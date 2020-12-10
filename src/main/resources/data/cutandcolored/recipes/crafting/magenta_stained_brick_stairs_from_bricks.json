@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "B  ",
+        "BB ",
+        "BBB"
+    ],
+    "key": {
+        "B": {
+            "item": "cutandcolored:magenta_stained_bricks"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:magenta_stained_brick_stairs",
+        "count": 4
+    }
+}

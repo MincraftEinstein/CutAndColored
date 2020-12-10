@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab",
+    "textures": {
+        "bottom": "cutandcolored:block/orange_stained_bricks",
+        "top": "cutandcolored:block/orange_stained_bricks",
+        "side": "cutandcolored:block/orange_stained_bricks"
+    }
+}

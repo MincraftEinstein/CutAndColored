@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SDS",
+        "SSS"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:red_dye"
+        },
+        "S": {
+            "tag": "cutandcolored:concrete_slabs"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:red_concrete_slab",
+        "count": 8
+    }
+}

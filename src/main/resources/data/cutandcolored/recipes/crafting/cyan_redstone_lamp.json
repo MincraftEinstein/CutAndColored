@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:cyan_dye"
+		},
+		{
+			"tag": "cutandcolored:redstone_lamps"
+		}
+	],
+	"result": {
+		"item": "cutandcolored:cyan_redstone_lamp"
+	}
+}

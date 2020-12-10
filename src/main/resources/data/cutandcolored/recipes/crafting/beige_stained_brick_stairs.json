@@ -1,0 +1,26 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SDS",
+        "SSS"
+    ],
+    "key": {
+        "D": {
+            "item": "flamboyant:beige_dye"
+        },
+        "S": {
+            "tag": "cutandcolored:clay_brick_stairs"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:beige_stained_brick_stairs",
+        "count": 8
+    }
+}

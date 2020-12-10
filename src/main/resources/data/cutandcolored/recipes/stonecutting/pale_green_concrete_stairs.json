@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "flamboyant:pale_green_concrete"
+	},
+	"result": "cutandcolored:pale_green_concrete_stairs",
+	"count": 1
+}

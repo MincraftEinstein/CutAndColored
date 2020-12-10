@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SDS",
+        "SSS"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:cyan_dye"
+        },
+        "S": {
+            "tag": "cutandcolored:terracotta_stairs"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:cyan_terracotta_stairs",
+        "count": 8
+    }
+}

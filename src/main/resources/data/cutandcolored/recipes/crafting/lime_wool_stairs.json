@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SDS",
+        "SSS"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:lime_dye"
+        },
+        "S": {
+            "tag": "cutandcolored:wool_stairs"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:lime_wool_stairs",
+        "count": 8
+    }
+}

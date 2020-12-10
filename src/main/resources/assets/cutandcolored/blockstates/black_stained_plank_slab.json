@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cutandcolored:block/black_stained_plank_slab"
+        },
+        "type=top": {
+            "model": "cutandcolored:block/black_stained_plank_slab_top"
+        },
+        "type=double": {
+            "model": "cutandcolored:block/black_stained_planks"
+        }
+    }
+}

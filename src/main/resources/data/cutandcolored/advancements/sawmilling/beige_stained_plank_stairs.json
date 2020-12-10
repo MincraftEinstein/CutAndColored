@@ -1,0 +1,38 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"cutandcolored:sawmilling/beige_stained_plank_stairs"
+		]
+	},
+	"criteria": {
+		"has_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "cutandcolored:beige_stained_planks"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "cutandcolored:sawmilling/beige_stained_plank_stairs"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_item",
+			"has_the_recipe"
+		]
+	]
+}

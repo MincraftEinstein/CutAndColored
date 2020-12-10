@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "cutandcolored:white_stained_brick_slab",
+    "cutandcolored:orange_stained_brick_slab",
+    "cutandcolored:magenta_stained_brick_slab",
+    "cutandcolored:light_blue_stained_brick_slab",
+    "cutandcolored:yellow_stained_brick_slab",
+    "cutandcolored:lime_stained_brick_slab",
+    "cutandcolored:pink_stained_brick_slab",
+    "cutandcolored:gray_stained_brick_slab",
+    "cutandcolored:light_gray_stained_brick_slab",
+    "cutandcolored:cyan_stained_brick_slab",
+    "cutandcolored:purple_stained_brick_slab",
+    "cutandcolored:blue_stained_brick_slab",
+    "cutandcolored:brown_stained_brick_slab",
+    "cutandcolored:green_stained_brick_slab",
+    "cutandcolored:red_stained_brick_slab",
+    "cutandcolored:black_stained_brick_slab"
+  	]
+}

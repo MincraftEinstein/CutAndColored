@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SDS",
+        "SSS"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:light_gray_dye"
+        },
+        "S": {
+            "tag": "minecraft:wooden_slabs"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:light_gray_stained_plank_slab",
+        "count": 8
+    }
+}

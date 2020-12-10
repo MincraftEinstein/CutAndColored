@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cutandcolored:block/lime_concrete_slab"
+        },
+        "type=top": {
+            "model": "cutandcolored:block/lime_concrete_slab_top"
+        },
+        "type=double": {
+            "model": "minecraft:block/lime_concrete"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP"
+    ],
+    "key": {
+        "P": {
+            "item": "flamboyant:dark_green_terracotta"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:dark_green_terracotta_slab",
+        "count": 6
+    }
+}

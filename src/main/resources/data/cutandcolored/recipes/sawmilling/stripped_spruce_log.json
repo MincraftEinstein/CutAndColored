@@ -1,0 +1,8 @@
+{
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"item": "minecraft:spruce_log"
+	},
+	"result": "minecraft:stripped_spruce_log",
+	"count": 1
+}

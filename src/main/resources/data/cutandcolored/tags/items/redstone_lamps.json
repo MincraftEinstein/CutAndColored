@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:redstone_lamp",
+		"#cutandcolored:vanilla_redstone_lamps"
+	],
+	"optional": [
+		"#cutandcolored:flamboyant_redstone_lamps"
+	]
+}

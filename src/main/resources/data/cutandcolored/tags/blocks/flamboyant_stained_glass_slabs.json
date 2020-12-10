@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "optional": [
+    "cutandcolored:amber_stained_glass_slab",
+    "cutandcolored:beige_stained_glass_slab",
+    "cutandcolored:cream_stained_glass_slab",
+    "cutandcolored:dark_green_stained_glass_slab",
+    "cutandcolored:forest_green_stained_glass_slab",
+    "cutandcolored:hot_pink_stained_glass_slab",
+    "cutandcolored:indigo_stained_glass_slab",
+    "cutandcolored:maroon_stained_glass_slab",
+    "cutandcolored:navy_stained_glass_slab",
+    "cutandcolored:olive_stained_glass_slab",
+    "cutandcolored:pale_green_stained_glass_slab",
+    "cutandcolored:pale_pink_stained_glass_slab",
+    "cutandcolored:pale_yellow_stained_glass_slab",
+    "cutandcolored:sky_blue_stained_glass_slab",
+    "cutandcolored:slate_gray_stained_glass_slab",
+    "cutandcolored:violet_stained_glass_slab"
+  	]
+}

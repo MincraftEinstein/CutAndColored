@@ -1,0 +1,21 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WWW"
+    ],
+    "key": {
+        "W": {
+            "item": "flamboyant:amber_wool"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:amber_wool_slab",
+        "count": 6
+    }
+}

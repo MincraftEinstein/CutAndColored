@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cutandcolored:block/olive_terracotta_slab"
+        },
+        "type=top": {
+            "model": "cutandcolored:block/olive_terracotta_slab_top"
+        },
+        "type=double": {
+            "model": "flamboyant:block/olive_terracotta"
+        }
+    }
+}
+s

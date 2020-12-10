@@ -1,0 +1,15 @@
+{
+	"replace": false,
+	"values": [
+		"#cutandcolored:concrete_stairs",
+		"#cutandcolored:glass_stairs",
+		"#cutandcolored:stained_plank_stairs",
+		"#cutandcolored:terracotta_stairs",
+		"#cutandcolored:wool_stairs",
+		"#cutandcolored:clay_brick_stairs",
+		"cutandcolored:smooth_stone_stairs",
+		"cutandcolored:cracked_stone_brick_stairs",
+		"cutandcolored:cracked_polished_blackstone_brick_stairs",
+		"cutandcolored:cracked_nether_brick_stairs"
+	]
+}

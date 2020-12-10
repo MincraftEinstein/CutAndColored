@@ -1,0 +1,8 @@
+{
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"tag": "minecraft:spruce_logs"
+	},
+	"result": "minecraft:spruce_fence",
+	"count": 1
+}

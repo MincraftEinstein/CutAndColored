@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SSS"
+    ],
+    "key": {
+        "S": {
+            "item": "cutandcolored:soul_glass"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:soul_glass_pane",
+        "count": 16
+    }
+}

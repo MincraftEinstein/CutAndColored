@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+
+
+        "CCC"
+    ],
+    "key": {
+        "C": {
+            "item": "minecraft:light_gray_concrete"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:light_gray_concrete_slab",
+        "count": 6
+    }
+}

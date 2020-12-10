@@ -1,0 +1,8 @@
+{
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"tag": "minecraft:birch_logs"
+	},
+	"result": "minecraft:birch_sign",
+	"count": 1
+}

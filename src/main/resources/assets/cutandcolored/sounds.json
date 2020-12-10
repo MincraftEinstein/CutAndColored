@@ -1,0 +1,20 @@
+{
+	"ui.glasscutter_take_result": {
+		"category": "block",
+		"sounds": [
+			{
+				"name": "cutandcolored:ui/glasscutter_take_result",
+				"stream": true
+			}
+		]
+	},
+	"ui.sawmill_take_result": {
+		"category": "block",
+		"sounds": [
+			{
+				"name": "cutandcolored:ui/sawmill_take_result",
+				"stream": true
+			}
+		]
+	}
+}

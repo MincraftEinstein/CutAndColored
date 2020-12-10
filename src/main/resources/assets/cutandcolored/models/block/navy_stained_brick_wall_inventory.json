@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/wall_inventory",
+    "textures": {
+        "wall": "cutandcolored:block/navy_stained_bricks"
+    }
+}

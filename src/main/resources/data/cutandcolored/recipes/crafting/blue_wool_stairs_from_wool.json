@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "W  ",
+        "WW ",
+        "WWW"
+    ],
+    "key": {
+        "W": {
+            "item": "minecraft:blue_wool"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:blue_wool_stairs",
+        "count": 4
+    }
+}

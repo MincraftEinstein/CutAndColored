@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "cutandcolored:white_redstone_lamp",
+    "cutandcolored:orange_redstone_lamp",
+    "cutandcolored:magenta_redstone_lamp",
+    "cutandcolored:light_blue_redstone_lamp",
+    "cutandcolored:yellow_redstone_lamp",
+    "cutandcolored:lime_redstone_lamp",
+    "cutandcolored:pink_redstone_lamp",
+    "cutandcolored:gray_redstone_lamp",
+    "cutandcolored:light_gray_redstone_lamp",
+    "cutandcolored:cyan_redstone_lamp",
+    "cutandcolored:purple_redstone_lamp",
+    "cutandcolored:blue_redstone_lamp",
+    "cutandcolored:brown_redstone_lamp",
+    "cutandcolored:green_redstone_lamp",
+    "cutandcolored:red_redstone_lamp",
+    "cutandcolored:black_redstone_lamp"
+  	]
+}

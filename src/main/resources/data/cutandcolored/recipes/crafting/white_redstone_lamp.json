@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:white_dye"
+		},
+		{
+			"tag": "cutandcolored:redstone_lamps"
+		}
+	],
+	"result": {
+		"item": "cutandcolored:white_redstone_lamp"
+	}
+}

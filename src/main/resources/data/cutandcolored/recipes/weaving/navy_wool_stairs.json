@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "cutandcolored:weaving",
+    "ingredient": {
+        "item": "flamboyant:navy_wool"
+    },
+    "result": "cutandcolored:navy_wool_stairs",
+    "count": 1
+}

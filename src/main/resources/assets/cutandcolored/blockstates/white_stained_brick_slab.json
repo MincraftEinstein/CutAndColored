@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cutandcolored:block/white_stained_brick_slab"
+        },
+        "type=top": {
+            "model": "cutandcolored:block/white_stained_brick_slab_top"
+        },
+        "type=double": {
+            "model": "cutandcolored:block/white_stained_bricks"
+        }
+    }
+}

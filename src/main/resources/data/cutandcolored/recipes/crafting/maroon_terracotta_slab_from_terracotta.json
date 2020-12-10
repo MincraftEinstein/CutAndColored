@@ -1,0 +1,21 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP"
+    ],
+    "key": {
+        "P": {
+            "item": "flamboyant:maroon_terracotta"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:maroon_terracotta_slab",
+        "count": 6
+    }
+}

@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:bricks",
+		"#cutandcolored:vanilla_stained_bricks"
+	],
+	"optional": [
+		"#cutandcolored:flamboyant_stained_bricks"
+	]
+}

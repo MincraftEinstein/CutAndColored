@@ -1,0 +1,23 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "T  ",
+        "TT ",
+        "TTT"
+    ],
+    "key": {
+        "T": {
+            "item": "flamboyant:indigo_terracotta"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:indigo_terracotta_stairs",
+        "count": 4
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WWW",
+        "WDW",
+        "WWW"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:orange_dye"
+        },
+        "W": {
+            "tag": "cutandcolored:clay_brick_walls"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:orange_stained_brick_wall",
+        "count": 8
+    }
+}

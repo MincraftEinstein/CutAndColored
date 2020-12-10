@@ -1,0 +1,26 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SDS",
+        "SSS"
+    ],
+    "key": {
+        "D": {
+            "item": "flamboyant:sky_blue_dye"
+        },
+        "S": {
+            "tag": "cutandcolored:wool_slabs"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:sky_blue_wool_slab",
+        "count": 8
+    }
+}

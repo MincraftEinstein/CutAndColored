@@ -1,0 +1,20 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "flamboyant:navy_dye"
+		},
+		{
+			"tag": "cutandcolored:redstone_lamps"
+		}
+	],
+	"result": {
+		"item": "cutandcolored:navy_redstone_lamp"
+	}
+}

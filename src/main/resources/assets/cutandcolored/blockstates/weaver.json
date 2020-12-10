@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cutandcolored:block/weaver"
+        },
+        "facing=south": {
+            "model": "cutandcolored:block/weaver",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cutandcolored:block/weaver",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cutandcolored:block/weaver",
+            "y": 90
+        }
+    }
+}

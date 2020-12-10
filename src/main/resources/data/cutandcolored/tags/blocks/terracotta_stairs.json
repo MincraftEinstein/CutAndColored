@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"cutandcolored:terracotta_stairs",
+		"#cutandcolored:vanilla_terracotta_stairs"
+	],
+	"optional": [
+		"#cutandcolored:flamboyant_terracotta_stairs"
+	]
+}

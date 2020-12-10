@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "flamboyant:indigo_concrete"
+	},
+	"result": "cutandcolored:indigo_concrete_slab",
+	"count": 2
+}

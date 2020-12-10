@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab",
+    "textures": {
+        "bottom": "flamboyant:block/cream_terracotta",
+        "top": "flamboyant:block/cream_terracotta",
+        "side": "flamboyant:block/cream_terracotta"
+    }
+}

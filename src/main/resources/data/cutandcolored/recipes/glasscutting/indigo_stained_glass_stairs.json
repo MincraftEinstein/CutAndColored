@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "cutandcolored:glasscutting",
+    "ingredient": {
+        "item": "flamboyant:indigo_stained_glass"
+    },
+    "result": "cutandcolored:indigo_stained_glass_stairs",
+    "count": 1
+}

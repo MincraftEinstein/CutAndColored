@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+        "bottom": "cutandcolored:block/white_stained_planks",
+        "top": "cutandcolored:block/white_stained_planks",
+        "side": "cutandcolored:block/white_stained_planks"
+    }
+}

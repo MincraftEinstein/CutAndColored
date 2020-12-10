@@ -1,0 +1,20 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "flamboyant:hot_pink_dye"
+		},
+		{
+			"tag": "cutandcolored:redstone_lamps"
+		}
+	],
+	"result": {
+		"item": "cutandcolored:hot_pink_redstone_lamp"
+	}
+}

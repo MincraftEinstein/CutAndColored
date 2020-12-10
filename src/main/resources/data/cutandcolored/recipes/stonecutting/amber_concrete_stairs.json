@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "flamboyant:amber_concrete"
+	},
+	"result": "cutandcolored:amber_concrete_stairs",
+	"count": 1
+}

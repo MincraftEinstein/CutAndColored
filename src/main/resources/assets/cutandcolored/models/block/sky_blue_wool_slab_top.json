@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+        "bottom": "flamboyant:block/sky_blue_wool",
+        "top": "flamboyant:block/sky_blue_wool",
+        "side": "flamboyant:block/sky_blue_wool"
+    }
+}

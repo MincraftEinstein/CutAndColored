@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "cutandcolored:soul_sandstone"
+	},
+	"result": "cutandcolored:smooth_soul_sandstone",
+	"experience": 0.3,
+	"cookingtime": 300
+}

@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "flamboyant:pale_yellow_terracotta"
+	},
+	"result": "cutandcolored:pale_yellow_terracotta_stairs",
+	"count": 1
+}

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "lit=false": { "model": "cutandcolored:block/sky_blue_redstone_lamp" },
+        "lit=true": { "model": "cutandcolored:block/sky_blue_redstone_lamp_on" }
+    }
+}

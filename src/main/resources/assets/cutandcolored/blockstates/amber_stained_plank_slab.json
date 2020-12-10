@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cutandcolored:block/amber_stained_plank_slab"
+        },
+        "type=top": {
+            "model": "cutandcolored:block/amber_stained_plank_slab_top"
+        },
+        "type=double": {
+            "model": "cutandcolored:block/amber_stained_planks"
+        }
+    }
+}

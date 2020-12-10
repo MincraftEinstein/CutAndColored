@@ -1,0 +1,26 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SDS",
+        "SSS"
+    ],
+    "key": {
+        "D": {
+            "item": "flamboyant:violet_dye"
+        },
+        "S": {
+            "tag": "cutandcolored:glass_stairs"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:violet_stained_glass_stairs",
+        "count": 8
+    }
+}

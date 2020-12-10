@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "cutandcolored:white_terracotta_slab",
+    "cutandcolored:orange_terracotta_slab",
+    "cutandcolored:magenta_terracotta_slab",
+    "cutandcolored:light_blue_terracotta_slab",
+    "cutandcolored:yellow_terracotta_slab",
+    "cutandcolored:lime_terracotta_slab",
+    "cutandcolored:pink_terracotta_slab",
+    "cutandcolored:gray_terracotta_slab",
+    "cutandcolored:light_gray_terracotta_slab",
+    "cutandcolored:cyan_terracotta_slab",
+    "cutandcolored:purple_terracotta_slab",
+    "cutandcolored:blue_terracotta_slab",
+    "cutandcolored:brown_terracotta_slab",
+    "cutandcolored:green_terracotta_slab",
+    "cutandcolored:red_terracotta_slab",
+    "cutandcolored:black_terracotta_slab"
+  	]
+}

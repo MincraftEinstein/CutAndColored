@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "P  ",
+        "PP ",
+        "PPP"
+    ],
+    "key": {
+        "P": {
+            "item": "cutandcolored:gray_stained_planks"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:gray_stained_plank_stairs",
+        "count": 4
+    }
+}

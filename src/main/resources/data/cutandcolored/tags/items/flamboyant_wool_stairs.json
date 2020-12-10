@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "optional": [
+    "cutandcolored:amber_wool_stairs",
+    "cutandcolored:beige_wool_stairs",
+    "cutandcolored:cream_wool_stairs",
+    "cutandcolored:dark_green_wool_stairs",
+    "cutandcolored:forest_green_wool_stairs",
+    "cutandcolored:hot_pink_wool_stairs",
+    "cutandcolored:indigo_wool_stairs",
+    "cutandcolored:maroon_wool_stairs",
+    "cutandcolored:navy_wool_stairs",
+    "cutandcolored:olive_wool_stairs",
+    "cutandcolored:pale_green_wool_stairs",
+    "cutandcolored:pale_pink_wool_stairs",
+    "cutandcolored:pale_yellow_wool_stairs",
+    "cutandcolored:sky_blue_wool_stairs",
+    "cutandcolored:slate_gray_wool_stairs",
+    "cutandcolored:violet_wool_stairs"
+  	]
+}

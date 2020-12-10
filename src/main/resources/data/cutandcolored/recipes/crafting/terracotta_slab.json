@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP"
+    ],
+    "key": {
+        "P": {
+            "item": "minecraft:terracotta"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:terracotta_slab",
+        "count": 6
+    }
+}

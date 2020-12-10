@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "optional": [
+    "cutandcolored:amber_wool_slab",
+    "cutandcolored:beige_wool_slab",
+    "cutandcolored:cream_wool_slab",
+    "cutandcolored:dark_green_wool_slab",
+    "cutandcolored:forest_green_wool_slab",
+    "cutandcolored:hot_pink_wool_slab",
+    "cutandcolored:indigo_wool_slab",
+    "cutandcolored:maroon_wool_slab",
+    "cutandcolored:navy_wool_slab",
+    "cutandcolored:olive_wool_slab",
+    "cutandcolored:pale_green_wool_slab",
+    "cutandcolored:pale_pink_wool_slab",
+    "cutandcolored:pale_yellow_wool_slab",
+    "cutandcolored:sky_blue_wool_slab",
+    "cutandcolored:slate_gray_wool_slab",
+    "cutandcolored:violet_wool_slab"
+  	]
+}

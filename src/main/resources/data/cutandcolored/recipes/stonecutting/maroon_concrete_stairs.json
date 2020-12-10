@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "flamboyant:maroon_concrete"
+	},
+	"result": "cutandcolored:maroon_concrete_stairs",
+	"count": 1
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP",
+        "PDP",
+        "PPP"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:lime_dye"
+        },
+        "P": {
+            "tag": "minecraft:planks"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:lime_stained_planks",
+        "count": 8
+    }
+}

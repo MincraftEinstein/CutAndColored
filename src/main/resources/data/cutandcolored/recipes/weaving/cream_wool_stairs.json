@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "cutandcolored:weaving",
+    "ingredient": {
+        "item": "flamboyant:cream_wool"
+    },
+    "result": "cutandcolored:cream_wool_stairs",
+    "count": 1
+}

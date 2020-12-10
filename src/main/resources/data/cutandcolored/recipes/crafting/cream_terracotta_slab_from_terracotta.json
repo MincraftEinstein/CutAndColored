@@ -1,0 +1,27 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP"
+    ],
+    "key": {
+        "P": {
+            "item": "flamboyant:cream_terracotta"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:cream_terracotta_slab",
+        "count": 6
+    }
+}

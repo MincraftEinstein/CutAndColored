@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "AAA"
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:cracked_stone_bricks"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:cracked_stone_brick_wall",
+        "count": 6
+    }
+}

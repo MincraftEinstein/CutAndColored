@@ -1,0 +1,10 @@
+{
+    "parent": "minecraft:block/stonecutter",
+    "textures": {
+        "particle": "cutandcolored:block/sawmill_bottom",
+        "bottom": "cutandcolored:block/sawmill_bottom",
+        "top": "cutandcolored:block/sawmill_top",
+        "side": "cutandcolored:block/sawmill_side",
+        "saw": "cutandcolored:block/sawmill_saw"
+    }
+}

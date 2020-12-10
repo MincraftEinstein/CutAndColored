@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+        "bottom": "flamboyant:block/forest_green_concrete",
+        "top": "flamboyant:block/forest_green_concrete",
+        "side": "flamboyant:block/forest_green_concrete"
+    }
+}

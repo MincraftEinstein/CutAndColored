@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cutandcolored:block/smooth_soul_sandstone_slab"
+        },
+        "type=top": {
+            "model": "cutandcolored:block/smooth_soul_sandstone_slab_top"
+        },
+        "type=double": {
+            "model": "cutandcolored:block/smooth_soul_sandstone"
+        }
+    }
+}

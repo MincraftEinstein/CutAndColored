@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SSS"
+    ],
+    "key": {
+        "S": {
+            "item": "cutandcolored:soul_sandstone"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:soul_sandstone_wall",
+        "count": 6
+    }
+}

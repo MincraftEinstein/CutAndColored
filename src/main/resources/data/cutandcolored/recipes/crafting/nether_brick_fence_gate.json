@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "IBI",
+        "IBI"
+    ],
+    "key": {
+        "B": {
+            "item": "minecraft:nether_bricks"
+        },
+        "I": {
+            "item": "minecraft:nether_brick"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:nether_brick_fence_gate",
+        "count": 2
+    }
+}

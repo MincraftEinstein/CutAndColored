@@ -1,0 +1,21 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+       "CCC"
+    ],
+    "key": {
+        "C": {
+            "item": "flamboyant:forest_green_concrete"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:forest_green_concrete_slab",
+        "count": 6
+    }
+}

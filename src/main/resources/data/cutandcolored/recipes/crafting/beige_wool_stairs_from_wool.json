@@ -1,0 +1,23 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "W  ",
+        "WW ",
+        "WWW"
+    ],
+    "key": {
+        "W": {
+            "item": "flamboyant:beige_wool"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:beige_wool_stairs",
+        "count": 4
+    }
+}

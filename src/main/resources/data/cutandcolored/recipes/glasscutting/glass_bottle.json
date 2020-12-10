@@ -1,0 +1,8 @@
+{
+    "type": "cutandcolored:glasscutting",
+    "ingredient": {
+        "item": "minecraft:glass"
+    },
+    "result": "minecraft:glass_bottle",
+    "count": 1
+}

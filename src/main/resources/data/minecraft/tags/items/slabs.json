@@ -1,0 +1,14 @@
+{
+	"replace": false,
+	"values": [
+		"#cutandcolored:concrete_slabs",
+		"#cutandcolored:glass_slabs",
+		"#cutandcolored:stained_plank_slabs",
+		"#cutandcolored:terracotta_slabs",
+		"#cutandcolored:wool_slabs",
+		"#cutandcolored:clay_brick_slabs",
+		"cutandcolored:cracked_stone_brick_slab",
+		"cutandcolored:cracked_polished_blackstone_brick_slab",
+		"cutandcolored:cracked_nether_brick_slab"
+	]
+}

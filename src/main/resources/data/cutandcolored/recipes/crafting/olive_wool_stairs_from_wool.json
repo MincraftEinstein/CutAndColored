@@ -1,0 +1,23 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "W  ",
+        "WW ",
+        "WWW"
+    ],
+    "key": {
+        "W": {
+            "item": "flamboyant:olive_wool"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:olive_wool_stairs",
+        "count": 4
+    }
+}

@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"#cutandcolored:vanilla_concrete_slabs"
+	],
+	"optional": [
+		"#cutandcolored:flamboyant_concrete_slabs"
+	]
+}

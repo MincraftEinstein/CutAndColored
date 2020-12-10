@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "flamboyant:forest_green_terracotta"
+	},
+	"result": "cutandcolored:forest_green_terracotta_slab",
+	"count": 2
+}

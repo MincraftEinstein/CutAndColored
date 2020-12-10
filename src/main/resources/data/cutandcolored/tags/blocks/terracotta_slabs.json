@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"cutandcolored:terracotta_slab",
+		"#cutandcolored:vanilla_terracotta_slabs"
+	],
+	"optional": [
+		"#cutandcolored:flamboyant_terracotta_slabs"
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BBB",
+        "BDB",
+        "BBB"
+    ],
+    "key": {
+        "D": {
+            "item": "flamboyant:pale_green_dye"
+        },
+        "B": {
+            "tag": "cutandcolored:clay_bricks"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:pale_green_stained_bricks",
+        "count": 8
+    }
+}

@@ -1,0 +1,21 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BBB"
+    ],
+    "key": {
+        "B": {
+            "item": "cutandcolored:pale_yellow_stained_bricks"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:pale_yellow_stained_brick_slab",
+        "count": 6
+    }
+}

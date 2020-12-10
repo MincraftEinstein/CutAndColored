@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BBB",
+        "BDB",
+        "BBB"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:white_dye"
+        },
+        "B": {
+            "tag": "cutandcolored:clay_bricks"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:white_stained_bricks",
+        "count": 8
+    }
+}

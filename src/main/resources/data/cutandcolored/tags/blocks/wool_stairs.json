@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"#cutandcolored:vanilla_wool_stairs"
+	],
+	"optional": [
+		"#cutandcolored:flamboyant_wool_stairs"
+	]
+}

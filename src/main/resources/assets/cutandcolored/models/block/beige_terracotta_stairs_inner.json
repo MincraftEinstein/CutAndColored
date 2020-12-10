@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+        "bottom": "flamboyant:block/beige_terracotta",
+        "top": "flamboyant:block/beige_terracotta",
+        "side": "flamboyant:block/beige_terracotta"
+    }
+}

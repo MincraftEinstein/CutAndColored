@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"item": "cutandcolored:olive_stained_planks"
+	},
+	"result": "cutandcolored:olive_stained_plank_stairs",
+	"count": 1
+}

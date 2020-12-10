@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "flamboyant:slate_gray_concrete"
+	},
+	"result": "cutandcolored:slate_gray_concrete_slab",
+	"count": 2
+}

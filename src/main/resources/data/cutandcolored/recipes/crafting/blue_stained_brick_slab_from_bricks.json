@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BBB"
+    ],
+    "key": {
+        "B": {
+            "item": "cutandcolored:blue_stained_bricks"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:blue_stained_brick_slab",
+        "count": 6
+    }
+}

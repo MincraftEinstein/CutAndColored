@@ -1,0 +1,26 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SDS",
+        "SSS"
+    ],
+    "key": {
+        "D": {
+            "item": "flamboyant:beige_dye"
+        },
+        "S": {
+            "tag": "cutandcolored:glass_slabs"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:beige_stained_glass_slab",
+        "count": 8
+    }
+}

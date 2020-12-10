@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "optional": [
+    "cutandcolored:amber_stained_planks",
+    "cutandcolored:beige_stained_planks",
+    "cutandcolored:cream_stained_planks",
+    "cutandcolored:dark_green_stained_planks",
+    "cutandcolored:forest_green_stained_planks",
+    "cutandcolored:hot_pink_stained_planks",
+    "cutandcolored:indigo_stained_planks",
+    "cutandcolored:maroon_stained_planks",
+    "cutandcolored:navy_stained_planks",
+    "cutandcolored:olive_stained_planks",
+    "cutandcolored:pale_green_stained_planks",
+    "cutandcolored:pale_pink_stained_planks",
+    "cutandcolored:pale_yellow_stained_planks",
+    "cutandcolored:sky_blue_stained_planks",
+    "cutandcolored:slate_gray_stained_planks",
+    "cutandcolored:violet_stained_planks"
+  	]
+}

@@ -1,0 +1,21 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+       "CCC"
+    ],
+    "key": {
+        "C": {
+            "item": "flamboyant:cream_concrete"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:cream_concrete_slab",
+        "count": 6
+    }
+}

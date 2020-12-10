@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "optional": [
+    "cutandcolored:amber_stained_glass_stairs",
+    "cutandcolored:beige_stained_glass_stairs",
+    "cutandcolored:cream_stained_glass_stairs",
+    "cutandcolored:dark_green_stained_glass_stairs",
+    "cutandcolored:forest_green_stained_glass_stairs",
+    "cutandcolored:hot_pink_stained_glass_stairs",
+    "cutandcolored:indigo_stained_glass_stairs",
+    "cutandcolored:maroon_stained_glass_stairs",
+    "cutandcolored:navy_stained_glass_stairs",
+    "cutandcolored:olive_stained_glass_stairs",
+    "cutandcolored:pale_green_stained_glass_stairs",
+    "cutandcolored:pale_pink_stained_glass_stairs",
+    "cutandcolored:pale_yellow_stained_glass_stairs",
+    "cutandcolored:sky_blue_stained_glass_stairs",
+    "cutandcolored:slate_gray_stained_glass_stairs",
+    "cutandcolored:violet_stained_glass_stairs"
+  	]
+}

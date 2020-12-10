@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "flamboyant"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"item": "cutandcolored:pale_pink_stained_planks"
+	},
+	"result": "cutandcolored:pale_pink_stained_plank_slab",
+	"count": 2
+}
