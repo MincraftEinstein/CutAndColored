@@ -1,0 +1,7 @@
+{
+	"parent": "horizontalpanes:block/horizontal_pane_block",
+	"textures": {
+		"edge": "cutandcolored:block/soul_glass_pane_top",
+		"glass": "cutandcolored:block/soul_glass"
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "horizontalpanes"
+		}
+	],
+    "type": "cutandcolored:glasscutting",
+    "ingredient": {
+        "item": "minecraft:glass"
+    },
+    "result": "horizontalpanes:horizontal_glass_pane",
+    "count": 4
+}

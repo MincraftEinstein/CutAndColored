@@ -443,6 +443,7 @@ public class BlockDataHandler
         
         // PANES
         RenderTypeLookup.setRenderLayer(ModBlocks.SOUL_GLASS_PANE, RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, RenderType.getCutout());
         
         // STAIRS
         RenderTypeLookup.setRenderLayer(ModBlocks.GLASS_STAIRS, RenderType.getCutout());

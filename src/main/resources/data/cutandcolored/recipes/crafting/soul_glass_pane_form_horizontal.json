@@ -1,0 +1,21 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "horizontalpanes"
+		}
+	],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+       "S"
+    ],
+    "key": {
+        "S": {
+            "item": "cutandcolored:horizontal_soul_glass_pane"
+        }
+    },
+    "result": {
+        "item": "cutandcolored:soul_glass_pane",
+        "count": 1
+    }
+}
