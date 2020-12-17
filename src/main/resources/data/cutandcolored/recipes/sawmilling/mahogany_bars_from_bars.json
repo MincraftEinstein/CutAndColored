@@ -1,0 +1,26 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		},
+		{
+			"type": "forge:mod_loaded",
+			"modid": "biomesoplenty"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": [
+		{
+			"item": "additionalbars:crossed_mahogany_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_mahogany_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_crossed_mahogany_bars"
+		}
+	],
+	"result": "additionalbars:mahogany_bars",
+	"count": 1
+}

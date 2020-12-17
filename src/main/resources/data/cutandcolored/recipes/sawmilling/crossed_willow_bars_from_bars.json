@@ -1,0 +1,26 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		},
+		{
+			"type": "forge:mod_loaded",
+			"modid": "biomesoplenty"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": [
+		{
+			"item": "additionalbars:willow_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_willow_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_crossed_willow_bars"
+		}
+	],
+	"result": "additionalbars:crossed_willow_bars",
+	"count": 1
+}

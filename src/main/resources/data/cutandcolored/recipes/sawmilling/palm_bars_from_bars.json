@@ -1,0 +1,26 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		},
+		{
+			"type": "forge:mod_loaded",
+			"modid": "biomesoplenty"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": [
+		{
+			"item": "additionalbars:crossed_palm_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_palm_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_crossed_palm_bars"
+		}
+	],
+	"result": "additionalbars:palm_bars",
+	"count": 1
+}

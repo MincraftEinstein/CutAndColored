@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"tag": "minecraft:oak_logs"
+	},
+	"result": "additionalbars:oak_bars",
+	"count": 2
+}

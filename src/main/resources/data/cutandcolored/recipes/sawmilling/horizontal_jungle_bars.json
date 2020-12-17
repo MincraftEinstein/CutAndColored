@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"tag": "minecraft:jungle_logs"
+	},
+	"result": "additionalbars:horizontal_jungle_bars",
+	"count": 2
+}

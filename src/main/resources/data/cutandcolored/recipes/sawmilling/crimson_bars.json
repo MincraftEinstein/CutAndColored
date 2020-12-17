@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"tag": "minecraft:crimson_logs"
+	},
+	"result": "additionalbars:crimson_bars",
+	"count": 2
+}

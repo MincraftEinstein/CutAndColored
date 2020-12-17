@@ -1,0 +1,22 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": [
+		{
+			"item": "additionalbars:spruce_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_spruce_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_crossed_spruce_bars"
+		}
+	],
+	"result": "additionalbars:crossed_spruce_bars",
+	"count": 1
+}

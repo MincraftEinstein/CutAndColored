@@ -1,0 +1,22 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": [
+		{
+			"item": "additionalbars:oak_bars"
+		},
+		{
+			"item": "additionalbars:crossed_oak_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_crossed_oak_bars"
+		}
+	],
+	"result": "additionalbars:horizontal_oak_bars",
+	"count": 1
+}

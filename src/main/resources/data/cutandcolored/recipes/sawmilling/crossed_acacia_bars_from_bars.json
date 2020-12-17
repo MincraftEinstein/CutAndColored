@@ -1,0 +1,22 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": [
+		{
+			"item": "additionalbars:acacia_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_acacia_bars"
+		},
+		{
+			"item": "additionalbars:horizontal_crossed_acacia_bars"
+		}
+	],
+	"result": "additionalbars:crossed_acacia_bars",
+	"count": 1
+}

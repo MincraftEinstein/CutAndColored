@@ -1,0 +1,18 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		},
+		{
+			"type": "forge:mod_loaded",
+			"modid": "biomesoplenty"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"tag": "biomesoplenty:cherry_logs"
+	},
+	"result": "additionalbars:horizontal_cherry_bars",
+	"count": 2
+}

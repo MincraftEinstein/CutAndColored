@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "additionalbars"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"tag": "minecraft:acacia_logs"
+	},
+	"result": "additionalbars:horizontal_crossed_acacia_bars",
+	"count": 2
+}
