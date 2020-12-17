@@ -97,7 +97,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.16.4-35.0.1'
+    minecraft 'net.minecraftforge:forge:1.16.4-35.1.10'
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
@@ -125,8 +125,7 @@ dependencies {
 	implementation fg.deobf("curse.maven:cofh-core:3104353")
 	implementation fg.deobf("curse.maven:additional-bars:3136777")
 	implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes:3137463")
-//	implementation fg.deobf("curse.maven:biomes-o-plenty:3136442")
-//	implementation fg.deobf("curse.maven:jeitweaker:3003397")
+	implementation fg.deobf("curse.maven:biomes-o-plenty:3136442")
 //	implementation fg.deobf("curse.maven:flamboyant:2896037")
 
 }
