@@ -119,10 +119,10 @@ dependencies {
 
 	// Library
 	implementation fg.deobf("curse.maven:einsteins-library:3100553")
-	implementation fg.deobf("curse.maven:jei:3105896")
+	implementation fg.deobf("curse.maven:jei:3136600")
 	implementation fg.deobf("curse.maven:crafttweaker:3116045")
-	implementation fg.deobf("curse.maven:oh-my-gourd:3099198")
-	implementation fg.deobf("curse.maven:cofh-core:3104353")
+	implementation fg.deobf("curse.maven:oh-my-gourd:3147565")
+	implementation fg.deobf("curse.maven:cofh-core:3149057")
 	implementation fg.deobf("curse.maven:additional-bars:3136777")
 	implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes:3137463")
 	implementation fg.deobf("curse.maven:biomes-o-plenty:3136442")
