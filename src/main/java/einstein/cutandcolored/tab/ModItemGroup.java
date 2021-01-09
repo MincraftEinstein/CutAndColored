@@ -9,7 +9,6 @@ import net.minecraft.util.ResourceLocation;
 
 public class ModItemGroup extends ItemGroup
 {
-    
     public ModItemGroup(final int index, final String label) {
         super(index, label);
     }

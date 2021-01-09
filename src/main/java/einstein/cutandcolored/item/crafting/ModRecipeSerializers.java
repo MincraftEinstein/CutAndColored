@@ -16,23 +16,21 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber(modid = CutAndColored.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModRecipeSerializers
 {
-	
 	private static final List<IRecipeSerializer> RECIPES = new ArrayList<IRecipeSerializer>();
-	public static final IRecipeSerializer<GlasscuttingRecipe> GLASSCUTTING = register("cutandcolored:glasscutting", new GlasscuttingRecipe.Serializer(GlasscuttingRecipe::new));
-    public static final IRecipeSerializer<WeavingRecipe> WEAVING = register("cutandcolored:weaving", new WeavingRecipe.Serializer(WeavingRecipe::new));
-	public static final IRecipeSerializer<SawmillingRecipe> SAWMILLING = register("cutandcolored:sawmilling", new SawmillingRecipe.Serializer(SawmillingRecipe::new));
+	public static final IRecipeSerializer<GlasscuttingRecipe> GLASSCUTTING = register("glasscutting", new GlasscuttingRecipe.Serializer(GlasscuttingRecipe::new));
+    public static final IRecipeSerializer<WeavingRecipe> WEAVING = register("weaving", new WeavingRecipe.Serializer(WeavingRecipe::new));
+	public static final IRecipeSerializer<SawmillingRecipe> SAWMILLING = register("sawmilling", new SawmillingRecipe.Serializer(SawmillingRecipe::new));
     
     private static <T extends IRecipeSerializer<? extends IRecipe<?>>> T register(final String name, final T t) {
-        t.setRegistryName(new ResourceLocation(name));
+        t.setRegistryName(new ResourceLocation(CutAndColored.MODID + ":" + name));
         ModRecipeSerializers.RECIPES.add(t);
         return t;
     }
     
 	@SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<IRecipeSerializer<?>> event) {
-		final IForgeRegistry<IRecipeSerializer<?>> registry = (IForgeRegistry<IRecipeSerializer<?>>)event.getRegistry();
+		final IForgeRegistry<IRecipeSerializer<?>> registry = event.getRegistry();
         ModRecipeSerializers.RECIPES.forEach(item -> event.getRegistry().register(item));
         ModRecipeSerializers.RECIPES.clear();
     }
-    
 }

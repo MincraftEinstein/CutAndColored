@@ -24,7 +24,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 @Mod.EventBusSubscriber(modid = CutAndColored.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = { Dist.CLIENT })
 public class BlockDataHandler
 {
-    
     @SubscribeEvent
     public static void setBlockFlammable(final FMLCommonSetupEvent event) {
         final FireBlock fire = (FireBlock)Blocks.FIRE;

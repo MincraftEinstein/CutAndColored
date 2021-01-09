@@ -8,17 +8,16 @@ import net.minecraft.util.registry.Registry;
 
 public class ModRecipeType
 {
-    public static final IRecipeType<GlasscuttingRecipe> GLASSCUTTING = register(new ResourceLocation(CutAndColored.MODID, "glasscutting"));
-    public static final IRecipeType<WeavingRecipe> WEAVING = register(new ResourceLocation(CutAndColored.MODID, "weaving"));
-    public static final IRecipeType<SawmillingRecipe> SAWMILLING = register(new ResourceLocation(CutAndColored.MODID, "sawmilling"));
+    public static final IRecipeType<GlasscuttingRecipe> GLASSCUTTING = register("glasscutting");
+    public static final IRecipeType<WeavingRecipe> WEAVING = register("weaving");
+    public static final IRecipeType<SawmillingRecipe> SAWMILLING = register("sawmilling");
     
-	private static <T extends IRecipe<?>> IRecipeType<T> register(final ResourceLocation name) {
-        return (IRecipeType<T>)Registry.register(Registry.RECIPE_TYPE, name, new IRecipeType<T>() {
+	private static <T extends IRecipe<?>> IRecipeType<T> register(final String name) {
+        return Registry.register(Registry.RECIPE_TYPE, new ResourceLocation(CutAndColored.MODID, name), new IRecipeType<T>() {
             @Override
             public String toString() {
                 return name.toString();
             }
         });
     }
-
 }

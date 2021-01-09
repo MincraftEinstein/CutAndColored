@@ -18,7 +18,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class ModContainerType
 {
     private static final List<ContainerType<?>> CONTAINER_TYPES = new ArrayList<ContainerType<?>>();
-    public static final ContainerType<GlasscutterContainer> GLASSCUTTER = register("glasscutter",GlasscutterContainer::new);
+    public static final ContainerType<GlasscutterContainer> GLASSCUTTER = register("glasscutter", GlasscutterContainer::new);
     public static final ContainerType<WeaverContainer> WEAVER = register("weaver", WeaverContainer::new);
     public static final ContainerType<SawmillContainer> SAWMILL = register("sawmill", SawmillContainer::new);
     
@@ -30,12 +30,10 @@ public class ModContainerType
         return type;
     }
     
-    
 	@SubscribeEvent
     public static void registerTypes(final RegistryEvent.Register<ContainerType<?>> event) {
         final IForgeRegistry<ContainerType<?>> registry = (IForgeRegistry<ContainerType<?>>)event.getRegistry();
         ModContainerType.CONTAINER_TYPES.forEach((Consumer<? super ContainerType>)registry::register);
         ModContainerType.CONTAINER_TYPES.clear();
     }
-    
 }
