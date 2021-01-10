@@ -7,7 +7,7 @@
 	],
 	"type": "cutandcolored:sawmilling",
 	"ingredient": {
-		"tag": "minecraft:crimson_logs"
+		"tag": "minecraft:crimson_stems"
 	},
 	"result": "additionalbars:crossed_crimson_bars",
 	"count": 2

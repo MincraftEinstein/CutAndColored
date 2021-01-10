@@ -21,7 +21,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "additionalbars:dead_logs"
+						"tag": "biomesoplenty:dead_logs"
 					}
 				]
 			}

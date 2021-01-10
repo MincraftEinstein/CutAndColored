@@ -21,7 +21,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "additionalbars:hellbark_logs"
+						"tag": "biomesoplenty:hellbark_logs"
 					}
 				]
 			}

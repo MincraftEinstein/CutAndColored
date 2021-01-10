@@ -21,7 +21,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "additionalbars:jacaranda_logs"
+						"tag": "biomesoplenty:jacaranda_logs"
 					}
 				]
 			}

@@ -7,7 +7,7 @@
 	],
 	"type": "cutandcolored:sawmilling",
 	"ingredient": {
-		"tag": "minecraft:warped_logs"
+		"tag": "minecraft:warped_stems"
 	},
 	"result": "additionalbars:warped_bars",
 	"count": 2

@@ -21,7 +21,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "additionalbars:palm_logs"
+						"tag": "biomesoplenty:palm_logs"
 					}
 				]
 			}

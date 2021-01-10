@@ -21,7 +21,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "additionalbars:fir_logs"
+						"tag": "biomesoplenty:fir_logs"
 					}
 				]
 			}

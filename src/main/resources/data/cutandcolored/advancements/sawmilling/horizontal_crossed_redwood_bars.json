@@ -21,7 +21,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "additionalbars:redwood_logs"
+						"tag": "biomesoplenty:redwood_logs"
 					}
 				]
 			}

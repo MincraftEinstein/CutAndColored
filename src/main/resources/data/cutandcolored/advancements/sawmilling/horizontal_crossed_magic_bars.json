@@ -21,7 +21,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "additionalbars:magic_logs"
+						"tag": "biomesoplenty:magic_logs"
 					}
 				]
 			}
