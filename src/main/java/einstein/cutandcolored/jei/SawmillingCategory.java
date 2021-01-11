@@ -1,7 +1,5 @@
 package einstein.cutandcolored.jei;
 
-import java.util.List;
-
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.item.crafting.ModRecipeSerializers;
@@ -16,7 +14,6 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import mezz.jei.config.Constants;
 import mezz.jei.util.Translator;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 
 public class SawmillingCategory implements IRecipeCategory<SawmillingRecipe>
@@ -62,7 +59,7 @@ public class SawmillingCategory implements IRecipeCategory<SawmillingRecipe>
     
     @Override
     public void setIngredients(final SawmillingRecipe recipe, final IIngredients ingredients) {
-        ingredients.setInputIngredients((List<Ingredient>)recipe.getIngredients());
+        ingredients.setInputIngredients(recipe.getIngredients());
         ingredients.setOutput(VanillaTypes.ITEM, recipe.getRecipeOutput());
     }
     

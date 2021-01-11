@@ -21,16 +21,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 @SuppressWarnings("deprecation")
-public class GlasscutterScreen extends ContainerScreen<GlasscutterContainer> {
+public class GlasscutterScreen extends ContainerScreen<GlasscutterContainer>
+{
    private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(CutAndColored.MODID, "textures/gui/container/glasscutter.png");
    private float sliderProgress;
-   /** Is {@code true} if the player clicked on the scroll wheel in the GUI. */
    private boolean clickedOnSroll;
-   /**
-    * The index of the first recipe to display.
-    * The number of recipes displayed at any time is 12 (4 recipes per row, and 3 rows). If the player scrolled down one
-    * row, this value would be 4 (representing the index of the first slot on the second row).
-    */
    private int recipeIndexOffset;
    private boolean hasItemsInInputSlot;
 
@@ -172,9 +167,6 @@ public class GlasscutterScreen extends ContainerScreen<GlasscutterContainer> {
       return (this.container.getRecipeListSize() + 4 - 1) / 4 - 3;
    }
 
-   /**
-    * Called every time this screen's container is changed (is marked as dirty).
-    */
    private void onInventoryUpdate() {
       this.hasItemsInInputSlot = this.container.hasItemsinInputSlot();
       if (!this.hasItemsInInputSlot) {

@@ -15,8 +15,8 @@ import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = CutAndColored.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class FlamboyantBlocks {
-	
+public class FlamboyantBlocks
+{	
 	/************************GLASS***************************/
     // STAIRS
 	public static final Block AMBER_STAINED_GLASS_STAIRS = RegistryHandler.registerModCompatBlock(CutAndColored.MODID, CutAndColored.FMODID, "amber_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::getDefaultState, Block.Properties.from(Blocks.GLASS)), CutAndColored.MOD_TAB);

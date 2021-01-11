@@ -25,7 +25,8 @@ import net.minecraft.util.ResourceLocation;
 
 @SuppressWarnings("resource")
 @JeiPlugin
-public class JEIPlugin implements IModPlugin {
+public class JEIPlugin implements IModPlugin
+{
 	private static final ResourceLocation UID = new ResourceLocation(CutAndColored.MODID, CutAndColored.MODID);
 	
 	@Override
@@ -62,5 +63,4 @@ public class JEIPlugin implements IModPlugin {
         final Collection<IRecipe<?>> recipes = manager.getRecipes();
         return recipes.stream().filter(iRecipe -> iRecipe.getType() == type).collect(Collectors.toList());
     }
-
 }

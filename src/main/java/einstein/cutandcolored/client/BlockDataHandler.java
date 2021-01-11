@@ -521,5 +521,4 @@ public class BlockDataHandler
         RenderTypeLookup.setRenderLayer(FlamboyantBlocks.SLATE_GRAY_STAINED_GLASS_SLAB, RenderType.getTranslucent());
         RenderTypeLookup.setRenderLayer(FlamboyantBlocks.VIOLET_STAINED_GLASS_SLAB, RenderType.getTranslucent());
     }
-    
 }

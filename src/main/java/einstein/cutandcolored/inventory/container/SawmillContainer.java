@@ -25,36 +25,25 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class SawmillContainer extends Container {
+public class SawmillContainer extends Container
+{
    private final IWorldPosCallable worldPosCallable;
-   /** The index of the selected recipe in the GUI. */
    private final IntReferenceHolder selectedRecipe = IntReferenceHolder.single();
    private final World world;
    private List<SawmillingRecipe> recipes = Lists.newArrayList();
-   /** The {@plainlink ItemStack} set in the input slot by the player. */
    private ItemStack itemStackInput = ItemStack.EMPTY;
-   /**
-    * Stores the game time of the last time the player took items from the the crafting result slot. This is used to
-    * prevent the sound from being played multiple times on the same tick.
-    */
    private long lastOnTake;
    final Slot inputInventorySlot;
-   /** The inventory slot that stores the output of the crafting recipe. */
    final Slot outputInventorySlot;
    private Runnable inventoryUpdateListener = () -> {
    };
    public final IInventory inputInventory = new Inventory(1) {
-      /**
-       * For tile entities, ensures the chunk containing the tile entity is saved to disk later - the game won't think
-       * it hasn't changed and skip it.
-       */
       public void markDirty() {
          super.markDirty();
          SawmillContainer.this.onCraftMatrixChanged(this);
          SawmillContainer.this.inventoryUpdateListener.run();
       }
    };
-   /** The inventory that stores the output of the crafting recipe. */
    private final CraftResultInventory inventory = new CraftResultInventory();
 
    public SawmillContainer(int windowIdIn, PlayerInventory playerInventoryIn) {
@@ -67,9 +56,6 @@ public class SawmillContainer extends Container {
       this.world = playerInventoryIn.player.world;
       this.inputInventorySlot = this.addSlot(new Slot(this.inputInventory, 0, 20, 33));
       this.outputInventorySlot = this.addSlot(new Slot(this.inventory, 1, 143, 33) {
-         /**
-          * Check if the stack is allowed to be placed in this slot, used for armor slots as well as furnace fuel.
-          */
          public boolean isItemValid(ItemStack stack) {
             return false;
          }
@@ -106,9 +92,6 @@ public class SawmillContainer extends Container {
       this.trackInt(this.selectedRecipe);
    }
 
-   /**
-    * Returns the index of the selected recipe.
-    */
    @OnlyIn(Dist.CLIENT)
    public int getSelectedRecipe() {
       return this.selectedRecipe.get();
@@ -129,16 +112,10 @@ public class SawmillContainer extends Container {
       return this.inputInventorySlot.getHasStack() && !this.recipes.isEmpty();
    }
 
-   /**
-    * Determines whether supplied player can use this container
-    */
    public boolean canInteractWith(PlayerEntity playerIn) {
       return isWithinUsableDistance(this.worldPosCallable, playerIn, ModBlocks.SAWMILL);
    }
 
-   /**
-    * Handles the given Button-click on the server, currently only used by enchanting. Name is for legacy.
-    */
    public boolean enchantItem(PlayerEntity playerIn, int id) {
       if (id >= 0 && id < this.recipes.size()) {
          this.selectedRecipe.set(id);
@@ -148,9 +125,6 @@ public class SawmillContainer extends Container {
       return true;
    }
 
-   /**
-    * Callback for when the crafting matrix is changed.
-    */
    public void onCraftMatrixChanged(IInventory inventoryIn) {
       ItemStack itemstack = this.inputInventorySlot.getStack();
       if (itemstack.getItem() != this.itemStackInput.getItem()) {
@@ -190,18 +164,10 @@ public class SawmillContainer extends Container {
       this.inventoryUpdateListener = listenerIn;
    }
 
-   /**
-    * Called to determine if the current slot is valid for the stack merging (double-click) code. The stack passed in is
-    * null for the initial slot that was double-clicked.
-    */
    public boolean canMergeSlot(ItemStack stack, Slot slotIn) {
       return slotIn.inventory != this.inventory && super.canMergeSlot(stack, slotIn);
    }
 
-   /**
-    * Handle when the stack in slot {@code index} is shift-clicked. Normally this moves the stack between the player
-    * inventory and the other inventory(s).
-    */
    public ItemStack transferStackInSlot(PlayerEntity playerIn, int index) {
       ItemStack itemstack = ItemStack.EMPTY;
       Slot slot = this.inventorySlots.get(index);
@@ -248,9 +214,6 @@ public class SawmillContainer extends Container {
       return itemstack;
    }
 
-   /**
-    * Called when the container is closed.
-    */
    public void onContainerClosed(PlayerEntity playerIn) {
       super.onContainerClosed(playerIn);
       this.inventory.removeStackFromSlot(1);
