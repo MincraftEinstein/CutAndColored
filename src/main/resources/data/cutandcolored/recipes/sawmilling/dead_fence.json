@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "biomesoplenty"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"item": "biomesoplenty:dead_planks"
+	},
+	"result": "biomesoplenty:dead_fence",
+	"count": 1
+}

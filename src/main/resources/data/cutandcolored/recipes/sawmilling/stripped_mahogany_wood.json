@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "biomesoplenty"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"item": "biomesoplenty:mahogany_wood"
+	},
+	"result": "biomesoplenty:stripped_mahogany_wood",
+	"count": 1
+}

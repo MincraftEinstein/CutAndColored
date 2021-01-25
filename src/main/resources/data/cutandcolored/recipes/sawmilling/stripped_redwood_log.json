@@ -1,0 +1,14 @@
+{
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "biomesoplenty"
+		}
+	],
+	"type": "cutandcolored:sawmilling",
+	"ingredient": {
+		"item": "biomesoplenty:redwood_log"
+	},
+	"result": "biomesoplenty:stripped_redwood_log",
+	"count": 1
+}
