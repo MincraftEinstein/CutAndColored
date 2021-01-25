@@ -26,7 +26,7 @@ Adds a bunch of stairs, slabs and color variation to blocks in default Minecraft
 [[dependencies.cutandcolored]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.4]"
+    versionRange="[1.16.4, 1.17]"
     ordering="NONE"
     side="BOTH"
     
