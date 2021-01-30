@@ -1,12 +1,11 @@
 package einstein.cutandcolored.init;
 
-import com.codenamerevy.horizontalpanes.content.blocks.HorizontalPaneBlock;
-
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.block.ColoredRedstoneLamp;
 import einstein.cutandcolored.block.GlassSlabBlock;
 import einstein.cutandcolored.block.GlassStairsBlock;
 import einstein.cutandcolored.block.GlasscutterBlock;
+import einstein.cutandcolored.block.HorizontalSoulGlassPane;
 import einstein.cutandcolored.block.IronFenceGateBlock;
 import einstein.cutandcolored.block.SawmillBlock;
 import einstein.cutandcolored.block.StainedGlassSlabBlock;
@@ -42,7 +41,7 @@ public class ModBlocks
     
     // PANES
     public static final Block SOUL_GLASS_PANE = RegistryHandler.registerBlock(CutAndColored.MODID, "soul_glass_pane", new PaneBlockBase(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.4F).sound(SoundType.GLASS).notSolid()), CutAndColored.MOD_TAB);
-    public static final Block HORIZONTAL_SOUL_GLASS_PANE = RegistryHandler.registerModCompatBlock(CutAndColored.MODID, "horizontalpanes", "horizontal_soul_glass_pane", new HorizontalPaneBlock(Block.Properties.create(Material.GLASS)), CutAndColored.MOD_TAB);
+    public static final Block HORIZONTAL_SOUL_GLASS_PANE = RegistryHandler.registerModCompatBlock(CutAndColored.MODID, "horizontalpanes", "horizontal_soul_glass_pane", new HorizontalSoulGlassPane(Block.Properties.create(Material.GLASS).notSolid().hardnessAndResistance(0.3F, 0.3F).sound(SoundType.GLASS)), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block GLASS_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "glass_stairs", new GlassStairsBlock(Blocks.GLASS::getDefaultState, Block.Properties.from(Blocks.GLASS)), CutAndColored.MOD_TAB);
