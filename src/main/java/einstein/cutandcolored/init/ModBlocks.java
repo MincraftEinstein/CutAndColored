@@ -424,6 +424,8 @@ public class ModBlocks
     public static final Block CRACKED_STONE_BRICK_WALL = RegistryHandler.registerBlock(CutAndColored.MODID, "cracked_stone_brick_wall", new WallBlockBase(Blocks.CRACKED_STONE_BRICKS::getDefaultState, Block.Properties.from(Blocks.CRACKED_STONE_BRICKS)), CutAndColored.MOD_TAB);
     public static final Block CRACKED_POLISHED_BLACKSTONE_BRICK_WALL = RegistryHandler.registerBlock(CutAndColored.MODID, "cracked_polished_blackstone_brick_wall", new WallBlockBase(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS::getDefaultState, Block.Properties.from(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS)), CutAndColored.MOD_TAB);
     public static final Block CRACKED_NETHER_BRICK_WALL = RegistryHandler.registerBlock(CutAndColored.MODID, "cracked_nether_brick_wall", new WallBlockBase(Blocks.CRACKED_NETHER_BRICKS::getDefaultState, Block.Properties.from(Blocks.CRACKED_NETHER_BRICKS)), CutAndColored.MOD_TAB);
+    public static final Block SMOOTH_STONE_WALL = RegistryHandler.registerBlock(CutAndColored.MODID, "smooth_stone_wall", new WallBlockBase(Blocks.SMOOTH_STONE::getDefaultState, Block.Properties.from(Blocks.SMOOTH_STONE)), CutAndColored.MOD_TAB);
+    public static final Block QUARTZ_BRICK_WALL = RegistryHandler.registerBlock(CutAndColored.MODID, "quartz_brick_wall", new WallBlockBase(Blocks.QUARTZ_BRICKS::getDefaultState, Block.Properties.from(Blocks.QUARTZ_BRICKS)), CutAndColored.MOD_TAB);
     
     // MISC MODELS
     public static final Block NETHER_BRICK_FENCE_GATE = RegistryHandler.registerBlock(CutAndColored.MODID, "nether_brick_fence_gate", new FenceGateBlock(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);

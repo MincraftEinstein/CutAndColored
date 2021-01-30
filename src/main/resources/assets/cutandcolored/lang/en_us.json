@@ -408,6 +408,8 @@
     "block.cutandcolored.cracked_stone_brick_wall": "Cracked Stone Brick Wall",
     "block.cutandcolored.cracked_polished_blackstone_brick_wall": "Cracked Polished Blackstone Brick Wall",
     "block.cutandcolored.cracked_nether_brick_wall": "Cracked Nether Brick Wall",
+    "block.cutandcolored.smooth_stone_wall": "Smooth Stone Wall",
+    "block.cutandcolored.quartz_brick_wall": "Quartz Brick Wall",
     
     // MISC MODELS
     "block.cutandcolored.nether_brick_fence_gate": "Nether Brick Fence Gate",

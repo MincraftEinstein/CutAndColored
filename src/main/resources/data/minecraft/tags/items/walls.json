@@ -11,6 +11,8 @@
 		"cutandcolored:dark_prismarine_wall",
 		"cutandcolored:cracked_stone_brick_wall",
 		"cutandcolored:cracked_polished_blackstone_brick_wall",
-		"cutandcolored:cracked_nether_brick_wall"
+		"cutandcolored:cracked_nether_brick_wall",
+		"cutandcolored:smooth_stone_wall",
+		"cutandcolored:quartz_brick_wall"
 	]
 }
