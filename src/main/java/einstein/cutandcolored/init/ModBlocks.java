@@ -405,6 +405,14 @@ public class ModBlocks
     public static final Block CHISELED_PRISMARINE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "chiseled_prismarine_bricks", new Block(Block.Properties.from(Blocks.PRISMARINE_BRICKS)), CutAndColored.MOD_TAB);
     public static final Block PRISMARINE_BRICK_PILLAR = RegistryHandler.registerBlock(CutAndColored.MODID, "prismarine_brick_pillar", new RotatedPillarBlock(Block.Properties.from(Blocks.PRISMARINE_BRICKS)), CutAndColored.MOD_TAB);
     public static final Block POLISHED_BLACKSTONE_PILLAR = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_blackstone_pillar", new RotatedPillarBlock(Block.Properties.from(Blocks.POLISHED_BLACKSTONE)), CutAndColored.MOD_TAB);
+    public static final Block POLISHED_END_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_end_stone", new Block(Block.Properties.from(Blocks.END_STONE_BRICKS)), CutAndColored.MOD_TAB);
+    public static final Block POLISHED_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_stone", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
+    public static final Block CRACKED_POLISHED_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "cracked_polished_stone", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
+    public static final Block CHISELED_POLISHED_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "chiseled_polished_stone", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
+    public static final Block CHISELED_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "chiseled_stone", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
+    public static final Block TILED_STONE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "tiled_stone_bricks", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
+    public static final Block MOSSY_TILED_STONE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "mossy_tiled_stone_bricks", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
+    public static final Block POLISHED_TILED_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_tiled_stone", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block SMOOTH_STONE_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "smooth_stone_stairs", new StairsBlockBase(Blocks.SMOOTH_STONE::getDefaultState, Block.Properties.from(Blocks.SMOOTH_STONE)), CutAndColored.MOD_TAB);

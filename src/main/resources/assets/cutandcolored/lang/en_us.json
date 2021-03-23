@@ -389,6 +389,10 @@
     "block.cutandcolored.chiseled_prismarine_bricks": "Chiseled Prismarine Bricks",
     "block.cutandcolored.prismarine_brick_pillar": "Prismarine Brick Pillar",
     "block.cutandcolored.polished_blackstone_pillar": "Polished Blackstone Pillar",
+    "block.cutandcolored.polished_stone": "Polished Stone",
+    "block.cutandcolored.cracked_polished_stone": "Cracked Polished Stone",
+    "block.cutandcolored.chiseled_polished_stone": "Chiseled Polished Stone",
+    "block.cutandcolored.chiseled_stone": "Chiseled Stone",
     
     // STAIRS
     "block.cutandcolored.smooth_stone_stairs": "Smooth Stone Stairs",
