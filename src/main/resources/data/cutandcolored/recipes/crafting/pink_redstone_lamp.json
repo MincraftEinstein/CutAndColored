@@ -5,7 +5,7 @@
 			"item": "minecraft:pink_dye"
 		},
 		{
-			"tag": "cutandcolored:redstone_lamps"
+			"tag": "forge:redstone_lamps"
 		}
 	],
 	"result": {

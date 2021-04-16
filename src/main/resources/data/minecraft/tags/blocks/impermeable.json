@@ -2,7 +2,7 @@
 	"replace": false,
 	"values": [
 		"cutandcolored:soul_glass",
-		"#cutandcolored:glass_slabs",
-		"#cutandcolored:glass_stairs"
+		"#forge:glass_slabs",
+		"#forge:glass_stairs"
 	]
 }

@@ -17,7 +17,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "cutandcolored:clay_bricks"
+						"tag": "forge:clay_bricks"
 					}
 				]
 			}

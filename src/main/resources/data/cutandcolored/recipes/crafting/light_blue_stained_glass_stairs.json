@@ -10,7 +10,7 @@
             "item": "minecraft:light_blue_dye"
         },
         "S": {
-            "tag": "cutandcolored:glass_stairs"
+            "tag": "forge:glass_stairs"
         }
     },
     "result": {

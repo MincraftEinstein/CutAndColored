@@ -7,7 +7,7 @@
 	],
 	"type": "cutandcolored:sawmilling",
 	"ingredient": {
-		"tag": "cutandcolored:carved_pumpkins"
+		"tag": "forge:carved_pumpkins"
 	},
 	"result": "omgourd:carved_pumpkin_23",
 	"count": 1

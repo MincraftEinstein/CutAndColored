@@ -7,7 +7,7 @@
 	],
 	"type": "cutandcolored:sawmilling",
 	"ingredient": {
-		"tag": "cutandcolored:jack_o_lanterns"
+		"tag": "forge:jack_o_lanterns"
 	},
 	"result": "omgourd:jack_o_lantern_7",
 	"count": 1

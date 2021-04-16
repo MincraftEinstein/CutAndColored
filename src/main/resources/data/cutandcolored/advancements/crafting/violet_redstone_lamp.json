@@ -17,7 +17,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "cutandcolored:redstone_lamps"
+						"tag": "forge:redstone_lamps"
 					}
 				]
 			}

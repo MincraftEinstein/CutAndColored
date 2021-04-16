@@ -10,7 +10,7 @@
             "item": "minecraft:brown_dye"
         },
         "S": {
-            "tag": "cutandcolored:concrete_stairs"
+            "tag": "forge:concrete_stairs"
         }
     },
     "result": {

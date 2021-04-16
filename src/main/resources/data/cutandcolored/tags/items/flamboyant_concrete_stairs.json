@@ -1,5 +1,6 @@
 {
   "replace": false,
+  "values": [],
   "optional": [
     "cutandcolored:amber_concrete_stairs",
     "cutandcolored:beige_concrete_stairs",

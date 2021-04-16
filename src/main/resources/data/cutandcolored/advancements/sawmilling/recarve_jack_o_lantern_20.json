@@ -17,7 +17,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "cutandcolored:jack_o_lanterns"
+						"tag": "forge:jack_o_lanterns"
 					}
 				]
 			}

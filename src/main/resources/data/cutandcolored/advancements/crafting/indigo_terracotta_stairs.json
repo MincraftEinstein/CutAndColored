@@ -17,7 +17,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "cutandcolored:terracotta_stairs"
+						"tag": "forge:terracotta_stairs"
 					}
 				]
 			}

@@ -1,7 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"#cutandcolored:clay_brick_walls",
+		"#forge:clay_brick_walls",
 		"cutandcolored:soul_sandstone_wall",
 		"cutandcolored:granite_brick_wall",
 		"cutandcolored:diorite_brick_wall",

@@ -1,5 +1,6 @@
 {
   "replace": false,
+  "values": [],
   "optional": [
     "cutandcolored:amber_redstone_lamp",
     "cutandcolored:beige_redstone_lamp",

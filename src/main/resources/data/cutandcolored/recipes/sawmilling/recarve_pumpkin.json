@@ -7,7 +7,7 @@
 	],
 	"type": "cutandcolored:sawmilling",
 	"ingredient": {
-		"tag": "cutandcolored:carved_pumpkins"
+		"tag": "forge:carved_pumpkins"
 	},
 	"result": "minecraft:carved_pumpkin",
 	"count": 1

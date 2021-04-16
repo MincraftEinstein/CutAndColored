@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "cutandcolored:wool_slabs"
+						"tag": "forge:wool_slabs"
 					}
 				]
 			}

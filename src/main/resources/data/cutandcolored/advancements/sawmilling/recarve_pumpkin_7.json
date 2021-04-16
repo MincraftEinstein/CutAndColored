@@ -17,7 +17,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "cutandcolored:carved_pumpkins"
+						"tag": "forge:carved_pumpkins"
 					}
 				]
 			}

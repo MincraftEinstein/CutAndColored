@@ -1,5 +1,6 @@
 {
   "replace": false,
+  "values": [],
   "optional": [
     "cutandcolored:amber_stained_planks",
     "cutandcolored:beige_stained_planks",
