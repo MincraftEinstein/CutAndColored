@@ -1,5 +1,6 @@
 {
   "replace": false,
+  "values": [],
   "optional": [
     "cutandcolored:amber_stained_bricks",
     "cutandcolored:beige_stained_bricks",

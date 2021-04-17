@@ -21,8 +21,6 @@ build
 eclipse
 run
 logs
-src/main/java/einstein/cutandcolored/BeforeExportCheckList.txt
-src/main/java/einstein/cutandcolored/ToDoList.txt
 
 # Files from Forge MDK
 forge*changelog.txt

@@ -1,7 +1,9 @@
 {
 	"replace": false,
 	"values": [
-		"minecraft:carved_pumpkin",
+		"minecraft:carved_pumpkin"
+	],
+	"optional": [
 		"omgourd:carved_pumpkin_1",
 		"omgourd:carved_pumpkin_2",
 		"omgourd:carved_pumpkin_3",

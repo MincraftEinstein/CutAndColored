@@ -16,9 +16,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
+version = "${mod_version}-${minecraft_version}"
 group = 'einstein.cutandcolored' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'modid'
+archivesBaseName = "${modid}"
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -29,7 +29,7 @@ minecraft {
     // stable_#            Stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'snapshot', version: '20201028-1.16.3'
+    mappings channel: 'snapshot', version: "${mpc_version}".toString()
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -97,7 +97,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.16.4-35.1.10'
+    minecraft "net.minecraftforge:forge:${forge_version}"
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
@@ -126,29 +126,22 @@ dependencies {
 	implementation fg.deobf("curse.maven:additional-bars:3136777")
 	implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes:3137463")
 	implementation fg.deobf("curse.maven:biomes-o-plenty:3136442")
-//	implementation fg.deobf("curse.maven:abnormals-core:3157757")
-//	implementation fg.deobf("curse.maven:flamboyant-recrafted:3168032")
+	implementation fg.deobf("curse.maven:differentiate:3254375")
+	implementation fg.deobf("curse.maven:flamboyant-recrafted:3270883")
+	implementation fg.deobf("curse.maven:catalogue:3258558")
 //	implementation fg.deobf("curse.maven:flamboyant:2896037")
 
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
-	sourceSets {
-		main {
-			java {
-				exclude '**/ToDoList.txt'
-				exclude '**/BeforeExportCheckList.txt'
-			}
-		}
-	}
     manifest {
         attributes([
-            "Specification-Title": "CutAndColored",
+            "Specification-Title": "Cut And Colored",
             "Specification-Vendor": "MincraftEinstein",
             "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": "CutAndColored",
-            "Implementation-Version": "4.0",
+            "Implementation-Title": "Cut And Colored",
+            "Implementation-Version": "${mod_version}",
             "Implementation-Vendor" :"MincraftEinstein",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])

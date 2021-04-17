@@ -10,7 +10,7 @@
             "item": "minecraft:green_dye"
         },
         "S": {
-            "tag": "cutandcolored:wool_stairs"
+            "tag": "forge:wool_stairs"
         }
     },
     "result": {

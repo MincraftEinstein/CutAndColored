@@ -1,7 +1,9 @@
 {
 	"replace": false,
 	"values": [
-		"minecraft:jack_o_lantern",
+		"minecraft:jack_o_lantern"
+	],
+	"optional": [
 		"omgourd:jack_o_lantern_1",
 		"omgourd:jack_o_lantern_2",
 		"omgourd:jack_o_lantern_3",

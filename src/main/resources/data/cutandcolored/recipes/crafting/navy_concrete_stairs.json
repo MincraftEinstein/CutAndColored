@@ -16,7 +16,7 @@
             "item": "flamboyant:navy_dye"
         },
         "S": {
-            "tag": "cutandcolored:concrete_stairs"
+            "tag": "forge:concrete_stairs"
         }
     },
     "result": {

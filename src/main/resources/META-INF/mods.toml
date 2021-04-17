@@ -1,17 +1,18 @@
 modLoader="javafml"
 loaderVersion="[34,)"
 license="All rights reserved"
-issueTrackerURL="http://my.issue.tracker/"
+#issueTrackerURL="http://my.issue.tracker/"
 
 [[mods]]
 	modId="cutandcolored"
-	version="4.0"
+	version="5.0"
 	displayName="Cut And Colored"
-	updateJSONURL="http://myurl.me/"
+	#updateJSONURL="http://myurl.me/"
 	displayURL="https://www.curseforge.com/minecraft/mc-mods/cut-and-colored"
 	logoFile="pack.png"
 	credits="Me the mod author (Programer), SpiderKolo (Artist)"
 	authors="MincraftEinstein, SpiderKolo"
+	itemIcon="cutandcolored:sawmill" #Used by Catalogue
 	description='''
 Adds a bunch of stairs, slabs and color variation to blocks in default Minecraft
 '''

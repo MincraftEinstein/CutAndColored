@@ -10,7 +10,7 @@
             "item": "minecraft:light_blue_dye"
         },
         "B": {
-            "tag": "cutandcolored:clay_bricks"
+            "tag": "forge:clay_bricks"
         }
     },
     "result": {

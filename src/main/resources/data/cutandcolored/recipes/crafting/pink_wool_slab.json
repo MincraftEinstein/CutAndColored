@@ -10,7 +10,7 @@
             "item": "minecraft:pink_dye"
         },
         "S": {
-            "tag": "cutandcolored:wool_slabs"
+            "tag": "forge:wool_slabs"
         }
     },
     "result": {

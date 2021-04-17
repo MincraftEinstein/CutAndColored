@@ -17,7 +17,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "cutandcolored:wool_stairs"
+						"tag": "forge:wool_stairs"
 					}
 				]
 			}
