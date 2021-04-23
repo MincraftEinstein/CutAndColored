@@ -2,7 +2,7 @@
 	"conditions": [
 		{
 			"type": "forge:mod_loaded",
-			"modid": "additionalbars"
+			"modid": "additionalbarsbop"
 		},
 		{
 			"type": "forge:mod_loaded",
@@ -12,15 +12,15 @@
 	"type": "cutandcolored:sawmilling",
 	"ingredient": [
 		{
-			"item": "additionalbars:mahogany_bars"
+			"item": "additionalbarsbop:mahogany_bars"
 		},
 		{
-			"item": "additionalbars:horizontal_mahogany_bars"
+			"item": "additionalbarsbop:horizontal_mahogany_bars"
 		},
 		{
-			"item": "additionalbars:horizontal_crossed_mahogany_bars"
+			"item": "additionalbarsbop:horizontal_crossed_mahogany_bars"
 		}
 	],
-	"result": "additionalbars:crossed_mahogany_bars",
+	"result": "additionalbarsbop:crossed_mahogany_bars",
 	"count": 1
 }

@@ -2,7 +2,7 @@
 	"conditions": [
 		{
 			"type": "forge:mod_loaded",
-			"modid": "additionalbars"
+			"modid": "additionalbarsbopbop"
 		},
 		{
 			"type": "forge:mod_loaded",
@@ -13,6 +13,6 @@
 	"ingredient": {
 		"tag": "biomesoplenty:redwood_logs"
 	},
-	"result": "additionalbars:redwood_bars",
+	"result": "additionalbarsbopbop:redwood_bars",
 	"count": 2
 }

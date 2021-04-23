@@ -2,7 +2,7 @@
 	"conditions": [
 		{
 			"type": "forge:mod_loaded",
-			"modid": "additionalbars"
+			"modid": "additionalbarsbop"
 		},
 		{
 			"type": "forge:mod_loaded",
@@ -12,15 +12,15 @@
 	"type": "cutandcolored:sawmilling",
 	"ingredient": [
 		{
-			"item": "additionalbars:hellbark_bars"
+			"item": "additionalbarsbop:hellbark_bars"
 		},
 		{
-			"item": "additionalbars:horizontal_hellbark_bars"
+			"item": "additionalbarsbop:horizontal_hellbark_bars"
 		},
 		{
-			"item": "additionalbars:horizontal_crossed_hellbark_bars"
+			"item": "additionalbarsbop:horizontal_crossed_hellbark_bars"
 		}
 	],
-	"result": "additionalbars:crossed_hellbark_bars",
+	"result": "additionalbarsbop:crossed_hellbark_bars",
 	"count": 1
 }

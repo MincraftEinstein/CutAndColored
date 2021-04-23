@@ -2,7 +2,7 @@
 	"conditions": [
 		{
 			"type": "forge:mod_loaded",
-			"modid": "additionalbars"
+			"modid": "additionalbarsbop"
 		},
 		{
 			"type": "forge:mod_loaded",
@@ -12,15 +12,15 @@
 	"type": "cutandcolored:sawmilling",
 	"ingredient": [
 		{
-			"item": "additionalbars:palm_bars"
+			"item": "additionalbarsbop:palm_bars"
 		},
 		{
-			"item": "additionalbars:crossed_palm_bars"
+			"item": "additionalbarsbop:crossed_palm_bars"
 		},
 		{
-			"item": "additionalbars:horizontal_crossed_palm_bars"
+			"item": "additionalbarsbop:horizontal_crossed_palm_bars"
 		}
 	],
-	"result": "additionalbars:horizontal_palm_bars",
+	"result": "additionalbarsbop:horizontal_palm_bars",
 	"count": 1
 }
