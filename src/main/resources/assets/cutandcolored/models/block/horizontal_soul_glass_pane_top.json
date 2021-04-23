@@ -1,5 +1,5 @@
 {
-	"parent": "horizontalpanes:block/parent/pane_bot",
+	"parent": "horizontalpanes:block/parent/pane_top",
 	"textures": {
 		"glass": "cutandcolored:block/soul_glass",
 		"edges": "cutandcolored:block/soul_glass_pane_top"

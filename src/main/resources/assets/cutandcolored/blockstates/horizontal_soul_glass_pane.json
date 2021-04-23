@@ -1,7 +1,13 @@
 {
 	"variants": {
-		"": {
+		"type=bottom": {
 			"model": "cutandcolored:block/horizontal_soul_glass_pane"
+		},
+		"type=double": {
+			"model": "cutandcolored:block/horizontal_soul_glass_pane_combined"
+		},
+		"type=top": {
+			"model": "cutandcolored:block/horizontal_soul_glass_pane_top"
 		}
 	}
 }
