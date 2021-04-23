@@ -2,7 +2,7 @@
 	"conditions": [
 		{
 			"type": "forge:mod_loaded",
-			"modid": "additionalbars"
+			"modid": "additionalbarsbop"
 		},
 		{
 			"type": "forge:mod_loaded",
@@ -21,7 +21,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "additionalbars:horizontal_crossed_mahogany_bars"
+						"item": "additionalbarsbop:horizontal_crossed_mahogany_bars"
 					}
 				]
 			}
