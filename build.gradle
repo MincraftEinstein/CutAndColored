@@ -17,7 +17,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = "${mod_version}-${minecraft_version}"
-group = 'einstein.cutandcolored' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = "einstein.${modid}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "${modid}"
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
@@ -118,17 +118,17 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
 	// Library
-	implementation fg.deobf("curse.maven:einsteins-library:3100553")
-	implementation fg.deobf("curse.maven:jei:3136600")
-	implementation fg.deobf("curse.maven:crafttweaker:3116045")
-	implementation fg.deobf("curse.maven:oh-my-gourd:3147565")
-	implementation fg.deobf("curse.maven:cofh-core:3149057")
+	implementation fg.deobf("curse.maven:einsteins-library:3173798")
+	implementation fg.deobf("curse.maven:jei:3280247")
+	implementation fg.deobf("curse.maven:crafttweaker:3285951")
+	implementation fg.deobf("curse.maven:oh-my-gourd:3246997")
+	implementation fg.deobf("curse.maven:cofh-core:3249453")
 	implementation fg.deobf("curse.maven:additional-bars:3136777")
-	implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes:3137463")
-	implementation fg.deobf("curse.maven:biomes-o-plenty:3136442")
+	implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes:3228362")
+	implementation fg.deobf("curse.maven:biomes-o-plenty:3236010")
 	implementation fg.deobf("curse.maven:differentiate:3254375")
 	implementation fg.deobf("curse.maven:flamboyant-recrafted:3270883")
-	implementation fg.deobf("curse.maven:catalogue:3258558")
+	implementation fg.deobf("curse.maven:catalogue:3285353")
 //	implementation fg.deobf("curse.maven:flamboyant:2896037")
 
 }
