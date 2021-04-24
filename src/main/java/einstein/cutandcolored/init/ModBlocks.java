@@ -415,6 +415,7 @@ public class ModBlocks
     public static final Block TILED_STONE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "tiled_stone_bricks", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
     public static final Block MOSSY_TILED_STONE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "mossy_tiled_stone_bricks", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
     public static final Block POLISHED_TILED_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_tiled_stone", new Block(Block.Properties.create(Material.ROCK)), CutAndColored.MOD_TAB);
+    public static final Block CHISELED_END_STONE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "chiseled_end_stone_bricks", new Block(Block.Properties.from(Blocks.END_STONE_BRICKS)), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block SMOOTH_STONE_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "smooth_stone_stairs", new StairsBlock(Blocks.SMOOTH_STONE::getDefaultState, Block.Properties.from(Blocks.SMOOTH_STONE)), CutAndColored.MOD_TAB);
