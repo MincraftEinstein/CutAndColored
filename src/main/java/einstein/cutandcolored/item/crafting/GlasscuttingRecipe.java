@@ -3,13 +3,14 @@ package einstein.cutandcolored.item.crafting;
 import com.google.gson.JsonObject;
 
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.init.ModRecipeSerializers;
+import einstein.cutandcolored.init.ModRecipeTypes;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.crafting.SingleItemRecipe;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.IItemProvider;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -21,7 +22,7 @@ public class GlasscuttingRecipe extends SingleItemRecipe
 {
 	
     public GlasscuttingRecipe(final ResourceLocation id, final String group, final Ingredient ingredient, final ItemStack stack) {
-        super(ModRecipeType.GLASSCUTTING, ModRecipeSerializers.GLASSCUTTING, id, group, ingredient, stack);
+        super(ModRecipeTypes.GLASSCUTTING, ModRecipeSerializers.GLASSCUTTING, id, group, ingredient, stack);
     }
     
     public boolean matches(final IInventory inventory, final World world) {
@@ -51,7 +52,7 @@ public class GlasscuttingRecipe extends SingleItemRecipe
             }
             final String result = JSONUtils.getString(json, "result");
             final int count = JSONUtils.getInt(json, "count");
-            final ItemStack stack = new ItemStack((IItemProvider)Registry.ITEM.getOrDefault(new ResourceLocation(result)), count);
+            final ItemStack stack = new ItemStack(Registry.ITEM.getOrDefault(new ResourceLocation(result)), count);
             return this.factory.create(recipeId, group, ingredient, stack);
         }
         

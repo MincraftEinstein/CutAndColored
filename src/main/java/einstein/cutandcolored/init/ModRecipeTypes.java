@@ -1,12 +1,15 @@
-package einstein.cutandcolored.item.crafting;
+package einstein.cutandcolored.init;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.item.crafting.GlasscuttingRecipe;
+import einstein.cutandcolored.item.crafting.SawmillingRecipe;
+import einstein.cutandcolored.item.crafting.WeavingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
-public class ModRecipeType
+public class ModRecipeTypes
 {
     public static final IRecipeType<GlasscuttingRecipe> GLASSCUTTING = register("glasscutting");
     public static final IRecipeType<WeavingRecipe> WEAVING = register("weaving");

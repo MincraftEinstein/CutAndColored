@@ -10,7 +10,7 @@ import com.blamejared.crafttweaker.api.item.IItemStack;
 import com.blamejared.crafttweaker.api.managers.IRecipeManager;
 import com.blamejared.crafttweaker.impl.actions.recipes.ActionAddRecipe;
 
-import einstein.cutandcolored.item.crafting.ModRecipeType;
+import einstein.cutandcolored.init.ModRecipeTypes;
 import einstein.cutandcolored.item.crafting.WeavingRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.ResourceLocation;
@@ -31,6 +31,6 @@ public class WeaverManager implements IRecipeManager
     
 	@Override
     public IRecipeType getRecipeType() {
-		return ModRecipeType.WEAVING;
+		return ModRecipeTypes.WEAVING;
 	}
 }

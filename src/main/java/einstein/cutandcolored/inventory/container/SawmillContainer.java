@@ -5,8 +5,9 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.init.ModContainerTypes;
+import einstein.cutandcolored.init.ModRecipeTypes;
 import einstein.cutandcolored.init.ModSounds;
-import einstein.cutandcolored.item.crafting.ModRecipeType;
 import einstein.cutandcolored.item.crafting.SawmillingRecipe;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -51,7 +52,7 @@ public class SawmillContainer extends Container
    }
 
    public SawmillContainer(int windowIdIn, PlayerInventory playerInventoryIn, final IWorldPosCallable worldPosCallableIn) {
-      super(ModContainerType.WEAVER, windowIdIn);
+      super(ModContainerTypes.WEAVER, windowIdIn);
       this.worldPosCallable = worldPosCallableIn;
       this.world = playerInventoryIn.player.world;
       this.inputInventorySlot = this.addSlot(new Slot(this.inputInventory, 0, 20, 33));
@@ -139,7 +140,7 @@ public class SawmillContainer extends Container
       this.selectedRecipe.set(-1);
       this.outputInventorySlot.putStack(ItemStack.EMPTY);
       if (!stack.isEmpty()) {
-         this.recipes = this.world.getRecipeManager().getRecipes(ModRecipeType.SAWMILLING, inventoryIn, this.world);
+         this.recipes = this.world.getRecipeManager().getRecipes(ModRecipeTypes.SAWMILLING, inventoryIn, this.world);
       }
 
    }
@@ -156,7 +157,7 @@ public class SawmillContainer extends Container
    }
 
    public ContainerType<?> getType() {
-      return ModContainerType.SAWMILL;
+      return ModContainerTypes.SAWMILL;
    }
 
    @OnlyIn(Dist.CLIENT)
@@ -186,7 +187,7 @@ public class SawmillContainer extends Container
             if (!this.mergeItemStack(itemstack1, 2, 38, false)) {
                return ItemStack.EMPTY;
             }
-         } else if (this.world.getRecipeManager().getRecipe(ModRecipeType.SAWMILLING, new Inventory(itemstack1), this.world).isPresent()) {
+         } else if (this.world.getRecipeManager().getRecipe(ModRecipeTypes.SAWMILLING, new Inventory(itemstack1), this.world).isPresent()) {
             if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
                return ItemStack.EMPTY;
             }
