@@ -1,74 +1,98 @@
 package einstein.cutandcolored.block;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.GlassBlock;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.IWaterLoggable;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
-import net.minecraft.state.StateContainer;
+import net.minecraft.state.EnumProperty;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tags.FluidTags;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
 
 @SuppressWarnings("deprecation")
-public class HorizontalSoulGlassPane extends GlassBlock implements IWaterLoggable 
-{
-	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	private final VoxelShape SHAPE = Block.makeCuboidShape(0.0D, 6.0D, 0.0D, 16.0D, 8.0D, 16.0D);
+public class HorizontalSoulGlassPane extends SlabBlock implements IWaterLoggable {
+
+	public static final EnumProperty<SlabType> TYPE = BlockStateProperties.SLAB_TYPE;
+	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
+	protected static final VoxelShape BOTTOM = Block.makeCuboidShape(0.0F, 6.0F, 0.0F, 16.0F, 8.0F, 16.0F);
+	protected static final VoxelShape TOP = Block.makeCuboidShape(0.0F, 6.0F + 8.0F, 0.0F, 16.0F, 8.0F + 8.0F, 16.0F);
+	protected static final VoxelShape SHAPE = VoxelShapes.or(BOTTOM, TOP);
 
 	public HorizontalSoulGlassPane(Properties properties) {
-		super(properties);
-		this.setDefaultState(this.getStateContainer().getBaseState().with(WATERLOGGED, false));
-	}
-
-	public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
-		return adjacentBlockState.matchesBlock(this) ? true : super.isSideInvisible(state, adjacentBlockState, side);
-	}
-
-	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		return 1.0F;
+		super(properties.notSolid().hardnessAndResistance(0.3F, 0.3F).sound(SoundType.GLASS));
+		this.setDefaultState(this.getDefaultState().with(TYPE, SlabType.BOTTOM).with(WATERLOGGED, false));
 	}
 
 	@Override
-	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-		builder.add(WATERLOGGED);
-	}
-
-	@Override
-	public FluidState getFluidState(BlockState state) {
-		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
-	}
-
-	@Override
-	public BlockState updatePostPlacement(BlockState state, Direction facing, BlockState facingState, IWorld world, BlockPos currentPos, BlockPos facingPos) {
-		if (state.get(WATERLOGGED)) {
-			world.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-		}
-		return super.updatePostPlacement(state, facing, facingState, world, currentPos, facingPos);
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
-		return SHAPE;
-	}
-
-	@Override
-	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		FluidState fluidState = context.getWorld().getFluidState(context.getPos());
-		return this.getDefaultState().with(WATERLOGGED, Boolean.valueOf(fluidState.isTagged(FluidTags.WATER) && fluidState.getLevel() == 8));
-	}
-
-	@Override
-	public boolean allowsMovement(BlockState state, IBlockReader world, BlockPos pos, PathType path) {
+	public boolean isTransparent(BlockState state) {
 		return true;
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+		SlabType slabType = state.get(TYPE);
+		switch(slabType) {
+			case DOUBLE:
+				return SHAPE;
+			case TOP:
+				return TOP;
+			default:
+				return BOTTOM;
+		}
+	}
+	
+	@Override
+	public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
+		if (adjacentBlockState.getBlock() == Blocks.GLASS) return true;
+		if (adjacentBlockState.getBlock() == this) if (slabSideInvisible(state, adjacentBlockState, side)) return true;
+
+		return super.isSideInvisible(state, adjacentBlockState, side);
+	}
+	
+	private boolean slabSideInvisible(BlockState slabState, BlockState neighbourState, Direction dir)
+	{
+		SlabType slabType = slabState.get(TYPE);
+		SlabType neighbourType = neighbourState.get(TYPE);
+
+		if (neighbourType == SlabType.DOUBLE) return true;
+
+		switch (dir)
+		{
+			case NORTH: case SOUTH: case EAST: case WEST:
+			if(slabType == neighbourType) return true;
+			default:
+				break;
+		}
+
+		return false;
+	}
+
+	@Nullable
+	@Override
+	public BlockState getStateForPlacement(BlockItemUseContext ctx) {
+		BlockPos blockPos = ctx.getPos();
+		BlockState blockState = ctx.getWorld().getBlockState(blockPos);
+		FluidState fluidState = ctx.getWorld().getFluidState(blockPos);
+		if (blockState.matchesBlock(this)) {
+			return blockState.with(TYPE, SlabType.DOUBLE).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+		} else {
+			BlockState blockState2 = this.getDefaultState().with(TYPE, SlabType.BOTTOM).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+			Direction direction = ctx.getFace();
+			return direction != Direction.DOWN && (direction == Direction.UP || !(ctx.getHitVec().y - blockPos.getY() > 0.5D)) ? blockState2 : blockState2.with(TYPE, SlabType.TOP);
+		}
 	}
 }

@@ -2,7 +2,7 @@
 	"conditions": [
 		{
 			"type": "forge:mod_loaded",
-			"modid": "additionalbars"
+			"modid": "additionalbarsbop"
 		},
 		{
 			"type": "forge:mod_loaded",
@@ -13,6 +13,6 @@
 	"ingredient": {
 		"tag": "biomesoplenty:dead_logs"
 	},
-	"result": "additionalbars:dead_bars",
+	"result": "additionalbarsbop:dead_bars",
 	"count": 2
 }

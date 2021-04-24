@@ -2,7 +2,7 @@ package einstein.cutandcolored.jei;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.item.crafting.ModRecipeSerializers;
+import einstein.cutandcolored.init.ModRecipeSerializers;
 import einstein.cutandcolored.item.crafting.SawmillingRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.IRecipeLayout;

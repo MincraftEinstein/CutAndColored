@@ -1,10 +1,13 @@
-package einstein.cutandcolored.inventory.container;
+package einstein.cutandcolored.init;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.inventory.container.GlasscutterContainer;
+import einstein.cutandcolored.inventory.container.SawmillContainer;
+import einstein.cutandcolored.inventory.container.WeaverContainer;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.util.ResourceLocation;
@@ -15,7 +18,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @SuppressWarnings({ "rawtypes", "unchecked" })
 @Mod.EventBusSubscriber(modid = CutAndColored.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ModContainerType
+public class ModContainerTypes
 {
     private static final List<ContainerType<?>> CONTAINER_TYPES = new ArrayList<ContainerType<?>>();
     public static final ContainerType<GlasscutterContainer> GLASSCUTTER = register("glasscutter", GlasscutterContainer::new);
@@ -26,14 +29,14 @@ public class ModContainerType
 	private static <T extends Container> ContainerType<T> register(final String name, final ContainerType.IFactory<T> factory) {
         final ContainerType<T> type = (ContainerType<T>)new ContainerType(factory);
         type.setRegistryName(new ResourceLocation(CutAndColored.MODID, name));
-        ModContainerType.CONTAINER_TYPES.add(type);
+        ModContainerTypes.CONTAINER_TYPES.add(type);
         return type;
     }
     
 	@SubscribeEvent
     public static void registerTypes(final RegistryEvent.Register<ContainerType<?>> event) {
         final IForgeRegistry<ContainerType<?>> registry = (IForgeRegistry<ContainerType<?>>)event.getRegistry();
-        ModContainerType.CONTAINER_TYPES.forEach((Consumer<? super ContainerType>)registry::register);
-        ModContainerType.CONTAINER_TYPES.clear();
+        ModContainerTypes.CONTAINER_TYPES.forEach((Consumer<? super ContainerType>)registry::register);
+        ModContainerTypes.CONTAINER_TYPES.clear();
     }
 }

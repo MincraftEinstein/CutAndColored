@@ -2,7 +2,7 @@
 	"conditions": [
 		{
 			"type": "forge:mod_loaded",
-			"modid": "additionalbars"
+			"modid": "additionalbarsbop"
 		},
 		{
 			"type": "forge:mod_loaded",
@@ -13,6 +13,6 @@
 	"ingredient": {
 		"tag": "biomesoplenty:palm_logs"
 	},
-	"result": "additionalbars:crossed_palm_bars",
+	"result": "additionalbarsbop:crossed_palm_bars",
 	"count": 2
 }

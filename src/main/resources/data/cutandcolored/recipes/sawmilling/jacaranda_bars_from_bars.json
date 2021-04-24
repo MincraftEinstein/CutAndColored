@@ -2,7 +2,7 @@
 	"conditions": [
 		{
 			"type": "forge:mod_loaded",
-			"modid": "additionalbars"
+			"modid": "additionalbarsbop"
 		},
 		{
 			"type": "forge:mod_loaded",
@@ -12,15 +12,15 @@
 	"type": "cutandcolored:sawmilling",
 	"ingredient": [
 		{
-			"item": "additionalbars:crossed_jacaranda_bars"
+			"item": "additionalbarsbop:crossed_jacaranda_bars"
 		},
 		{
-			"item": "additionalbars:horizontal_jacaranda_bars"
+			"item": "additionalbarsbop:horizontal_jacaranda_bars"
 		},
 		{
-			"item": "additionalbars:horizontal_crossed_jacaranda_bars"
+			"item": "additionalbarsbop:horizontal_crossed_jacaranda_bars"
 		}
 	],
-	"result": "additionalbars:jacaranda_bars",
+	"result": "additionalbarsbop:jacaranda_bars",
 	"count": 1
 }

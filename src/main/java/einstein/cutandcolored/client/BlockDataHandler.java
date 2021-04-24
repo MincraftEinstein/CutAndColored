@@ -6,7 +6,7 @@ import einstein.cutandcolored.client.gui.screen.inventory.SawmillScreen;
 import einstein.cutandcolored.client.gui.screen.inventory.WeaverScreen;
 import einstein.cutandcolored.init.FlamboyantBlocks;
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.inventory.container.ModContainerType;
+import einstein.cutandcolored.init.ModContainerTypes;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FireBlock;
 import net.minecraft.client.gui.ScreenManager;
@@ -427,9 +427,9 @@ public class BlockDataHandler
     public static void setupBlockRenderLayer(final FMLClientSetupEvent event) {
     	/************************GUIS***************************/
     	// SCREENS
-        ScreenManager.registerFactory(ModContainerType.GLASSCUTTER, GlasscutterScreen::new);
-        ScreenManager.registerFactory(ModContainerType.WEAVER, WeaverScreen::new);
-        ScreenManager.registerFactory(ModContainerType.SAWMILL, SawmillScreen::new);
+        ScreenManager.registerFactory(ModContainerTypes.GLASSCUTTER, GlasscutterScreen::new);
+        ScreenManager.registerFactory(ModContainerTypes.WEAVER, WeaverScreen::new);
+        ScreenManager.registerFactory(ModContainerTypes.SAWMILL, SawmillScreen::new);
         
     	/***********************CUTTERS*************************/
         RenderTypeLookup.setRenderLayer(ModBlocks.GLASSCUTTER, RenderType.getCutout());

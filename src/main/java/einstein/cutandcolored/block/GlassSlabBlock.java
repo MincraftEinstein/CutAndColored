@@ -2,9 +2,9 @@ package einstein.cutandcolored.block;
 
 import java.util.function.Supplier;
 
-import einstein.einsteins_library.blocks.SlabBlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -13,12 +13,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @SuppressWarnings("deprecation")
-public class GlassSlabBlock extends SlabBlockBase
+public class GlassSlabBlock extends SlabBlock
 {
     private Supplier<BlockState> state;
     
     public GlassSlabBlock(final Supplier<BlockState> state, final Block.Properties properties) {
-        super(state, properties);
+        super(properties);
         this.state = state;
     }
     
@@ -28,7 +28,7 @@ public class GlassSlabBlock extends SlabBlockBase
     
 	@OnlyIn(Dist.CLIENT)
     public boolean isSideInvisible(final BlockState state, final BlockState adjacentState, final Direction side) {
-        return (adjacentState.getBlock() == this && adjacentState.get(SlabBlockBase.TYPE) == state.get(SlabBlockBase.TYPE)) || adjacentState.getBlock() == this.state.get().getBlock() || super.isSideInvisible(state, adjacentState, side);
+        return (adjacentState.getBlock() == this && adjacentState.get(SlabBlock.TYPE) == state.get(SlabBlock.TYPE)) || adjacentState.getBlock() == this.state.get().getBlock() || super.isSideInvisible(state, adjacentState, side);
     }
     
     @OnlyIn(Dist.CLIENT)

@@ -2,7 +2,7 @@
 	"conditions": [
 		{
 			"type": "forge:mod_loaded",
-			"modid": "additionalbars"
+			"modid": "additionalbarsbop"
 		},
 		{
 			"type": "forge:mod_loaded",
@@ -12,15 +12,15 @@
 	"type": "cutandcolored:sawmilling",
 	"ingredient": [
 		{
-			"item": "additionalbars:redwood_bars"
+			"item": "additionalbarsbop:redwood_bars"
 		},
 		{
-			"item": "additionalbars:horizontal_redwood_bars"
+			"item": "additionalbarsbop:horizontal_redwood_bars"
 		},
 		{
-			"item": "additionalbars:horizontal_crossed_redwood_bars"
+			"item": "additionalbarsbop:horizontal_crossed_redwood_bars"
 		}
 	],
-	"result": "additionalbars:crossed_redwood_bars",
+	"result": "additionalbarsbop:crossed_redwood_bars",
 	"count": 1
 }

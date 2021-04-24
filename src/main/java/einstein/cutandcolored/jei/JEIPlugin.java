@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.item.crafting.ModRecipeType;
+import einstein.cutandcolored.init.ModRecipeTypes;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -47,9 +47,9 @@ public class JEIPlugin implements IModPlugin
     public void registerRecipes(final IRecipeRegistration registration) {
         final ClientWorld world = Minecraft.getInstance().world;
         final RecipeManager recipeManager = world.getRecipeManager();
-        registration.addRecipes(getRecipes(recipeManager, ModRecipeType.GLASSCUTTING), GlasscuttingCategory.UID);
-        registration.addRecipes(getRecipes(recipeManager, ModRecipeType.SAWMILLING), SawmillingCategory.UID);
-        registration.addRecipes(getRecipes(recipeManager, ModRecipeType.WEAVING), WeavingCategory.UID);
+        registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.GLASSCUTTING), GlasscuttingCategory.UID);
+        registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.SAWMILLING), SawmillingCategory.UID);
+        registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.WEAVING), WeavingCategory.UID);
     }
 	
 	@Override

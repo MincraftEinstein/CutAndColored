@@ -10,8 +10,8 @@ import com.blamejared.crafttweaker.api.item.IItemStack;
 import com.blamejared.crafttweaker.api.managers.IRecipeManager;
 import com.blamejared.crafttweaker.impl.actions.recipes.ActionAddRecipe;
 
+import einstein.cutandcolored.init.ModRecipeTypes;
 import einstein.cutandcolored.item.crafting.GlasscuttingRecipe;
-import einstein.cutandcolored.item.crafting.ModRecipeType;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.ResourceLocation;
 
@@ -31,6 +31,6 @@ public class GlasscutterManager implements IRecipeManager
     
 	@Override
     public IRecipeType getRecipeType() {
-		return ModRecipeType.GLASSCUTTING;
+		return ModRecipeTypes.GLASSCUTTING;
 	}
 }

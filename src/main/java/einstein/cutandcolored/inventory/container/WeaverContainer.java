@@ -5,7 +5,8 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.item.crafting.ModRecipeType;
+import einstein.cutandcolored.init.ModContainerTypes;
+import einstein.cutandcolored.init.ModRecipeTypes;
 import einstein.cutandcolored.item.crafting.WeavingRecipe;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -52,7 +53,7 @@ public class WeaverContainer extends Container
    }
 
    public WeaverContainer(int windowIdIn, PlayerInventory playerInventoryIn, final IWorldPosCallable worldPosCallableIn) {
-      super(ModContainerType.WEAVER, windowIdIn);
+      super(ModContainerTypes.WEAVER, windowIdIn);
       this.worldPosCallable = worldPosCallableIn;
       this.world = playerInventoryIn.player.world;
       this.inputInventorySlot = this.addSlot(new Slot(this.inputInventory, 0, 20, 33));
@@ -140,7 +141,7 @@ public class WeaverContainer extends Container
       this.selectedRecipe.set(-1);
       this.outputInventorySlot.putStack(ItemStack.EMPTY);
       if (!stack.isEmpty()) {
-         this.recipes = this.world.getRecipeManager().getRecipes(ModRecipeType.WEAVING, inventoryIn, this.world);
+         this.recipes = this.world.getRecipeManager().getRecipes(ModRecipeTypes.WEAVING, inventoryIn, this.world);
       }
 
    }
@@ -157,7 +158,7 @@ public class WeaverContainer extends Container
    }
 
    public ContainerType<?> getType() {
-      return ModContainerType.WEAVER;
+      return ModContainerTypes.WEAVER;
    }
 
    @OnlyIn(Dist.CLIENT)
@@ -187,7 +188,7 @@ public class WeaverContainer extends Container
             if (!this.mergeItemStack(itemstack1, 2, 38, false)) {
                return ItemStack.EMPTY;
             }
-         } else if (this.world.getRecipeManager().getRecipe(ModRecipeType.WEAVING, new Inventory(itemstack1), this.world).isPresent()) {
+         } else if (this.world.getRecipeManager().getRecipe(ModRecipeTypes.WEAVING, new Inventory(itemstack1), this.world).isPresent()) {
             if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
                return ItemStack.EMPTY;
             }

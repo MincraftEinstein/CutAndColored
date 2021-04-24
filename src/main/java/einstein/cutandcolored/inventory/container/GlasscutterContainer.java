@@ -5,9 +5,10 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.init.ModContainerTypes;
+import einstein.cutandcolored.init.ModRecipeTypes;
 import einstein.cutandcolored.init.ModSounds;
 import einstein.cutandcolored.item.crafting.GlasscuttingRecipe;
-import einstein.cutandcolored.item.crafting.ModRecipeType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftResultInventory;
@@ -51,7 +52,7 @@ public class GlasscutterContainer extends Container
    }
 
    public GlasscutterContainer(int windowIdIn, PlayerInventory playerInventoryIn, final IWorldPosCallable worldPosCallableIn) {
-      super(ModContainerType.GLASSCUTTER, windowIdIn);
+      super(ModContainerTypes.GLASSCUTTER, windowIdIn);
       this.worldPosCallable = worldPosCallableIn;
       this.world = playerInventoryIn.player.world;
       this.inputInventorySlot = this.addSlot(new Slot(this.inputInventory, 0, 20, 33));
@@ -138,7 +139,7 @@ public class GlasscutterContainer extends Container
       this.selectedRecipe.set(-1);
       this.outputInventorySlot.putStack(ItemStack.EMPTY);
       if (!stack.isEmpty()) {
-         this.recipes = this.world.getRecipeManager().getRecipes(ModRecipeType.GLASSCUTTING, inventoryIn, this.world);
+         this.recipes = this.world.getRecipeManager().getRecipes(ModRecipeTypes.GLASSCUTTING, inventoryIn, this.world);
       }
 
    }
@@ -155,7 +156,7 @@ public class GlasscutterContainer extends Container
    }
 
    public ContainerType<?> getType() {
-      return ModContainerType.GLASSCUTTER;
+      return ModContainerTypes.GLASSCUTTER;
    }
 
    @OnlyIn(Dist.CLIENT)
@@ -185,7 +186,7 @@ public class GlasscutterContainer extends Container
             if (!this.mergeItemStack(itemstack1, 2, 38, false)) {
                return ItemStack.EMPTY;
             }
-         } else if (this.world.getRecipeManager().getRecipe(ModRecipeType.GLASSCUTTING, new Inventory(itemstack1), this.world).isPresent()) {
+         } else if (this.world.getRecipeManager().getRecipe(ModRecipeTypes.GLASSCUTTING, new Inventory(itemstack1), this.world).isPresent()) {
             if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
                return ItemStack.EMPTY;
             }

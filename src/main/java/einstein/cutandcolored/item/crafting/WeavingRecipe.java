@@ -3,6 +3,8 @@ package einstein.cutandcolored.item.crafting;
 import com.google.gson.JsonObject;
 
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.init.ModRecipeSerializers;
+import einstein.cutandcolored.init.ModRecipeTypes;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -19,7 +21,7 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 public class WeavingRecipe extends SingleItemRecipe
 {
     public WeavingRecipe(final ResourceLocation id, final String group, final Ingredient ingredient, final ItemStack stack) {
-        super(ModRecipeType.WEAVING, ModRecipeSerializers.WEAVING, id, group, ingredient, stack);
+        super(ModRecipeTypes.WEAVING, ModRecipeSerializers.WEAVING, id, group, ingredient, stack);
     }
     
     public boolean matches(final IInventory inventory, final World world) {
