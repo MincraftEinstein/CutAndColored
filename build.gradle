@@ -128,7 +128,7 @@ dependencies {
 	implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes:3228362")
 	implementation fg.deobf("curse.maven:biomes-o-plenty:3236010")
 	implementation fg.deobf("curse.maven:differentiate:3254375")
-	implementation fg.deobf("curse.maven:flamboyant-recrafted:3270883")
+	implementation fg.deobf("curse.maven:flamboyant-recrafted:3287767")
 	implementation fg.deobf("curse.maven:catalogue:3285353")
 //	implementation fg.deobf("curse.maven:flamboyant:2896037")
 
