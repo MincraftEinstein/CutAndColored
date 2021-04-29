@@ -25,6 +25,7 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
+import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
@@ -409,6 +410,7 @@ public class ModBlocks
     public static final Block END_STONE_BRICK_PILLAR = RegistryHandler.registerBlock(CutAndColored.MODID, "end_stone_brick_pillar", new RotatedPillarBlock(Block.Properties.from(Blocks.END_STONE_BRICKS)), CutAndColored.MOD_TAB);
     public static final Block POLISHED_END_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_end_stone", new Block(Block.Properties.from(Blocks.END_STONE_BRICKS)), CutAndColored.MOD_TAB);
     public static final Block CHISELED_END_STONE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "chiseled_end_stone_bricks", new Block(Block.Properties.from(Blocks.END_STONE_BRICKS)), CutAndColored.MOD_TAB);
+    public static final Block POLISHED_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_stone", new Block(Block.Properties.from(Blocks.STONE)), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block SMOOTH_STONE_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "smooth_stone_stairs", new StairsBlock(Blocks.SMOOTH_STONE::getDefaultState, Block.Properties.from(Blocks.SMOOTH_STONE)), CutAndColored.MOD_TAB);
