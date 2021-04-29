@@ -25,7 +25,6 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
-import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
@@ -39,10 +38,10 @@ public class ModBlocks
     
     /************************GLASS***************************/
     // FULL BLOCKS
-    public static final Block SOUL_GLASS = RegistryHandler.registerBlock(CutAndColored.MODID, "soul_glass", new GlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.4F).sound(SoundType.GLASS).notSolid()), CutAndColored.MOD_TAB);
+    public static final Block SOUL_GLASS = RegistryHandler.registerBlock(CutAndColored.MODID, "soul_glass", new GlassBlock(BlockProperties.GLASS), CutAndColored.MOD_TAB);
     
     // PANES
-    public static final Block SOUL_GLASS_PANE = RegistryHandler.registerBlock(CutAndColored.MODID, "soul_glass_pane", new PaneBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.4F).sound(SoundType.GLASS).notSolid()), CutAndColored.MOD_TAB);
+    public static final Block SOUL_GLASS_PANE = RegistryHandler.registerBlock(CutAndColored.MODID, "soul_glass_pane", new PaneBlock(BlockProperties.GLASS), CutAndColored.MOD_TAB);
     public static final Block HORIZONTAL_SOUL_GLASS_PANE = RegistryHandler.registerModCompatBlock(CutAndColored.MODID, "horizontalpanes", "horizontal_soul_glass_pane", new HorizontalSoulGlassPane(Block.Properties.create(Material.GLASS).notSolid().hardnessAndResistance(0.3F, 0.3F).sound(SoundType.GLASS)), CutAndColored.MOD_TAB);
     
     // STAIRS
@@ -124,22 +123,22 @@ public class ModBlocks
     
     /*******************STAINED_PLANKS**********************/
     // FULL BLOCKS
-    public static final Block WHITE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "white_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.SNOW).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block ORANGE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "orange_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.ADOBE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block MAGENTA_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "magenta_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.MAGENTA).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block LIGHT_BLUE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "light_blue_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block YELLOW_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "yellow_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.YELLOW).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block LIME_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "lime_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.LIME).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block PINK_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "pink_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.PINK).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block GRAY_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "gray_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.GRAY).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block LIGHT_GRAY_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "light_gray_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_GRAY).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block CYAN_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "cyan_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.CYAN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block PURPLE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "purple_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.PURPLE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block BLUE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "blue_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.BLUE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block BROWN_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "brown_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block GREEN_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "green_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block RED_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "red_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.RED).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
-    public static final Block BLACK_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "black_stained_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.BLACK).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), CutAndColored.MOD_TAB);
+    public static final Block WHITE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "white_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.SNOW)), CutAndColored.MOD_TAB);
+    public static final Block ORANGE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "orange_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.ADOBE)), CutAndColored.MOD_TAB);
+    public static final Block MAGENTA_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "magenta_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.MAGENTA)), CutAndColored.MOD_TAB);
+    public static final Block LIGHT_BLUE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "light_blue_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.LIGHT_BLUE)), CutAndColored.MOD_TAB);
+    public static final Block YELLOW_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "yellow_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.YELLOW)), CutAndColored.MOD_TAB);
+    public static final Block LIME_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "lime_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.LIME)), CutAndColored.MOD_TAB);
+    public static final Block PINK_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "pink_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.PINK)), CutAndColored.MOD_TAB);
+    public static final Block GRAY_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "gray_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.GRAY)), CutAndColored.MOD_TAB);
+    public static final Block LIGHT_GRAY_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "light_gray_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.LIGHT_GRAY)), CutAndColored.MOD_TAB);
+    public static final Block CYAN_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "cyan_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.CYAN)), CutAndColored.MOD_TAB);
+    public static final Block PURPLE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "purple_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.PURPLE)), CutAndColored.MOD_TAB);
+    public static final Block BLUE_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "blue_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.BLUE)), CutAndColored.MOD_TAB);
+    public static final Block BROWN_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "brown_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.BROWN)), CutAndColored.MOD_TAB);
+    public static final Block GREEN_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "green_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.GREEN)), CutAndColored.MOD_TAB);
+    public static final Block RED_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "red_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.RED)), CutAndColored.MOD_TAB);
+    public static final Block BLACK_STAINED_PLANKS = RegistryHandler.registerBlock(CutAndColored.MODID, "black_stained_planks", new Block(BlockProperties.StainedPlanks(MaterialColor.BLACK)), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block WHITE_STAINED_PLANK_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "white_stained_plank_stairs", new StairsBlock(ModBlocks.WHITE_STAINED_PLANKS::getDefaultState, Block.Properties.from(ModBlocks.WHITE_STAINED_PLANKS)), CutAndColored.MOD_TAB);
@@ -255,22 +254,22 @@ public class ModBlocks
     
     /*******************STAINED_BRICKS**********************/
     // FULL BLOCKS
-    public static final Block WHITE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "white_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.SNOW).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block ORANGE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "orange_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.ADOBE).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block MAGENTA_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "magenta_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.MAGENTA).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block LIGHT_BLUE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "light_blue_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.LIGHT_BLUE).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block YELLOW_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "yellow_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.YELLOW).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block LIME_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "lime_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.LIME).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block PINK_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "pink_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.PINK).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block GRAY_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "gray_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.GRAY).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block LIGHT_GRAY_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "light_gray_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.LIGHT_GRAY).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block CYAN_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "cyan_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.CYAN).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block PURPLE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "purple_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.PURPLE).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block BLUE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "blue_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.BLUE).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block BROWN_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "brown_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.BROWN).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block GREEN_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "green_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.GREEN).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block RED_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "red_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.RED).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
-    public static final Block BLACK_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "black_stained_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
+    public static final Block WHITE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "white_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.SNOW)), CutAndColored.MOD_TAB);
+    public static final Block ORANGE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "orange_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.ADOBE)), CutAndColored.MOD_TAB);
+    public static final Block MAGENTA_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "magenta_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.MAGENTA)), CutAndColored.MOD_TAB);
+    public static final Block LIGHT_BLUE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "light_blue_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.LIGHT_BLUE)), CutAndColored.MOD_TAB);
+    public static final Block YELLOW_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "yellow_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.YELLOW)), CutAndColored.MOD_TAB);
+    public static final Block LIME_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "lime_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.LIME)), CutAndColored.MOD_TAB);
+    public static final Block PINK_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "pink_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.PINK)), CutAndColored.MOD_TAB);
+    public static final Block GRAY_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "gray_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.GRAY)), CutAndColored.MOD_TAB);
+    public static final Block LIGHT_GRAY_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "light_gray_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.LIGHT_GRAY)), CutAndColored.MOD_TAB);
+    public static final Block CYAN_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "cyan_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.CYAN)), CutAndColored.MOD_TAB);
+    public static final Block PURPLE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "purple_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.PURPLE)), CutAndColored.MOD_TAB);
+    public static final Block BLUE_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "blue_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.BLUE)), CutAndColored.MOD_TAB);
+    public static final Block BROWN_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "brown_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.BROWN)), CutAndColored.MOD_TAB);
+    public static final Block GREEN_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "green_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.GREEN)), CutAndColored.MOD_TAB);
+    public static final Block RED_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "red_stained_bricks", new Block(BlockProperties.StainedBricks(MaterialColor.RED)), CutAndColored.MOD_TAB);
+    public static final Block BLACK_STAINED_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "black_stained_bricks", new Block(BlockProperties.StainedBricks( MaterialColor.BLACK)), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block WHITE_STAINED_BRICK_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "white_stained_brick_stairs", new StairsBlock(ModBlocks.WHITE_STAINED_BRICKS::getDefaultState, Block.Properties.from(ModBlocks.WHITE_STAINED_BRICKS)), CutAndColored.MOD_TAB);
@@ -346,7 +345,7 @@ public class ModBlocks
     
     /******************GRANITE_BRICKS***********************/
     // FULL BLOCKS
-    public static final Block GRANITE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "granite_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.DIRT).hardnessAndResistance(1.5F, 6.0F)), CutAndColored.MOD_TAB);
+    public static final Block GRANITE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "granite_bricks", new Block(BlockProperties.Stone(MaterialColor.DIRT)), CutAndColored.MOD_TAB);
 
     // STAIRS
     public static final Block GRANITE_BRICK_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "granite_brick_stairs", new StairsBlock(ModBlocks.GRANITE_BRICKS::getDefaultState, Block.Properties.from(ModBlocks.GRANITE_BRICKS)), CutAndColored.MOD_TAB);
@@ -359,7 +358,7 @@ public class ModBlocks
     
     /******************DIORITE_BRICKS***********************/
     // FULL BLOCKS
-    public static final Block DIORITE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "diorite_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(1.5F, 6.0F)), CutAndColored.MOD_TAB);
+    public static final Block DIORITE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "diorite_bricks", new Block(BlockProperties.Stone(MaterialColor.QUARTZ)), CutAndColored.MOD_TAB);
 
     // STAIRS
     public static final Block DIORITE_BRICK_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "diorite_brick_stairs", new StairsBlock(ModBlocks.DIORITE_BRICKS::getDefaultState, Block.Properties.from(ModBlocks.DIORITE_BRICKS)), CutAndColored.MOD_TAB);
@@ -372,7 +371,7 @@ public class ModBlocks
     
     /******************ANDESITE_BRICKS**********************/
     // FULL BLOCKS
-    public static final Block ANDESITE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "andesite_bricks", new Block(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F)), CutAndColored.MOD_TAB);
+    public static final Block ANDESITE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "andesite_bricks", new Block(BlockProperties.Stone(MaterialColor.STONE)), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block ANDESITE_BRICK_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "andesite_brick_stairs", new StairsBlock(ModBlocks.ANDESITE_BRICKS::getDefaultState, Block.Properties.from(ModBlocks.ANDESITE_BRICKS)), CutAndColored.MOD_TAB);
@@ -385,10 +384,10 @@ public class ModBlocks
 
     /*******************SOUL_SANDSTONE**********************/
     // FULL BLOCKS
-    public static final Block SOUL_SANDSTONE = RegistryHandler.registerBlock(CutAndColored.MODID, "soul_sandstone", new Block(Block.Properties.create(Material.ROCK, MaterialColor.BROWN).hardnessAndResistance(0.8F)), CutAndColored.MOD_TAB);
-    public static final Block CHISELED_SOUL_SANDSTONE = RegistryHandler.registerBlock(CutAndColored.MODID, "chiseled_soul_sandstone", new Block(Block.Properties.create(Material.ROCK, MaterialColor.BROWN).hardnessAndResistance(0.8F)), CutAndColored.MOD_TAB);
-    public static final Block CUT_SOUL_SANDSTONE = RegistryHandler.registerBlock(CutAndColored.MODID, "cut_soul_sandstone", new Block(Block.Properties.create(Material.ROCK, MaterialColor.BROWN).hardnessAndResistance(0.8F)), CutAndColored.MOD_TAB);
-    public static final Block SMOOTH_SOUL_SANDSTONE = RegistryHandler.registerBlock(CutAndColored.MODID, "smooth_soul_sandstone", new Block(Block.Properties.create(Material.ROCK, MaterialColor.BROWN).hardnessAndResistance(0.8F)), CutAndColored.MOD_TAB);
+    public static final Block SOUL_SANDSTONE = RegistryHandler.registerBlock(CutAndColored.MODID, "soul_sandstone", new Block(BlockProperties.SOUL_SANDSTONE), CutAndColored.MOD_TAB);
+    public static final Block CHISELED_SOUL_SANDSTONE = RegistryHandler.registerBlock(CutAndColored.MODID, "chiseled_soul_sandstone", new Block(BlockProperties.SOUL_SANDSTONE), CutAndColored.MOD_TAB);
+    public static final Block CUT_SOUL_SANDSTONE = RegistryHandler.registerBlock(CutAndColored.MODID, "cut_soul_sandstone", new Block(BlockProperties.SOUL_SANDSTONE), CutAndColored.MOD_TAB);
+    public static final Block SMOOTH_SOUL_SANDSTONE = RegistryHandler.registerBlock(CutAndColored.MODID, "smooth_soul_sandstone", new Block(BlockProperties.SOUL_SANDSTONE), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block SOUL_SANDSTONE_STAIR = RegistryHandler.registerBlock(CutAndColored.MODID, "soul_sandstone_stairs", new StairsBlock(ModBlocks.SOUL_SANDSTONE::getDefaultState, Block.Properties.from(ModBlocks.SOUL_SANDSTONE)), CutAndColored.MOD_TAB);
@@ -410,7 +409,7 @@ public class ModBlocks
     public static final Block END_STONE_BRICK_PILLAR = RegistryHandler.registerBlock(CutAndColored.MODID, "end_stone_brick_pillar", new RotatedPillarBlock(Block.Properties.from(Blocks.END_STONE_BRICKS)), CutAndColored.MOD_TAB);
     public static final Block POLISHED_END_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_end_stone", new Block(Block.Properties.from(Blocks.END_STONE_BRICKS)), CutAndColored.MOD_TAB);
     public static final Block CHISELED_END_STONE_BRICKS = RegistryHandler.registerBlock(CutAndColored.MODID, "chiseled_end_stone_bricks", new Block(Block.Properties.from(Blocks.END_STONE_BRICKS)), CutAndColored.MOD_TAB);
-    public static final Block POLISHED_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_stone", new Block(Block.Properties.from(Blocks.STONE)), CutAndColored.MOD_TAB);
+    public static final Block POLISHED_STONE = RegistryHandler.registerBlock(CutAndColored.MODID, "polished_stone", new Block(BlockProperties.Stone(MaterialColor.STONE)), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block SMOOTH_STONE_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "smooth_stone_stairs", new StairsBlock(Blocks.SMOOTH_STONE::getDefaultState, Block.Properties.from(Blocks.SMOOTH_STONE)), CutAndColored.MOD_TAB);
@@ -437,4 +436,21 @@ public class ModBlocks
     public static final Block NETHER_BRICK_FENCE_GATE = RegistryHandler.registerBlock(CutAndColored.MODID, "nether_brick_fence_gate", new FenceGateBlock(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
     public static final Block IRON_FENCE_GATE = RegistryHandler.registerBlock(CutAndColored.MODID, "iron_fence_gate", new IronFenceGateBlock(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), CutAndColored.MOD_TAB);
     
+    public static class BlockProperties
+    {
+    	public static final Block.Properties GLASS = Block.Properties.create(Material.GLASS).hardnessAndResistance(0.4F).sound(SoundType.GLASS).notSolid();
+    	public static final Block.Properties SOUL_SANDSTONE = Block.Properties.create(Material.ROCK, MaterialColor.BROWN).hardnessAndResistance(0.8F);
+    	
+    	public static Block.Properties StainedPlanks(MaterialColor color) {
+    		return Block.Properties.create(Material.WOOD, color).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
+    	}
+    	
+    	public static Block.Properties StainedBricks(MaterialColor color) {
+    		return Block.Properties.create(Material.ROCK, color).hardnessAndResistance(2.0F, 6.0F);
+    	}
+    	
+    	public static Block.Properties Stone(MaterialColor color) {
+    		return Block.Properties.create(Material.ROCK, color).setRequiresTool().hardnessAndResistance(1.5F, 6.0F);
+    	}
+    }
 }
