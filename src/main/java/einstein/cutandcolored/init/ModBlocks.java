@@ -438,15 +438,15 @@ public class ModBlocks
     
     public static class BlockProperties
     {
-    	public static final Block.Properties GLASS = Block.Properties.create(Material.GLASS).hardnessAndResistance(0.4F).sound(SoundType.GLASS).notSolid();
-    	public static final Block.Properties SOUL_SANDSTONE = Block.Properties.create(Material.ROCK, MaterialColor.BROWN).hardnessAndResistance(0.8F);
+    	public static final Block.Properties GLASS = Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(Blocks::neverAllowSpawn).setOpaque(Blocks::isntSolid).setSuffocates(Blocks::isntSolid).setBlocksVision(Blocks::isntSolid);
+    	public static final Block.Properties SOUL_SANDSTONE = Block.Properties.create(Material.ROCK, MaterialColor.BROWN).setRequiresTool().hardnessAndResistance(0.8F);
     	
     	public static Block.Properties StainedPlanks(MaterialColor color) {
     		return Block.Properties.create(Material.WOOD, color).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
     	}
     	
     	public static Block.Properties StainedBricks(MaterialColor color) {
-    		return Block.Properties.create(Material.ROCK, color).hardnessAndResistance(2.0F, 6.0F);
+    		return Block.Properties.create(Material.ROCK, color).setRequiresTool().hardnessAndResistance(2.0F, 6.0F);
     	}
     	
     	public static Block.Properties Stone(MaterialColor color) {
