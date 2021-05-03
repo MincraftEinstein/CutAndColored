@@ -34,6 +34,6 @@ Adds a bunch of stairs, slabs and color variation to blocks in default Minecraft
 [[dependencies.cutandcolored]]
     modId="einsteins_library"
     mandatory=true
-    versionRange="[1.4,)"
+    versionRange="[2.0,)"
     ordering="AFTER"
     side="BOTH"

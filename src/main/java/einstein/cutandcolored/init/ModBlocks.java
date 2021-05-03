@@ -42,7 +42,7 @@ public class ModBlocks
     
     // PANES
     public static final Block SOUL_GLASS_PANE = RegistryHandler.registerBlock(CutAndColored.MODID, "soul_glass_pane", new PaneBlock(BlockProperties.GLASS), CutAndColored.MOD_TAB);
-    public static final Block HORIZONTAL_SOUL_GLASS_PANE = RegistryHandler.registerModCompatBlock(CutAndColored.MODID, "horizontalpanes", "horizontal_soul_glass_pane", new HorizontalSoulGlassPane(Block.Properties.create(Material.GLASS).notSolid().hardnessAndResistance(0.3F, 0.3F).sound(SoundType.GLASS)), CutAndColored.MOD_TAB);
+    public static final Block HORIZONTAL_SOUL_GLASS_PANE = RegistryHandler.registerBlock(CutAndColored.MODID, "horizontalpanes", "horizontal_soul_glass_pane", new HorizontalSoulGlassPane(Block.Properties.create(Material.GLASS).notSolid().hardnessAndResistance(0.3F, 0.3F).sound(SoundType.GLASS)), CutAndColored.MOD_TAB);
     
     // STAIRS
     public static final Block GLASS_STAIRS = RegistryHandler.registerBlock(CutAndColored.MODID, "glass_stairs", new GlassStairsBlock(Blocks.GLASS::getDefaultState, Block.Properties.from(Blocks.GLASS)), CutAndColored.MOD_TAB);
