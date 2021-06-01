@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "cutandcolored:stonecutting/test_recipe"
+      "cutandcolored:stonecutting/granite_bricks_from_granite"
     ]
   },
   "criteria": {
-    "has_cake": {
+    "has_item": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "minecraft:cake"
+            "item": "minecraft:granite"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "cutandcolored:stonecutting/test_recipe"
+        "recipe": "cutandcolored:stonecutting/granite_bricks_from_granite"
       }
     }
   },
   "requirements": [
     [
-      "has_cake",
+      "has_item",
       "has_the_recipe"
     ]
   ]

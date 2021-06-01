@@ -15,5 +15,8 @@ public class ModDataGenerators {
 		DataGenerator generator = event.getGenerator();
 		generator.addProvider(new GenCraftingRecipes(generator));
 		generator.addProvider(new GenStonecuttingRecipes(generator));
+		generator.addProvider(new GenGlasscuttingRecipes(generator));
+		generator.addProvider(new GenSawmillingRecipes(generator));
+		generator.addProvider(new GenWeavingRecipes(generator));
 	}
 }

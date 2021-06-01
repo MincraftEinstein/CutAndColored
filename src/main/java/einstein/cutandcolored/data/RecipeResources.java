@@ -10,12 +10,9 @@ import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.SingleItemRecipeBuilder;
-import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.tags.Tag;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.Tags;
 
 public class RecipeResources extends RecipeProvider {
 	
@@ -31,12 +28,12 @@ public class RecipeResources extends RecipeProvider {
 		return new ResourceLocation(CutAndColored.MODID, folder + Objects.requireNonNull(item.asItem().getRegistryName().getPath()));
 	}
 	
-	protected static void stonecuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count) {
-		SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "stonecutting/"));
+	protected static void stonecuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result) {
+		SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(ingredient), result).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "stonecutting/"));
 	}
 	
-	protected static void stonecuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result) {
-		SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(ingredient), result, 1).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "stonecutting/"));
+	protected static void stonecuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count) {
+		SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "stonecutting/"));
 	}
 	
 	protected static void smeltingRecipe(Consumer<IFinishedRecipe> consumer, IItemProvider ingredient, IItemProvider result, float experience, int cookTime) {
@@ -45,6 +42,30 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void blastingRecipe(Consumer<IFinishedRecipe> consumer, IItemProvider ingredient, IItemProvider result, float experience, int cooktime) {
 		CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(ingredient.asItem()), result, experience, cooktime).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(result, "blasting/"));
+	}
+	
+	protected static void glasscuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result) {
+		ModRecipeBuilder.glasscuttingRecipe(Ingredient.fromItems(ingredient), result).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "glasscutting/"));
+	}
+	
+	protected static void glasscuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count) {
+		ModRecipeBuilder.glasscuttingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "glasscutting/"));
+	}
+	
+	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result) {
+		ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "sawmilling/"));
+	}
+	
+	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count) {
+		ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "sawmilling/"));
+	}
+	
+	protected static void weavingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result) {
+		ModRecipeBuilder.weavingRecipe(Ingredient.fromItems(ingredient), result).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "weaving/"));
+	}
+	
+	protected static void weavingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count) {
+		ModRecipeBuilder.weavingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "weaving/"));
 	}
 	
 	protected static void stairsRecipe(Consumer<IFinishedRecipe> consumer, IItemProvider ingredient, IItemProvider result) {
@@ -74,21 +95,21 @@ public class RecipeResources extends RecipeProvider {
 			.build(consumer, location(result, "crafting/"));
 	}
 	
-	protected static void recolorItemRecipe(Consumer<IFinishedRecipe> consumer, IItemProvider item /*, ITag<Item> tag*/) {
-		for (int i = 0; i < Tags.Items.DYES.getAllElements().size(); i++) {
-			IItemProvider dye = Tags.Items.DYES.getAllElements().get(i);
-			ShapedRecipeBuilder.shapedRecipe(item, 8)
-				.patternLine("###")
-				.patternLine("#$#")
-				.patternLine("###")
-				.key('#', item)
-				.key('$', dye)
-				.addCriterion("has_item", hasItem(item))
-				.build(consumer, location(item.asItem().getRegistryName().getPath() + "_recolor_" + dye.asItem().getRegistryName().getPath(), "crafting/"));
-		}
-	}
-	
-	protected static void recolorTagRecipes(Consumer<IFinishedRecipe> consumer, Tag<Item> tag) {
-		//ShapedRecipeBuilder.shapedRecipe(resultIn);
-	}
+//	protected static void recolorItemRecipe(Consumer<IFinishedRecipe> consumer, IItemProvider item /*, ITag<Item> tag*/) {
+//		for (int i = 0; i < Tags.Items.DYES.getAllElements().size(); i++) {
+//			IItemProvider dye = Tags.Items.DYES.getAllElements().get(i);
+//			ShapedRecipeBuilder.shapedRecipe(item, 8)
+//				.patternLine("###")
+//				.patternLine("#$#")
+//				.patternLine("###")
+//				.key('#', item)
+//				.key('$', dye)
+//				.addCriterion("has_item", hasItem(item))
+//				.build(consumer, location(item.asItem().getRegistryName().getPath() + "_recolor_" + dye.asItem().getRegistryName().getPath(), "crafting/"));
+//		}
+//	}
+//	
+//	protected static void recolorTagRecipes(Consumer<IFinishedRecipe> consumer, Tag<Item> tag) {
+//		//ShapedRecipeBuilder.shapedRecipe(resultIn);
+//	}
 }
