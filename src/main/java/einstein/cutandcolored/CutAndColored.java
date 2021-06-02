@@ -1,5 +1,8 @@
 package einstein.cutandcolored;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import einstein.cutandcolored.client.BlockDataHandler;
 import einstein.cutandcolored.init.ModConfigs;
 import einstein.cutandcolored.tab.ModItemGroup;
@@ -10,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod(CutAndColored.MODID)
 public class CutAndColored
 {
+	public static final Logger LOGGER = LogManager.getLogger();
 	public static final String MODID = "cutandcolored";
 	public static final String MCMODID = "minecraft";
 	public static final String FMODID = "flamboyant";
