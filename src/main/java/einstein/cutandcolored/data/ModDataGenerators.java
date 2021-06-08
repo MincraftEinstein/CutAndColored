@@ -35,6 +35,7 @@ public class ModDataGenerators {
 		generator.addProvider(new GenSawmillingRecipes(generator));
 		generator.addProvider(new GenWeavingRecipes(generator));
 		generator.addProvider(new ModLootTableProvder(generator));
+		generator.addProvider(new GenBlockAssets(generator, event.getExistingFileHelper()));
 	}
 	
 	public static class ModLootTableProvder extends LootTableProvider {

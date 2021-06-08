@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "cutandcolored:block/red_stained_glass_slab_top"
+    },
+    "type=bottom": {
+      "model": "cutandcolored:block/red_stained_glass_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/red_stained_glass"
+    }
+  }
+}

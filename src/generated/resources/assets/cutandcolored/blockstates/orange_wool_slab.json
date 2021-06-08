@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "cutandcolored:block/orange_wool_slab_top"
+    },
+    "type=bottom": {
+      "model": "cutandcolored:block/orange_wool_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/orange_wool"
+    }
+  }
+}

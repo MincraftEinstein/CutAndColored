@@ -2,7 +2,6 @@ package einstein.cutandcolored.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 import javax.annotation.Nonnull;
@@ -21,31 +20,26 @@ import net.minecraft.loot.LootTable.Builder;
 import net.minecraft.loot.conditions.BlockStateProperty;
 import net.minecraft.loot.functions.SetCount;
 import net.minecraft.state.properties.SlabType;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModBlockLootTables extends BlockLootTables {
-
-	private List<Block> allBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
-            .filter((block) -> CutAndColored.MODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
-            .collect(Collectors.toList()));
 	
-	private List<Block> nonSlabBlocks = new ArrayList<Block>(allBlocks.stream()
+	private List<Block> nonSlabBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> !block.getRegistryName().getPath().contains("_slab"))
 			.filter((block) -> !block.getRegistryName().getPath().contains("glass"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> slabBlocks = new ArrayList<Block>(allBlocks.stream()
+	private List<Block> slabBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> block.getRegistryName().getPath().contains("_slab"))
 			.filter((block) -> !block.getRegistryName().getPath().contains("glass"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> silkTouchBlocks = new ArrayList<Block>(allBlocks.stream()
+	private List<Block> silkTouchBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> block.getRegistryName().getPath().contains("glass"))
 			.filter((block) -> !block.getRegistryName().getPath().contains("_slab"))
 			.filter((block) -> !block.getRegistryName().getPath().contains("glasscutter"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> glassSlabBlocks = new ArrayList<Block>(allBlocks.stream()
+	private List<Block> glassSlabBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> block.getRegistryName().getPath().contains("glass"))
 			.filter((block) -> block.getRegistryName().getPath().contains("_slab"))
 			.collect(Collectors.toList()));
@@ -61,7 +55,7 @@ public class ModBlockLootTables extends BlockLootTables {
 	@Override
 	protected void addTables() {
 //		checkForDuplicates();
-		CutAndColored.LOGGER.debug(allBlocks.size() + " mod blocks found");
+		CutAndColored.LOGGER.debug(ModBlocks.allBlocks.size() + " mod blocks found");
 		CutAndColored.LOGGER.debug(nonSlabBlocks.size() + " non slab blocks found");
 		CutAndColored.LOGGER.debug(slabBlocks.size() + " slab blocks found");
 		CutAndColored.LOGGER.debug(silkTouchBlocks.size() + " silk touch blocks found");
@@ -84,7 +78,7 @@ public class ModBlockLootTables extends BlockLootTables {
 	@Nonnull
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		return allBlocks;
+		return ModBlocks.allBlocks;
 	}
 	
 	protected static LootTable.Builder droppingSilkTouchSlab(Block slab) {

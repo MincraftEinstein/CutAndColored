@@ -1,5 +1,10 @@
 package einstein.cutandcolored.init;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.block.ColoredRedstoneLamp;
 import einstein.cutandcolored.block.GlassSlabBlock;
@@ -27,6 +32,7 @@ import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.registries.ForgeRegistries;
 
 @EventBusSubscriber(modid = CutAndColored.MODID, bus = Bus.MOD)
 public class ModBlocks
@@ -436,6 +442,10 @@ public class ModBlocks
     public static final Block NETHER_BRICK_FENCE_GATE = RegistryHandler.registerBlock(CutAndColored.MODID, "nether_brick_fence_gate", new FenceGateBlock(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).hardnessAndResistance(2.0F, 6.0F)), CutAndColored.MOD_TAB);
     public static final Block IRON_FENCE_GATE = RegistryHandler.registerBlock(CutAndColored.MODID, "iron_fence_gate", new IronFenceGateBlock(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), CutAndColored.MOD_TAB);
     
+	public static final List<Block> allBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
+            .filter((block) -> CutAndColored.MODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
+            .collect(Collectors.toList()));
+	
     public static class BlockProperties
     {
     	public static final Block.Properties GLASS = Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(Blocks::neverAllowSpawn).setOpaque(Blocks::isntSolid).setSuffocates(Blocks::isntSolid).setBlocksVision(Blocks::isntSolid);
