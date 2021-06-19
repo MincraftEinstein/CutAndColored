@@ -3,6 +3,10 @@ package einstein.cutandcolored.item;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ *  Copy from {@link net.minecraft.item.DyeColor}. 
+ *  Will only be used as a place holder for flamboyant colors
+ */
 public enum FlamboyantDyeColors {
 
 	AMBER(0, "amber"),
