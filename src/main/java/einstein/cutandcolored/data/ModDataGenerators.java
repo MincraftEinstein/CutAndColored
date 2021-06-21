@@ -36,6 +36,7 @@ public class ModDataGenerators {
 		generator.addProvider(new WeavingRecipesGenerator(generator));
 		generator.addProvider(new ModLootTableProvder(generator));
 		generator.addProvider(new BlockAssetsGenerator(generator, event.getExistingFileHelper()));
+		generator.addProvider(new ItemAssetsGenerator(generator, event.getExistingFileHelper()));
 	}
 	
 	public static class ModLootTableProvder extends LootTableProvider {

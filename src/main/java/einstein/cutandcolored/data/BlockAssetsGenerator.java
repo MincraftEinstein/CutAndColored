@@ -21,7 +21,6 @@ import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockAssetsGenerator extends BlockStateProvider {
@@ -289,16 +288,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 //			String name = block.getRegistryName().getPath();
 //			String fileName = name.replaceAll("_slab", "");
 //			if (name.contains("glass")) {
-//				getVariantBuilder(block)
-//				.partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).addModels(new ConfiguredModel(models().withExistingParent(name, blockRL("bordered_slab"))
-//						.texture("side", blockFRL(fileName))
-//						.texture("top", blockFRL(fileName))
-//						.texture("bottom", blockFRL(fileName))))
-//	            .partialState().with(SlabBlock.TYPE, SlabType.TOP).addModels(new ConfiguredModel(models().withExistingParent(name + "_top", blockRL("bordered_slab_top"))
-//	            		.texture("side", blockFRL(fileName))
-//	            		.texture("top", blockFRL(fileName))
-//	            		.texture("bottom", blockFRL(fileName))))
-//	            .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).addModels(new ConfiguredModel(models().getExistingFile(blockFRL(fileName))));
+//				borderedSlabBlock(block, blockFRL(fileName), blockFRL(fileName));
 //			}
 //			else if (name.contains("wool") || name.contains("concrete") || name.contains("terracotta")) {
 //				slabBlock(block, blockFRL(fileName), blockFRL(fileName));
@@ -306,6 +296,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 //			else if (name.contains("stained_plank") || name.contains("stained_brick")) {
 //				slabBlock(block, blockRL(fileName + "s"), blockRL(fileName + "s"));
 //			}
+//			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 //		}
 //		// Stairs
 //		for (int i = 0; i < fColoredStairs.size(); i++) {
@@ -313,19 +304,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 //			String name = block.getRegistryName().getPath();
 //			String fileName = name.replaceAll("_stairs", "");
 //			if (name.contains("glass")) {
-//				stairsBlock(block,
-//						models().withExistingParent(name, blockRL("bordered_stairs"))
-//							.texture("side", blockFRL(fileName))
-//							.texture("top", blockFRL(fileName))
-//							.texture("bottom", blockFRL(fileName)),
-//						models().withExistingParent(name + "_inner", blockRL("bordered_inner_stairs"))
-//							.texture("side", blockFRL(fileName))
-//							.texture("top", blockFRL(fileName))
-//							.texture("bottom", blockFRL(fileName)),
-//						models().withExistingParent(name + "_outer", blockRL("bordered_outer_stairs"))
-//							.texture("side", blockFRL(fileName))
-//							.texture("top", blockFRL(fileName))
-//							.texture("bottom", blockFRL(fileName)));
+//				borderedStairsBlock(block, blockFRL(fileName));
 //			}
 //			else if (name.contains("wool") || name.contains("concrete") || name.contains("terracotta")) {
 //				stairsBlock(block, blockFRL(fileName));
@@ -333,6 +312,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 //			else if (name.contains("stained_plank") || name.contains("stained_brick")) {
 //				stairsBlock(block, blockRL(fileName + "s"));
 //			}
+//			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 //		}
 //		// Walls
 //		for (int i = 0; i < fColoredWalls.size(); i++) {
@@ -342,6 +322,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 //			if (name.contains("stained_brick")) {
 //				wallBlock(block, blockRL(fileName + "s"));
 //			}
+//			simpleBlockItem(block, models().getExistingFile(blockRL(name + "_inventory")));
 //		}
 //		// Redstone Lamps
 //		for (int i = 0; i < fColoredLamps.size(); i++) {
@@ -351,6 +332,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 //			.partialState().with(ColoredRedstoneLamp.LIT, false).addModels(new ConfiguredModel(cubeAll(block)))
 //			.partialState().with(ColoredRedstoneLamp.LIT, true).addModels(new ConfiguredModel(models()
 //					.withExistingParent(name + "_on", "cube_all").texture("all", blockRL(name + "_on"))));
+//			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 //		}
 	}
 	
@@ -393,6 +375,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		return new ResourceLocation(CutAndColored.MCMODID, "block/" + string);
 	}
 	
+	@SuppressWarnings("unused")
 	private ResourceLocation blockFRL(String string) {
 		return new ResourceLocation(CutAndColored.FMODID, "block/" + string);
 	}
