@@ -29,18 +29,18 @@ public class ModDataGenerators {
 	@SubscribeEvent
 	public static void DataGenerator(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
-		generator.addProvider(new GenCraftingRecipes(generator));
-		generator.addProvider(new GenStonecuttingRecipes(generator));
-		generator.addProvider(new GenGlasscuttingRecipes(generator));
-		generator.addProvider(new GenSawmillingRecipes(generator));
-		generator.addProvider(new GenWeavingRecipes(generator));
+		generator.addProvider(new CraftingRecipesGenerator(generator));
+		generator.addProvider(new StonecuttingRecipesGenerator(generator));
+		generator.addProvider(new GlasscuttingRecipesGenerator(generator));
+		generator.addProvider(new SawmillingRecipesGenerator(generator));
+		generator.addProvider(new WeavingRecipesGenerator(generator));
 		generator.addProvider(new ModLootTableProvder(generator));
-		generator.addProvider(new GenBlockAssets(generator, event.getExistingFileHelper()));
+		generator.addProvider(new BlockAssetsGenerator(generator, event.getExistingFileHelper()));
 	}
 	
 	public static class ModLootTableProvder extends LootTableProvider {
 
-		private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootParameterSet>> loot_tables = ImmutableList.of(Pair.of(ModBlockLootTables::new, LootParameterSets.BLOCK));
+		private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootParameterSet>> loot_tables = ImmutableList.of(Pair.of(BlockLootTableGenerator::new, LootParameterSets.BLOCK));
 		
 		public ModLootTableProvder(net.minecraft.data.DataGenerator dataGeneratorIn) {
 			super(dataGeneratorIn);

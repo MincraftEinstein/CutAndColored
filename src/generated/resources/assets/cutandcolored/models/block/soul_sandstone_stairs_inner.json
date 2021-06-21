@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "side": "cutandcolored:block/soul_sandstone_side",
+    "bottom": "cutandcolored:block/soul_sandstone_bottom",
+    "top": "cutandcolored:block/soul_sandstone_top"
+  }
+}
