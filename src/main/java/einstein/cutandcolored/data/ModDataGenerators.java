@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 
 import einstein.cutandcolored.CutAndColored;
+import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.LootTableProvider;
 import net.minecraft.loot.LootParameterSet;
@@ -37,6 +38,9 @@ public class ModDataGenerators {
 		generator.addProvider(new ModLootTableProvder(generator));
 		generator.addProvider(new BlockAssetsGenerator(generator, event.getExistingFileHelper()));
 		generator.addProvider(new ItemAssetsGenerator(generator, event.getExistingFileHelper()));
+		BlockTagsProvider blockTags = new BlockTagsGenerator(generator, event.getExistingFileHelper()); // Used for both item and block tags
+		generator.addProvider(blockTags);
+		generator.addProvider(new ItemTagsGenerator(generator, blockTags, event.getExistingFileHelper()));
 	}
 	
 	public static class ModLootTableProvder extends LootTableProvider {

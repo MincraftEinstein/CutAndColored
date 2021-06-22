@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "cutandcolored:soul_glass",
+    "#forge:glass_slabs",
+    "#forge:glass_stairs"
+  ]
+}
