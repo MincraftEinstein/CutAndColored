@@ -51,10 +51,10 @@ public class WeavingRecipesGenerator extends RecipeResources {
 			String color = item.getRegistryName().getPath().replaceFirst("_wool", "");
 			
 			Item carpet = getItem(new ResourceLocation(color + "_carpet"));
-			weavingRecipe(consumer, carpet.getRegistryName().getPath(), item, carpet);
+			weavingRecipe(consumer, carpet.getRegistryName().getPath(), item, carpet, 2);
 			
 			Item slab = getItem(new ResourceLocation(CutAndColored.MODID, color + "_wool_slab"));
-			weavingRecipe(consumer, slab.getRegistryName().getPath(), item, slab);
+			weavingRecipe(consumer, slab.getRegistryName().getPath(), item, slab, 2);
 			
 			Item stairs = getItem(new ResourceLocation(CutAndColored.MODID, color + "_wool_stairs"));
 			weavingRecipe(consumer, stairs.getRegistryName().getPath(), item, stairs);
@@ -64,13 +64,13 @@ public class WeavingRecipesGenerator extends RecipeResources {
 			String color = item.getRegistryName().getPath().replaceFirst("_wool", "");
 			
 			Item carpet = getItem(new ResourceLocation(CutAndColored.FMODID, color + "_carpet"));
-			weavingRecipe(consumer, carpet.getRegistryName().getPath(), item, carpet);
+			weavingRecipe(consumer, carpet.getRegistryName().getPath(), item, carpet, 2, CutAndColored.FMODID);
 			
 			Item slab = getItem(new ResourceLocation(CutAndColored.MODID, color + "_wool_slab"));
-			weavingRecipe(consumer, slab.getRegistryName().getPath(), item, slab);
+			weavingRecipe(consumer, slab.getRegistryName().getPath(), item, slab, 2, CutAndColored.FMODID);
 			
 			Item stairs = getItem(new ResourceLocation(CutAndColored.MODID, color + "_wool_stairs"));
-			weavingRecipe(consumer, stairs.getRegistryName().getPath(), item, stairs);
+			weavingRecipe(consumer, stairs.getRegistryName().getPath(), item, stairs, 1, CutAndColored.FMODID);
 		}
 	}
 	

@@ -82,6 +82,12 @@ public class RecipeResources extends RecipeProvider {
 		ModRecipeBuilder.weavingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "weaving/"));
 	}
 	
+	protected static void weavingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ModRecipeBuilder.weavingRecipe(Ingredient.fromItems(ingredient), result, count)
+				.addCriterion("has_item", hasItem(ingredient))::build).generateAdvancement().build(consumer, location(name, "weaving/"));
+	}
+	
 	protected static void stairsRecipe(Consumer<IFinishedRecipe> consumer, IItemProvider ingredient, IItemProvider result) {
 		ShapedRecipeBuilder.shapedRecipe(result, 4)
 			.patternLine("#  ")

@@ -1,8 +1,21 @@
 {
-  "type": "cutandcolored:weaving",
-  "ingredient": {
-    "item": "flamboyant:dark_green_wool"
-  },
-  "result": "cutandcolored:dark_green_wool_stairs",
-  "count": 1
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:weaving",
+        "ingredient": {
+          "item": "flamboyant:dark_green_wool"
+        },
+        "result": "cutandcolored:dark_green_wool_stairs",
+        "count": 1
+      }
+    }
+  ]
 }

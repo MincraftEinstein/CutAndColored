@@ -1,8 +1,21 @@
 {
-  "type": "cutandcolored:weaving",
-  "ingredient": {
-    "item": "flamboyant:slate_gray_wool"
-  },
-  "result": "cutandcolored:slate_gray_wool_slab",
-  "count": 1
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:weaving",
+        "ingredient": {
+          "item": "flamboyant:slate_gray_wool"
+        },
+        "result": "cutandcolored:slate_gray_wool_slab",
+        "count": 2
+      }
+    }
+  ]
 }

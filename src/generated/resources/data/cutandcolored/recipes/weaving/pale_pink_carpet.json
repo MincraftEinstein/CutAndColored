@@ -1,8 +1,21 @@
 {
-  "type": "cutandcolored:weaving",
-  "ingredient": {
-    "item": "flamboyant:pale_pink_wool"
-  },
-  "result": "flamboyant:pale_pink_carpet",
-  "count": 1
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:weaving",
+        "ingredient": {
+          "item": "flamboyant:pale_pink_wool"
+        },
+        "result": "flamboyant:pale_pink_carpet",
+        "count": 2
+      }
+    }
+  ]
 }
