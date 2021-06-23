@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.item.FlamboyantDyeColors;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
@@ -18,10 +19,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class WeavingRecipesGenerator extends RecipeResources {
 
-	public static final List<Block> allMCBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
-            .filter((block) -> CutAndColored.MCMODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
-            .collect(Collectors.toList()));
-	
 	public static final List<Block> allFBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
             .filter((block) -> CutAndColored.FMODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
             .collect(Collectors.toList()));
@@ -29,17 +26,16 @@ public class WeavingRecipesGenerator extends RecipeResources {
 	private List<Item> coloredWool = new ArrayList<Item>();
 	private List<Item> fColoredWool = new ArrayList<Item>();
 	
-	
 	public WeavingRecipesGenerator(DataGenerator generatorIn) {
 		super(generatorIn);
 	}
 
 	@Override
 	protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
-		for (int i = 0; i < allMCBlocks.size(); i++) {
+		for (int i = 0; i < ModBlocks.allMCBlocks.size(); i++) {
 			for (int i1 = 0; i1 < DyeColor.values().length; i1++) {
-				if (allMCBlocks.get(i).getRegistryName().getPath().equals(DyeColor.byId(i1).getTranslationKey() + "_wool")) {
-					coloredWool.add(allMCBlocks.get(i).asItem());
+				if (ModBlocks.allMCBlocks.get(i).getRegistryName().getPath().equals(DyeColor.byId(i1).getTranslationKey() + "_wool")) {
+					coloredWool.add(ModBlocks.allMCBlocks.get(i).asItem());
 				}
 			}
 		}

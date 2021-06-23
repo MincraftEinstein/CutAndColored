@@ -18,9 +18,8 @@ import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
+import net.minecraftforge.registries.ForgeRegistries;
 
-@SuppressWarnings("deprecation")
 public class ModRecipeBuilder {
 	private final Item result;
 	private final Ingredient ingredient;
@@ -64,11 +63,15 @@ public class ModRecipeBuilder {
 		this.advancementBuilder.withCriterion(name, criterionIn);
 		return this;
 	}
-
+	
+	public void build(Consumer<IFinishedRecipe> consumerIn) {
+		this.build(consumerIn, ForgeRegistries.ITEMS.getKey(this.result));
+	}
+	
 	public void build(Consumer<IFinishedRecipe> consumerIn, String save) {
-		ResourceLocation resourcelocation = Registry.ITEM.getKey(this.result);
+		ResourceLocation resourcelocation = ForgeRegistries.ITEMS.getKey(this.result);
 		if ((new ResourceLocation(save)).equals(resourcelocation)) {
-			throw new IllegalStateException("Mod Single Item Recipe " + save + " should remove its 'save' argument");
+			throw new IllegalStateException("Mod Recipe Builder " + save + " should remove its 'save' argument");
 		} else {
 			this.build(consumerIn, new ResourceLocation(save));
 		}
@@ -113,7 +116,7 @@ public class ModRecipeBuilder {
 			}
 
 			json.add("ingredient", this.ingredient.serialize());
-			json.addProperty("result", Registry.ITEM.getKey(this.result).toString());
+			json.addProperty("result", ForgeRegistries.ITEMS.getKey(this.result).toString());
 			json.addProperty("count", this.count);
 		}
 

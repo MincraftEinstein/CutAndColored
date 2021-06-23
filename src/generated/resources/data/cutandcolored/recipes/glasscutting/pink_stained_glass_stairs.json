@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "item": "minecraft:pink_stained_glass"
+  },
+  "result": "cutandcolored:pink_stained_glass_stairs",
+  "count": 1
+}

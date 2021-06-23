@@ -14,6 +14,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class RecipeResources extends RecipeProvider {
@@ -56,6 +58,12 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void glasscuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count) {
 		ModRecipeBuilder.glasscuttingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "glasscutting/"));
+	}
+	
+	protected static void glasscuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ModRecipeBuilder.glasscuttingRecipe(Ingredient.fromItems(ingredient), result, count)
+				.addCriterion("has_item", hasItem(ingredient))::build).generateAdvancement().build(consumer, location(name, "glasscutting/"));
 	}
 	
 	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result) {
