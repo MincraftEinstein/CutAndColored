@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "cutandcolored:weaving/test_recipe"
+      "cutandcolored:weaving/amber_carpet"
     ]
   },
   "criteria": {
@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "item": "minecraft:chicken"
+            "item": "flamboyant:amber_wool"
           }
         ]
       }
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "cutandcolored:weaving/test_recipe"
+        "recipe": "cutandcolored:weaving/amber_carpet"
       }
     }
   },

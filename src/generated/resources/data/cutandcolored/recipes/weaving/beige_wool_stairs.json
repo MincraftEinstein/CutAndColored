@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:weaving",
+  "ingredient": {
+    "item": "flamboyant:beige_wool"
+  },
+  "result": "cutandcolored:beige_wool_stairs",
+  "count": 1
+}

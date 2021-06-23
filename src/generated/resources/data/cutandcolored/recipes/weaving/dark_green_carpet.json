@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:weaving",
+  "ingredient": {
+    "item": "flamboyant:dark_green_wool"
+  },
+  "result": "flamboyant:dark_green_carpet",
+  "count": 1
+}

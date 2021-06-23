@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:weaving",
+  "ingredient": {
+    "item": "flamboyant:maroon_wool"
+  },
+  "result": "flamboyant:maroon_carpet",
+  "count": 1
+}

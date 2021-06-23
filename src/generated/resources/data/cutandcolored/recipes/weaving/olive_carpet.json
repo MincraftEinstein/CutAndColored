@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:weaving",
+  "ingredient": {
+    "item": "flamboyant:olive_wool"
+  },
+  "result": "flamboyant:olive_carpet",
+  "count": 1
+}

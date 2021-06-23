@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:weaving",
+  "ingredient": {
+    "item": "minecraft:cyan_wool"
+  },
+  "result": "minecraft:cyan_carpet",
+  "count": 1
+}

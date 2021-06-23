@@ -10,9 +10,11 @@ import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.SingleItemRecipeBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class RecipeResources extends RecipeProvider {
 	
@@ -20,6 +22,10 @@ public class RecipeResources extends RecipeProvider {
 		super(generatorIn);
 	}
 
+	protected Item getItem(ResourceLocation location) {
+		return ForgeRegistries.ITEMS.getValue(location);
+	}
+	
 	protected static ResourceLocation location(String name, String folder) {
 		return new ResourceLocation(CutAndColored.MODID, folder + name);
 	}

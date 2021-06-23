@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:weaving",
+  "ingredient": {
+    "item": "minecraft:black_wool"
+  },
+  "result": "cutandcolored:black_wool_stairs",
+  "count": 1
+}

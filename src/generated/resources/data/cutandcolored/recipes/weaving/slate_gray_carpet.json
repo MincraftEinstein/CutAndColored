@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:weaving",
+  "ingredient": {
+    "item": "flamboyant:slate_gray_wool"
+  },
+  "result": "flamboyant:slate_gray_carpet",
+  "count": 1
+}
