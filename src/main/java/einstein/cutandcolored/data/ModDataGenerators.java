@@ -31,6 +31,7 @@ public class ModDataGenerators {
 	public static void DataGenerator(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
 		generator.addProvider(new CraftingRecipesGenerator(generator));
+		generator.addProvider(new SmeltingRecipeGenerator(generator));
 		generator.addProvider(new StonecuttingRecipesGenerator(generator));
 		generator.addProvider(new GlasscuttingRecipesGenerator(generator));
 		generator.addProvider(new SawmillingRecipesGenerator(generator));
