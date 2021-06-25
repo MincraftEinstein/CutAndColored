@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "flamboyant:slate_gray_concrete"
+        },
+        "result": "cutandcolored:slate_gray_concrete_stairs",
+        "count": 1
+      }
+    }
+  ]
+}

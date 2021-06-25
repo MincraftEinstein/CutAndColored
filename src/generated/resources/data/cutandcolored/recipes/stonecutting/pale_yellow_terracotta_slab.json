@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "flamboyant:pale_yellow_terracotta"
+        },
+        "result": "cutandcolored:pale_yellow_terracotta_slab",
+        "count": 2
+      }
+    }
+  ]
+}

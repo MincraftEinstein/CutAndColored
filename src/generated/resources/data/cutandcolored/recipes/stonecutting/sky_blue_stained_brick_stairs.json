@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "cutandcolored:sky_blue_stained_bricks"
+        },
+        "result": "cutandcolored:sky_blue_stained_brick_stairs",
+        "count": 1
+      }
+    }
+  ]
+}

@@ -44,6 +44,12 @@ public class RecipeResources extends RecipeProvider {
 		SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "stonecutting/"));
 	}
 	
+	protected static void stonecuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ModRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(ingredient), result, count)
+				.addCriterion("has_item", hasItem(ingredient))::build).generateAdvancement().build(consumer, location(name, "stonecutting/"));
+	}
+	
 	protected static void smeltingRecipe(Consumer<IFinishedRecipe> consumer, IItemProvider ingredient, IItemProvider result, float experience, int cookTime) {
 		CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(ingredient.asItem()), result, experience, cookTime).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(result, "smelting/"));
 	}

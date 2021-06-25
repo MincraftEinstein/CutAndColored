@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "cutandcolored:stonecutting/granite_bricks_from_granite"
+      "cutandcolored:stonecutting/red_stained_brick_wall"
     ]
   },
   "criteria": {
@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "item": "minecraft:granite"
+            "item": "cutandcolored:red_stained_bricks"
           }
         ]
       }
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "cutandcolored:stonecutting/granite_bricks_from_granite"
+        "recipe": "cutandcolored:stonecutting/red_stained_brick_wall"
       }
     }
   },

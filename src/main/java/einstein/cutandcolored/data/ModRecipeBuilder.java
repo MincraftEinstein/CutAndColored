@@ -58,6 +58,11 @@ public class ModRecipeBuilder {
 	public static ModRecipeBuilder weavingRecipe(Ingredient ingredientIn, IItemProvider resultIn, int countIn) {
 		return new ModRecipeBuilder(ModRecipeSerializers.WEAVING, ingredientIn, resultIn, countIn);
 	}
+	
+	// Used to add conditions to stonecutting recipes
+	public static ModRecipeBuilder stonecuttingRecipe(Ingredient ingredientIn, IItemProvider resultIn, int countIn) {
+		return new ModRecipeBuilder(IRecipeSerializer.STONECUTTING, ingredientIn, resultIn, countIn);
+	}
 
 	public ModRecipeBuilder addCriterion(String name, ICriterionInstance criterionIn) {
 		this.advancementBuilder.withCriterion(name, criterionIn);

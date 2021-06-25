@@ -48,7 +48,7 @@ public class ModDataGenerators {
 
 		private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootParameterSet>> loot_tables = ImmutableList.of(Pair.of(BlockLootTableGenerator::new, LootParameterSets.BLOCK));
 		
-		public ModLootTableProvder(net.minecraft.data.DataGenerator dataGeneratorIn) {
+		public ModLootTableProvder(DataGenerator dataGeneratorIn) {
 			super(dataGeneratorIn);
 		}
 		
