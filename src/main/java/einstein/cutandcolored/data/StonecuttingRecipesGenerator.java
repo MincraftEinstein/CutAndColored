@@ -9,7 +9,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.item.DyeColor;
-import net.minecraft.util.ResourceLocation;
 
 public class StonecuttingRecipesGenerator extends RecipeResources {
 
@@ -108,18 +107,6 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 			stonecuttingRecipe(consumer, type + "_brick_wall_from_polished", getItem(MCRL("polished_" + type)), getItem(ModRL(type + "_brick_wall")));
 			stonecuttingRecipe(consumer, type + "_brick_wall_from_bricks", getItem(ModRL(type + "_bricks")), getItem(ModRL(type + "_brick_wall")));
 		}
-	}
-	
-	private ResourceLocation ModRL(String string) {
-		return new ResourceLocation(CutAndColored.MODID, string);
-	}
-	
-	private ResourceLocation MCRL(String string) {
-		return new ResourceLocation(CutAndColored.MCMODID, string);
-	}
-	
-	private ResourceLocation FRL(String string) {
-		return new ResourceLocation(CutAndColored.FMODID, string);
 	}
 	
 	@Override

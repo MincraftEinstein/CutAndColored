@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": {
+    "item": "minecraft:pumpkin"
+  },
+  "result": "omgourd:carved_pumpkin_10",
+  "count": 1
+}

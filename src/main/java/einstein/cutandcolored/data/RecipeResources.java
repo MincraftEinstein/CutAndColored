@@ -12,6 +12,7 @@ import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.SingleItemRecipeBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
@@ -28,12 +29,24 @@ public class RecipeResources extends RecipeProvider {
 		return ForgeRegistries.ITEMS.getValue(location);
 	}
 	
+	protected static ResourceLocation ModRL(String string) {
+		return new ResourceLocation(CutAndColored.MODID, string);
+	}
+	
+	protected static ResourceLocation MCRL(String string) {
+		return new ResourceLocation(CutAndColored.MCMODID, string);
+	}
+	
+	protected static ResourceLocation FRL(String string) {
+		return new ResourceLocation(CutAndColored.FMODID, string);
+	}
+	
 	protected static ResourceLocation location(String name, String folder) {
-		return new ResourceLocation(CutAndColored.MODID, folder + name);
+		return ModRL(folder + name);
 	}
 
 	protected static ResourceLocation location(IItemProvider item, String folder) {
-		return new ResourceLocation(CutAndColored.MODID, folder + Objects.requireNonNull(item.asItem().getRegistryName().getPath()));
+		return ModRL(folder + Objects.requireNonNull(item.asItem().getRegistryName().getPath()));
 	}
 	
 	protected static void stonecuttingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result) {
@@ -78,6 +91,26 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count) {
 		ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "sawmilling/"));
+	}
+	
+	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result, count)
+				.addCriterion("has_item", hasItem(ingredient))::build).generateAdvancement().build(consumer, location(name, "sawmilling/"));
+	}
+	
+	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, ITag<Item> ingredient, IItemProvider result) {
+		ModRecipeBuilder.sawmillingRecipe(Ingredient.fromTag(ingredient), result).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "sawmilling/"));
+	}
+	
+	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, ITag<Item> ingredient, IItemProvider result, int count) {
+		ModRecipeBuilder.sawmillingRecipe(Ingredient.fromTag(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "sawmilling/"));
+	}
+	
+	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, ITag<Item> ingredient, IItemProvider result, int count, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ModRecipeBuilder.sawmillingRecipe(Ingredient.fromTag(ingredient), result, count)
+				.addCriterion("has_item", hasItem(ingredient))::build).generateAdvancement().build(consumer, location(name, "sawmilling/"));
 	}
 	
 	protected static void weavingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result) {
