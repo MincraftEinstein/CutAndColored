@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbars",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "minecraft:jungle_log"
+          },
+          {
+            "item": "minecraft:stripped_jungle_log"
+          },
+          {
+            "item": "minecraft:jungle_wood"
+          },
+          {
+            "item": "minecraft:stripped_jungle_wood"
+          }
+        ],
+        "result": "additionalbars:horizontal_jungle_bars",
+        "count": 2
+      }
+    }
+  ]
+}

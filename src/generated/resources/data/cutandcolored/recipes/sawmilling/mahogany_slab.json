@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "biomesoplenty",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "item": "biomesoplenty:mahogany_planks"
+        },
+        "result": "biomesoplenty:mahogany_slab",
+        "count": 2
+      }
+    }
+  ]
+}

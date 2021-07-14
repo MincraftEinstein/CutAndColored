@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": {
+    "item": "biomesoplenty:cherry_planks"
+  },
+  "result": "biomesoplenty:cherry_stairs",
+  "count": 1
+}

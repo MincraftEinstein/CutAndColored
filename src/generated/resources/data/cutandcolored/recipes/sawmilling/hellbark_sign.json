@@ -1,0 +1,19 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": [
+    {
+      "item": "biomesoplenty:hellbark_log"
+    },
+    {
+      "item": "biomesoplenty:stripped_hellbark_log"
+    },
+    {
+      "item": "biomesoplenty:hellbark_wood"
+    },
+    {
+      "item": "biomesoplenty:stripped_hellbark_wood"
+    }
+  ],
+  "result": "minecraft:air",
+  "count": 1
+}

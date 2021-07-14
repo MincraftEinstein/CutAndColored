@@ -1,0 +1,19 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": [
+    {
+      "item": "biomesoplenty:fir_log"
+    },
+    {
+      "item": "biomesoplenty:stripped_fir_log"
+    },
+    {
+      "item": "biomesoplenty:fir_wood"
+    },
+    {
+      "item": "biomesoplenty:stripped_fir_wood"
+    }
+  ],
+  "result": "minecraft:air",
+  "count": 1
+}

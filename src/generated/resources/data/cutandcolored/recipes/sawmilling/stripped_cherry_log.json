@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": {
+    "item": "biomesoplenty:cherry_log"
+  },
+  "result": "biomesoplenty:stripped_cherry_log",
+  "count": 1
+}

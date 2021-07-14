@@ -89,14 +89,20 @@ public class RecipeResources extends RecipeProvider {
 		ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "sawmilling/"));
 	}
 	
-	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count) {
-		ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "sawmilling/"));
-	}
+//	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count) {
+//		ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient)).build(consumer, location(name, "sawmilling/"));
+//	}
 	
-	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider ingredient, IItemProvider result, int count, String modid) {
-		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
-		.addRecipe(ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result, count)
-				.addCriterion("has_item", hasItem(ingredient))::build).generateAdvancement().build(consumer, location(name, "sawmilling/"));
+	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, IItemProvider result, int count, IItemProvider... ingredient) {
+		String modid = result.asItem().getRegistryName().getNamespace();
+		if (modid == CutAndColored.MCMODID || modid == CutAndColored.MODID) {
+			ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result, count).addCriterion("has_item", hasItem(ingredient[0])).build(consumer, location(name, "sawmilling/"));
+		}
+		else {
+			ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+			.addRecipe(ModRecipeBuilder.sawmillingRecipe(Ingredient.fromItems(ingredient), result, count)
+					.addCriterion("has_item", hasItem(ingredient[0]))::build).generateAdvancement().build(consumer, location(name, "sawmilling/"));
+		}
 	}
 	
 	protected static void sawmillingRecipe(Consumer<IFinishedRecipe> consumer, String name, ITag<Item> ingredient, IItemProvider result) {

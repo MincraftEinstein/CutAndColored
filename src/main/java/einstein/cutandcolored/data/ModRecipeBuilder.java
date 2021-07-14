@@ -85,7 +85,9 @@ public class ModRecipeBuilder {
 	public void build(Consumer<IFinishedRecipe> consumerIn, ResourceLocation id) {
 		this.validate(id);
 		this.advancementBuilder.withParentId(new ResourceLocation("recipes/root")).withCriterion("has_the_recipe", RecipeUnlockedTrigger.create(id)).withRewards(AdvancementRewards.Builder.recipe(id)).withRequirementsStrategy(IRequirementsStrategy.OR);
-		consumerIn.accept(new ModRecipeBuilder.Result(id, this.serializer, this.group == null ? "" : this.group, this.ingredient, this.result, this.count, this.advancementBuilder, new ResourceLocation(id.getNamespace(), "recipes/" + this.result.getGroup().getPath() + "/" + id.getPath())));
+		consumerIn.accept(new ModRecipeBuilder.Result(id, this.serializer, this.group == null ? "" : this.group,
+				this.ingredient, this.result, this.count, this.advancementBuilder, new ResourceLocation(
+						id.getNamespace(), "recipes/" + /* this.result.getGroup().getPath() + "/" + */ id.getPath())));
 	}
 
 	private void validate(ResourceLocation id) {

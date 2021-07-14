@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "biomesoplenty",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:redwood_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_redwood_log"
+          },
+          {
+            "item": "biomesoplenty:redwood_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_redwood_wood"
+          }
+        ],
+        "result": "biomesoplenty:redwood_door",
+        "count": 1
+      }
+    }
+  ]
+}
