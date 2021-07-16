@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "rewards": {
-    "recipes": [
-      "cutandcolored:sawmilling/willow_bars_from_bars"
-    ]
-  },
-  "criteria": {
-    "has_item": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "minecraft:air"
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "additionalbarsbop:willow_bars"
+          ]
+        },
+        "criteria": {
+          "has_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "item": "additionalbarsbop:horizontal_willow_bars"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "additionalbarsbop:willow_bars"
+            }
           }
+        },
+        "requirements": [
+          [
+            "has_item",
+            "has_the_recipe"
+          ]
         ]
       }
-    },
-    "has_the_recipe": {
-      "trigger": "minecraft:recipe_unlocked",
-      "conditions": {
-        "recipe": "cutandcolored:sawmilling/willow_bars_from_bars"
-      }
     }
-  },
-  "requirements": [
-    [
-      "has_item",
-      "has_the_recipe"
-    ]
   ]
 }

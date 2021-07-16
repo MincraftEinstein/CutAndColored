@@ -1,19 +1,32 @@
 {
-  "type": "cutandcolored:sawmilling",
-  "ingredient": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "biomesoplenty:palm_log"
-    },
-    {
-      "item": "biomesoplenty:stripped_palm_log"
-    },
-    {
-      "item": "biomesoplenty:palm_wood"
-    },
-    {
-      "item": "biomesoplenty:stripped_palm_wood"
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:palm_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_palm_log"
+          },
+          {
+            "item": "biomesoplenty:palm_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_palm_wood"
+          }
+        ],
+        "result": "additionalbarsbop:horizontal_palm_bars",
+        "count": 2
+      }
     }
-  ],
-  "result": "minecraft:air",
-  "count": 2
+  ]
 }

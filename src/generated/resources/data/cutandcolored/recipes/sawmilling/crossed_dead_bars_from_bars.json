@@ -1,6 +1,29 @@
 {
-  "type": "cutandcolored:sawmilling",
-  "ingredient": [],
-  "result": "minecraft:air",
-  "count": 1
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "additionalbarsbop:horizontal_dead_bars"
+          },
+          {
+            "item": "additionalbarsbop:horizontal_crossed_dead_bars"
+          },
+          {
+            "item": "additionalbarsbop:dead_bars"
+          }
+        ],
+        "result": "additionalbarsbop:crossed_dead_bars",
+        "count": 1
+      }
+    }
+  ]
 }

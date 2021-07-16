@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.item.FlamboyantDyeColors;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -77,35 +78,70 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 		for (int i = 0; i < woodTypes.size(); i++) {
 			String modid = woodTypes.get(i)[0];
 			String woodName = woodTypes.get(i)[1];
+			String logKind;
+			String woodKind;
 			
-			Item log = getItem(new ResourceLocation(modid, woodName + "_log"));
-			Item strippedLog = getItem(new ResourceLocation(modid, "stripped_" + woodName + "_log"));
-			Item wood = getItem(new ResourceLocation(modid, woodName + "_wood"));
-			Item strippedWood = getItem(new ResourceLocation(modid, "stripped_" + woodName + "_wood"));
+			Item log;
+			Item strippedLog;
+			Item strippedWood;
+			Item wood;
+			Item bars;
+			Item crossed_bars;
+			Item horizontal_bars;
+			Item horizontal_crossed_bars;
 			Item planks = getItem(new ResourceLocation(modid, woodName + "_planks"));
 			Item stairs = getItem(new ResourceLocation(modid, woodName + "_stairs"));
 			Item slab = getItem(new ResourceLocation(modid, woodName + "_slab"));
-			Item bars = null;
-			Item crossed_bars = null;
-			Item horizontal_bars = null;
-			Item horizontal_crossed_bars = null;
 			
-			Item[] logTypes = { log, strippedLog, wood, strippedWood }; // Temporary fix, until I figure out how to indirectly use tags 
+			try {
+				logKind = "_log";
+				log = getItem(new ResourceLocation(modid, woodName + logKind));
+				strippedLog = getItem(new ResourceLocation(modid, "stripped_" + woodName + logKind));
+			}
+			catch (Exception e) {
+				logKind = "_stem";
+				log = getItem(new ResourceLocation(modid, woodName + logKind)); 
+				strippedLog = getItem(new ResourceLocation(modid, "stripped_" + woodName + logKind));
+			}
+			
+			try {
+				woodKind = "_wood";
+				wood = getItem(new ResourceLocation(modid, woodName + woodKind));
+				strippedWood = getItem(new ResourceLocation(modid, "stripped_" + woodName + woodKind));
+			}
+			catch (Exception e) {
+				woodKind = "_hyphae";
+				wood = getItem(new ResourceLocation(modid, woodName + woodKind));
+				strippedWood = getItem(new ResourceLocation(modid, "stripped_" + woodName + woodKind));
+			}
+			
+			Item[] logTypes = { log, strippedLog, wood, strippedWood }; // Temporary fix, until I figure out how to indirectly reference tags
+			String s = logKind + "s";
 			sawmillingRecipe(consumer, woodName + "_planks", planks, 4, logTypes);
 			sawmillingRecipe(consumer, woodName + "_slab", slab, 2, planks);
 			sawmillingRecipe(consumer, woodName + "_stairs", planks, stairs);
-			sawmillingRecipe(consumer, "stripped_" + woodName + "_log", log, strippedLog);
-			sawmillingRecipe(consumer, "stripped_" + woodName + "_wood", wood, strippedWood);
-			sawmillingRecipe(consumer, woodName + "_boat", getItem(new ResourceLocation(modid, woodName + "_boat")), 1, logTypes);
+			sawmillingRecipe(consumer, "stripped_" + woodName + s, log, strippedLog);
+			sawmillingRecipe(consumer, "stripped_" + woodName + woodKind + "s", wood, strippedWood);
 			sawmillingRecipe(consumer, woodName + "_door", getItem(new ResourceLocation(modid, woodName + "_door")), 1, logTypes);
 			sawmillingRecipe(consumer, woodName + "_fence", getItem(new ResourceLocation(modid, woodName + "_fence")), 1, logTypes);
 			sawmillingRecipe(consumer, woodName + "_fence_gate", getItem(new ResourceLocation(modid, woodName + "_fence_gate")), 1, logTypes);
-			sawmillingRecipe(consumer, woodName + "_slab_from_logs", slab, 1, logTypes);
-			sawmillingRecipe(consumer, woodName + "_stairs_from_logs", stairs, 1, logTypes);
+			sawmillingRecipe(consumer, woodName + "_slab_from" + s, slab, 1, logTypes);
+			sawmillingRecipe(consumer, woodName + "_stairs_from" + s, stairs, 1, logTypes);
 			sawmillingRecipe(consumer, woodName + "_trapdoor", getItem(new ResourceLocation(modid, woodName + "_trapdoor")), 2, logTypes);
-			sawmillingRecipe(consumer, woodName + "_sign", getItem(new ResourceLocation(modid, woodName + "_sign")), 1, logTypes);
 			
-			try { 	// Try using @ObjectHolders for getting the log type tags
+			try {
+				sawmillingRecipe(consumer, woodName + "_boat", getItem(new ResourceLocation(modid, woodName + "_boat")), 1, logTypes);
+			}
+			catch (Exception e) {
+			}
+			
+			try {
+				sawmillingRecipe(consumer, woodName + "_sign", getItem(new ResourceLocation(modid, woodName + "_sign")), 1, logTypes);
+			}
+			catch (Exception e) {
+			}
+			
+			try {
 				bars = getItem(new ResourceLocation("additionalbars", woodName + "_bars"));
 				horizontal_bars = getItem(new ResourceLocation("additionalbars", "horizontal_" + woodName + "_bars"));
 				horizontal_crossed_bars = getItem(new ResourceLocation("additionalbars", "horizontal_crossed_" + woodName + "_bars"));
@@ -137,25 +173,20 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 	}
 	
 	private void getWood() {
-//		String[] woodtypes = {"oak", "spruce", "birch", "jungle", "dark_oak", "acacia", "crimson", "warped", "fir", "hellbark", "cherry", "dead", "jacaranda", "magic", "mahogany", "palm", "redwood", "umbran", "willow"};
 		for (int i = 0; i < ForgeRegistries.BLOCKS.getValues().size(); i++) {
 			Block block = ForgeRegistries.BLOCKS.getValues().stream().collect(Collectors.toList()).get(i);
 			if (block.getRegistryName().getPath().contains("_log") && !block.getRegistryName().getPath().contains("stripped_")) {
-				String[] object = {block.getRegistryName().getNamespace(), block.getRegistryName().getPath().replace("_log", "")};
+				String[] object = { block.getRegistryName().getNamespace(), block.getRegistryName().getPath().replace("_log", "") };
 				woodTypes.add(object);
 			}
 		}
-//		for (int i = 0; i < woodtypes.length; i++) {
-//			String type = woodtypes[i];
-//			if (i < 8) {
-//				String[] object = {"minecraft", type};
-//				woodTypes.add(object);
-//			}
-//			else if (i > 5 && i < 20) {
-//				String[] object = {"biomesoplenty", type};
-//				woodTypes.add(object);
-//			}
-//		}
+		
+		String[] object = {CutAndColored.MCMODID, "crimson"};
+		woodTypes.add(object);
+		String[] object2 = {CutAndColored.MCMODID, "warped"};
+		woodTypes.add(object2);
+		
+		CutAndColored.LOGGER.debug("Found " + woodTypes.size() + " wood types");
 	}
 	
 	@Override

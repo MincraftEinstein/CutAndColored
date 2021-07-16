@@ -1,19 +1,32 @@
 {
-  "type": "cutandcolored:sawmilling",
-  "ingredient": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "biomesoplenty:cherry_log"
-    },
-    {
-      "item": "biomesoplenty:stripped_cherry_log"
-    },
-    {
-      "item": "biomesoplenty:cherry_wood"
-    },
-    {
-      "item": "biomesoplenty:stripped_cherry_wood"
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:cherry_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_cherry_log"
+          },
+          {
+            "item": "biomesoplenty:cherry_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_cherry_wood"
+          }
+        ],
+        "result": "additionalbarsbop:cherry_bars",
+        "count": 2
+      }
     }
-  ],
-  "result": "minecraft:air",
-  "count": 2
+  ]
 }

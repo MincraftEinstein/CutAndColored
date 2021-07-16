@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbars",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "minecraft:warped_stem"
+          },
+          {
+            "item": "minecraft:stripped_warped_stem"
+          },
+          {
+            "item": "minecraft:warped_hyphae"
+          },
+          {
+            "item": "minecraft:stripped_warped_hyphae"
+          }
+        ],
+        "result": "additionalbars:warped_bars",
+        "count": 2
+      }
+    }
+  ]
+}

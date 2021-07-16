@@ -1,6 +1,29 @@
 {
-  "type": "cutandcolored:sawmilling",
-  "ingredient": [],
-  "result": "minecraft:air",
-  "count": 1
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "additionalbarsbop:horizontal_jacaranda_bars"
+          },
+          {
+            "item": "additionalbarsbop:horizontal_crossed_jacaranda_bars"
+          },
+          {
+            "item": "additionalbarsbop:jacaranda_bars"
+          }
+        ],
+        "result": "additionalbarsbop:crossed_jacaranda_bars",
+        "count": 1
+      }
+    }
+  ]
 }

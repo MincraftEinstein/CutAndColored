@@ -1,19 +1,32 @@
 {
-  "type": "cutandcolored:sawmilling",
-  "ingredient": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "biomesoplenty:dead_log"
-    },
-    {
-      "item": "biomesoplenty:stripped_dead_log"
-    },
-    {
-      "item": "biomesoplenty:dead_wood"
-    },
-    {
-      "item": "biomesoplenty:stripped_dead_wood"
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:dead_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_dead_log"
+          },
+          {
+            "item": "biomesoplenty:dead_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_dead_wood"
+          }
+        ],
+        "result": "additionalbarsbop:crossed_dead_bars",
+        "count": 2
+      }
     }
-  ],
-  "result": "minecraft:air",
-  "count": 2
+  ]
 }

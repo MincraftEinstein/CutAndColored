@@ -1,19 +1,32 @@
 {
-  "type": "cutandcolored:sawmilling",
-  "ingredient": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "biomesoplenty:mahogany_log"
-    },
-    {
-      "item": "biomesoplenty:stripped_mahogany_log"
-    },
-    {
-      "item": "biomesoplenty:mahogany_wood"
-    },
-    {
-      "item": "biomesoplenty:stripped_mahogany_wood"
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:mahogany_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_mahogany_log"
+          },
+          {
+            "item": "biomesoplenty:mahogany_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_mahogany_wood"
+          }
+        ],
+        "result": "additionalbarsbop:horizontal_mahogany_bars",
+        "count": 2
+      }
     }
-  ],
-  "result": "minecraft:air",
-  "count": 2
+  ]
 }

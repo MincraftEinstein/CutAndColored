@@ -1,19 +1,32 @@
 {
-  "type": "cutandcolored:sawmilling",
-  "ingredient": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "biomesoplenty:umbran_log"
-    },
-    {
-      "item": "biomesoplenty:stripped_umbran_log"
-    },
-    {
-      "item": "biomesoplenty:umbran_wood"
-    },
-    {
-      "item": "biomesoplenty:stripped_umbran_wood"
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:umbran_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_umbran_log"
+          },
+          {
+            "item": "biomesoplenty:umbran_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_umbran_wood"
+          }
+        ],
+        "result": "additionalbarsbop:umbran_bars",
+        "count": 2
+      }
     }
-  ],
-  "result": "minecraft:air",
-  "count": 2
+  ]
 }

@@ -1,19 +1,32 @@
 {
-  "type": "cutandcolored:sawmilling",
-  "ingredient": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "biomesoplenty:jacaranda_log"
-    },
-    {
-      "item": "biomesoplenty:stripped_jacaranda_log"
-    },
-    {
-      "item": "biomesoplenty:jacaranda_wood"
-    },
-    {
-      "item": "biomesoplenty:stripped_jacaranda_wood"
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:jacaranda_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_jacaranda_log"
+          },
+          {
+            "item": "biomesoplenty:jacaranda_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_jacaranda_wood"
+          }
+        ],
+        "result": "additionalbarsbop:jacaranda_bars",
+        "count": 2
+      }
     }
-  ],
-  "result": "minecraft:air",
-  "count": 2
+  ]
 }

@@ -11,6 +11,7 @@ import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.SingleItemRecipeBuilder;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
@@ -26,7 +27,13 @@ public class RecipeResources extends RecipeProvider {
 	}
 
 	protected Item getItem(ResourceLocation location) {
-		return ForgeRegistries.ITEMS.getValue(location);
+		Item item = ForgeRegistries.ITEMS.getValue(location);
+		if (item != Items.AIR) {
+			return item;
+		}
+		else {
+			throw new NullPointerException("Could not find item: " + location.toString());
+		}
 	}
 	
 	protected static ResourceLocation ModRL(String string) {
