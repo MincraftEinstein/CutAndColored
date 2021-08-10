@@ -20,7 +20,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class SawmillingRecipesGenerator extends RecipeResources {
 
-	List<String[]> woodTypes = new ArrayList<String[]>();
+	private List<String[]> woodTypes = new ArrayList<String[]>();
+	private String namespace;
 	
 	public SawmillingRecipesGenerator(DataGenerator generatorIn) {
 		super(generatorIn);
@@ -28,55 +29,57 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 	
 	@Override
 	protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
-		pumpkinRecipes(consumer);
-		vanillaColoredWood(consumer);
-		flamboyantColoredWood(consumer);
-		wood(consumer);
+		setConsumer(consumer);
+		pumpkinRecipes();
+		vanillaColoredWood();
+		flamboyantColoredWood();
+		wood();
 		
-		sawmillingRecipe(consumer, "bowl_from_logs", ItemTags.LOGS, Items.BOWL, 4);
-		sawmillingRecipe(consumer, "bowl", ItemTags.PLANKS, Items.BOWL);
-		sawmillingRecipe(consumer, "crafting_table", ItemTags.LOGS, Blocks.CRAFTING_TABLE);
-		sawmillingRecipe(consumer, "sticks_from_logs", ItemTags.LOGS, Items.STICK, 16);
-		sawmillingRecipe(consumer, "sticks_from_planks", ItemTags.PLANKS, Items.STICK, 4);
-		sawmillingRecipe(consumer, "carved_pumpkin", Blocks.PUMPKIN, Blocks.CARVED_PUMPKIN);
+		sawmillingRecipe("bowl_from_logs", ItemTags.LOGS, Items.BOWL, 4);
+		sawmillingRecipe("bowl", ItemTags.PLANKS, Items.BOWL);
+		sawmillingRecipe("crafting_table", ItemTags.LOGS, Blocks.CRAFTING_TABLE);
+		sawmillingRecipe("sticks_from_logs", ItemTags.LOGS, Items.STICK, 16);
+		sawmillingRecipe("sticks_from_planks", ItemTags.PLANKS, Items.STICK, 4);
+		sawmillingRecipe("carved_pumpkin", Blocks.PUMPKIN, Blocks.CARVED_PUMPKIN);
 	}
 	
-	private void pumpkinRecipes(Consumer<IFinishedRecipe> consumer) {
+	private void pumpkinRecipes() {
 		for (int i = 0; i < 24; i++) {
 			int i1 = i + 1;
 			Item item = getItem(new ResourceLocation("omgourd", "carved_pumpkin_" + i1));
-			sawmillingRecipe(consumer, "carved_pumpkin_" + i1, Blocks.PUMPKIN, item);
-			sawmillingRecipe(consumer, "recarve_pumpkin_" + i1, ItemTagsGenerator.CARVED_PUMPKINS, item, 1, "omgourd");
+			sawmillingRecipe("carved_pumpkin_" + i1, Blocks.PUMPKIN, item);
+			sawmillingRecipe("recarve_pumpkin_" + i1, ItemTagsGenerator.CARVED_PUMPKINS, item, 1);
 			
 			item = getItem(new ResourceLocation("omgourd", "jack_o_lantern_" + i1));
-			sawmillingRecipe(consumer, "recave_jack_o_lantern_" + i1, ItemTagsGenerator.JACK_O_LANTERNS, item, 1, "omgourd");
+			sawmillingRecipe("recave_jack_o_lantern_" + i1, ItemTagsGenerator.JACK_O_LANTERNS, item, 1);
 		}
 	}
 	
-	private void vanillaColoredWood(Consumer<IFinishedRecipe> consumer) {
+	private void vanillaColoredWood() {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			String color = DyeColor.byId(i).getTranslationKey();
 			Item item = getItem(ModRL(color + "_stained_planks"));
 			
-			sawmillingRecipe(consumer, color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
-			sawmillingRecipe(consumer, color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
+			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
+			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
 		}
 	}
 	
-	private void flamboyantColoredWood(Consumer<IFinishedRecipe> consumer) {
+	private void flamboyantColoredWood() {
 		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
 			String color = FlamboyantDyeColors.byId(i).getTranslationKey();
 			Item item = getItem(ModRL(color + "_stained_planks"));
 			
-			sawmillingRecipe(consumer, color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
-			sawmillingRecipe(consumer, color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
+			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
+			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
 		}
 	}
 	
-	private void wood(Consumer<IFinishedRecipe> consumer) {
+	private void wood() {
 		getWood();
 		for (int i = 0; i < woodTypes.size(); i++) {
 			String modid = woodTypes.get(i)[0];
+			namespace = modid;
 			String woodName = woodTypes.get(i)[1];
 			String logKind;
 			String woodKind;
@@ -89,54 +92,54 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			Item crossed_bars;
 			Item horizontal_bars;
 			Item horizontal_crossed_bars;
-			Item planks = getItem(new ResourceLocation(modid, woodName + "_planks"));
-			Item stairs = getItem(new ResourceLocation(modid, woodName + "_stairs"));
-			Item slab = getItem(new ResourceLocation(modid, woodName + "_slab"));
+			Item planks = getItem(RL(woodName + "_planks"));
+			Item stairs = getItem(RL(woodName + "_stairs"));
+			Item slab = getItem(RL(woodName + "_slab"));
 			
 			try {
 				logKind = "_log";
-				log = getItem(new ResourceLocation(modid, woodName + logKind));
-				strippedLog = getItem(new ResourceLocation(modid, "stripped_" + woodName + logKind));
+				log = getItem(RL(woodName + logKind));
+				strippedLog = getItem(RL("stripped_" + woodName + logKind));
 			}
 			catch (Exception e) {
 				logKind = "_stem";
-				log = getItem(new ResourceLocation(modid, woodName + logKind)); 
-				strippedLog = getItem(new ResourceLocation(modid, "stripped_" + woodName + logKind));
+				log = getItem(RL(woodName + logKind)); 
+				strippedLog = getItem(RL("stripped_" + woodName + logKind));
 			}
 			
 			try {
 				woodKind = "_wood";
-				wood = getItem(new ResourceLocation(modid, woodName + woodKind));
-				strippedWood = getItem(new ResourceLocation(modid, "stripped_" + woodName + woodKind));
+				wood = getItem(RL(woodName + woodKind));
+				strippedWood = getItem(RL("stripped_" + woodName + woodKind));
 			}
 			catch (Exception e) {
 				woodKind = "_hyphae";
-				wood = getItem(new ResourceLocation(modid, woodName + woodKind));
-				strippedWood = getItem(new ResourceLocation(modid, "stripped_" + woodName + woodKind));
+				wood = getItem(RL(woodName + woodKind));
+				strippedWood = getItem(RL("stripped_" + woodName + woodKind));
 			}
 			
 			Item[] logTypes = { log, strippedLog, wood, strippedWood }; // Temporary fix, until I figure out how to indirectly reference tags
 			String s = logKind + "s";
-			sawmillingRecipe(consumer, woodName + "_planks", planks, 4, logTypes);
-			sawmillingRecipe(consumer, woodName + "_slab", slab, 2, planks);
-			sawmillingRecipe(consumer, woodName + "_stairs", planks, stairs);
-			sawmillingRecipe(consumer, "stripped_" + woodName + s, log, strippedLog);
-			sawmillingRecipe(consumer, "stripped_" + woodName + woodKind + "s", wood, strippedWood);
-			sawmillingRecipe(consumer, woodName + "_door", getItem(new ResourceLocation(modid, woodName + "_door")), 1, logTypes);
-			sawmillingRecipe(consumer, woodName + "_fence", getItem(new ResourceLocation(modid, woodName + "_fence")), 1, logTypes);
-			sawmillingRecipe(consumer, woodName + "_fence_gate", getItem(new ResourceLocation(modid, woodName + "_fence_gate")), 1, logTypes);
-			sawmillingRecipe(consumer, woodName + "_slab_from" + s, slab, 1, logTypes);
-			sawmillingRecipe(consumer, woodName + "_stairs_from" + s, stairs, 1, logTypes);
-			sawmillingRecipe(consumer, woodName + "_trapdoor", getItem(new ResourceLocation(modid, woodName + "_trapdoor")), 2, logTypes);
+			sawmillingRecipe(woodName + "_planks", planks, 4, log, logTypes);
+			sawmillingRecipe(woodName + "_slab", planks, slab, 2);
+			sawmillingRecipe(woodName + "_stairs", planks, stairs);
+			sawmillingRecipe("stripped_" + woodName + s, log, strippedLog);
+			sawmillingRecipe("stripped_" + woodName + woodKind + "s", wood, strippedWood);
+			sawmillingRecipe(woodName + "_door", getItem(RL(woodName + "_door")), 1, log, logTypes);
+			sawmillingRecipe(woodName + "_fence", getItem(RL(woodName + "_fence")), 1, log, logTypes);
+			sawmillingRecipe(woodName + "_fence_gate", getItem(RL(woodName + "_fence_gate")), 1, log, logTypes);
+			sawmillingRecipe(woodName + "_slab_from" + s, slab, 1, log, logTypes);
+			sawmillingRecipe(woodName + "_stairs_from" + s, stairs, 1, log, logTypes);
+			sawmillingRecipe(woodName + "_trapdoor", getItem(RL(woodName + "_trapdoor")), 2, log, logTypes);
 			
 			try {
-				sawmillingRecipe(consumer, woodName + "_boat", getItem(new ResourceLocation(modid, woodName + "_boat")), 1, logTypes);
+				sawmillingRecipe(woodName + "_boat", getItem(RL(woodName + "_boat")), 1, log, logTypes);
 			}
 			catch (Exception e) {
 			}
 			
 			try {
-				sawmillingRecipe(consumer, woodName + "_sign", getItem(new ResourceLocation(modid, woodName + "_sign")), 1, logTypes);
+				sawmillingRecipe(woodName + "_sign", getItem(RL(woodName + "_sign")), 1, log, logTypes);
 			}
 			catch (Exception e) {
 			}
@@ -155,17 +158,17 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			}
 			
 			try {
-				sawmillingRecipe(consumer, woodName + "_bars", bars, 2, logTypes);
-				sawmillingRecipe(consumer, woodName + "_bars_from_bars", bars, 1, horizontal_bars, horizontal_crossed_bars, crossed_bars);
+//				sawmillingRecipe(woodName + "_bars", bars, 2, logTypes);
+				sawmillingRecipe(woodName + "_bars_from_bars", bars, 1, horizontal_bars, horizontal_crossed_bars, crossed_bars);
 				
-				sawmillingRecipe(consumer, "crossed_" + woodName + "_bars", crossed_bars, 2, logTypes);
-				sawmillingRecipe(consumer, "crossed_" + woodName + "_bars_from_bars", crossed_bars, 1, horizontal_bars, horizontal_crossed_bars, bars);
+//				sawmillingRecipe("crossed_" + woodName + "_bars", crossed_bars, 2, logTypes);
+				sawmillingRecipe("crossed_" + woodName + "_bars_from_bars", crossed_bars, 1, horizontal_bars, horizontal_crossed_bars, bars);
 				
-				sawmillingRecipe(consumer, "horizontal_" + woodName + "_bars", horizontal_bars, 2, logTypes);
-				sawmillingRecipe(consumer, "horizontal_" + woodName + "_bars_from_bars", horizontal_bars, 1, horizontal_crossed_bars, bars, crossed_bars);
+//				sawmillingRecipe("horizontal_" + woodName + "_bars", horizontal_bars, 2, logTypes);
+				sawmillingRecipe("horizontal_" + woodName + "_bars_from_bars", horizontal_bars, 1, horizontal_crossed_bars, bars, crossed_bars);
 				
-				sawmillingRecipe(consumer, "horizontal_crossed_" + woodName + "_bars", horizontal_crossed_bars, 2, logTypes);
-				sawmillingRecipe(consumer, "horizontal_crossed_" + woodName + "_bars_from_bars", horizontal_crossed_bars, 1, horizontal_bars, bars, crossed_bars);
+//				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars", horizontal_crossed_bars, 2, logTypes);
+				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars_from_bars", horizontal_crossed_bars, 1, horizontal_bars, bars, crossed_bars);
 			}
 			catch (Exception e) {
 			}
@@ -187,6 +190,10 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 		woodTypes.add(object2);
 		
 		CutAndColored.LOGGER.debug("Found " + woodTypes.size() + " wood types");
+	}
+	
+	private ResourceLocation RL(String string) {
+		return new ResourceLocation(namespace, string);
 	}
 	
 	@Override

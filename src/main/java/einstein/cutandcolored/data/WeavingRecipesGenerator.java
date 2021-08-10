@@ -14,7 +14,6 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class WeavingRecipesGenerator extends RecipeResources {
@@ -50,27 +49,27 @@ public class WeavingRecipesGenerator extends RecipeResources {
 			Item item = coloredWool.get(i);
 			String color = item.getRegistryName().getPath().replaceFirst("_wool", "");
 			
-			Item carpet = getItem(new ResourceLocation(color + "_carpet"));
-			weavingRecipe(consumer, carpet.getRegistryName().getPath(), item, carpet, 2);
+			Item carpet = getItem(MCRL(color + "_carpet"));
+			weavingRecipe(carpet.getRegistryName().getPath(), item, carpet, 2);
 			
-			Item slab = getItem(new ResourceLocation(CutAndColored.MODID, color + "_wool_slab"));
-			weavingRecipe(consumer, slab.getRegistryName().getPath(), item, slab, 2);
+			Item slab = getItem(ModRL(color + "_wool_slab"));
+			weavingRecipe(slab.getRegistryName().getPath(), item, slab, 2);
 			
-			Item stairs = getItem(new ResourceLocation(CutAndColored.MODID, color + "_wool_stairs"));
-			weavingRecipe(consumer, stairs.getRegistryName().getPath(), item, stairs);
+			Item stairs = getItem(ModRL(color + "_wool_stairs"));
+			weavingRecipe(stairs.getRegistryName().getPath(), item, stairs);
 		}
 		for (int i = 0; i < fColoredWool.size(); i++) {
 			Item item = fColoredWool.get(i);
 			String color = item.getRegistryName().getPath().replaceFirst("_wool", "");
 			
-			Item carpet = getItem(new ResourceLocation(CutAndColored.FMODID, color + "_carpet"));
-			weavingRecipe(consumer, carpet.getRegistryName().getPath(), item, carpet, 2, CutAndColored.FMODID);
+			Item carpet = getItem(FRL(color + "_carpet"));
+			weavingRecipe(carpet.getRegistryName().getPath(), item, carpet, 2);
 			
-			Item slab = getItem(new ResourceLocation(CutAndColored.MODID, color + "_wool_slab"));
-			weavingRecipe(consumer, slab.getRegistryName().getPath(), item, slab, 2, CutAndColored.FMODID);
+			Item slab = getItem(ModRL(color + "_wool_slab"));
+			weavingRecipe(slab.getRegistryName().getPath(), item, slab, 2, CutAndColored.FMODID);
 			
-			Item stairs = getItem(new ResourceLocation(CutAndColored.MODID, color + "_wool_stairs"));
-			weavingRecipe(consumer, stairs.getRegistryName().getPath(), item, stairs, 1, CutAndColored.FMODID);
+			Item stairs = getItem(ModRL(color + "_wool_stairs"));
+			weavingRecipe(stairs.getRegistryName().getPath(), item, stairs, 1, CutAndColored.FMODID);
 		}
 	}
 	

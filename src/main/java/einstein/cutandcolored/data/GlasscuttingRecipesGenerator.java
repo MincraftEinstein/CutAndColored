@@ -26,6 +26,7 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 	
 	@Override
 	protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
+		setConsumer(consumer);
 		for (int i = 0; i < ModBlocks.allMCBlocks.size(); i++) {
 			for (int i1 = 0; i1 < DyeColor.values().length; i1++) {
 				if (ModBlocks.allMCBlocks.get(i).getRegistryName().getPath().equals(DyeColor.byId(i1).getTranslationKey() + "_stained_glass")) {
@@ -41,45 +42,45 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 			}
 		}
 		
-		glasscuttingRecipe(consumer, "glass_bottle", Blocks.GLASS, Items.GLASS_BOTTLE);
-		glasscuttingRecipe(consumer, "glass_pane", Blocks.GLASS, Blocks.GLASS_PANE, 4);
-		glasscuttingRecipe(consumer, "glass_slab", Blocks.GLASS, ModBlocks.GLASS_SLAB, 2);
-		glasscuttingRecipe(consumer, "glass_stairs", Blocks.GLASS, ModBlocks.GLASS_STAIRS);
-		glasscuttingRecipe(consumer, "horizontal_glass_pane", Blocks.GLASS, com.codenamerevy.horizontalpanes.content.blocks.ModBlocks.GLASS_PANE.get(), 4, "horizontalpanes");
+		glasscuttingRecipe("glass_bottle", Blocks.GLASS, Items.GLASS_BOTTLE);
+		glasscuttingRecipe("glass_pane", Blocks.GLASS, Blocks.GLASS_PANE, 4);
+		glasscuttingRecipe("glass_slab", Blocks.GLASS, ModBlocks.GLASS_SLAB, 2);
+		glasscuttingRecipe("glass_stairs", Blocks.GLASS, ModBlocks.GLASS_STAIRS);
+		glasscuttingRecipe("horizontal_glass_pane", Blocks.GLASS, com.codenamerevy.horizontalpanes.content.blocks.ModBlocks.GLASS_PANE.get(), 4);
 		
-		glasscuttingRecipe(consumer, "soul_glass_pane", ModBlocks.SOUL_GLASS, ModBlocks.SOUL_GLASS_PANE, 4);
-		glasscuttingRecipe(consumer, "soul_glass_slab", ModBlocks.SOUL_GLASS, ModBlocks.SOUL_GLASS_SLAB, 2);
-		glasscuttingRecipe(consumer, "soul_glass_stairs", ModBlocks.SOUL_GLASS, ModBlocks.SOUL_GLASS_STAIRS);
-		glasscuttingRecipe(consumer, "horizontal_soul_glass_pane", ModBlocks.SOUL_GLASS, ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, 4, "horizontalpanes");
+		glasscuttingRecipe("soul_glass_pane", ModBlocks.SOUL_GLASS, ModBlocks.SOUL_GLASS_PANE, 4);
+		glasscuttingRecipe("soul_glass_slab", ModBlocks.SOUL_GLASS, ModBlocks.SOUL_GLASS_SLAB, 2);
+		glasscuttingRecipe("soul_glass_stairs", ModBlocks.SOUL_GLASS, ModBlocks.SOUL_GLASS_STAIRS);
+		glasscuttingRecipe("horizontal_soul_glass_pane", ModBlocks.SOUL_GLASS, ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, 4, "horizontalpanes");
 		
 		for (int i = 0; i < stainedGlass.size(); i++) {
 			Item item = stainedGlass.get(i);
 			String color = item.getRegistryName().getPath().replaceFirst("_stained_glass", "");
 			
-			Item pane = getItem(new ResourceLocation(CutAndColored.MCMODID, color + "_stained_glass_pane"));
-			glasscuttingRecipe(consumer, pane.getRegistryName().getPath(), item, pane, 4);
+			Item pane = getItem(MCRL(color + "_stained_glass_pane"));
+			glasscuttingRecipe(pane.getRegistryName().getPath(), item, pane, 4);
 			
-			Item slab = getItem(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_slab"));
-			glasscuttingRecipe(consumer, slab.getRegistryName().getPath(), item, slab, 2);
+			Item slab = getItem(ModRL(color + "_stained_glass_slab"));
+			glasscuttingRecipe(slab.getRegistryName().getPath(), item, slab, 2);
 			
-			Item stairs = getItem(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_stairs"));
-			glasscuttingRecipe(consumer, stairs.getRegistryName().getPath(), item, stairs);
+			Item stairs = getItem(ModRL(color + "_stained_glass_stairs"));
+			glasscuttingRecipe(stairs.getRegistryName().getPath(), item, stairs);
 			
 			Item hPane = getItem(new ResourceLocation("horizontalpanes", "horizontal_stained_" + color + "_pane"));
-			glasscuttingRecipe(consumer, hPane.getRegistryName().getPath(), item, hPane, 4, "horizontalpanes");
+			glasscuttingRecipe(hPane.getRegistryName().getPath(), item, hPane, 4);
 		}
 		for (int i = 0; i < fStainedGlass.size(); i++) {
 			Item item = fStainedGlass.get(i);
 			String color = item.getRegistryName().getPath().replaceFirst("_stained_glass", "");
 			
-			Item pane = getItem(new ResourceLocation(CutAndColored.FMODID, color + "_stained_glass_pane"));
-			glasscuttingRecipe(consumer, pane.getRegistryName().getPath(), item, pane, 4, CutAndColored.FMODID);
+			Item pane = getItem(FRL(color + "_stained_glass_pane"));
+			glasscuttingRecipe(pane.getRegistryName().getPath(), item, pane, 4);
 			
-			Item slab = getItem(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_slab"));
-			glasscuttingRecipe(consumer, slab.getRegistryName().getPath(), item, slab, 2, CutAndColored.FMODID);
+			Item slab = getItem(ModRL(color + "_stained_glass_slab"));
+			glasscuttingRecipe(slab.getRegistryName().getPath(), item, slab, 2, CutAndColored.FMODID);
 			
-			Item stairs = getItem(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_stairs"));
-			glasscuttingRecipe(consumer, stairs.getRegistryName().getPath(), item, stairs, 1, CutAndColored.FMODID);
+			Item stairs = getItem(ModRL(color + "_stained_glass_stairs"));
+			glasscuttingRecipe(stairs.getRegistryName().getPath(), item, stairs, 1, CutAndColored.FMODID);
 		}
 	}
 	

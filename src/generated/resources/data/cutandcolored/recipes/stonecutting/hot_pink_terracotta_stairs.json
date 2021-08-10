@@ -9,7 +9,7 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:stonecutting",
+        "type": "cutandcolored:glasscutting",
         "ingredient": {
           "item": "flamboyant:hot_pink_terracotta"
         },

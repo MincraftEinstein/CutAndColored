@@ -12,9 +12,6 @@
         "type": "cutandcolored:sawmilling",
         "ingredient": [
           {
-            "item": "additionalbars:horizontal_acacia_bars"
-          },
-          {
             "item": "additionalbars:acacia_bars"
           },
           {

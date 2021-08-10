@@ -12,9 +12,6 @@
         "type": "cutandcolored:sawmilling",
         "ingredient": [
           {
-            "item": "additionalbarsbop:horizontal_dead_bars"
-          },
-          {
             "item": "additionalbarsbop:dead_bars"
           },
           {

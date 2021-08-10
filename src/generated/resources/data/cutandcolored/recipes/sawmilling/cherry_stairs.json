@@ -1,8 +1,21 @@
 {
-  "type": "cutandcolored:sawmilling",
-  "ingredient": {
-    "item": "biomesoplenty:cherry_planks"
-  },
-  "result": "biomesoplenty:cherry_stairs",
-  "count": 1
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "biomesoplenty",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "item": "biomesoplenty:cherry_planks"
+        },
+        "result": "biomesoplenty:cherry_stairs",
+        "count": 1
+      }
+    }
+  ]
 }

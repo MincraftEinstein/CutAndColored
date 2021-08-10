@@ -1,21 +1,8 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "modid": "flamboyant",
-          "type": "forge:mod_loaded"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:stonecutting",
-        "ingredient": {
-          "item": "cutandcolored:navy_stained_bricks"
-        },
-        "result": "cutandcolored:navy_stained_brick_stairs",
-        "count": 1
-      }
-    }
-  ]
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cutandcolored:navy_stained_bricks"
+  },
+  "result": "cutandcolored:navy_stained_brick_stairs",
+  "count": 1
 }

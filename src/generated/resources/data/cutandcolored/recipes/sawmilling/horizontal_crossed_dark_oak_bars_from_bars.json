@@ -12,9 +12,6 @@
         "type": "cutandcolored:sawmilling",
         "ingredient": [
           {
-            "item": "additionalbars:horizontal_dark_oak_bars"
-          },
-          {
             "item": "additionalbars:dark_oak_bars"
           },
           {

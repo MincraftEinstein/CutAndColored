@@ -9,7 +9,7 @@
         }
       ],
       "recipe": {
-        "type": "cutandcolored:weaving",
+        "type": "cutandcolored:glasscutting",
         "ingredient": {
           "item": "flamboyant:violet_wool"
         },

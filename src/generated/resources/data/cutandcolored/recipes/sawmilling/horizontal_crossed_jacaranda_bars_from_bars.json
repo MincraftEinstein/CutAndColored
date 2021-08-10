@@ -12,9 +12,6 @@
         "type": "cutandcolored:sawmilling",
         "ingredient": [
           {
-            "item": "additionalbarsbop:horizontal_jacaranda_bars"
-          },
-          {
             "item": "additionalbarsbop:jacaranda_bars"
           },
           {
