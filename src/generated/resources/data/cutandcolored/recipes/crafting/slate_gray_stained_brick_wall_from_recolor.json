@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolor_stained_brick_walls",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "forge:clay_brick_walls"
+          },
+          "$": {
+            "item": "flamboyant:slate_gray_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:slate_gray_stained_brick_wall",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

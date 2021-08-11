@@ -1,0 +1,98 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:jack_o_lantern",
+    {
+      "id": "omgourd:jack_o_lantern_1",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_2",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_3",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_4",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_5",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_6",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_7",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_8",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_9",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_10",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_11",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_12",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_13",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_14",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_15",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_16",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_17",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_18",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_19",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_20",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_21",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_22",
+      "required": false
+    },
+    {
+      "id": "omgourd:jack_o_lantern_23",
+      "required": false
+    }
+  ]
+}

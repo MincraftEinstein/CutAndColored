@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:glasscutting",
+        "ingredient": {
+          "item": "flamboyant:maroon_concrete"
+        },
+        "result": "cutandcolored:maroon_concrete_stairs",
+        "count": 1
+      }
+    }
+  ]
+}

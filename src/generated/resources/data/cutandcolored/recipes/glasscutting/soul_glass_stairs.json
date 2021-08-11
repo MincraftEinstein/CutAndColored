@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "item": "cutandcolored:soul_glass"
+  },
+  "result": "cutandcolored:soul_glass_stairs",
+  "count": 1
+}

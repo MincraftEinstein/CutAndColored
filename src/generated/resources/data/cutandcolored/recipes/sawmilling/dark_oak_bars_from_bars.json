@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbars",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "additionalbars:horizontal_crossed_dark_oak_bars"
+          },
+          {
+            "item": "additionalbars:crossed_dark_oak_bars"
+          }
+        ],
+        "result": "additionalbars:dark_oak_bars",
+        "count": 1
+      }
+    }
+  ]
+}

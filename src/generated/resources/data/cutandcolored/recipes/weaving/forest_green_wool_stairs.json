@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:glasscutting",
+        "ingredient": {
+          "item": "flamboyant:forest_green_wool"
+        },
+        "result": "cutandcolored:forest_green_wool_stairs",
+        "count": 1
+      }
+    }
+  ]
+}

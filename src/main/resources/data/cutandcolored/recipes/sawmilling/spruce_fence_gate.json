@@ -1,8 +1,0 @@
-{
-	"type": "cutandcolored:sawmilling",
-	"ingredient": {
-		"item": "minecraft:spruce_planks"
-	},
-	"result": "minecraft:spruce_fence_gate",
-	"count": 1
-}

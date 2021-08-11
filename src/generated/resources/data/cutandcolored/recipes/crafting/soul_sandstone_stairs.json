@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "cutandcolored:soul_sandstone"
+      },
+      {
+        "item": "cutandcolored:chiseled_soul_sandstone"
+      },
+      {
+        "item": "cutandcolored:cut_soul_sandstone"
+      }
+    ]
+  },
+  "result": {
+    "item": "cutandcolored:soul_sandstone_stairs",
+    "count": 4
+  }
+}

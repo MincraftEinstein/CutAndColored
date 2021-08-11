@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_plank_slabs",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cutandcolored:yellow_stained_planks"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:yellow_stained_plank_slab",
+    "count": 6
+  }
+}

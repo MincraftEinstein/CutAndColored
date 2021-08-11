@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "biomesoplenty",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:umbran_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_umbran_log"
+          },
+          {
+            "item": "biomesoplenty:umbran_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_umbran_wood"
+          }
+        ],
+        "result": "biomesoplenty:umbran_fence",
+        "count": 1
+      }
+    }
+  ]
+}

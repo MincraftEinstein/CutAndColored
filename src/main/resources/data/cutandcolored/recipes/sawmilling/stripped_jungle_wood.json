@@ -1,8 +1,0 @@
-{
-	"type": "cutandcolored:sawmilling",
-	"ingredient": {
-		"item": "minecraft:jungle_wood"
-	},
-	"result": "minecraft:stripped_jungle_wood",
-	"count": 1
-}

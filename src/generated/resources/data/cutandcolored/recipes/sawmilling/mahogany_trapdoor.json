@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "biomesoplenty",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:mahogany_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_mahogany_log"
+          },
+          {
+            "item": "biomesoplenty:mahogany_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_mahogany_wood"
+          }
+        ],
+        "result": "biomesoplenty:mahogany_trapdoor",
+        "count": 2
+      }
+    }
+  ]
+}

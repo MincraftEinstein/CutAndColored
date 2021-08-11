@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "biomesoplenty",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "item": "biomesoplenty:hellbark_planks"
+        },
+        "result": "biomesoplenty:hellbark_slab",
+        "count": 2
+      }
+    }
+  ]
+}

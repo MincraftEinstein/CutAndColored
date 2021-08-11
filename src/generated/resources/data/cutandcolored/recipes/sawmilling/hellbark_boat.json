@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "biomesoplenty",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "biomesoplenty:hellbark_log"
+          },
+          {
+            "item": "biomesoplenty:stripped_hellbark_log"
+          },
+          {
+            "item": "biomesoplenty:hellbark_wood"
+          },
+          {
+            "item": "biomesoplenty:stripped_hellbark_wood"
+          }
+        ],
+        "result": "biomesoplenty:hellbark_boat",
+        "count": 1
+      }
+    }
+  ]
+}

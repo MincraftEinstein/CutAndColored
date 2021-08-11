@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:glasscutting",
+        "ingredient": {
+          "item": "flamboyant:dark_green_concrete"
+        },
+        "result": "cutandcolored:dark_green_concrete_slab",
+        "count": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "group": "redstone_lamp",
+        "ingredients": [
+          {
+            "tag": "forge:redstone_lamps"
+          },
+          {
+            "item": "flamboyant:maroon_dye"
+          }
+        ],
+        "result": {
+          "item": "cutandcolored:maroon_redstone_lamp"
+        }
+      }
+    }
+  ]
+}

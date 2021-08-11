@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "additionalbarsbop:horizontal_crossed_willow_bars"
+          },
+          {
+            "item": "additionalbarsbop:willow_bars"
+          }
+        ],
+        "result": "additionalbarsbop:crossed_willow_bars",
+        "count": 1
+      }
+    }
+  ]
+}

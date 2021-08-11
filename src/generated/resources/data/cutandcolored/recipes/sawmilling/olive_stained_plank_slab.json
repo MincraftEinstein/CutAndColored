@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": {
+    "item": "cutandcolored:olive_stained_planks"
+  },
+  "result": "cutandcolored:olive_stained_plank_slab",
+  "count": 1
+}

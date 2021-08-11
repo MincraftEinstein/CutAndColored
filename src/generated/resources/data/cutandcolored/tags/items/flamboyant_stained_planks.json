@@ -1,0 +1,69 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "cutandcolored:amber_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:beige_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:cream_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:dark_green_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:forest_green_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:hot_pink_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:indigo_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:maroon_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:navy_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:olive_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:pale_green_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:pale_pink_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:pale_yellow_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:sky_blue_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:slate_gray_stained_planks",
+      "required": false
+    },
+    {
+      "id": "cutandcolored:violet_stained_planks",
+      "required": false
+    }
+  ]
+}

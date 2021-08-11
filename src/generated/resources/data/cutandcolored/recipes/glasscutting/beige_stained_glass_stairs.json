@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:glasscutting",
+        "ingredient": {
+          "item": "flamboyant:beige_stained_glass"
+        },
+        "result": "cutandcolored:beige_stained_glass_stairs",
+        "count": 1
+      }
+    }
+  ]
+}

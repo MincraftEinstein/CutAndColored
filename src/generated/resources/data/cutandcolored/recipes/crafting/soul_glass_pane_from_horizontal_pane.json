@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cutandcolored:horizontal_soul_glass_pane"
+    }
+  ],
+  "result": {
+    "item": "cutandcolored:soul_glass_pane"
+  }
+}

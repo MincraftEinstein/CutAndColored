@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolor_stained_plank_slabs",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "minecraft:wooden_slabs"
+          },
+          "$": {
+            "item": "flamboyant:cream_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:cream_stained_plank_slab",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

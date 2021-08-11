@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolor_stained_brick_stairs",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "forge:clay_brick_stairs"
+          },
+          "$": {
+            "item": "flamboyant:cream_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:cream_stained_brick_stairs",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

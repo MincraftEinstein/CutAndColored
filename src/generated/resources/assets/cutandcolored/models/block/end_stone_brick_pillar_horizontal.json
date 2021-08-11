@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "side": "cutandcolored:block/end_stone_brick_pillar",
+    "end": "cutandcolored:block/end_stone_brick_pillar_top"
+  }
+}

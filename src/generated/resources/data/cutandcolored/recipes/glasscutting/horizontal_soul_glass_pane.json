@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "horizontalpanes",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:glasscutting",
+        "ingredient": {
+          "item": "cutandcolored:soul_glass"
+        },
+        "result": "cutandcolored:horizontal_soul_glass_pane",
+        "count": 4
+      }
+    }
+  ]
+}

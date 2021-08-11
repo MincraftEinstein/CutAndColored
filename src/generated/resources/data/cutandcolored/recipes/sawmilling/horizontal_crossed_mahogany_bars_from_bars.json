@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "additionalbarsbop:mahogany_bars"
+          },
+          {
+            "item": "additionalbarsbop:crossed_mahogany_bars"
+          }
+        ],
+        "result": "additionalbarsbop:horizontal_crossed_mahogany_bars",
+        "count": 1
+      }
+    }
+  ]
+}

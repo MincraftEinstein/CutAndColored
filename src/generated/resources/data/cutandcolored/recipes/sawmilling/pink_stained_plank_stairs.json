@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": {
+    "item": "cutandcolored:pink_stained_planks"
+  },
+  "result": "cutandcolored:pink_stained_plank_stairs",
+  "count": 1
+}

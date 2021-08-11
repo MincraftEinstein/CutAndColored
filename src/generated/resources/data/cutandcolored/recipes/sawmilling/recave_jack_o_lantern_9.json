@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "omgourd",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "tag": "forge:jack_o_lanterns"
+        },
+        "result": "omgourd:jack_o_lantern_9",
+        "count": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "cutandcolored:white_stained_bricks",
+    "cutandcolored:orange_stained_bricks",
+    "cutandcolored:magenta_stained_bricks",
+    "cutandcolored:light_blue_stained_bricks",
+    "cutandcolored:yellow_stained_bricks",
+    "cutandcolored:pale_yellow_stained_bricks",
+    "cutandcolored:lime_stained_bricks",
+    "cutandcolored:pink_stained_bricks",
+    "cutandcolored:pale_pink_stained_bricks",
+    "cutandcolored:hot_pink_stained_bricks",
+    "cutandcolored:light_gray_stained_bricks",
+    "cutandcolored:gray_stained_bricks",
+    "cutandcolored:slate_gray_stained_bricks",
+    "cutandcolored:light_gray_stained_bricks",
+    "cutandcolored:cyan_stained_bricks",
+    "cutandcolored:purple_stained_bricks",
+    "cutandcolored:blue_stained_bricks",
+    "cutandcolored:light_blue_stained_bricks",
+    "cutandcolored:sky_blue_stained_bricks",
+    "cutandcolored:brown_stained_bricks",
+    "cutandcolored:green_stained_bricks",
+    "cutandcolored:pale_green_stained_bricks",
+    "cutandcolored:forest_green_stained_bricks",
+    "cutandcolored:dark_green_stained_bricks",
+    "cutandcolored:red_stained_bricks",
+    "cutandcolored:black_stained_bricks"
+  ]
+}

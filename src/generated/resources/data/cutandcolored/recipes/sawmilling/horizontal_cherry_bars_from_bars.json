@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": [
+          {
+            "item": "additionalbarsbop:cherry_bars"
+          },
+          {
+            "item": "additionalbarsbop:crossed_cherry_bars"
+          }
+        ],
+        "result": "additionalbarsbop:horizontal_cherry_bars",
+        "count": 1
+      }
+    }
+  ]
+}

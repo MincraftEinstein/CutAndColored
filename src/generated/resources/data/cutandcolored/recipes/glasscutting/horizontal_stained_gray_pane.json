@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "horizontalpanes",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:glasscutting",
+        "ingredient": {
+          "item": "minecraft:gray_stained_glass"
+        },
+        "result": "horizontalpanes:horizontal_stained_gray_pane",
+        "count": 4
+      }
+    }
+  ]
+}

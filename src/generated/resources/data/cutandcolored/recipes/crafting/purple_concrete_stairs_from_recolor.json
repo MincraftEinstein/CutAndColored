@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "recolor_concrete_stairs",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:concrete_stairs"
+    },
+    "$": {
+      "item": "minecraft:purple_dye"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:purple_concrete_stairs",
+    "count": 8
+  }
+}

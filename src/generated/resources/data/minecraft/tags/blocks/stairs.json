@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:concrete_stairs",
+    "#forge:glass_stairs",
+    "#cutandcolored:flamboyant_plank_stairs",
+    "#forge:terracotta_stairs",
+    "#forge:wool_stairs",
+    "cutandcolored:smooth_stone_stairs",
+    "cutandcolored:cracked_stone_brick_stairs",
+    "cutandcolored:cracked_polished_blackstone_brick_stairs",
+    "cutandcolored:cracked_nether_brick_stairs",
+    "cutandcolored:soul_sandstone_stairs",
+    "cutandcolored:smooth_soul_sandstone_stairs",
+    "cutandcolored:granite_brick_stairs",
+    "cutandcolored:diorite_brick_stairs",
+    "cutandcolored:andesite_brick_stairs"
+  ]
+}

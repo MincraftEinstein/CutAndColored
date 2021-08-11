@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolor_concrete_stairs",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "forge:concrete_stairs"
+          },
+          "$": {
+            "item": "flamboyant:forest_green_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:forest_green_concrete_stairs",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

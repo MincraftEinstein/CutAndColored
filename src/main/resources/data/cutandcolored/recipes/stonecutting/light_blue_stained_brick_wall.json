@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "cutandcolored:light_blue_stained_bricks"
-	},
-	"result": "cutandcolored:light_blue_stained_brick_wall",
-	"count": 1
-}
