@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "recolor_stained_glass_stairs",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:glass_stairs"
+    },
+    "$": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:orange_stained_glass_stairs",
+    "count": 8
+  }
+}

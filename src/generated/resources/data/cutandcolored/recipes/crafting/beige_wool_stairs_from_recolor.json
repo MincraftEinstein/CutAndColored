@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolor_wool_stairs",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "forge:wool_stairs"
+          },
+          "$": {
+            "item": "flamboyant:beige_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:beige_wool_stairs",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

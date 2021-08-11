@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_brick_walls",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cutandcolored:magenta_stained_bricks"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:magenta_stained_brick_wall",
+    "count": 6
+  }
+}

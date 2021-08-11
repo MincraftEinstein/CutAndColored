@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cutandcolored:granite_bricks"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:granite_brick_stairs",
+    "count": 6
+  }
+}

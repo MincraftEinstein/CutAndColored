@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_brick_stairs",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cutandcolored:lime_stained_bricks"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:lime_stained_brick_stairs",
+    "count": 4
+  }
+}

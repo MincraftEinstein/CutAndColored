@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "recolor_wool_slabs",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:wool_slabs"
+    },
+    "$": {
+      "item": "minecraft:blue_dye"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:blue_wool_slab",
+    "count": 8
+  }
+}

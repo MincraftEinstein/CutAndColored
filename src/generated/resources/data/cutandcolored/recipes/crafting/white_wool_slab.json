@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wool_slabs",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:white_wool_slab",
+    "count": 6
+  }
+}

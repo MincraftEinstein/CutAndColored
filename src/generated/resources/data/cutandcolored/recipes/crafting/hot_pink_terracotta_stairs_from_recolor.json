@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolored_tarracotta_stairs",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "forge:terracotta_stairs"
+          },
+          "$": {
+            "item": "flamboyant:hot_pink_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:hot_pink_terracotta_stairs",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

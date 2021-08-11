@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "recolor_stained_brick_slabs",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:clay_brick_slabs"
+    },
+    "$": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:orange_stained_brick_slab",
+    "count": 8
+  }
+}

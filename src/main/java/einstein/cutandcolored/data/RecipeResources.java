@@ -21,7 +21,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class RecipeResources extends RecipeProvider {
 	
-	private static Consumer<IFinishedRecipe> consumer;
+	protected static Consumer<IFinishedRecipe> consumer;
 	
 	public RecipeResources(DataGenerator generatorIn) {
 		super(generatorIn);
@@ -237,57 +237,127 @@ public class RecipeResources extends RecipeProvider {
 		weavingRecipe(name, ingredient, result, 1);
 	}
 	
-	protected static void stairsRecipe(String name, IItemProvider ingredient, IItemProvider result) {
+	protected static void stairsRecipe(String name, IItemProvider ingredient, IItemProvider result, String group) {
 		ShapedRecipeBuilder.shapedRecipe(result, 4)
 			.patternLine("#  ")
 			.patternLine("## ")
 			.patternLine("###")
 			.key('#', ingredient)
+			.setGroup(group)
 			.addCriterion("has_item", hasItem(ingredient))
 			.build(consumer, location(name, "crafting/"));
 	}
 	
-	protected static void slabsRecipe(String name, IItemProvider ingredient, IItemProvider result) {
+	protected static void stairsRecipe(String name, IItemProvider ingredient, IItemProvider result, String group, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ShapedRecipeBuilder.shapedRecipe(result, 4)
+			.patternLine("#  ")
+			.patternLine("## ")
+			.patternLine("###")
+			.key('#', ingredient)
+			.setGroup(group)
+			.addCriterion("has_item", hasItem(ingredient))::build)
+			.generateAdvancement()
+			.build(consumer, location(name, "crafting/"));
+	}
+	
+	protected static void slabsRecipe(String name, IItemProvider ingredient, IItemProvider result, String group) {
 		ShapedRecipeBuilder.shapedRecipe(result, 6)
 			.patternLine("###")
+			.key('#', ingredient)
+			.setGroup(group)
+			.addCriterion("has_item", hasItem(ingredient))
+			.build(consumer, location(name, "crafting/"));
+	}
+	
+	protected static void slabsRecipe(String name, IItemProvider ingredient, IItemProvider result, String group, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ShapedRecipeBuilder.shapedRecipe(result, 6)
+			.patternLine("###")
+			.key('#', ingredient)
+			.setGroup(group)
+			.addCriterion("has_item", hasItem(ingredient))::build)
+			.generateAdvancement()
+			.build(consumer, location(name, "crafting/"));
+	}
+	
+	protected static void wallsRecipe(String name, IItemProvider ingredient, IItemProvider result, String group) {
+		ShapedRecipeBuilder.shapedRecipe(result, 6)
+			.patternLine("###")
+			.patternLine("###")
+			.key('#', ingredient)
+			.setGroup(group)
+			.addCriterion("has_item", hasItem(ingredient))
+			.build(consumer, location(name, "crafting/"));
+	}
+	
+	protected static void wallsRecipe(String name, IItemProvider ingredient, IItemProvider result, String group, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ShapedRecipeBuilder.shapedRecipe(result, 6)
+			.patternLine("###")
+			.patternLine("###")
+			.key('#', ingredient)
+			.setGroup(group)
+			.addCriterion("has_item", hasItem(ingredient))::build)
+			.generateAdvancement()
+			.build(consumer, location(name, "crafting/"));
+	}
+	
+	protected static void blockRecipe4x4(String name, IItemProvider ingredient, IItemProvider result, int count) {
+		ShapedRecipeBuilder.shapedRecipe(result, count)
+			.patternLine("##")
+			.patternLine("##")
 			.key('#', ingredient)
 			.addCriterion("has_item", hasItem(ingredient))
 			.build(consumer, location(name, "crafting/"));
 	}
 	
-	protected static void wallsRecipe(String name, IItemProvider ingredient, IItemProvider result) {
-		ShapedRecipeBuilder.shapedRecipe(result, 6)
-			.patternLine("###")
-			.patternLine("###")
-			.key('#', ingredient)
-			.addCriterion("has_item", hasItem(ingredient))
-			.build(consumer, location(name, "crafting/"));
-	}
-	
-	protected static void blockRecipe4x4(String name, IItemProvider ingredient, IItemProvider result) {
-		ShapedRecipeBuilder.shapedRecipe(result, 4)
-		.patternLine("##")
-		.patternLine("##")
+	protected static void pillarRecipe(IItemProvider ingredient, IItemProvider result, int count) {
+		ShapedRecipeBuilder.shapedRecipe(result, count)
+		.patternLine("#")
+		.patternLine("#")
 		.key('#', ingredient)
 		.addCriterion("has_item", hasItem(ingredient))
-		.build(consumer, location(name, "crafting/"));
+		.build(consumer, location(result, "crafting/"));
 	}
 	
-//	protected static void recolorItemRecipe(IItemProvider item /*, ITag<Item> tag*/) {
-//		for (int i = 0; i < DyeColor.values().length; i++) {
-//			IItemProvider dye = getItem(ModRL(DyeColor.byId(i).getTranslationKey() + "_dye"));
-//			ShapedRecipeBuilder.shapedRecipe(item, 8)
-//				.patternLine("###")
-//				.patternLine("#$#")
-//				.patternLine("###")
-//				.key('#', item)
-//				.key('$', dye)
-//				.addCriterion("has_item", hasItem(item))
-//				.build(consumer, location(item.asItem().getRegistryName().getPath() + "_recolor_" + dye.asItem().getRegistryName().getPath(), "crafting/"));
-//		}
-//	}
+	protected static void recolorObject(ITag<Item> ingredients, IItemProvider result, String color, String group) {
+		Item dye;
+		try {
+			dye = getItem(MCRL(color + "_dye"));
+		}
+		catch (Exception e) {
+			dye = getItem(FRL(color + "_dye"));
+		}
+		ShapedRecipeBuilder.shapedRecipe(result, 8)
+			.patternLine("###")
+			.patternLine("#$#")
+			.patternLine("###")
+			.key('#', ingredients)
+			.key('$', dye)
+			.setGroup(group)
+			.addCriterion("has_item", hasItem(ingredients))
+			.build(consumer, location(result.asItem().getRegistryName().getPath() + "_from_recolor", "crafting/"));
+	}
 	
-//	protected static void recolorTagRecipes(Tag<Item> tag) {
-//		//ShapedRecipeBuilder.shapedRecipe(resultIn);
-//	}
+	protected static void recolorObject(ITag<Item> ingredients, IItemProvider result, String color, String group, String modid) {
+		Item dye;
+		try {
+			dye = getItem(MCRL(color + "_dye"));
+		}
+		catch (Exception e) {
+			dye = getItem(FRL(color + "_dye"));
+		}
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ShapedRecipeBuilder.shapedRecipe(result, 8)
+			.patternLine("###")
+			.patternLine("#$#")
+			.patternLine("###")
+			.key('#', ingredients)
+			.key('$', dye)
+			.setGroup(group)
+			.addCriterion("has_item", hasItem(ingredients))::build)
+			.generateAdvancement()
+			.build(consumer, location(result.asItem().getRegistryName().getPath() + "_from_recolor", "crafting/"));
+	}
 }
