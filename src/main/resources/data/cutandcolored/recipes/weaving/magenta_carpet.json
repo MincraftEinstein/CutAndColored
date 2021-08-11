@@ -1,8 +1,0 @@
-{
-    "type": "cutandcolored:weaving",
-    "ingredient": {
-        "item": "minecraft:magenta_wool"
-    },
-    "result": "minecraft:magenta_carpet",
-    "count": 2
-}
