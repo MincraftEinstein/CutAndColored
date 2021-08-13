@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#cutandcolored:vanilla_plank_stairs",
+    {
+      "id": "#cutandcolored:flamboyant_plank_stairs",
+      "required": false
+    }
+  ]
+}

@@ -12,10 +12,14 @@ license="All rights reserved"
 	logoFile="pack.png"
 	credits="Me the mod author (Programer), SpiderKolo (Artist)"
 	authors="MincraftEinstein, SpiderKolo"
-	itemIcon="cutandcolored:sawmill" #Used by Catalogue
 	description='''
 Adds a bunch of stairs, slabs and color variation to blocks in default Minecraft
 '''
+
+[modproperties.cutandcolored]
+	catalogueImageIcon="pack.png"
+	configuredBackground="cutandcolored:textures/block/light_blue_stained_planks.png"
+
 
 [[dependencies.cutandcolored]]
     modId="forge"
@@ -30,7 +34,7 @@ Adds a bunch of stairs, slabs and color variation to blocks in default Minecraft
     versionRange="[1.16.3, 1.17]"
     ordering="NONE"
     side="BOTH"
-    
+
 [[dependencies.cutandcolored]]
     modId="einsteins_library"
     mandatory=true

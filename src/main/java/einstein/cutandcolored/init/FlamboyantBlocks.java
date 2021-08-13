@@ -312,6 +312,6 @@ public class FlamboyantBlocks
     public static final Block VIOLET_REDSTONE_LAMP = register("violet_redstone_lamp", new ColoredRedstoneLamp(Blocks.REDSTONE_LAMP::getDefaultState, Block.Properties.from(Blocks.REDSTONE_LAMP)));
 
     private static Block register(String name, Block block) {
-    	return RegistryHandler.registerBlock(CutAndColored.MODID, CutAndColored.FMODID, name, block);
+    	return RegistryHandler.registerBlock(CutAndColored.MODID, CutAndColored.FMODID, name, block, CutAndColored.MOD_TAB);
     }
 }

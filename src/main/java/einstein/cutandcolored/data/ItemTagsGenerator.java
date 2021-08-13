@@ -163,7 +163,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		getOrCreateBuilder(WOOL_SLABS).addTag(VANILLA_WOOL_SLABS).addOptionalTag(FLAMBOYANT_WOOL_SLABS.getName());
 		getOrCreateBuilder(WOOL_STAIRS).addTag(VANILLA_WOOL_STAIRS).addOptionalTag(FLAMBOYANT_WOOL_STAIRS.getName());
 		getOrCreateBuilder(STAINED_PLANK_SLABS).addTag(VANILLA_STAINED_PLANK_SLABS).addOptionalTag(FLAMBOYANT_STAINED_PLANK_SLABS.getName());
-		getOrCreateBuilder(STAINED_PLANK_SLABS).addTag(VANILLA_STAINED_PLANK_SLABS).addOptionalTag(FLAMBOYANT_STAINED_PLANK_SLABS.getName());
+		getOrCreateBuilder(STAINED_PLANK_STAIRS).addTag(VANILLA_STAINED_PLANK_STAIRS).addOptionalTag(FLAMBOYANT_STAINED_PLANK_STAIRS.getName());
 		getOrCreateBuilder(STAINED_PLANKS).addTag(VANILLA_STAINED_PLANKS).addOptionalTag(FLAMBOYANT_STAINED_PLANKS.getName());
 		getOrCreateBuilder(NETHER_BRICK_FENCE_GATES).add(ModBlocks.NETHER_BRICK_FENCE_GATE.asItem());
 		getOrCreateBuilder(SOUL_GLASS).add(ModBlocks.SOUL_GLASS.asItem());

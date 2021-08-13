@@ -5837,7 +5837,8 @@ b16889ad64ced8f81d672482b3af9596f4e95b66 data/forge/tags/blocks/glass_stairs.jso
 8e3bcb60a9b075f4c4c6b63617d43170e157ddb1 data/forge/tags/blocks/jack_o_lanterns.json
 c103f10d6149d1f3c15dc6bf031130452208bde5 data/forge/tags/blocks/redstone_lamps.json
 4ecd7325fd08800c3424939147893a2e9a171a31 data/forge/tags/blocks/sandstone.json
-48742e3d582cfe931ea5f3367ef75a2d81c18ae4 data/forge/tags/blocks/stained_plank_slabs.json
+e0cf8edd82781dfb4aad727ba036ecf64fd7ea7b data/forge/tags/blocks/stained_plank_slabs.json
+a1ca98a72d8f919c062b13b05bc9702250fa5e6b data/forge/tags/blocks/stained_plank_stairs.json
 11319fce20e983126642122ebe949790ed59c052 data/forge/tags/blocks/stained_planks.json
 bbb4d016fb327668dde6689660b72413deeaf113 data/forge/tags/blocks/terracotta_slabs.json
 8c826100a57b15f823cfee1956320415c6d3550b data/forge/tags/blocks/terracotta_stairs.json
@@ -5861,7 +5862,8 @@ b16889ad64ced8f81d672482b3af9596f4e95b66 data/forge/tags/items/glass_stairs.json
 8e3bcb60a9b075f4c4c6b63617d43170e157ddb1 data/forge/tags/items/jack_o_lanterns.json
 c103f10d6149d1f3c15dc6bf031130452208bde5 data/forge/tags/items/redstone_lamps.json
 4ecd7325fd08800c3424939147893a2e9a171a31 data/forge/tags/items/sandstone.json
-48742e3d582cfe931ea5f3367ef75a2d81c18ae4 data/forge/tags/items/stained_plank_slabs.json
+e0cf8edd82781dfb4aad727ba036ecf64fd7ea7b data/forge/tags/items/stained_plank_slabs.json
+a1ca98a72d8f919c062b13b05bc9702250fa5e6b data/forge/tags/items/stained_plank_stairs.json
 11319fce20e983126642122ebe949790ed59c052 data/forge/tags/items/stained_planks.json
 bbb4d016fb327668dde6689660b72413deeaf113 data/forge/tags/items/terracotta_slabs.json
 8c826100a57b15f823cfee1956320415c6d3550b data/forge/tags/items/terracotta_stairs.json

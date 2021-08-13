@@ -5,11 +5,6 @@
     {
       "id": "#cutandcolored:flamboyant_plank_slabs",
       "required": false
-    },
-    "#cutandcolored:vanilla_plank_slabs",
-    {
-      "id": "#cutandcolored:flamboyant_plank_slabs",
-      "required": false
     }
   ]
 }
