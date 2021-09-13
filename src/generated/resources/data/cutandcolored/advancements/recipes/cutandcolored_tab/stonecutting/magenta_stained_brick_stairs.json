@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "cutandcolored:magenta_stained_bricks"
+            "items": [
+              "cutandcolored:magenta_stained_bricks"
+            ]
           }
         ]
       }

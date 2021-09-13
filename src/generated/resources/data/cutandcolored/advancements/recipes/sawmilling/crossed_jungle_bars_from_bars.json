@@ -20,7 +20,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "additionalbars:horizontal_jungle_bars"
+                  "items": [
+                    "additionalbars:horizontal_jungle_bars"
+                  ]
                 }
               ]
             }

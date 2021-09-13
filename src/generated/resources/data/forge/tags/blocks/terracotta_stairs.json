@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#cutandcolored:vanilla_terracotta_stairs",
-    {
-      "id": "#cutandcolored:flamboyant_terracotta_stairs",
-      "required": false
-    }
+    "#cutandcolored:vanilla_terracotta_stairs"
   ]
 }

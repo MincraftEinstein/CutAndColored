@@ -20,7 +20,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "biomesoplenty:magic_wood"
+                  "items": [
+                    "biomesoplenty:magic_wood"
+                  ]
                 }
               ]
             }

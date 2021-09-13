@@ -6,13 +6,13 @@ import einstein.cutandcolored.client.gui.screen.inventory.SawmillScreen;
 import einstein.cutandcolored.client.gui.screen.inventory.WeaverScreen;
 import einstein.cutandcolored.init.FlamboyantBlocks;
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.init.ModContainerTypes;
+import einstein.cutandcolored.init.ModMenuTypes;
 import einstein.einsteins_library.util.PropertyRegistry;
-import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -426,98 +426,98 @@ public class BlockDataHandler
     public static void setupBlockRenderLayer(final FMLClientSetupEvent event) {
     	/************************GUIS***************************/
     	// SCREENS
-        ScreenManager.registerFactory(ModContainerTypes.GLASSCUTTER, GlasscutterScreen::new);
-        ScreenManager.registerFactory(ModContainerTypes.WEAVER, WeaverScreen::new);
-        ScreenManager.registerFactory(ModContainerTypes.SAWMILL, SawmillScreen::new);
+    	MenuScreens.register(ModMenuTypes.GLASSCUTTER, GlasscutterScreen::new);
+    	MenuScreens.register(ModMenuTypes.WEAVER, WeaverScreen::new);
+    	MenuScreens.register(ModMenuTypes.SAWMILL, SawmillScreen::new);
         
     	/***********************CUTTERS*************************/
-        RenderTypeLookup.setRenderLayer(ModBlocks.GLASSCUTTER, RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.SAWMILL, RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.WEAVER, RenderType.getCutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASSCUTTER, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SAWMILL, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WEAVER, RenderType.cutout());
         
         /************************GLASS***************************/
         // FULL BLOCKS
-        RenderTypeLookup.setRenderLayer(ModBlocks.SOUL_GLASS, RenderType.getCutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOUL_GLASS, RenderType.cutout());
         
         // PANES
-        RenderTypeLookup.setRenderLayer(ModBlocks.SOUL_GLASS_PANE, RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, RenderType.getCutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOUL_GLASS_PANE, RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, RenderType.cutout());
         
         // STAIRS
-        RenderTypeLookup.setRenderLayer(ModBlocks.GLASS_STAIRS, RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.SOUL_GLASS_STAIRS, RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_STAIRS, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOUL_GLASS_STAIRS, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.RED_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_STAIRS, RenderType.translucent());
         
         // SLABS
-        RenderTypeLookup.setRenderLayer(ModBlocks.GLASS_SLAB, RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.SOUL_GLASS_SLAB, RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_SLAB, RenderType.getTranslucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_SLAB, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOUL_GLASS_SLAB, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.RED_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_SLAB, RenderType.translucent());
         /*#######################FLAMBOYANT############################*/
     	/************************GLASS***************************/
         // STAIRS
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.AMBER_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.BEIGE_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.CREAM_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.DARK_GREEN_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.FOREST_GREEN_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.HOT_PINK_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.INDIGO_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.MAROON_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.NAVY_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.OLIVE_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.PALE_GREEN_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.PALE_PINK_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.PALE_YELLOW_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.SKY_BLUE_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.SLATE_GRAY_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.VIOLET_STAINED_GLASS_STAIRS, RenderType.getTranslucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.AMBER_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.BEIGE_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.CREAM_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.DARK_GREEN_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.FOREST_GREEN_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.HOT_PINK_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.INDIGO_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.MAROON_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.NAVY_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.OLIVE_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_GREEN_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_PINK_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_YELLOW_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SKY_BLUE_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SLATE_GRAY_STAINED_GLASS_STAIRS, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.VIOLET_STAINED_GLASS_STAIRS, RenderType.translucent());
         
         // SLABS
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.AMBER_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.BEIGE_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.CREAM_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.DARK_GREEN_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.FOREST_GREEN_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.HOT_PINK_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.INDIGO_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.MAROON_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.NAVY_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.OLIVE_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.PALE_GREEN_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.PALE_PINK_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.PALE_YELLOW_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.SKY_BLUE_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.SLATE_GRAY_STAINED_GLASS_SLAB, RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(FlamboyantBlocks.VIOLET_STAINED_GLASS_SLAB, RenderType.getTranslucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.AMBER_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.BEIGE_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.CREAM_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.DARK_GREEN_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.FOREST_GREEN_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.HOT_PINK_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.INDIGO_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.MAROON_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.NAVY_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.OLIVE_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_GREEN_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_PINK_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_YELLOW_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SKY_BLUE_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SLATE_GRAY_STAINED_GLASS_SLAB, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.VIOLET_STAINED_GLASS_SLAB, RenderType.translucent());
     }
 }

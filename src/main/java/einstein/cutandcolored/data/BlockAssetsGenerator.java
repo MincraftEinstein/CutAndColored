@@ -5,20 +5,20 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
-import einstein.cutandcolored.block.ColoredRedstoneLamp;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.item.FlamboyantDyeColors;
-import net.minecraft.block.Block;
-import net.minecraft.block.FenceGateBlock;
-import net.minecraft.block.PaneBlock;
-import net.minecraft.block.RotatedPillarBlock;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.block.WallBlock;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.DyeColor;
-import net.minecraft.state.properties.SlabType;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.RedstoneLampBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -28,7 +28,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 	private List<Block> cubeBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> block.getRegistryName().getPath().contains("planks") || block.getRegistryName().getPath().contains("bricks"))
 			.filter((block) -> !(block instanceof SlabBlock))
-			.filter((block) -> !(block instanceof StairsBlock))
+			.filter((block) -> !(block instanceof StairBlock))
 			.collect(Collectors.toList()));
 	
 	private List<Block> slabBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
@@ -37,7 +37,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			.collect(Collectors.toList()));
 	
 	private List<Block> stairBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
-			.filter((block) -> block instanceof StairsBlock)
+			.filter((block) -> block instanceof StairBlock)
 			.collect(Collectors.toList()));
 	
 	private List<Block> wallBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
@@ -46,7 +46,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			.collect(Collectors.toList()));
 
 	private List<Block> lampBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
-			.filter((block) -> block instanceof ColoredRedstoneLamp)
+			.filter((block) -> block instanceof RedstoneLampBlock)
 			.collect(Collectors.toList()));
 	
 	private List<Block> coloredStairs = new ArrayList<Block>();
@@ -71,7 +71,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
 			int i1 = stairBlocks.size() - 1;
 			while (i1 >= 0) {
-				if (stairBlocks.get(i1).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getTranslationKey())) {
+				if (stairBlocks.get(i1).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
 					fColoredStairs.add(stairBlocks.get(i1));
 					stairBlocks.remove(i1);
 				}
@@ -79,7 +79,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			}
 			int i2 = slabBlocks.size() - 1;
 			while (i2 >= 0) {
-				if (slabBlocks.get(i2).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getTranslationKey())) {
+				if (slabBlocks.get(i2).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
 					fColoredSlabs.add(slabBlocks.get(i2));
 					slabBlocks.remove(i2);
 				}
@@ -87,7 +87,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			}
 			int i3 = wallBlocks.size() - 1;
 			while (i3 >= 0) {
-				if (wallBlocks.get(i3).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getTranslationKey())) {
+				if (wallBlocks.get(i3).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
 					fColoredWalls.add(wallBlocks.get(i3));
 					wallBlocks.remove(i3);
 				}
@@ -95,7 +95,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			}
 			int i4 = lampBlocks.size() - 1;
 			while (i4 >= 0) {
-				if (lampBlocks.get(i4).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getTranslationKey())) {
+				if (lampBlocks.get(i4).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
 					fColoredLamps.add(lampBlocks.get(i4));
 					lampBlocks.remove(i4);
 				}
@@ -106,7 +106,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			int i1 = stairBlocks.size() - 1;
 			while (i1 >= 0) {
-				if (stairBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getTranslationKey()) && !stairBlocks.get(i1).getRegistryName().getPath().contains("blackstone")) {
+				if (stairBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !stairBlocks.get(i1).getRegistryName().getPath().contains("blackstone")) {
 					coloredStairs.add(stairBlocks.get(i1));
 					stairBlocks.remove(i1);
 				}
@@ -114,7 +114,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			}
 			int i2 = slabBlocks.size() - 1;
 			while (i2 >= 0) {
-				if (slabBlocks.get(i2).getRegistryName().getPath().contains(DyeColor.byId(i).getTranslationKey()) && !slabBlocks.get(i2).getRegistryName().getPath().contains("blackstone")) {
+				if (slabBlocks.get(i2).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !slabBlocks.get(i2).getRegistryName().getPath().contains("blackstone")) {
 					coloredSlabs.add(slabBlocks.get(i2));
 					slabBlocks.remove(i2);
 				}
@@ -122,7 +122,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			}
 			int i3 = wallBlocks.size() - 1;
 			while (i3 >= 0) {
-				if (wallBlocks.get(i3).getRegistryName().getPath().contains(DyeColor.byId(i).getTranslationKey()) && !wallBlocks.get(i3).getRegistryName().getPath().contains("blackstone")) {
+				if (wallBlocks.get(i3).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !wallBlocks.get(i3).getRegistryName().getPath().contains("blackstone")) {
 					coloredWalls.add(wallBlocks.get(i3));
 					wallBlocks.remove(i3);
 				}
@@ -130,7 +130,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			}
 			int i4 = lampBlocks.size() - 1;
 			while (i4 >= 0) {
-				if (lampBlocks.get(i4).getRegistryName().getPath().contains(DyeColor.byId(i).getTranslationKey())) {
+				if (lampBlocks.get(i4).getRegistryName().getPath().contains(DyeColor.byId(i).getName())) {
 					coloredLamps.add(lampBlocks.get(i4));
 					lampBlocks.remove(i4);
 				}
@@ -156,15 +156,15 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		simpleBlock(ModBlocks.POLISHED_END_STONE);
 		simpleBlock(ModBlocks.POLISHED_STONE);
 		
-		stairsBlock((StairsBlock) ModBlocks.TERRACOTTA_STAIRS, blockMCRL("terracotta"));
-		stairsBlock((StairsBlock) ModBlocks.GRANITE_BRICK_STAIRS, blockRL("granite_bricks"));
-		stairsBlock((StairsBlock) ModBlocks.DIORITE_BRICK_STAIRS, blockRL("diorite_bricks"));
-		stairsBlock((StairsBlock) ModBlocks.ANDESITE_BRICK_STAIRS, blockRL("andesite_bricks"));
-		stairsBlock((StairsBlock) ModBlocks.SOUL_SANDSTONE_STAIR, blockRL("soul_sandstone_side"), blockRL("soul_sandstone_bottom"), blockRL("soul_sandstone_top"));
-		stairsBlock((StairsBlock) ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS, blockRL("soul_sandstone_top"));
-		stairsBlock((StairsBlock) ModBlocks.CRACKED_STONE_BRICK_STAIRS, blockMCRL("cracked_stone_bricks"));
-		stairsBlock((StairsBlock) ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS, blockMCRL("cracked_polished_blackstone_bricks"));
-		stairsBlock((StairsBlock) ModBlocks.CRACKED_NETHER_BRICK_STAIRS, blockMCRL("cracked_nether_bricks"));
+		stairsBlock((StairBlock) ModBlocks.TERRACOTTA_STAIRS, blockMCRL("terracotta"));
+		stairsBlock((StairBlock) ModBlocks.GRANITE_BRICK_STAIRS, blockRL("granite_bricks"));
+		stairsBlock((StairBlock) ModBlocks.DIORITE_BRICK_STAIRS, blockRL("diorite_bricks"));
+		stairsBlock((StairBlock) ModBlocks.ANDESITE_BRICK_STAIRS, blockRL("andesite_bricks"));
+		stairsBlock((StairBlock) ModBlocks.SOUL_SANDSTONE_STAIR, blockRL("soul_sandstone_side"), blockRL("soul_sandstone_bottom"), blockRL("soul_sandstone_top"));
+		stairsBlock((StairBlock) ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS, blockRL("soul_sandstone_top"));
+		stairsBlock((StairBlock) ModBlocks.CRACKED_STONE_BRICK_STAIRS, blockMCRL("cracked_stone_bricks"));
+		stairsBlock((StairBlock) ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS, blockMCRL("cracked_polished_blackstone_bricks"));
+		stairsBlock((StairBlock) ModBlocks.CRACKED_NETHER_BRICK_STAIRS, blockMCRL("cracked_nether_bricks"));
 		
 		slabBlock((SlabBlock) ModBlocks.TERRACOTTA_SLAB, blockMCRL("terracotta"), blockMCRL("terracotta"));
 		slabBlock((SlabBlock) ModBlocks.GRANITE_BRICK_SLAB, blockRL("granite_bricks"), blockRL("granite_bricks"));
@@ -174,9 +174,9 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		slabBlock((SlabBlock) ModBlocks.CUT_SOUL_SANDSTONE_SLAB, blockRL("cut_soul_sandstone"), blockRL("cut_soul_sandstone"), blockRL("soul_sandstone_bottom"), blockRL("soul_sandstone_top"));
 		slabBlock((SlabBlock) ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB, blockRL("smooth_soul_sandstone"), blockRL("soul_sandstone_top"));
 		
-		borderedStairsBlock((StairsBlock) ModBlocks.SMOOTH_STONE_STAIRS, blockMCRL("smooth_stone"));
-		borderedStairsBlock((StairsBlock) ModBlocks.GLASS_STAIRS, blockMCRL("glass"));
-		borderedStairsBlock((StairsBlock) ModBlocks.SOUL_GLASS_STAIRS, blockRL("soul_glass"));
+		borderedStairBlock((StairBlock) ModBlocks.SMOOTH_STONE_STAIRS, blockMCRL("smooth_stone"));
+		borderedStairBlock((StairBlock) ModBlocks.GLASS_STAIRS, blockMCRL("glass"));
+		borderedStairBlock((StairBlock) ModBlocks.SOUL_GLASS_STAIRS, blockRL("soul_glass"));
 		
 		borderedSlabBlock((SlabBlock) ModBlocks.GLASS_SLAB, blockMCRL("glass"), blockMCRL("glass"));
 		borderedSlabBlock((SlabBlock) ModBlocks.SOUL_GLASS_SLAB, blockRL("soul_glass"), blockRL("soul_glass"));
@@ -186,7 +186,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		wallBlock((WallBlock) ModBlocks.PURPUR_WALL, blockMCRL("purpur_block"));
 		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.PURPUR_WALL));
 		
-		paneBlock((PaneBlock) ModBlocks.SOUL_GLASS_PANE, blockRL("soul_glass"), blockRL("soul_glass_pane_top"));
+		paneBlock((IronBarsBlock) ModBlocks.SOUL_GLASS_PANE, blockRL("soul_glass"), blockRL("soul_glass_pane_top"));
 		
 		logBlock((RotatedPillarBlock) ModBlocks.PRISMARINE_BRICK_PILLAR);
 		logBlock((RotatedPillarBlock) ModBlocks.POLISHED_BLACKSTONE_PILLAR);
@@ -244,11 +244,11 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		}
 		// Stairs
 		for (int i = 0; i < coloredStairs.size(); i++) {
-			StairsBlock block = (StairsBlock) coloredStairs.get(i);
+			StairBlock block = (StairBlock) coloredStairs.get(i);
 			String name = block.getRegistryName().getPath();
 			String fileName = name.replaceAll("_stairs", "");
 			if (name.contains("glass")) {
-				borderedStairsBlock(block, blockMCRL(fileName));
+				borderedStairBlock(block, blockMCRL(fileName));
 			}
 			else if (name.contains("wool") || name.contains("concrete") || name.contains("terracotta")) {
 				stairsBlock(block, blockMCRL(fileName));
@@ -270,11 +270,11 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		}
 		// Redstone Lamps
 		for (int i = 0; i < coloredLamps.size(); i++) {
-			ColoredRedstoneLamp block = (ColoredRedstoneLamp) coloredLamps.get(i);
+			RedstoneLampBlock block = (RedstoneLampBlock) coloredLamps.get(i);
 			String name = block.getRegistryName().getPath();
 			getVariantBuilder(block)
-			.partialState().with(ColoredRedstoneLamp.LIT, false).addModels(new ConfiguredModel(cubeAll(block)))
-			.partialState().with(ColoredRedstoneLamp.LIT, true).addModels(new ConfiguredModel(models()
+			.partialState().with(RedstoneLampBlock.LIT, false).addModels(new ConfiguredModel(cubeAll(block)))
+			.partialState().with(RedstoneLampBlock.LIT, true).addModels(new ConfiguredModel(models()
 					.withExistingParent(name + "_on", "cube_all").texture("all", blockRL(name + "_on"))));
 			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 		}
@@ -300,17 +300,17 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 //		}
 //		// Stairs
 //		for (int i = 0; i < fColoredStairs.size(); i++) {
-//			StairsBlock block = (StairsBlock) fColoredStairs.get(i);
+//			StairBlock block = (StairBlock) fColoredStairs.get(i);
 //			String name = block.getRegistryName().getPath();
 //			String fileName = name.replaceAll("_stairs", "");
 //			if (name.contains("glass")) {
-//				borderedStairsBlock(block, blockFRL(fileName));
+//				borderedStairBlock(block, blockFRL(fileName));
 //			}
 //			else if (name.contains("wool") || name.contains("concrete") || name.contains("terracotta")) {
-//				stairsBlock(block, blockFRL(fileName));
+//				StairBlock(block, blockFRL(fileName));
 //			}
 //			else if (name.contains("stained_plank") || name.contains("stained_brick")) {
-//				stairsBlock(block, blockRL(fileName + "s"));
+//				StairBlock(block, blockRL(fileName + "s"));
 //			}
 //			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 //		}
@@ -336,7 +336,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 //		}
 	}
 	
-	private void borderedStairsBlock(StairsBlock block, ResourceLocation imageName) {
+	private void borderedStairBlock(StairBlock block, ResourceLocation imageName) {
 		String name = block.getRegistryName().getPath();
 		stairsBlock(block,
 				models().withExistingParent(name, blockRL("bordered_stairs"))

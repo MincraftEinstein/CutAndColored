@@ -31,19 +31,19 @@ public enum FlamboyantDyeColors {
 			});
 
 	private final int id;
-	private final String translationKey;
+	private final String name;
 
-	private FlamboyantDyeColors(int idIn, String translationKeyIn) {
+	private FlamboyantDyeColors(int idIn, String nameIn) {
 		this.id = idIn;
-		this.translationKey = translationKeyIn;
+		this.name = nameIn;
 	}
 
 	public int getId() {
 		return this.id;
 	}
 
-	public String getTranslationKey() {
-		return this.translationKey;
+	public String getName() {
+		return this.name;
 	}
 
 	public static FlamboyantDyeColors byId(int colorId) {

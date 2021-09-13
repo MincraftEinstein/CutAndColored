@@ -2,7 +2,7 @@ package einstein.cutandcolored.init;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.einsteins_library.util.RegistryHandler;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 

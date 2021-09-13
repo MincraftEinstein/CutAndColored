@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "cutandcolored:smooth_soul_sandstone"
+            "items": [
+              "cutandcolored:smooth_soul_sandstone"
+            ]
           }
         ]
       }

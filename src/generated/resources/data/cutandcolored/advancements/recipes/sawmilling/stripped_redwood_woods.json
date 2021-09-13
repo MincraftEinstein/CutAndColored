@@ -20,7 +20,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "biomesoplenty:redwood_wood"
+                  "items": [
+                    "biomesoplenty:redwood_wood"
+                  ]
                 }
               ]
             }

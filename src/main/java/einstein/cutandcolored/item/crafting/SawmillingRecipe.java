@@ -5,16 +5,16 @@ import com.google.gson.JsonObject;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.init.ModRecipeSerializers;
 import einstein.cutandcolored.init.ModRecipeTypes;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.crafting.SingleItemRecipe;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.JSONUtils;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.World;
+import net.minecraft.core.Registry;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.GsonHelper;
+import net.minecraft.world.Container;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.SingleItemRecipe;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
 @SuppressWarnings("deprecation")
@@ -24,15 +24,15 @@ public class SawmillingRecipe extends SingleItemRecipe
         super(ModRecipeTypes.SAWMILLING, ModRecipeSerializers.SAWMILLING, id, group, ingredient, stack);
     }
     
-    public boolean matches(final IInventory inventory, final World world) {
-        return this.ingredient.test(inventory.getStackInSlot(0));
+    public boolean matches(final Container inventory, final Level level) {
+        return this.ingredient.test(inventory.getItem(0));
     }
     
-    public ItemStack getIcon() {
+    public ItemStack getToastSymbol() {
         return new ItemStack(ModBlocks.SAWMILL);
     }
     
-    public static class Serializer<T extends SawmillingRecipe> extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<T>
+    public static class Serializer<T extends SawmillingRecipe> extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<T>
     {
         private final IRecipeFactory<T> factory;
         
@@ -40,32 +40,32 @@ public class SawmillingRecipe extends SingleItemRecipe
             this.factory = factory;
         }
         
-        public T read(final ResourceLocation recipeId, final JsonObject json) {
-            final String group = JSONUtils.getString(json, "group", "");
+        public T fromJson(final ResourceLocation recipeId, final JsonObject json) {
+            final String group = GsonHelper.getAsString(json, "group", "");
             Ingredient ingredient;
-            if (JSONUtils.isJsonArray(json, "ingredient")) {
-                ingredient = Ingredient.deserialize(JSONUtils.getJsonArray(json, "ingredient"));
+            if (GsonHelper.isArrayNode(json, "ingredient")) {
+                ingredient = Ingredient.fromJson(GsonHelper.getAsJsonArray(json, "ingredient"));
             }
             else {
-                ingredient = Ingredient.deserialize(JSONUtils.getJsonObject(json, "ingredient"));
+                ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(json, "ingredient"));
             }
-            final String result = JSONUtils.getString(json, "result");
-            final int count = JSONUtils.getInt(json, "count");
-            final ItemStack stack = new ItemStack(Registry.ITEM.getOrDefault(new ResourceLocation(result)), count);
+            final String result = GsonHelper.getAsString(json, "result");
+            final int count = GsonHelper.getAsInt(json, "count");
+            final ItemStack stack = new ItemStack(Registry.ITEM.get(new ResourceLocation(result)), count);
             return this.factory.create(recipeId, group, ingredient, stack);
         }
         
-        public T read(final ResourceLocation recipeId, final PacketBuffer buffer) {
-            final String group = buffer.readString(32767);
-            final Ingredient ingredient = Ingredient.read(buffer);
-            final ItemStack stack = buffer.readItemStack();
+        public T fromNetwork(final ResourceLocation recipeId, final FriendlyByteBuf buffer) {
+            final String group = buffer.readUtf(32767);
+            final Ingredient ingredient = Ingredient.fromNetwork(buffer);
+            final ItemStack stack = buffer.readItem();
             return this.factory.create(recipeId, group, ingredient, stack);
         }
         
-        public void write(final PacketBuffer buffer, final T recipe) {
-            buffer.writeString(recipe.group);
-            recipe.ingredient.write(buffer);
-            buffer.writeItemStack(recipe.result);
+        public void toNetwork(final FriendlyByteBuf buffer, final T recipe) {
+            buffer.writeUtf(recipe.group);
+            recipe.ingredient.toNetwork(buffer);
+            buffer.writeItem(recipe.result);
         }
         
         public interface IRecipeFactory<T extends SawmillingRecipe>

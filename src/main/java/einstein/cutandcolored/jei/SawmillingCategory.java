@@ -13,12 +13,14 @@ import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import mezz.jei.config.Constants;
 import mezz.jei.util.Translator;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 
 public class SawmillingCategory implements IRecipeCategory<SawmillingRecipe>
 {
-	public static final ResourceLocation UID = ModRecipeSerializers.SAWMILLING.getRegistryName();//new ResourceLocation(CutAndColored.MODID, "sawmilling");
+	public static final ResourceLocation UID = ModRecipeSerializers.SAWMILLING.getRegistryName();
     public static final int width = 82;
     public static final int height = 34;
     private final IDrawable background;
@@ -27,9 +29,9 @@ public class SawmillingCategory implements IRecipeCategory<SawmillingRecipe>
     
     public SawmillingCategory(final IGuiHelper guiHelper) {
         final ResourceLocation location = Constants.RECIPE_GUI_VANILLA;
-        this.background = guiHelper.createDrawable(location, 0, 220, 82, 34);
-        this.icon = guiHelper.createDrawableIngredient(new ItemStack(ModBlocks.SAWMILL));
-        this.localizedName = Translator.translateToLocal("gui.jei." + CutAndColored.MODID + ".category.sawmilling");
+        background = guiHelper.createDrawable(location, 0, 220, 82, 34);
+        icon = guiHelper.createDrawableIngredient(new ItemStack(ModBlocks.SAWMILL));
+        localizedName = Translator.translateToLocal("gui.jei." + CutAndColored.MODID + ".category.sawmilling");
     }
     
     @Override
@@ -43,8 +45,8 @@ public class SawmillingCategory implements IRecipeCategory<SawmillingRecipe>
     }
     
     @Override
-    public String getTitle() {
-        return this.localizedName;
+    public Component getTitle() {
+        return new TranslatableComponent(localizedName);
     }
     
     @Override
@@ -60,7 +62,7 @@ public class SawmillingCategory implements IRecipeCategory<SawmillingRecipe>
     @Override
     public void setIngredients(final SawmillingRecipe recipe, final IIngredients ingredients) {
         ingredients.setInputIngredients(recipe.getIngredients());
-        ingredients.setOutput(VanillaTypes.ITEM, recipe.getRecipeOutput());
+        ingredients.setOutput(VanillaTypes.ITEM, recipe.getResultItem());
     }
     
     @Override

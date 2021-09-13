@@ -20,7 +20,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "additionalbars:horizontal_crossed_oak_bars"
+                  "items": [
+                    "additionalbars:horizontal_crossed_oak_bars"
+                  ]
                 }
               ]
             }

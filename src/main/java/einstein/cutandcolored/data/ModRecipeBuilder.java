@@ -9,139 +9,141 @@ import com.google.gson.JsonObject;
 import einstein.cutandcolored.init.ModRecipeSerializers;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
-import net.minecraft.advancements.ICriterionInstance;
-import net.minecraft.advancements.IRequirementsStrategy;
-import net.minecraft.advancements.criterion.RecipeUnlockedTrigger;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.item.Item;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.IItemProvider;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.advancements.CriterionTriggerInstance;
+import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.core.Registry;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModRecipeBuilder {
 	private final Item result;
 	private final Ingredient ingredient;
 	private final int count;
-	private final Advancement.Builder advancementBuilder = Advancement.Builder.builder();
+	private final Advancement.Builder advancement = Advancement.Builder.advancement();
 	private String group;
-	private final IRecipeSerializer<?> serializer;
+	private final RecipeSerializer<?> serializer;
 	
-	public ModRecipeBuilder(IRecipeSerializer<?> serializerIn, Ingredient ingredientIn, IItemProvider resultProviderIn, int countIn) {
+	public ModRecipeBuilder(RecipeSerializer<?> serializerIn, Ingredient ingredientIn, ItemLike resultProviderIn, int countIn) {
 		this.serializer = serializerIn;
 		this.result = resultProviderIn.asItem();
 		this.ingredient = ingredientIn;
 		this.count = countIn;
 	}
 	
-	public static ModRecipeBuilder glasscuttingRecipe(Ingredient ingredientIn, IItemProvider resultIn) {
+	public static ModRecipeBuilder glasscuttingRecipe(Ingredient ingredientIn, ItemLike resultIn) {
 		return new ModRecipeBuilder(ModRecipeSerializers.GLASSCUTTING, ingredientIn, resultIn, 1);
 	}
 	
-	public static ModRecipeBuilder glasscuttingRecipe(Ingredient ingredientIn, IItemProvider resultIn, int countIn) {
+	public static ModRecipeBuilder glasscuttingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
 		return new ModRecipeBuilder(ModRecipeSerializers.GLASSCUTTING, ingredientIn, resultIn, countIn);
 	}
 	
-	public static ModRecipeBuilder sawmillingRecipe(Ingredient ingredientIn, IItemProvider resultIn) {
+	public static ModRecipeBuilder sawmillingRecipe(Ingredient ingredientIn, ItemLike resultIn) {
 		return new ModRecipeBuilder(ModRecipeSerializers.SAWMILLING, ingredientIn, resultIn, 1);
 	}
 	
-	public static ModRecipeBuilder sawmillingRecipe(Ingredient ingredientIn, IItemProvider resultIn, int countIn) {
+	public static ModRecipeBuilder sawmillingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
 		return new ModRecipeBuilder(ModRecipeSerializers.SAWMILLING, ingredientIn, resultIn, countIn);
 	}
 	
-	public static ModRecipeBuilder weavingRecipe(Ingredient ingredientIn, IItemProvider resultIn) {
+	public static ModRecipeBuilder weavingRecipe(Ingredient ingredientIn, ItemLike resultIn) {
 		return new ModRecipeBuilder(ModRecipeSerializers.WEAVING, ingredientIn, resultIn, 1);
 	}
 	
-	public static ModRecipeBuilder weavingRecipe(Ingredient ingredientIn, IItemProvider resultIn, int countIn) {
+	public static ModRecipeBuilder weavingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
 		return new ModRecipeBuilder(ModRecipeSerializers.WEAVING, ingredientIn, resultIn, countIn);
 	}
 	
 	// Used to add conditions to stonecutting recipes
-	public static ModRecipeBuilder stonecuttingRecipe(Ingredient ingredientIn, IItemProvider resultIn, int countIn) {
-		return new ModRecipeBuilder(IRecipeSerializer.STONECUTTING, ingredientIn, resultIn, countIn);
+	public static ModRecipeBuilder stonecuttingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
+		return new ModRecipeBuilder(RecipeSerializer.STONECUTTER, ingredientIn, resultIn, countIn);
 	}
 	
-	public ModRecipeBuilder addCriterion(String name, ICriterionInstance criterionIn) {
-		this.advancementBuilder.withCriterion(name, criterionIn);
+	public ModRecipeBuilder unlockedBy(String p_176810_, CriterionTriggerInstance p_176811_) {
+		this.advancement.addCriterion(p_176810_, p_176811_);
 		return this;
 	}
 	
-	public void build(Consumer<IFinishedRecipe> consumerIn) {
-		this.build(consumerIn, ForgeRegistries.ITEMS.getKey(this.result));
+	public void save(Consumer<FinishedRecipe> consumerIn) {
+		this.save(consumerIn, ForgeRegistries.ITEMS.getKey(this.result));
 	}
 	
-	public void build(Consumer<IFinishedRecipe> consumerIn, String save) {
+	public void save(Consumer<FinishedRecipe> consumerIn, String save) {
 		ResourceLocation resourcelocation = ForgeRegistries.ITEMS.getKey(this.result);
 		if ((new ResourceLocation(save)).equals(resourcelocation)) {
 			throw new IllegalStateException("Mod Recipe Builder " + save + " should remove its 'save' argument");
 		} else {
-			this.build(consumerIn, new ResourceLocation(save));
+			this.save(consumerIn, new ResourceLocation(save));
 		}
 	}
 	
-	public void build(Consumer<IFinishedRecipe> consumerIn, ResourceLocation id) {
-		this.validate(id);
-		this.advancementBuilder.withParentId(new ResourceLocation("recipes/root")).withCriterion("has_the_recipe", RecipeUnlockedTrigger.create(id)).withRewards(AdvancementRewards.Builder.recipe(id)).withRequirementsStrategy(IRequirementsStrategy.OR);
-		consumerIn.accept(new ModRecipeBuilder.Result(id, this.serializer, this.group == null ? "" : this.group,
-				this.ingredient, this.result, this.count, this.advancementBuilder, new ResourceLocation(
-						id.getNamespace(), "recipes/" + this.result.getGroup().getPath().toLowerCase() + "/" + id.getPath())));
+	public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
+		this.ensureValid(id);
+		this.advancement.parent(new ResourceLocation("recipes/root")).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
+		consumer.accept(new ModRecipeBuilder.Result(id, this.serializer, this.group == null ? "" : this.group,
+				this.ingredient, this.result, this.count, this.advancement, new ResourceLocation(
+						id.getNamespace(), "recipes/" + this.result.getItemCategory().getRecipeFolderName().toLowerCase() + "/" + id.getPath())));
 	}
 	
-	private void validate(ResourceLocation id) {
-		if (this.advancementBuilder.getCriteria().isEmpty()) {
+	private void ensureValid(ResourceLocation id) {
+		if (this.advancement.getCriteria().isEmpty()) {
 			throw new IllegalStateException("No way of obtaining recipe " + id);
 		}
 	}
 	
-	public static class Result implements IFinishedRecipe {
+	public static class Result implements FinishedRecipe {
 		private final ResourceLocation id;
 		private final String group;
 		private final Ingredient ingredient;
 		private final Item result;
 		private final int count;
-		private final Advancement.Builder advancementBuilder;
+		private final Advancement.Builder advancement;
 		private final ResourceLocation advancementId;
-		private final IRecipeSerializer<?> serializer;
+		private final RecipeSerializer<?> type;
 		
-		public Result(ResourceLocation idIn, IRecipeSerializer<?> serializerIn, String groupIn, Ingredient ingredientIn, Item resultIn, int countIn, Advancement.Builder advancementBuilderIn, ResourceLocation advancementIdIn) {
-			this.id = idIn;
-			this.serializer = serializerIn;
-			this.group = groupIn;
-			this.ingredient = ingredientIn;
-			this.result = resultIn;
-			this.count = countIn;
-			this.advancementBuilder = advancementBuilderIn;
-			this.advancementId = advancementIdIn;
+		public Result(ResourceLocation id, RecipeSerializer<?> serializer, String group, Ingredient ingredient, Item result, int count, Advancement.Builder advancement, ResourceLocation advancementId) {
+			this.id = id;
+			this.type = serializer;
+			this.group = group;
+			this.ingredient = ingredient;
+			this.result = result;
+			this.count = count;
+			this.advancement = advancement;
+			this.advancementId = advancementId;
 		}
 		
-		public void serialize(JsonObject json) {
+		@SuppressWarnings("deprecation")
+		public void serializeRecipeData(JsonObject p_126349_) {
 			if (!this.group.isEmpty()) {
-				json.addProperty("group", this.group);
+				p_126349_.addProperty("group", this.group);
 			}
 			
-			json.add("ingredient", this.ingredient.serialize());
-			json.addProperty("result", ForgeRegistries.ITEMS.getKey(this.result).toString());
-			json.addProperty("count", this.count);
+			p_126349_.add("ingredient", this.ingredient.toJson());
+			p_126349_.addProperty("result", Registry.ITEM.getKey(this.result).toString());
+			p_126349_.addProperty("count", this.count);
 		}
 		
-		public ResourceLocation getID() {
+		public ResourceLocation getId() {
 			return this.id;
 		}
 		
-		public IRecipeSerializer<?> getSerializer() {
-			return this.serializer;
+		public RecipeSerializer<?> getType() {
+			return this.type;
 		}
 		
 		@Nullable
-		public JsonObject getAdvancementJson() {
-			return this.advancementBuilder.serialize();
+		public JsonObject serializeAdvancement() {
+			return this.advancement.serializeToJson();
 		}
 		
 		@Nullable
-		public ResourceLocation getAdvancementID() {
+		public ResourceLocation getAdvancementId() {
 			return this.advancementId;
 		}
 	}

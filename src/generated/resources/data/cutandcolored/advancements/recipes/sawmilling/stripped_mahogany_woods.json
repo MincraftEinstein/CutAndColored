@@ -20,7 +20,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "biomesoplenty:mahogany_wood"
+                  "items": [
+                    "biomesoplenty:mahogany_wood"
+                  ]
                 }
               ]
             }

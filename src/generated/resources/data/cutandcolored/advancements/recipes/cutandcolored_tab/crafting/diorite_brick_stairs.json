@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "cutandcolored:diorite_bricks"
+            "items": [
+              "cutandcolored:diorite_bricks"
+            ]
           }
         ]
       }

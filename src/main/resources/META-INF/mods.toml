@@ -1,11 +1,11 @@
 modLoader="javafml"
-loaderVersion="[34,)"
+loaderVersion="[37,)"
 license="All rights reserved"
 #issueTrackerURL="http://my.issue.tracker/"
 
 [[mods]]
 	modId="cutandcolored"
-	version="5.1"
+	version="6.0"
 	displayName="Cut And Colored"
 	#updateJSONURL="http://myurl.me/"
 	displayURL="https://www.curseforge.com/minecraft/mc-mods/cut-and-colored"
@@ -24,14 +24,14 @@ Adds a bunch of stairs, slabs and color variation to blocks in default Minecraft
 [[dependencies.cutandcolored]]
     modId="forge"
     mandatory=true
-    versionRange="[34,)"
+    versionRange="[37,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.cutandcolored]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.3, 1.17]"
+    versionRange="[1.17.1, 1.18]"
     ordering="NONE"
     side="BOTH"
 

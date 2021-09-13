@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "cutandcolored:horizontal_soul_glass_pane"
+            "items": [
+              "cutandcolored:horizontal_soul_glass_pane"
+            ]
           }
         ]
       }

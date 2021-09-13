@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "cutandcolored:brown_stained_planks"
+            "items": [
+              "cutandcolored:brown_stained_planks"
+            ]
           }
         ]
       }

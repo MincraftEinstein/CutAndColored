@@ -6,16 +6,15 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
-import einstein.cutandcolored.item.FlamboyantDyeColors;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.item.DyeColor;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class SawmillingRecipesGenerator extends RecipeResources {
@@ -28,11 +27,11 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 	}
 	
 	@Override
-	protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
+	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
-		pumpkinRecipes();
+//		pumpkinRecipes();
 		vanillaColoredWood();
-		flamboyantColoredWood();
+//		flamboyantColoredWood();
 		wood();
 		
 		sawmillingRecipe("bowl_from_logs", ItemTags.LOGS, Items.BOWL, 4);
@@ -43,21 +42,21 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 		sawmillingRecipe("carved_pumpkin", Blocks.PUMPKIN, Blocks.CARVED_PUMPKIN);
 	}
 	
-	private void pumpkinRecipes() {
-		for (int i = 0; i < 24; i++) {
-			int i1 = i + 1;
-			Item item = getItem(new ResourceLocation("omgourd", "carved_pumpkin_" + i1));
-			sawmillingRecipe("carved_pumpkin_" + i1, Blocks.PUMPKIN, item);
-			sawmillingRecipe("recarve_pumpkin_" + i1, ItemTagsGenerator.CARVED_PUMPKINS, item, 1);
-			
-			item = getItem(new ResourceLocation("omgourd", "jack_o_lantern_" + i1));
-			sawmillingRecipe("recave_jack_o_lantern_" + i1, ItemTagsGenerator.JACK_O_LANTERNS, item, 1);
-		}
-	}
+//	private void pumpkinRecipes() {
+//		for (int i = 0; i < 24; i++) {
+//			int i1 = i + 1;
+//			Item item = getItem(new ResourceLocation("omgourd", "carved_pumpkin_" + i1));
+//			sawmillingRecipe("carved_pumpkin_" + i1, Blocks.PUMPKIN, item);
+//			sawmillingRecipe("recarve_pumpkin_" + i1, ItemTagsGenerator.CARVED_PUMPKINS, item, 1);
+//			
+//			item = getItem(new ResourceLocation("omgourd", "jack_o_lantern_" + i1));
+//			sawmillingRecipe("recave_jack_o_lantern_" + i1, ItemTagsGenerator.JACK_O_LANTERNS, item, 1);
+//		}
+//	}
 	
 	private void vanillaColoredWood() {
 		for (int i = 0; i < DyeColor.values().length; i++) {
-			String color = DyeColor.byId(i).getTranslationKey();
+			String color = DyeColor.byId(i).getName();
 			Item item = getItem(ModRL(color + "_stained_planks"));
 			
 			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
@@ -65,15 +64,15 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 		}
 	}
 	
-	private void flamboyantColoredWood() {
-		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
-			String color = FlamboyantDyeColors.byId(i).getTranslationKey();
-			Item item = getItem(ModRL(color + "_stained_planks"));
-			
-			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
-			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
-		}
-	}
+//	private void flamboyantColoredWood() {
+//		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
+//			String color = FlamboyantDyeColors.byId(i).getName();
+//			Item item = getItem(ModRL(color + "_stained_planks"));
+//			
+//			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
+//			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
+//		}
+//	}
 	
 	private void wood() {
 		getWood();

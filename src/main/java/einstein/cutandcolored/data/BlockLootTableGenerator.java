@@ -8,20 +8,19 @@ import javax.annotation.Nonnull;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
-import net.minecraft.advancements.criterion.StatePropertiesPredicate;
-import net.minecraft.block.Block;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.data.loot.BlockLootTables;
-import net.minecraft.loot.ConstantRange;
-import net.minecraft.loot.ItemLootEntry;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.LootTable.Builder;
-import net.minecraft.loot.conditions.BlockStateProperty;
-import net.minecraft.loot.functions.SetCount;
-import net.minecraft.state.properties.SlabType;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.state.properties.SlabType;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
-public class BlockLootTableGenerator extends BlockLootTables {
+public class BlockLootTableGenerator extends BlockLoot {
 	
 	private List<Block> nonSlabBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> !block.getRegistryName().getPath().contains("_slab"))
@@ -45,8 +44,8 @@ public class BlockLootTableGenerator extends BlockLootTables {
 			.collect(Collectors.toList()));
 	
 	@Override
-	protected void registerLootTable(Block blockIn, Builder table) {
-		super.registerLootTable(blockIn, table);
+	protected void add(Block blockIn, LootTable.Builder table) {
+		super.add(blockIn, table);
 	}
 	
 	// May need to change the loot table for horizontal soul glass panes, because it is a slab that only drops one item,
@@ -61,18 +60,18 @@ public class BlockLootTableGenerator extends BlockLootTables {
 		CutAndColored.LOGGER.debug(silkTouchBlocks.size() + " silk touch blocks found");
 		CutAndColored.LOGGER.debug(glassSlabBlocks.size() + " glass slabs found");
 		for (int i = 0; i < nonSlabBlocks.size(); i++) {
-			registerDropSelfLootTable(nonSlabBlocks.get(i).getBlock());
+			dropSelf(nonSlabBlocks.get(i));
 		}
 		for (int i = 0; i < slabBlocks.size(); i++) {
-			registerLootTable(slabBlocks.get(i).getBlock(), BlockLootTables::droppingSlab);
+			add(slabBlocks.get(i), BlockLoot::createSlabItemTable);
 		}
 		for (int i = 0; i < silkTouchBlocks.size(); i++) {
-			registerSilkTouch(silkTouchBlocks.get(i).getBlock());
+			dropWhenSilkTouch(silkTouchBlocks.get(i));
 		}
 		for (int i = 0; i < glassSlabBlocks.size(); i++) {
-			registerLootTable(glassSlabBlocks.get(i), BlockLootTableGenerator::droppingSilkTouchSlab);
+			add(glassSlabBlocks.get(i), BlockLootTableGenerator::droppingSilkTouchSlab);
 		}
-		registerDropSelfLootTable(ModBlocks.GLASSCUTTER);
+		dropSelf(ModBlocks.GLASSCUTTER);
 	}
 	
 	@Nonnull
@@ -82,12 +81,12 @@ public class BlockLootTableGenerator extends BlockLootTables {
 	}
 	
 	protected static LootTable.Builder droppingSilkTouchSlab(Block slab) {
-		return LootTable.builder()
-				.addLootPool(LootPool.builder().acceptCondition(SILK_TOUCH).rolls(ConstantRange.of(1))
-				.addEntry(withExplosionDecay(slab, ItemLootEntry.builder(slab)
-				.acceptFunction(SetCount.builder(ConstantRange.of(2))
-				.acceptCondition(BlockStateProperty.builder(slab).fromProperties(StatePropertiesPredicate.Builder
-				.newBuilder().withProp(SlabBlock.TYPE, SlabType.DOUBLE)))))));
+		return LootTable.lootTable()
+				.withPool(LootPool.lootPool().when(HAS_SILK_TOUCH).setRolls(ConstantValue.exactly(1))
+				.add(applyExplosionDecay(slab, LootItem.lootTableItem(slab)
+				.apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
+				.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(slab).setProperties(StatePropertiesPredicate.Builder
+				.properties().hasProperty(SlabBlock.TYPE, SlabType.DOUBLE)))))));
 	}
 	
 //	private void checkForDuplicates() {

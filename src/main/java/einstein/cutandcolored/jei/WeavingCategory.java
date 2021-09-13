@@ -13,8 +13,10 @@ import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import mezz.jei.config.Constants;
 import mezz.jei.util.Translator;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 
 public class WeavingCategory implements IRecipeCategory<WeavingRecipe>
 {
@@ -27,9 +29,9 @@ public class WeavingCategory implements IRecipeCategory<WeavingRecipe>
     
     public WeavingCategory(final IGuiHelper guiHelper) {
         final ResourceLocation location = Constants.RECIPE_GUI_VANILLA;
-        this.background = guiHelper.createDrawable(location, 0, 220, 82, 34);
-        this.icon = guiHelper.createDrawableIngredient(new ItemStack(ModBlocks.WEAVER));
-        this.localizedName = Translator.translateToLocal("gui.jei." + CutAndColored.MODID + ".category.weaving");
+        background = guiHelper.createDrawable(location, 0, 220, 82, 34);
+        icon = guiHelper.createDrawableIngredient(new ItemStack(ModBlocks.WEAVER));
+        localizedName = Translator.translateToLocal("gui.jei." + CutAndColored.MODID + ".category.weaving");
     }
     
     @Override
@@ -43,8 +45,8 @@ public class WeavingCategory implements IRecipeCategory<WeavingRecipe>
     }
     
     @Override
-    public String getTitle() {
-        return this.localizedName;
+    public Component getTitle() {
+        return new TranslatableComponent(localizedName);
     }
     
     @Override
@@ -60,7 +62,7 @@ public class WeavingCategory implements IRecipeCategory<WeavingRecipe>
     @Override
     public void setIngredients(final WeavingRecipe recipe, final IIngredients ingredients) {
         ingredients.setInputIngredients(recipe.getIngredients());
-        ingredients.setOutput(VanillaTypes.ITEM, recipe.getRecipeOutput());
+        ingredients.setOutput(VanillaTypes.ITEM, recipe.getResultItem());
     }
     
     @Override

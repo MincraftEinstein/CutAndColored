@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "minecraft:nether_brick_wall"
+            "items": [
+              "minecraft:nether_brick_wall"
+            ]
           }
         ]
       }

@@ -16,12 +16,12 @@ import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.world.ClientWorld;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.item.crafting.RecipeManager;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.RecipeType;
 
 @SuppressWarnings("resource")
 @JeiPlugin
@@ -45,8 +45,8 @@ public class JEIPlugin implements IModPlugin
 	
 	@Override
     public void registerRecipes(final IRecipeRegistration registration) {
-        final ClientWorld world = Minecraft.getInstance().world;
-        final RecipeManager recipeManager = world.getRecipeManager();
+        final ClientLevel level = Minecraft.getInstance().level;
+        final RecipeManager recipeManager = level.getRecipeManager();
         registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.GLASSCUTTING), GlasscuttingCategory.UID);
         registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.SAWMILLING), SawmillingCategory.UID);
         registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.WEAVING), WeavingCategory.UID);
@@ -59,8 +59,8 @@ public class JEIPlugin implements IModPlugin
 		registration.addRecipeCatalyst(new ItemStack(ModBlocks.WEAVER), new ResourceLocation[] { WeavingCategory.UID });
 	}
 		
-    public static List<IRecipe<?>> getRecipes(final RecipeManager manager, final IRecipeType<?> type) {
-        final Collection<IRecipe<?>> recipes = manager.getRecipes();
+    public static List<Recipe<?>> getRecipes(final RecipeManager manager, final RecipeType<?> type) {
+        final Collection<Recipe<?>> recipes = manager.getRecipes();
         return recipes.stream().filter(iRecipe -> iRecipe.getType() == type).collect(Collectors.toList());
     }
 }

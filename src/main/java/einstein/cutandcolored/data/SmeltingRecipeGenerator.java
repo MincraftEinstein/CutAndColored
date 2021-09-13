@@ -3,9 +3,9 @@ package einstein.cutandcolored.data;
 import java.util.function.Consumer;
 
 import einstein.cutandcolored.init.ModBlocks;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.level.block.Blocks;
 
 public class SmeltingRecipeGenerator extends RecipeResources {
 
@@ -14,7 +14,7 @@ public class SmeltingRecipeGenerator extends RecipeResources {
 	}
 	
 	@Override
-	protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
+	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
 		smeltingRecipe(Blocks.SOUL_SAND, ModBlocks.SOUL_GLASS, 0.3F, 300);
 		smeltingRecipe(ModBlocks.SOUL_SANDSTONE, ModBlocks.SMOOTH_SOUL_SANDSTONE, 0.3F, 300);

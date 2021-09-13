@@ -20,7 +20,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "biomesoplenty:fir_wood"
+                  "items": [
+                    "biomesoplenty:fir_wood"
+                  ]
                 }
               ]
             }
