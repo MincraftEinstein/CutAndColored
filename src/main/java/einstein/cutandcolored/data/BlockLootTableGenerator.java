@@ -36,6 +36,7 @@ public class BlockLootTableGenerator extends BlockLoot {
 			.filter((block) -> block.getRegistryName().getPath().contains("glass"))
 			.filter((block) -> !block.getRegistryName().getPath().contains("_slab"))
 			.filter((block) -> !block.getRegistryName().getPath().contains("glasscutter"))
+			.filter((block) -> !block.getRegistryName().getPath().contains("tinted_glass_pane"))
 			.collect(Collectors.toList()));
 	
 	private List<Block> glassSlabBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
@@ -72,6 +73,7 @@ public class BlockLootTableGenerator extends BlockLoot {
 			add(glassSlabBlocks.get(i), BlockLootTableGenerator::droppingSilkTouchSlab);
 		}
 		dropSelf(ModBlocks.GLASSCUTTER);
+		dropSelf(ModBlocks.TINTED_GLASS_PANE);
 	}
 	
 	@Nonnull

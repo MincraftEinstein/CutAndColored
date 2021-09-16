@@ -7,6 +7,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -121,6 +122,22 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			.define('#', ModBlocks.SOUL_GLASS)
 			.unlockedBy("has_item", has(ModBlocks.SOUL_GLASS))
 			.save(consumer, location(ModBlocks.SOUL_GLASS_PANE, "crafting/"));
+		ShapedRecipeBuilder.shaped(ModBlocks.TINTED_GLASS_PANE, 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Blocks.TINTED_GLASS)
+			.unlockedBy("has_item", has(Blocks.TINTED_GLASS))
+			.save(consumer, location(ModBlocks.TINTED_GLASS_PANE, "crafting/"));
+		Item horizontal_tinted_glass_pane = getItem(new ResourceLocation("horizontalpanes:horizontal_tinted_glass_pane"));
+		ShapedRecipeBuilder.shaped(horizontal_tinted_glass_pane, 3)
+			.pattern("###")
+			.define('#', ModBlocks.TINTED_GLASS_PANE)
+			.unlockedBy("has_item", has(ModBlocks.TINTED_GLASS_PANE))
+			.save(consumer, location(horizontal_tinted_glass_pane, "crafting/"));
+		ShapelessRecipeBuilder.shapeless(ModBlocks.TINTED_GLASS_PANE)
+			.requires(horizontal_tinted_glass_pane)
+			.unlockedBy("has_item", has(horizontal_tinted_glass_pane))
+			.save(consumer, location("tinted_glass_pane_from_horizontal_pane", "crafting/"));
 		
 		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_SANDSTONE_SLAB, 6)
 			.pattern("###")

@@ -187,6 +187,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.PURPUR_WALL));
 		
 		paneBlock((IronBarsBlock) ModBlocks.SOUL_GLASS_PANE, blockRL("soul_glass"), blockRL("soul_glass_pane_top"));
+		paneBlock((IronBarsBlock) ModBlocks.TINTED_GLASS_PANE, blockMCRL("tinted_glass"), blockRL("tinted_glass_pane_top"));
 		
 		logBlock((RotatedPillarBlock) ModBlocks.PRISMARINE_BRICK_PILLAR);
 		logBlock((RotatedPillarBlock) ModBlocks.POLISHED_BLACKSTONE_PILLAR);

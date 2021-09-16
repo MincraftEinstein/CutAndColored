@@ -14,6 +14,7 @@ import einstein.cutandcolored.block.IronFenceGateBlock;
 import einstein.cutandcolored.block.SawmillBlock;
 import einstein.cutandcolored.block.StainedGlassSlabBlock;
 import einstein.cutandcolored.block.StainedGlassStairsBlock;
+import einstein.cutandcolored.block.TintedGlassPane;
 import einstein.cutandcolored.block.WeaverBlock;
 import einstein.einsteins_library.util.RegistryHandler;
 import net.minecraft.world.item.DyeColor;
@@ -49,6 +50,7 @@ public class ModBlocks
     
     // PANES
     public static final Block SOUL_GLASS_PANE = register("soul_glass_pane", new IronBarsBlock(BlockProperties.GLASS));
+    public static final Block TINTED_GLASS_PANE = register("tinted_glass_pane", new TintedGlassPane(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE).color(MaterialColor.COLOR_GRAY).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
     public static final Block HORIZONTAL_SOUL_GLASS_PANE = RegistryHandler.registerBlock(CutAndColored.MODID, "horizontalpanes", "horizontal_soul_glass_pane", new HorizontalSoulGlassPane(BlockBehaviour.Properties.of(Material.GLASS).noOcclusion().strength(0.3F, 0.3F).sound(SoundType.GLASS)), CutAndColored.MOD_TAB);
     
     // STAIRS

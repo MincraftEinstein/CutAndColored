@@ -88,6 +88,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	public static final Tag.Named<Block> NETHER_BRICK_FENCE_GATES = BlockTags.bind("forge:fence_gates/nether_brick");
 	
 	public static final Tag.Named<Block> SOUL_GLASS_PANES = BlockTags.bind("forge:glass_panes/soul");
+	public static final Tag.Named<Block> TINTED_GLASS_PANES = BlockTags.bind("forge:glass_panes/tinted");
 	
 	public static final Tag.Named<Block> SOUL_GLASS = BlockTags.bind("forge:glass/soul");
 	
@@ -166,6 +167,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 		tag(NETHER_BRICK_FENCE_GATES).add(ModBlocks.NETHER_BRICK_FENCE_GATE);
 		tag(SOUL_GLASS).add(ModBlocks.SOUL_GLASS);
 		tag(SOUL_GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE);
+		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE);
 		
 		tag(Tags.Blocks.GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE);
 		tag(Tags.Blocks.SANDSTONE).add(ModBlocks.SOUL_SANDSTONE, ModBlocks.CUT_SOUL_SANDSTONE,

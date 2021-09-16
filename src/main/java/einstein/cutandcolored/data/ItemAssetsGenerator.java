@@ -54,6 +54,7 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.PURPUR_WALL, "purpur_wall_inventory");
 		
 		generatedItem("soul_glass_pane", new ResourceLocation(CutAndColored.MODID, "block/soul_glass"));
+		generatedItem("tinted_glass_pane", new ResourceLocation(CutAndColored.MCMODID, "block/tinted_glass"));
 		
 		blockItemModel(ModBlocks.PRISMARINE_BRICK_PILLAR);
 		blockItemModel(ModBlocks.POLISHED_BLACKSTONE_PILLAR);

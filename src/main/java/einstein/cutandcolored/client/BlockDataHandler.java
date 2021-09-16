@@ -441,6 +441,7 @@ public class BlockDataHandler
         
         // PANES
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOUL_GLASS_PANE, RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TINTED_GLASS_PANE, RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, RenderType.cutout());
         
         // STAIRS

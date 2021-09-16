@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cutandcolored:tinted_glass_pane"
+    }
+  },
+  "result": {
+    "item": "horizontalpanes:horizontal_tinted_glass_pane",
+    "count": 3
+  }
+}

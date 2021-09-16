@@ -89,6 +89,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	public static final Tag.Named<Item> NETHER_BRICK_FENCE_GATES = ItemTags.bind("forge:fence_gates/nether_brick");
 	
 	public static final Tag.Named<Item> SOUL_GLASS_PANES = ItemTags.bind("forge:glass_panes/soul");
+	public static final Tag.Named<Item> TINTED_GLASS_PANES = ItemTags.bind("forge:glass_panes/tinted");
 	
 	public static final Tag.Named<Item> SOUL_GLASS = ItemTags.bind("forge:glass/soul");
 	
@@ -166,6 +167,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(NETHER_BRICK_FENCE_GATES).add(ModBlocks.NETHER_BRICK_FENCE_GATE.asItem());
 		tag(SOUL_GLASS).add(ModBlocks.SOUL_GLASS.asItem());
 		tag(SOUL_GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.asItem());
+		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.asItem());
 		
 		tag(Tags.Items.GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.asItem());
 		tag(Tags.Items.SANDSTONE).add(ModBlocks.SOUL_SANDSTONE.asItem(), ModBlocks.CUT_SOUL_SANDSTONE.asItem(), ModBlocks.CHISELED_SOUL_SANDSTONE.asItem(), ModBlocks.SMOOTH_SOUL_SANDSTONE.asItem());
