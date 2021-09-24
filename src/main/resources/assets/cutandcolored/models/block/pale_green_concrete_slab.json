@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab",
-    "textures": {
-        "bottom": "flamboyant:block/pale_green_concrete",
-        "top": "flamboyant:block/pale_green_concrete",
-        "side": "flamboyant:block/pale_green_concrete"
-    }
-}

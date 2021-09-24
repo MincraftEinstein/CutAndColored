@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/stairs",
-    "textures": {
-        "bottom": "cutandcolored:block/lime_stained_bricks",
-        "top": "cutandcolored:block/lime_stained_bricks",
-        "side": "cutandcolored:block/lime_stained_bricks"
-    }
-}

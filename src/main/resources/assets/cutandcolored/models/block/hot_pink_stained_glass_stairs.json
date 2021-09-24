@@ -1,8 +1,0 @@
-{
-    "parent": "cutandcolored:block/bordered_stairs",
-    "textures": {
-        "bottom": "flamboyant:block/hot_pink_stained_glass",
-        "top": "flamboyant:block/hot_pink_stained_glass",
-        "side": "flamboyant:block/hot_pink_stained_glass"
-    }
-}

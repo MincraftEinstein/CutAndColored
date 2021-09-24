@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab",
-    "textures": {
-        "bottom": "cutandcolored:block/slate_gray_stained_planks",
-        "top": "cutandcolored:block/slate_gray_stained_planks",
-        "side": "cutandcolored:block/slate_gray_stained_planks"
-    }
-}

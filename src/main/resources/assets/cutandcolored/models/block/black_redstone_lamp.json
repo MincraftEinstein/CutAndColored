@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:block/cube_all",
-    "textures": {
-        "all": "cutandcolored:block/black_redstone_lamp"
-    }
-}

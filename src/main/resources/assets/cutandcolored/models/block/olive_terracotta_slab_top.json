@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab_top",
-    "textures": {
-        "bottom": "flamboyant:block/olive_terracotta",
-        "top": "flamboyant:block/olive_terracotta",
-        "side": "flamboyant:block/olive_terracotta"
-    }
-}

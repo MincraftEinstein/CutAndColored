@@ -46,6 +46,14 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		stairsRecipe("cracked_stone_brick_stairs", Blocks.CRACKED_STONE_BRICKS, ModBlocks.CRACKED_STONE_BRICK_STAIRS, "");
 		wallsRecipe("cracked_stone_brick_wall", Blocks.CRACKED_STONE_BRICKS, ModBlocks.CRACKED_STONE_BRICK_WALL, "");
 		
+		slabsRecipe("cracked_deepslate_brick_slab", Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB, "");
+		stairsRecipe("cracked_deepslate_brick_stairs", Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS, "");
+		wallsRecipe("cracked_deepslate_brick_wall", Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL, "");
+		
+		slabsRecipe("cracked_deepslate_tile_slab", Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB, "");
+		stairsRecipe("cracked_deepslate_tile_stairs", Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS, "");
+		wallsRecipe("cracked_deepslate_tile_wall", Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_WALL, "");
+		
 		blockRecipe4x4("cut_soul_sandstone", ModBlocks.SOUL_SANDSTONE, ModBlocks.CUT_SOUL_SANDSTONE, 1);
 		slabsRecipe("cut_soul_sandstone_slab", ModBlocks.CUT_SOUL_SANDSTONE, ModBlocks.CUT_SOUL_SANDSTONE_SLAB, "");
 		
@@ -96,6 +104,8 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		
 		wallsRecipe("purpur_wall", Blocks.PURPUR_BLOCK, ModBlocks.PURPUR_WALL, "");
 		
+		slabsRecipe("quartz_brick_slab", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_SLAB, "");
+		stairsRecipe("quartz_brick_stairs", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_STAIRS, "");
 		wallsRecipe("quartz_brick_wall", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_WALL, "");
 		
 		ShapedRecipeBuilder.shaped(ModBlocks.SAWMILL)
@@ -145,7 +155,7 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			.unlockedBy("has_soul_sandstone", has(ModBlocks.SOUL_SANDSTONE))
 			.unlockedBy("has_chiseled_soul_sandstone", has(ModBlocks.CHISELED_SOUL_SANDSTONE))
 			.save(consumer, location("soul_sandstone_slab", "crafting/"));
-		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_SANDSTONE_STAIR, 4)
+		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_SANDSTONE_STAIRS, 4)
 			.pattern("#  ")
 			.pattern("## ")
 			.pattern("###")
@@ -169,6 +179,14 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			.define('$', ItemTags.PLANKS)
 			.unlockedBy("has_item", has(Items.STRING))
 			.save(consumer, location(ModBlocks.WEAVER, "crafting/"));
+		
+		slabsRecipe("calcite_slab", Blocks.CALCITE, ModBlocks.CALCITE_SLAB, "");
+		stairsRecipe("calcite_stairs", Blocks.CALCITE, ModBlocks.CALCITE_STAIRS, "");
+		wallsRecipe("calcite_wall", Blocks.CALCITE, ModBlocks.CALCITE_WALL, "");
+		
+		slabsRecipe("tuff_slab", Blocks.TUFF, ModBlocks.TUFF_SLAB, "");
+		stairsRecipe("tuff_stairs", Blocks.TUFF, ModBlocks.TUFF_STAIRS, "");
+		wallsRecipe("tuff_wall", Blocks.TUFF, ModBlocks.TUFF_WALL, "");
 	}
 	
 	private void vanillaColoredRecipes() {

@@ -1,3 +1,6 @@
 {
-  "parent": "cutandcolored:block/light_blue_stained_brick_wall_inventory"
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "cutandcolored:block/light_blue_stained_bricks"
+  }
 }

@@ -39,16 +39,24 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 		stonecuttingRecipe("prismarine_brick_pillar", Blocks.PRISMARINE_BRICKS, ModBlocks.PRISMARINE_BRICK_PILLAR);
 		stonecuttingRecipe("prismarine_brick_wall", Blocks.PRISMARINE_BRICKS, ModBlocks.PRISMARINE_BRICK_WALL);
 		stonecuttingRecipe("purpur_wall", Blocks.PURPUR_BLOCK, ModBlocks.PURPUR_WALL);
+		stonecuttingRecipe("quartz_brick_slab", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_SLAB);
+		stonecuttingRecipe("quartz_brick_stairs", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_STAIRS);
 		stonecuttingRecipe("quartz_brick_wall", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_WALL);
 		stonecuttingRecipe("smooth_soul_sandstone_slab", ModBlocks.SMOOTH_SOUL_SANDSTONE, ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB, 2);
 		stonecuttingRecipe("smooth_soul_sandstone_stairs", ModBlocks.SMOOTH_SOUL_SANDSTONE, ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS);
 		stonecuttingRecipe("smooth_stone_stairs", Blocks.SMOOTH_STONE, ModBlocks.SMOOTH_STONE_STAIRS);
 		stonecuttingRecipe("smooth_stone_wall", Blocks.SMOOTH_STONE, ModBlocks.SMOOTH_STONE_WALL);
 		stonecuttingRecipe("soul_sandstone_slab", ModBlocks.SOUL_SANDSTONE, ModBlocks.SOUL_SANDSTONE_SLAB, 2);
-		stonecuttingRecipe("soul_sandstone_stairs", ModBlocks.SOUL_SANDSTONE, ModBlocks.SOUL_SANDSTONE_STAIR);
+		stonecuttingRecipe("soul_sandstone_stairs", ModBlocks.SOUL_SANDSTONE, ModBlocks.SOUL_SANDSTONE_STAIRS);
 		stonecuttingRecipe("soul_sandstone_wall", ModBlocks.SOUL_SANDSTONE, ModBlocks.SOUL_SANDSTONE_WALL);
 		stonecuttingRecipe("terracotta_slab", Blocks.TERRACOTTA, ModBlocks.TERRACOTTA_SLAB, 2);
 		stonecuttingRecipe("terracotta_stairs", Blocks.TERRACOTTA, ModBlocks.TERRACOTTA_STAIRS);
+		stonecuttingRecipe("calcite_slab", Blocks.CALCITE, ModBlocks.CALCITE_SLAB, 2);
+		stonecuttingRecipe("calcite_stairs", Blocks.CALCITE, ModBlocks.CALCITE_STAIRS);
+		stonecuttingRecipe("calcite_wall", Blocks.CALCITE, ModBlocks.CALCITE_WALL);
+		stonecuttingRecipe("tuff_slab", Blocks.TUFF, ModBlocks.TUFF_SLAB, 2);
+		stonecuttingRecipe("tuff_stairs", Blocks.TUFF, ModBlocks.TUFF_STAIRS);
+		stonecuttingRecipe("tuff_wall", Blocks.TUFF, ModBlocks.TUFF_WALL);
 	}
 	
 	private void vanillaColoredRecipes() {

@@ -35,22 +35,17 @@ public class BlockLootTableGenerator extends BlockLoot {
 	private List<Block> silkTouchBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> block.getRegistryName().getPath().contains("glass"))
 			.filter((block) -> !block.getRegistryName().getPath().contains("_slab"))
-			.filter((block) -> !block.getRegistryName().getPath().contains("glasscutter"))
-			.filter((block) -> !block.getRegistryName().getPath().contains("tinted_glass_pane"))
+			.filter((block) -> !ModBlocks.GLASSCUTTER.equals(block))
+			.filter((block) -> !ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.equals(block))
+			.filter((block) -> !ModBlocks.TINTED_GLASS_PANE.equals(block))
+			.filter((block) -> !ModBlocks.TINTED_GLASS_STAIRS.equals(block))
+			.filter((block) -> !ModBlocks.TINTED_GLASS_SLAB.equals(block))
 			.collect(Collectors.toList()));
 	
 	private List<Block> glassSlabBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> block.getRegistryName().getPath().contains("glass"))
 			.filter((block) -> block.getRegistryName().getPath().contains("_slab"))
 			.collect(Collectors.toList()));
-	
-	@Override
-	protected void add(Block blockIn, LootTable.Builder table) {
-		super.add(blockIn, table);
-	}
-	
-	// May need to change the loot table for horizontal soul glass panes, because it is a slab that only drops one item,
-	// but only if the Horizontal Glass Panes mod does it
 	
 	@Override
 	protected void addTables() {
@@ -70,19 +65,23 @@ public class BlockLootTableGenerator extends BlockLoot {
 			dropWhenSilkTouch(silkTouchBlocks.get(i));
 		}
 		for (int i = 0; i < glassSlabBlocks.size(); i++) {
-			add(glassSlabBlocks.get(i), BlockLootTableGenerator::droppingSilkTouchSlab);
+			add(glassSlabBlocks.get(i), BlockLootTableGenerator::createSilkTouchSlabTable);
 		}
 		dropSelf(ModBlocks.GLASSCUTTER);
 		dropSelf(ModBlocks.TINTED_GLASS_PANE);
+		dropSelf(ModBlocks.TINTED_GLASS_STAIRS);
+		add(ModBlocks.TINTED_GLASS_SLAB, BlockLoot::createSlabItemTable);
 	}
 	
 	@Nonnull
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		return ModBlocks.allBlocks;
+		List<Block> list = new ArrayList<Block>(ModBlocks.allBlocks);
+		list.remove(list.indexOf(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE));
+		return list;
 	}
 	
-	protected static LootTable.Builder droppingSilkTouchSlab(Block slab) {
+	protected static LootTable.Builder createSilkTouchSlabTable(Block slab) {
 		return LootTable.lootTable()
 				.withPool(LootPool.lootPool().when(HAS_SILK_TOUCH).setRolls(ConstantValue.exactly(1))
 				.add(applyExplosionDecay(slab, LootItem.lootTableItem(slab)

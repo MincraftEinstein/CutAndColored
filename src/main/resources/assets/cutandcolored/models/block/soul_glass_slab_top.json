@@ -1,8 +1,0 @@
-{
-    "parent": "cutandcolored:block/bordered_slab_top",
-    "textures": {
-        "bottom": "cutandcolored:block/soul_glass",
-        "top": "cutandcolored:block/soul_glass",
-        "side": "cutandcolored:block/soul_glass"
-    }
-}

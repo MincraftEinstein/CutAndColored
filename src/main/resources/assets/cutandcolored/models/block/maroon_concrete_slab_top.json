@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab_top",
-    "textures": {
-        "bottom": "flamboyant:block/maroon_concrete",
-        "top": "flamboyant:block/maroon_concrete",
-        "side": "flamboyant:block/maroon_concrete"
-    }
-}

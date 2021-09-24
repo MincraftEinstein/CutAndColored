@@ -51,7 +51,9 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 		glasscuttingRecipe("soul_glass_stairs", ModBlocks.SOUL_GLASS, ModBlocks.SOUL_GLASS_STAIRS);
 		glasscuttingRecipe("horizontal_soul_glass_pane", ModBlocks.SOUL_GLASS, ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, 4, "horizontalpanes");
 		
-		glasscuttingRecipe("tinted_glass_pane", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_PANE);
+		glasscuttingRecipe("tinted_glass_pane", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_PANE, 4);
+		glasscuttingRecipe("tinted_glass_slab", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_SLAB, 2);
+		glasscuttingRecipe("tinted_glass_stairs", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_STAIRS);
 		glasscuttingRecipe("horizontal_tinted_glass_pane", Blocks.TINTED_GLASS, getItem(new ResourceLocation("horizontalpanes:horizontal_tinted_glass_pane")), 4);
 		
 		for (int i = 0; i < stainedGlass.size(); i++) {

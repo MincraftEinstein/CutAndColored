@@ -129,19 +129,26 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 				.add(ModBlocks.CRACKED_STONE_BRICK_SLAB.asItem(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.asItem(),
 						ModBlocks.CRACKED_NETHER_BRICK_SLAB.asItem(), ModBlocks.SOUL_SANDSTONE_SLAB.asItem(),
 						ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB.asItem(), ModBlocks.CUT_SOUL_SANDSTONE_SLAB.asItem(),
-						ModBlocks.GRANITE_BRICK_SLAB.asItem(), ModBlocks.DIORITE_BRICK_SLAB.asItem(), ModBlocks.ANDESITE_BRICK_SLAB.asItem());
+						ModBlocks.GRANITE_BRICK_SLAB.asItem(), ModBlocks.DIORITE_BRICK_SLAB.asItem(), ModBlocks.ANDESITE_BRICK_SLAB.asItem(),
+						ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.asItem(), ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB.asItem(),
+						ModBlocks.QUARTZ_BRICK_SLAB.asItem(), ModBlocks.CALCITE_SLAB.asItem(),
+						ModBlocks.TUFF_SLAB.asItem());
 		tag(ItemTags.STAIRS)
 				.addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS)//.addOptionalTag(FLAMBOYANT_STAINED_PLANK_STAIRS.getName())
 				.add(ModBlocks.SMOOTH_STONE_STAIRS.asItem(), ModBlocks.CRACKED_STONE_BRICK_STAIRS.asItem(),
 						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.asItem(), ModBlocks.CRACKED_NETHER_BRICK_STAIRS.asItem(),
-						ModBlocks.SOUL_SANDSTONE_STAIR.asItem(), ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS.asItem(),
+						ModBlocks.SOUL_SANDSTONE_STAIRS.asItem(), ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS.asItem(),
 						ModBlocks.GRANITE_BRICK_STAIRS.asItem(), ModBlocks.DIORITE_BRICK_STAIRS.asItem(),
-						ModBlocks.ANDESITE_BRICK_STAIRS.asItem());
+						ModBlocks.ANDESITE_BRICK_STAIRS.asItem(), ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.asItem(),
+						ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.asItem(), ModBlocks.QUARTZ_BRICK_STAIRS.asItem(), 
+						ModBlocks.CALCITE_STAIRS.asItem(), ModBlocks.TUFF_STAIRS.asItem());
 		tag(ItemTags.WALLS).addTag(CLAY_BRICK_WALLS).add(ModBlocks.SOUL_SANDSTONE_WALL.asItem(),
 				ModBlocks.GRANITE_BRICK_WALL.asItem(), ModBlocks.DIORITE_BRICK_WALL.asItem(), ModBlocks.ANDESITE_BRICK_WALL.asItem(),
 				ModBlocks.PURPUR_WALL.asItem(), ModBlocks.PRISMARINE_BRICK_WALL.asItem(), ModBlocks.DARK_PRISMARINE_WALL.asItem(),
 				ModBlocks.CRACKED_STONE_BRICK_WALL.asItem(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.asItem(),
-				ModBlocks.CRACKED_NETHER_BRICK_WALL.asItem(), ModBlocks.SMOOTH_STONE_WALL.asItem(), ModBlocks.QUARTZ_BRICK_WALL.asItem());
+				ModBlocks.CRACKED_NETHER_BRICK_WALL.asItem(), ModBlocks.SMOOTH_STONE_WALL.asItem(), ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL.asItem(),
+				ModBlocks.CRACKED_DEEPSLATE_TILE_WALL.asItem(), ModBlocks.QUARTZ_BRICK_WALL.asItem(),
+				ModBlocks.CALCITE_WALL.asItem(), ModBlocks.TUFF_WALL.asItem());
 		tag(ItemTags.WOODEN_SLABS).addTag(STAINED_PLANK_SLABS);
 		tag(ItemTags.WOODEN_STAIRS).addTag(STAINED_PLANK_STAIRS);
 		
@@ -152,8 +159,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(CLAY_BRICKS).add(Items.BRICKS).addTag(VANILLA_STAINED_BRICKS);//.addOptionalTag(FLAMBOYANT_STAINED_BRICKS.getName());
 		tag(CONCRETE_SLABS).addTag(VANILLA_CONCRETE_SLABS);//.addOptionalTag(FLAMBOYANT_CONCRETE_SLABS.getName());
 		tag(CONCRETE_STAIRS).addTag(VANILLA_CONCRETE_STAIRS);//.addOptionalTag(FLAMBOYANT_CONCRETE_STAIRS.getName());
-		tag(GLASS_SLABS).addTag(VANILLA_STAINED_GLASS_SLABS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_SLABS.getName());
-		tag(GLASS_STAIRS).addTag(VANILLA_STAINED_GLASS_STAIRS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_STAIRS.getName());
+		tag(GLASS_SLABS).add(ModBlocks.GLASS_SLAB.asItem()).add(ModBlocks.SOUL_GLASS_SLAB.asItem()).add(ModBlocks.TINTED_GLASS_SLAB.asItem()).addTag(VANILLA_STAINED_GLASS_SLABS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_SLABS.getName());
+		tag(GLASS_STAIRS).add(ModBlocks.GLASS_STAIRS.asItem()).add(ModBlocks.SOUL_GLASS_STAIRS.asItem()).add(ModBlocks.TINTED_GLASS_STAIRS.asItem()).addTag(VANILLA_STAINED_GLASS_STAIRS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_STAIRS.getName());
 		tag(REDSTONE_LAMPS).add(Items.REDSTONE_LAMP).addTag(VANILLA_REDSTONE_LAMPS);//.addOptionalTag(FLAMBOYANT_REDSTONE_LAMPS.getName());
 		tag(CARVED_PUMPKINS).add(Items.CARVED_PUMPKIN);
 		tag(JACK_O_LANTERNS).add(Items.JACK_O_LANTERN);
@@ -169,7 +176,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(SOUL_GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.asItem());
 		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.asItem());
 		
-		tag(Tags.Items.GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.asItem());
+		tag(Tags.Items.GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.asItem()).add(ModBlocks.TINTED_GLASS_PANE.asItem());
 		tag(Tags.Items.SANDSTONE).add(ModBlocks.SOUL_SANDSTONE.asItem(), ModBlocks.CUT_SOUL_SANDSTONE.asItem(), ModBlocks.CHISELED_SOUL_SANDSTONE.asItem(), ModBlocks.SMOOTH_SOUL_SANDSTONE.asItem());
 		tag(Tags.Items.GLASS_COLORLESS).add(ModBlocks.SOUL_GLASS.asItem());
 		tag(Tags.Items.GLASS_PANES_COLORLESS).add(ModBlocks.SOUL_GLASS_PANE.asItem());

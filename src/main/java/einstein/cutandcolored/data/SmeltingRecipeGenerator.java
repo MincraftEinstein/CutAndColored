@@ -30,6 +30,14 @@ public class SmeltingRecipeGenerator extends RecipeResources {
 		smeltingRecipe(Blocks.NETHER_BRICK_SLAB, ModBlocks.CRACKED_NETHER_BRICK_SLAB, 0.1F, 200);
 		smeltingRecipe(Blocks.NETHER_BRICK_STAIRS, ModBlocks.CRACKED_NETHER_BRICK_STAIRS, 0.1F, 200);
 		smeltingRecipe(Blocks.NETHER_BRICK_WALL, ModBlocks.CRACKED_NETHER_BRICK_WALL, 0.1F, 200);
+		
+		smeltingRecipe(Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB, 0.1F, 200);
+		smeltingRecipe(Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS, 0.1F, 200);
+		smeltingRecipe(Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL, 0.1F, 200);
+		
+		smeltingRecipe(Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB, 0.1F, 200);
+		smeltingRecipe(Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS, 0.1F, 200);
+		smeltingRecipe(Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_WALL, 0.1F, 200);
 
 	}
 	

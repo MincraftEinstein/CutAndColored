@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/stairs",
-    "textures": {
-        "bottom": "cutandcolored:block/pink_stained_planks",
-        "top": "cutandcolored:block/pink_stained_planks",
-        "side": "cutandcolored:block/pink_stained_planks"
-    }
-}

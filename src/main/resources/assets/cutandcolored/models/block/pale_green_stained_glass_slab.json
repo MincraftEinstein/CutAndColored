@@ -1,8 +1,0 @@
-{
-    "parent": "cutandcolored:block/bordered_slab",
-    "textures": {
-        "bottom": "flamboyant:block/pale_green_stained_glass",
-        "top": "flamboyant:block/pale_green_stained_glass",
-        "side": "flamboyant:block/pale_green_stained_glass"
-    }
-}

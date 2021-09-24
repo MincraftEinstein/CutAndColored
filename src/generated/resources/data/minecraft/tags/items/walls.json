@@ -13,6 +13,10 @@
     "cutandcolored:cracked_polished_blackstone_brick_wall",
     "cutandcolored:cracked_nether_brick_wall",
     "cutandcolored:smooth_stone_wall",
-    "cutandcolored:quartz_brick_wall"
+    "cutandcolored:cracked_deepslate_brick_wall",
+    "cutandcolored:cracked_deepslate_tile_wall",
+    "cutandcolored:quartz_brick_wall",
+    "cutandcolored:calcite_wall",
+    "cutandcolored:tuff_wall"
   ]
 }

@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab",
-    "textures": {
-        "bottom": "flamboyant:block/maroon_wool",
-        "top": "flamboyant:block/maroon_wool",
-        "side": "flamboyant:block/maroon_wool"
-    }
-}

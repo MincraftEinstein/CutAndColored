@@ -1,3 +1,6 @@
 {
-  "parent": "cutandcolored:block/purpur_wall_inventory"
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "minecraft:block/purpur_block"
+  }
 }

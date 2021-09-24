@@ -1,8 +1,0 @@
-{
-    "parent": "cutandcolored:block/bordered_slab_top",
-    "textures": {
-        "bottom": "flamboyant:block/sky_blue_stained_glass",
-        "top": "flamboyant:block/sky_blue_stained_glass",
-        "side": "flamboyant:block/sky_blue_stained_glass"
-    }
-}

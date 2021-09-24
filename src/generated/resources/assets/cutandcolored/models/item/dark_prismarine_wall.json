@@ -1,3 +1,6 @@
 {
-  "parent": "cutandcolored:block/dark_prismarine_wall_inventory"
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "minecraft:block/dark_prismarine"
+  }
 }
