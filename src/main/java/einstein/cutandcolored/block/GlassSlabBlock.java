@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -13,29 +14,29 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class GlassSlabBlock extends SlabBlock
 {
-    private Supplier<BlockState> state;
+    private Supplier<BlockState> blockState;
     
-    public GlassSlabBlock(final Supplier<BlockState> state, final BlockBehaviour.Properties properties) {
+    public GlassSlabBlock(Block block, BlockBehaviour.Properties properties) {
         super(properties);
-        this.state = state;
+        blockState = block::defaultBlockState;
     }
     
-    public boolean useShapeForLightOcclusion(final BlockState state) {
+    public boolean useShapeForLightOcclusion(BlockState state) {
         return true;
     }
-
+    
     @SuppressWarnings("deprecation")
 	@OnlyIn(Dist.CLIENT)
-    public boolean isSideInvisible(final BlockState state, final BlockState adjacentState, final Direction side) {
-        return (adjacentState.getBlock() == this && adjacentState.getValue(SlabBlock.TYPE) == state.getValue(SlabBlock.TYPE)) || adjacentState.getBlock() == this.state.get().getBlock() || super.skipRendering(state, adjacentState, side);
+    public boolean isSideInvisible(BlockState state, BlockState adjacentState, Direction side) {
+        return (adjacentState.getBlock() == this && adjacentState.getValue(SlabBlock.TYPE) == state.getValue(SlabBlock.TYPE)) || adjacentState.getBlock() == blockState.get().getBlock() || super.skipRendering(state, adjacentState, side);
     }
     
     @OnlyIn(Dist.CLIENT)
-    public float getShadeBrightness(final BlockState state, final BlockGetter worldIn, final BlockPos pos) {
+    public float getShadeBrightness(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 1.0F;
     }
     
-    public boolean propagatesSkylightDown(final BlockState state, final BlockGetter reader, final BlockPos pos) {
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
         return true;
     }
 }

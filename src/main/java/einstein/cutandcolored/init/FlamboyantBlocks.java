@@ -20,40 +20,40 @@ public class FlamboyantBlocks
 {
 	/************************GLASS***************************/
     // STAIRS
-	public static final Block AMBER_STAINED_GLASS_STAIRS = register("amber_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block BEIGE_STAINED_GLASS_STAIRS = register("beige_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block CREAM_STAINED_GLASS_STAIRS = register("cream_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block DARK_GREEN_STAINED_GLASS_STAIRS = register("dark_green_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block FOREST_GREEN_STAINED_GLASS_STAIRS = register("forest_green_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block HOT_PINK_STAINED_GLASS_STAIRS = register("hot_pink_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block INDIGO_STAINED_GLASS_STAIRS = register("indigo_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block MAROON_STAINED_GLASS_STAIRS = register("maroon_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block NAVY_STAINED_GLASS_STAIRS = register("navy_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block OLIVE_STAINED_GLASS_STAIRS = register("olive_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block PALE_GREEN_STAINED_GLASS_STAIRS = register("pale_green_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block PALE_PINK_STAINED_GLASS_STAIRS = register("pale_pink_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block PALE_YELLOW_STAINED_GLASS_STAIRS = register("pale_yellow_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block SKY_BLUE_STAINED_GLASS_STAIRS = register("sky_blue_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block SLATE_GRAY_STAINED_GLASS_STAIRS = register("slate_gray_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block VIOLET_STAINED_GLASS_STAIRS = register("violet_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block AMBER_STAINED_GLASS_STAIRS = register("amber_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block BEIGE_STAINED_GLASS_STAIRS = register("beige_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block CREAM_STAINED_GLASS_STAIRS = register("cream_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block DARK_GREEN_STAINED_GLASS_STAIRS = register("dark_green_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block FOREST_GREEN_STAINED_GLASS_STAIRS = register("forest_green_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block HOT_PINK_STAINED_GLASS_STAIRS = register("hot_pink_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block INDIGO_STAINED_GLASS_STAIRS = register("indigo_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block MAROON_STAINED_GLASS_STAIRS = register("maroon_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block NAVY_STAINED_GLASS_STAIRS = register("navy_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block OLIVE_STAINED_GLASS_STAIRS = register("olive_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block PALE_GREEN_STAINED_GLASS_STAIRS = register("pale_green_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block PALE_PINK_STAINED_GLASS_STAIRS = register("pale_pink_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block PALE_YELLOW_STAINED_GLASS_STAIRS = register("pale_yellow_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block SKY_BLUE_STAINED_GLASS_STAIRS = register("sky_blue_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block SLATE_GRAY_STAINED_GLASS_STAIRS = register("slate_gray_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block VIOLET_STAINED_GLASS_STAIRS = register("violet_stained_glass_stairs", new GlassStairsBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
 
     // SLAB
-	public static final Block AMBER_STAINED_GLASS_SLAB = register("amber_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block BEIGE_STAINED_GLASS_SLAB = register("beige_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block CREAM_STAINED_GLASS_SLAB = register("cream_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block DARK_GREEN_STAINED_GLASS_SLAB = register("dark_green_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block FOREST_GREEN_STAINED_GLASS_SLAB = register("forest_green_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block HOT_PINK_STAINED_GLASS_SLAB = register("hot_pink_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block INDIGO_STAINED_GLASS_SLAB = register("indigo_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block MAROON_STAINED_GLASS_SLAB = register("maroon_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block NAVY_STAINED_GLASS_SLAB = register("navy_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block OLIVE_STAINED_GLASS_SLAB = register("olive_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block PALE_GREEN_STAINED_GLASS_SLAB = register("pale_green_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block PALE_PINK_STAINED_GLASS_SLAB = register("pale_pink_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block PALE_YELLOW_STAINED_GLASS_SLAB = register("pale_yellow_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block SKY_BLUE_STAINED_GLASS_SLAB = register("sky_blue_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block SLATE_GRAY_STAINED_GLASS_SLAB = register("slate_gray_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final Block VIOLET_STAINED_GLASS_SLAB = register("violet_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block AMBER_STAINED_GLASS_SLAB = register("amber_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block BEIGE_STAINED_GLASS_SLAB = register("beige_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block CREAM_STAINED_GLASS_SLAB = register("cream_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block DARK_GREEN_STAINED_GLASS_SLAB = register("dark_green_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block FOREST_GREEN_STAINED_GLASS_SLAB = register("forest_green_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block HOT_PINK_STAINED_GLASS_SLAB = register("hot_pink_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block INDIGO_STAINED_GLASS_SLAB = register("indigo_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block MAROON_STAINED_GLASS_SLAB = register("maroon_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block NAVY_STAINED_GLASS_SLAB = register("navy_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block OLIVE_STAINED_GLASS_SLAB = register("olive_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block PALE_GREEN_STAINED_GLASS_SLAB = register("pale_green_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block PALE_PINK_STAINED_GLASS_SLAB = register("pale_pink_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block PALE_YELLOW_STAINED_GLASS_SLAB = register("pale_yellow_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block SKY_BLUE_STAINED_GLASS_SLAB = register("sky_blue_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block SLATE_GRAY_STAINED_GLASS_SLAB = register("slate_gray_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final Block VIOLET_STAINED_GLASS_SLAB = register("violet_stained_glass_slab", new GlassSlabBlock(Blocks.GLASS, BlockBehaviour.Properties.copy(Blocks.GLASS)));
 	
     /*************************WOOL**************************/
     // STAIRS

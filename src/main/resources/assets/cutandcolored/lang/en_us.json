@@ -1,7 +1,7 @@
 {
 
 	/************************GUIS***************************/
-	// ITEMS GROUPS
+	// TABS
 	"itemGroup.cutandcolored_tab": "Cut And Colored",
 
 	// CONTAINERS
@@ -14,7 +14,7 @@
     "gui.jei.cutandcolored.category.sawmilling": "Sawmilling",
     "gui.jei.cutandcolored.category.weaving": "Weaving",
     
-    /***********************CUTTERS*************************/
+    /*********************WORK_STATIONS**********************/
     "block.cutandcolored.glasscutter": "Glasscutter",
     "block.cutandcolored.weaver": "Weaver",
     "block.cutandcolored.sawmill": "Sawmill",
@@ -30,6 +30,7 @@
     
     // STAIRS
     "block.cutandcolored.glass_stairs": "Glass Stairs",
+    "block.cutandcolored.tinted_glass_stairs": "Tinted Glass Stairs",
     "block.cutandcolored.soul_glass_stairs": "Soul Glass Stairs",
     "block.cutandcolored.black_stained_glass_stairs": "Black Stained Glass Stairs",
     "block.cutandcolored.red_stained_glass_stairs": "Red Stained Glass Stairs",
@@ -50,6 +51,7 @@
     
     // SLABS
     "block.cutandcolored.glass_slab": "Glass Slab",
+    "block.cutandcolored.tinted_glass_slab": "Tinted Glass Slab",
     "block.cutandcolored.soul_glass_slab": "Soul Glass Slab",
     "block.cutandcolored.black_stained_glass_slab": "Black Stained Glass Slab",
     "block.cutandcolored.red_stained_glass_slab": "Red Stained Glass Slab",
@@ -400,11 +402,21 @@
     "block.cutandcolored.cracked_stone_brick_stairs": "Cracked Stone Brick Stairs",
     "block.cutandcolored.cracked_polished_blackstone_brick_stairs": "Cracked Polished Blackstone Brick Stairs",
     "block.cutandcolored.cracked_nether_brick_stairs": "Cracked Nether Brick Stairs",
+    "block.cutandcolored.cracked_deepslate_brick_stairs": "Cracked Deepslate Brick Stairs",
+    "block.cutandcolored.cracked_deepslate_tile_stairs": "Cracked Deepslate Tile Stairs",
+    "block.cutandcolored.quartz_brick_stairs": "Quartz Brick Stairs",
+    "block.cutandcolored.calcite_stairs": "Calcite Stairs",
+    "block.cutandcolored.tuff_stairs": "Tuff Stairs",
     
     // SLABS
     "block.cutandcolored.cracked_stone_brick_slab": "Cracked Stone Brick Slab",
     "block.cutandcolored.cracked_polished_blackstone_brick_slab": "Cracked Polished Blackstone Brick Slab",
     "block.cutandcolored.cracked_nether_brick_slab": "Cracked Nether Brick Slab",
+    "block.cutandcolored.cracked_deepslate_brick_slab": "Cracked Deepslate Brick Slab",
+    "block.cutandcolored.cracked_deepslate_tile_slab": "Cracked Deepslate Tile Slab",
+    "block.cutandcolored.quartz_brick_slab": "Quartz Brick Slab",
+    "block.cutandcolored.calcite_slab": "Calcite Slab",
+    "block.cutandcolored.tuff_slab": "Tuff Slab",
     
     // WALLS
     "block.cutandcolored.purpur_wall": "Purpur Wall",
@@ -413,8 +425,12 @@
     "block.cutandcolored.cracked_stone_brick_wall": "Cracked Stone Brick Wall",
     "block.cutandcolored.cracked_polished_blackstone_brick_wall": "Cracked Polished Blackstone Brick Wall",
     "block.cutandcolored.cracked_nether_brick_wall": "Cracked Nether Brick Wall",
+    "block.cutandcolored.cracked_deepslate_brick_wall": "Cracked Deepslate Brick Wall",
+    "block.cutandcolored.cracked_deepslate_tile_wall": "Cracked Deepslate Tile Wall",
     "block.cutandcolored.smooth_stone_wall": "Smooth Stone Wall",
     "block.cutandcolored.quartz_brick_wall": "Quartz Brick Wall",
+    "block.cutandcolored.calcite_wall": "Calcite Wall",
+    "block.cutandcolored.tuff_wall": "Tuff Wall",
     
     // MISC MODELS
     "block.cutandcolored.nether_brick_fence_gate": "Nether Brick Fence Gate",

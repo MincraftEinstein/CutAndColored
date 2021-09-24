@@ -430,7 +430,7 @@ public class BlockDataHandler
     	MenuScreens.register(ModMenuTypes.WEAVER, WeaverScreen::new);
     	MenuScreens.register(ModMenuTypes.SAWMILL, SawmillScreen::new);
         
-    	/***********************CUTTERS*************************/
+    	/*********************WORK_STATIONS**********************/
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASSCUTTER, RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SAWMILL, RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WEAVER, RenderType.cutout());
@@ -446,6 +446,7 @@ public class BlockDataHandler
         
         // STAIRS
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_STAIRS, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TINTED_GLASS_STAIRS, RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOUL_GLASS_STAIRS, RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_STAIRS, RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_STAIRS, RenderType.translucent());
@@ -466,6 +467,7 @@ public class BlockDataHandler
         
         // SLABS
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_SLAB, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TINTED_GLASS_SLAB, RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOUL_GLASS_SLAB, RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_SLAB, RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_SLAB, RenderType.translucent());
