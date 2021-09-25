@@ -25,20 +25,9 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
-		for (int i = 0; i < ModBlocks.allMCBlocks.size(); i++) {
-			for (int i1 = 0; i1 < DyeColor.values().length; i1++) {
-				if (ModBlocks.allMCBlocks.get(i).getRegistryName().getPath().equals(DyeColor.byId(i1).getName() + "_stained_glass")) {
-					stainedGlass.add(ModBlocks.allMCBlocks.get(i).asItem());
-				}
-			}
-		}
-//		for (int i = 0; i < WeavingRecipesGenerator.allFBlocks.size(); i++) {
-//			for (int i1 = 0; i1 < FlamboyantDyeColors.values().length; i1++) {
-//				if (WeavingRecipesGenerator.allFBlocks.get(i).getRegistryName().getPath().equals(FlamboyantDyeColors.byId(i1).getName() + "_stained_glass")) {
-//					fStainedGlass.add(WeavingRecipesGenerator.allFBlocks.get(i).asItem());
-//				}
-//			}
-//		}
+		
+		vanillaGlass();
+		flamboyantGlass();
 		
 		glasscuttingRecipe("glass_bottle", Blocks.GLASS, Items.GLASS_BOTTLE);
 		glasscuttingRecipe("glass_pane", Blocks.GLASS, Blocks.GLASS_PANE, 4);
@@ -55,7 +44,16 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 		glasscuttingRecipe("tinted_glass_slab", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_SLAB, 2);
 		glasscuttingRecipe("tinted_glass_stairs", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_STAIRS);
 		glasscuttingRecipe("horizontal_tinted_glass_pane", Blocks.TINTED_GLASS, getItem(new ResourceLocation("horizontalpanes:horizontal_tinted_glass_pane")), 4);
-		
+	}
+	
+	private void vanillaGlass() {
+		for (int i = 0; i < ModBlocks.allMCBlocks.size(); i++) {
+			for (int i1 = 0; i1 < DyeColor.values().length; i1++) {
+				if (ModBlocks.allMCBlocks.get(i).getRegistryName().getPath().equals(DyeColor.byId(i1).getName() + "_stained_glass")) {
+					stainedGlass.add(ModBlocks.allMCBlocks.get(i).asItem());
+				}
+			}
+		}
 		for (int i = 0; i < stainedGlass.size(); i++) {
 			Item item = stainedGlass.get(i);
 			String color = item.getRegistryName().getPath().replaceFirst("_stained_glass", "");
@@ -72,6 +70,16 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 			Item hPane = getItem(new ResourceLocation("horizontalpanes", "horizontal_stained_" + color + "_pane"));
 			glasscuttingRecipe(hPane.getRegistryName().getPath(), item, hPane, 4);
 		}
+	}
+	
+	private void flamboyantGlass() {
+//		for (int i = 0; i < ModDataGenerators.allFBlocks.size(); i++) {
+//			for (int i1 = 0; i1 < FlamboyantDyeColors.values().length; i1++) {
+//				if (ModDataGenerators.allFBlocks.get(i).getRegistryName().getPath().equals(FlamboyantDyeColors.byId(i1).getName() + "_stained_glass")) {
+//					fStainedGlass.add(ModDataGenerators.allFBlocks.get(i).asItem());
+//				}
+//			}
+//		}
 //		for (int i = 0; i < fStainedGlass.size(); i++) {
 //			Item item = fStainedGlass.get(i);
 //			String color = item.getRegistryName().getPath().replaceFirst("_stained_glass", "");

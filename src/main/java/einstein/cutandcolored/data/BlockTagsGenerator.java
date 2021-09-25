@@ -99,24 +99,6 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void addTags() {
-//		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
-//			int i1 = ModBlocks.allBlocks.size() - 1;
-//			while (i1 >= 0) {
-//				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
-//					fColoredBlocks.add(ModBlocks.allBlocks.get(i1));
-//				}
-//				i1--;
-//			}
-//		}
-		for (int i = 0; i < DyeColor.values().length; i++) {
-			int i1 = ModBlocks.allBlocks.size() - 1;
-			while (i1 >= 0) {
-				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getName())) {
-					coloredBlocks.add(ModBlocks.allBlocks.get(i1));
-				}
-				i1--;
-			}
-		}
 		
 		vanillaDyedTags();
 		flaboyantDyedTags();
@@ -153,11 +135,10 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 				.addTags(CLAY_BRICK_SLABS, CLAY_BRICK_STAIRS, CLAY_BRICKS, CONCRETE_SLABS, CONCRETE_STAIRS, GLASS_SLABS,
 						GLASS_STAIRS, REDSTONE_LAMPS, TERRACOTTA_SLABS, TERRACOTTA_STAIRS, NETHER_BRICK_FENCE_GATES,
 						SOUL_GLASS, SOUL_GLASS_PANES, TINTED_GLASS_PANES)
-				.add(ModBlocks.GLASSCUTTER, ModBlocks.HORIZONTAL_SOUL_GLASS_PANE,
-						ModBlocks.ANDESITE_BRICK_SLAB, ModBlocks.ANDESITE_BRICK_STAIRS, ModBlocks.ANDESITE_BRICKS,
-						ModBlocks.DIORITE_BRICK_SLAB, ModBlocks.DIORITE_BRICK_STAIRS, ModBlocks.DIORITE_BRICKS,
-						ModBlocks.GRANITE_BRICK_SLAB, ModBlocks.GRANITE_BRICK_STAIRS, ModBlocks.GRANITE_BRICKS,
-						ModBlocks.CHISELED_SOUL_SANDSTONE, ModBlocks.CUT_SOUL_SANDSTONE,
+				.add(ModBlocks.GLASSCUTTER, ModBlocks.ANDESITE_BRICK_SLAB, ModBlocks.ANDESITE_BRICK_STAIRS,
+						ModBlocks.ANDESITE_BRICKS, ModBlocks.DIORITE_BRICK_SLAB, ModBlocks.DIORITE_BRICK_STAIRS,
+						ModBlocks.DIORITE_BRICKS, ModBlocks.GRANITE_BRICK_SLAB, ModBlocks.GRANITE_BRICK_STAIRS,
+						ModBlocks.GRANITE_BRICKS, ModBlocks.CHISELED_SOUL_SANDSTONE, ModBlocks.CUT_SOUL_SANDSTONE,
 						ModBlocks.CUT_SOUL_SANDSTONE_SLAB, ModBlocks.SMOOTH_SOUL_SANDSTONE,
 						ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB, ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS,
 						ModBlocks.SOUL_SANDSTONE, ModBlocks.SOUL_SANDSTONE_SLAB, ModBlocks.SOUL_SANDSTONE_STAIRS,
@@ -173,8 +154,10 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 						ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB, ModBlocks.QUARTZ_BRICK_SLAB, ModBlocks.CALCITE_SLAB,
 						ModBlocks.TUFF_SLAB, ModBlocks.NETHER_BRICK_FENCE_GATE, ModBlocks.IRON_FENCE_GATE,
 						ModBlocks.RAW_IRON_SLAB, ModBlocks.RAW_IRON_STAIRS, ModBlocks.RAW_GOLD_SLAB,
-						ModBlocks.RAW_GOLD_STAIRS, ModBlocks.RAW_COPPER_SLAB, ModBlocks.RAW_COPPER_STAIRS);
-		tag(BlockTags.MINEABLE_WITH_AXE).addTags(STAINED_PLANK_SLABS, STAINED_PLANK_STAIRS, STAINED_PLANKS).add(ModBlocks.WEAVER, ModBlocks.SAWMILL);
+						ModBlocks.RAW_GOLD_STAIRS, ModBlocks.RAW_COPPER_SLAB, ModBlocks.RAW_COPPER_STAIRS)
+				.addOptional(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.getRegistryName());
+		tag(BlockTags.MINEABLE_WITH_AXE).addTags(STAINED_PLANK_SLABS, STAINED_PLANK_STAIRS, STAINED_PLANKS)
+				.add(ModBlocks.WEAVER, ModBlocks.SAWMILL);
 		
 		/**********************Forge***********************/
 		tag(CLAY_BRICK_SLABS).add(Blocks.BRICK_SLAB).addTag(VANILLA_STAINED_BRICK_SLABS);//.addOptionalTag(FLAMBOYANT_STAINED_BRICK_SLABS.getName());
@@ -215,6 +198,15 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	}
 	
 	private void vanillaDyedTags() {
+		for (int i = 0; i < DyeColor.values().length; i++) {
+			int i1 = ModBlocks.allBlocks.size() - 1;
+			while (i1 >= 0) {
+				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getName())) {
+					coloredBlocks.add(ModBlocks.allBlocks.get(i1));
+				}
+				i1--;
+			}
+		}
 		for (int i = 0; i < coloredBlocks.size(); i++) {
 			Block block = coloredBlocks.get(i);
 			String name = block.getRegistryName().getPath();
@@ -282,6 +274,15 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	}
 	
 	private void flaboyantDyedTags() {
+//		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
+//		int i1 = ModBlocks.allBlocks.size() - 1;
+//		while (i1 >= 0) {
+//			if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
+//				fColoredBlocks.add(ModBlocks.allBlocks.get(i1));
+//			}
+//			i1--;
+//		}
+//	}
 //		for (int i = 0; i < fColoredBlocks.size(); i++) {
 //			Block block = fColoredBlocks.get(i);
 //			String name = block.getRegistryName().getPath();

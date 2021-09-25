@@ -67,116 +67,11 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 	
 	@Override
 	protected void registerStatesAndModels() {
-		// Flamboyant dye
-		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
-			int i1 = stairBlocks.size() - 1;
-			while (i1 >= 0) {
-				if (stairBlocks.get(i1).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
-					fColoredStairs.add(stairBlocks.get(i1));
-					stairBlocks.remove(i1);
-				}
-				i1--;
-			}
-			int i2 = slabBlocks.size() - 1;
-			while (i2 >= 0) {
-				if (slabBlocks.get(i2).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
-					fColoredSlabs.add(slabBlocks.get(i2));
-					slabBlocks.remove(i2);
-				}
-				i2--;
-			}
-			int i3 = wallBlocks.size() - 1;
-			while (i3 >= 0) {
-				if (wallBlocks.get(i3).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
-					fColoredWalls.add(wallBlocks.get(i3));
-					wallBlocks.remove(i3);
-				}
-				i3--;
-			}
-			int i4 = lampBlocks.size() - 1;
-			while (i4 >= 0) {
-				if (lampBlocks.get(i4).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
-					fColoredLamps.add(lampBlocks.get(i4));
-					lampBlocks.remove(i4);
-				}
-				i4--;
-			}
-		}
-		// Vanilla dye
-		for (int i = 0; i < DyeColor.values().length; i++) {
-			int i1 = stairBlocks.size() - 1;
-			while (i1 >= 0) {
-				if (stairBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !stairBlocks.get(i1).getRegistryName().getPath().contains("blackstone")) {
-					coloredStairs.add(stairBlocks.get(i1));
-					stairBlocks.remove(i1);
-				}
-				i1--;
-			}
-			int i2 = slabBlocks.size() - 1;
-			while (i2 >= 0) {
-				if (slabBlocks.get(i2).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !slabBlocks.get(i2).getRegistryName().getPath().contains("blackstone")) {
-					coloredSlabs.add(slabBlocks.get(i2));
-					slabBlocks.remove(i2);
-				}
-				i2--;
-			}
-			int i3 = wallBlocks.size() - 1;
-			while (i3 >= 0) {
-				if (wallBlocks.get(i3).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !wallBlocks.get(i3).getRegistryName().getPath().contains("blackstone")) {
-					coloredWalls.add(wallBlocks.get(i3));
-					wallBlocks.remove(i3);
-				}
-				i3--;
-			}
-			int i4 = lampBlocks.size() - 1;
-			while (i4 >= 0) {
-				if (lampBlocks.get(i4).getRegistryName().getPath().contains(DyeColor.byId(i).getName())) {
-					coloredLamps.add(lampBlocks.get(i4));
-					lampBlocks.remove(i4);
-				}
-				i4--;
-			}
-		}
-		
-		CutAndColored.LOGGER.debug(coloredSlabs.size() + " colored slabs");
-		CutAndColored.LOGGER.debug(coloredStairs.size() + " colored stairs");
-		CutAndColored.LOGGER.debug(coloredWalls.size() + " colored walls");
-		CutAndColored.LOGGER.debug(fColoredSlabs.size() + " f colored slabs");
-		CutAndColored.LOGGER.debug(fColoredStairs.size() + " f colored stairs");
-		CutAndColored.LOGGER.debug(fColoredWalls.size() + " f colored walls");
-		CutAndColored.LOGGER.debug(cubeBlocks.size() + " cube blocks");
-		
 		for (int i = 0; i < cubeBlocks.size(); i++) {
 			Block block = cubeBlocks.get(i);
 			String name = block.getRegistryName().getPath();
 			simpleBlock(block);
 			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
-		}
-		
-		wallBlock((WallBlock) ModBlocks.SOUL_SANDSTONE_WALL, blockRL("soul_sandstone_side"));
-		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.SOUL_SANDSTONE_WALL));
-		wallBlock((WallBlock) ModBlocks.PURPUR_WALL, blockMCRL("purpur_block"));
-		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.PURPUR_WALL));
-		
-		for (int i = 0; i < wallBlocks.size(); i ++) {
-			WallBlock block = (WallBlock) wallBlocks.get(i);
-			String name = block.getRegistryName().getPath();
-			String fileName = name.replaceAll("_wall", "");
-			try {
-				if (name.contains("brick")) {
-					wallBlock(block, blockRL(fileName + "s"));
-				}
-				else {
-					wallBlock(block, blockRL(fileName));
-				}
-			} catch (IllegalArgumentException e) {
-				if (name.contains("brick") || name.contains("tile")) {
-					wallBlock(block, blockMCRL(fileName + "s"));
-				}
-				else {
-					wallBlock(block, blockMCRL(fileName));
-				}
-			}
 		}
 		
 		simpleBlock(ModBlocks.SOUL_SANDSTONE, new ConfiguredModel(models().cubeBottomTop("soul_sandstone", blockRL("soul_sandstone_side"), blockRL("soul_sandstone_bottom"), blockRL("soul_sandstone_top"))));
@@ -233,6 +128,11 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		borderedSlabBlock((SlabBlock) ModBlocks.SOUL_GLASS_SLAB, blockRL("soul_glass"), blockRL("soul_glass"));
 		borderedSlabBlock((SlabBlock) ModBlocks.TINTED_GLASS_SLAB, blockMCRL("tinted_glass"), blockMCRL("tinted_glass"));
 		
+		wallBlock((WallBlock) ModBlocks.SOUL_SANDSTONE_WALL, blockRL("soul_sandstone_side"));
+		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.SOUL_SANDSTONE_WALL));
+		wallBlock((WallBlock) ModBlocks.PURPUR_WALL, blockMCRL("purpur_block"));
+		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.PURPUR_WALL));
+		
 		paneBlock((IronBarsBlock) ModBlocks.SOUL_GLASS_PANE, blockRL("soul_glass"), blockRL("soul_glass_pane_top"));
 		paneBlock((IronBarsBlock) ModBlocks.TINTED_GLASS_PANE, blockMCRL("tinted_glass"), blockRL("tinted_glass_pane_top"));
 		
@@ -245,9 +145,65 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		
 		vanillaDyedObjects();
 		flamboyantDyedObjects();
+		
+		for (int i = 0; i < wallBlocks.size(); i ++) {
+			WallBlock block = (WallBlock) wallBlocks.get(i);
+			String name = block.getRegistryName().getPath();
+			String fileName = name.replaceAll("_wall", "");
+			try {
+				if (name.contains("brick")) {
+					wallBlock(block, blockRL(fileName + "s"));
+				}
+				else {
+					wallBlock(block, blockRL(fileName));
+				}
+			} catch (IllegalArgumentException e) {
+				if (name.contains("brick") || name.contains("tile")) {
+					wallBlock(block, blockMCRL(fileName + "s"));
+				}
+				else {
+					wallBlock(block, blockMCRL(fileName));
+				}
+			}
+		}
 	}
 	
 	private void vanillaDyedObjects() {
+		for (int i = 0; i < DyeColor.values().length; i++) {
+			int i1 = stairBlocks.size() - 1;
+			while (i1 >= 0) {
+				if (stairBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !stairBlocks.get(i1).getRegistryName().getPath().contains("blackstone")) {
+					coloredStairs.add(stairBlocks.get(i1));
+					stairBlocks.remove(i1);
+				}
+				i1--;
+			}
+			int i2 = slabBlocks.size() - 1;
+			while (i2 >= 0) {
+				if (slabBlocks.get(i2).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !slabBlocks.get(i2).getRegistryName().getPath().contains("blackstone")) {
+					coloredSlabs.add(slabBlocks.get(i2));
+					slabBlocks.remove(i2);
+				}
+				i2--;
+			}
+			int i3 = wallBlocks.size() - 1;
+			while (i3 >= 0) {
+				if (wallBlocks.get(i3).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !wallBlocks.get(i3).getRegistryName().getPath().contains("blackstone")) {
+					coloredWalls.add(wallBlocks.get(i3));
+					wallBlocks.remove(i3);
+				}
+				i3--;
+			}
+			int i4 = lampBlocks.size() - 1;
+			while (i4 >= 0) {
+				if (lampBlocks.get(i4).getRegistryName().getPath().contains(DyeColor.byId(i).getName())) {
+					coloredLamps.add(lampBlocks.get(i4));
+					lampBlocks.remove(i4);
+				}
+				i4--;
+			}
+		}
+		
 		// Slabs
 		for (int i = 0; i < coloredSlabs.size(); i++) {
 			SlabBlock block = (SlabBlock) coloredSlabs.get(i);
@@ -303,6 +259,40 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 	
 	// Game can't find textures
 	private void flamboyantDyedObjects() {
+		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
+			int i1 = stairBlocks.size() - 1;
+			while (i1 >= 0) {
+				if (stairBlocks.get(i1).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
+					fColoredStairs.add(stairBlocks.get(i1));
+					stairBlocks.remove(i1);
+				}
+				i1--;
+			}
+			int i2 = slabBlocks.size() - 1;
+			while (i2 >= 0) {
+				if (slabBlocks.get(i2).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
+					fColoredSlabs.add(slabBlocks.get(i2));
+					slabBlocks.remove(i2);
+				}
+				i2--;
+			}
+			int i3 = wallBlocks.size() - 1;
+			while (i3 >= 0) {
+				if (wallBlocks.get(i3).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
+					fColoredWalls.add(wallBlocks.get(i3));
+					wallBlocks.remove(i3);
+				}
+				i3--;
+			}
+			int i4 = lampBlocks.size() - 1;
+			while (i4 >= 0) {
+				if (lampBlocks.get(i4).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
+					fColoredLamps.add(lampBlocks.get(i4));
+					lampBlocks.remove(i4);
+				}
+				i4--;
+			}
+		}
 //		// Slabs
 //		for (int i = 0; i < fColoredSlabs.size(); i++) {
 //			SlabBlock block = (SlabBlock) fColoredSlabs.get(i);

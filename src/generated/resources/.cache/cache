@@ -4241,7 +4241,7 @@ e3d37847743109bbaace212d11fc9ee86882f692 data/forge/tags/items/terracotta_stairs
 aeb58d44fa937a4670931f85d6490e3978c2c4bb data/forge/tags/items/wool_stairs.json
 e5d4e9e31562ad20fa5f48c0b95c40c1b35e4451 data/minecraft/tags/blocks/impermeable.json
 0d4c674cea46274fd0e6247a1c56d6e6909c54ed data/minecraft/tags/blocks/mineable/axe.json
-6b60b18cd7f1c923ae9fea63eb7e36e1efabf866 data/minecraft/tags/blocks/mineable/pickaxe.json
+9a3ee4794e4ba004e5e8a53cb5d44b9a7fefdbfe data/minecraft/tags/blocks/mineable/pickaxe.json
 5953383baebf6927e8863859da25b84d1ac0bff9 data/minecraft/tags/blocks/planks.json
 5846af886711c70e3f6c9feebcdba72e682c695f data/minecraft/tags/blocks/slabs.json
 1149e6c145f1506a91bc4c351fc639d0f8d5eaa8 data/minecraft/tags/blocks/stairs.json

@@ -16,7 +16,6 @@
     "#forge:glass_panes/soul",
     "#forge:glass_panes/tinted",
     "cutandcolored:glasscutter",
-    "cutandcolored:horizontal_soul_glass_pane",
     "cutandcolored:andesite_brick_slab",
     "cutandcolored:andesite_brick_stairs",
     "cutandcolored:andesite_bricks",
@@ -66,6 +65,10 @@
     "cutandcolored:raw_gold_slab",
     "cutandcolored:raw_gold_stairs",
     "cutandcolored:raw_copper_slab",
-    "cutandcolored:raw_copper_stairs"
+    "cutandcolored:raw_copper_stairs",
+    {
+      "id": "cutandcolored:horizontal_soul_glass_pane",
+      "required": false
+    }
   ]
 }

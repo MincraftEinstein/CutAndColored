@@ -22,7 +22,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @EventBusSubscriber(modid = CutAndColored.MODID, bus = Bus.MOD, value = { Dist.CLIENT })
-public class BlockDataHandler
+public class PropertyEvents
 {
     @SubscribeEvent
     public static void setBlockFlammable(final FMLCommonSetupEvent event) {

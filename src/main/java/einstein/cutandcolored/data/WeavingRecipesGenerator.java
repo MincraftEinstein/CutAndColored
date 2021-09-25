@@ -2,25 +2,16 @@ package einstein.cutandcolored.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
-import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class WeavingRecipesGenerator extends RecipeResources {
 
-	public static final List<Block> allFBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
-            .filter((block) -> CutAndColored.FMODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
-            .collect(Collectors.toList()));
-	
 	private List<Item> coloredWool = new ArrayList<Item>();
 //	private List<Item> fColoredWool = new ArrayList<Item>();
 	
@@ -31,6 +22,12 @@ public class WeavingRecipesGenerator extends RecipeResources {
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
+		
+		vanillaWool();
+		flamboyantWool();
+	}
+	
+	private void vanillaWool() {
 		for (int i = 0; i < ModBlocks.allMCBlocks.size(); i++) {
 			for (int i1 = 0; i1 < DyeColor.values().length; i1++) {
 				if (ModBlocks.allMCBlocks.get(i).getRegistryName().getPath().equals(DyeColor.byId(i1).getName() + "_wool")) {
@@ -38,13 +35,6 @@ public class WeavingRecipesGenerator extends RecipeResources {
 				}
 			}
 		}
-//		for (int i = 0; i < allFBlocks.size(); i++) {
-//			for (int i1 = 0; i1 < FlamboyantDyeColors.values().length; i1++) {
-//				if (allFBlocks.get(i).getRegistryName().getPath().equals(FlamboyantDyeColors.byId(i1).getName() + "_wool")) {
-//					fColoredWool.add(allFBlocks.get(i).asItem());
-//				}
-//			}
-//		}
 		for (int i = 0; i < coloredWool.size(); i++) {
 			Item item = coloredWool.get(i);
 			String color = item.getRegistryName().getPath().replaceFirst("_wool", "");
@@ -58,6 +48,16 @@ public class WeavingRecipesGenerator extends RecipeResources {
 			Item stairs = getItem(ModRL(color + "_wool_stairs"));
 			weavingRecipe(stairs.getRegistryName().getPath(), item, stairs);
 		}
+	}
+	
+	private void flamboyantWool() {
+//		for (int i = 0; i < allFBlocks.size(); i++) {
+//			for (int i1 = 0; i1 < FlamboyantDyeColors.values().length; i1++) {
+//				if (allFBlocks.get(i).getRegistryName().getPath().equals(FlamboyantDyeColors.byId(i1).getName() + "_wool")) {
+//					fColoredWool.add(allFBlocks.get(i).asItem());
+//				}
+//			}
+//		}
 //		for (int i = 0; i < fColoredWool.size(); i++) {
 //			Item item = fColoredWool.get(i);
 //			String color = item.getRegistryName().getPath().replaceFirst("_wool", "");

@@ -29,10 +29,10 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
-//		pumpkinRecipes();
-		vanillaColoredWood();
-//		flamboyantColoredWood();
-		wood();
+		pumpkinRecipes();
+		vanillaColoredWoodRecipes();
+		flamboyantColoredWoodRecipes();
+		woodRecipes();
 		
 		sawmillingRecipe("bowl_from_logs", ItemTags.LOGS, Items.BOWL, 4);
 		sawmillingRecipe("bowl", ItemTags.PLANKS, Items.BOWL);
@@ -42,7 +42,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 		sawmillingRecipe("carved_pumpkin", Blocks.PUMPKIN, Blocks.CARVED_PUMPKIN);
 	}
 	
-//	private void pumpkinRecipes() {
+	private void pumpkinRecipes() {
 //		for (int i = 0; i < 24; i++) {
 //			int i1 = i + 1;
 //			Item item = getItem(new ResourceLocation("omgourd", "carved_pumpkin_" + i1));
@@ -52,9 +52,9 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 //			item = getItem(new ResourceLocation("omgourd", "jack_o_lantern_" + i1));
 //			sawmillingRecipe("recave_jack_o_lantern_" + i1, ItemTagsGenerator.JACK_O_LANTERNS, item, 1);
 //		}
-//	}
+	}
 	
-	private void vanillaColoredWood() {
+	private void vanillaColoredWoodRecipes() {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			String color = DyeColor.byId(i).getName();
 			Item item = getItem(ModRL(color + "_stained_planks"));
@@ -64,7 +64,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 		}
 	}
 	
-//	private void flamboyantColoredWood() {
+	private void flamboyantColoredWoodRecipes() {
 //		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
 //			String color = FlamboyantDyeColors.byId(i).getName();
 //			Item item = getItem(ModRL(color + "_stained_planks"));
@@ -72,9 +72,9 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 //			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
 //			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
 //		}
-//	}
+	}
 	
-	private void wood() {
+	private void woodRecipes() {
 		getWood();
 		for (int i = 0; i < woodTypes.size(); i++) {
 			String modid = woodTypes.get(i)[0];

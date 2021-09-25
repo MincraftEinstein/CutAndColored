@@ -100,27 +100,9 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void addTags() {
-//		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
-//			int i1 = ModBlocks.allBlocks.size() - 1;
-//			while (i1 >= 0) {
-//				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
-//					fColoredItems.add(ModBlocks.allBlocks.get(i1).asItem());
-//				}
-//				i1--;
-//			}
-//		}
-		for (int i = 0; i < DyeColor.values().length; i++) {
-			int i1 = ModBlocks.allBlocks.size() - 1;
-			while (i1 >= 0) {
-				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getName())) {
-					coloredItems.add(ModBlocks.allBlocks.get(i1).asItem());
-				}
-				i1--;
-			}
-		}
 		
 		vanillaDyedTags();
-//		flaboyantDyedTags();
+		flaboyantDyedTags();
 		
 		/**********************Minecraft***********************/
 		tag(ItemTags.PLANKS).addTag(STAINED_PLANKS);
@@ -194,6 +176,15 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	}
 	
 	private void vanillaDyedTags() {
+		for (int i = 0; i < DyeColor.values().length; i++) {
+			int i1 = ModBlocks.allBlocks.size() - 1;
+			while (i1 >= 0) {
+				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getName())) {
+					coloredItems.add(ModBlocks.allBlocks.get(i1).asItem());
+				}
+				i1--;
+			}
+		}
 		for (int i = 0; i < coloredItems.size(); i++) {
 			Item item = coloredItems.get(i);
 			String name = item.getRegistryName().getPath();
@@ -260,7 +251,17 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		}
 	}
 	
-//	private void flaboyantDyedTags() {
+	private void flaboyantDyedTags() {
+//		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
+//			int i1 = ModBlocks.allBlocks.size() - 1;
+//			while (i1 >= 0) {
+//				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath()
+//						.contains(FlamboyantDyeColors.byId(i).getName())) {
+//					fColoredItems.add(ModBlocks.allBlocks.get(i1).asItem());
+//				}
+//				i1--;
+//			}
+//		}
 //		for (int i = 0; i < fColoredItems.size(); i++) {
 //			Item item = fColoredItems.get(i);
 //			String name = item.getRegistryName().getPath();
@@ -325,7 +326,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 //				}
 //			}
 //		}
-//	}
+	}
 	
 	@Override
 	public String getName() {

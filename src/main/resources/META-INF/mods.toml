@@ -20,7 +20,6 @@ Adds a bunch of stairs, slabs and color variation to blocks in default Minecraft
 	catalogueImageIcon="pack.png"
 	configuredBackground="cutandcolored:textures/block/light_blue_stained_planks.png"
 
-
 [[dependencies.cutandcolored]]
     modId="forge"
     mandatory=true

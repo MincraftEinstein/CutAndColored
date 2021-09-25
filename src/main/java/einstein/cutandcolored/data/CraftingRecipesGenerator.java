@@ -26,6 +26,7 @@ public class CraftingRecipesGenerator extends RecipeResources {
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
+		
 		vanillaColoredRecipes();
 		flamboyantColoredRecipes();
 		stoneBrickTypeRecipes();
