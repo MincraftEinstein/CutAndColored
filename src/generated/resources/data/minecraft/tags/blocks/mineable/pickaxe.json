@@ -60,6 +60,12 @@
     "cutandcolored:calcite_slab",
     "cutandcolored:tuff_slab",
     "cutandcolored:nether_brick_fence_gate",
-    "cutandcolored:iron_fence_gate"
+    "cutandcolored:iron_fence_gate",
+    "cutandcolored:raw_iron_slab",
+    "cutandcolored:raw_iron_stairs",
+    "cutandcolored:raw_gold_slab",
+    "cutandcolored:raw_gold_stairs",
+    "cutandcolored:raw_copper_slab",
+    "cutandcolored:raw_copper_stairs"
   ]
 }

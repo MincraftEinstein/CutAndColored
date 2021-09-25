@@ -55,6 +55,9 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.QUARTZ_BRICK_STAIRS);
 		blockItemModel(ModBlocks.CALCITE_STAIRS);
 		blockItemModel(ModBlocks.TUFF_STAIRS);
+		blockItemModel(ModBlocks.RAW_IRON_STAIRS);
+		blockItemModel(ModBlocks.RAW_GOLD_STAIRS);
+		blockItemModel(ModBlocks.RAW_COPPER_STAIRS);
 		
 		blockItemModel(ModBlocks.TERRACOTTA_SLAB);
 		blockItemModel(ModBlocks.GRANITE_BRICK_SLAB);
@@ -71,6 +74,9 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.QUARTZ_BRICK_SLAB);
 		blockItemModel(ModBlocks.CALCITE_SLAB);
 		blockItemModel(ModBlocks.TUFF_SLAB);
+		blockItemModel(ModBlocks.RAW_IRON_SLAB);
+		blockItemModel(ModBlocks.RAW_GOLD_SLAB);
+		blockItemModel(ModBlocks.RAW_COPPER_SLAB);
 		
 		blockItemModel(ModBlocks.SMOOTH_STONE_STAIRS);
 		blockItemModel(ModBlocks.GLASS_STAIRS);

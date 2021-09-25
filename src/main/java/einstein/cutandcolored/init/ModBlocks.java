@@ -434,6 +434,9 @@ public class ModBlocks
     public static final Block QUARTZ_BRICK_STAIRS = register("quartz_brick_stairs", new StairBlock(Blocks.QUARTZ_BRICKS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.QUARTZ_BRICKS)));
     public static final Block CALCITE_STAIRS = register("calcite_stairs", new StairBlock(Blocks.CALCITE::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.CALCITE)));
     public static final Block TUFF_STAIRS = register("tuff_stairs", new StairBlock(Blocks.TUFF::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.TUFF)));
+    public static final Block RAW_IRON_STAIRS = register("raw_iron_stairs", new StairBlock(Blocks.RAW_IRON_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
+    public static final Block RAW_GOLD_STAIRS = register("raw_gold_stairs", new StairBlock(Blocks.RAW_GOLD_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.RAW_GOLD_BLOCK)));
+    public static final Block RAW_COPPER_STAIRS = register("raw_copper_stairs", new StairBlock(Blocks.RAW_COPPER_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK)));
     
     // SLABS
     public static final Block CRACKED_STONE_BRICK_SLAB = register("cracked_stone_brick_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CRACKED_STONE_BRICKS)));
@@ -444,6 +447,9 @@ public class ModBlocks
     public static final Block QUARTZ_BRICK_SLAB = register("quartz_brick_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BRICKS)));
     public static final Block CALCITE_SLAB = register("calcite_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
     public static final Block TUFF_SLAB = register("tuff_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
+    public static final Block RAW_IRON_SLAB = register("raw_iron_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
+    public static final Block RAW_GOLD_SLAB = register("raw_gold_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.RAW_GOLD_BLOCK)));
+    public static final Block RAW_COPPER_SLAB = register("raw_copper_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK)));
     
     // WALLS
     public static final Block PURPUR_WALL = register("purpur_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));

@@ -18,6 +18,9 @@
     "cutandcolored:cracked_deepslate_tile_slab",
     "cutandcolored:quartz_brick_slab",
     "cutandcolored:calcite_slab",
-    "cutandcolored:tuff_slab"
+    "cutandcolored:tuff_slab",
+    "cutandcolored:raw_iron_slab",
+    "cutandcolored:raw_gold_slab",
+    "cutandcolored:raw_copper_slab"
   ]
 }

@@ -18,6 +18,9 @@
     "cutandcolored:cracked_deepslate_tile_stairs",
     "cutandcolored:quartz_brick_stairs",
     "cutandcolored:calcite_stairs",
-    "cutandcolored:tuff_stairs"
+    "cutandcolored:tuff_stairs",
+    "cutandcolored:raw_iron_stairs",
+    "cutandcolored:raw_gold_stairs",
+    "cutandcolored:raw_copper_stairs"
   ]
 }

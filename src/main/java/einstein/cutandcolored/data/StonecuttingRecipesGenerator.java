@@ -18,7 +18,7 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
 		vanillaColoredRecipes();
-//		flamboyantColoredRecipes();
+		flamboyantColoredRecipes();
 		stoneBrickTypeRecipes();
 		
 		stonecuttingRecipe("chiseled_end_stone_bricks", Blocks.END_STONE, ModBlocks.CHISELED_END_STONE_BRICKS);
@@ -57,6 +57,12 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 		stonecuttingRecipe("tuff_slab", Blocks.TUFF, ModBlocks.TUFF_SLAB, 2);
 		stonecuttingRecipe("tuff_stairs", Blocks.TUFF, ModBlocks.TUFF_STAIRS);
 		stonecuttingRecipe("tuff_wall", Blocks.TUFF, ModBlocks.TUFF_WALL);
+		stonecuttingRecipe("raw_iron_slab", Blocks.RAW_IRON_BLOCK, ModBlocks.RAW_IRON_SLAB, 2);
+		stonecuttingRecipe("raw_iron_stairs", Blocks.RAW_IRON_BLOCK, ModBlocks.RAW_IRON_STAIRS);
+		stonecuttingRecipe("raw_gold_slab", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_SLAB, 2);
+		stonecuttingRecipe("raw_gold_stairs", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_STAIRS);
+		stonecuttingRecipe("raw_copper_slab", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_SLAB, 2);
+		stonecuttingRecipe("raw_copper_stairs", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_STAIRS);
 	}
 	
 	private void vanillaColoredRecipes() {
@@ -78,7 +84,7 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 		}
 	}
 	
-//	private void flamboyantColoredRecipes() {
+	private void flamboyantColoredRecipes() {
 //		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
 //			String color = FlamboyantDyeColors.byId(i).getName();
 //			
@@ -95,7 +101,7 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 //			stonecuttingRecipe(type + "_slab", getItem(FRL(type)), getItem(ModRL(type + "_slab")), 2, CutAndColored.FMODID);
 //			stonecuttingRecipe(type + "_stairs", getItem(FRL(type)), getItem(ModRL(type + "_stairs")), 1, CutAndColored.FMODID);
 //		}
-//	}
+	}
 	
 	private void stoneBrickTypeRecipes() {
 		String[] stoneTypes = {"andesite", "diorite", "granite"};

@@ -407,6 +407,9 @@
     "block.cutandcolored.quartz_brick_stairs": "Quartz Brick Stairs",
     "block.cutandcolored.calcite_stairs": "Calcite Stairs",
     "block.cutandcolored.tuff_stairs": "Tuff Stairs",
+    "block.cutandcolored.raw_iron_stairs": "Raw Iron Stairs",
+    "block.cutandcolored.raw_gold_stairs": "Raw Gold Stairs",
+    "block.cutandcolored.raw_copper_stairs": "Raw Copper Stairs",
     
     // SLABS
     "block.cutandcolored.cracked_stone_brick_slab": "Cracked Stone Brick Slab",
@@ -417,6 +420,9 @@
     "block.cutandcolored.quartz_brick_slab": "Quartz Brick Slab",
     "block.cutandcolored.calcite_slab": "Calcite Slab",
     "block.cutandcolored.tuff_slab": "Tuff Slab",
+    "block.cutandcolored.raw_iron_slab": "Raw Iron Slab",
+    "block.cutandcolored.raw_gold_slab": "Raw Gold Slab",
+    "block.cutandcolored.raw_copper_slab": "Raw Copper Slab",
     
     // WALLS
     "block.cutandcolored.purpur_wall": "Purpur Wall",

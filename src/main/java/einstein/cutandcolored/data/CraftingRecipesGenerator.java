@@ -27,7 +27,7 @@ public class CraftingRecipesGenerator extends RecipeResources {
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
 		vanillaColoredRecipes();
-//		flamboyantColoredRecipes();
+		flamboyantColoredRecipes();
 		stoneBrickTypeRecipes();
 		
 		pillarRecipe(Blocks.END_STONE_BRICK_SLAB, ModBlocks.CHISELED_END_STONE_BRICKS, 1);
@@ -187,6 +187,15 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		slabsRecipe("tuff_slab", Blocks.TUFF, ModBlocks.TUFF_SLAB, "");
 		stairsRecipe("tuff_stairs", Blocks.TUFF, ModBlocks.TUFF_STAIRS, "");
 		wallsRecipe("tuff_wall", Blocks.TUFF, ModBlocks.TUFF_WALL, "");
+		
+		slabsRecipe("raw_iron_slab", Blocks.RAW_IRON_BLOCK, ModBlocks.RAW_IRON_SLAB, "");
+		stairsRecipe("raw_iron_stairs", Blocks.RAW_IRON_BLOCK, ModBlocks.RAW_IRON_STAIRS, "");
+		
+		slabsRecipe("raw_gold_slab", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_SLAB, "");
+		stairsRecipe("raw_gold_stairs", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_STAIRS, "");
+		
+		slabsRecipe("raw_copper_slab", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_SLAB, "");
+		stairsRecipe("raw_copper_stairs", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_STAIRS, "");
 	}
 	
 	private void vanillaColoredRecipes() {
@@ -255,7 +264,7 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		}
 	}
 	
-//	private void flamboyantColoredRecipes() {
+	private void flamboyantColoredRecipes() {
 //		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
 //			String color = FlamboyantDyeColors.byId(i).getName();
 //			Item dye = getItem(FRL(color + "_dye"));
@@ -321,7 +330,7 @@ public class CraftingRecipesGenerator extends RecipeResources {
 //				.generateAdvancement()
 //				.build(consumer, location(name, "crafting/"));
 //		}
-//	}
+	}
 	
 	private void stoneBrickTypeRecipes() {
 		String[] stoneTypes = {"andesite", "diorite", "granite"};

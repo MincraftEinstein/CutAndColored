@@ -201,6 +201,9 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		stairsBlock((StairBlock) ModBlocks.QUARTZ_BRICK_STAIRS, blockMCRL("quartz_bricks"));
 		stairsBlock((StairBlock) ModBlocks.CALCITE_STAIRS, blockMCRL("calcite"));
 		stairsBlock((StairBlock) ModBlocks.TUFF_STAIRS, blockMCRL("tuff"));
+		stairsBlock((StairBlock) ModBlocks.RAW_IRON_STAIRS, blockMCRL("raw_iron_block"));
+		stairsBlock((StairBlock) ModBlocks.RAW_GOLD_STAIRS, blockMCRL("raw_gold_block"));
+		stairsBlock((StairBlock) ModBlocks.RAW_COPPER_STAIRS, blockMCRL("raw_copper_block"));
 		
 		slabBlock((SlabBlock) ModBlocks.TERRACOTTA_SLAB, blockMCRL("terracotta"), blockMCRL("terracotta"));
 		slabBlock((SlabBlock) ModBlocks.GRANITE_BRICK_SLAB, blockRL("granite_bricks"), blockRL("granite_bricks"));
@@ -217,6 +220,9 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		slabBlock((SlabBlock) ModBlocks.QUARTZ_BRICK_SLAB, blockMCRL("quartz_bricks"), blockMCRL("quartz_bricks"));
 		slabBlock((SlabBlock) ModBlocks.CALCITE_SLAB, blockMCRL("calcite"), blockMCRL("calcite"));
 		slabBlock((SlabBlock) ModBlocks.TUFF_SLAB, blockMCRL("tuff"), blockMCRL("tuff"));
+		slabBlock((SlabBlock) ModBlocks.RAW_IRON_SLAB, blockMCRL("raw_iron_block"), blockMCRL("raw_iron_block"));
+		slabBlock((SlabBlock) ModBlocks.RAW_GOLD_SLAB, blockMCRL("raw_gold_block"), blockMCRL("raw_gold_block"));
+		slabBlock((SlabBlock) ModBlocks.RAW_COPPER_SLAB, blockMCRL("raw_copper_block"), blockMCRL("raw_copper_block"));
 		
 		borderedStairBlock((StairBlock) ModBlocks.SMOOTH_STONE_STAIRS, blockMCRL("smooth_stone"));
 		borderedStairBlock((StairBlock) ModBlocks.GLASS_STAIRS, blockMCRL("glass"));

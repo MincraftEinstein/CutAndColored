@@ -119,35 +119,34 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 		}
 		
 		vanillaDyedTags();
-//		flaboyantDyedTags();
+		flaboyantDyedTags();
 		
 		/**********************Minecraft***********************/
 		tag(BlockTags.IMPERMEABLE).add(ModBlocks.SOUL_GLASS).addTags(GLASS_SLABS, GLASS_STAIRS);
 		tag(BlockTags.PLANKS).addTag(STAINED_PLANKS);
-		tag(BlockTags.SLABS)
-				.addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS)//.addOptionalTag(FLAMBOYANT_STAINED_PLANK_SLABS.getName())
+		tag(BlockTags.SLABS).addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS)// .addOptionalTag(FLAMBOYANT_STAINED_PLANK_SLABS.getName())
 				.add(ModBlocks.CRACKED_STONE_BRICK_SLAB, ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB,
 						ModBlocks.CRACKED_NETHER_BRICK_SLAB, ModBlocks.SOUL_SANDSTONE_SLAB,
 						ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB, ModBlocks.CUT_SOUL_SANDSTONE_SLAB,
 						ModBlocks.GRANITE_BRICK_SLAB, ModBlocks.DIORITE_BRICK_SLAB, ModBlocks.ANDESITE_BRICK_SLAB,
 						ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB, ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB,
-						ModBlocks.QUARTZ_BRICK_SLAB, ModBlocks.CALCITE_SLAB, ModBlocks.TUFF_SLAB);
-		tag(BlockTags.STAIRS)
-				.addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS)//.addOptionalTag(FLAMBOYANT_STAINED_PLANK_STAIRS.getName())
+						ModBlocks.QUARTZ_BRICK_SLAB, ModBlocks.CALCITE_SLAB, ModBlocks.TUFF_SLAB,
+						ModBlocks.RAW_IRON_SLAB, ModBlocks.RAW_GOLD_SLAB, ModBlocks.RAW_COPPER_SLAB);
+		tag(BlockTags.STAIRS).addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS)// .addOptionalTag(FLAMBOYANT_STAINED_PLANK_STAIRS.getName())
 				.add(ModBlocks.SMOOTH_STONE_STAIRS, ModBlocks.CRACKED_STONE_BRICK_STAIRS,
 						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS, ModBlocks.CRACKED_NETHER_BRICK_STAIRS,
 						ModBlocks.SOUL_SANDSTONE_STAIRS, ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS,
-						ModBlocks.GRANITE_BRICK_STAIRS, ModBlocks.DIORITE_BRICK_STAIRS,
-						ModBlocks.ANDESITE_BRICK_STAIRS, ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS,
-						ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS, ModBlocks.QUARTZ_BRICK_STAIRS,
-						ModBlocks.CALCITE_STAIRS, ModBlocks.TUFF_STAIRS);
-		tag(BlockTags.WALLS).addTag(CLAY_BRICK_WALLS).add(ModBlocks.SOUL_SANDSTONE_WALL,
-				ModBlocks.GRANITE_BRICK_WALL, ModBlocks.DIORITE_BRICK_WALL, ModBlocks.ANDESITE_BRICK_WALL,
-				ModBlocks.PURPUR_WALL, ModBlocks.PRISMARINE_BRICK_WALL, ModBlocks.DARK_PRISMARINE_WALL,
-				ModBlocks.CRACKED_STONE_BRICK_WALL, ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL,
-				ModBlocks.CRACKED_NETHER_BRICK_WALL, ModBlocks.SMOOTH_STONE_WALL, ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL,
-				ModBlocks.CRACKED_DEEPSLATE_TILE_WALL, ModBlocks.QUARTZ_BRICK_WALL,
-				ModBlocks.CALCITE_WALL, ModBlocks.TUFF_WALL);
+						ModBlocks.GRANITE_BRICK_STAIRS, ModBlocks.DIORITE_BRICK_STAIRS, ModBlocks.ANDESITE_BRICK_STAIRS,
+						ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS, ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS,
+						ModBlocks.QUARTZ_BRICK_STAIRS, ModBlocks.CALCITE_STAIRS, ModBlocks.TUFF_STAIRS,
+						ModBlocks.RAW_IRON_STAIRS, ModBlocks.RAW_GOLD_STAIRS, ModBlocks.RAW_COPPER_STAIRS);
+		tag(BlockTags.WALLS).addTag(CLAY_BRICK_WALLS).add(ModBlocks.SOUL_SANDSTONE_WALL, ModBlocks.GRANITE_BRICK_WALL,
+				ModBlocks.DIORITE_BRICK_WALL, ModBlocks.ANDESITE_BRICK_WALL, ModBlocks.PURPUR_WALL,
+				ModBlocks.PRISMARINE_BRICK_WALL, ModBlocks.DARK_PRISMARINE_WALL, ModBlocks.CRACKED_STONE_BRICK_WALL,
+				ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL, ModBlocks.CRACKED_NETHER_BRICK_WALL,
+				ModBlocks.SMOOTH_STONE_WALL, ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL,
+				ModBlocks.CRACKED_DEEPSLATE_TILE_WALL, ModBlocks.QUARTZ_BRICK_WALL, ModBlocks.CALCITE_WALL,
+				ModBlocks.TUFF_WALL);
 		tag(BlockTags.WOODEN_SLABS).addTag(STAINED_PLANK_SLABS);
 		tag(BlockTags.WOODEN_STAIRS).addTag(STAINED_PLANK_STAIRS);
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -172,7 +171,9 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 						ModBlocks.CRACKED_STONE_BRICK_SLAB, ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB,
 						ModBlocks.CRACKED_NETHER_BRICK_SLAB, ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB,
 						ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB, ModBlocks.QUARTZ_BRICK_SLAB, ModBlocks.CALCITE_SLAB,
-						ModBlocks.TUFF_SLAB, ModBlocks.NETHER_BRICK_FENCE_GATE, ModBlocks.IRON_FENCE_GATE);
+						ModBlocks.TUFF_SLAB, ModBlocks.NETHER_BRICK_FENCE_GATE, ModBlocks.IRON_FENCE_GATE,
+						ModBlocks.RAW_IRON_SLAB, ModBlocks.RAW_IRON_STAIRS, ModBlocks.RAW_GOLD_SLAB,
+						ModBlocks.RAW_GOLD_STAIRS, ModBlocks.RAW_COPPER_SLAB, ModBlocks.RAW_COPPER_STAIRS);
 		tag(BlockTags.MINEABLE_WITH_AXE).addTags(STAINED_PLANK_SLABS, STAINED_PLANK_STAIRS, STAINED_PLANKS).add(ModBlocks.WEAVER, ModBlocks.SAWMILL);
 		
 		/**********************Forge***********************/
@@ -280,7 +281,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 		}
 	}
 	
-//	private void flaboyantDyedTags() {
+	private void flaboyantDyedTags() {
 //		for (int i = 0; i < fColoredBlocks.size(); i++) {
 //			Block block = fColoredBlocks.get(i);
 //			String name = block.getRegistryName().getPath();
@@ -345,7 +346,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 //				}
 //			}
 //		}
-//	}
+	}
 	
 	@Override
 	public String getName() {
