@@ -11,7 +11,7 @@
       "recipe": {
         "type": "cutandcolored:glasscutting",
         "ingredient": {
-          "item": "minecraft:orange_stained_glass"
+          "tag": "forge:glass/orange"
         },
         "result": "horizontalpanes:horizontal_stained_orange_pane",
         "count": 4

@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "cutandcolored:soul_glass"
-            ]
+            "tag": "forge:glass/soul"
           }
         ]
       }

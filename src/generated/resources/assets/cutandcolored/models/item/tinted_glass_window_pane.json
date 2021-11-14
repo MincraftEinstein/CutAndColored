@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cutandcolored:block/tinted_glass_window"
+  }
+}

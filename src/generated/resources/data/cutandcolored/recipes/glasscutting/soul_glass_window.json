@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "tag": "forge:glass/soul"
+  },
+  "result": "cutandcolored:soul_glass_window",
+  "count": 1
+}

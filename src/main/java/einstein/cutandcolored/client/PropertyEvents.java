@@ -485,6 +485,48 @@ public class PropertyEvents
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_SLAB, RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.RED_STAINED_GLASS_SLAB, RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_SLAB, RenderType.translucent());
+        
+        // WINDOWS
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_WINDOW, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TINTED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOUL_GLASS_WINDOW, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.RED_STAINED_GLASS_WINDOW, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_WINDOW, RenderType.translucent());
+        
+        // WINDOW PANES
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_WINDOW_PANE, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TINTED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOUL_GLASS_WINDOW_PANE, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.RED_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_WINDOW_PANE, RenderType.translucent());
         /*#######################FLAMBOYANT############################*/
     	/************************GLASS***************************/
         // STAIRS

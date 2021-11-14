@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "item": "minecraft:glass"
+  },
+  "result": "cutandcolored:glass_window_pane",
+  "count": 1
+}

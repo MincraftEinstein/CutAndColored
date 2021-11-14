@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "tag": "forge:glass/red"
+  },
+  "result": "cutandcolored:red_stained_glass_window_pane",
+  "count": 1
+}

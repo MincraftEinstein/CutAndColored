@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "cutandcolored:white_stained_glass_window",
+    "cutandcolored:orange_stained_glass_window",
+    "cutandcolored:magenta_stained_glass_window",
+    "cutandcolored:light_blue_stained_glass_window",
+    "cutandcolored:yellow_stained_glass_window",
+    "cutandcolored:lime_stained_glass_window",
+    "cutandcolored:pink_stained_glass_window",
+    "cutandcolored:light_gray_stained_glass_window",
+    "cutandcolored:gray_stained_glass_window",
+    "cutandcolored:light_gray_stained_glass_window",
+    "cutandcolored:cyan_stained_glass_window",
+    "cutandcolored:purple_stained_glass_window",
+    "cutandcolored:blue_stained_glass_window",
+    "cutandcolored:light_blue_stained_glass_window",
+    "cutandcolored:brown_stained_glass_window",
+    "cutandcolored:green_stained_glass_window",
+    "cutandcolored:red_stained_glass_window",
+    "cutandcolored:black_stained_glass_window"
+  ]
+}

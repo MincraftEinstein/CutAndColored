@@ -8,6 +8,7 @@ import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
@@ -19,6 +20,10 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 	private List<Block> wallBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
 			.filter((block) -> block.getRegistryName().getPath().contains("wall"))
+			.collect(Collectors.toList()));
+	
+	private List<Block> windowBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+			.filter((block) -> block.getRegistryName().getPath().contains("window") && !block.getRegistryName().getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	
 	public ItemAssetsGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
@@ -94,6 +99,9 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		
 		generatedItem("soul_glass_pane", new ResourceLocation(CutAndColored.MODID, "block/soul_glass"));
 		generatedItem("tinted_glass_pane", new ResourceLocation(CutAndColored.MCMODID, "block/tinted_glass"));
+		generatedItem("glass_window_pane", new ResourceLocation(CutAndColored.MODID, "block/glass_window"));
+		generatedItem("soul_glass_window_pane", new ResourceLocation(CutAndColored.MODID, "block/soul_glass_window"));
+		generatedItem("tinted_glass_window_pane", new ResourceLocation(CutAndColored.MODID, "block/tinted_glass_window"));
 		
 		blockItemModel(ModBlocks.PRISMARINE_BRICK_PILLAR);
 		blockItemModel(ModBlocks.POLISHED_BLACKSTONE_PILLAR);
@@ -102,7 +110,7 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.NETHER_BRICK_FENCE_GATE);
 		blockItemModel(ModBlocks.IRON_FENCE_GATE);
 		
-		for(int i = 0; i < wallBlocks.size(); i++) {
+		for (int i = 0; i < wallBlocks.size(); i++) {
 			String name = wallBlocks.get(i).getRegistryName().getPath();
 			String fileName = name.replaceAll("_wall", "");
 			try {
@@ -120,6 +128,15 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 					wallInventory(name, blockMCRL(fileName));
 				}
 			}
+		}
+		
+		for (int i = 0; i < DyeColor.values().length; i++) {
+			String name = DyeColor.byId(i).getName() + "_stained_glass_window";
+			generatedItem(name + "_pane", blockRL(name));
+		}
+		
+		for (int i = 0; i < windowBlocks.size(); i++) {
+			blockItemModel(windowBlocks.get(i));
 		}
 	}
 	

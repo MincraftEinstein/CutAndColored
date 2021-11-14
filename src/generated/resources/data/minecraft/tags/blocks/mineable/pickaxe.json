@@ -15,6 +15,8 @@
     "#forge:glass/soul",
     "#forge:glass_panes/soul",
     "#forge:glass_panes/tinted",
+    "#forge:glass_windows",
+    "#forge:glass_window_panes",
     "cutandcolored:glasscutter",
     "cutandcolored:andesite_brick_slab",
     "cutandcolored:andesite_brick_stairs",

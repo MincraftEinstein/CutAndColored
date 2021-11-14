@@ -11,7 +11,7 @@
       "recipe": {
         "type": "cutandcolored:glasscutting",
         "ingredient": {
-          "item": "minecraft:light_gray_stained_glass"
+          "tag": "forge:glass/light_gray"
         },
         "result": "horizontalpanes:horizontal_stained_light_gray_pane",
         "count": 4

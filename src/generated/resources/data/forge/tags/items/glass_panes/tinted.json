@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "cutandcolored:tinted_glass_pane"
+    "cutandcolored:tinted_glass_pane",
+    "cutandcolored:tinted_glass_window_pane"
   ]
 }

@@ -3,6 +3,7 @@
   "values": [
     "cutandcolored:soul_glass",
     "#forge:glass_slabs",
-    "#forge:glass_stairs"
+    "#forge:glass_stairs",
+    "#forge:glass_windows"
   ]
 }

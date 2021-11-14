@@ -26,7 +26,10 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 public class BlockAssetsGenerator extends BlockStateProvider {
 	
 	private List<Block> cubeBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
-			.filter((block) -> block.getRegistryName().getPath().contains("planks") || block.getRegistryName().getPath().contains("bricks"))
+			.filter((block) -> block.getRegistryName().getPath().contains("planks")
+					|| block.getRegistryName().getPath().contains("bricks")
+					|| block.getRegistryName().getPath().contains("window"))
+			.filter((block) -> !block.getRegistryName().getPath().contains("pane"))
 			.filter((block) -> !(block instanceof SlabBlock))
 			.filter((block) -> !(block instanceof StairBlock))
 			.collect(Collectors.toList()));
@@ -47,6 +50,11 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 
 	private List<Block> lampBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
 			.filter((block) -> block instanceof RedstoneLampBlock)
+			.collect(Collectors.toList()));
+	
+	private List<Block> paneBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+			.filter((block) -> block.getRegistryName().getPath().contains("pane"))
+			.filter((block) -> block.getRegistryName().getPath().contains("window"))
 			.collect(Collectors.toList()));
 	
 	private List<Block> coloredStairs = new ArrayList<Block>();
@@ -254,6 +262,16 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			.partialState().with(RedstoneLampBlock.LIT, true).addModels(new ConfiguredModel(models()
 					.withExistingParent(name + "_on", "cube_all").texture("all", blockRL(name + "_on"))));
 			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
+		}
+		// Window Panes
+		for (int i = 0; i < paneBlocks.size(); i++) {
+			IronBarsBlock block = (IronBarsBlock) paneBlocks.get(i);
+			try {
+				paneBlock(block, blockRL(block.getRegistryName().getPath().replace("_pane", "")), blockMCRL(block.getRegistryName().getPath().replace("_window", "") + "_top"));
+			}
+			catch (Exception e) {
+				paneBlock(block, blockRL(block.getRegistryName().getPath().replace("_pane", "")), blockRL(block.getRegistryName().getPath().replace("_window", "") + "_top"));
+			}
 		}
 	}
 	

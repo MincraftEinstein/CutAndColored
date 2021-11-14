@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "item": "cutandcolored:soul_glass"
+    "tag": "forge:glass/soul"
   },
   "result": "cutandcolored:soul_glass_slab",
   "count": 2

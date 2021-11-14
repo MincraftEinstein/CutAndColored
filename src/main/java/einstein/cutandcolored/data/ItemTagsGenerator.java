@@ -8,13 +8,16 @@ import einstein.cutandcolored.init.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.Tag;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ItemTagsGenerator extends ItemTagsProvider {
 	
@@ -25,6 +28,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	public static final Tag.Named<Item> VANILLA_STAINED_BRICKS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_bricks");
 	public static final Tag.Named<Item> VANILLA_STAINED_PLANKS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_planks");
 	public static final Tag.Named<Item> VANILLA_REDSTONE_LAMPS = ItemTags.bind(CutAndColored.MODID + ":vanilla_redstone_lamps");
+	public static final Tag.Named<Item> VANILLA_STAINED_GLASS_WINDOWS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_glass_windows");
 	
 	public static final Tag.Named<Item> VANILLA_CONCRETE_SLABS = ItemTags.bind(CutAndColored.MODID + ":vanilla_concrete_slabs");
 	public static final Tag.Named<Item> VANILLA_STAINED_BRICK_SLABS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_brick_slabs");
@@ -41,6 +45,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	public static final Tag.Named<Item> VANILLA_WOOL_STAIRS = ItemTags.bind(CutAndColored.MODID + ":vanilla_wool_stairs");
 	
 	public static final Tag.Named<Item> VANILLA_STAINED_BRICK_WALLS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_brick_walls");
+	
+	public static final Tag.Named<Item> VANILLA_STAINED_GLASS_WINDOW_PANES = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_glass_window_panes");
 	
 	/**********************Flamboyant***********************/
 //	public static final Tag.Named<Item> FLAMBOYANT_REDSTONE_LAMPS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_redstone_lamps");
@@ -69,6 +75,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	public static final Tag.Named<Item> CARVED_PUMPKINS = ItemTags.bind("forge:carved_pumpkins");
 	public static final Tag.Named<Item> JACK_O_LANTERNS = ItemTags.bind("forge:jack_o_lanterns");
 	public static final Tag.Named<Item> STAINED_PLANKS = ItemTags.bind("forge:stained_planks");
+	public static final Tag.Named<Item> GLASS_WINDOWS = ItemTags.bind("forge:glass_windows");
+	public static final Tag.Named<Item> TINTED_GLASS = ItemTags.bind("forge:glass/tinted");
 	
 	public static final Tag.Named<Item> CLAY_BRICK_SLABS = ItemTags.bind("forge:clay_brick_slabs");
 	public static final Tag.Named<Item> CONCRETE_SLABS = ItemTags.bind("forge:concrete_slabs");
@@ -90,6 +98,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	
 	public static final Tag.Named<Item> SOUL_GLASS_PANES = ItemTags.bind("forge:glass_panes/soul");
 	public static final Tag.Named<Item> TINTED_GLASS_PANES = ItemTags.bind("forge:glass_panes/tinted");
+	public static final Tag.Named<Item> GLASS_WINDOW_PANES = ItemTags.bind("forge:glass_window_panes");
 	
 	public static final Tag.Named<Item> SOUL_GLASS = ItemTags.bind("forge:glass/soul");
 	
@@ -147,6 +156,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(CONCRETE_STAIRS).addTag(VANILLA_CONCRETE_STAIRS);//.addOptionalTag(FLAMBOYANT_CONCRETE_STAIRS.getName());
 		tag(GLASS_SLABS).add(ModBlocks.GLASS_SLAB.asItem()).add(ModBlocks.SOUL_GLASS_SLAB.asItem()).add(ModBlocks.TINTED_GLASS_SLAB.asItem()).addTag(VANILLA_STAINED_GLASS_SLABS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_SLABS.getName());
 		tag(GLASS_STAIRS).add(ModBlocks.GLASS_STAIRS.asItem()).add(ModBlocks.SOUL_GLASS_STAIRS.asItem()).add(ModBlocks.TINTED_GLASS_STAIRS.asItem()).addTag(VANILLA_STAINED_GLASS_STAIRS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_STAIRS.getName());
+		tag(GLASS_WINDOWS).add(ModBlocks.GLASS_WINDOW.asItem(), ModBlocks.SOUL_GLASS_WINDOW.asItem(), ModBlocks.TINTED_GLASS_WINDOW.asItem()).addTag(VANILLA_STAINED_GLASS_WINDOWS);
+		tag(GLASS_WINDOW_PANES).add(ModBlocks.GLASS_WINDOW_PANE.asItem(), ModBlocks.SOUL_GLASS_WINDOW_PANE.asItem(), ModBlocks.TINTED_GLASS_WINDOW_PANE.asItem()).addTag(VANILLA_STAINED_GLASS_WINDOW_PANES);
 		tag(REDSTONE_LAMPS).add(Items.REDSTONE_LAMP).addTag(VANILLA_REDSTONE_LAMPS);//.addOptionalTag(FLAMBOYANT_REDSTONE_LAMPS.getName());
 		tag(CARVED_PUMPKINS).add(Items.CARVED_PUMPKIN);
 		tag(JACK_O_LANTERNS).add(Items.JACK_O_LANTERN);
@@ -158,14 +169,17 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(STAINED_PLANK_STAIRS).addTag(VANILLA_STAINED_PLANK_STAIRS);//.addOptionalTag(FLAMBOYANT_STAINED_PLANK_STAIRS.getName());
 		tag(STAINED_PLANKS).addTag(VANILLA_STAINED_PLANKS);//.addOptionalTag(FLAMBOYANT_STAINED_PLANKS.getName());
 		tag(NETHER_BRICK_FENCE_GATES).add(ModBlocks.NETHER_BRICK_FENCE_GATE.asItem());
-		tag(SOUL_GLASS).add(ModBlocks.SOUL_GLASS.asItem());
-		tag(SOUL_GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.asItem());
-		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.asItem());
+		tag(SOUL_GLASS).add(ModBlocks.SOUL_GLASS.asItem(), ModBlocks.SOUL_GLASS_WINDOW.asItem());
+		tag(SOUL_GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.asItem(), ModBlocks.SOUL_GLASS_WINDOW_PANE.asItem());
+		tag(TINTED_GLASS).add(Blocks.TINTED_GLASS.asItem(), ModBlocks.TINTED_GLASS_WINDOW.asItem());
+		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.asItem(), ModBlocks.TINTED_GLASS_WINDOW_PANE.asItem());
 		
-		tag(Tags.Items.GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.asItem()).add(ModBlocks.TINTED_GLASS_PANE.asItem());
-		tag(Tags.Items.SANDSTONE).add(ModBlocks.SOUL_SANDSTONE.asItem(), ModBlocks.CUT_SOUL_SANDSTONE.asItem(), ModBlocks.CHISELED_SOUL_SANDSTONE.asItem(), ModBlocks.SMOOTH_SOUL_SANDSTONE.asItem());
-		tag(Tags.Items.GLASS_COLORLESS).add(ModBlocks.SOUL_GLASS.asItem());
-		tag(Tags.Items.GLASS_PANES_COLORLESS).add(ModBlocks.SOUL_GLASS_PANE.asItem());
+		tag(Tags.Items.GLASS_COLORLESS).add(ModBlocks.GLASS_WINDOW.asItem());
+		tag(Tags.Items.GLASS_PANES_COLORLESS).add(ModBlocks.GLASS_WINDOW_PANE.asItem());
+		tag(Tags.Items.STAINED_GLASS).addTag(VANILLA_STAINED_GLASS_WINDOWS);
+		tag(Tags.Items.STAINED_GLASS_PANES).addTag(VANILLA_STAINED_GLASS_WINDOW_PANES);
+		tag(Tags.Items.SANDSTONE).add(ModBlocks.SOUL_SANDSTONE.asItem(), ModBlocks.CUT_SOUL_SANDSTONE.asItem(),
+				ModBlocks.CHISELED_SOUL_SANDSTONE.asItem(), ModBlocks.SMOOTH_SOUL_SANDSTONE.asItem());
 		
 //		for (int i = 0; i < 23; i++) {
 //			tag(CARVED_PUMPKINS).addOptional(new ResourceLocation("omgourd", "carved_pumpkin_" + (i + 1)));
@@ -177,13 +191,16 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	
 	private void vanillaDyedTags() {
 		for (int i = 0; i < DyeColor.values().length; i++) {
+			String color = DyeColor.byId(i).getName();
 			int i1 = ModBlocks.allBlocks.size() - 1;
 			while (i1 >= 0) {
-				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getName())) {
+				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(color)) {
 					coloredItems.add(ModBlocks.allBlocks.get(i1).asItem());
 				}
 				i1--;
 			}
+			tag(ItemTags.bind("forge:glass/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window")).asItem());
+			tag(ItemTags.bind("forge:glass_panes/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window_pane")).asItem());
 		}
 		for (int i = 0; i < coloredItems.size(); i++) {
 			Item item = coloredItems.get(i);
@@ -219,6 +236,14 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 				}
 				else if (name.contains("stairs")) {
 					tag(VANILLA_STAINED_GLASS_STAIRS).add(item);
+				}
+				else if (name.contains("window")) {
+					if (name.contains("pane")) {
+						tag(VANILLA_STAINED_GLASS_WINDOW_PANES).add(item);
+					}
+					else {
+						tag(VANILLA_STAINED_GLASS_WINDOWS).add(item);
+					}
 				}
 			}
 			else if (name.contains("stained_plank")) {

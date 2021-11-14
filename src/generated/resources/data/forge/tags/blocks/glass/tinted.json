@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:tinted_glass",
+    "cutandcolored:tinted_glass_window"
+  ]
+}

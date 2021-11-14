@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "tag": "forge:glass/green"
+  },
+  "result": "cutandcolored:green_stained_glass_window",
+  "count": 1
+}

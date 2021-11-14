@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "item": "minecraft:yellow_stained_glass"
+    "tag": "forge:glass/yellow"
   },
   "result": "cutandcolored:yellow_stained_glass_slab",
   "count": 2

@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "tag": "forge:glass/black"
+  },
+  "result": "cutandcolored:black_stained_glass_window",
+  "count": 1
+}

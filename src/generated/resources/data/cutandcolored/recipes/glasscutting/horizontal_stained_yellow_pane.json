@@ -11,7 +11,7 @@
       "recipe": {
         "type": "cutandcolored:glasscutting",
         "ingredient": {
-          "item": "minecraft:yellow_stained_glass"
+          "tag": "forge:glass/yellow"
         },
         "result": "horizontalpanes:horizontal_stained_yellow_pane",
         "count": 4

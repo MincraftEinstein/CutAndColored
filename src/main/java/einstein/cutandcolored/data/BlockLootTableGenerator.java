@@ -32,13 +32,15 @@ public class BlockLootTableGenerator extends BlockLoot {
 			.collect(Collectors.toList()));
 	
 	private List<Block> silkTouchBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
-			.filter((block) -> block.getRegistryName().getPath().contains("glass"))
+			.filter((block) -> block.getRegistryName().getPath().contains("glass") || block.getRegistryName().getPath().contains("window"))
 			.filter((block) -> !block.getRegistryName().getPath().contains("_slab"))
 			.filter((block) -> !ModBlocks.GLASSCUTTER.equals(block))
 			.filter((block) -> !ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.equals(block))
 			.filter((block) -> !ModBlocks.TINTED_GLASS_PANE.equals(block))
 			.filter((block) -> !ModBlocks.TINTED_GLASS_STAIRS.equals(block))
 			.filter((block) -> !ModBlocks.TINTED_GLASS_SLAB.equals(block))
+			.filter((block) -> !ModBlocks.TINTED_GLASS_WINDOW.equals(block))
+			.filter((block) -> !ModBlocks.TINTED_GLASS_WINDOW_PANE.equals(block))
 			.collect(Collectors.toList()));
 	
 	private List<Block> glassSlabBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
@@ -63,6 +65,8 @@ public class BlockLootTableGenerator extends BlockLoot {
 		dropSelf(ModBlocks.GLASSCUTTER);
 		dropSelf(ModBlocks.TINTED_GLASS_PANE);
 		dropSelf(ModBlocks.TINTED_GLASS_STAIRS);
+		dropSelf(ModBlocks.TINTED_GLASS_WINDOW);
+		dropSelf(ModBlocks.TINTED_GLASS_WINDOW_PANE);
 		add(ModBlocks.TINTED_GLASS_SLAB, BlockLoot::createSlabItemTable);
 	}
 	

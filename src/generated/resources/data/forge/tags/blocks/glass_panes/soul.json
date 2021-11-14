@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "cutandcolored:soul_glass_pane"
+    "cutandcolored:soul_glass_pane",
+    "cutandcolored:soul_glass_window_pane"
   ]
 }

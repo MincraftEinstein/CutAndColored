@@ -29,7 +29,10 @@ import net.minecraft.world.level.block.RedstoneLampBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StainedGlassBlock;
+import net.minecraft.world.level.block.StainedGlassPaneBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TintedGlassBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -96,6 +99,48 @@ public class ModBlocks
     public static final Block GREEN_STAINED_GLASS_SLAB = register("green_stained_glass_slab", new StainedGlassSlabBlock(DyeColor.GREEN, Blocks.GREEN_STAINED_GLASS, BlockBehaviour.Properties.copy(Blocks.GREEN_STAINED_GLASS)));
     public static final Block RED_STAINED_GLASS_SLAB = register("red_stained_glass_slab", new StainedGlassSlabBlock(DyeColor.RED, Blocks.RED_STAINED_GLASS, BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS)));
     public static final Block BLACK_STAINED_GLASS_SLAB = register("black_stained_glass_slab", new StainedGlassSlabBlock(DyeColor.BLACK, Blocks.BLACK_STAINED_GLASS, BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS)));
+    
+    // WINDOWS
+    public static final Block GLASS_WINDOW = register("glass_window", new GlassBlock(BlockProperties.GLASS));
+    public static final Block TINTED_GLASS_WINDOW = register("tinted_glass_window", new TintedGlassBlock(BlockProperties.TINTED_GLASS));
+    public static final Block SOUL_GLASS_WINDOW = register("soul_glass_window", new GlassBlock(BlockBehaviour.Properties.copy(SOUL_GLASS)));
+    public static final Block WHITE_STAINED_GLASS_WINDOW = register("white_stained_glass_window", new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+    public static final Block ORANGE_STAINED_GLASS_WINDOW = register("orange_stained_glass_window", new StainedGlassBlock(DyeColor.ORANGE, BlockProperties.GLASS));
+    public static final Block MAGENTA_STAINED_GLASS_WINDOW = register("magenta_stained_glass_window", new StainedGlassBlock(DyeColor.MAGENTA, BlockProperties.GLASS));
+    public static final Block LIGHT_BLUE_STAINED_GLASS_WINDOW = register("light_blue_stained_glass_window", new StainedGlassBlock(DyeColor.LIGHT_BLUE, BlockProperties.GLASS));
+    public static final Block YELLOW_STAINED_GLASS_WINDOW = register("yellow_stained_glass_window", new StainedGlassBlock(DyeColor.YELLOW, BlockProperties.GLASS));
+    public static final Block LIME_STAINED_GLASS_WINDOW = register("lime_stained_glass_window", new StainedGlassBlock(DyeColor.LIME, BlockProperties.GLASS));
+    public static final Block PINK_STAINED_GLASS_WINDOW = register("pink_stained_glass_window", new StainedGlassBlock(DyeColor.PINK, BlockProperties.GLASS));
+    public static final Block GRAY_STAINED_GLASS_WINDOW = register("gray_stained_glass_window", new StainedGlassBlock(DyeColor.GRAY, BlockProperties.GLASS));
+    public static final Block LIGHT_GRAY_STAINED_GLASS_WINDOW = register("light_gray_stained_glass_window", new StainedGlassBlock(DyeColor.LIGHT_GRAY, BlockProperties.GLASS));
+    public static final Block CYAN_STAINED_GLASS_WINDOW = register("cyan_stained_glass_window", new StainedGlassBlock(DyeColor.CYAN, BlockProperties.GLASS));
+    public static final Block PURPLE_STAINED_GLASS_WINDOW = register("purple_stained_glass_window", new StainedGlassBlock(DyeColor.PURPLE, BlockProperties.GLASS));
+    public static final Block BLUE_STAINED_GLASS_WINDOW = register("blue_stained_glass_window", new StainedGlassBlock(DyeColor.BLUE, BlockProperties.GLASS));
+    public static final Block BROWN_STAINED_GLASS_WINDOW = register("brown_stained_glass_window", new StainedGlassBlock(DyeColor.BROWN, BlockProperties.GLASS));
+    public static final Block GREEN_STAINED_GLASS_WINDOW = register("green_stained_glass_window", new StainedGlassBlock(DyeColor.GREEN, BlockProperties.GLASS));
+    public static final Block RED_STAINED_GLASS_WINDOW = register("red_stained_glass_window", new StainedGlassBlock(DyeColor.RED, BlockProperties.GLASS));
+    public static final Block BLACK_STAINED_GLASS_WINDOW = register("black_stained_glass_window", new StainedGlassBlock(DyeColor.BLACK, BlockProperties.GLASS));
+    
+    // WINDOW PANES
+    public static final Block GLASS_WINDOW_PANE = register("glass_window_pane", new IronBarsBlock(BlockProperties.GLASS));
+    public static final Block TINTED_GLASS_WINDOW_PANE = register("tinted_glass_window_pane", new TintedGlassPane(BlockProperties.TINTED_GLASS));
+    public static final Block SOUL_GLASS_WINDOW_PANE = register("soul_glass_window_pane", new IronBarsBlock(BlockProperties.GLASS));
+    public static final Block WHITE_STAINED_GLASS_WINDOW_PANE = register("white_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+    public static final Block ORANGE_STAINED_GLASS_WINDOW_PANE = register("orange_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.ORANGE, BlockProperties.GLASS));
+    public static final Block MAGENTA_STAINED_GLASS_WINDOW_PANE = register("magenta_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.MAGENTA, BlockProperties.GLASS));
+    public static final Block LIGHT_BLUE_STAINED_GLASS_WINDOW_PANE = register("light_blue_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.LIGHT_BLUE, BlockProperties.GLASS));
+    public static final Block YELLOW_STAINED_GLASS_WINDOW_PANE = register("yellow_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.YELLOW, BlockProperties.GLASS));
+    public static final Block LIME_STAINED_GLASS_WINDOW_PANE = register("lime_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.LIME, BlockProperties.GLASS));
+    public static final Block PINK_STAINED_GLASS_WINDOW_PANE = register("pink_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.PINK, BlockProperties.GLASS));
+    public static final Block GRAY_STAINED_GLASS_WINDOW_PANE = register("gray_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.GRAY, BlockProperties.GLASS));
+    public static final Block LIGHT_GRAY_STAINED_GLASS_WINDOW_PANE = register("light_gray_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.LIGHT_GRAY, BlockProperties.GLASS));
+    public static final Block CYAN_STAINED_GLASS_WINDOW_PANE = register("cyan_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.CYAN, BlockProperties.GLASS));
+    public static final Block PURPLE_STAINED_GLASS_WINDOW_PANE = register("purple_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.PURPLE, BlockProperties.GLASS));
+    public static final Block BLUE_STAINED_GLASS_WINDOW_PANE = register("blue_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.BLUE, BlockProperties.GLASS));
+    public static final Block BROWN_STAINED_GLASS_WINDOW_PANE = register("brown_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.BROWN, BlockProperties.GLASS));
+    public static final Block GREEN_STAINED_GLASS_WINDOW_PANE = register("green_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.GREEN, BlockProperties.GLASS));
+    public static final Block RED_STAINED_GLASS_WINDOW_PANE = register("red_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.RED, BlockProperties.GLASS));
+    public static final Block BLACK_STAINED_GLASS_WINDOW_PANE = register("black_stained_glass_window_pane", new StainedGlassPaneBlock(DyeColor.BLACK, BlockProperties.GLASS));
     
     /*************************WOOL**************************/
     // STAIRS
@@ -484,6 +529,7 @@ public class ModBlocks
     public static class BlockProperties
     {
     	public static final BlockBehaviour.Properties GLASS = BlockBehaviour.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never);
+    	public static final BlockBehaviour.Properties TINTED_GLASS = BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS).color(MaterialColor.COLOR_GRAY).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never);
     	public static final BlockBehaviour.Properties SOUL_SANDSTONE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN).requiresCorrectToolForDrops().strength(0.8F);
     	
     	public static BlockBehaviour.Properties StainedPlanks(MaterialColor color) {

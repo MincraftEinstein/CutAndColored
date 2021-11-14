@@ -11,7 +11,7 @@
       "recipe": {
         "type": "cutandcolored:glasscutting",
         "ingredient": {
-          "item": "minecraft:cyan_stained_glass"
+          "tag": "forge:glass/cyan"
         },
         "result": "horizontalpanes:horizontal_stained_cyan_pane",
         "count": 4

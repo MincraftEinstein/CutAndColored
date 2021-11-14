@@ -11,7 +11,7 @@
       "recipe": {
         "type": "cutandcolored:glasscutting",
         "ingredient": {
-          "item": "minecraft:glass"
+          "tag": "forge:glass/colorless"
         },
         "result": "horizontalpanes:horizontal_glass_pane",
         "count": 4
