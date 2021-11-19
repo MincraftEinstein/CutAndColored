@@ -1,0 +1,44 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "additionalbarsbop:crossed_hellbark_bars"
+          ]
+        },
+        "criteria": {
+          "has_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "tag": "biomesoplenty:hellbark_logs"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "additionalbarsbop:crossed_hellbark_bars"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_item",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

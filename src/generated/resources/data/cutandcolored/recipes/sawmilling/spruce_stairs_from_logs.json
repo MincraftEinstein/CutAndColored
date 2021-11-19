@@ -1,19 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
-  "ingredient": [
-    {
-      "item": "minecraft:spruce_log"
-    },
-    {
-      "item": "minecraft:stripped_spruce_log"
-    },
-    {
-      "item": "minecraft:spruce_wood"
-    },
-    {
-      "item": "minecraft:stripped_spruce_wood"
-    }
-  ],
+  "ingredient": {
+    "tag": "minecraft:spruce_logs"
+  },
   "result": "minecraft:spruce_stairs",
   "count": 1
 }

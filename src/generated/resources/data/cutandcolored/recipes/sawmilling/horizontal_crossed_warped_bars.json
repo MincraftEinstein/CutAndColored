@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbars",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "tag": "minecraft:warped_logs"
+        },
+        "result": "additionalbars:horizontal_crossed_warped_bars",
+        "count": 2
+      }
+    }
+  ]
+}

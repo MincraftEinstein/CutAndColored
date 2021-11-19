@@ -1,19 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
-  "ingredient": [
-    {
-      "item": "minecraft:warped_stem"
-    },
-    {
-      "item": "minecraft:stripped_warped_stem"
-    },
-    {
-      "item": "minecraft:warped_hyphae"
-    },
-    {
-      "item": "minecraft:stripped_warped_hyphae"
-    }
-  ],
+  "ingredient": {
+    "tag": "minecraft:warped_logs"
+  },
   "result": "minecraft:warped_stairs",
   "count": 1
 }

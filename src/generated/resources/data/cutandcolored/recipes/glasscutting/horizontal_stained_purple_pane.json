@@ -11,7 +11,7 @@
       "recipe": {
         "type": "cutandcolored:glasscutting",
         "ingredient": {
-          "tag": "forge:glass/purple"
+          "item": "minecraft:purple_stained_glass"
         },
         "result": "horizontalpanes:horizontal_stained_purple_pane",
         "count": 4

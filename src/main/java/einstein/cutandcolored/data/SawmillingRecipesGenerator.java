@@ -10,6 +10,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.Tag;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -117,28 +118,29 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 				strippedWood = getItem(RL("stripped_" + woodName + woodKind));
 			}
 			
-			Item[] logTypes = { log, strippedLog, wood, strippedWood }; // Temporary fix, until I figure out how to indirectly reference tags
+			//Item[] logTypes = { log, strippedLog, wood, strippedWood }; // Temporary fix, until I figure out how to indirectly reference tags
+			Tag.Named<Item> logTypes = ItemTags.bind(modid + ":" + woodName + "_logs");
 			String s = logKind + "s";
-			sawmillingRecipe(woodName + "_planks", planks, 4, log, logTypes);
+			sawmillingRecipe(woodName + "_planks", logTypes, planks, 4);
 			sawmillingRecipe(woodName + "_slab", planks, slab, 2);
 			sawmillingRecipe(woodName + "_stairs", planks, stairs);
 			sawmillingRecipe("stripped_" + woodName + s, log, strippedLog);
 			sawmillingRecipe("stripped_" + woodName + woodKind + "s", wood, strippedWood);
-			sawmillingRecipe(woodName + "_door", getItem(RL(woodName + "_door")), 1, log, logTypes);
-			sawmillingRecipe(woodName + "_fence", getItem(RL(woodName + "_fence")), 1, log, logTypes);
-			sawmillingRecipe(woodName + "_fence_gate", getItem(RL(woodName + "_fence_gate")), 1, log, logTypes);
-			sawmillingRecipe(woodName + "_slab_from" + s, slab, 1, log, logTypes);
-			sawmillingRecipe(woodName + "_stairs_from" + s, stairs, 1, log, logTypes);
-			sawmillingRecipe(woodName + "_trapdoor", getItem(RL(woodName + "_trapdoor")), 2, log, logTypes);
+			sawmillingRecipe(woodName + "_door", logTypes, getItem(RL(woodName + "_door")), 1);
+			sawmillingRecipe(woodName + "_fence", logTypes, getItem(RL(woodName + "_fence")), 1);
+			sawmillingRecipe(woodName + "_fence_gate", logTypes, getItem(RL(woodName + "_fence_gate")), 1);
+			sawmillingRecipe(woodName + "_slab_from" + s, logTypes, slab, 1);
+			sawmillingRecipe(woodName + "_stairs_from" + s, logTypes, stairs, 1);
+			sawmillingRecipe(woodName + "_trapdoor", logTypes, getItem(RL(woodName + "_trapdoor")), 2);
 			
 			try {
-				sawmillingRecipe(woodName + "_boat", getItem(RL(woodName + "_boat")), 1, log, logTypes);
+				sawmillingRecipe(woodName + "_boat", logTypes, getItem(RL(woodName + "_boat")), 1);
 			}
 			catch (Exception e) {
 			}
 			
 			try {
-				sawmillingRecipe(woodName + "_sign", getItem(RL(woodName + "_sign")), 1, log, logTypes);
+				sawmillingRecipe(woodName + "_sign", logTypes, getItem(RL(woodName + "_sign")), 1);
 			}
 			catch (Exception e) {
 			}
@@ -157,16 +159,16 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			}
 			
 			try {
-//				sawmillingRecipe(woodName + "_bars", bars, 2, logTypes);
+				sawmillingRecipe(woodName + "_bars", logTypes, bars, 2);
 				sawmillingRecipe(woodName + "_bars_from_bars", bars, 1, horizontal_bars, horizontal_crossed_bars, crossed_bars);
 				
-//				sawmillingRecipe("crossed_" + woodName + "_bars", crossed_bars, 2, logTypes);
+				sawmillingRecipe("crossed_" + woodName + "_bars", logTypes, crossed_bars, 2);
 				sawmillingRecipe("crossed_" + woodName + "_bars_from_bars", crossed_bars, 1, horizontal_bars, horizontal_crossed_bars, bars);
 				
-//				sawmillingRecipe("horizontal_" + woodName + "_bars", horizontal_bars, 2, logTypes);
+				sawmillingRecipe("horizontal_" + woodName + "_bars", logTypes, horizontal_bars, 2);
 				sawmillingRecipe("horizontal_" + woodName + "_bars_from_bars", horizontal_bars, 1, horizontal_crossed_bars, bars, crossed_bars);
 				
-//				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars", horizontal_crossed_bars, 2, logTypes);
+				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars", logTypes, horizontal_crossed_bars, 2);
 				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars_from_bars", horizontal_crossed_bars, 1, horizontal_bars, bars, crossed_bars);
 			}
 			catch (Exception e) {

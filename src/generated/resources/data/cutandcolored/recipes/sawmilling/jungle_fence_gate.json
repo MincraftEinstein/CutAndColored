@@ -1,19 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
-  "ingredient": [
-    {
-      "item": "minecraft:jungle_log"
-    },
-    {
-      "item": "minecraft:stripped_jungle_log"
-    },
-    {
-      "item": "minecraft:jungle_wood"
-    },
-    {
-      "item": "minecraft:stripped_jungle_wood"
-    }
-  ],
+  "ingredient": {
+    "tag": "minecraft:jungle_logs"
+  },
   "result": "minecraft:jungle_fence_gate",
   "count": 1
 }

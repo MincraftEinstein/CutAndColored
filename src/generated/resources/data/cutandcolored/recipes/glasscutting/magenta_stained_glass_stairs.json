@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass/magenta"
+    "item": "minecraft:magenta_stained_glass"
   },
   "result": "cutandcolored:magenta_stained_glass_stairs",
   "count": 1

@@ -20,7 +20,9 @@
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:glass/gray"
+                  "items": [
+                    "minecraft:gray_stained_glass"
+                  ]
                 }
               ]
             }

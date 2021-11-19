@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass/tinted"
+    "item": "minecraft:tinted_glass"
   },
   "result": "cutandcolored:tinted_glass_pane",
   "count": 4

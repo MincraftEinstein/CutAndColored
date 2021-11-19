@@ -2,8 +2,6 @@
   "replace": false,
   "values": [
     "cutandcolored:glass_slab",
-    "cutandcolored:soul_glass_slab",
-    "cutandcolored:tinted_glass_slab",
     "#cutandcolored:vanilla_stained_glass_slabs"
   ]
 }

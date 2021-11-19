@@ -1,19 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
-  "ingredient": [
-    {
-      "item": "minecraft:oak_log"
-    },
-    {
-      "item": "minecraft:stripped_oak_log"
-    },
-    {
-      "item": "minecraft:oak_wood"
-    },
-    {
-      "item": "minecraft:stripped_oak_wood"
-    }
-  ],
+  "ingredient": {
+    "tag": "minecraft:oak_logs"
+  },
   "result": "minecraft:oak_planks",
   "count": 4
 }

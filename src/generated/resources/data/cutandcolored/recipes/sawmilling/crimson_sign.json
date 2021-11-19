@@ -1,19 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
-  "ingredient": [
-    {
-      "item": "minecraft:crimson_stem"
-    },
-    {
-      "item": "minecraft:stripped_crimson_stem"
-    },
-    {
-      "item": "minecraft:crimson_hyphae"
-    },
-    {
-      "item": "minecraft:stripped_crimson_hyphae"
-    }
-  ],
+  "ingredient": {
+    "tag": "minecraft:crimson_logs"
+  },
   "result": "minecraft:crimson_sign",
   "count": 1
 }

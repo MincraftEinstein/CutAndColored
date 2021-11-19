@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_glass_window_panes",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cutandcolored:black_stained_glass_window"
+    }
+  },
+  "result": {
+    "item": "cutandcolored:black_stained_glass_window_pane",
+    "count": 6
+  }
+}

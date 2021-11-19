@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass/purple"
+    "item": "minecraft:purple_stained_glass"
   },
   "result": "cutandcolored:purple_stained_glass_stairs",
   "count": 1

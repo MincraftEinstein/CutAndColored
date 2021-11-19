@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:mahogany_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_mahogany_log"
-          },
-          {
-            "item": "biomesoplenty:mahogany_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_mahogany_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:mahogany_logs"
+        },
         "result": "biomesoplenty:mahogany_boat",
         "count": 1
       }

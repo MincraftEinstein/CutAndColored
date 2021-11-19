@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:redwood_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_redwood_log"
-          },
-          {
-            "item": "biomesoplenty:redwood_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_redwood_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:redwood_logs"
+        },
         "result": "biomesoplenty:redwood_trapdoor",
         "count": 2
       }

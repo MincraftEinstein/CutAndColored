@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "forge:glass/lime"
+            "items": [
+              "minecraft:lime_stained_glass"
+            ]
           }
         ]
       }

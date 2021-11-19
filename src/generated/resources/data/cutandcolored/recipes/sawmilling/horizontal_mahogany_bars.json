@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "tag": "biomesoplenty:mahogany_logs"
+        },
+        "result": "additionalbarsbop:horizontal_mahogany_bars",
+        "count": 2
+      }
+    }
+  ]
+}

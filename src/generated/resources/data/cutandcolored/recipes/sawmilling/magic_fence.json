@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:magic_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_magic_log"
-          },
-          {
-            "item": "biomesoplenty:magic_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_magic_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:magic_logs"
+        },
         "result": "biomesoplenty:magic_fence",
         "count": 1
       }

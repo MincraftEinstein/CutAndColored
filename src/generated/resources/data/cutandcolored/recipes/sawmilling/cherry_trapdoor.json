@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:cherry_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_cherry_log"
-          },
-          {
-            "item": "biomesoplenty:cherry_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_cherry_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:cherry_logs"
+        },
         "result": "biomesoplenty:cherry_trapdoor",
         "count": 2
       }

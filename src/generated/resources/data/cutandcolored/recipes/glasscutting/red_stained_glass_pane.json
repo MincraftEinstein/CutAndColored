@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass/red"
+    "item": "minecraft:red_stained_glass"
   },
   "result": "minecraft:red_stained_glass_pane",
   "count": 4

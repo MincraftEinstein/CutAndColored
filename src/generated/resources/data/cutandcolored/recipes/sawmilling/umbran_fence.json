@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:umbran_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_umbran_log"
-          },
-          {
-            "item": "biomesoplenty:umbran_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_umbran_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:umbran_logs"
+        },
         "result": "biomesoplenty:umbran_fence",
         "count": 1
       }

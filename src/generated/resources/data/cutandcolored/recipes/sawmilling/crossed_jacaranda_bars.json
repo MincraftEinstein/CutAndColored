@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "tag": "biomesoplenty:jacaranda_logs"
+        },
+        "result": "additionalbarsbop:crossed_jacaranda_bars",
+        "count": 2
+      }
+    }
+  ]
+}

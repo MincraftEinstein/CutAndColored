@@ -1,19 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
-  "ingredient": [
-    {
-      "item": "minecraft:acacia_log"
-    },
-    {
-      "item": "minecraft:stripped_acacia_log"
-    },
-    {
-      "item": "minecraft:acacia_wood"
-    },
-    {
-      "item": "minecraft:stripped_acacia_wood"
-    }
-  ],
+  "ingredient": {
+    "tag": "minecraft:acacia_logs"
+  },
   "result": "minecraft:acacia_sign",
   "count": 1
 }

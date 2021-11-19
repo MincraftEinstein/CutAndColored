@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:dead_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_dead_log"
-          },
-          {
-            "item": "biomesoplenty:dead_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_dead_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:dead_logs"
+        },
         "result": "biomesoplenty:dead_stairs",
         "count": 1
       }

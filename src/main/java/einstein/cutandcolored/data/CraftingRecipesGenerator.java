@@ -73,8 +73,8 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition("horizontalpanes"))
 		.addRecipe(ShapedRecipeBuilder.shaped(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, 3)
 			.pattern("###")
-			.define('#', ModBlocks.SOUL_GLASS_PANE)
-			.unlockedBy("has_item", has(ModBlocks.SOUL_GLASS_PANE))::save)
+			.define('#', ItemTagsGenerator.SOUL_GLASS_PANES)
+			.unlockedBy("has_item", has(ItemTagsGenerator.SOUL_GLASS_PANES))::save)
 			.generateAdvancement()
 			.build(consumer, location(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, "crafting/"));
 		
@@ -123,6 +123,8 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		stairsRecipe("smooth_stone_stairs", Blocks.SMOOTH_STONE, ModBlocks.SMOOTH_STONE_STAIRS, "");
 		wallsRecipe("smooth_stone_wall", Blocks.SMOOTH_STONE, ModBlocks.SMOOTH_STONE_WALL, "");
 		
+		wallsRecipe("glass_window_pane", ModBlocks.GLASS_WINDOW, ModBlocks.GLASS_WINDOW_PANE, "");
+		wallsRecipe("soul_glass_window_pane", ModBlocks.SOUL_GLASS_WINDOW, ModBlocks.SOUL_GLASS_WINDOW_PANE, "");
 		ShapelessRecipeBuilder.shapeless(ModBlocks.SOUL_GLASS_PANE)
 			.requires(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE)
 			.unlockedBy("has_item", has(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE))
@@ -133,6 +135,7 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			.define('#', ModBlocks.SOUL_GLASS)
 			.unlockedBy("has_item", has(ModBlocks.SOUL_GLASS))
 			.save(consumer, location(ModBlocks.SOUL_GLASS_PANE, "crafting/"));
+		wallsRecipe("tinted_glass_window_pane", ModBlocks.TINTED_GLASS_WINDOW, ModBlocks.TINTED_GLASS_WINDOW_PANE, "");
 		ShapedRecipeBuilder.shaped(ModBlocks.TINTED_GLASS_PANE, 16)
 			.pattern("###")
 			.pattern("###")
@@ -142,8 +145,8 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		Item horizontal_tinted_glass_pane = getItem(new ResourceLocation("horizontalpanes:horizontal_tinted_glass_pane"));
 		ShapedRecipeBuilder.shaped(horizontal_tinted_glass_pane, 3)
 			.pattern("###")
-			.define('#', ModBlocks.TINTED_GLASS_PANE)
-			.unlockedBy("has_item", has(ModBlocks.TINTED_GLASS_PANE))
+			.define('#', ItemTagsGenerator.TINTED_GLASS_PANES)
+			.unlockedBy("has_item", has(ItemTagsGenerator.TINTED_GLASS_PANES))
 			.save(consumer, location(horizontal_tinted_glass_pane, "crafting/"));
 		ShapelessRecipeBuilder.shapeless(ModBlocks.TINTED_GLASS_PANE)
 			.requires(horizontal_tinted_glass_pane)
@@ -228,6 +231,14 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			block = color + blockKind;
 			recolorObject(ItemTagsGenerator.GLASS_SLABS, getItem(ModRL(block + "_slab")), color, "recolor_stained_glass_slabs");
 			recolorObject(ItemTagsGenerator.GLASS_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolor_stained_glass_stairs");
+//			ShapedRecipeBuilder.shaped(getItem(ModRL(block + "_window_pane")))
+//			.pattern("###")
+//			.pattern("###")
+//			.define('#', ItemTags.bind("forge:glass_panes/" + color))
+//			.group("stained_glass_window_panes")
+//			.unlockedBy("has_item", has(ItemTags.bind("forge:glass_panes/" + color)))
+//			.save(consumer, location(block + "_window_pane", "crafting/"));
+			wallsRecipe(block + "_window_pane", getItem(ModRL(block + "_window")), getItem(ModRL(block + "_window_pane")), "stained_glass_window_panes");
 			
 			// Stained Planks
 			blockKind = "_stained_plank";

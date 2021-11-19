@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass/orange"
+    "item": "minecraft:orange_stained_glass"
   },
   "result": "cutandcolored:orange_stained_glass_slab",
   "count": 2

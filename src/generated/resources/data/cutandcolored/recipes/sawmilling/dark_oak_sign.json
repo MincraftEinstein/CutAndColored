@@ -1,19 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
-  "ingredient": [
-    {
-      "item": "minecraft:dark_oak_log"
-    },
-    {
-      "item": "minecraft:stripped_dark_oak_log"
-    },
-    {
-      "item": "minecraft:dark_oak_wood"
-    },
-    {
-      "item": "minecraft:stripped_dark_oak_wood"
-    }
-  ],
+  "ingredient": {
+    "tag": "minecraft:dark_oak_logs"
+  },
   "result": "minecraft:dark_oak_sign",
   "count": 1
 }

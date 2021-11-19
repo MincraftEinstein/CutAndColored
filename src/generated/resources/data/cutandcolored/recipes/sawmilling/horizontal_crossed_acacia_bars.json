@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbars",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "tag": "minecraft:acacia_logs"
+        },
+        "result": "additionalbars:horizontal_crossed_acacia_bars",
+        "count": 2
+      }
+    }
+  ]
+}

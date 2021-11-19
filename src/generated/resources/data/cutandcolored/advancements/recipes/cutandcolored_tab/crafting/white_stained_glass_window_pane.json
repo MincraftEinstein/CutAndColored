@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "cutandcolored:crafting/white_stained_glass_window_pane"
+    ]
+  },
+  "criteria": {
+    "has_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cutandcolored:white_stained_glass_window"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "cutandcolored:crafting/white_stained_glass_window_pane"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_item",
+      "has_the_recipe"
+    ]
+  ]
+}

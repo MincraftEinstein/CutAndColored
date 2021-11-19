@@ -2,8 +2,6 @@
   "replace": false,
   "values": [
     "cutandcolored:glass_window",
-    "cutandcolored:soul_glass_window",
-    "cutandcolored:tinted_glass_window",
     "#cutandcolored:vanilla_stained_glass_windows"
   ]
 }

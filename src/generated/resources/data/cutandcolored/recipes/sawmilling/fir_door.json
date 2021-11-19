@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:fir_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_fir_log"
-          },
-          {
-            "item": "biomesoplenty:fir_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_fir_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:fir_logs"
+        },
         "result": "biomesoplenty:fir_door",
         "count": 1
       }

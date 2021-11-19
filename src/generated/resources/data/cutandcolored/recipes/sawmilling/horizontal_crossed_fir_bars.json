@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "tag": "biomesoplenty:fir_logs"
+        },
+        "result": "additionalbarsbop:horizontal_crossed_fir_bars",
+        "count": 2
+      }
+    }
+  ]
+}

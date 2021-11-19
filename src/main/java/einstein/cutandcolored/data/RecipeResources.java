@@ -111,6 +111,12 @@ public class RecipeResources extends RecipeProvider {
 		stonecuttingRecipe(name, ingredient, result, 1);
 	}
 	
+	protected static void stonecuttingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ModRecipeBuilder.stonecuttingRecipe(Ingredient.of(ingredient), result, count)
+				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "stonecutting/"));
+	}
+	
 	protected static void glasscuttingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
 		String modid = result.asItem().getRegistryName().getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
@@ -151,6 +157,12 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void glasscuttingRecipe(String name, Tag<Item> ingredient, ItemLike result) {
 		glasscuttingRecipe(name, ingredient, result, 1);
+	}
+	
+	protected static void glasscuttingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count)
+				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "glasscutting/"));
 	}
 	
 	protected static void sawmillingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
@@ -195,6 +207,12 @@ public class RecipeResources extends RecipeProvider {
 		sawmillingRecipe(name, ingredient, result, 1);
 	}
 	
+	protected static void sawmillingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ModRecipeBuilder.sawmillingRecipe(Ingredient.of(ingredient), result, count)
+				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "sawmilling/"));
+	}
+	
 	protected static void weavingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
 		String modid = result.asItem().getRegistryName().getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
@@ -235,6 +253,12 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void weavingRecipe(String name, Tag<Item> ingredient, ItemLike result) {
 		weavingRecipe(name, ingredient, result, 1);
+	}
+	
+	protected static void weavingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count, String modid) {
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
+		.addRecipe(ModRecipeBuilder.weavingRecipe(Ingredient.of(ingredient), result, count)
+				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "weaving/"));
 	}
 	
 	protected static void stairsRecipe(String name, ItemLike ingredient, ItemLike result, String group) {

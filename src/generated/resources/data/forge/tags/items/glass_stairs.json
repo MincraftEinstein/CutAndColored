@@ -2,8 +2,6 @@
   "replace": false,
   "values": [
     "cutandcolored:glass_stairs",
-    "cutandcolored:soul_glass_stairs",
-    "cutandcolored:tinted_glass_stairs",
     "#cutandcolored:vanilla_stained_glass_stairs"
   ]
 }

@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:jacaranda_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_jacaranda_log"
-          },
-          {
-            "item": "biomesoplenty:jacaranda_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_jacaranda_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:jacaranda_logs"
+        },
         "result": "biomesoplenty:jacaranda_door",
         "count": 1
       }

@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:hellbark_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_hellbark_log"
-          },
-          {
-            "item": "biomesoplenty:hellbark_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_hellbark_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:hellbark_logs"
+        },
         "result": "biomesoplenty:hellbark_trapdoor",
         "count": 2
       }

@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass/magenta"
+    "item": "minecraft:magenta_stained_glass"
   },
   "result": "minecraft:magenta_stained_glass_pane",
   "count": 4

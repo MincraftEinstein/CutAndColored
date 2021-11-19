@@ -68,6 +68,8 @@
     "cutandcolored:raw_gold_stairs",
     "cutandcolored:raw_copper_slab",
     "cutandcolored:raw_copper_stairs",
+    "cutandcolored:soul_glass_stairs",
+    "cutandcolored:soul_glass_slab",
     {
       "id": "cutandcolored:horizontal_soul_glass_pane",
       "required": false

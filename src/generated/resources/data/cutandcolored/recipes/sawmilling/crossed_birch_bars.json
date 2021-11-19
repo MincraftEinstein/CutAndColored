@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbars",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "tag": "minecraft:birch_logs"
+        },
+        "result": "additionalbars:crossed_birch_bars",
+        "count": 2
+      }
+    }
+  ]
+}

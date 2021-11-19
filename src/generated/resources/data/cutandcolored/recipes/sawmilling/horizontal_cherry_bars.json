@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "additionalbarsbop",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:sawmilling",
+        "ingredient": {
+          "tag": "biomesoplenty:cherry_logs"
+        },
+        "result": "additionalbarsbop:horizontal_cherry_bars",
+        "count": 2
+      }
+    }
+  ]
+}

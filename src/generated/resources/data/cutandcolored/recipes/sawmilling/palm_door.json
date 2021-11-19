@@ -10,20 +10,9 @@
       ],
       "recipe": {
         "type": "cutandcolored:sawmilling",
-        "ingredient": [
-          {
-            "item": "biomesoplenty:palm_log"
-          },
-          {
-            "item": "biomesoplenty:stripped_palm_log"
-          },
-          {
-            "item": "biomesoplenty:palm_wood"
-          },
-          {
-            "item": "biomesoplenty:stripped_palm_wood"
-          }
-        ],
+        "ingredient": {
+          "tag": "biomesoplenty:palm_logs"
+        },
         "result": "biomesoplenty:palm_door",
         "count": 1
       }
