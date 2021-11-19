@@ -231,14 +231,9 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			block = color + blockKind;
 			recolorObject(ItemTagsGenerator.GLASS_SLABS, getItem(ModRL(block + "_slab")), color, "recolor_stained_glass_slabs");
 			recolorObject(ItemTagsGenerator.GLASS_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolor_stained_glass_stairs");
-//			ShapedRecipeBuilder.shaped(getItem(ModRL(block + "_window_pane")))
-//			.pattern("###")
-//			.pattern("###")
-//			.define('#', ItemTags.bind("forge:glass_panes/" + color))
-//			.group("stained_glass_window_panes")
-//			.unlockedBy("has_item", has(ItemTags.bind("forge:glass_panes/" + color)))
-//			.save(consumer, location(block + "_window_pane", "crafting/"));
 			wallsRecipe(block + "_window_pane", getItem(ModRL(block + "_window")), getItem(ModRL(block + "_window_pane")), "stained_glass_window_panes");
+			recolorObject(ItemTagsGenerator.GLASS_WINDOWS, getItem(ModRL(block + "_window")), color, "recolor_stained_glass_windows");
+			recolorObject(ItemTagsGenerator.GLASS_WINDOW_PANES, getItem(ModRL(block + "_window_pane")), color, "recolor_stained_glass_window_panes");
 			
 			// Stained Planks
 			blockKind = "_stained_plank";

@@ -83,10 +83,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			String woodName = woodTypes.get(i)[1];
 			String logKind;
 			String woodKind;
-			
 			Item log;
-			Item strippedLog;
-			Item strippedWood;
 			Item wood;
 			Item bars;
 			Item crossed_bars;
@@ -99,28 +96,26 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			try {
 				logKind = "_log";
 				log = getItem(RL(woodName + logKind));
-				strippedLog = getItem(RL("stripped_" + woodName + logKind));
 			}
 			catch (Exception e) {
 				logKind = "_stem";
-				log = getItem(RL(woodName + logKind)); 
-				strippedLog = getItem(RL("stripped_" + woodName + logKind));
+				log = getItem(RL(woodName + logKind));
 			}
 			
 			try {
 				woodKind = "_wood";
 				wood = getItem(RL(woodName + woodKind));
-				strippedWood = getItem(RL("stripped_" + woodName + woodKind));
 			}
 			catch (Exception e) {
 				woodKind = "_hyphae";
 				wood = getItem(RL(woodName + woodKind));
-				strippedWood = getItem(RL("stripped_" + woodName + woodKind));
 			}
 			
-			//Item[] logTypes = { log, strippedLog, wood, strippedWood }; // Temporary fix, until I figure out how to indirectly reference tags
-			Tag.Named<Item> logTypes = ItemTags.bind(modid + ":" + woodName + "_logs");
+			Item strippedLog = getItem(RL("stripped_" + woodName + logKind));
+			Item strippedWood = getItem(RL("stripped_" + woodName + woodKind));
 			String s = logKind + "s";
+			Tag.Named<Item> logTypes = ItemTags.bind(modid + ":" + woodName + s);
+			
 			sawmillingRecipe(woodName + "_planks", logTypes, planks, 4);
 			sawmillingRecipe(woodName + "_slab", planks, slab, 2);
 			sawmillingRecipe(woodName + "_stairs", planks, stairs);

@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass_panes/lime"
+    "item": "minecraft:lime_stained_glass_pane"
   },
   "result": "cutandcolored:lime_stained_glass_window_pane",
   "count": 1

@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "forge:glass_panes/pink"
+            "items": [
+              "minecraft:pink_stained_glass_pane"
+            ]
           }
         ]
       }

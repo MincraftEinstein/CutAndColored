@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass_panes/colorless"
+    "item": "minecraft:glass_pane"
   },
   "result": "cutandcolored:glass_window_pane",
   "count": 1

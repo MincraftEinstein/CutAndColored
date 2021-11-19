@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass/brown"
+    "item": "minecraft:brown_stained_glass"
   },
   "result": "cutandcolored:brown_stained_glass_window",
   "count": 1

@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "forge:glass/blue"
+            "items": [
+              "minecraft:blue_stained_glass"
+            ]
           }
         ]
       }

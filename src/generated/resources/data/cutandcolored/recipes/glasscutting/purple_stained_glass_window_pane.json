@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass_panes/purple"
+    "item": "minecraft:purple_stained_glass_pane"
   },
   "result": "cutandcolored:purple_stained_glass_window_pane",
   "count": 1

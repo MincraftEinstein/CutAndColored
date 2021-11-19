@@ -1,7 +1,7 @@
 {
   "type": "cutandcolored:glasscutting",
   "ingredient": {
-    "tag": "forge:glass_panes/tinted"
+    "item": "cutandcolored:tinted_glass_pane"
   },
   "result": "cutandcolored:tinted_glass_window_pane",
   "count": 1
