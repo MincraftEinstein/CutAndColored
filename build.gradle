@@ -147,7 +147,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 	
 	implementation fg.deobf("curse.maven:einsteins-library-405744:3442335")
-	implementation fg.deobf("curse.maven:jei-238222:3448057")
+	implementation fg.deobf("curse.maven:jei-238222:3527367")
 	// implementation fg.deobf("curse.maven:crafttweaker-239197:3423348")
 	// implementation fg.deobf("curse.maven:oh-my-gourd-377322:3407023")
 	// implementation fg.deobf("curse.maven:cofh-core-69162:3407019")
@@ -157,8 +157,8 @@ dependencies {
 	implementation fg.deobf("curse.maven:biomes-o-plenty-220318:3432927")
 	implementation fg.deobf("curse.maven:differentiate-450748:3400000")
 	// implementation fg.deobf("curse.maven:flamboyant-recrafted-436280:3287767")
-	implementation fg.deobf("curse.maven:catalogue-459701:3399552")
-	implementation fg.deobf("curse.maven:configured-457570:3434072")
+	implementation fg.deobf("curse.maven:catalogue-459701:3529459")
+	implementation fg.deobf("curse.maven:configured-457570:3529542")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
