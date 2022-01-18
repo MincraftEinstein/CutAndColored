@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[37,)"
+loaderVersion="[38,)"
 license="All rights reserved"
 #issueTrackerURL="http://my.issue.tracker/"
 
@@ -23,14 +23,14 @@ Adds a bunch of stairs, slabs and color variation to blocks in default Minecraft
 [[dependencies.cutandcolored]]
     modId="forge"
     mandatory=true
-    versionRange="[37,)"
+    versionRange="[38,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.cutandcolored]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.17.1, 1.18]"
+    versionRange="[1.18, 1.19]"
     ordering="NONE"
     side="BOTH"
 
