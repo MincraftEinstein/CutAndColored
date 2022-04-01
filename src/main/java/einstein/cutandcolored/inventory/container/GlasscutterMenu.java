@@ -49,7 +49,7 @@ public class GlasscutterMenu extends AbstractContainerMenu {
 	}
 
 	public GlasscutterMenu(int id, Inventory inventory, final ContainerLevelAccess levelAccess) {
-		super(ModMenuTypes.GLASSCUTTER, id);
+		super(ModMenuTypes.GLASSCUTTER.get(), id);
 		this.access = levelAccess;
 		this.level = inventory.player.level;
 		this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
@@ -108,7 +108,7 @@ public class GlasscutterMenu extends AbstractContainerMenu {
 	}
 
 	public boolean stillValid(Player player) {
-		return stillValid(this.access, player, ModBlocks.GLASSCUTTER);
+		return stillValid(this.access, player, ModBlocks.GLASSCUTTER.get());
 	}
 
 	public boolean clickMenuButton(Player player, int id) {
@@ -138,7 +138,7 @@ public class GlasscutterMenu extends AbstractContainerMenu {
 		this.selectedRecipeIndex.set(-1);
 		this.resultSlot.set(ItemStack.EMPTY);
 		if (!stack.isEmpty()) {
-			this.recipes = this.level.getRecipeManager().getRecipesFor(ModRecipeTypes.GLASSCUTTING, container, this.level);
+			this.recipes = this.level.getRecipeManager().getRecipesFor(ModRecipeTypes.GLASSCUTTING_RECIPE, container, this.level);
 		}
 
 	}
@@ -156,7 +156,7 @@ public class GlasscutterMenu extends AbstractContainerMenu {
 	}
 
 	public MenuType<?> getType() {
-		return ModMenuTypes.GLASSCUTTER;
+		return ModMenuTypes.GLASSCUTTER.get();
 	}
 
 	public void registerUpdateListener(Runnable listener) {
@@ -184,7 +184,7 @@ public class GlasscutterMenu extends AbstractContainerMenu {
 				if (!this.moveItemStackTo(itemstack1, 2, 38, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (this.level.getRecipeManager().getRecipeFor(ModRecipeTypes.GLASSCUTTING, new SimpleContainer(itemstack1), this.level).isPresent()) {
+			} else if (this.level.getRecipeManager().getRecipeFor(ModRecipeTypes.GLASSCUTTING_RECIPE, new SimpleContainer(itemstack1), this.level).isPresent()) {
 				if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
 					return ItemStack.EMPTY;
 				}

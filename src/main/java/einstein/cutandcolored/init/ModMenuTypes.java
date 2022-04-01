@@ -1,18 +1,33 @@
 package einstein.cutandcolored.init;
 
+import java.util.function.Supplier;
+
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.inventory.container.GlasscutterMenu;
 import einstein.cutandcolored.inventory.container.SawmillMenu;
 import einstein.cutandcolored.inventory.container.WeaverMenu;
-import einstein.einsteins_library.util.RegistryHandler;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.common.extensions.IForgeMenuType;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
-@EventBusSubscriber(modid = CutAndColored.MODID, bus = Bus.MOD)
 public class ModMenuTypes
 {
-    public static final MenuType<GlasscutterMenu> GLASSCUTTER = RegistryHandler.registerMenuType(CutAndColored.MODID, "glasscutter", GlasscutterMenu::new);
-    public static final MenuType<WeaverMenu> WEAVER = RegistryHandler.registerMenuType(CutAndColored.MODID, "weaver", WeaverMenu::new);
-    public static final MenuType<SawmillMenu> SAWMILL = RegistryHandler.registerMenuType(CutAndColored.MODID, "sawmill", SawmillMenu::new);
+	public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.CONTAINERS, CutAndColored.MODID);
+	
+    public static final RegistryObject<MenuType<GlasscutterMenu>> GLASSCUTTER = register("glasscutter", () -> IForgeMenuType.create((id, inventory, data) -> {
+    	return new GlasscutterMenu(id, inventory);
+    }));
+    public static final RegistryObject<MenuType<WeaverMenu>> WEAVER = register("weaver", () -> IForgeMenuType.create((id, inventory, data) -> {
+    	return new WeaverMenu(id, inventory);
+    }));
+    public static final RegistryObject<MenuType<SawmillMenu>> SAWMILL = register("sawmill", () -> IForgeMenuType.create((id, inventory, data) -> {
+    	return new SawmillMenu(id, inventory);
+    }));
+    
+    private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> register(final String name, final Supplier<MenuType<T>> menu) {
+    	return MENUS.register(name, menu);
+    }
 }

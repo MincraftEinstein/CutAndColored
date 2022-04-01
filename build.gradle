@@ -85,19 +85,19 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
 	implementation fg.deobf("curse.maven:einsteins-library-405744:3545865")
-	implementation fg.deobf("curse.maven:jei-238222:3550020")
-	// implementation fg.deobf("curse.maven:crafttweaker-239197:3609589")
+	implementation fg.deobf("curse.maven:jei-238222:3712464")
+	// implementation fg.deobf("curse.maven:crafttweaker-239197:3696628")
 	// implementation fg.deobf("curse.maven:oh-my-gourd-377322:3407023")
 	// implementation fg.deobf("curse.maven:cofh-core-69162:3407019")
-	implementation fg.deobf("curse.maven:additional-bars-357362:3577982")
-	// implementation fg.deobf("curse.maven:additional-bars-biomes-o-plenty-addon-460311:3426278")
-	implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes-397068:3569783")
-	// implementation fg.deobf("curse.maven:biomes-o-plenty-220318:3605502")
-	// implementation fg.deobf("curse.maven:terrablender-563928:3606522")
+	implementation fg.deobf("curse.maven:additional-bars-357362:3672351")
+	// implementation fg.deobf("curse.maven:additional-bars-biomes-o-plenty-addon-460311:3682646")
+	// implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes-397068:3569783")
+	// implementation fg.deobf("curse.maven:biomes-o-plenty-220318:3616582")
+	// implementation fg.deobf("curse.maven:terrablender-563928:3704222")
 	// implementation fg.deobf("curse.maven:differentiate-450748:3400000")
 	// implementation fg.deobf("curse.maven:flamboyant-recrafted-436280:3287767")
-	implementation fg.deobf("curse.maven:catalogue-459701:3559402")
-	implementation fg.deobf("curse.maven:configured-457570:3559398")
+	implementation fg.deobf("curse.maven:catalogue-459701:3721991")
+	implementation fg.deobf("curse.maven:configured-457570:3721946")
 }
 
 jar {

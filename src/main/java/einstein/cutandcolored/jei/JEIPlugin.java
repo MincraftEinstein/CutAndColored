@@ -47,16 +47,16 @@ public class JEIPlugin implements IModPlugin
     public void registerRecipes(final IRecipeRegistration registration) {
         final ClientLevel level = Minecraft.getInstance().level;
         final RecipeManager recipeManager = level.getRecipeManager();
-        registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.GLASSCUTTING), GlasscuttingCategory.UID);
-        registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.SAWMILLING), SawmillingCategory.UID);
-        registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.WEAVING), WeavingCategory.UID);
+        registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.GLASSCUTTING_RECIPE), GlasscuttingCategory.UID);
+        registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.SAWMILLING_RECIPE), SawmillingCategory.UID);
+        registration.addRecipes(getRecipes(recipeManager, ModRecipeTypes.WEAVING_RECIPE), WeavingCategory.UID);
     }
 	
 	@Override
 	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-		registration.addRecipeCatalyst(new ItemStack(ModBlocks.GLASSCUTTER), new ResourceLocation[] { GlasscuttingCategory.UID });
-		registration.addRecipeCatalyst(new ItemStack(ModBlocks.SAWMILL), new ResourceLocation[] { SawmillingCategory.UID });
-		registration.addRecipeCatalyst(new ItemStack(ModBlocks.WEAVER), new ResourceLocation[] { WeavingCategory.UID });
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.GLASSCUTTER.get()), new ResourceLocation[] { GlasscuttingCategory.UID });
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.SAWMILL.get()), new ResourceLocation[] { SawmillingCategory.UID });
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.WEAVER.get()), new ResourceLocation[] { WeavingCategory.UID });
 	}
 		
     public static List<Recipe<?>> getRecipes(final RecipeManager manager, final RecipeType<?> type) {

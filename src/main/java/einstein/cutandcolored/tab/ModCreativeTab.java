@@ -14,7 +14,7 @@ public class ModCreativeTab extends CreativeModeTab
     }
     
     public ItemStack makeIcon() {
-        return new ItemStack(ModBlocks.SAWMILL);
+        return new ItemStack(ModBlocks.SAWMILL.get());
     }
     
     public ResourceLocation getBackgroundImage() {

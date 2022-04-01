@@ -49,7 +49,7 @@ public class WeaverMenu extends AbstractContainerMenu {
 	}
 
 	public WeaverMenu(int id, Inventory inventory, final ContainerLevelAccess levelAccess) {
-		super(ModMenuTypes.WEAVER, id);
+		super(ModMenuTypes.WEAVER.get(), id);
 		this.access = levelAccess;
 		this.level = inventory.player.level;
 		this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
@@ -108,7 +108,7 @@ public class WeaverMenu extends AbstractContainerMenu {
 	}
 
 	public boolean stillValid(Player player) {
-		return stillValid(this.access, player, ModBlocks.WEAVER);
+		return stillValid(this.access, player, ModBlocks.WEAVER.get());
 	}
 
 	public boolean clickMenuButton(Player player, int id) {
@@ -138,7 +138,7 @@ public class WeaverMenu extends AbstractContainerMenu {
 		this.selectedRecipeIndex.set(-1);
 		this.resultSlot.set(ItemStack.EMPTY);
 		if (!stack.isEmpty()) {
-			this.recipes = this.level.getRecipeManager().getRecipesFor(ModRecipeTypes.WEAVING, container, this.level);
+			this.recipes = this.level.getRecipeManager().getRecipesFor(ModRecipeTypes.WEAVING_RECIPE, container, this.level);
 		}
 
 	}
@@ -156,7 +156,7 @@ public class WeaverMenu extends AbstractContainerMenu {
 	}
 
 	public MenuType<?> getType() {
-		return ModMenuTypes.WEAVER;
+		return ModMenuTypes.WEAVER.get();
 	}
 
 	public void registerUpdateListener(Runnable listener) {
@@ -184,7 +184,7 @@ public class WeaverMenu extends AbstractContainerMenu {
 				if (!this.moveItemStackTo(itemstack1, 2, 38, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (this.level.getRecipeManager().getRecipeFor(ModRecipeTypes.WEAVING, new SimpleContainer(itemstack1), this.level).isPresent()) {
+			} else if (this.level.getRecipeManager().getRecipeFor(ModRecipeTypes.WEAVING_RECIPE, new SimpleContainer(itemstack1), this.level).isPresent()) {
 				if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
 					return ItemStack.EMPTY;
 				}

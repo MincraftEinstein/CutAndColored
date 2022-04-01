@@ -3,7 +3,6 @@ package einstein.cutandcolored.item.crafting;
 import com.google.gson.JsonObject;
 
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.init.ModRecipeSerializers;
 import einstein.cutandcolored.init.ModRecipeTypes;
 import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
@@ -21,7 +20,7 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 public class GlasscuttingRecipe extends SingleItemRecipe
 {
     public GlasscuttingRecipe(final ResourceLocation id, final String group, final Ingredient ingredient, final ItemStack stack) {
-        super(ModRecipeTypes.GLASSCUTTING, ModRecipeSerializers.GLASSCUTTING, id, group, ingredient, stack);
+        super(ModRecipeTypes.GLASSCUTTING_RECIPE, ModRecipeTypes.GLASSCUTTING.get(), id, group, ingredient, stack);
     }
     
     public boolean matches(final Container inventory, final Level level) {
@@ -29,7 +28,7 @@ public class GlasscuttingRecipe extends SingleItemRecipe
     }
     
     public ItemStack getToastSymbol() {
-        return new ItemStack(ModBlocks.GLASSCUTTER);
+        return new ItemStack(ModBlocks.GLASSCUTTER.get());
     }
     
     public static class Serializer<T extends GlasscuttingRecipe> extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<T>

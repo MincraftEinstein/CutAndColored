@@ -2,7 +2,7 @@ package einstein.cutandcolored.jei;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.init.ModRecipeSerializers;
+import einstein.cutandcolored.init.ModRecipeTypes;
 import einstein.cutandcolored.item.crafting.GlasscuttingRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.IRecipeLayout;
@@ -11,8 +11,8 @@ import mezz.jei.api.gui.ingredient.IGuiItemStackGroup;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.common.util.Translator;
 import mezz.jei.config.Constants;
-import mezz.jei.util.Translator;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -20,7 +20,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class GlasscuttingCategory implements IRecipeCategory<GlasscuttingRecipe>
 {
-	public static final ResourceLocation UID = ModRecipeSerializers.GLASSCUTTING.getRegistryName();
+	public static final ResourceLocation UID = ModRecipeTypes.GLASSCUTTING.get().getRegistryName();
     public static final int width = 82;
     public static final int height = 34;
     private final IDrawable background;
@@ -30,7 +30,7 @@ public class GlasscuttingCategory implements IRecipeCategory<GlasscuttingRecipe>
     public GlasscuttingCategory(final IGuiHelper guiHelper) {
         final ResourceLocation location = Constants.RECIPE_GUI_VANILLA;
         background = guiHelper.createDrawable(location, 0, 220, 82, 34);
-        icon = guiHelper.createDrawableIngredient(new ItemStack(ModBlocks.GLASSCUTTER));
+        icon = guiHelper.createDrawableIngredient(new ItemStack(ModBlocks.GLASSCUTTER.get()));
         localizedName = Translator.translateToLocal("gui.jei." + CutAndColored.MODID + ".category.glasscutting");
     }
     

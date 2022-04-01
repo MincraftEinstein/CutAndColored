@@ -3,7 +3,6 @@ package einstein.cutandcolored.item.crafting;
 import com.google.gson.JsonObject;
 
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.init.ModRecipeSerializers;
 import einstein.cutandcolored.init.ModRecipeTypes;
 import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
@@ -21,7 +20,7 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 public class WeavingRecipe extends SingleItemRecipe
 {
     public WeavingRecipe(final ResourceLocation id, final String group, final Ingredient ingredient, final ItemStack stack) {
-        super(ModRecipeTypes.WEAVING, ModRecipeSerializers.WEAVING, id, group, ingredient, stack);
+        super(ModRecipeTypes.WEAVING_RECIPE, ModRecipeTypes.WEAVING.get(), id, group, ingredient, stack);
     }
     
     public boolean matches(final Container inventory, final Level level) {
@@ -29,7 +28,7 @@ public class WeavingRecipe extends SingleItemRecipe
     }
     
     public ItemStack getToastSymbol() {
-        return new ItemStack(ModBlocks.WEAVER);
+        return new ItemStack(ModBlocks.WEAVER.get());
     }
     
     public static class Serializer<T extends WeavingRecipe> extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<T>

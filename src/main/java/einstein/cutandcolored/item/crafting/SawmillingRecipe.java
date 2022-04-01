@@ -3,7 +3,6 @@ package einstein.cutandcolored.item.crafting;
 import com.google.gson.JsonObject;
 
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.init.ModRecipeSerializers;
 import einstein.cutandcolored.init.ModRecipeTypes;
 import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
@@ -21,7 +20,7 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 public class SawmillingRecipe extends SingleItemRecipe
 {
     public SawmillingRecipe(final ResourceLocation id, final String group, final Ingredient ingredient, final ItemStack stack) {
-        super(ModRecipeTypes.SAWMILLING, ModRecipeSerializers.SAWMILLING, id, group, ingredient, stack);
+        super(ModRecipeTypes.SAWMILLING_RECIPE, ModRecipeTypes.SAWMILLING.get(), id, group, ingredient, stack);
     }
     
     public boolean matches(final Container inventory, final Level level) {
@@ -29,7 +28,7 @@ public class SawmillingRecipe extends SingleItemRecipe
     }
     
     public ItemStack getToastSymbol() {
-        return new ItemStack(ModBlocks.SAWMILL);
+        return new ItemStack(ModBlocks.SAWMILL.get());
     }
     
     public static class Serializer<T extends SawmillingRecipe> extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<T>

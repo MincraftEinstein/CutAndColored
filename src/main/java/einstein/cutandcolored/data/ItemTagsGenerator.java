@@ -10,7 +10,7 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -25,82 +25,82 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 //	private List<Item> fColoredItems = new ArrayList<Item>();
 	
 	/**********************Mod***********************/
-	public static final Tag.Named<Item> VANILLA_STAINED_BRICKS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_bricks");
-	public static final Tag.Named<Item> VANILLA_STAINED_PLANKS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_planks");
-	public static final Tag.Named<Item> VANILLA_REDSTONE_LAMPS = ItemTags.bind(CutAndColored.MODID + ":vanilla_redstone_lamps");
-	public static final Tag.Named<Item> VANILLA_STAINED_GLASS_WINDOWS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_glass_windows");
+	public static final TagKey<Item> VANILLA_STAINED_BRICKS = create("vanilla_stained_bricks");
+	public static final TagKey<Item> VANILLA_STAINED_PLANKS = create("vanilla_stained_planks");
+	public static final TagKey<Item> VANILLA_REDSTONE_LAMPS = create("vanilla_redstone_lamps");
+	public static final TagKey<Item> VANILLA_STAINED_GLASS_WINDOWS = create("vanilla_stained_glass_windows");
 	
-	public static final Tag.Named<Item> VANILLA_CONCRETE_SLABS = ItemTags.bind(CutAndColored.MODID + ":vanilla_concrete_slabs");
-	public static final Tag.Named<Item> VANILLA_STAINED_BRICK_SLABS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_brick_slabs");
-	public static final Tag.Named<Item> VANILLA_STAINED_GLASS_SLABS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_glass_slabs");
-	public static final Tag.Named<Item> VANILLA_STAINED_PLANK_SLABS = ItemTags.bind(CutAndColored.MODID + ":vanilla_plank_slabs");
-	public static final Tag.Named<Item> VANILLA_TERRACOTTA_SLABS = ItemTags.bind(CutAndColored.MODID + ":vanilla_terracotta_slabs");
-	public static final Tag.Named<Item> VANILLA_WOOL_SLABS = ItemTags.bind(CutAndColored.MODID + ":vanilla_wool_slabs");
+	public static final TagKey<Item> VANILLA_CONCRETE_SLABS = create("vanilla_concrete_slabs");
+	public static final TagKey<Item> VANILLA_STAINED_BRICK_SLABS = create("vanilla_stained_brick_slabs");
+	public static final TagKey<Item> VANILLA_STAINED_GLASS_SLABS = create("vanilla_stained_glass_slabs");
+	public static final TagKey<Item> VANILLA_STAINED_PLANK_SLABS = create("vanilla_plank_slabs");
+	public static final TagKey<Item> VANILLA_TERRACOTTA_SLABS = create("vanilla_terracotta_slabs");
+	public static final TagKey<Item> VANILLA_WOOL_SLABS = create("vanilla_wool_slabs");
 	
-	public static final Tag.Named<Item> VANILLA_CONCRETE_STAIRS = ItemTags.bind(CutAndColored.MODID + ":vanilla_concrete_stairs");
-	public static final Tag.Named<Item> VANILLA_STAINED_BRICK_STAIRS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_brick_stairs");
-	public static final Tag.Named<Item> VANILLA_STAINED_GLASS_STAIRS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_glass_stairs");
-	public static final Tag.Named<Item> VANILLA_STAINED_PLANK_STAIRS = ItemTags.bind(CutAndColored.MODID + ":vanilla_plank_stairs");
-	public static final Tag.Named<Item> VANILLA_TERRACOTTA_STAIRS = ItemTags.bind(CutAndColored.MODID + ":vanilla_terracotta_stairs");
-	public static final Tag.Named<Item> VANILLA_WOOL_STAIRS = ItemTags.bind(CutAndColored.MODID + ":vanilla_wool_stairs");
+	public static final TagKey<Item> VANILLA_CONCRETE_STAIRS = create("vanilla_concrete_stairs");
+	public static final TagKey<Item> VANILLA_STAINED_BRICK_STAIRS = create("vanilla_stained_brick_stairs");
+	public static final TagKey<Item> VANILLA_STAINED_GLASS_STAIRS = create("vanilla_stained_glass_stairs");
+	public static final TagKey<Item> VANILLA_STAINED_PLANK_STAIRS = create("vanilla_plank_stairs");
+	public static final TagKey<Item> VANILLA_TERRACOTTA_STAIRS = create("vanilla_terracotta_stairs");
+	public static final TagKey<Item> VANILLA_WOOL_STAIRS = create("vanilla_wool_stairs");
 	
-	public static final Tag.Named<Item> VANILLA_STAINED_BRICK_WALLS = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_brick_walls");
+	public static final TagKey<Item> VANILLA_STAINED_BRICK_WALLS = create("vanilla_stained_brick_walls");
 	
-	public static final Tag.Named<Item> VANILLA_STAINED_GLASS_WINDOW_PANES = ItemTags.bind(CutAndColored.MODID + ":vanilla_stained_glass_window_panes");
+	public static final TagKey<Item> VANILLA_STAINED_GLASS_WINDOW_PANES = create("vanilla_stained_glass_window_panes");
 	
 	/**********************Flamboyant***********************/
-//	public static final Tag.Named<Item> FLAMBOYANT_REDSTONE_LAMPS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_redstone_lamps");
-//	public static final Tag.Named<Item> FLAMBOYANT_STAINED_BRICKS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_stained_bricks");
-//	public static final Tag.Named<Item> FLAMBOYANT_STAINED_PLANKS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_stained_planks");
+//	public static final TagKey<Item> FLAMBOYANT_REDSTONE_LAMPS = create("flamboyant_redstone_lamps");
+//	public static final TagKey<Item> FLAMBOYANT_STAINED_BRICKS = create("flamboyant_stained_bricks");
+//	public static final TagKey<Item> FLAMBOYANT_STAINED_PLANKS = create("flamboyant_stained_planks");
 	
-//	public static final Tag.Named<Item> FLAMBOYANT_CONCRETE_SLABS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_concrete_slabs");
-//	public static final Tag.Named<Item> FLAMBOYANT_STAINED_BRICK_SLABS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_stained_brick_slabs");
-//	public static final Tag.Named<Item> FLAMBOYANT_STAINED_GLASS_SLABS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_stained_glass_slabs");
-//	public static final Tag.Named<Item> FLAMBOYANT_STAINED_PLANK_SLABS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_plank_slabs");
-//	public static final Tag.Named<Item> FLAMBOYANT_TERRACOTTA_SLABS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_terracotta_slabs");
-//	public static final Tag.Named<Item> FLAMBOYANT_WOOL_SLABS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_wool_slabs");
+//	public static final TagKey<Item> FLAMBOYANT_CONCRETE_SLABS = create("flamboyant_concrete_slabs");
+//	public static final TagKey<Item> FLAMBOYANT_STAINED_BRICK_SLABS = create("flamboyant_stained_brick_slabs");
+//	public static final TagKey<Item> FLAMBOYANT_STAINED_GLASS_SLABS = create("flamboyant_stained_glass_slabs");
+//	public static final TagKey<Item> FLAMBOYANT_STAINED_PLANK_SLABS = create("flamboyant_plank_slabs");
+//	public static final TagKey<Item> FLAMBOYANT_TERRACOTTA_SLABS = create("flamboyant_terracotta_slabs");
+//	public static final TagKey<Item> FLAMBOYANT_WOOL_SLABS = create("flamboyant_wool_slabs");
 	
-//	public static final Tag.Named<Item> FLAMBOYANT_CONCRETE_STAIRS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_concrete_stairs");
-//	public static final Tag.Named<Item> FLAMBOYANT_STAINED_BRICK_STAIRS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_stained_brick_stairs");
-//	public static final Tag.Named<Item> FLAMBOYANT_STAINED_GLASS_STAIRS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_stained_glass_stairs");
-//	public static final Tag.Named<Item> FLAMBOYANT_STAINED_PLANK_STAIRS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_plank_stairs");
-//	public static final Tag.Named<Item> FLAMBOYANT_TERRACOTTA_STAIRS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_terracotta_stairs");
-//	public static final Tag.Named<Item> FLAMBOYANT_WOOL_STAIRS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_wool_stairs");
+//	public static final TagKey<Item> FLAMBOYANT_CONCRETE_STAIRS = create("flamboyant_concrete_stairs");
+//	public static final TagKey<Item> FLAMBOYANT_STAINED_BRICK_STAIRS = create("flamboyant_stained_brick_stairs");
+//	public static final TagKey<Item> FLAMBOYANT_STAINED_GLASS_STAIRS = create("flamboyant_stained_glass_stairs");
+//	public static final TagKey<Item> FLAMBOYANT_STAINED_PLANK_STAIRS = create("flamboyant_plank_stairs");
+//	public static final TagKey<Item> FLAMBOYANT_TERRACOTTA_STAIRS = create("flamboyant_terracotta_stairs");
+//	public static final TagKey<Item> FLAMBOYANT_WOOL_STAIRS = create("flamboyant_wool_stairs");
 	
-//	public static final Tag.Named<Item> FLAMBOYANT_STAINED_BRICK_WALLS = ItemTags.bind(CutAndColored.MODID + ":flamboyant_stained_brick_walls");
+//	public static final TagKey<Item> FLAMBOYANT_STAINED_BRICK_WALLS = create("flamboyant_stained_brick_walls");
 	
 	/**********************Forge***********************/
-	public static final Tag.Named<Item> CLAY_BRICKS = ItemTags.bind("forge:clay_bricks");
-	public static final Tag.Named<Item> REDSTONE_LAMPS = ItemTags.bind("forge:redstone_lamps");
-	public static final Tag.Named<Item> CARVED_PUMPKINS = ItemTags.bind("forge:carved_pumpkins");
-	public static final Tag.Named<Item> JACK_O_LANTERNS = ItemTags.bind("forge:jack_o_lanterns");
-	public static final Tag.Named<Item> STAINED_PLANKS = ItemTags.bind("forge:stained_planks");
-	public static final Tag.Named<Item> GLASS_WINDOWS = ItemTags.bind("forge:glass_windows");
-	public static final Tag.Named<Item> TINTED_GLASS = ItemTags.bind("forge:glass/tinted");
+	public static final TagKey<Item> CLAY_BRICKS = forgeCreate("clay_bricks");
+	public static final TagKey<Item> REDSTONE_LAMPS = forgeCreate("redstone_lamps");
+	public static final TagKey<Item> CARVED_PUMPKINS = forgeCreate("carved_pumpkins");
+	public static final TagKey<Item> JACK_O_LANTERNS = forgeCreate("jack_o_lanterns");
+	public static final TagKey<Item> STAINED_PLANKS = forgeCreate("stained_planks");
+	public static final TagKey<Item> GLASS_WINDOWS = forgeCreate("glass_windows");
+	public static final TagKey<Item> TINTED_GLASS = forgeCreate("glass/tinted");
 	
-	public static final Tag.Named<Item> CLAY_BRICK_SLABS = ItemTags.bind("forge:clay_brick_slabs");
-	public static final Tag.Named<Item> CONCRETE_SLABS = ItemTags.bind("forge:concrete_slabs");
-	public static final Tag.Named<Item> GLASS_SLABS = ItemTags.bind("forge:glass_slabs");
-	public static final Tag.Named<Item> STAINED_PLANK_SLABS = ItemTags.bind("forge:stained_plank_slabs");
-	public static final Tag.Named<Item> TERRACOTTA_SLABS = ItemTags.bind("forge:terracotta_slabs");
-	public static final Tag.Named<Item> WOOL_SLABS = ItemTags.bind("forge:wool_slabs");
+	public static final TagKey<Item> CLAY_BRICK_SLABS = forgeCreate("clay_brick_slabs");
+	public static final TagKey<Item> CONCRETE_SLABS = forgeCreate("concrete_slabs");
+	public static final TagKey<Item> GLASS_SLABS = forgeCreate("glass_slabs");
+	public static final TagKey<Item> STAINED_PLANK_SLABS = forgeCreate("stained_plank_slabs");
+	public static final TagKey<Item> TERRACOTTA_SLABS = forgeCreate("terracotta_slabs");
+	public static final TagKey<Item> WOOL_SLABS = forgeCreate("wool_slabs");
 	
-	public static final Tag.Named<Item> CLAY_BRICK_STAIRS = ItemTags.bind("forge:clay_brick_stairs");
-	public static final Tag.Named<Item> CONCRETE_STAIRS = ItemTags.bind("forge:concrete_stairs");
-	public static final Tag.Named<Item> GLASS_STAIRS = ItemTags.bind("forge:glass_stairs");
-	public static final Tag.Named<Item> STAINED_PLANK_STAIRS = ItemTags.bind("forge:stained_plank_stairs");
-	public static final Tag.Named<Item> TERRACOTTA_STAIRS = ItemTags.bind("forge:terracotta_stairs");
-	public static final Tag.Named<Item> WOOL_STAIRS = ItemTags.bind("forge:wool_stairs");
+	public static final TagKey<Item> CLAY_BRICK_STAIRS = forgeCreate("clay_brick_stairs");
+	public static final TagKey<Item> CONCRETE_STAIRS = forgeCreate("concrete_stairs");
+	public static final TagKey<Item> GLASS_STAIRS = forgeCreate("glass_stairs");
+	public static final TagKey<Item> STAINED_PLANK_STAIRS = forgeCreate("stained_plank_stairs");
+	public static final TagKey<Item> TERRACOTTA_STAIRS = forgeCreate("terracotta_stairs");
+	public static final TagKey<Item> WOOL_STAIRS = forgeCreate("wool_stairs");
 	
-	public static final Tag.Named<Item> CLAY_BRICK_WALLS = ItemTags.bind("forge:clay_brick_walls");
+	public static final TagKey<Item> CLAY_BRICK_WALLS = forgeCreate("clay_brick_walls");
 	
-	public static final Tag.Named<Item> NETHER_BRICK_FENCE_GATES = ItemTags.bind("forge:fence_gates/nether_brick");
+	public static final TagKey<Item> NETHER_BRICK_FENCE_GATES = forgeCreate("fence_gates/nether_brick");
 	
-	public static final Tag.Named<Item> SOUL_GLASS_PANES = ItemTags.bind("forge:glass_panes/soul");
-	public static final Tag.Named<Item> TINTED_GLASS_PANES = ItemTags.bind("forge:glass_panes/tinted");
-	public static final Tag.Named<Item> GLASS_WINDOW_PANES = ItemTags.bind("forge:glass_window_panes");
+	public static final TagKey<Item> SOUL_GLASS_PANES = forgeCreate("glass_panes/soul");
+	public static final TagKey<Item> TINTED_GLASS_PANES = forgeCreate("glass_panes/tinted");
+	public static final TagKey<Item> GLASS_WINDOW_PANES = forgeCreate("glass_window_panes");
 	
-	public static final Tag.Named<Item> SOUL_GLASS = ItemTags.bind("forge:glass/soul");
+	public static final TagKey<Item> SOUL_GLASS = forgeCreate("glass/soul");
 	
 	public ItemTagsGenerator(DataGenerator dataGenerator, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
 		super(dataGenerator, blockTagProvider, CutAndColored.MODID, existingFileHelper);
@@ -116,34 +116,34 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		/**********************Minecraft***********************/
 		tag(ItemTags.PLANKS).addTag(STAINED_PLANKS);
 		tag(ItemTags.SLABS).addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS)// .addOptionalTag(FLAMBOYANT_STAINED_PLANK_SLABS.getName())
-				.add(ModBlocks.CRACKED_STONE_BRICK_SLAB.asItem(),
-						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.asItem(),
-						ModBlocks.CRACKED_NETHER_BRICK_SLAB.asItem(), ModBlocks.SOUL_SANDSTONE_SLAB.asItem(),
-						ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB.asItem(), ModBlocks.CUT_SOUL_SANDSTONE_SLAB.asItem(),
-						ModBlocks.GRANITE_BRICK_SLAB.asItem(), ModBlocks.DIORITE_BRICK_SLAB.asItem(),
-						ModBlocks.ANDESITE_BRICK_SLAB.asItem(), ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.asItem(),
-						ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB.asItem(), ModBlocks.QUARTZ_BRICK_SLAB.asItem(),
-						ModBlocks.CALCITE_SLAB.asItem(), ModBlocks.TUFF_SLAB.asItem(), ModBlocks.RAW_IRON_SLAB.asItem(),
-						ModBlocks.RAW_GOLD_SLAB.asItem(), ModBlocks.RAW_COPPER_SLAB.asItem());
+				.add(ModBlocks.CRACKED_STONE_BRICK_SLAB.get().asItem(),
+						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get().asItem(),
+						ModBlocks.CRACKED_NETHER_BRICK_SLAB.get().asItem(), ModBlocks.SOUL_SANDSTONE_SLAB.get().asItem(),
+						ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB.get().asItem(), ModBlocks.CUT_SOUL_SANDSTONE_SLAB.get().asItem(),
+						ModBlocks.GRANITE_BRICK_SLAB.get().asItem(), ModBlocks.DIORITE_BRICK_SLAB.get().asItem(),
+						ModBlocks.ANDESITE_BRICK_SLAB.get().asItem(), ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get().asItem(),
+						ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get().asItem(), ModBlocks.QUARTZ_BRICK_SLAB.get().asItem(),
+						ModBlocks.CALCITE_SLAB.get().asItem(), ModBlocks.TUFF_SLAB.get().asItem(), ModBlocks.RAW_IRON_SLAB.get().asItem(),
+						ModBlocks.RAW_GOLD_SLAB.get().asItem(), ModBlocks.RAW_COPPER_SLAB.get().asItem());
 		tag(ItemTags.STAIRS).addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS)// .addOptionalTag(FLAMBOYANT_STAINED_PLANK_STAIRS.getName())
-				.add(ModBlocks.SMOOTH_STONE_STAIRS.asItem(), ModBlocks.CRACKED_STONE_BRICK_STAIRS.asItem(),
-						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.asItem(),
-						ModBlocks.CRACKED_NETHER_BRICK_STAIRS.asItem(), ModBlocks.SOUL_SANDSTONE_STAIRS.asItem(),
-						ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS.asItem(), ModBlocks.GRANITE_BRICK_STAIRS.asItem(),
-						ModBlocks.DIORITE_BRICK_STAIRS.asItem(), ModBlocks.ANDESITE_BRICK_STAIRS.asItem(),
-						ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.asItem(),
-						ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.asItem(), ModBlocks.QUARTZ_BRICK_STAIRS.asItem(),
-						ModBlocks.CALCITE_STAIRS.asItem(), ModBlocks.TUFF_STAIRS.asItem(),
-						ModBlocks.RAW_IRON_STAIRS.asItem(), ModBlocks.RAW_GOLD_STAIRS.asItem(),
-						ModBlocks.RAW_COPPER_STAIRS.asItem());
-		tag(ItemTags.WALLS).addTag(CLAY_BRICK_WALLS).add(ModBlocks.SOUL_SANDSTONE_WALL.asItem(),
-				ModBlocks.GRANITE_BRICK_WALL.asItem(), ModBlocks.DIORITE_BRICK_WALL.asItem(),
-				ModBlocks.ANDESITE_BRICK_WALL.asItem(), ModBlocks.PURPUR_WALL.asItem(),
-				ModBlocks.PRISMARINE_BRICK_WALL.asItem(), ModBlocks.DARK_PRISMARINE_WALL.asItem(),
-				ModBlocks.CRACKED_STONE_BRICK_WALL.asItem(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.asItem(),
-				ModBlocks.CRACKED_NETHER_BRICK_WALL.asItem(), ModBlocks.SMOOTH_STONE_WALL.asItem(),
-				ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL.asItem(), ModBlocks.CRACKED_DEEPSLATE_TILE_WALL.asItem(),
-				ModBlocks.QUARTZ_BRICK_WALL.asItem(), ModBlocks.CALCITE_WALL.asItem(), ModBlocks.TUFF_WALL.asItem());
+				.add(ModBlocks.SMOOTH_STONE_STAIRS.get().asItem(), ModBlocks.CRACKED_STONE_BRICK_STAIRS.get().asItem(),
+						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get().asItem(),
+						ModBlocks.CRACKED_NETHER_BRICK_STAIRS.get().asItem(), ModBlocks.SOUL_SANDSTONE_STAIRS.get().asItem(),
+						ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS.get().asItem(), ModBlocks.GRANITE_BRICK_STAIRS.get().asItem(),
+						ModBlocks.DIORITE_BRICK_STAIRS.get().asItem(), ModBlocks.ANDESITE_BRICK_STAIRS.get().asItem(),
+						ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get().asItem(),
+						ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get().asItem(), ModBlocks.QUARTZ_BRICK_STAIRS.get().asItem(),
+						ModBlocks.CALCITE_STAIRS.get().asItem(), ModBlocks.TUFF_STAIRS.get().asItem(),
+						ModBlocks.RAW_IRON_STAIRS.get().asItem(), ModBlocks.RAW_GOLD_STAIRS.get().asItem(),
+						ModBlocks.RAW_COPPER_STAIRS.get().asItem());
+		tag(ItemTags.WALLS).addTag(CLAY_BRICK_WALLS).add(ModBlocks.SOUL_SANDSTONE_WALL.get().asItem(),
+				ModBlocks.GRANITE_BRICK_WALL.get().asItem(), ModBlocks.DIORITE_BRICK_WALL.get().asItem(),
+				ModBlocks.ANDESITE_BRICK_WALL.get().asItem(), ModBlocks.PURPUR_WALL.get().asItem(),
+				ModBlocks.PRISMARINE_BRICK_WALL.get().asItem(), ModBlocks.DARK_PRISMARINE_WALL.get().asItem(),
+				ModBlocks.CRACKED_STONE_BRICK_WALL.get().asItem(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get().asItem(),
+				ModBlocks.CRACKED_NETHER_BRICK_WALL.get().asItem(), ModBlocks.SMOOTH_STONE_WALL.get().asItem(),
+				ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL.get().asItem(), ModBlocks.CRACKED_DEEPSLATE_TILE_WALL.get().asItem(),
+				ModBlocks.QUARTZ_BRICK_WALL.get().asItem(), ModBlocks.CALCITE_WALL.get().asItem(), ModBlocks.TUFF_WALL.get().asItem());
 		tag(ItemTags.WOODEN_SLABS).addTag(STAINED_PLANK_SLABS);
 		tag(ItemTags.WOODEN_STAIRS).addTag(STAINED_PLANK_STAIRS);
 		
@@ -154,10 +154,10 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(CLAY_BRICKS).add(Items.BRICKS).addTag(VANILLA_STAINED_BRICKS);//.addOptionalTag(FLAMBOYANT_STAINED_BRICKS.getName());
 		tag(CONCRETE_SLABS).addTag(VANILLA_CONCRETE_SLABS);//.addOptionalTag(FLAMBOYANT_CONCRETE_SLABS.getName());
 		tag(CONCRETE_STAIRS).addTag(VANILLA_CONCRETE_STAIRS);//.addOptionalTag(FLAMBOYANT_CONCRETE_STAIRS.getName());
-		tag(GLASS_SLABS).add(ModBlocks.GLASS_SLAB.asItem()).addTag(VANILLA_STAINED_GLASS_SLABS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_SLABS.getName());
-		tag(GLASS_STAIRS).add(ModBlocks.GLASS_STAIRS.asItem()).addTag(VANILLA_STAINED_GLASS_STAIRS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_STAIRS.getName());
-		tag(GLASS_WINDOWS).add(ModBlocks.GLASS_WINDOW.asItem()).addTag(VANILLA_STAINED_GLASS_WINDOWS);
-		tag(GLASS_WINDOW_PANES).add(ModBlocks.GLASS_WINDOW_PANE.asItem()).addTag(VANILLA_STAINED_GLASS_WINDOW_PANES);
+		tag(GLASS_SLABS).add(ModBlocks.GLASS_SLAB.get().asItem()).addTag(VANILLA_STAINED_GLASS_SLABS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_SLABS.getName());
+		tag(GLASS_STAIRS).add(ModBlocks.GLASS_STAIRS.get().asItem()).addTag(VANILLA_STAINED_GLASS_STAIRS);//.addOptionalTag(FLAMBOYANT_STAINED_GLASS_STAIRS.getName());
+		tag(GLASS_WINDOWS).add(ModBlocks.GLASS_WINDOW.get().asItem()).addTag(VANILLA_STAINED_GLASS_WINDOWS);
+		tag(GLASS_WINDOW_PANES).add(ModBlocks.GLASS_WINDOW_PANE.get().asItem()).addTag(VANILLA_STAINED_GLASS_WINDOW_PANES);
 		tag(REDSTONE_LAMPS).add(Items.REDSTONE_LAMP).addTag(VANILLA_REDSTONE_LAMPS);//.addOptionalTag(FLAMBOYANT_REDSTONE_LAMPS.getName());
 		tag(CARVED_PUMPKINS).add(Items.CARVED_PUMPKIN);
 		tag(JACK_O_LANTERNS).add(Items.JACK_O_LANTERN);
@@ -168,18 +168,18 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(STAINED_PLANK_SLABS).addTag(VANILLA_STAINED_PLANK_SLABS);//.addOptionalTag(FLAMBOYANT_STAINED_PLANK_SLABS.getName());
 		tag(STAINED_PLANK_STAIRS).addTag(VANILLA_STAINED_PLANK_STAIRS);//.addOptionalTag(FLAMBOYANT_STAINED_PLANK_STAIRS.getName());
 		tag(STAINED_PLANKS).addTag(VANILLA_STAINED_PLANKS);//.addOptionalTag(FLAMBOYANT_STAINED_PLANKS.getName());
-		tag(NETHER_BRICK_FENCE_GATES).add(ModBlocks.NETHER_BRICK_FENCE_GATE.asItem());
-		tag(SOUL_GLASS).add(ModBlocks.SOUL_GLASS.asItem(), ModBlocks.SOUL_GLASS_WINDOW.asItem());
-		tag(SOUL_GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.asItem(), ModBlocks.SOUL_GLASS_WINDOW_PANE.asItem());
-		tag(TINTED_GLASS).add(Blocks.TINTED_GLASS.asItem(), ModBlocks.TINTED_GLASS_WINDOW.asItem());
-		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.asItem(), ModBlocks.TINTED_GLASS_WINDOW_PANE.asItem());
+		tag(NETHER_BRICK_FENCE_GATES).add(ModBlocks.NETHER_BRICK_FENCE_GATE.get().asItem());
+		tag(SOUL_GLASS).add(ModBlocks.SOUL_GLASS.get().asItem(), ModBlocks.SOUL_GLASS_WINDOW.get().asItem());
+		tag(SOUL_GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.get().asItem(), ModBlocks.SOUL_GLASS_WINDOW_PANE.get().asItem());
+		tag(TINTED_GLASS).add(Blocks.TINTED_GLASS.asItem(), ModBlocks.TINTED_GLASS_WINDOW.get().asItem());
+		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.get().asItem(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get().asItem());
 		
-		tag(Tags.Items.GLASS_COLORLESS).add(ModBlocks.GLASS_WINDOW.asItem());
-		tag(Tags.Items.GLASS_PANES_COLORLESS).add(ModBlocks.GLASS_WINDOW_PANE.asItem());
+		tag(Tags.Items.GLASS_COLORLESS).add(ModBlocks.GLASS_WINDOW.get().asItem());
+		tag(Tags.Items.GLASS_PANES_COLORLESS).add(ModBlocks.GLASS_WINDOW_PANE.get().asItem());
 		tag(Tags.Items.STAINED_GLASS).addTag(VANILLA_STAINED_GLASS_WINDOWS);
 		tag(Tags.Items.STAINED_GLASS_PANES).addTag(VANILLA_STAINED_GLASS_WINDOW_PANES);
-		tag(Tags.Items.SANDSTONE).add(ModBlocks.SOUL_SANDSTONE.asItem(), ModBlocks.CUT_SOUL_SANDSTONE.asItem(),
-				ModBlocks.CHISELED_SOUL_SANDSTONE.asItem(), ModBlocks.SMOOTH_SOUL_SANDSTONE.asItem());
+		tag(Tags.Items.SANDSTONE).add(ModBlocks.SOUL_SANDSTONE.get().asItem(), ModBlocks.CUT_SOUL_SANDSTONE.get().asItem(),
+				ModBlocks.CHISELED_SOUL_SANDSTONE.get().asItem(), ModBlocks.SMOOTH_SOUL_SANDSTONE.get().asItem());
 		
 //		for (int i = 0; i < 23; i++) {
 //			tag(CARVED_PUMPKINS).addOptional(new ResourceLocation("omgourd", "carved_pumpkin_" + (i + 1)));
@@ -199,8 +199,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 				}
 				i1--;
 			}
-			tag(ItemTags.bind("forge:glass/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window")).asItem());
-			tag(ItemTags.bind("forge:glass_panes/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window_pane")).asItem());
+			tag(forgeCreate("glass/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window")).asItem());
+			tag(forgeCreate("glass_panes/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window_pane")).asItem());
 		}
 		for (int i = 0; i < coloredItems.size(); i++) {
 			Item item = coloredItems.get(i);
@@ -351,6 +351,14 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 //				}
 //			}
 //		}
+	}
+	
+	private static TagKey<Item> create(String name) {
+		return ItemTags.create(new ResourceLocation(CutAndColored.MODID, name));
+	}
+	
+	private static TagKey<Item> forgeCreate(String name) {
+		return ItemTags.create(new ResourceLocation("forge", name));
 	}
 	
 	@Override

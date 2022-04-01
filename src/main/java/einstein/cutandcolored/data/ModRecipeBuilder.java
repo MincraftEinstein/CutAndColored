@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 import com.google.gson.JsonObject;
 
-import einstein.cutandcolored.init.ModRecipeSerializers;
+import einstein.cutandcolored.init.ModRecipeTypes;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
@@ -37,27 +37,27 @@ public class ModRecipeBuilder {
 	}
 	
 	public static ModRecipeBuilder glasscuttingRecipe(Ingredient ingredientIn, ItemLike resultIn) {
-		return new ModRecipeBuilder(ModRecipeSerializers.GLASSCUTTING, ingredientIn, resultIn, 1);
+		return new ModRecipeBuilder(ModRecipeTypes.GLASSCUTTING.get(), ingredientIn, resultIn, 1);
 	}
 	
 	public static ModRecipeBuilder glasscuttingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
-		return new ModRecipeBuilder(ModRecipeSerializers.GLASSCUTTING, ingredientIn, resultIn, countIn);
+		return new ModRecipeBuilder(ModRecipeTypes.GLASSCUTTING.get(), ingredientIn, resultIn, countIn);
 	}
 	
 	public static ModRecipeBuilder sawmillingRecipe(Ingredient ingredientIn, ItemLike resultIn) {
-		return new ModRecipeBuilder(ModRecipeSerializers.SAWMILLING, ingredientIn, resultIn, 1);
+		return new ModRecipeBuilder(ModRecipeTypes.SAWMILLING.get(), ingredientIn, resultIn, 1);
 	}
 	
 	public static ModRecipeBuilder sawmillingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
-		return new ModRecipeBuilder(ModRecipeSerializers.SAWMILLING, ingredientIn, resultIn, countIn);
+		return new ModRecipeBuilder(ModRecipeTypes.SAWMILLING.get(), ingredientIn, resultIn, countIn);
 	}
 	
 	public static ModRecipeBuilder weavingRecipe(Ingredient ingredientIn, ItemLike resultIn) {
-		return new ModRecipeBuilder(ModRecipeSerializers.WEAVING, ingredientIn, resultIn, 1);
+		return new ModRecipeBuilder(ModRecipeTypes.WEAVING.get(), ingredientIn, resultIn, 1);
 	}
 	
 	public static ModRecipeBuilder weavingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
-		return new ModRecipeBuilder(ModRecipeSerializers.WEAVING, ingredientIn, resultIn, countIn);
+		return new ModRecipeBuilder(ModRecipeTypes.WEAVING.get(), ingredientIn, resultIn, countIn);
 	}
 	
 	// Used to add conditions to stonecutting recipes

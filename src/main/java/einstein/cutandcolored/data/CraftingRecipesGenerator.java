@@ -31,150 +31,150 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		flamboyantColoredRecipes();
 		stoneBrickTypeRecipes();
 		
-		pillarRecipe(Blocks.END_STONE_BRICK_SLAB, ModBlocks.CHISELED_END_STONE_BRICKS, 1);
-		pillarRecipe(Blocks.PRISMARINE_BRICK_SLAB, ModBlocks.CHISELED_PRISMARINE_BRICKS, 1);
-		pillarRecipe(ModBlocks.CHISELED_SOUL_SANDSTONE, ModBlocks.CHISELED_SOUL_SANDSTONE, 1);
+		pillarRecipe(Blocks.END_STONE_BRICK_SLAB, ModBlocks.CHISELED_END_STONE_BRICKS.get(), 1);
+		pillarRecipe(Blocks.PRISMARINE_BRICK_SLAB, ModBlocks.CHISELED_PRISMARINE_BRICKS.get(), 1);
+		pillarRecipe(ModBlocks.CHISELED_SOUL_SANDSTONE.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get(), 1);
 		
-		slabsRecipe("cracked_nether_brick_slab", Blocks.CRACKED_NETHER_BRICKS, ModBlocks.CRACKED_NETHER_BRICK_SLAB, "");
-		stairsRecipe("cracked_nether_brick_stairs", Blocks.CRACKED_NETHER_BRICKS, ModBlocks.CRACKED_NETHER_BRICK_STAIRS, "");
-		wallsRecipe("cracked_nether_brick_wall", Blocks.CRACKED_NETHER_BRICKS, ModBlocks.CRACKED_NETHER_BRICK_WALL, "");
+		slabsRecipe("cracked_nether_brick_slab", Blocks.CRACKED_NETHER_BRICKS, ModBlocks.CRACKED_NETHER_BRICK_SLAB.get(), "");
+		stairsRecipe("cracked_nether_brick_stairs", Blocks.CRACKED_NETHER_BRICKS, ModBlocks.CRACKED_NETHER_BRICK_STAIRS.get(), "");
+		wallsRecipe("cracked_nether_brick_wall", Blocks.CRACKED_NETHER_BRICKS, ModBlocks.CRACKED_NETHER_BRICK_WALL.get(), "");
 		
-		slabsRecipe("cracked_polished_blackstone_brick_slab", Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB, "");
-		stairsRecipe("cracked_polished_blackstone_brick_stairs", Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS, "");
-		wallsRecipe("cracked_polished_blackstone_brick_wall", Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL, "");
+		slabsRecipe("cracked_polished_blackstone_brick_slab", Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(), "");
+		stairsRecipe("cracked_polished_blackstone_brick_stairs", Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(), "");
+		wallsRecipe("cracked_polished_blackstone_brick_wall", Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(), "");
 		
-		slabsRecipe("cracked_stone_brick_slab", Blocks.CRACKED_STONE_BRICKS, ModBlocks.CRACKED_STONE_BRICK_SLAB, "");
-		stairsRecipe("cracked_stone_brick_stairs", Blocks.CRACKED_STONE_BRICKS, ModBlocks.CRACKED_STONE_BRICK_STAIRS, "");
-		wallsRecipe("cracked_stone_brick_wall", Blocks.CRACKED_STONE_BRICKS, ModBlocks.CRACKED_STONE_BRICK_WALL, "");
+		slabsRecipe("cracked_stone_brick_slab", Blocks.CRACKED_STONE_BRICKS, ModBlocks.CRACKED_STONE_BRICK_SLAB.get(), "");
+		stairsRecipe("cracked_stone_brick_stairs", Blocks.CRACKED_STONE_BRICKS, ModBlocks.CRACKED_STONE_BRICK_STAIRS.get(), "");
+		wallsRecipe("cracked_stone_brick_wall", Blocks.CRACKED_STONE_BRICKS, ModBlocks.CRACKED_STONE_BRICK_WALL.get(), "");
 		
-		slabsRecipe("cracked_deepslate_brick_slab", Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB, "");
-		stairsRecipe("cracked_deepslate_brick_stairs", Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS, "");
-		wallsRecipe("cracked_deepslate_brick_wall", Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL, "");
+		slabsRecipe("cracked_deepslate_brick_slab", Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), "");
+		stairsRecipe("cracked_deepslate_brick_stairs", Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), "");
+		wallsRecipe("cracked_deepslate_brick_wall", Blocks.CRACKED_DEEPSLATE_BRICKS, ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL.get(), "");
 		
-		slabsRecipe("cracked_deepslate_tile_slab", Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB, "");
-		stairsRecipe("cracked_deepslate_tile_stairs", Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS, "");
-		wallsRecipe("cracked_deepslate_tile_wall", Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_WALL, "");
+		slabsRecipe("cracked_deepslate_tile_slab", Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get(), "");
+		stairsRecipe("cracked_deepslate_tile_stairs", Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get(), "");
+		wallsRecipe("cracked_deepslate_tile_wall", Blocks.CRACKED_DEEPSLATE_TILES, ModBlocks.CRACKED_DEEPSLATE_TILE_WALL.get(), "");
 		
-		blockRecipe4x4("cut_soul_sandstone", ModBlocks.SOUL_SANDSTONE, ModBlocks.CUT_SOUL_SANDSTONE, 1);
-		slabsRecipe("cut_soul_sandstone_slab", ModBlocks.CUT_SOUL_SANDSTONE, ModBlocks.CUT_SOUL_SANDSTONE_SLAB, "");
+		blockRecipe4x4("cut_soul_sandstone", ModBlocks.SOUL_SANDSTONE.get(), ModBlocks.CUT_SOUL_SANDSTONE.get(), 1);
+		slabsRecipe("cut_soul_sandstone_slab", ModBlocks.CUT_SOUL_SANDSTONE.get(), ModBlocks.CUT_SOUL_SANDSTONE_SLAB.get(), "");
 		
-		wallsRecipe("dark_prismarine_wall", Blocks.DARK_PRISMARINE, ModBlocks.DARK_PRISMARINE_WALL, "");
+		wallsRecipe("dark_prismarine_wall", Blocks.DARK_PRISMARINE, ModBlocks.DARK_PRISMARINE_WALL.get(), "");
 		
-		pillarRecipe(Blocks.END_STONE_BRICKS, ModBlocks.END_STONE_BRICK_PILLAR, 2);
+		pillarRecipe(Blocks.END_STONE_BRICKS, ModBlocks.END_STONE_BRICK_PILLAR.get(), 2);
 		
-		ShapedRecipeBuilder.shaped(ModBlocks.GLASSCUTTER)
+		ShapedRecipeBuilder.shaped(ModBlocks.GLASSCUTTER.get())
 			.pattern(" # ")
 			.pattern("$$$")
 			.define('#', Items.DIAMOND)
 			.define('$', Blocks.STONE)
 			.unlockedBy("has_item", has(Items.DIAMOND))
-			.save(consumer, location(ModBlocks.GLASSCUTTER, "crafting/"));
+			.save(consumer, location(ModBlocks.GLASSCUTTER.get(), "crafting/"));
 		
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition("horizontalpanes"))
-		.addRecipe(ShapedRecipeBuilder.shaped(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, 3)
+		.addRecipe(ShapedRecipeBuilder.shaped(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get(), 3)
 			.pattern("###")
 			.define('#', ItemTagsGenerator.SOUL_GLASS_PANES)
 			.unlockedBy("has_item", has(ItemTagsGenerator.SOUL_GLASS_PANES))::save)
 			.generateAdvancement()
-			.build(consumer, location(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE, "crafting/"));
+			.build(consumer, location(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get(), "crafting/"));
 		
-		ShapedRecipeBuilder.shaped(ModBlocks.IRON_FENCE_GATE)
+		ShapedRecipeBuilder.shaped(ModBlocks.IRON_FENCE_GATE.get())
 			.pattern("#$#")
 			.pattern("#$#")
 			.define('#', Items.IRON_INGOT)
 			.define('$', Items.IRON_NUGGET)
 			.unlockedBy("has_item", has(Items.IRON_INGOT))
-			.save(consumer, location(ModBlocks.IRON_FENCE_GATE, "crafting/"));
+			.save(consumer, location(ModBlocks.IRON_FENCE_GATE.get(), "crafting/"));
 		
-		ShapedRecipeBuilder.shaped(ModBlocks.NETHER_BRICK_FENCE_GATE)
+		ShapedRecipeBuilder.shaped(ModBlocks.NETHER_BRICK_FENCE_GATE.get())
 			.pattern("#$#")
 			.pattern("#$#")
 			.define('#', Blocks.NETHER_BRICKS)
 			.define('$', Items.NETHER_BRICK)
 			.unlockedBy("has_item", has(Blocks.NETHER_BRICKS))
-			.save(consumer, location(ModBlocks.NETHER_BRICK_FENCE_GATE, "crafting/"));
+			.save(consumer, location(ModBlocks.NETHER_BRICK_FENCE_GATE.get(), "crafting/"));
 		
-		pillarRecipe(Blocks.POLISHED_BLACKSTONE, ModBlocks.POLISHED_BLACKSTONE_PILLAR, 2);
+		pillarRecipe(Blocks.POLISHED_BLACKSTONE, ModBlocks.POLISHED_BLACKSTONE_PILLAR.get(), 2);
 		
-		blockRecipe4x4("polished_end_stone", Blocks.END_STONE_BRICKS, ModBlocks.POLISHED_END_STONE, 4);
+		blockRecipe4x4("polished_end_stone", Blocks.END_STONE_BRICKS, ModBlocks.POLISHED_END_STONE.get(), 4);
 		
-		blockRecipe4x4("polished_stone", Blocks.STONE_BRICKS, ModBlocks.POLISHED_STONE, 4);
+		blockRecipe4x4("polished_stone", Blocks.STONE_BRICKS, ModBlocks.POLISHED_STONE.get(), 4);
 		
-		pillarRecipe(Blocks.PRISMARINE_BRICKS, ModBlocks.PRISMARINE_BRICK_PILLAR, 2);
-		wallsRecipe("prismarine_brick_wall", Blocks.PRISMARINE_BRICKS, ModBlocks.PRISMARINE_BRICK_WALL, "");
+		pillarRecipe(Blocks.PRISMARINE_BRICKS, ModBlocks.PRISMARINE_BRICK_PILLAR.get(), 2);
+		wallsRecipe("prismarine_brick_wall", Blocks.PRISMARINE_BRICKS, ModBlocks.PRISMARINE_BRICK_WALL.get(), "");
 		
-		wallsRecipe("purpur_wall", Blocks.PURPUR_BLOCK, ModBlocks.PURPUR_WALL, "");
+		wallsRecipe("purpur_wall", Blocks.PURPUR_BLOCK, ModBlocks.PURPUR_WALL.get(), "");
 		
-		slabsRecipe("quartz_brick_slab", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_SLAB, "");
-		stairsRecipe("quartz_brick_stairs", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_STAIRS, "");
-		wallsRecipe("quartz_brick_wall", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_WALL, "");
+		slabsRecipe("quartz_brick_slab", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_SLAB.get(), "");
+		stairsRecipe("quartz_brick_stairs", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_STAIRS.get(), "");
+		wallsRecipe("quartz_brick_wall", Blocks.QUARTZ_BRICKS, ModBlocks.QUARTZ_BRICK_WALL.get(), "");
 		
-		ShapedRecipeBuilder.shaped(ModBlocks.SAWMILL)
+		ShapedRecipeBuilder.shaped(ModBlocks.SAWMILL.get())
 			.pattern(" # ")
 			.pattern("$$$")
 			.define('#', Items.IRON_INGOT)
 			.define('$', ItemTags.PLANKS)
 			.unlockedBy("has_item", has(Items.IRON_INGOT))
-			.save(consumer, location(ModBlocks.SAWMILL, "crafting/"));
+			.save(consumer, location(ModBlocks.SAWMILL.get(), "crafting/"));
 		
-		slabsRecipe("smooth_soul_sandstone_slab", ModBlocks.SMOOTH_SOUL_SANDSTONE, ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB, "");
-		stairsRecipe("smooth_soul_sandstone_stairs", ModBlocks.SMOOTH_SOUL_SANDSTONE, ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS, "");
+		slabsRecipe("smooth_soul_sandstone_slab", ModBlocks.SMOOTH_SOUL_SANDSTONE.get(), ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB.get(), "");
+		stairsRecipe("smooth_soul_sandstone_stairs", ModBlocks.SMOOTH_SOUL_SANDSTONE.get(), ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS.get(), "");
 		
-		stairsRecipe("smooth_stone_stairs", Blocks.SMOOTH_STONE, ModBlocks.SMOOTH_STONE_STAIRS, "");
-		wallsRecipe("smooth_stone_wall", Blocks.SMOOTH_STONE, ModBlocks.SMOOTH_STONE_WALL, "");
+		stairsRecipe("smooth_stone_stairs", Blocks.SMOOTH_STONE, ModBlocks.SMOOTH_STONE_STAIRS.get(), "");
+		wallsRecipe("smooth_stone_wall", Blocks.SMOOTH_STONE, ModBlocks.SMOOTH_STONE_WALL.get(), "");
 		
-		wallsRecipe("glass_window_pane", ModBlocks.GLASS_WINDOW, ModBlocks.GLASS_WINDOW_PANE, "");
-		wallsRecipe("soul_glass_window_pane", ModBlocks.SOUL_GLASS_WINDOW, ModBlocks.SOUL_GLASS_WINDOW_PANE, "");
-		ShapelessRecipeBuilder.shapeless(ModBlocks.SOUL_GLASS_PANE)
-			.requires(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE)
-			.unlockedBy("has_item", has(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE))
+		wallsRecipe("glass_window_pane", ModBlocks.GLASS_WINDOW.get(), ModBlocks.GLASS_WINDOW_PANE.get(), "");
+		wallsRecipe("soul_glass_window_pane", ModBlocks.SOUL_GLASS_WINDOW.get(), ModBlocks.SOUL_GLASS_WINDOW_PANE.get(), "");
+		ShapelessRecipeBuilder.shapeless(ModBlocks.SOUL_GLASS_PANE.get())
+			.requires(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get())
+			.unlockedBy("has_item", has(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get()))
 			.save(consumer, location("soul_glass_pane_from_horizontal_pane", "crafting/"));
-		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_GLASS_PANE, 16)
+		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_GLASS_PANE.get(), 16)
 			.pattern("###")
 			.pattern("###")
-			.define('#', ModBlocks.SOUL_GLASS)
-			.unlockedBy("has_item", has(ModBlocks.SOUL_GLASS))
-			.save(consumer, location(ModBlocks.SOUL_GLASS_PANE, "crafting/"));
-		wallsRecipe("tinted_glass_window_pane", ModBlocks.TINTED_GLASS_WINDOW, ModBlocks.TINTED_GLASS_WINDOW_PANE, "");
-		ShapedRecipeBuilder.shaped(ModBlocks.TINTED_GLASS_PANE, 16)
+			.define('#', ModBlocks.SOUL_GLASS.get())
+			.unlockedBy("has_item", has(ModBlocks.SOUL_GLASS.get()))
+			.save(consumer, location(ModBlocks.SOUL_GLASS_PANE.get(), "crafting/"));
+		wallsRecipe("tinted_glass_window_pane", ModBlocks.TINTED_GLASS_WINDOW.get(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get(), "");
+		ShapedRecipeBuilder.shaped(ModBlocks.TINTED_GLASS_PANE.get(), 16)
 			.pattern("###")
 			.pattern("###")
 			.define('#', Blocks.TINTED_GLASS)
 			.unlockedBy("has_item", has(Blocks.TINTED_GLASS))
-			.save(consumer, location(ModBlocks.TINTED_GLASS_PANE, "crafting/"));
+			.save(consumer, location(ModBlocks.TINTED_GLASS_PANE.get(), "crafting/"));
 		Item horizontal_tinted_glass_pane = getItem(new ResourceLocation("horizontalpanes:horizontal_tinted_glass_pane"));
 		ShapedRecipeBuilder.shaped(horizontal_tinted_glass_pane, 3)
 			.pattern("###")
 			.define('#', ItemTagsGenerator.TINTED_GLASS_PANES)
 			.unlockedBy("has_item", has(ItemTagsGenerator.TINTED_GLASS_PANES))
 			.save(consumer, location(horizontal_tinted_glass_pane, "crafting/"));
-		ShapelessRecipeBuilder.shapeless(ModBlocks.TINTED_GLASS_PANE)
+		ShapelessRecipeBuilder.shapeless(ModBlocks.TINTED_GLASS_PANE.get())
 			.requires(horizontal_tinted_glass_pane)
 			.unlockedBy("has_item", has(horizontal_tinted_glass_pane))
 			.save(consumer, location("tinted_glass_pane_from_horizontal_pane", "crafting/"));
 		
-		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_SANDSTONE_SLAB, 6)
+		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_SANDSTONE_SLAB.get(), 6)
 			.pattern("###")
-			.define('#', Ingredient.of(ModBlocks.SOUL_SANDSTONE, ModBlocks.CHISELED_SOUL_SANDSTONE))
-			.unlockedBy("has_soul_sandstone", has(ModBlocks.SOUL_SANDSTONE))
-			.unlockedBy("has_chiseled_soul_sandstone", has(ModBlocks.CHISELED_SOUL_SANDSTONE))
+			.define('#', Ingredient.of(ModBlocks.SOUL_SANDSTONE.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get()))
+			.unlockedBy("has_soul_sandstone", has(ModBlocks.SOUL_SANDSTONE.get()))
+			.unlockedBy("has_chiseled_soul_sandstone", has(ModBlocks.CHISELED_SOUL_SANDSTONE.get()))
 			.save(consumer, location("soul_sandstone_slab", "crafting/"));
-		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_SANDSTONE_STAIRS, 4)
+		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_SANDSTONE_STAIRS.get(), 4)
 			.pattern("#  ")
 			.pattern("## ")
 			.pattern("###")
-			.define('#', Ingredient.of(ModBlocks.SOUL_SANDSTONE, ModBlocks.CHISELED_SOUL_SANDSTONE, ModBlocks.CUT_SOUL_SANDSTONE))
-			.unlockedBy("has_soul_sandstone", has(ModBlocks.SOUL_SANDSTONE))
-			.unlockedBy("has_chiseled_soul_sandstone", has(ModBlocks.CHISELED_SOUL_SANDSTONE))
-			.unlockedBy("has_cut_soul_sandstone", has(ModBlocks.CUT_SOUL_SANDSTONE))
+			.define('#', Ingredient.of(ModBlocks.SOUL_SANDSTONE.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get(), ModBlocks.CUT_SOUL_SANDSTONE.get()))
+			.unlockedBy("has_soul_sandstone", has(ModBlocks.SOUL_SANDSTONE.get()))
+			.unlockedBy("has_chiseled_soul_sandstone", has(ModBlocks.CHISELED_SOUL_SANDSTONE.get()))
+			.unlockedBy("has_cut_soul_sandstone", has(ModBlocks.CUT_SOUL_SANDSTONE.get()))
 			.save(consumer, location("soul_sandstone_stairs", "crafting/"));
-		wallsRecipe("soul_sandstone_wall", ModBlocks.SOUL_SANDSTONE, ModBlocks.SOUL_SANDSTONE_WALL, "");
-		blockRecipe4x4("soul_sandstone", Blocks.SOUL_SAND, ModBlocks.SOUL_SANDSTONE, 1);
+		wallsRecipe("soul_sandstone_wall", ModBlocks.SOUL_SANDSTONE.get(), ModBlocks.SOUL_SANDSTONE_WALL.get(), "");
+		blockRecipe4x4("soul_sandstone", Blocks.SOUL_SAND, ModBlocks.SOUL_SANDSTONE.get(), 1);
 		
-		slabsRecipe("terracotta_slab", Blocks.TERRACOTTA, ModBlocks.TERRACOTTA_SLAB, "");
-		stairsRecipe("terracotta_stairs", Blocks.TERRACOTTA, ModBlocks.TERRACOTTA_STAIRS, "");
+		slabsRecipe("terracotta_slab", Blocks.TERRACOTTA, ModBlocks.TERRACOTTA_SLAB.get(), "");
+		stairsRecipe("terracotta_stairs", Blocks.TERRACOTTA, ModBlocks.TERRACOTTA_STAIRS.get(), "");
 		
-		ShapedRecipeBuilder.shaped(ModBlocks.WEAVER)
+		ShapedRecipeBuilder.shaped(ModBlocks.WEAVER.get())
 			.pattern("#~#")
 			.pattern("#~#")
 			.pattern("$ $")
@@ -182,24 +182,24 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			.define('~', Items.STRING)
 			.define('$', ItemTags.PLANKS)
 			.unlockedBy("has_item", has(Items.STRING))
-			.save(consumer, location(ModBlocks.WEAVER, "crafting/"));
+			.save(consumer, location(ModBlocks.WEAVER.get(), "crafting/"));
 		
-		slabsRecipe("calcite_slab", Blocks.CALCITE, ModBlocks.CALCITE_SLAB, "");
-		stairsRecipe("calcite_stairs", Blocks.CALCITE, ModBlocks.CALCITE_STAIRS, "");
-		wallsRecipe("calcite_wall", Blocks.CALCITE, ModBlocks.CALCITE_WALL, "");
+		slabsRecipe("calcite_slab", Blocks.CALCITE, ModBlocks.CALCITE_SLAB.get(), "");
+		stairsRecipe("calcite_stairs", Blocks.CALCITE, ModBlocks.CALCITE_STAIRS.get(), "");
+		wallsRecipe("calcite_wall", Blocks.CALCITE, ModBlocks.CALCITE_WALL.get(), "");
 		
-		slabsRecipe("tuff_slab", Blocks.TUFF, ModBlocks.TUFF_SLAB, "");
-		stairsRecipe("tuff_stairs", Blocks.TUFF, ModBlocks.TUFF_STAIRS, "");
-		wallsRecipe("tuff_wall", Blocks.TUFF, ModBlocks.TUFF_WALL, "");
+		slabsRecipe("tuff_slab", Blocks.TUFF, ModBlocks.TUFF_SLAB.get(), "");
+		stairsRecipe("tuff_stairs", Blocks.TUFF, ModBlocks.TUFF_STAIRS.get(), "");
+		wallsRecipe("tuff_wall", Blocks.TUFF, ModBlocks.TUFF_WALL.get(), "");
 		
-		slabsRecipe("raw_iron_slab", Blocks.RAW_IRON_BLOCK, ModBlocks.RAW_IRON_SLAB, "");
-		stairsRecipe("raw_iron_stairs", Blocks.RAW_IRON_BLOCK, ModBlocks.RAW_IRON_STAIRS, "");
+		slabsRecipe("raw_iron_slab", Blocks.RAW_IRON_BLOCK, ModBlocks.RAW_IRON_SLAB.get(), "");
+		stairsRecipe("raw_iron_stairs", Blocks.RAW_IRON_BLOCK, ModBlocks.RAW_IRON_STAIRS.get(), "");
 		
-		slabsRecipe("raw_gold_slab", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_SLAB, "");
-		stairsRecipe("raw_gold_stairs", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_STAIRS, "");
+		slabsRecipe("raw_gold_slab", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_SLAB.get(), "");
+		stairsRecipe("raw_gold_stairs", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_STAIRS.get(), "");
 		
-		slabsRecipe("raw_copper_slab", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_SLAB, "");
-		stairsRecipe("raw_copper_stairs", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_STAIRS, "");
+		slabsRecipe("raw_copper_slab", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_SLAB.get(), "");
+		stairsRecipe("raw_copper_stairs", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_STAIRS.get(), "");
 	}
 	
 	private void vanillaColoredRecipes() {

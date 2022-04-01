@@ -32,70 +32,70 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 	
 	@Override
 	protected void registerModels() {
-		blockItemModel(ModBlocks.GLASSCUTTER);
-		blockItemModel(ModBlocks.SAWMILL);
-		blockItemModel(ModBlocks.WEAVER);
+		blockItemModel(ModBlocks.GLASSCUTTER.get());
+		blockItemModel(ModBlocks.SAWMILL.get());
+		blockItemModel(ModBlocks.WEAVER.get());
 		
-		blockItemModel(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE);
+		blockItemModel(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get());
 		
-		blockItemModel(ModBlocks.SOUL_SANDSTONE);
-		blockItemModel(ModBlocks.CHISELED_SOUL_SANDSTONE);
-		blockItemModel(ModBlocks.CUT_SOUL_SANDSTONE);
-		blockItemModel(ModBlocks.SMOOTH_SOUL_SANDSTONE);
-		blockItemModel(ModBlocks.SOUL_GLASS);
-		blockItemModel(ModBlocks.POLISHED_END_STONE);
-		blockItemModel(ModBlocks.POLISHED_STONE);
+		blockItemModel(ModBlocks.SOUL_SANDSTONE.get());
+		blockItemModel(ModBlocks.CHISELED_SOUL_SANDSTONE.get());
+		blockItemModel(ModBlocks.CUT_SOUL_SANDSTONE.get());
+		blockItemModel(ModBlocks.SMOOTH_SOUL_SANDSTONE.get());
+		blockItemModel(ModBlocks.SOUL_GLASS.get());
+		blockItemModel(ModBlocks.POLISHED_END_STONE.get());
+		blockItemModel(ModBlocks.POLISHED_STONE.get());
 		
-		blockItemModel(ModBlocks.TERRACOTTA_STAIRS);
-		blockItemModel(ModBlocks.GRANITE_BRICK_STAIRS);
-		blockItemModel(ModBlocks.DIORITE_BRICK_STAIRS);
-		blockItemModel(ModBlocks.ANDESITE_BRICK_STAIRS);
-		blockItemModel(ModBlocks.SOUL_SANDSTONE_STAIRS);
-		blockItemModel(ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS);
-		blockItemModel(ModBlocks.CRACKED_STONE_BRICK_STAIRS);
-		blockItemModel(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS);
-		blockItemModel(ModBlocks.CRACKED_NETHER_BRICK_STAIRS);
-		blockItemModel(ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS);
-		blockItemModel(ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS);
-		blockItemModel(ModBlocks.QUARTZ_BRICK_STAIRS);
-		blockItemModel(ModBlocks.CALCITE_STAIRS);
-		blockItemModel(ModBlocks.TUFF_STAIRS);
-		blockItemModel(ModBlocks.RAW_IRON_STAIRS);
-		blockItemModel(ModBlocks.RAW_GOLD_STAIRS);
-		blockItemModel(ModBlocks.RAW_COPPER_STAIRS);
+		blockItemModel(ModBlocks.TERRACOTTA_STAIRS.get());
+		blockItemModel(ModBlocks.GRANITE_BRICK_STAIRS.get());
+		blockItemModel(ModBlocks.DIORITE_BRICK_STAIRS.get());
+		blockItemModel(ModBlocks.ANDESITE_BRICK_STAIRS.get());
+		blockItemModel(ModBlocks.SOUL_SANDSTONE_STAIRS.get());
+		blockItemModel(ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS.get());
+		blockItemModel(ModBlocks.CRACKED_STONE_BRICK_STAIRS.get());
+		blockItemModel(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get());
+		blockItemModel(ModBlocks.CRACKED_NETHER_BRICK_STAIRS.get());
+		blockItemModel(ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get());
+		blockItemModel(ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get());
+		blockItemModel(ModBlocks.QUARTZ_BRICK_STAIRS.get());
+		blockItemModel(ModBlocks.CALCITE_STAIRS.get());
+		blockItemModel(ModBlocks.TUFF_STAIRS.get());
+		blockItemModel(ModBlocks.RAW_IRON_STAIRS.get());
+		blockItemModel(ModBlocks.RAW_GOLD_STAIRS.get());
+		blockItemModel(ModBlocks.RAW_COPPER_STAIRS.get());
 		
-		blockItemModel(ModBlocks.TERRACOTTA_SLAB);
-		blockItemModel(ModBlocks.GRANITE_BRICK_SLAB);
-		blockItemModel(ModBlocks.DIORITE_BRICK_SLAB);
-		blockItemModel(ModBlocks.ANDESITE_BRICK_SLAB);
-		blockItemModel(ModBlocks.SOUL_SANDSTONE_SLAB);
-		blockItemModel(ModBlocks.CUT_SOUL_SANDSTONE_SLAB);
-		blockItemModel(ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB);
-		blockItemModel(ModBlocks.CRACKED_STONE_BRICK_SLAB);
-		blockItemModel(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB);
-		blockItemModel(ModBlocks.CRACKED_NETHER_BRICK_SLAB);
-		blockItemModel(ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB);
-		blockItemModel(ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB);
-		blockItemModel(ModBlocks.QUARTZ_BRICK_SLAB);
-		blockItemModel(ModBlocks.CALCITE_SLAB);
-		blockItemModel(ModBlocks.TUFF_SLAB);
-		blockItemModel(ModBlocks.RAW_IRON_SLAB);
-		blockItemModel(ModBlocks.RAW_GOLD_SLAB);
-		blockItemModel(ModBlocks.RAW_COPPER_SLAB);
+		blockItemModel(ModBlocks.TERRACOTTA_SLAB.get());
+		blockItemModel(ModBlocks.GRANITE_BRICK_SLAB.get());
+		blockItemModel(ModBlocks.DIORITE_BRICK_SLAB.get());
+		blockItemModel(ModBlocks.ANDESITE_BRICK_SLAB.get());
+		blockItemModel(ModBlocks.SOUL_SANDSTONE_SLAB.get());
+		blockItemModel(ModBlocks.CUT_SOUL_SANDSTONE_SLAB.get());
+		blockItemModel(ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB.get());
+		blockItemModel(ModBlocks.CRACKED_STONE_BRICK_SLAB.get());
+		blockItemModel(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get());
+		blockItemModel(ModBlocks.CRACKED_NETHER_BRICK_SLAB.get());
+		blockItemModel(ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get());
+		blockItemModel(ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get());
+		blockItemModel(ModBlocks.QUARTZ_BRICK_SLAB.get());
+		blockItemModel(ModBlocks.CALCITE_SLAB.get());
+		blockItemModel(ModBlocks.TUFF_SLAB.get());
+		blockItemModel(ModBlocks.RAW_IRON_SLAB.get());
+		blockItemModel(ModBlocks.RAW_GOLD_SLAB.get());
+		blockItemModel(ModBlocks.RAW_COPPER_SLAB.get());
 		
-		blockItemModel(ModBlocks.SMOOTH_STONE_STAIRS);
-		blockItemModel(ModBlocks.GLASS_STAIRS);
-		blockItemModel(ModBlocks.SOUL_GLASS_STAIRS);
-		blockItemModel(ModBlocks.TINTED_GLASS_STAIRS);
+		blockItemModel(ModBlocks.SMOOTH_STONE_STAIRS.get());
+		blockItemModel(ModBlocks.GLASS_STAIRS.get());
+		blockItemModel(ModBlocks.SOUL_GLASS_STAIRS.get());
+		blockItemModel(ModBlocks.TINTED_GLASS_STAIRS.get());
 		
-		blockItemModel(ModBlocks.GLASS_SLAB);
-		blockItemModel(ModBlocks.SOUL_GLASS_SLAB);
-		blockItemModel(ModBlocks.TINTED_GLASS_SLAB);
+		blockItemModel(ModBlocks.GLASS_SLAB.get());
+		blockItemModel(ModBlocks.SOUL_GLASS_SLAB.get());
+		blockItemModel(ModBlocks.TINTED_GLASS_SLAB.get());
 		
 		wallInventory("soul_sandstone_wall", new ResourceLocation(CutAndColored.MODID, "block/soul_sandstone_side"));
-		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.SOUL_SANDSTONE_WALL));
+		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.SOUL_SANDSTONE_WALL.get()));
 		wallInventory("purpur_wall", new ResourceLocation(CutAndColored.MCMODID, "block/purpur_block"));
-		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.PURPUR_WALL));
+		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.PURPUR_WALL.get()));
 		
 		generatedItem("soul_glass_pane", new ResourceLocation(CutAndColored.MODID, "block/soul_glass"));
 		generatedItem("tinted_glass_pane", new ResourceLocation(CutAndColored.MCMODID, "block/tinted_glass"));
@@ -103,12 +103,12 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		generatedItem("soul_glass_window_pane", new ResourceLocation(CutAndColored.MODID, "block/soul_glass_window"));
 		generatedItem("tinted_glass_window_pane", new ResourceLocation(CutAndColored.MODID, "block/tinted_glass_window"));
 		
-		blockItemModel(ModBlocks.PRISMARINE_BRICK_PILLAR);
-		blockItemModel(ModBlocks.POLISHED_BLACKSTONE_PILLAR);
-		blockItemModel(ModBlocks.END_STONE_BRICK_PILLAR);
+		blockItemModel(ModBlocks.PRISMARINE_BRICK_PILLAR.get());
+		blockItemModel(ModBlocks.POLISHED_BLACKSTONE_PILLAR.get());
+		blockItemModel(ModBlocks.END_STONE_BRICK_PILLAR.get());
 		
-		blockItemModel(ModBlocks.NETHER_BRICK_FENCE_GATE);
-		blockItemModel(ModBlocks.IRON_FENCE_GATE);
+		blockItemModel(ModBlocks.NETHER_BRICK_FENCE_GATE.get());
+		blockItemModel(ModBlocks.IRON_FENCE_GATE.get());
 		
 		for (int i = 0; i < wallBlocks.size(); i++) {
 			String name = wallBlocks.get(i).getRegistryName().getPath();

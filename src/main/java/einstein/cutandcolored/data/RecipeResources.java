@@ -10,7 +10,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -95,7 +95,7 @@ public class RecipeResources extends RecipeProvider {
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "stonecutting/"));
 	}
 	
-	protected static void stonecuttingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count) {
+	protected static void stonecuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
 		String modid = result.asItem().getRegistryName().getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.stonecuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "stonecutting/"));
@@ -107,11 +107,11 @@ public class RecipeResources extends RecipeProvider {
 		}
 	}
 	
-	protected static void stonecuttingRecipe(String name, Tag<Item> ingredient, ItemLike result) {
+	protected static void stonecuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result) {
 		stonecuttingRecipe(name, ingredient, result, 1);
 	}
 	
-	protected static void stonecuttingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count, String modid) {
+	protected static void stonecuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count, String modid) {
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
 		.addRecipe(ModRecipeBuilder.stonecuttingRecipe(Ingredient.of(ingredient), result, count)
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "stonecutting/"));
@@ -143,7 +143,7 @@ public class RecipeResources extends RecipeProvider {
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "glasscutting/"));
 	}
 	
-	protected static void glasscuttingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count) {
+	protected static void glasscuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
 		String modid = result.asItem().getRegistryName().getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "glasscutting/"));
@@ -155,11 +155,11 @@ public class RecipeResources extends RecipeProvider {
 		}
 	}
 	
-	protected static void glasscuttingRecipe(String name, Tag<Item> ingredient, ItemLike result) {
+	protected static void glasscuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result) {
 		glasscuttingRecipe(name, ingredient, result, 1);
 	}
 	
-	protected static void glasscuttingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count, String modid) {
+	protected static void glasscuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count, String modid) {
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
 		.addRecipe(ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count)
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "glasscutting/"));
@@ -191,7 +191,7 @@ public class RecipeResources extends RecipeProvider {
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "sawmilling/"));
 	}
 	
-	protected static void sawmillingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count) {
+	protected static void sawmillingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
 		String modid = result.asItem().getRegistryName().getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.sawmillingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "sawmilling/"));
@@ -203,11 +203,11 @@ public class RecipeResources extends RecipeProvider {
 		}
 	}
 	
-	protected static void sawmillingRecipe(String name, Tag<Item> ingredient, ItemLike result) {
+	protected static void sawmillingRecipe(String name, TagKey<Item> ingredient, ItemLike result) {
 		sawmillingRecipe(name, ingredient, result, 1);
 	}
 	
-	protected static void sawmillingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count, String modid) {
+	protected static void sawmillingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count, String modid) {
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
 		.addRecipe(ModRecipeBuilder.sawmillingRecipe(Ingredient.of(ingredient), result, count)
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "sawmilling/"));
@@ -239,7 +239,7 @@ public class RecipeResources extends RecipeProvider {
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "weaving/"));
 	}
 	
-	protected static void weavingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count) {
+	protected static void weavingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
 		String modid = result.asItem().getRegistryName().getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.weavingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "weaving/"));
@@ -251,11 +251,11 @@ public class RecipeResources extends RecipeProvider {
 		}
 	}
 	
-	protected static void weavingRecipe(String name, Tag<Item> ingredient, ItemLike result) {
+	protected static void weavingRecipe(String name, TagKey<Item> ingredient, ItemLike result) {
 		weavingRecipe(name, ingredient, result, 1);
 	}
 	
-	protected static void weavingRecipe(String name, Tag<Item> ingredient, ItemLike result, int count, String modid) {
+	protected static void weavingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count, String modid) {
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
 		.addRecipe(ModRecipeBuilder.weavingRecipe(Ingredient.of(ingredient), result, count)
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "weaving/"));
@@ -345,7 +345,7 @@ public class RecipeResources extends RecipeProvider {
 		.save(consumer, location(result, "crafting/"));
 	}
 	
-	protected static void recolorObject(Tag<Item> ingredients, ItemLike result, String color, String group) {
+	protected static void recolorObject(TagKey<Item> ingredients, ItemLike result, String color, String group) {
 		Item dye;
 		try {
 			dye = getItem(MCRL(color + "_dye"));
@@ -364,7 +364,7 @@ public class RecipeResources extends RecipeProvider {
 			.save(consumer, location(result.asItem().getRegistryName().getPath() + "_from_recolor", "crafting/"));
 	}
 	
-	protected static void recolorObject(Tag<Item> ingredients, ItemLike result, String color, String group, String modid) {
+	protected static void recolorObject(TagKey<Item> ingredients, ItemLike result, String color, String group, String modid) {
 		Item dye;
 		try {
 			dye = getItem(MCRL(color + "_dye"));

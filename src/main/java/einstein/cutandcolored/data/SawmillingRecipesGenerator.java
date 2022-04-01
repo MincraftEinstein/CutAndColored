@@ -10,7 +10,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -114,7 +114,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			Item strippedLog = getItem(RL("stripped_" + woodName + logKind));
 			Item strippedWood = getItem(RL("stripped_" + woodName + woodKind));
 			String s = logKind + "s";
-			Tag.Named<Item> logTypes = ItemTags.bind(modid + ":" + woodName + s);
+			TagKey<Item> logTypes = ItemTags.create(new ResourceLocation(modid + ":" + woodName + s));
 			
 			sawmillingRecipe(woodName + "_planks", logTypes, planks, 4);
 			sawmillingRecipe(woodName + "_slab", planks, slab, 2);
