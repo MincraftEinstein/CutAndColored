@@ -31,6 +31,11 @@ public class GlasscuttingRecipe extends SingleItemRecipe
         return new ItemStack(ModBlocks.GLASSCUTTER.get());
     }
     
+    @Override
+    public boolean isSpecial() {
+    	return true;
+    }
+    
     public static class Serializer<T extends GlasscuttingRecipe> extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<T>
     {
         private final IRecipeFactory<T> factory;

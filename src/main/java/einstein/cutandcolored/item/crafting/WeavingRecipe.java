@@ -31,6 +31,11 @@ public class WeavingRecipe extends SingleItemRecipe
         return new ItemStack(ModBlocks.WEAVER.get());
     }
     
+    @Override
+    public boolean isSpecial() {
+    	return true;
+    }
+    
     public static class Serializer<T extends WeavingRecipe> extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<T>
     {
         private final IRecipeFactory<T> factory;

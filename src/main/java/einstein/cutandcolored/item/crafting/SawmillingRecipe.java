@@ -31,6 +31,11 @@ public class SawmillingRecipe extends SingleItemRecipe
         return new ItemStack(ModBlocks.SAWMILL.get());
     }
     
+    @Override
+    public boolean isSpecial() {
+    	return true;
+    }
+    
     public static class Serializer<T extends SawmillingRecipe> extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<T>
     {
         private final IRecipeFactory<T> factory;
