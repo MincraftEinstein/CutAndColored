@@ -17,12 +17,12 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ItemAssetsGenerator extends ItemModelProvider {
 
-	private List<Block> wallBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+	private List<Block> wallBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
 			.filter((block) -> block.getRegistryName().getPath().contains("wall"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> windowBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+	private List<Block> windowBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block.getRegistryName().getPath().contains("window") && !block.getRegistryName().getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	

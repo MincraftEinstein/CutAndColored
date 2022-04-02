@@ -13,6 +13,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.init.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -31,6 +32,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 @EventBusSubscriber(modid = CutAndColored.MODID, bus = Bus.MOD)
 public class ModDataGenerators {
 
+	public static final List<Block> allBlocks = new ArrayList<Block>();
+	public static final List<Block> allMCBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
+			.filter((block) -> CutAndColored.MCMODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
+			.collect(Collectors.toList()));
 	public static final List<Block> allFBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
             .filter((block) -> CutAndColored.FMODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
             .collect(Collectors.toList()));
@@ -38,6 +43,7 @@ public class ModDataGenerators {
 	@SubscribeEvent
 	public static void DataGenerator(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
+		ModBlocks.BLOCKS.getEntries().forEach((block) -> allBlocks.add(block.get()));
 		generator.addProvider(new CraftingRecipesGenerator(generator));
 		generator.addProvider(new SmeltingRecipeGenerator(generator));
 		generator.addProvider(new StonecuttingRecipesGenerator(generator));
@@ -56,8 +62,8 @@ public class ModDataGenerators {
 
 		private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> loot_tables = ImmutableList.of(Pair.of(BlockLootTableGenerator::new, LootContextParamSets.BLOCK));
 		
-		public ModLootTableProvder(DataGenerator dataGeneratorIn) {
-			super(dataGeneratorIn);
+		public ModLootTableProvder(DataGenerator dataGenerator) {
+			super(dataGenerator);
 		}
 		
 		@Override

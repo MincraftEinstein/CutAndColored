@@ -321,10 +321,14 @@ public class FlamboyantBlocks {
     public static final RegistryObject<Block> VIOLET_REDSTONE_LAMP = register("violet_redstone_lamp", () -> new RedstoneLampBlock(Properties.copy(Blocks.REDSTONE_LAMP)));
     
     public static <T extends Block> RegistryObject<Block> register(final String name, final Supplier<T> block) {
-    	RegistryObject<Block> instance = BLOCKS.register(name, block);
+    	final RegistryObject<Block> instance = BLOCKS.register(name, block);
+    	final Item.Properties props = new Item.Properties();
+    	
     	if (ModList.get().isLoaded(CutAndColored.FMODID)) {
-    		ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties().tab(CutAndColored.MOD_TAB)));
+    		props.tab(CutAndColored.MOD_TAB);
     	}
+    	
+    	ITEMS.register(name, () -> new BlockItem(instance.get(), props));
     	return instance;
     }
 }

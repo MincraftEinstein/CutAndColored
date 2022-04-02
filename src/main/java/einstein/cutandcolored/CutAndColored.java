@@ -27,7 +27,7 @@ public class CutAndColored
 	public static final String MCMODID = "minecraft";
 	public static final String FMODID = "flamboyant";
 	public static final CreativeModeTab MOD_TAB = new ModCreativeTab(CreativeModeTab.TABS.length, "cutandcolored_tab");
-
+	
 	public CutAndColored() {
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		

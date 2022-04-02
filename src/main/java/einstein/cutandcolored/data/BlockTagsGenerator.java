@@ -213,10 +213,10 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	private void vanillaDyedTags() {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			String color = DyeColor.byId(i).getName();
-			int i1 = ModBlocks.allBlocks.size() - 1;
+			int i1 = ModDataGenerators.allBlocks.size() - 1;
 			while (i1 >= 0) {
-				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(color)) {
-					coloredBlocks.add(ModBlocks.allBlocks.get(i1));
+				if (ModDataGenerators.allBlocks.get(i1).getRegistryName().getPath().contains(color)) {
+					coloredBlocks.add(ModDataGenerators.allBlocks.get(i1));
 				}
 				i1--;
 			}

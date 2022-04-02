@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import einstein.cutandcolored.init.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.DyeColor;
@@ -28,10 +27,10 @@ public class WeavingRecipesGenerator extends RecipeResources {
 	}
 	
 	private void vanillaWool() {
-		for (int i = 0; i < ModBlocks.allMCBlocks.size(); i++) {
+		for (int i = 0; i < ModDataGenerators.allMCBlocks.size(); i++) {
 			for (int i1 = 0; i1 < DyeColor.values().length; i1++) {
-				if (ModBlocks.allMCBlocks.get(i).getRegistryName().getPath().equals(DyeColor.byId(i1).getName() + "_wool")) {
-					coloredWool.add(ModBlocks.allMCBlocks.get(i).asItem());
+				if (ModDataGenerators.allMCBlocks.get(i).getRegistryName().getPath().equals(DyeColor.byId(i1).getName() + "_wool")) {
+					coloredWool.add(ModDataGenerators.allMCBlocks.get(i).asItem());
 				}
 			}
 		}

@@ -25,7 +25,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockAssetsGenerator extends BlockStateProvider {
 	
-	private List<Block> cubeBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+	private List<Block> cubeBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block.getRegistryName().getPath().contains("planks")
 					|| block.getRegistryName().getPath().contains("bricks")
 					|| block.getRegistryName().getPath().contains("window"))
@@ -34,25 +34,25 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			.filter((block) -> !(block instanceof StairBlock))
 			.collect(Collectors.toList()));
 	
-	private List<Block> slabBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+	private List<Block> slabBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block instanceof SlabBlock)
 			.filter((block) -> !block.getRegistryName().getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> stairBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+	private List<Block> stairBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block instanceof StairBlock)
 			.collect(Collectors.toList()));
 	
-	private List<Block> wallBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+	private List<Block> wallBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
 			.filter((block) -> block.getRegistryName().getPath().contains("wall"))
 			.collect(Collectors.toList()));
 
-	private List<Block> lampBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+	private List<Block> lampBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block instanceof RedstoneLampBlock)
 			.collect(Collectors.toList()));
 	
-	private List<Block> paneBlocks = new ArrayList<Block>(ModBlocks.allBlocks.stream()
+	private List<Block> paneBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block.getRegistryName().getPath().contains("pane"))
 			.filter((block) -> block.getRegistryName().getPath().contains("window"))
 			.collect(Collectors.toList()));

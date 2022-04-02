@@ -192,10 +192,10 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	private void vanillaDyedTags() {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			String color = DyeColor.byId(i).getName();
-			int i1 = ModBlocks.allBlocks.size() - 1;
+			int i1 = ModDataGenerators.allBlocks.size() - 1;
 			while (i1 >= 0) {
-				if (ModBlocks.allBlocks.get(i1).getRegistryName().getPath().contains(color)) {
-					coloredItems.add(ModBlocks.allBlocks.get(i1).asItem());
+				if (ModDataGenerators.allBlocks.get(i1).getRegistryName().getPath().contains(color)) {
+					coloredItems.add(ModDataGenerators.allBlocks.get(i1).asItem());
 				}
 				i1--;
 			}

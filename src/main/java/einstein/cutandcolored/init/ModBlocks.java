@@ -1,10 +1,6 @@
 package einstein.cutandcolored.init;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.block.GlassSlabBlock;
@@ -39,7 +35,6 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -519,25 +514,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", () -> new FenceGateBlock(Properties.of(Material.STONE, MaterialColor.NETHER).strength(2.0F, 6.0F)));
     public static final RegistryObject<Block> IRON_FENCE_GATE = register("iron_fence_gate", () -> new IronFenceGateBlock(Properties.of(Material.METAL, MaterialColor.METAL).strength(5.0F).sound(SoundType.METAL)));
     
-	public static final List<Block> allBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
-            .filter((block) -> CutAndColored.MODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
-            .collect(Collectors.toList()));
-	
-	public static final List<Block> allMCBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
-            .filter((block) -> CutAndColored.MCMODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
-            .collect(Collectors.toList()));
-
     public static <T extends Block> RegistryObject<Block> register(final String name, final Supplier<T> block) {
-    	RegistryObject<Block> instance = BLOCKS.register(name, block);
+    	final RegistryObject<Block> instance = BLOCKS.register(name, block);
     	ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties().tab(CutAndColored.MOD_TAB)));
     	return instance;
     }
     
     public static <T extends Block> RegistryObject<Block> register(final String modid, final String name, final Supplier<T> block) {
-    	RegistryObject<Block> instance = BLOCKS.register(name, block);
-    	if (ModList.get().isLoaded(modid)) {
-    		ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties().tab(CutAndColored.MOD_TAB)));
-    	}
+    	final RegistryObject<Block> instance = BLOCKS.register(name, block);
+    	final Item.Properties props = new Item.Properties();
+    	
+//    	if (ModList.get().isLoaded(modid)) {
+    		props.tab(CutAndColored.MOD_TAB);
+//    	}
+    	
+    	ITEMS.register(name, () -> new BlockItem(instance.get(), props));
     	return instance;
     }
 	
