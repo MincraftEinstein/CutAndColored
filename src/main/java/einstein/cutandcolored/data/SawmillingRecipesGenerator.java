@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.item.FlamboyantDyeColors;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
@@ -66,13 +67,13 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 	}
 	
 	private void flamboyantColoredWoodRecipes() {
-//		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
-//			String color = FlamboyantDyeColors.byId(i).getName();
-//			Item item = getItem(ModRL(color + "_stained_planks"));
-//			
-//			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
-//			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
-//		}
+		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
+			String color = FlamboyantDyeColors.byId(i).getName();
+			Item item = getItem(ModRL(color + "_stained_planks"));
+			
+			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
+			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
+		}
 	}
 	
 	private void woodRecipes() {

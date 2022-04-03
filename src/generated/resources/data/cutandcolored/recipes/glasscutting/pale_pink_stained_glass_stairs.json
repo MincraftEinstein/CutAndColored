@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "item": "flamboyant:pale_pink_stained_glass"
+  },
+  "result": "cutandcolored:pale_pink_stained_glass_stairs",
+  "count": 1
+}

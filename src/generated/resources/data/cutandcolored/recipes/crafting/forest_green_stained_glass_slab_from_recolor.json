@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolor_stained_glass_slabs",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "forge:glass_slabs"
+          },
+          "$": {
+            "item": "flamboyant:forest_green_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:forest_green_stained_glass_slab",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

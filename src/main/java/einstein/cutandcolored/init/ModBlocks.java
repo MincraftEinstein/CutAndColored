@@ -35,6 +35,7 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -524,9 +525,9 @@ public class ModBlocks {
     	final RegistryObject<Block> instance = BLOCKS.register(name, block);
     	final Item.Properties props = new Item.Properties();
     	
-//    	if (ModList.get().isLoaded(modid)) {
+    	if (ModList.get().isLoaded(modid)) {
     		props.tab(CutAndColored.MOD_TAB);
-//    	}
+    	}
     	
     	ITEMS.register(name, () -> new BlockItem(instance.get(), props));
     	return instance;

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "flamboyant:block/amber_terracotta",
+    "bottom": "flamboyant:block/amber_terracotta",
+    "top": "flamboyant:block/amber_terracotta"
+  }
+}

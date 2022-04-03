@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "item": "flamboyant:pale_green_stained_glass"
+  },
+  "result": "cutandcolored:pale_green_stained_glass_slab",
+  "count": 2
+}

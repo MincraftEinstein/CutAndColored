@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "cutandcolored:block/pale_pink_concrete_slab_top"
+    },
+    "type=bottom": {
+      "model": "cutandcolored:block/pale_pink_concrete_slab"
+    },
+    "type=double": {
+      "model": "flamboyant:block/pale_pink_concrete"
+    }
+  }
+}

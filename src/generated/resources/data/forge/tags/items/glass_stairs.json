@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "cutandcolored:glass_stairs",
-    "#cutandcolored:vanilla_stained_glass_stairs"
+    "#cutandcolored:vanilla_stained_glass_stairs",
+    {
+      "id": "#cutandcolored:flamboyant_stained_glass_stairs",
+      "required": false
+    }
   ]
 }

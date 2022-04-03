@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "item": "flamboyant:maroon_stained_glass"
+  },
+  "result": "cutandcolored:maroon_stained_glass_slab",
+  "count": 2
+}

@@ -13,6 +13,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.init.FlamboyantBlocks;
 import einstein.cutandcolored.init.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.LootTableProvider;
@@ -44,6 +45,7 @@ public class ModDataGenerators {
 	public static void DataGenerator(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
 		ModBlocks.BLOCKS.getEntries().forEach((block) -> allBlocks.add(block.get()));
+		FlamboyantBlocks.BLOCKS.getEntries().forEach((block) -> allBlocks.add(block.get()));
 		generator.addProvider(new CraftingRecipesGenerator(generator));
 		generator.addProvider(new SmeltingRecipeGenerator(generator));
 		generator.addProvider(new StonecuttingRecipesGenerator(generator));

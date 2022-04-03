@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "flamboyant:violet_terracotta"
+        },
+        "result": "cutandcolored:violet_terracotta_slab",
+        "count": 2
+      }
+    }
+  ]
+}

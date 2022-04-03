@@ -73,7 +73,7 @@ public class BlockLootTableGenerator extends BlockLoot {
 	@Nonnull
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		List<Block> list = new ArrayList<Block>(ModDataGenerators.allBlocks); //List.copyOf(CutAndColored.allBlocks);
+		List<Block> list = new ArrayList<Block>(ModDataGenerators.allBlocks);
 		list.remove(list.indexOf(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get()));
 		return list;
 	}

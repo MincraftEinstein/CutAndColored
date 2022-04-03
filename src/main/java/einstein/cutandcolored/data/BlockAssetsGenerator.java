@@ -180,32 +180,36 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			int i1 = stairBlocks.size() - 1;
 			while (i1 >= 0) {
-				if (stairBlocks.get(i1).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !stairBlocks.get(i1).getRegistryName().getPath().contains("blackstone")) {
-					coloredStairs.add(stairBlocks.get(i1));
+				Block block = stairBlocks.get(i1);
+				if (isVanillaColored(block, i)) {
+					coloredStairs.add(block);
 					stairBlocks.remove(i1);
 				}
 				i1--;
 			}
 			int i2 = slabBlocks.size() - 1;
 			while (i2 >= 0) {
-				if (slabBlocks.get(i2).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !slabBlocks.get(i2).getRegistryName().getPath().contains("blackstone")) {
-					coloredSlabs.add(slabBlocks.get(i2));
+				Block block = slabBlocks.get(i2);
+				if (isVanillaColored(block, i)) {
+					coloredSlabs.add(block);
 					slabBlocks.remove(i2);
 				}
 				i2--;
 			}
 			int i3 = wallBlocks.size() - 1;
 			while (i3 >= 0) {
-				if (wallBlocks.get(i3).getRegistryName().getPath().contains(DyeColor.byId(i).getName()) && !wallBlocks.get(i3).getRegistryName().getPath().contains("blackstone")) {
-					coloredWalls.add(wallBlocks.get(i3));
+				Block block = wallBlocks.get(i3);
+				if (isVanillaColored(block, i)) {
+					coloredWalls.add(block);
 					wallBlocks.remove(i3);
 				}
 				i3--;
 			}
 			int i4 = lampBlocks.size() - 1;
 			while (i4 >= 0) {
-				if (lampBlocks.get(i4).getRegistryName().getPath().contains(DyeColor.byId(i).getName())) {
-					coloredLamps.add(lampBlocks.get(i4));
+				Block block = lampBlocks.get(i4);
+				if (isVanillaColored(block, i)) {
+					coloredLamps.add(block);
 					lampBlocks.remove(i4);
 				}
 				i4--;
@@ -275,7 +279,16 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		}
 	}
 	
-	// Game can't find textures
+	private boolean isVanillaColored(Block block, int colorIndex) {
+		String name = block.getRegistryName().getPath();
+		for (FlamboyantDyeColors color : FlamboyantDyeColors.values()) {
+			if (name.contains(color.getName())) {
+				return false;
+			}
+		}
+		return name.contains(DyeColor.byId(colorIndex).getName()) && !name.contains("blackstone");
+	}
+	
 	private void flamboyantDyedObjects() {
 		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
 			int i1 = stairBlocks.size() - 1;
@@ -311,58 +324,57 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 				i4--;
 			}
 		}
-//		// Slabs
-//		for (int i = 0; i < fColoredSlabs.size(); i++) {
-//			SlabBlock block = (SlabBlock) fColoredSlabs.get(i);
-//			String name = block.getRegistryName().getPath();
-//			String fileName = name.replaceAll("_slab", "");
-//			if (name.contains("glass")) {
-//				borderedSlabBlock(block, blockFRL(fileName), blockFRL(fileName));
-//			}
-//			else if (name.contains("wool") || name.contains("concrete") || name.contains("terracotta")) {
-//				slabBlock(block, blockFRL(fileName), blockFRL(fileName));
-//			}
-//			else if (name.contains("stained_plank") || name.contains("stained_brick")) {
-//				slabBlock(block, blockRL(fileName + "s"), blockRL(fileName + "s"));
-//			}
-//			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
-//		}
-//		// Stairs
-//		for (int i = 0; i < fColoredStairs.size(); i++) {
-//			StairBlock block = (StairBlock) fColoredStairs.get(i);
-//			String name = block.getRegistryName().getPath();
-//			String fileName = name.replaceAll("_stairs", "");
-//			if (name.contains("glass")) {
-//				borderedStairBlock(block, blockFRL(fileName));
-//			}
-//			else if (name.contains("wool") || name.contains("concrete") || name.contains("terracotta")) {
-//				StairBlock(block, blockFRL(fileName));
-//			}
-//			else if (name.contains("stained_plank") || name.contains("stained_brick")) {
-//				StairBlock(block, blockRL(fileName + "s"));
-//			}
-//			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
-//		}
-//		// Walls
-//		for (int i = 0; i < fColoredWalls.size(); i++) {
-//			WallBlock block = (WallBlock) fColoredWalls.get(i);
-//			String name = block.getRegistryName().getPath();
-//			String fileName = name.replaceAll("_wall", "");
-//			if (name.contains("stained_brick")) {
-//				wallBlock(block, blockRL(fileName + "s"));
-//			}
-//			simpleBlockItem(block, models().getExistingFile(blockRL(name + "_inventory")));
-//		}
-//		// Redstone Lamps
-//		for (int i = 0; i < fColoredLamps.size(); i++) {
-//			ColoredRedstoneLamp block = (ColoredRedstoneLamp) fColoredLamps.get(i);
-//			String name = block.getRegistryName().getPath();
-//			getVariantBuilder(block)
-//			.partialState().with(ColoredRedstoneLamp.LIT, false).addModels(new ConfiguredModel(cubeAll(block)))
-//			.partialState().with(ColoredRedstoneLamp.LIT, true).addModels(new ConfiguredModel(models()
-//					.withExistingParent(name + "_on", "cube_all").texture("all", blockRL(name + "_on"))));
-//			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
-//		}
+		// Slabs
+		for (int i = 0; i < fColoredSlabs.size(); i++) {
+			SlabBlock block = (SlabBlock) fColoredSlabs.get(i);
+			String name = block.getRegistryName().getPath();
+			String fileName = name.replaceAll("_slab", "");
+			if (name.contains("glass")) {
+				borderedSlabBlock(block, blockFRL(fileName), blockFRL(fileName));
+			}
+			else if (name.contains("wool") || name.contains("concrete") || name.contains("terracotta")) {
+				slabBlock(block, blockFRL(fileName), blockFRL(fileName));
+			}
+			else if (name.contains("stained_plank") || name.contains("stained_brick")) {
+				slabBlock(block, blockRL(fileName + "s"), blockRL(fileName + "s"));
+			}
+			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
+		}
+		// Stairs
+		for (int i = 0; i < fColoredStairs.size(); i++) {
+			StairBlock block = (StairBlock) fColoredStairs.get(i);
+			String name = block.getRegistryName().getPath();
+			String fileName = name.replaceAll("_stairs", "");
+			if (name.contains("glass")) {
+				borderedStairBlock(block, blockFRL(fileName));
+			}
+			else if (name.contains("wool") || name.contains("concrete") || name.contains("terracotta")) {
+				stairsBlock(block, blockFRL(fileName));
+			}
+			else if (name.contains("stained_plank") || name.contains("stained_brick")) {
+				stairsBlock(block, blockRL(fileName + "s"));
+			}
+			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
+		}
+		// Walls
+		for (int i = 0; i < fColoredWalls.size(); i++) {
+			WallBlock block = (WallBlock) fColoredWalls.get(i);
+			String name = block.getRegistryName().getPath();
+			String fileName = name.replaceAll("_wall", "");
+			if (name.contains("stained_brick")) {
+				wallBlock(block, blockRL(fileName + "s"));
+			}
+		}
+		// Redstone Lamps
+		for (int i = 0; i < fColoredLamps.size(); i++) {
+			RedstoneLampBlock block = (RedstoneLampBlock) fColoredLamps.get(i);
+			String name = block.getRegistryName().getPath();
+			getVariantBuilder(block)
+			.partialState().with(RedstoneLampBlock.LIT, false).addModels(new ConfiguredModel(cubeAll(block)))
+			.partialState().with(RedstoneLampBlock.LIT, true).addModels(new ConfiguredModel(models()
+					.withExistingParent(name + "_on", "cube_all").texture("all", blockRL(name + "_on"))));
+			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
+		}
 	}
 	
 	private void borderedStairBlock(StairBlock block, ResourceLocation imageName) {
@@ -404,7 +416,6 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		return new ResourceLocation(CutAndColored.MCMODID, "block/" + string);
 	}
 	
-	@SuppressWarnings("unused")
 	private ResourceLocation blockFRL(String string) {
 		return new ResourceLocation(CutAndColored.FMODID, "block/" + string);
 	}

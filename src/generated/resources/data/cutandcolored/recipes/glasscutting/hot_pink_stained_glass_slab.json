@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "item": "flamboyant:hot_pink_stained_glass"
+  },
+  "result": "cutandcolored:hot_pink_stained_glass_slab",
+  "count": 2
+}

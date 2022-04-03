@@ -1,11 +1,24 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "horizontalpanes:horizontal_tinted_glass_pane"
+      "conditions": [
+        {
+          "modid": "horizontalpanes",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "horizontalpanes:horizontal_tinted_glass_pane"
+          }
+        ],
+        "result": {
+          "item": "cutandcolored:tinted_glass_pane"
+        }
+      }
     }
-  ],
-  "result": {
-    "item": "cutandcolored:tinted_glass_pane"
-  }
+  ]
 }

@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolor_stained_glass_stairs",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "forge:glass_stairs"
+          },
+          "$": {
+            "item": "flamboyant:pale_green_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:pale_green_stained_glass_stairs",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

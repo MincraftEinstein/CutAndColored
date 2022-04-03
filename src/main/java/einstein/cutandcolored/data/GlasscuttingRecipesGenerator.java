@@ -3,6 +3,7 @@ package einstein.cutandcolored.data;
 import java.util.function.Consumer;
 
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.item.FlamboyantDyeColors;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
@@ -16,8 +17,6 @@ import net.minecraftforge.common.Tags;
 
 public class GlasscuttingRecipesGenerator extends RecipeResources {
 
-//	private List<Item> fStainedGlass = new ArrayList<Item>();
-	
 	public GlasscuttingRecipesGenerator(DataGenerator generatorIn) {
 		super(generatorIn);
 	}
@@ -84,26 +83,27 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 	}
 	
 	private void flamboyantGlass() {
-//		for (int i = 0; i < ModDataGenerators.allFBlocks.size(); i++) {
-//			for (int i1 = 0; i1 < FlamboyantDyeColors.values().length; i1++) {
-//				if (ModDataGenerators.allFBlocks.get(i).getRegistryName().getPath().equals(FlamboyantDyeColors.byId(i1).getName() + "_stained_glass")) {
-//					fStainedGlass.add(ModDataGenerators.allFBlocks.get(i).asItem());
-//				}
-//			}
-//		}
-//		for (int i = 0; i < fStainedGlass.size(); i++) {
-//			Item item = fStainedGlass.get(i);
-//			String color = item.getRegistryName().getPath().replaceFirst("_stained_glass", "");
-//			
-//			Item pane = getItem(FRL(color + "_stained_glass_pane"));
-//			glasscuttingRecipe(pane.getRegistryName().getPath(), item, pane, 4);
-//			
-//			Item slab = getItem(ModRL(color + "_stained_glass_slab"));
-//			glasscuttingRecipe(slab.getRegistryName().getPath(), item, slab, 2, CutAndColored.FMODID);
-//			
-//			Item stairs = getItem(ModRL(color + "_stained_glass_stairs"));
-//			glasscuttingRecipe(stairs.getRegistryName().getPath(), item, stairs, 1, CutAndColored.FMODID);
-//		}
+		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
+			String color = FlamboyantDyeColors.byId(i).getName();
+			Item glass = getItem(FRL(color + "_stained_glass"));
+//			TagKey<Item> tag = ItemTags.create(new ResourceLocation("forge", "glass/" + color));
+			
+			Item pane = getItem(FRL(color + "_stained_glass_pane"));
+			glasscuttingRecipe(pane.getRegistryName().getPath(), glass, pane, 4);
+			
+			Item slab = getItem(ModRL(color + "_stained_glass_slab"));
+			glasscuttingRecipe(slab.getRegistryName().getPath(), glass, slab, 2);
+			
+			Item stairs = getItem(ModRL(color + "_stained_glass_stairs"));
+			glasscuttingRecipe(stairs.getRegistryName().getPath(), glass, stairs);
+			
+//			Item window = getItem(ModRL(color + "_stained_glass_window"));
+//			glasscuttingRecipe(window.getRegistryName().getPath(), glass, window);
+			
+//			Item window_pane = getItem(ModRL(color + "_stained_glass_window_pane"));
+//			glasscuttingRecipe(window_pane.getRegistryName().getPath() + "_from_glass", tag, window_pane);
+//			glasscuttingRecipe(window_pane.getRegistryName().getPath(), getItem(MCRL(color + "_stained_glass_pane")), window_pane);
+		}
 	}
 	
 	@Override

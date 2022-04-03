@@ -91,7 +91,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void stonecuttingRecipe(String name, ItemLike ingredient, ItemLike result, int count, String modid) {
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
-		.addRecipe(ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count)
+		.addRecipe(ModRecipeBuilder.stonecuttingRecipe(Ingredient.of(ingredient), result, count)
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "stonecutting/"));
 	}
 	
@@ -187,7 +187,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void sawmillingRecipe(String name, ItemLike ingredient, ItemLike result, int count, String modid) {
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
-		.addRecipe(ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count)
+		.addRecipe(ModRecipeBuilder.sawmillingRecipe(Ingredient.of(ingredient), result, count)
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "sawmilling/"));
 	}
 	
@@ -235,7 +235,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void weavingRecipe(String name, ItemLike ingredient, ItemLike result, int count, String modid) {
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
-		.addRecipe(ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count)
+		.addRecipe(ModRecipeBuilder.weavingRecipe(Ingredient.of(ingredient), result, count)
 				.unlockedBy("has_item", has(ingredient))::save).generateAdvancement().build(consumer, location(name, "weaving/"));
 	}
 	

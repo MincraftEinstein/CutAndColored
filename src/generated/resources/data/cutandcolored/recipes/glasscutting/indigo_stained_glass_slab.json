@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "item": "flamboyant:indigo_stained_glass"
+  },
+  "result": "cutandcolored:indigo_stained_glass_slab",
+  "count": 2
+}

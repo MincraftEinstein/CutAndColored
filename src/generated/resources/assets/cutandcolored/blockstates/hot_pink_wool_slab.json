@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "cutandcolored:block/hot_pink_wool_slab_top"
+    },
+    "type=bottom": {
+      "model": "cutandcolored:block/hot_pink_wool_slab"
+    },
+    "type=double": {
+      "model": "flamboyant:block/hot_pink_wool"
+    }
+  }
+}

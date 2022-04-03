@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "#cutandcolored:vanilla_stained_planks"
+    "#cutandcolored:vanilla_stained_planks",
+    {
+      "id": "#cutandcolored:flamboyant_stained_planks",
+      "required": false
+    }
   ]
 }

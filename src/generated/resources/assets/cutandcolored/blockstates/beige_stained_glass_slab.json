@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "cutandcolored:block/beige_stained_glass_slab_top"
+    },
+    "type=bottom": {
+      "model": "cutandcolored:block/beige_stained_glass_slab"
+    },
+    "type=double": {
+      "model": "flamboyant:block/beige_stained_glass"
+    }
+  }
+}

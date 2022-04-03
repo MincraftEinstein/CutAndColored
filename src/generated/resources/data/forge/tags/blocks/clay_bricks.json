@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "minecraft:bricks",
-    "#cutandcolored:vanilla_stained_bricks"
+    "#cutandcolored:vanilla_stained_bricks",
+    {
+      "id": "#cutandcolored:flamboyant_stained_bricks",
+      "required": false
+    }
   ]
 }

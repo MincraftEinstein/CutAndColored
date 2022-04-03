@@ -1,0 +1,29 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "colored_tarracotta_slabs",
+        "pattern": [
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "flamboyant:amber_terracotta"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:amber_terracotta_slab",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

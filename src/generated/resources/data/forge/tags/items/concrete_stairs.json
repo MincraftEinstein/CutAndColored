@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "#cutandcolored:vanilla_concrete_stairs"
+    "#cutandcolored:vanilla_concrete_stairs",
+    {
+      "id": "#cutandcolored:flamboyant_concrete_stairs",
+      "required": false
+    }
   ]
 }

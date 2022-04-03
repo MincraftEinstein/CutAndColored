@@ -1,9 +1,9 @@
 package einstein.cutandcolored.data;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 
+import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.item.FlamboyantDyeColors;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.DyeColor;
@@ -11,9 +11,6 @@ import net.minecraft.world.item.Item;
 
 public class WeavingRecipesGenerator extends RecipeResources {
 
-	private List<Item> coloredWool = new ArrayList<Item>();
-//	private List<Item> fColoredWool = new ArrayList<Item>();
-	
 	public WeavingRecipesGenerator(DataGenerator generatorIn) {
 		super(generatorIn);
 	}
@@ -27,16 +24,9 @@ public class WeavingRecipesGenerator extends RecipeResources {
 	}
 	
 	private void vanillaWool() {
-		for (int i = 0; i < ModDataGenerators.allMCBlocks.size(); i++) {
-			for (int i1 = 0; i1 < DyeColor.values().length; i1++) {
-				if (ModDataGenerators.allMCBlocks.get(i).getRegistryName().getPath().equals(DyeColor.byId(i1).getName() + "_wool")) {
-					coloredWool.add(ModDataGenerators.allMCBlocks.get(i).asItem());
-				}
-			}
-		}
-		for (int i = 0; i < coloredWool.size(); i++) {
-			Item item = coloredWool.get(i);
-			String color = item.getRegistryName().getPath().replaceFirst("_wool", "");
+		for (int i = 0; i < DyeColor.values().length; i++) {
+			String color = DyeColor.byId(i).getName();
+			Item item = getItem(MCRL(color + "_wool"));
 			
 			Item carpet = getItem(MCRL(color + "_carpet"));
 			weavingRecipe(carpet.getRegistryName().getPath(), item, carpet, 2);
@@ -50,26 +40,19 @@ public class WeavingRecipesGenerator extends RecipeResources {
 	}
 	
 	private void flamboyantWool() {
-//		for (int i = 0; i < allFBlocks.size(); i++) {
-//			for (int i1 = 0; i1 < FlamboyantDyeColors.values().length; i1++) {
-//				if (allFBlocks.get(i).getRegistryName().getPath().equals(FlamboyantDyeColors.byId(i1).getName() + "_wool")) {
-//					fColoredWool.add(allFBlocks.get(i).asItem());
-//				}
-//			}
-//		}
-//		for (int i = 0; i < fColoredWool.size(); i++) {
-//			Item item = fColoredWool.get(i);
-//			String color = item.getRegistryName().getPath().replaceFirst("_wool", "");
-//			
-//			Item carpet = getItem(FRL(color + "_carpet"));
-//			weavingRecipe(carpet.getRegistryName().getPath(), item, carpet, 2);
-//			
-//			Item slab = getItem(ModRL(color + "_wool_slab"));
-//			weavingRecipe(slab.getRegistryName().getPath(), item, slab, 2, CutAndColored.FMODID);
-//			
-//			Item stairs = getItem(ModRL(color + "_wool_stairs"));
-//			weavingRecipe(stairs.getRegistryName().getPath(), item, stairs, 1, CutAndColored.FMODID);
-//		}
+		for(int i = 0; i < FlamboyantDyeColors.values().length; i++) {
+			String color = FlamboyantDyeColors.byId(i).getName();
+			Item item = getItem(FRL(color + "_wool"));
+			
+			Item carpet = getItem(FRL(color + "_carpet"));
+			weavingRecipe(carpet.getRegistryName().getPath(), item, carpet, 2, CutAndColored.FMODID);
+			
+			Item slab = getItem(ModRL(color + "_wool_slab"));
+			weavingRecipe(slab.getRegistryName().getPath(), item, slab, 2, CutAndColored.FMODID);
+			
+			Item stairs = getItem(ModRL(color + "_wool_stairs"));
+			weavingRecipe(stairs.getRegistryName().getPath(), item, stairs, 1, CutAndColored.FMODID);
+		}
 	}
 	
 	@Override

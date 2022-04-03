@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "flamboyant:block/hot_pink_concrete",
+    "bottom": "flamboyant:block/hot_pink_concrete",
+    "top": "flamboyant:block/hot_pink_concrete"
+  }
+}

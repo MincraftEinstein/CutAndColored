@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "#cutandcolored:vanilla_wool_slabs"
+    "#cutandcolored:vanilla_wool_slabs",
+    {
+      "id": "#cutandcolored:flamboyant_wool_slabs",
+      "required": false
+    }
   ]
 }

@@ -1,0 +1,29 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "wool_slabs",
+        "pattern": [
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "flamboyant:beige_wool"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:beige_wool_slab",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

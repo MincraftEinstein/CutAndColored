@@ -1,0 +1,29 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "stained_plank_slabs",
+        "pattern": [
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "cutandcolored:pale_yellow_stained_planks"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:pale_yellow_stained_plank_slab",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

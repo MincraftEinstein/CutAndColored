@@ -2,7 +2,9 @@ package einstein.cutandcolored.data;
 
 import java.util.function.Consumer;
 
+import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.item.FlamboyantDyeColors;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -125,10 +127,13 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		
 		wallsRecipe("glass_window_pane", ModBlocks.GLASS_WINDOW.get(), ModBlocks.GLASS_WINDOW_PANE.get(), "");
 		wallsRecipe("soul_glass_window_pane", ModBlocks.SOUL_GLASS_WINDOW.get(), ModBlocks.SOUL_GLASS_WINDOW_PANE.get(), "");
-		ShapelessRecipeBuilder.shapeless(ModBlocks.SOUL_GLASS_PANE.get())
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition("horizontalpanes"))
+		.addRecipe(ShapelessRecipeBuilder.shapeless(ModBlocks.SOUL_GLASS_PANE.get())
 			.requires(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get())
-			.unlockedBy("has_item", has(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get()))
-			.save(consumer, location("soul_glass_pane_from_horizontal_pane", "crafting/"));
+			.unlockedBy("has_item", has(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get()))::save)
+			.generateAdvancement()
+			.build(consumer, location("soul_glass_pane_from_horizontal_pane", "crafting/"));
+		
 		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_GLASS_PANE.get(), 16)
 			.pattern("###")
 			.pattern("###")
@@ -142,16 +147,21 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			.define('#', Blocks.TINTED_GLASS)
 			.unlockedBy("has_item", has(Blocks.TINTED_GLASS))
 			.save(consumer, location(ModBlocks.TINTED_GLASS_PANE.get(), "crafting/"));
+		
 		Item horizontal_tinted_glass_pane = getItem(new ResourceLocation("horizontalpanes:horizontal_tinted_glass_pane"));
-		ShapedRecipeBuilder.shaped(horizontal_tinted_glass_pane, 3)
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition("horizontalpanes"))
+		.addRecipe(ShapedRecipeBuilder.shaped(horizontal_tinted_glass_pane, 3)
 			.pattern("###")
 			.define('#', ItemTagsGenerator.TINTED_GLASS_PANES)
-			.unlockedBy("has_item", has(ItemTagsGenerator.TINTED_GLASS_PANES))
-			.save(consumer, location(horizontal_tinted_glass_pane, "crafting/"));
-		ShapelessRecipeBuilder.shapeless(ModBlocks.TINTED_GLASS_PANE.get())
+			.unlockedBy("has_item", has(ItemTagsGenerator.TINTED_GLASS_PANES))::save)
+			.generateAdvancement()
+			.build(consumer, location(horizontal_tinted_glass_pane, "crafting/"));
+		ConditionalRecipe.builder().addCondition(new ModLoadedCondition("horizontalpanes"))
+		.addRecipe(ShapelessRecipeBuilder.shapeless(ModBlocks.TINTED_GLASS_PANE.get())
 			.requires(horizontal_tinted_glass_pane)
-			.unlockedBy("has_item", has(horizontal_tinted_glass_pane))
-			.save(consumer, location("tinted_glass_pane_from_horizontal_pane", "crafting/"));
+			.unlockedBy("has_item", has(horizontal_tinted_glass_pane))::save)
+			.generateAdvancement()
+			.build(consumer, location("tinted_glass_pane_from_horizontal_pane", "crafting/"));
 		
 		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_SANDSTONE_SLAB.get(), 6)
 			.pattern("###")
@@ -272,71 +282,71 @@ public class CraftingRecipesGenerator extends RecipeResources {
 	}
 	
 	private void flamboyantColoredRecipes() {
-//		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
-//			String color = FlamboyantDyeColors.byId(i).getName();
-//			Item dye = getItem(FRL(color + "_dye"));
-//			
-//			// Concrete
-//			String blockKind = "_concrete";
-//			String block = color + blockKind;
-//			slabsRecipe(block + "_slab", getItem(FRL(block)), getItem(ModRL(block + "_slab")), "concrete_slabs", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.CONCRETE_SLABS, getItem(ModRL(block + "_slab")), color, "recolor_concrete_slabs", CutAndColored.FMODID);
-//			stairsRecipe(block + "_stairs", getItem(FRL(block)), getItem(ModRL(block + "_stairs")), "concrete_stairs", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.CONCRETE_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolor_concrete_stairs", CutAndColored.FMODID);
-//			
-//			// Stained Bricks
-//			blockKind = "_stained_brick";
-//			block = color + blockKind + "s";
-//			slabsRecipe(color + blockKind + "_slab", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_slab")), "stained_brick_slabs", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.CLAY_BRICK_SLABS, getItem(ModRL(color + blockKind + "_slab")), color, "recolor_stained_brick_slabs", CutAndColored.FMODID);
-//			stairsRecipe(color + blockKind + "_stairs", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_stairs")), "stained_brick_stairs", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.CLAY_BRICK_STAIRS, getItem(ModRL(color + blockKind + "_stairs")), color, "recolor_stained_brick_stairs", CutAndColored.FMODID);
-//			wallsRecipe(color + blockKind + "_wall", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_wall")), "stained_brick_walls", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.CLAY_BRICK_WALLS, getItem(ModRL(color + blockKind + "_wall")), color, "recolor_stained_brick_walls", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.CLAY_BRICKS, getItem(ModRL(block)), color, "recolor_stained_bricks", CutAndColored.FMODID);
-//			
-//			// Stained Glass
-//			blockKind = "_stained_glass";
-//			block = color + blockKind;
-//			recolorObject(ItemTagsGenerator.GLASS_SLABS, getItem(ModRL(block + "_slab")), color, "recolor_stained_glass_slabs", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.GLASS_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolor_stained_glass_stairs", CutAndColored.FMODID);
-//			
-//			// Stained Planks
-//			blockKind = "_stained_plank";
-//			block = color + blockKind + "s";
-//			slabsRecipe(color + blockKind + "_slab", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_slab")), "stained_plank_slabs", CutAndColored.FMODID);
-//			recolorObject(ItemTags.WOODEN_SLABS, getItem(ModRL(color + blockKind + "_slab")), color, "recolor_stained_plank_slabs", CutAndColored.FMODID);
-//			stairsRecipe(color + blockKind + "_stairs", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_stairs")), "stained_plank_stairs", CutAndColored.FMODID);
-//			recolorObject(ItemTags.WOODEN_STAIRS, getItem(ModRL(color + blockKind + "_stairs")), color, "recolor_stained_plank_stairs", CutAndColored.FMODID);
-//			recolorObject(ItemTags.PLANKS, getItem(ModRL(block)), color, "recolor_stained_planks", CutAndColored.FMODID);
-//			
-//			// Terracotta
-//			blockKind = "_terracotta";
-//			block = color + blockKind;
-//			slabsRecipe(block + "_slab", getItem(FRL(block)), getItem(ModRL(block + "_slab")), "colored_tarracotta_slabs", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.TERRACOTTA_SLABS, getItem(ModRL(block + "_slab")), color, "recolored_tarracotta_slabs", CutAndColored.FMODID);
-//			stairsRecipe(block + "_stairs", getItem(FRL(block)), getItem(ModRL(block + "_stairs")), "colored_tarracotta_stairs", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.TERRACOTTA_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolored_tarracotta_stairs", CutAndColored.FMODID);
-//			
-//			// Wool
-//			blockKind = "_wool";
-//			block = color + blockKind;
-//			slabsRecipe(block + "_slab", getItem(FRL(block)), getItem(ModRL(block + "_slab")), "wool_slabs", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.WOOL_SLABS, getItem(ModRL(block + "_slab")), color, "recolor_wool_slabs", CutAndColored.FMODID);
-//			stairsRecipe(block + "_stairs", getItem(FRL(block)), getItem(ModRL(block + "_stairs")), "wool_stairs", CutAndColored.FMODID);
-//			recolorObject(ItemTagsGenerator.WOOL_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolor_wool_stairs", CutAndColored.FMODID);
-//			
-//			// Redstone Lamps
-//			String name = color + "_redstone_lamp";
-//			ConditionalRecipe.builder().addCondition(new ModLoadedCondition(CutAndColored.FMODID))
-//			.addRecipe(ShapelessRecipeBuilder.shapeless(getItem(ModRL(name)))
-//				.requires(ItemTagsGenerator.REDSTONE_LAMPS)
-//				.requires(dye)
-//				.group("redstone_lamp")
-//				.unlockedBy("has_item", has(ItemTagsGenerator.REDSTONE_LAMPS))::save)
-//				.generateAdvancement()
-//				.build(consumer, location(name, "crafting/"));
-//		}
+		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
+			String color = FlamboyantDyeColors.byId(i).getName();
+			Item dye = getItem(FRL(color + "_dye"));
+			
+			// Concrete
+			String blockKind = "_concrete";
+			String block = color + blockKind;
+			slabsRecipe(block + "_slab", getItem(FRL(block)), getItem(ModRL(block + "_slab")), "concrete_slabs", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.CONCRETE_SLABS, getItem(ModRL(block + "_slab")), color, "recolor_concrete_slabs", CutAndColored.FMODID);
+			stairsRecipe(block + "_stairs", getItem(FRL(block)), getItem(ModRL(block + "_stairs")), "concrete_stairs", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.CONCRETE_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolor_concrete_stairs", CutAndColored.FMODID);
+			
+			// Stained Bricks
+			blockKind = "_stained_brick";
+			block = color + blockKind + "s";
+			slabsRecipe(color + blockKind + "_slab", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_slab")), "stained_brick_slabs", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.CLAY_BRICK_SLABS, getItem(ModRL(color + blockKind + "_slab")), color, "recolor_stained_brick_slabs", CutAndColored.FMODID);
+			stairsRecipe(color + blockKind + "_stairs", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_stairs")), "stained_brick_stairs", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.CLAY_BRICK_STAIRS, getItem(ModRL(color + blockKind + "_stairs")), color, "recolor_stained_brick_stairs", CutAndColored.FMODID);
+			wallsRecipe(color + blockKind + "_wall", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_wall")), "stained_brick_walls", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.CLAY_BRICK_WALLS, getItem(ModRL(color + blockKind + "_wall")), color, "recolor_stained_brick_walls", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.CLAY_BRICKS, getItem(ModRL(block)), color, "recolor_stained_bricks", CutAndColored.FMODID);
+			
+			// Stained Glass
+			blockKind = "_stained_glass";
+			block = color + blockKind;
+			recolorObject(ItemTagsGenerator.GLASS_SLABS, getItem(ModRL(block + "_slab")), color, "recolor_stained_glass_slabs", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.GLASS_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolor_stained_glass_stairs", CutAndColored.FMODID);
+			
+			// Stained Planks
+			blockKind = "_stained_plank";
+			block = color + blockKind + "s";
+			slabsRecipe(color + blockKind + "_slab", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_slab")), "stained_plank_slabs", CutAndColored.FMODID);
+			recolorObject(ItemTags.WOODEN_SLABS, getItem(ModRL(color + blockKind + "_slab")), color, "recolor_stained_plank_slabs", CutAndColored.FMODID);
+			stairsRecipe(color + blockKind + "_stairs", getItem(ModRL(block)), getItem(ModRL(color + blockKind + "_stairs")), "stained_plank_stairs", CutAndColored.FMODID);
+			recolorObject(ItemTags.WOODEN_STAIRS, getItem(ModRL(color + blockKind + "_stairs")), color, "recolor_stained_plank_stairs", CutAndColored.FMODID);
+			recolorObject(ItemTags.PLANKS, getItem(ModRL(block)), color, "recolor_stained_planks", CutAndColored.FMODID);
+			
+			// Terracotta
+			blockKind = "_terracotta";
+			block = color + blockKind;
+			slabsRecipe(block + "_slab", getItem(FRL(block)), getItem(ModRL(block + "_slab")), "colored_tarracotta_slabs", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.TERRACOTTA_SLABS, getItem(ModRL(block + "_slab")), color, "recolored_tarracotta_slabs", CutAndColored.FMODID);
+			stairsRecipe(block + "_stairs", getItem(FRL(block)), getItem(ModRL(block + "_stairs")), "colored_tarracotta_stairs", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.TERRACOTTA_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolored_tarracotta_stairs", CutAndColored.FMODID);
+			
+			// Wool
+			blockKind = "_wool";
+			block = color + blockKind;
+			slabsRecipe(block + "_slab", getItem(FRL(block)), getItem(ModRL(block + "_slab")), "wool_slabs", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.WOOL_SLABS, getItem(ModRL(block + "_slab")), color, "recolor_wool_slabs", CutAndColored.FMODID);
+			stairsRecipe(block + "_stairs", getItem(FRL(block)), getItem(ModRL(block + "_stairs")), "wool_stairs", CutAndColored.FMODID);
+			recolorObject(ItemTagsGenerator.WOOL_STAIRS, getItem(ModRL(block + "_stairs")), color, "recolor_wool_stairs", CutAndColored.FMODID);
+			
+			// Redstone Lamps
+			String name = color + "_redstone_lamp";
+			ConditionalRecipe.builder().addCondition(new ModLoadedCondition(CutAndColored.FMODID))
+			.addRecipe(ShapelessRecipeBuilder.shapeless(getItem(ModRL(name)))
+				.requires(ItemTagsGenerator.REDSTONE_LAMPS)
+				.requires(dye)
+				.group("redstone_lamp")
+				.unlockedBy("has_item", has(ItemTagsGenerator.REDSTONE_LAMPS))::save)
+				.generateAdvancement()
+				.build(consumer, location(name, "crafting/"));
+		}
 	}
 	
 	private void stoneBrickTypeRecipes() {

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "cutandcolored:block/maroon_stained_bricks",
+    "bottom": "cutandcolored:block/maroon_stained_bricks",
+    "top": "cutandcolored:block/maroon_stained_bricks"
+  }
+}

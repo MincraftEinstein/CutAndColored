@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolor_wool_stairs",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "forge:wool_stairs"
+          },
+          "$": {
+            "item": "flamboyant:hot_pink_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:hot_pink_wool_stairs",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

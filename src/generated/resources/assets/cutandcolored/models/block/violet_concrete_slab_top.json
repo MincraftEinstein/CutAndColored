@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "flamboyant:block/violet_concrete",
+    "bottom": "flamboyant:block/violet_concrete",
+    "top": "flamboyant:block/violet_concrete"
+  }
+}

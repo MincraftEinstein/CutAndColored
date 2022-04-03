@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "recolor_stained_plank_stairs",
+        "pattern": [
+          "###",
+          "#$#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "minecraft:wooden_stairs"
+          },
+          "$": {
+            "item": "flamboyant:hot_pink_dye"
+          }
+        },
+        "result": {
+          "item": "cutandcolored:hot_pink_stained_plank_stairs",
+          "count": 8
+        }
+      }
+    }
+  ]
+}
