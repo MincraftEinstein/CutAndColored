@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "cutandcolored:glass_window_pane",
-    "#cutandcolored:vanilla_stained_glass_window_panes"
+    "#cutandcolored:vanilla_stained_glass_window_panes",
+    {
+      "id": "#cutandcolored:flamboyant_stained_glass_window_panes",
+      "required": false
+    }
   ]
 }

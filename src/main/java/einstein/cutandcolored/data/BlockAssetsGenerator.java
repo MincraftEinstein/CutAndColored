@@ -69,6 +69,9 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 	private List<Block> coloredLamps = new ArrayList<Block>();
 	private List<Block> fColoredLamps = new ArrayList<Block>();
 	
+	private List<Block> coloredWindowPanes = new ArrayList<Block>();
+	private List<Block> fColoredWindowPanes = new ArrayList<Block>();
+	
 	public BlockAssetsGenerator(DataGenerator generator, ExistingFileHelper existingFile) {
 		super(generator, CutAndColored.MODID, existingFile);
 	}
@@ -144,6 +147,10 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		paneBlock((IronBarsBlock) ModBlocks.SOUL_GLASS_PANE.get(), blockRL("soul_glass"), blockRL("soul_glass_pane_top"));
 		paneBlock((IronBarsBlock) ModBlocks.TINTED_GLASS_PANE.get(), blockMCRL("tinted_glass"), blockRL("tinted_glass_pane_top"));
 		
+		paneBlock((IronBarsBlock) ModBlocks.GLASS_WINDOW_PANE.get(), blockRL("glass_window"), blockMCRL("glass_pane_top"));
+		paneBlock((IronBarsBlock) ModBlocks.SOUL_GLASS_WINDOW_PANE.get(), blockRL("soul_glass_window"), blockRL("soul_glass_pane_top"));
+		paneBlock((IronBarsBlock) ModBlocks.TINTED_GLASS_WINDOW_PANE.get(), blockRL("tinted_glass_window"), blockRL("tinted_glass_pane_top"));
+		
 		logBlock((RotatedPillarBlock) ModBlocks.PRISMARINE_BRICK_PILLAR.get());
 		logBlock((RotatedPillarBlock) ModBlocks.POLISHED_BLACKSTONE_PILLAR.get());
 		logBlock((RotatedPillarBlock) ModBlocks.END_STONE_BRICK_PILLAR.get());
@@ -214,6 +221,15 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 				}
 				i4--;
 			}
+			int i5 = paneBlocks.size() - 1;
+			while (i5 >= 0) {
+				Block block = paneBlocks.get(i5);
+				if (isVanillaColored(block, i)) {
+					coloredWindowPanes.add(block);
+					paneBlocks.remove(i5);
+				}
+				i5--;
+			}
 		}
 		
 		// Slabs
@@ -268,14 +284,10 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 		}
 		// Window Panes
-		for (int i = 0; i < paneBlocks.size(); i++) {
-			IronBarsBlock block = (IronBarsBlock) paneBlocks.get(i);
-			try {
-				paneBlock(block, blockRL(block.getRegistryName().getPath().replace("_pane", "")), blockMCRL(block.getRegistryName().getPath().replace("_window", "") + "_top"));
-			}
-			catch (Exception e) {
-				paneBlock(block, blockRL(block.getRegistryName().getPath().replace("_pane", "")), blockRL(block.getRegistryName().getPath().replace("_window", "") + "_top"));
-			}
+		for (int i = 0; i < coloredWindowPanes.size(); i++) {
+			IronBarsBlock block = (IronBarsBlock) coloredWindowPanes.get(i);
+			String name = block.getRegistryName().getPath();
+			paneBlock(block, blockRL(name.replace("_pane", "")), blockMCRL(name.replace("_window", "") + "_top"));
 		}
 	}
 	
@@ -293,35 +305,48 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
 			int i1 = stairBlocks.size() - 1;
 			while (i1 >= 0) {
-				if (stairBlocks.get(i1).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
-					fColoredStairs.add(stairBlocks.get(i1));
+				Block block = stairBlocks.get(i1);
+				if (isFlamboyantColored(block, i)) {
+					fColoredStairs.add(block);
 					stairBlocks.remove(i1);
 				}
 				i1--;
 			}
 			int i2 = slabBlocks.size() - 1;
 			while (i2 >= 0) {
-				if (slabBlocks.get(i2).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
-					fColoredSlabs.add(slabBlocks.get(i2));
+				Block block = slabBlocks.get(i2);
+				if (isFlamboyantColored(block, i)) {
+					fColoredSlabs.add(block);
 					slabBlocks.remove(i2);
 				}
 				i2--;
 			}
 			int i3 = wallBlocks.size() - 1;
 			while (i3 >= 0) {
-				if (wallBlocks.get(i3).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
-					fColoredWalls.add(wallBlocks.get(i3));
+				Block block = wallBlocks.get(i3);
+				if (isFlamboyantColored(block, i)) {
+					fColoredWalls.add(block);
 					wallBlocks.remove(i3);
 				}
 				i3--;
 			}
 			int i4 = lampBlocks.size() - 1;
 			while (i4 >= 0) {
-				if (lampBlocks.get(i4).getRegistryName().getPath().contains(FlamboyantDyeColors.byId(i).getName())) {
+				Block block = lampBlocks.get(i4);
+				if (isFlamboyantColored(block, i)) {
 					fColoredLamps.add(lampBlocks.get(i4));
 					lampBlocks.remove(i4);
 				}
 				i4--;
+			}
+			int i5 = paneBlocks.size() - 1;
+			while (i5 >= 0) {
+				Block block = paneBlocks.get(i5);
+				if (isFlamboyantColored(block, i)) {
+					fColoredWindowPanes.add(block);
+					paneBlocks.remove(i5);
+				}
+				i5--;
 			}
 		}
 		// Slabs
@@ -375,6 +400,16 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 					.withExistingParent(name + "_on", "cube_all").texture("all", blockRL(name + "_on"))));
 			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 		}
+		// Window Panes
+		for (int i = 0; i < fColoredWindowPanes.size(); i++) {
+			IronBarsBlock block = (IronBarsBlock) fColoredWindowPanes.get(i);
+			String name = block.getRegistryName().getPath();
+			paneBlock(block, blockRL(name.replace("_pane", "")), blockFRL(name.replace("_window", "") + "_top"));
+		}
+	}
+	
+	private boolean isFlamboyantColored(Block block, int colorIndex) {
+		return block.getRegistryName().getPath().contains(FlamboyantDyeColors.byId(colorIndex).getName());
 	}
 	
 	private void borderedStairBlock(StairBlock block, ResourceLocation imageName) {

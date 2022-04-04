@@ -86,7 +86,7 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
 			String color = FlamboyantDyeColors.byId(i).getName();
 			Item glass = getItem(FRL(color + "_stained_glass"));
-//			TagKey<Item> tag = ItemTags.create(new ResourceLocation("forge", "glass/" + color));
+			TagKey<Item> tag = ItemTags.create(new ResourceLocation("forge", "glass/" + color));
 			
 			Item pane = getItem(FRL(color + "_stained_glass_pane"));
 			glasscuttingRecipe(pane.getRegistryName().getPath(), glass, pane, 4);
@@ -97,12 +97,12 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 			Item stairs = getItem(ModRL(color + "_stained_glass_stairs"));
 			glasscuttingRecipe(stairs.getRegistryName().getPath(), glass, stairs);
 			
-//			Item window = getItem(ModRL(color + "_stained_glass_window"));
-//			glasscuttingRecipe(window.getRegistryName().getPath(), glass, window);
+			Item window = getItem(ModRL(color + "_stained_glass_window"));
+			glasscuttingRecipe(window.getRegistryName().getPath(), glass, window);
 			
-//			Item window_pane = getItem(ModRL(color + "_stained_glass_window_pane"));
-//			glasscuttingRecipe(window_pane.getRegistryName().getPath() + "_from_glass", tag, window_pane);
-//			glasscuttingRecipe(window_pane.getRegistryName().getPath(), getItem(MCRL(color + "_stained_glass_pane")), window_pane);
+			Item window_pane = getItem(ModRL(color + "_stained_glass_window_pane"));
+			glasscuttingRecipe(window_pane.getRegistryName().getPath() + "_from_glass", tag, window_pane);
+			glasscuttingRecipe(window_pane.getRegistryName().getPath(), getItem(FRL(color + "_stained_glass_pane")), window_pane);
 		}
 	}
 	

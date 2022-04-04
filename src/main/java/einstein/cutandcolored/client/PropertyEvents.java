@@ -564,5 +564,41 @@ public class PropertyEvents
         ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SKY_BLUE_STAINED_GLASS_SLAB.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SLATE_GRAY_STAINED_GLASS_SLAB.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.VIOLET_STAINED_GLASS_SLAB.get(), RenderType.translucent());
+        
+        // WINDOWS
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.AMBER_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.BEIGE_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.CREAM_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.DARK_GREEN_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.FOREST_GREEN_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.HOT_PINK_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.INDIGO_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.MAROON_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.NAVY_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.OLIVE_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_GREEN_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_PINK_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_YELLOW_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SKY_BLUE_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SLATE_GRAY_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.VIOLET_STAINED_GLASS_WINDOW.get(), RenderType.translucent());
+        
+        // WINDOW PANES
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.AMBER_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.BEIGE_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.CREAM_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.DARK_GREEN_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.FOREST_GREEN_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.HOT_PINK_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.INDIGO_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.MAROON_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.NAVY_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.OLIVE_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_GREEN_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_PINK_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.PALE_YELLOW_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SKY_BLUE_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.SLATE_GRAY_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FlamboyantBlocks.VIOLET_STAINED_GLASS_WINDOW_PANE.get(), RenderType.translucent());
     }
 }

@@ -5,13 +5,17 @@ import java.util.function.Supplier;
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.block.GlassSlabBlock;
 import einstein.cutandcolored.block.GlassStairsBlock;
+import einstein.cutandcolored.init.ModBlocks.BlockProperties;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RedstoneLampBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StainedGlassBlock;
+import net.minecraft.world.level.block.StainedGlassPaneBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
@@ -62,6 +66,42 @@ public class FlamboyantBlocks {
 	public static final RegistryObject<Block> SKY_BLUE_STAINED_GLASS_SLAB = register("sky_blue_stained_glass_slab", () -> new GlassSlabBlock(Blocks.GLASS, Properties.copy(Blocks.GLASS)));
 	public static final RegistryObject<Block> SLATE_GRAY_STAINED_GLASS_SLAB = register("slate_gray_stained_glass_slab", () -> new GlassSlabBlock(Blocks.GLASS, Properties.copy(Blocks.GLASS)));
 	public static final RegistryObject<Block> VIOLET_STAINED_GLASS_SLAB = register("violet_stained_glass_slab", () -> new GlassSlabBlock(Blocks.GLASS, Properties.copy(Blocks.GLASS)));
+	
+    // WINDOWS
+	public static final RegistryObject<Block> AMBER_STAINED_GLASS_WINDOW = register("amber_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> BEIGE_STAINED_GLASS_WINDOW = register("beige_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> CREAM_STAINED_GLASS_WINDOW = register("cream_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> DARK_GREEN_STAINED_GLASS_WINDOW = register("dark_green_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> FOREST_GREEN_STAINED_GLASS_WINDOW = register("forest_green_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> HOT_PINK_STAINED_GLASS_WINDOW = register("hot_pink_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> INDIGO_STAINED_GLASS_WINDOW = register("indigo_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> MAROON_STAINED_GLASS_WINDOW = register("maroon_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> NAVY_STAINED_GLASS_WINDOW = register("navy_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> OLIVE_STAINED_GLASS_WINDOW = register("olive_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> PALE_GREEN_STAINED_GLASS_WINDOW = register("pale_green_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> PALE_PINK_STAINED_GLASS_WINDOW = register("pale_pink_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> PALE_YELLOW_STAINED_GLASS_WINDOW = register("pale_yellow_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> SKY_BLUE_STAINED_GLASS_WINDOW = register("sky_blue_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> SLATE_GRAY_STAINED_GLASS_WINDOW = register("slate_gray_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> VIOLET_STAINED_GLASS_WINDOW = register("violet_stained_glass_window", () -> new StainedGlassBlock(DyeColor.WHITE, BlockProperties.GLASS));
+    
+    // WINDOW PANES
+	public static final RegistryObject<Block> AMBER_STAINED_GLASS_WINDOW_PANE = register("amber_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> BEIGE_STAINED_GLASS_WINDOW_PANE = register("beige_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> CREAM_STAINED_GLASS_WINDOW_PANE = register("cream_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> DARK_GREEN_STAINED_GLASS_WINDOW_PANE = register("dark_green_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> FOREST_GREEN_STAINED_GLASS_WINDOW_PANE = register("forest_green_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> HOT_PINK_STAINED_GLASS_WINDOW_PANE = register("hot_pink_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> INDIGO_STAINED_GLASS_WINDOW_PANE = register("indigo_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> MAROON_STAINED_GLASS_WINDOW_PANE = register("maroon_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> NAVY_STAINED_GLASS_WINDOW_PANE = register("navy_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> OLIVE_STAINED_GLASS_WINDOW_PANE = register("olive_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> PALE_GREEN_STAINED_GLASS_WINDOW_PANE = register("pale_green_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> PALE_PINK_STAINED_GLASS_WINDOW_PANE = register("pale_pink_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> PALE_YELLOW_STAINED_GLASS_WINDOW_PANE = register("pale_yellow_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> SKY_BLUE_STAINED_GLASS_WINDOW_PANE = register("sky_blue_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> SLATE_GRAY_STAINED_GLASS_WINDOW_PANE = register("slate_gray_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
+	public static final RegistryObject<Block> VIOLET_STAINED_GLASS_WINDOW_PANE = register("violet_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.WHITE, BlockProperties.GLASS));
 	
     /*************************WOOL**************************/
     // STAIRS

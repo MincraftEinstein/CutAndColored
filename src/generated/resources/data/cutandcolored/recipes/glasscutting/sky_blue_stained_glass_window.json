@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:glasscutting",
+  "ingredient": {
+    "item": "flamboyant:sky_blue_stained_glass"
+  },
+  "result": "cutandcolored:sky_blue_stained_glass_window",
+  "count": 1
+}

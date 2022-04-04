@@ -522,6 +522,42 @@
     "block.cutandcolored.sky_blue_stained_glass_slab": "Sky Blue Stained Glass Slab",
     "block.cutandcolored.slate_gray_stained_glass_slab": "Slate Gray Stained Glass Slab",
     "block.cutandcolored.violet_stained_glass_slab": "Violet Stained Glass Slab",
+    
+	// WINDOWS
+    "block.cutandcolored.amber_stained_glass_window": "Amber Stained Glass Window",
+    "block.cutandcolored.beige_stained_glass_window": "Beige Stained Glass Window",
+    "block.cutandcolored.cream_stained_glass_window": "Cream Stained Glass Window",
+    "block.cutandcolored.dark_green_stained_glass_window": "Dark Green Stained Glass Window",
+    "block.cutandcolored.forest_green_stained_glass_window": "Forest Green Stained Glass Window",
+    "block.cutandcolored.hot_pink_stained_glass_window": "Hot Pink Stained Glass Window",
+    "block.cutandcolored.indigo_stained_glass_window": "Indigo Stained Glass Window",
+    "block.cutandcolored.maroon_stained_glass_window": "Maroon Stained Glass Window",
+    "block.cutandcolored.navy_stained_glass_window": "Navy Stained Glass Window",
+    "block.cutandcolored.olive_stained_glass_window": "Olive Stained Glass Window",
+    "block.cutandcolored.pale_green_stained_glass_window": "Pale Green Stained Glass Window",
+    "block.cutandcolored.pale_pink_stained_glass_window": "Pale Pink Stained Glass Window",
+    "block.cutandcolored.pale_yellow_stained_glass_window": "Pale Yellow Stained Glass Window",
+    "block.cutandcolored.sky_blue_stained_glass_window": "Sky Blue Stained Glass Window",
+    "block.cutandcolored.slate_gray_stained_glass_window": "Slate Gray Stained Glass Window",
+    "block.cutandcolored.violet_stained_glass_window": "Violet Stained Glass Window",
+    
+	// WINDOW PANES
+    "block.cutandcolored.amber_stained_glass_window_pane": "Amber Stained Glass Window Pane",
+    "block.cutandcolored.beige_stained_glass_window_pane": "Beige Stained Glass Window Pane",
+    "block.cutandcolored.cream_stained_glass_window_pane": "Cream Stained Glass Window Pane",
+    "block.cutandcolored.dark_green_stained_glass_window_pane": "Dark Green Stained Glass Window Pane",
+    "block.cutandcolored.forest_green_stained_glass_window_pane": "Forest Green Stained Glass Window Pane",
+    "block.cutandcolored.hot_pink_stained_glass_window_pane": "Hot Pink Stained Glass Window Pane",
+    "block.cutandcolored.indigo_stained_glass_window_pane": "Indigo Stained Glass Window Pane",
+    "block.cutandcolored.maroon_stained_glass_window_pane": "Maroon Stained Glass Window Pane",
+    "block.cutandcolored.navy_stained_glass_window_pane": "Navy Stained Glass Window Pane",
+    "block.cutandcolored.olive_stained_glass_window_pane": "Olive Stained Glass Window Pane",
+    "block.cutandcolored.pale_green_stained_glass_window_pane": "Pale Green Stained Glass Window Pane",
+    "block.cutandcolored.pale_pink_stained_glass_window_pane": "Pale Pink Stained Glass Window Pane",
+    "block.cutandcolored.pale_yellow_stained_glass_window_pane": "Pale Yellow Stained Glass Window Pane",
+    "block.cutandcolored.sky_blue_stained_glass_window_pane": "Sky Blue Stained Glass Window Pane",
+    "block.cutandcolored.slate_gray_stained_glass_window_pane": "Slate Gray Stained Glass Window Pane",
+    "block.cutandcolored.violet_stained_glass_window_pane": "Violet Stained Glass Window Pane",
 
     /*************************WOOL**************************/
     // STAIRS
