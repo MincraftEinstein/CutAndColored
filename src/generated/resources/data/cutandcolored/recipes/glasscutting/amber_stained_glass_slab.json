@@ -1,8 +1,21 @@
 {
-  "type": "cutandcolored:glasscutting",
-  "ingredient": {
-    "item": "flamboyant:amber_stained_glass"
-  },
-  "result": "cutandcolored:amber_stained_glass_slab",
-  "count": 2
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:glasscutting",
+        "ingredient": {
+          "item": "flamboyant:amber_stained_glass"
+        },
+        "result": "cutandcolored:amber_stained_glass_slab",
+        "count": 2
+      }
+    }
+  ]
 }

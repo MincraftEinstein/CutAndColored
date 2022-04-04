@@ -1,8 +1,21 @@
 {
-  "type": "cutandcolored:glasscutting",
-  "ingredient": {
-    "item": "flamboyant:pale_green_stained_glass_pane"
-  },
-  "result": "cutandcolored:pale_green_stained_glass_window_pane",
-  "count": 1
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "flamboyant",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "cutandcolored:glasscutting",
+        "ingredient": {
+          "item": "flamboyant:pale_green_stained_glass_pane"
+        },
+        "result": "cutandcolored:pale_green_stained_glass_window_pane",
+        "count": 1
+      }
+    }
+  ]
 }
