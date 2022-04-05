@@ -91,7 +91,7 @@ dependencies {
 	// implementation fg.deobf("curse.maven:cofh-core-69162:3407019")
 	implementation fg.deobf("curse.maven:additional-bars-357362:3672351")
 	// implementation fg.deobf("curse.maven:additional-bars-biomes-o-plenty-addon-460311:3682646")
-	// implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes-397068:3569783")
+	implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes-397068:3735973")
 	// implementation fg.deobf("curse.maven:biomes-o-plenty-220318:3616582")
 	// implementation fg.deobf("curse.maven:terrablender-563928:3704222")
 	// implementation fg.deobf("curse.maven:differentiate-450748:3400000")
