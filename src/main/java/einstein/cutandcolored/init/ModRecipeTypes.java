@@ -21,20 +21,20 @@ public class ModRecipeTypes
 	public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, CutAndColored.MODID);
 	public static final List<RecipeType<?>> types = new ArrayList<RecipeType<?>>();
 	
-	public static final RecipeType<GlasscuttingRecipe> GLASSCUTTING_RECIPE = createRecipeType("glasscutting"); // new GlasscuttingRecipe.Type();
+	public static final RecipeType<GlasscuttingRecipe> GLASSCUTTING_RECIPE = createRecipeType("glasscutting");
 	public static final RegistryObject<RecipeSerializer<GlasscuttingRecipe>> GLASSCUTTING = register("glasscutting", () -> new GlasscuttingRecipe.Serializer(GlasscuttingRecipe::new), GLASSCUTTING_RECIPE);
 	
-	public static final RecipeType<WeavingRecipe> WEAVING_RECIPE = createRecipeType("weaving"); // new WeavingRecipe.Type();
+	public static final RecipeType<WeavingRecipe> WEAVING_RECIPE = createRecipeType("weaving");
 	public static final RegistryObject<RecipeSerializer<WeavingRecipe>> WEAVING = register("weaving", () -> new WeavingRecipe.Serializer(WeavingRecipe::new), WEAVING_RECIPE);
 	
-	public static final RecipeType<SawmillingRecipe> SAWMILLING_RECIPE = createRecipeType("sawmilling"); // new SawmillingRecipe.Type();
+	public static final RecipeType<SawmillingRecipe> SAWMILLING_RECIPE = createRecipeType("sawmilling");
 	public static final RegistryObject<RecipeSerializer<SawmillingRecipe>> SAWMILLING = register("sawmilling", () -> new SawmillingRecipe.Serializer(SawmillingRecipe::new), SAWMILLING_RECIPE);
 	
-	private static <T extends Recipe> RegistryObject<RecipeSerializer<T>> register(final String name, final Supplier<RecipeSerializer<T>> serializer, RecipeType<T> recipeType) {
+	private static <T extends Recipe<?>> RegistryObject<RecipeSerializer<T>> register(final String name, final Supplier<RecipeSerializer<T>> serializer, RecipeType<T> recipeType) {
 		return RECIPE_SERIALIZERS.register(name, serializer);
 	}
 	
-	private static <T extends Recipe> RecipeType<T> createRecipeType(String name) {
+	private static <T extends Recipe<?>> RecipeType<T> createRecipeType(String name) {
 		RecipeType<T> type = new RecipeType<T>() {
 			@Override
 			public String toString() {
