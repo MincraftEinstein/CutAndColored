@@ -35,7 +35,7 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 		glasscuttingRecipe("glass_stairs", Blocks.GLASS, ModBlocks.GLASS_STAIRS.get());
 		glasscuttingRecipe("horizontal_glass_pane", Blocks.GLASS, getItem(new ResourceLocation("horizontalpanes:horizontal_glass_pane")), 4);
 		glasscuttingRecipe("glass_window", Blocks.GLASS, ModBlocks.GLASS_WINDOW.get());
-		glasscuttingRecipe("glass_window_pane_from_glass", Tags.Items.GLASS_COLORLESS, ModBlocks.GLASS_WINDOW_PANE.get());
+		glasscuttingRecipe("glass_window_pane_from_glass", Tags.Items.GLASS_COLORLESS, ModBlocks.GLASS_WINDOW_PANE.get(), 4);
 		glasscuttingRecipe("glass_window_pane", Blocks.GLASS_PANE, ModBlocks.GLASS_WINDOW_PANE.get());
 		
 		glasscuttingRecipe("soul_glass_pane", ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_PANE.get(), 4);
@@ -43,7 +43,7 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 		glasscuttingRecipe("soul_glass_stairs", ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_STAIRS.get());
 		glasscuttingRecipe("horizontal_soul_glass_pane", ModBlocks.SOUL_GLASS.get(), ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get(), 4, "horizontalpanes");
 		glasscuttingRecipe("soul_glass_window", ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_WINDOW.get());
-		glasscuttingRecipe("soul_glass_window_pane_from_glass", ItemTagsGenerator.SOUL_GLASS, ModBlocks.SOUL_GLASS_WINDOW_PANE.get());
+		glasscuttingRecipe("soul_glass_window_pane_from_glass", ItemTagsGenerator.SOUL_GLASS, ModBlocks.SOUL_GLASS_WINDOW_PANE.get(), 4);
 		glasscuttingRecipe("soul_glass_window_pane", ModBlocks.SOUL_GLASS_PANE.get(), ModBlocks.SOUL_GLASS_WINDOW_PANE.get());
 		
 		glasscuttingRecipe("tinted_glass_pane", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_PANE.get(), 4);
@@ -51,7 +51,7 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 		glasscuttingRecipe("tinted_glass_stairs", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_STAIRS.get());
 		glasscuttingRecipe("horizontal_tinted_glass_pane", Blocks.TINTED_GLASS, getItem(new ResourceLocation("horizontalpanes:horizontal_tinted_glass_pane")), 4);
 		glasscuttingRecipe("tinted_glass_window", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_WINDOW.get());
-		glasscuttingRecipe("tinted_glass_window_pane_from_glass", ItemTagsGenerator.TINTED_GLASS, ModBlocks.TINTED_GLASS_WINDOW_PANE.get());
+		glasscuttingRecipe("tinted_glass_window_pane_from_glass", ItemTagsGenerator.TINTED_GLASS, ModBlocks.TINTED_GLASS_WINDOW_PANE.get(), 4);
 		glasscuttingRecipe("tinted_glass_window_pane", ModBlocks.TINTED_GLASS_PANE.get(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get());
 		
 	}
@@ -78,7 +78,7 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 			glasscuttingRecipe(window.getRegistryName().getPath(), glass, window);
 			
 			Item window_pane = getItem(ModRL(color + "_stained_glass_window_pane"));
-			glasscuttingRecipe(window_pane.getRegistryName().getPath() + "_from_glass", tag, window_pane);
+			glasscuttingRecipe(window_pane.getRegistryName().getPath() + "_from_glass", tag, window_pane, 4);
 			glasscuttingRecipe(window_pane.getRegistryName().getPath(), getItem(MCRL(color + "_stained_glass_pane")), window_pane);
 		}
 	}
@@ -102,7 +102,7 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 			glasscuttingRecipe(window.getRegistryName().getPath(), glass, window, 1, CutAndColored.FMODID);
 			
 			Item window_pane = getItem(ModRL(color + "_stained_glass_window_pane"));
-			glasscuttingRecipe(window_pane.getRegistryName().getPath() + "_from_glass", tag, window_pane, 1, CutAndColored.FMODID);
+			glasscuttingRecipe(window_pane.getRegistryName().getPath() + "_from_glass", tag, window_pane, 4, CutAndColored.FMODID);
 			glasscuttingRecipe(window_pane.getRegistryName().getPath(), getItem(FRL(color + "_stained_glass_pane")), window_pane, 1, CutAndColored.FMODID);
 		}
 	}

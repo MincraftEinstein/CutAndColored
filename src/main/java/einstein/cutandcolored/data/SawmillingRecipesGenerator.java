@@ -61,7 +61,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			String color = DyeColor.byId(i).getName();
 			Item item = getItem(ModRL(color + "_stained_planks"));
 			
-			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
+			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")), 2);
 			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
 		}
 	}
@@ -71,7 +71,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			String color = FlamboyantDyeColors.byId(i).getName();
 			Item item = getItem(ModRL(color + "_stained_planks"));
 			
-			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")));
+			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")), 2);
 			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
 		}
 	}
@@ -125,8 +125,8 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			sawmillingRecipe(woodName + "_door", logTypes, getItem(RL(woodName + "_door")), 1);
 			sawmillingRecipe(woodName + "_fence", logTypes, getItem(RL(woodName + "_fence")), 1);
 			sawmillingRecipe(woodName + "_fence_gate", logTypes, getItem(RL(woodName + "_fence_gate")), 1);
-			sawmillingRecipe(woodName + "_slab_from" + s, logTypes, slab, 1);
-			sawmillingRecipe(woodName + "_stairs_from" + s, logTypes, stairs, 1);
+			sawmillingRecipe(woodName + "_slab_from" + s, logTypes, slab, 8);
+			sawmillingRecipe(woodName + "_stairs_from" + s, logTypes, stairs, 4);
 			sawmillingRecipe(woodName + "_trapdoor", logTypes, getItem(RL(woodName + "_trapdoor")), 2);
 			
 			try {
