@@ -1,7 +1,7 @@
 ﻿
 ## CutAndColored
 ![](https://img.shields.io/badge/Mod%20Loader-Forge-orange)
-![](https://img.shields.io/badge/Minecraft%20Versions-1.15.2%20%7C%201.16.2%20%7C%201.16.3%20%7C%201.16.4-green)</br>
+![](https://img.shields.io/badge/Minecraft%20Version-1.18.2-green)</br>
 📜 License: All Rights Reserved </br>
 💻 [Website](https://mincrafteinstein.wix.com/mincrafteinstein)</br>
 🧱 Requirements:
