@@ -7,34 +7,22 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.pathfinder.PathComputationType;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class WeaverBlock extends Block
+public class WeaverBlock extends AbstractSingleItemRecipeBlock
 {
 	private static final Component CONTAINER_TITLE = new TranslatableComponent("container.cutandcolored.weaver");
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	
+	// North shapes
     protected static final VoxelShape NORTH_RIGHT_LEG = Block.box(14.0, 0.0, 7.0, 15.0, 8.0, 9.0);
     protected static final VoxelShape NORTH_RIGHT_LEG_PIVOT = Block.box(14.0, 8.0, 6.5, 15.0, 11.0, 9.5);
     protected static final VoxelShape NORTH_LEFT_LEG = Block.box(1.0, 0.0, 7.0, 2.0, 8.0, 9.0);
@@ -50,7 +38,9 @@ public class WeaverBlock extends Block
     protected static final VoxelShape NORTH_BOARD9 = Block.box(2.0, 11.0, 9.5, 14.0, 12.0, 10.5);
     protected static final VoxelShape NORTH_BOARD10 = Block.box(2.0, 12.0, 10.5, 14.0, 13.0, 11.5);
     protected static final VoxelShape NORTH_BOARD11 = Block.box(2.0, 13.0, 11.5, 14.0, 14.0, 12.5);
-    protected static final VoxelShape NORTH_FACING = Shapes.or(WeaverBlock.NORTH_RIGHT_LEG, new VoxelShape[] { WeaverBlock.NORTH_RIGHT_LEG_PIVOT, WeaverBlock.NORTH_LEFT_LEG, WeaverBlock.NORTH_LEFT_LEG_PIVOT, WeaverBlock.NORTH_BOARD1, WeaverBlock.NORTH_BOARD2, WeaverBlock.NORTH_BOARD3, WeaverBlock.NORTH_BOARD4, WeaverBlock.NORTH_BOARD5, WeaverBlock.NORTH_BOARD6, WeaverBlock.NORTH_BOARD7, WeaverBlock.NORTH_BOARD8, WeaverBlock.NORTH_BOARD9, WeaverBlock.NORTH_BOARD10, WeaverBlock.NORTH_BOARD11 });
+    protected static final VoxelShape NORTH_SHAPE = Shapes.or(WeaverBlock.NORTH_RIGHT_LEG, new VoxelShape[] { WeaverBlock.NORTH_RIGHT_LEG_PIVOT, WeaverBlock.NORTH_LEFT_LEG, WeaverBlock.NORTH_LEFT_LEG_PIVOT, WeaverBlock.NORTH_BOARD1, WeaverBlock.NORTH_BOARD2, WeaverBlock.NORTH_BOARD3, WeaverBlock.NORTH_BOARD4, WeaverBlock.NORTH_BOARD5, WeaverBlock.NORTH_BOARD6, WeaverBlock.NORTH_BOARD7, WeaverBlock.NORTH_BOARD8, WeaverBlock.NORTH_BOARD9, WeaverBlock.NORTH_BOARD10, WeaverBlock.NORTH_BOARD11 });
+    
+    // South shapes
     protected static final VoxelShape SOUTH_RIGHT_LEG = Block.box(1.0, 0.0, 7.0, 2.0, 8.0, 9.0);
     protected static final VoxelShape SOUTH_RIGHT_LEG_PIVOT = Block.box(1.0, 8.0, 6.5, 2.0, 11.0, 9.5);
     protected static final VoxelShape SOUTH_LEFT_LEG = Block.box(14.0, 0.0, 7.0, 15.0, 8.0, 9.0);
@@ -66,7 +56,9 @@ public class WeaverBlock extends Block
     protected static final VoxelShape SOUTH_BOARD9 = Block.box(2.0, 11.0, 5.5, 14.0, 12.0, 6.5);
     protected static final VoxelShape SOUTH_BOARD10 = Block.box(2.0, 12.0, 4.5, 14.0, 13.0, 5.5);
     protected static final VoxelShape SOUTH_BOARD11 = Block.box(2.0, 13.0, 3.5, 14.0, 14.0, 4.5);
-    protected static final VoxelShape SOUTH_FACING = Shapes.or(WeaverBlock.SOUTH_RIGHT_LEG, new VoxelShape[] { WeaverBlock.SOUTH_RIGHT_LEG_PIVOT, WeaverBlock.SOUTH_LEFT_LEG, WeaverBlock.SOUTH_LEFT_LEG_PIVOT, WeaverBlock.SOUTH_BOARD1, WeaverBlock.SOUTH_BOARD2, WeaverBlock.SOUTH_BOARD3, WeaverBlock.SOUTH_BOARD4, WeaverBlock.SOUTH_BOARD5, WeaverBlock.SOUTH_BOARD6, WeaverBlock.SOUTH_BOARD7, WeaverBlock.SOUTH_BOARD8, WeaverBlock.SOUTH_BOARD9, WeaverBlock.SOUTH_BOARD10, WeaverBlock.SOUTH_BOARD11 });
+    protected static final VoxelShape SOUTH_SHAPE = Shapes.or(WeaverBlock.SOUTH_RIGHT_LEG, new VoxelShape[] { WeaverBlock.SOUTH_RIGHT_LEG_PIVOT, WeaverBlock.SOUTH_LEFT_LEG, WeaverBlock.SOUTH_LEFT_LEG_PIVOT, WeaverBlock.SOUTH_BOARD1, WeaverBlock.SOUTH_BOARD2, WeaverBlock.SOUTH_BOARD3, WeaverBlock.SOUTH_BOARD4, WeaverBlock.SOUTH_BOARD5, WeaverBlock.SOUTH_BOARD6, WeaverBlock.SOUTH_BOARD7, WeaverBlock.SOUTH_BOARD8, WeaverBlock.SOUTH_BOARD9, WeaverBlock.SOUTH_BOARD10, WeaverBlock.SOUTH_BOARD11 });
+    
+    // East shapes
     protected static final VoxelShape EAST_RIGHT_LEG = Block.box(7.0, 0.0, 14.0, 9.0, 8.0, 15.0);
     protected static final VoxelShape EAST_RIGHT_LEG_PIVOT = Block.box(6.5, 8.0, 14.0, 9.5, 11.0, 15.0);
     protected static final VoxelShape EAST_LEFT_LEG = Block.box(7.0, 0.0, 1.0, 9.0, 8.0, 2.0);
@@ -82,7 +74,9 @@ public class WeaverBlock extends Block
     protected static final VoxelShape EAST_BOARD9 = Block.box(5.5, 11.0, 2.0, 6.5, 12.0, 14.0);
     protected static final VoxelShape EAST_BOARD10 = Block.box(4.5, 12.0, 2.0, 5.5, 13.0, 14.0);
     protected static final VoxelShape EAST_BOARD11 = Block.box(3.5, 13.0, 2.0, 4.5, 14.0, 14.0);
-    protected static final VoxelShape EAST_FACING = Shapes.or(WeaverBlock.EAST_RIGHT_LEG, new VoxelShape[] { WeaverBlock.EAST_RIGHT_LEG_PIVOT, WeaverBlock.EAST_LEFT_LEG, WeaverBlock.EAST_LEFT_LEG_PIVOT, WeaverBlock.EAST_BOARD1, WeaverBlock.EAST_BOARD2, WeaverBlock.EAST_BOARD3, WeaverBlock.EAST_BOARD4, WeaverBlock.EAST_BOARD5, WeaverBlock.EAST_BOARD6, WeaverBlock.EAST_BOARD7, WeaverBlock.EAST_BOARD8, WeaverBlock.EAST_BOARD9, WeaverBlock.EAST_BOARD10, WeaverBlock.EAST_BOARD11 });
+    protected static final VoxelShape EAST_SHAPE = Shapes.or(WeaverBlock.EAST_RIGHT_LEG, new VoxelShape[] { WeaverBlock.EAST_RIGHT_LEG_PIVOT, WeaverBlock.EAST_LEFT_LEG, WeaverBlock.EAST_LEFT_LEG_PIVOT, WeaverBlock.EAST_BOARD1, WeaverBlock.EAST_BOARD2, WeaverBlock.EAST_BOARD3, WeaverBlock.EAST_BOARD4, WeaverBlock.EAST_BOARD5, WeaverBlock.EAST_BOARD6, WeaverBlock.EAST_BOARD7, WeaverBlock.EAST_BOARD8, WeaverBlock.EAST_BOARD9, WeaverBlock.EAST_BOARD10, WeaverBlock.EAST_BOARD11 });
+    
+    // West shapes
     protected static final VoxelShape WEST_RIGHT_LEG = Block.box(7.0, 0.0, 1.0, 9.0, 8.0, 2.0);
     protected static final VoxelShape WEST_RIGHT_LEG_PIVOT = Block.box(6.5, 8.0, 1.0, 9.5, 11.0, 2.0);
     protected static final VoxelShape WEST_LEFT_LEG = Block.box(7.0, 0.0, 14.0, 9.0, 8.0, 15.0);
@@ -98,69 +92,37 @@ public class WeaverBlock extends Block
     protected static final VoxelShape WEST_BOARD9 = Block.box(9.5, 11.0, 2.0, 10.5, 12.0, 14.0);
     protected static final VoxelShape WEST_BOARD10 = Block.box(10.5, 12.0, 2.0, 11.5, 13.0, 14.0);
     protected static final VoxelShape WEST_BOARD11 = Block.box(11.5, 13.0, 2.0, 12.5, 14.0, 14.0);
-    protected static final VoxelShape WEST_FACING = Shapes.or(WeaverBlock.WEST_RIGHT_LEG, new VoxelShape[] { WeaverBlock.WEST_RIGHT_LEG_PIVOT, WeaverBlock.WEST_LEFT_LEG, WeaverBlock.WEST_LEFT_LEG_PIVOT, WeaverBlock.WEST_BOARD1, WeaverBlock.WEST_BOARD2, WeaverBlock.WEST_BOARD3, WeaverBlock.WEST_BOARD4, WeaverBlock.WEST_BOARD5, WeaverBlock.WEST_BOARD6, WeaverBlock.WEST_BOARD7, WeaverBlock.WEST_BOARD8, WeaverBlock.WEST_BOARD9, WeaverBlock.WEST_BOARD10, WeaverBlock.WEST_BOARD11 });
+    protected static final VoxelShape WEST_SHAPE = Shapes.or(WeaverBlock.WEST_RIGHT_LEG, new VoxelShape[] { WeaverBlock.WEST_RIGHT_LEG_PIVOT, WeaverBlock.WEST_LEFT_LEG, WeaverBlock.WEST_LEFT_LEG_PIVOT, WeaverBlock.WEST_BOARD1, WeaverBlock.WEST_BOARD2, WeaverBlock.WEST_BOARD3, WeaverBlock.WEST_BOARD4, WeaverBlock.WEST_BOARD5, WeaverBlock.WEST_BOARD6, WeaverBlock.WEST_BOARD7, WeaverBlock.WEST_BOARD8, WeaverBlock.WEST_BOARD9, WeaverBlock.WEST_BOARD10, WeaverBlock.WEST_BOARD11 });
     
-    public WeaverBlock(BlockBehaviour.Properties propertiesIn) {
-        super(propertiesIn);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+    public WeaverBlock(Properties properties) {
+        super(properties);
     }
     
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
-	}
-	
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-		if (level.isClientSide) {
-			return InteractionResult.SUCCESS;
-		} else {
-			player.openMenu(state.getMenuProvider(level, pos));
-			return InteractionResult.CONSUME;
-		}
-	}
-	
 	@Nullable
+	@Override
 	public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
-		return new SimpleMenuProvider((id, inventory, p_57076_) -> {
+		return new SimpleMenuProvider((id, inventory, player) -> {
 			return new WeaverMenu(id, inventory, ContainerLevelAccess.create(level, pos));
 		}, CONTAINER_TITLE);
 	}
     
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        final Direction direction = state.getValue(WeaverBlock.FACING);
+        final Direction direction = state.getValue(FACING);
         if (direction == Direction.NORTH) {
-            return WeaverBlock.NORTH_FACING;
+            return WeaverBlock.NORTH_SHAPE;
         }
-        if (direction == Direction.SOUTH) {
-            return WeaverBlock.SOUTH_FACING;
+        else if (direction == Direction.SOUTH) {
+            return WeaverBlock.SOUTH_SHAPE;
         }
-        if (direction == Direction.WEST) {
-            return WeaverBlock.WEST_FACING;
+        else if (direction == Direction.WEST) {
+            return WeaverBlock.WEST_SHAPE;
         }
-        return WeaverBlock.EAST_FACING;
+        else if (direction == Direction.EAST) {
+        	return WeaverBlock.EAST_SHAPE;
+        }
+        else {
+        	return WeaverBlock.NORTH_SHAPE;
+        }
     }
-    
-	public boolean useShapeForLightOcclusion(BlockState state) {
-		return true;
-	}
-	
-	public RenderShape getRenderShape(BlockState state) {
-		return RenderShape.MODEL;
-	}
-	
-	public BlockState rotate(BlockState state, Rotation rotation) {
-		return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
-	}
-	
-	@SuppressWarnings("deprecation")
-	public BlockState mirror(BlockState state, Mirror mirror) {
-		return state.rotate(mirror.getRotation(state.getValue(FACING)));
-	}
-	
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING);
-	}
-	
-	public boolean isPathfindable(BlockState state, BlockGetter getter, BlockPos pos, PathComputationType coputation) {
-		return false;
-	}
 }

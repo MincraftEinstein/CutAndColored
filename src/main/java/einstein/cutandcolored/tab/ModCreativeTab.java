@@ -18,7 +18,7 @@ public class ModCreativeTab extends CreativeModeTab
     }
     
     public ResourceLocation getBackgroundImage() {
-    	if(ModConfigs.CREATIVESEARCHBAR.get()) {
+    	if (ModConfigs.CREATIVESEARCHBAR.get()) {
     		return new ResourceLocation(CutAndColored.MODID, "textures/gui/container/creative_inventory/tab_cutandcolored_item_search.png");
     	}
     	else {
