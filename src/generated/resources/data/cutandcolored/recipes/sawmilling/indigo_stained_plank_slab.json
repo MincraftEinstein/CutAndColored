@@ -1,8 +1,0 @@
-{
-  "type": "cutandcolored:sawmilling",
-  "ingredient": {
-    "item": "cutandcolored:indigo_stained_planks"
-  },
-  "result": "cutandcolored:indigo_stained_plank_slab",
-  "count": 2
-}

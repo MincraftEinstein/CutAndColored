@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "side": "cutandcolored:block/forest_green_stained_planks",
-    "bottom": "cutandcolored:block/forest_green_stained_planks",
-    "top": "cutandcolored:block/forest_green_stained_planks"
-  }
-}

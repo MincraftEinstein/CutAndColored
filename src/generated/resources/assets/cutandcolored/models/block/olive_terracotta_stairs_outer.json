@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "side": "flamboyant:block/olive_terracotta",
-    "bottom": "flamboyant:block/olive_terracotta",
-    "top": "flamboyant:block/olive_terracotta"
-  }
-}

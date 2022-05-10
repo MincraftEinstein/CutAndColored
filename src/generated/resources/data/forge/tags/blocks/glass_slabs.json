@@ -2,10 +2,6 @@
   "replace": false,
   "values": [
     "cutandcolored:glass_slab",
-    "#cutandcolored:vanilla_stained_glass_slabs",
-    {
-      "id": "#cutandcolored:flamboyant_stained_glass_slabs",
-      "required": false
-    }
+    "#cutandcolored:vanilla_stained_glass_slabs"
   ]
 }

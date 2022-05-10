@@ -41,7 +41,7 @@ public class RecipeResources extends RecipeProvider {
 		}
 	}
 	
-	protected static ResourceLocation ModRL(String string) {
+	protected static ResourceLocation modRL(String string) {
 		return new ResourceLocation(CutAndColored.MODID, string);
 	}
 	
@@ -49,16 +49,12 @@ public class RecipeResources extends RecipeProvider {
 		return new ResourceLocation(CutAndColored.MCMODID, string);
 	}
 	
-	protected static ResourceLocation FRL(String string) {
-		return new ResourceLocation(CutAndColored.FMODID, string);
-	}
-	
 	protected static ResourceLocation location(String name, String folder) {
-		return ModRL(folder + name);
+		return modRL(folder + name);
 	}
 
 	protected static ResourceLocation location(ItemLike item, String folder) {
-		return ModRL(folder + Objects.requireNonNull(item.asItem().getRegistryName().getPath()));
+		return modRL(folder + Objects.requireNonNull(item.asItem().getRegistryName().getPath()));
 	}
 	
 	protected static void smeltingRecipe(ItemLike ingredient, ItemLike result, float experience, int cookTime) {
@@ -346,13 +342,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void recolorObject(TagKey<Item> ingredients, ItemLike result, String color, String group) {
-		Item dye;
-		try {
-			dye = getItem(MCRL(color + "_dye"));
-		}
-		catch (Exception e) {
-			dye = getItem(FRL(color + "_dye"));
-		}
+		Item dye = getItem(MCRL(color + "_dye"));
 		ShapedRecipeBuilder.shaped(result, 8)
 			.pattern("###")
 			.pattern("#$#")
@@ -365,13 +355,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void recolorObject(TagKey<Item> ingredients, ItemLike result, String color, String group, String modid) {
-		Item dye;
-		try {
-			dye = getItem(MCRL(color + "_dye"));
-		}
-		catch (Exception e) {
-			dye = getItem(FRL(color + "_dye"));
-		}
+		Item dye = getItem(MCRL(color + "_dye"));
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid))
 		.addRecipe(ShapedRecipeBuilder.shaped(result, 8)
 			.pattern("###")

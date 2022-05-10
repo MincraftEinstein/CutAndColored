@@ -2,9 +2,7 @@ package einstein.cutandcolored.data;
 
 import java.util.function.Consumer;
 
-import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.item.FlamboyantDyeColors;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.DyeColor;
@@ -20,9 +18,39 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
 		
-		vanillaColoredRecipes();
-		flamboyantColoredRecipes();
-		stoneBrickTypeRecipes();
+		for (int i = 0; i < DyeColor.values().length; i++) {
+			String color = DyeColor.byId(i).getName();
+			
+			String type = color + "_concrete";
+			stonecuttingRecipe(type + "_slab", getItem(MCRL(type)), getItem(modRL(type + "_slab")), 2);
+			stonecuttingRecipe(type + "_stairs", getItem(MCRL(type)), getItem(modRL(type + "_stairs")));
+			
+			type = color + "_stained_brick";
+			stonecuttingRecipe(type + "_slab", getItem(modRL(type + "s")), getItem(modRL(type + "_slab")), 2);
+			stonecuttingRecipe(type + "_stairs", getItem(modRL(type + "s")), getItem(modRL(type + "_stairs")));
+			stonecuttingRecipe(type + "_wall", getItem(modRL(type + "s")), getItem(modRL(type + "_wall")));
+			
+			type = color + "_terracotta";
+			stonecuttingRecipe(type + "_slab", getItem(MCRL(type)), getItem(modRL(type + "_slab")), 2);
+			stonecuttingRecipe(type + "_stairs", getItem(MCRL(type)), getItem(modRL(type + "_stairs")));
+		}
+		
+		String[] stoneTypes = {"andesite", "diorite", "granite"};
+		for (int i = 0; i < stoneTypes.length; i++) {
+			String type = stoneTypes[i];
+			
+			stonecuttingRecipe(type + "_bricks", getItem(MCRL(type)), getItem(modRL(type + "_bricks")));
+			stonecuttingRecipe(type + "_bricks_from_polished", getItem(MCRL("polished_" + type)), getItem(modRL(type + "_bricks")));
+			stonecuttingRecipe(type + "_brick_slab", getItem(MCRL(type)), getItem(modRL(type + "_brick_slab")), 2);
+			stonecuttingRecipe(type + "_brick_slab_from_polished", getItem(MCRL("polished_" + type)), getItem(modRL(type + "_brick_slab")), 2);
+			stonecuttingRecipe(type + "_brick_slab_from_bricks", getItem(modRL(type + "_bricks")), getItem(modRL(type + "_brick_slab")), 2);
+			stonecuttingRecipe(type + "_brick_stairs", getItem(MCRL(type)), getItem(modRL(type + "_brick_stairs")));
+			stonecuttingRecipe(type + "_brick_stairs_from_polished", getItem(MCRL("polished_" + type)), getItem(modRL(type + "_brick_stairs")));
+			stonecuttingRecipe(type + "_brick_stairs_from_bricks", getItem(modRL(type + "_bricks")), getItem(modRL(type + "_brick_stairs")));
+			stonecuttingRecipe(type + "_brick_wall", getItem(MCRL(type)), getItem(modRL(type + "_brick_wall")));
+			stonecuttingRecipe(type + "_brick_wall_from_polished", getItem(MCRL("polished_" + type)), getItem(modRL(type + "_brick_wall")));
+			stonecuttingRecipe(type + "_brick_wall_from_bricks", getItem(modRL(type + "_bricks")), getItem(modRL(type + "_brick_wall")));
+		}
 		
 		stonecuttingRecipe("chiseled_end_stone_bricks", Blocks.END_STONE, ModBlocks.CHISELED_END_STONE_BRICKS.get());
 		stonecuttingRecipe("chiseled_end_stone_bricks_from_end_stone_bricks", Blocks.END_STONE_BRICKS, ModBlocks.CHISELED_END_STONE_BRICKS.get());
@@ -66,63 +94,6 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 		stonecuttingRecipe("raw_gold_stairs", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_STAIRS.get());
 		stonecuttingRecipe("raw_copper_slab", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_SLAB.get(), 2);
 		stonecuttingRecipe("raw_copper_stairs", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_STAIRS.get());
-	}
-	
-	private void vanillaColoredRecipes() {
-		for (int i = 0; i < DyeColor.values().length; i++) {
-			String color = DyeColor.byId(i).getName();
-			
-			String type = color + "_concrete";
-			stonecuttingRecipe(type + "_slab", getItem(MCRL(type)), getItem(ModRL(type + "_slab")), 2);
-			stonecuttingRecipe(type + "_stairs", getItem(MCRL(type)), getItem(ModRL(type + "_stairs")));
-			
-			type = color + "_stained_brick";
-			stonecuttingRecipe(type + "_slab", getItem(ModRL(type + "s")), getItem(ModRL(type + "_slab")), 2);
-			stonecuttingRecipe(type + "_stairs", getItem(ModRL(type + "s")), getItem(ModRL(type + "_stairs")));
-			stonecuttingRecipe(type + "_wall", getItem(ModRL(type + "s")), getItem(ModRL(type + "_wall")));
-			
-			type = color + "_terracotta";
-			stonecuttingRecipe(type + "_slab", getItem(MCRL(type)), getItem(ModRL(type + "_slab")), 2);
-			stonecuttingRecipe(type + "_stairs", getItem(MCRL(type)), getItem(ModRL(type + "_stairs")));
-		}
-	}
-	
-	private void flamboyantColoredRecipes() {
-		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
-			String color = FlamboyantDyeColors.byId(i).getName();
-			
-			String type = color + "_concrete";
-			stonecuttingRecipe(type + "_slab", getItem(FRL(type)), getItem(ModRL(type + "_slab")), 2, CutAndColored.FMODID);
-			stonecuttingRecipe(type + "_stairs", getItem(FRL(type)), getItem(ModRL(type + "_stairs")), 1, CutAndColored.FMODID);
-			
-			type = color + "_stained_brick";
-			stonecuttingRecipe(type + "_slab", getItem(ModRL(type + "s")), getItem(ModRL(type + "_slab")), 2);
-			stonecuttingRecipe(type + "_stairs", getItem(ModRL(type + "s")), getItem(ModRL(type + "_stairs")), 1);
-			stonecuttingRecipe(type + "_wall", getItem(ModRL(type + "s")), getItem(ModRL(type + "_wall")), 1);
-			
-			type = color + "_terracotta";
-			stonecuttingRecipe(type + "_slab", getItem(FRL(type)), getItem(ModRL(type + "_slab")), 2, CutAndColored.FMODID);
-			stonecuttingRecipe(type + "_stairs", getItem(FRL(type)), getItem(ModRL(type + "_stairs")), 1, CutAndColored.FMODID);
-		}
-	}
-	
-	private void stoneBrickTypeRecipes() {
-		String[] stoneTypes = {"andesite", "diorite", "granite"};
-		for (int i = 0; i < stoneTypes.length; i++) {
-			String type = stoneTypes[i];
-			
-			stonecuttingRecipe(type + "_bricks", getItem(MCRL(type)), getItem(ModRL(type + "_bricks")));
-			stonecuttingRecipe(type + "_bricks_from_polished", getItem(MCRL("polished_" + type)), getItem(ModRL(type + "_bricks")));
-			stonecuttingRecipe(type + "_brick_slab", getItem(MCRL(type)), getItem(ModRL(type + "_brick_slab")), 2);
-			stonecuttingRecipe(type + "_brick_slab_from_polished", getItem(MCRL("polished_" + type)), getItem(ModRL(type + "_brick_slab")), 2);
-			stonecuttingRecipe(type + "_brick_slab_from_bricks", getItem(ModRL(type + "_bricks")), getItem(ModRL(type + "_brick_slab")), 2);
-			stonecuttingRecipe(type + "_brick_stairs", getItem(MCRL(type)), getItem(ModRL(type + "_brick_stairs")));
-			stonecuttingRecipe(type + "_brick_stairs_from_polished", getItem(MCRL("polished_" + type)), getItem(ModRL(type + "_brick_stairs")));
-			stonecuttingRecipe(type + "_brick_stairs_from_bricks", getItem(ModRL(type + "_bricks")), getItem(ModRL(type + "_brick_stairs")));
-			stonecuttingRecipe(type + "_brick_wall", getItem(MCRL(type)), getItem(ModRL(type + "_brick_wall")));
-			stonecuttingRecipe(type + "_brick_wall_from_polished", getItem(MCRL("polished_" + type)), getItem(ModRL(type + "_brick_wall")));
-			stonecuttingRecipe(type + "_brick_wall_from_bricks", getItem(ModRL(type + "_bricks")), getItem(ModRL(type + "_brick_wall")));
-		}
 	}
 	
 	@Override

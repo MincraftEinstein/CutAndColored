@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
-import einstein.cutandcolored.item.FlamboyantDyeColors;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
@@ -133,11 +132,6 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			String name = DyeColor.byId(i).getName() + "_stained_glass_window";
-			generatedItem(name + "_pane", blockRL(name));
-		}
-		
-		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
-			String name = FlamboyantDyeColors.byId(i).getName() + "_stained_glass_window";
 			generatedItem(name + "_pane", blockRL(name));
 		}
 		

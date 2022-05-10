@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "side": "flamboyant:block/slate_gray_concrete",
-    "bottom": "flamboyant:block/slate_gray_concrete",
-    "top": "flamboyant:block/slate_gray_concrete"
-  }
-}

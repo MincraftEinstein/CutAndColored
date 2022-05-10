@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#cutandcolored:vanilla_concrete_slabs",
-    {
-      "id": "#cutandcolored:flamboyant_concrete_slabs",
-      "required": false
-    }
+    "#cutandcolored:vanilla_concrete_slabs"
   ]
 }

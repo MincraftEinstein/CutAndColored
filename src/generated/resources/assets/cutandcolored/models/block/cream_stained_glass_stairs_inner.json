@@ -1,8 +1,0 @@
-{
-  "parent": "cutandcolored:block/bordered_inner_stairs",
-  "textures": {
-    "side": "flamboyant:block/cream_stained_glass",
-    "top": "flamboyant:block/cream_stained_glass",
-    "bottom": "flamboyant:block/cream_stained_glass"
-  }
-}

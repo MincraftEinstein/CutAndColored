@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "cutandcolored:block/sky_blue_stained_glass_window"
-  }
-}

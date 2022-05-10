@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.Blocks;
 
 public class SmeltingRecipeGenerator extends RecipeResources {
 
-	public SmeltingRecipeGenerator(DataGenerator generatorIn) {
-		super(generatorIn);
+	public SmeltingRecipeGenerator(DataGenerator generator) {
+		super(generator);
 	}
 	
 	@Override

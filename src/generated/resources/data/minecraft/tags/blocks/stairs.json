@@ -5,10 +5,6 @@
     "#forge:glass_stairs",
     "#forge:terracotta_stairs",
     "#forge:wool_stairs",
-    {
-      "id": "#cutandcolored:flamboyant_plank_stairs",
-      "required": false
-    },
     "cutandcolored:smooth_stone_stairs",
     "cutandcolored:cracked_stone_brick_stairs",
     "cutandcolored:cracked_polished_blackstone_brick_stairs",

@@ -2,10 +2,6 @@
   "replace": false,
   "values": [
     "minecraft:brick_slab",
-    "#cutandcolored:vanilla_stained_brick_slabs",
-    {
-      "id": "#cutandcolored:flamboyant_stained_brick_slabs",
-      "required": false
-    }
+    "#cutandcolored:vanilla_stained_brick_slabs"
   ]
 }

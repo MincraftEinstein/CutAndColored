@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#cutandcolored:vanilla_stained_glass_windows",
-    {
-      "id": "#cutandcolored:flamboyant_stained_glass_windows",
-      "required": false
-    }
+    "#cutandcolored:vanilla_stained_glass_windows"
   ]
 }

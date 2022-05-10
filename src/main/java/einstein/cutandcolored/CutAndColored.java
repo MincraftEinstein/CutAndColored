@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import einstein.cutandcolored.client.PropertyEvents;
-import einstein.cutandcolored.init.FlamboyantBlocks;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.init.ModConfigs;
 import einstein.cutandcolored.init.ModMenuTypes;
@@ -33,8 +32,6 @@ public class CutAndColored
 		
 		ModBlocks.ITEMS.register(modEventBus);
 		ModBlocks.BLOCKS.register(modEventBus);
-		FlamboyantBlocks.ITEMS.register(modEventBus);
-		FlamboyantBlocks.BLOCKS.register(modEventBus);
 		ModMenuTypes.MENUS.register(modEventBus);
 		ModRecipeTypes.RECIPE_SERIALIZERS.register(modEventBus);
 		MinecraftForge.EVENT_BUS.register(new PropertyEvents());

@@ -5,10 +5,6 @@
     "#forge:glass_slabs",
     "#forge:terracotta_slabs",
     "#forge:wool_slabs",
-    {
-      "id": "#cutandcolored:flamboyant_plank_slabs",
-      "required": false
-    },
     "cutandcolored:cracked_stone_brick_slab",
     "cutandcolored:cracked_polished_blackstone_brick_slab",
     "cutandcolored:cracked_nether_brick_slab",

@@ -6,7 +6,6 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
-import einstein.cutandcolored.item.FlamboyantDyeColors;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
@@ -24,16 +23,21 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 	private List<String[]> woodTypes = new ArrayList<String[]>();
 	private String namespace;
 	
-	public SawmillingRecipesGenerator(DataGenerator generatorIn) {
-		super(generatorIn);
+	public SawmillingRecipesGenerator(DataGenerator generator) {
+		super(generator);
 	}
 	
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
-		pumpkinRecipes();
-		vanillaColoredWoodRecipes();
-		flamboyantColoredWoodRecipes();
+		for (int i = 0; i < DyeColor.values().length; i++) {
+			String color = DyeColor.byId(i).getName();
+			Item item = getItem(modRL(color + "_stained_planks"));
+			
+			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(modRL(color + "_stained_plank_slab")), 2);
+			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(modRL(color + "_stained_plank_stairs")));
+		}
+		
 		woodRecipes();
 		
 		sawmillingRecipe("bowl_from_logs", ItemTags.LOGS, Items.BOWL, 4);
@@ -42,38 +46,6 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 		sawmillingRecipe("sticks_from_logs", ItemTags.LOGS, Items.STICK, 16);
 		sawmillingRecipe("sticks_from_planks", ItemTags.PLANKS, Items.STICK, 4);
 		sawmillingRecipe("carved_pumpkin", Blocks.PUMPKIN, Blocks.CARVED_PUMPKIN);
-	}
-	
-	private void pumpkinRecipes() {
-//		for (int i = 0; i < 24; i++) {
-//			int i1 = i + 1;
-//			Item item = getItem(new ResourceLocation("omgourd", "carved_pumpkin_" + i1));
-//			sawmillingRecipe("carved_pumpkin_" + i1, Blocks.PUMPKIN, item);
-//			sawmillingRecipe("recarve_pumpkin_" + i1, ItemTagsGenerator.CARVED_PUMPKINS, item, 1);
-//			
-//			item = getItem(new ResourceLocation("omgourd", "jack_o_lantern_" + i1));
-//			sawmillingRecipe("recave_jack_o_lantern_" + i1, ItemTagsGenerator.JACK_O_LANTERNS, item, 1);
-//		}
-	}
-	
-	private void vanillaColoredWoodRecipes() {
-		for (int i = 0; i < DyeColor.values().length; i++) {
-			String color = DyeColor.byId(i).getName();
-			Item item = getItem(ModRL(color + "_stained_planks"));
-			
-			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")), 2);
-			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
-		}
-	}
-	
-	private void flamboyantColoredWoodRecipes() {
-		for (int i = 0; i < FlamboyantDyeColors.values().length; i++) {
-			String color = FlamboyantDyeColors.byId(i).getName();
-			Item item = getItem(ModRL(color + "_stained_planks"));
-			
-			sawmillingRecipe(color + "_stained_plank_slab", item, getItem(ModRL(color + "_stained_plank_slab")), 2);
-			sawmillingRecipe(color + "_stained_plank_stairs", item, getItem(ModRL(color + "_stained_plank_stairs")));
-		}
 	}
 	
 	private void woodRecipes() {
