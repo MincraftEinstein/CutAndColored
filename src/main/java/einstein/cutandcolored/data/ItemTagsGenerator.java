@@ -56,6 +56,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	public static final TagKey<Item> STAINED_PLANKS = forgeCreate("stained_planks");
 	public static final TagKey<Item> GLASS_WINDOWS = forgeCreate("glass_windows");
 	public static final TagKey<Item> TINTED_GLASS = forgeCreate("glass/tinted");
+	public static final TagKey<Item> BOARDS = forgeCreate("boards");
 	
 	public static final TagKey<Item> CLAY_BRICK_SLABS = forgeCreate("clay_brick_slabs");
 	public static final TagKey<Item> CONCRETE_SLABS = forgeCreate("concrete_slabs");
@@ -92,7 +93,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		vanillaDyedTags();
 		
 		/**********************Minecraft***********************/
-		tag(ItemTags.PLANKS).addTag(STAINED_PLANKS);
+		tag(ItemTags.PLANKS).addTags(STAINED_PLANKS);
 		tag(ItemTags.SLABS).addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS)
 				.add(ModBlocks.CRACKED_STONE_BRICK_SLAB.get().asItem(),
 						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get().asItem(),
@@ -124,6 +125,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 				ModBlocks.QUARTZ_BRICK_WALL.get().asItem(), ModBlocks.CALCITE_WALL.get().asItem(), ModBlocks.TUFF_WALL.get().asItem());
 		tag(ItemTags.WOODEN_SLABS).addTag(STAINED_PLANK_SLABS);
 		tag(ItemTags.WOODEN_STAIRS).addTag(STAINED_PLANK_STAIRS);
+		tag(ItemTags.NON_FLAMMABLE_WOOD).add(ModBlocks.CRIMSON_BOARDS.get().asItem(), ModBlocks.WARPED_BOARDS.get().asItem());
 		
 		/**********************Forge***********************/
 		tag(CLAY_BRICK_SLABS).add(Items.BRICK_SLAB).addTag(VANILLA_STAINED_BRICK_SLABS);
@@ -151,6 +153,9 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(SOUL_GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.get().asItem(), ModBlocks.SOUL_GLASS_WINDOW_PANE.get().asItem());
 		tag(TINTED_GLASS).add(Blocks.TINTED_GLASS.asItem(), ModBlocks.TINTED_GLASS_WINDOW.get().asItem());
 		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.get().asItem(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get().asItem());
+		tag(BOARDS).add(ModBlocks.OAK_BOARDS.get().asItem(), ModBlocks.SPRUCE_BOARDS.get().asItem(), ModBlocks.BIRCH_BOARDS.get().asItem(),
+				ModBlocks.JUNGLE_BOARDS.get().asItem(), ModBlocks.ACACIA_BOARDS.get().asItem(), ModBlocks.DARK_OAK_BOARDS.get().asItem(),
+				ModBlocks.CRIMSON_BOARDS.get().asItem(), ModBlocks.WARPED_BOARDS.get().asItem());
 		
 		tag(Tags.Items.GLASS_COLORLESS).add(ModBlocks.GLASS_WINDOW.get().asItem());
 		tag(Tags.Items.GLASS_PANES_COLORLESS).add(ModBlocks.GLASS_WINDOW_PANE.get().asItem());

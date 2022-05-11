@@ -59,9 +59,9 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			Item log;
 			Item wood;
 			Item bars;
-			Item crossed_bars;
-			Item horizontal_bars;
-			Item horizontal_crossed_bars;
+			Item crossedBars;
+			Item horizontalBars;
+			Item horizontalCrossedBars;
 			Item planks = getItem(RL(woodName + "_planks"));
 			Item stairs = getItem(RL(woodName + "_stairs"));
 			Item slab = getItem(RL(woodName + "_slab"));
@@ -114,30 +114,37 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			}
 			
 			try {
+				sawmillingRecipe(woodName + "_boards_from" + s, logTypes, getItem(new ResourceLocation(CutAndColored.MODID, woodName + "_boards")), 4);
+				sawmillingRecipe(woodName + "_boards", planks, getItem(new ResourceLocation(CutAndColored.MODID, woodName + "_boards")), 1);
+			}
+			catch(Exception e) {
+			}
+			
+			try {
 				bars = getItem(new ResourceLocation("additionalbars", woodName + "_bars"));
-				horizontal_bars = getItem(new ResourceLocation("additionalbars", "horizontal_" + woodName + "_bars"));
-				horizontal_crossed_bars = getItem(new ResourceLocation("additionalbars", "horizontal_crossed_" + woodName + "_bars"));
-				crossed_bars = getItem(new ResourceLocation("additionalbars", "crossed_" + woodName + "_bars"));
+				horizontalBars = getItem(new ResourceLocation("additionalbars", "horizontal_" + woodName + "_bars"));
+				horizontalCrossedBars = getItem(new ResourceLocation("additionalbars", "horizontal_crossed_" + woodName + "_bars"));
+				crossedBars = getItem(new ResourceLocation("additionalbars", "crossed_" + woodName + "_bars"));
 			}
 			catch (Exception e) {
 				bars = getItem(new ResourceLocation("additionalbarsbop", woodName + "_bars"));
-				horizontal_bars = getItem(new ResourceLocation("additionalbarsbop", "horizontal_" + woodName + "_bars"));
-				horizontal_crossed_bars = getItem(new ResourceLocation("additionalbarsbop", "horizontal_crossed_" + woodName + "_bars"));
-				crossed_bars = getItem(new ResourceLocation("additionalbarsbop", "crossed_" + woodName + "_bars"));
+				horizontalBars = getItem(new ResourceLocation("additionalbarsbop", "horizontal_" + woodName + "_bars"));
+				horizontalCrossedBars = getItem(new ResourceLocation("additionalbarsbop", "horizontal_crossed_" + woodName + "_bars"));
+				crossedBars = getItem(new ResourceLocation("additionalbarsbop", "crossed_" + woodName + "_bars"));
 			}
 			
 			try {
 				sawmillingRecipe(woodName + "_bars", logTypes, bars, 2);
-				sawmillingRecipe(woodName + "_bars_from_bars", bars, 1, horizontal_bars, horizontal_crossed_bars, crossed_bars);
+				sawmillingRecipe(woodName + "_bars_from_bars", bars, 1, horizontalBars, horizontalCrossedBars, crossedBars);
 				
-				sawmillingRecipe("crossed_" + woodName + "_bars", logTypes, crossed_bars, 2);
-				sawmillingRecipe("crossed_" + woodName + "_bars_from_bars", crossed_bars, 1, horizontal_bars, horizontal_crossed_bars, bars);
+				sawmillingRecipe("crossed_" + woodName + "_bars", logTypes, crossedBars, 2);
+				sawmillingRecipe("crossed_" + woodName + "_bars_from_bars", crossedBars, 1, horizontalBars, horizontalCrossedBars, bars);
 				
-				sawmillingRecipe("horizontal_" + woodName + "_bars", logTypes, horizontal_bars, 2);
-				sawmillingRecipe("horizontal_" + woodName + "_bars_from_bars", horizontal_bars, 1, horizontal_crossed_bars, bars, crossed_bars);
+				sawmillingRecipe("horizontal_" + woodName + "_bars", logTypes, horizontalBars, 2);
+				sawmillingRecipe("horizontal_" + woodName + "_bars_from_bars", horizontalBars, 1, horizontalCrossedBars, bars, crossedBars);
 				
-				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars", logTypes, horizontal_crossed_bars, 2);
-				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars_from_bars", horizontal_crossed_bars, 1, horizontal_bars, bars, crossed_bars);
+				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars", logTypes, horizontalCrossedBars, 2);
+				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars_from_bars", horizontalCrossedBars, 1, horizontalBars, bars, crossedBars);
 			}
 			catch (Exception e) {
 			}

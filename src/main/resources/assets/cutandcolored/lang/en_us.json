@@ -429,6 +429,16 @@
     // WALLS
     "block.cutandcolored.soul_sandstone_wall": "Soul Sandstone Wall",
     
+    /**********************WOOD_BOARDS**********************/
+    "block.cutandcolored.oak_boards": "Oak Boards",
+    "block.cutandcolored.spruce_boards": "Spruce Boards",
+    "block.cutandcolored.birch_boards": "Birch Boards",
+    "block.cutandcolored.jungle_boards": "Jungle Boards",
+    "block.cutandcolored.acacia_boards": "Acacia Boards",
+    "block.cutandcolored.dark_oak_boards": "Dark Oak Boards",
+    "block.cutandcolored.crimson_boards": "Crimson Boards",
+    "block.cutandcolored.warped_boards": "Warped Boards",
+    
     /**********************MISC_BLOCKS**********************/
     // FULL BLOCKS
     "block.cutandcolored.chiseled_prismarine_bricks": "Chiseled Prismarine Bricks",

@@ -92,16 +92,16 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.SOUL_GLASS_SLAB.get());
 		blockItemModel(ModBlocks.TINTED_GLASS_SLAB.get());
 		
-		wallInventory("soul_sandstone_wall", new ResourceLocation(CutAndColored.MODID, "block/soul_sandstone_side"));
+		wallInventory("soul_sandstone_wall", blockRL("soul_sandstone_side"));
 		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.SOUL_SANDSTONE_WALL.get()));
-		wallInventory("purpur_wall", new ResourceLocation(CutAndColored.MCMODID, "block/purpur_block"));
+		wallInventory("purpur_wall", blockMCRL("purpur_block"));
 		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.PURPUR_WALL.get()));
 		
-		generatedItem("soul_glass_pane", new ResourceLocation(CutAndColored.MODID, "block/soul_glass"));
-		generatedItem("tinted_glass_pane", new ResourceLocation(CutAndColored.MCMODID, "block/tinted_glass"));
-		generatedItem("glass_window_pane", new ResourceLocation(CutAndColored.MODID, "block/glass_window"));
-		generatedItem("soul_glass_window_pane", new ResourceLocation(CutAndColored.MODID, "block/soul_glass_window"));
-		generatedItem("tinted_glass_window_pane", new ResourceLocation(CutAndColored.MODID, "block/tinted_glass_window"));
+		generatedItem("soul_glass_pane", blockRL("soul_glass"));
+		generatedItem("tinted_glass_pane", blockMCRL("tinted_glass"));
+		generatedItem("glass_window_pane", blockRL("glass_window"));
+		generatedItem("soul_glass_window_pane", blockRL("soul_glass_window"));
+		generatedItem("tinted_glass_window_pane", blockRL("tinted_glass_window"));
 		
 		blockItemModel(ModBlocks.PRISMARINE_BRICK_PILLAR.get());
 		blockItemModel(ModBlocks.POLISHED_BLACKSTONE_PILLAR.get());
@@ -109,6 +109,15 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		
 		blockItemModel(ModBlocks.NETHER_BRICK_FENCE_GATE.get());
 		blockItemModel(ModBlocks.IRON_FENCE_GATE.get());
+		
+		blockItemModel(ModBlocks.OAK_BOARDS.get());
+		blockItemModel(ModBlocks.SPRUCE_BOARDS.get());
+		blockItemModel(ModBlocks.BIRCH_BOARDS.get());
+		blockItemModel(ModBlocks.JUNGLE_BOARDS.get());
+		blockItemModel(ModBlocks.ACACIA_BOARDS.get());
+		blockItemModel(ModBlocks.DARK_OAK_BOARDS.get());
+		blockItemModel(ModBlocks.CRIMSON_BOARDS.get());
+		blockItemModel(ModBlocks.WARPED_BOARDS.get());
 		
 		for (int i = 0; i < wallBlocks.size(); i++) {
 			String name = wallBlocks.get(i).getRegistryName().getPath();
@@ -142,13 +151,13 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 	
 	private void blockItemModel(Block block) {
 		String name = block.getRegistryName().getPath();
-		getBuilder(name).parent(getExistingFile(new ResourceLocation(CutAndColored.MODID, "block/" + name)));
+		getBuilder(name).parent(getExistingFile(blockRL(name)));
 	}
 	
 	@SuppressWarnings("unused")
 	private void blockItemModel(Block block, String parentName) {
 		String name = block.getRegistryName().getPath();
-		getBuilder(name).parent(getExistingFile(new ResourceLocation(CutAndColored.MODID, "block/" + parentName)));
+		getBuilder(name).parent(getExistingFile(blockRL(parentName)));
 	}
 	
 	private ItemModelBuilder generatedItem(String name, ResourceLocation... layers) {

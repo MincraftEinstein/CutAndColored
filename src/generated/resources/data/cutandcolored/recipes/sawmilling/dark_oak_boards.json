@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": {
+    "item": "minecraft:dark_oak_planks"
+  },
+  "result": "cutandcolored:dark_oak_boards",
+  "count": 1
+}

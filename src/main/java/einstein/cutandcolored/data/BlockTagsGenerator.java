@@ -53,6 +53,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	public static final TagKey<Block> STAINED_PLANKS = forgeCreate("stained_planks");
 	public static final TagKey<Block> GLASS_WINDOWS = forgeCreate("glass_windows");
 	public static final TagKey<Block> TINTED_GLASS = forgeCreate("glass/tinted");
+	public static final TagKey<Block> BOARDS = forgeCreate("boards");
 	
 	public static final TagKey<Block> CLAY_BRICK_SLABS = forgeCreate("clay_brick_slabs");
 	public static final TagKey<Block> CONCRETE_SLABS = forgeCreate("concrete_slabs");
@@ -90,7 +91,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 		
 		/**********************Minecraft***********************/
 		tag(BlockTags.IMPERMEABLE).add(ModBlocks.SOUL_GLASS.get()).addTags(GLASS_SLABS, GLASS_STAIRS, GLASS_WINDOWS);
-		tag(BlockTags.PLANKS).addTag(STAINED_PLANKS);
+		tag(BlockTags.PLANKS).addTags(STAINED_PLANKS);
 		tag(BlockTags.SLABS).addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS)
 				.add(ModBlocks.CRACKED_STONE_BRICK_SLAB.get(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(),
 						ModBlocks.CRACKED_NETHER_BRICK_SLAB.get(), ModBlocks.SOUL_SANDSTONE_SLAB.get(),
@@ -142,8 +143,9 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 						ModBlocks.RAW_GOLD_STAIRS.get(), ModBlocks.RAW_COPPER_SLAB.get(), ModBlocks.RAW_COPPER_STAIRS.get(),
 						ModBlocks.SOUL_GLASS_STAIRS.get(), ModBlocks.SOUL_GLASS_SLAB.get())
 				.addOptional(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get().getRegistryName());
-		tag(BlockTags.MINEABLE_WITH_AXE).addTags(STAINED_PLANK_SLABS, STAINED_PLANK_STAIRS, STAINED_PLANKS)
+		tag(BlockTags.MINEABLE_WITH_AXE).addTags(STAINED_PLANK_SLABS, STAINED_PLANK_STAIRS, STAINED_PLANKS, BOARDS)
 				.add(ModBlocks.WEAVER.get(), ModBlocks.SAWMILL.get());
+		tag(BlockTags.NON_FLAMMABLE_WOOD).add(ModBlocks.CRIMSON_BOARDS.get(), ModBlocks.WARPED_BOARDS.get());
 		
 		/**********************Forge***********************/
 		tag(CLAY_BRICK_SLABS).add(Blocks.BRICK_SLAB).addTag(VANILLA_STAINED_BRICK_SLABS);
@@ -171,6 +173,9 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 		tag(SOUL_GLASS_PANES).add(ModBlocks.SOUL_GLASS_PANE.get(), ModBlocks.SOUL_GLASS_WINDOW_PANE.get());
 		tag(TINTED_GLASS).add(Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_WINDOW.get());
 		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.get(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get());
+		tag(BOARDS).add(ModBlocks.OAK_BOARDS.get(), ModBlocks.SPRUCE_BOARDS.get(), ModBlocks.BIRCH_BOARDS.get(),
+				ModBlocks.JUNGLE_BOARDS.get(), ModBlocks.ACACIA_BOARDS.get(), ModBlocks.DARK_OAK_BOARDS.get(),
+				ModBlocks.CRIMSON_BOARDS.get(), ModBlocks.WARPED_BOARDS.get());
 		
 		tag(Tags.Blocks.GLASS_COLORLESS).add(ModBlocks.GLASS_WINDOW.get());
 		tag(Tags.Blocks.GLASS_PANES_COLORLESS).add(ModBlocks.GLASS_WINDOW_PANE.get());

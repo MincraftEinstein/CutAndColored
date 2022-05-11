@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "cutandcolored:oak_boards",
+    "cutandcolored:spruce_boards",
+    "cutandcolored:birch_boards",
+    "cutandcolored:jungle_boards",
+    "cutandcolored:acacia_boards",
+    "cutandcolored:dark_oak_boards",
+    "cutandcolored:crimson_boards",
+    "cutandcolored:warped_boards"
+  ]
+}

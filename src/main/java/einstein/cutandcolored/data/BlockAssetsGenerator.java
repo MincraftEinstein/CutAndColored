@@ -86,6 +86,14 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		simpleBlock(ModBlocks.SOUL_GLASS.get());
 		simpleBlock(ModBlocks.POLISHED_END_STONE.get());
 		simpleBlock(ModBlocks.POLISHED_STONE.get());
+		simpleBlock(ModBlocks.OAK_BOARDS.get());
+		simpleBlock(ModBlocks.SPRUCE_BOARDS.get());
+		simpleBlock(ModBlocks.BIRCH_BOARDS.get());
+		simpleBlock(ModBlocks.JUNGLE_BOARDS.get());
+		simpleBlock(ModBlocks.ACACIA_BOARDS.get());
+		simpleBlock(ModBlocks.DARK_OAK_BOARDS.get());
+		simpleBlock(ModBlocks.CRIMSON_BOARDS.get());
+		simpleBlock(ModBlocks.WARPED_BOARDS.get());
 		
 		stairsBlock((StairBlock) ModBlocks.TERRACOTTA_STAIRS.get(), blockMCRL("terracotta"));
 		stairsBlock((StairBlock) ModBlocks.GRANITE_BRICK_STAIRS.get(), blockRL("granite_bricks"));
