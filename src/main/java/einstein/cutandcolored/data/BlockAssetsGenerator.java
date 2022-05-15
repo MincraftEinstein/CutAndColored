@@ -86,6 +86,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		simpleBlock(ModBlocks.SOUL_GLASS.get());
 		simpleBlock(ModBlocks.POLISHED_END_STONE.get());
 		simpleBlock(ModBlocks.POLISHED_STONE.get());
+		
 		simpleBlock(ModBlocks.OAK_BOARDS.get());
 		simpleBlock(ModBlocks.SPRUCE_BOARDS.get());
 		simpleBlock(ModBlocks.BIRCH_BOARDS.get());
@@ -112,6 +113,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		stairsBlock((StairBlock) ModBlocks.RAW_IRON_STAIRS.get(), blockMCRL("raw_iron_block"));
 		stairsBlock((StairBlock) ModBlocks.RAW_GOLD_STAIRS.get(), blockMCRL("raw_gold_block"));
 		stairsBlock((StairBlock) ModBlocks.RAW_COPPER_STAIRS.get(), blockMCRL("raw_copper_block"));
+		stairsBlock((StairBlock) ModBlocks.OBSIDIAN_BRICK_STAIRS.get(), blockRL("obsidian_bricks"));
 		
 		slabBlock((SlabBlock) ModBlocks.TERRACOTTA_SLAB.get(), blockMCRL("terracotta"), blockMCRL("terracotta"));
 		slabBlock((SlabBlock) ModBlocks.GRANITE_BRICK_SLAB.get(), blockRL("granite_bricks"), blockRL("granite_bricks"));
@@ -131,6 +133,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		slabBlock((SlabBlock) ModBlocks.RAW_IRON_SLAB.get(), blockMCRL("raw_iron_block"), blockMCRL("raw_iron_block"));
 		slabBlock((SlabBlock) ModBlocks.RAW_GOLD_SLAB.get(), blockMCRL("raw_gold_block"), blockMCRL("raw_gold_block"));
 		slabBlock((SlabBlock) ModBlocks.RAW_COPPER_SLAB.get(), blockMCRL("raw_copper_block"), blockMCRL("raw_copper_block"));
+		slabBlock((SlabBlock) ModBlocks.OBSIDIAN_BRICK_SLAB.get(), blockRL("obsidian_bricks"), blockRL("obsidian_bricks"));
 		
 		borderedStairBlock((StairBlock) ModBlocks.SMOOTH_STONE_STAIRS.get(), blockMCRL("smooth_stone"));
 		borderedStairBlock((StairBlock) ModBlocks.GLASS_STAIRS.get(), blockMCRL("glass"));
@@ -156,6 +159,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		logBlock((RotatedPillarBlock) ModBlocks.PRISMARINE_BRICK_PILLAR.get());
 		logBlock((RotatedPillarBlock) ModBlocks.POLISHED_BLACKSTONE_PILLAR.get());
 		logBlock((RotatedPillarBlock) ModBlocks.END_STONE_BRICK_PILLAR.get());
+		logBlock((RotatedPillarBlock) ModBlocks.OBSIDIAN_BRICK_PILLAR.get());
 		
 		fenceGateBlock((FenceGateBlock) ModBlocks.NETHER_BRICK_FENCE_GATE.get(), blockMCRL("nether_bricks"));
 		fenceGateBlock((FenceGateBlock) ModBlocks.IRON_FENCE_GATE.get(), blockRL("iron_fence_gate"));

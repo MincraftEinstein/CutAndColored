@@ -94,6 +94,15 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 		stonecuttingRecipe("raw_gold_stairs", Blocks.RAW_GOLD_BLOCK, ModBlocks.RAW_GOLD_STAIRS.get());
 		stonecuttingRecipe("raw_copper_slab", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_SLAB.get(), 2);
 		stonecuttingRecipe("raw_copper_stairs", Blocks.RAW_COPPER_BLOCK, ModBlocks.RAW_COPPER_STAIRS.get());
+		stonecuttingRecipe("obsidian_bricks", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICKS.get());
+		stonecuttingRecipe("obsidian_brick_stairs", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICK_STAIRS.get());
+		stonecuttingRecipe("obsidian_brick_stairs_from_bricks", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get());
+		stonecuttingRecipe("obsidian_brick_slab", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICK_SLAB.get());
+		stonecuttingRecipe("obsidian_brick_slab_from_bricks", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_SLAB.get());
+		stonecuttingRecipe("obsidian_brick_pillar", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICK_PILLAR.get());
+		stonecuttingRecipe("obsidian_brick_pillar_from_bricks", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_PILLAR.get());
+		stonecuttingRecipe("obsidian_brick_wall", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICK_WALL.get());
+		stonecuttingRecipe("obsidian_brick_wall_from_bricks", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_WALL.get());
 	}
 	
 	@Override

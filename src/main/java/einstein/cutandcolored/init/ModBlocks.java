@@ -479,6 +479,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> POLISHED_END_STONE = register("polished_end_stone", () -> new Block(Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> CHISELED_END_STONE_BRICKS = register("chiseled_end_stone_bricks", () -> new Block(Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> POLISHED_STONE = register("polished_stone", () -> new Block(BlockProperties.stone(MaterialColor.STONE)));
+    public static final RegistryObject<Block> OBSIDIAN_BRICKS = register("obsidian_bricks", () -> new Block(Properties.copy(Blocks.OBSIDIAN)));
+    public static final RegistryObject<Block> OBSIDIAN_BRICK_PILLAR = register("obsidian_brick_pillar", () -> new RotatedPillarBlock(Properties.copy(OBSIDIAN_BRICKS.get())));
     
     // STAIRS
     public static final RegistryObject<Block> SMOOTH_STONE_STAIRS = register("smooth_stone_stairs", () -> new StairBlock(Blocks.SMOOTH_STONE::defaultBlockState, Properties.copy(Blocks.SMOOTH_STONE)));
@@ -493,6 +495,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> RAW_IRON_STAIRS = register("raw_iron_stairs", () -> new StairBlock(Blocks.RAW_IRON_BLOCK::defaultBlockState, Properties.copy(Blocks.RAW_IRON_BLOCK)));
     public static final RegistryObject<Block> RAW_GOLD_STAIRS = register("raw_gold_stairs", () -> new StairBlock(Blocks.RAW_GOLD_BLOCK::defaultBlockState, Properties.copy(Blocks.RAW_GOLD_BLOCK)));
     public static final RegistryObject<Block> RAW_COPPER_STAIRS = register("raw_copper_stairs", () -> new StairBlock(Blocks.RAW_COPPER_BLOCK::defaultBlockState, Properties.copy(Blocks.RAW_COPPER_BLOCK)));
+    public static final RegistryObject<Block> OBSIDIAN_BRICK_STAIRS = register("obsidian_brick_stairs", () -> new StairBlock(Blocks.OBSIDIAN::defaultBlockState, Properties.copy(OBSIDIAN_BRICKS.get())));
     
     // SLABS
     public static final RegistryObject<Block> CRACKED_STONE_BRICK_SLAB = register("cracked_stone_brick_slab", () -> new SlabBlock(Properties.copy(Blocks.CRACKED_STONE_BRICKS)));
@@ -506,6 +509,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> RAW_IRON_SLAB = register("raw_iron_slab", () -> new SlabBlock(Properties.copy(Blocks.RAW_IRON_BLOCK)));
     public static final RegistryObject<Block> RAW_GOLD_SLAB = register("raw_gold_slab", () -> new SlabBlock(Properties.copy(Blocks.RAW_GOLD_BLOCK)));
     public static final RegistryObject<Block> RAW_COPPER_SLAB = register("raw_copper_slab", () -> new SlabBlock(Properties.copy(Blocks.RAW_COPPER_BLOCK)));
+    public static final RegistryObject<Block> OBSIDIAN_BRICK_SLAB = register("obsidian_brick_slab", () -> new SlabBlock(Properties.copy(OBSIDIAN_BRICKS.get())));
     
     // WALLS
     public static final RegistryObject<Block> PURPUR_WALL = register("purpur_wall", () -> new WallBlock(Properties.copy(Blocks.PURPUR_BLOCK)));
@@ -520,6 +524,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> QUARTZ_BRICK_WALL = register("quartz_brick_wall", () -> new WallBlock(Properties.copy(Blocks.QUARTZ_BRICKS)));
     public static final RegistryObject<Block> CALCITE_WALL = register("calcite_wall", () -> new WallBlock(Properties.copy(Blocks.CALCITE)));
     public static final RegistryObject<Block> TUFF_WALL = register("tuff_wall", () -> new WallBlock(Properties.copy(Blocks.TUFF)));
+    public static final RegistryObject<Block> OBSIDIAN_BRICK_WALL = register("obsidian_brick_wall", () -> new WallBlock(Properties.copy(OBSIDIAN_BRICKS.get())));
     
     // MISC MODELS
     public static final RegistryObject<Block> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", () -> new FenceGateBlock(Properties.of(Material.STONE, MaterialColor.NETHER).strength(2.0F, 6.0F)));

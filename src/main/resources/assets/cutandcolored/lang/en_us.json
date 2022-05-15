@@ -448,6 +448,8 @@
     "block.cutandcolored.polished_end_stone": "Polished End Stone",
     "block.cutandcolored.chiseled_end_stone_bricks": "Chiseled End Stone Bricks",
     "block.cutandcolored.polished_stone": "Polished Stone",
+    "block.cutandcolored.obsidian_bricks": "Obsidian Bricks",
+    "block.cutandcolored.obsidian_brick_pillar": "Obsidian Brick Pillar",
     
     // STAIRS
     "block.cutandcolored.smooth_stone_stairs": "Smooth Stone Stairs",
@@ -462,6 +464,7 @@
     "block.cutandcolored.raw_iron_stairs": "Raw Iron Stairs",
     "block.cutandcolored.raw_gold_stairs": "Raw Gold Stairs",
     "block.cutandcolored.raw_copper_stairs": "Raw Copper Stairs",
+    "block.cutandcolored.obsidian_brick_stairs": "Obsidian Brick Stairs",
     
     // SLABS
     "block.cutandcolored.cracked_stone_brick_slab": "Cracked Stone Brick Slab",
@@ -475,6 +478,7 @@
     "block.cutandcolored.raw_iron_slab": "Raw Iron Slab",
     "block.cutandcolored.raw_gold_slab": "Raw Gold Slab",
     "block.cutandcolored.raw_copper_slab": "Raw Copper Slab",
+    "block.cutandcolored.obsidian_brick_slab": "Obsidian Brick Slab",
     
     // WALLS
     "block.cutandcolored.purpur_wall": "Purpur Wall",
@@ -489,6 +493,7 @@
     "block.cutandcolored.quartz_brick_wall": "Quartz Brick Wall",
     "block.cutandcolored.calcite_wall": "Calcite Wall",
     "block.cutandcolored.tuff_wall": "Tuff Wall",
+    "block.cutandcolored.obsidian_brick_wall": "Obsidian Brick Wall",
     
     // MISC MODELS
     "block.cutandcolored.nether_brick_fence_gate": "Nether Brick Fence Gate",

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cutandcolored:obsidian_bricks"
+  },
+  "result": "cutandcolored:obsidian_brick_slab",
+  "count": 1
+}

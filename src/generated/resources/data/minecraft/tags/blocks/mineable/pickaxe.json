@@ -70,6 +70,11 @@
     "cutandcolored:raw_copper_stairs",
     "cutandcolored:soul_glass_stairs",
     "cutandcolored:soul_glass_slab",
+    "cutandcolored:obsidian_bricks",
+    "cutandcolored:obsidian_brick_stairs",
+    "cutandcolored:obsidian_brick_slab",
+    "cutandcolored:obsidian_brick_pillar",
+    "cutandcolored:obsidian_brick_wall",
     {
       "id": "cutandcolored:horizontal_soul_glass_pane",
       "required": false

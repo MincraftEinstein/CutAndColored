@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "cutandcolored:obsidian_bricks",
+    "cutandcolored:obsidian_brick_stairs",
+    "cutandcolored:obsidian_brick_slab",
+    "cutandcolored:obsidian_brick_pillar",
+    "cutandcolored:obsidian_brick_wall"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "cutandcolored:block/obsidian_brick_pillar",
+    "end": "cutandcolored:block/obsidian_brick_pillar_top"
+  }
+}

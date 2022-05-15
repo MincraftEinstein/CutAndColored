@@ -63,6 +63,7 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.RAW_IRON_STAIRS.get());
 		blockItemModel(ModBlocks.RAW_GOLD_STAIRS.get());
 		blockItemModel(ModBlocks.RAW_COPPER_STAIRS.get());
+		blockItemModel(ModBlocks.OBSIDIAN_BRICK_STAIRS.get());
 		
 		blockItemModel(ModBlocks.TERRACOTTA_SLAB.get());
 		blockItemModel(ModBlocks.GRANITE_BRICK_SLAB.get());
@@ -82,6 +83,7 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.RAW_IRON_SLAB.get());
 		blockItemModel(ModBlocks.RAW_GOLD_SLAB.get());
 		blockItemModel(ModBlocks.RAW_COPPER_SLAB.get());
+		blockItemModel(ModBlocks.OBSIDIAN_BRICK_SLAB.get());
 		
 		blockItemModel(ModBlocks.SMOOTH_STONE_STAIRS.get());
 		blockItemModel(ModBlocks.GLASS_STAIRS.get());
@@ -118,6 +120,9 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.DARK_OAK_BOARDS.get());
 		blockItemModel(ModBlocks.CRIMSON_BOARDS.get());
 		blockItemModel(ModBlocks.WARPED_BOARDS.get());
+		
+		blockItemModel(ModBlocks.OBSIDIAN_BRICKS.get());
+		blockItemModel(ModBlocks.OBSIDIAN_BRICK_PILLAR.get());
 		
 		for (int i = 0; i < wallBlocks.size(); i++) {
 			String name = wallBlocks.get(i).getRegistryName().getPath();

@@ -61,6 +61,12 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		
 		pillarRecipe(Blocks.END_STONE_BRICKS, ModBlocks.END_STONE_BRICK_PILLAR.get(), 2);
 		
+		blockRecipe4x4("obsidian_bricks", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICKS.get(), 4);
+		pillarRecipe(ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_PILLAR.get(), 2);
+		stairsRecipe("obsidian_brick_stairs", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get(), "");
+		slabsRecipe("obsidian_brick_slab", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_SLAB.get(), "");
+		wallsRecipe("obsidian_brick_wall", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_WALL.get(), "");
+		
 		ShapedRecipeBuilder.shaped(ModBlocks.GLASSCUTTER.get())
 			.pattern(" # ")
 			.pattern("$$$")

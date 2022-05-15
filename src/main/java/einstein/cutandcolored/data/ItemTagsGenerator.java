@@ -103,7 +103,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 						ModBlocks.ANDESITE_BRICK_SLAB.get().asItem(), ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get().asItem(),
 						ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get().asItem(), ModBlocks.QUARTZ_BRICK_SLAB.get().asItem(),
 						ModBlocks.CALCITE_SLAB.get().asItem(), ModBlocks.TUFF_SLAB.get().asItem(), ModBlocks.RAW_IRON_SLAB.get().asItem(),
-						ModBlocks.RAW_GOLD_SLAB.get().asItem(), ModBlocks.RAW_COPPER_SLAB.get().asItem());
+						ModBlocks.RAW_GOLD_SLAB.get().asItem(), ModBlocks.RAW_COPPER_SLAB.get().asItem(),
+						ModBlocks.OBSIDIAN_BRICK_SLAB.get().asItem());
 		tag(ItemTags.STAIRS).addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS)
 				.add(ModBlocks.SMOOTH_STONE_STAIRS.get().asItem(), ModBlocks.CRACKED_STONE_BRICK_STAIRS.get().asItem(),
 						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get().asItem(),
@@ -114,7 +115,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 						ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get().asItem(), ModBlocks.QUARTZ_BRICK_STAIRS.get().asItem(),
 						ModBlocks.CALCITE_STAIRS.get().asItem(), ModBlocks.TUFF_STAIRS.get().asItem(),
 						ModBlocks.RAW_IRON_STAIRS.get().asItem(), ModBlocks.RAW_GOLD_STAIRS.get().asItem(),
-						ModBlocks.RAW_COPPER_STAIRS.get().asItem());
+						ModBlocks.RAW_COPPER_STAIRS.get().asItem(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get().asItem());
 		tag(ItemTags.WALLS).addTag(CLAY_BRICK_WALLS).add(ModBlocks.SOUL_SANDSTONE_WALL.get().asItem(),
 				ModBlocks.GRANITE_BRICK_WALL.get().asItem(), ModBlocks.DIORITE_BRICK_WALL.get().asItem(),
 				ModBlocks.ANDESITE_BRICK_WALL.get().asItem(), ModBlocks.PURPUR_WALL.get().asItem(),
@@ -122,7 +123,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 				ModBlocks.CRACKED_STONE_BRICK_WALL.get().asItem(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get().asItem(),
 				ModBlocks.CRACKED_NETHER_BRICK_WALL.get().asItem(), ModBlocks.SMOOTH_STONE_WALL.get().asItem(),
 				ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL.get().asItem(), ModBlocks.CRACKED_DEEPSLATE_TILE_WALL.get().asItem(),
-				ModBlocks.QUARTZ_BRICK_WALL.get().asItem(), ModBlocks.CALCITE_WALL.get().asItem(), ModBlocks.TUFF_WALL.get().asItem());
+				ModBlocks.QUARTZ_BRICK_WALL.get().asItem(), ModBlocks.CALCITE_WALL.get().asItem(), ModBlocks.TUFF_WALL.get().asItem(),
+				ModBlocks.OBSIDIAN_BRICK_WALL.get().asItem());
 		tag(ItemTags.WOODEN_SLABS).addTag(STAINED_PLANK_SLABS);
 		tag(ItemTags.WOODEN_STAIRS).addTag(STAINED_PLANK_STAIRS);
 		tag(ItemTags.NON_FLAMMABLE_WOOD).add(ModBlocks.CRIMSON_BOARDS.get().asItem(), ModBlocks.WARPED_BOARDS.get().asItem());
