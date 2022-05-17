@@ -97,8 +97,8 @@ public class StonecuttingRecipesGenerator extends RecipeResources {
 		stonecuttingRecipe("obsidian_bricks", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICKS.get());
 		stonecuttingRecipe("obsidian_brick_stairs", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICK_STAIRS.get());
 		stonecuttingRecipe("obsidian_brick_stairs_from_bricks", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get());
-		stonecuttingRecipe("obsidian_brick_slab", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICK_SLAB.get());
-		stonecuttingRecipe("obsidian_brick_slab_from_bricks", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_SLAB.get());
+		stonecuttingRecipe("obsidian_brick_slab", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICK_SLAB.get(), 2);
+		stonecuttingRecipe("obsidian_brick_slab_from_bricks", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_SLAB.get(), 2);
 		stonecuttingRecipe("obsidian_brick_pillar", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICK_PILLAR.get());
 		stonecuttingRecipe("obsidian_brick_pillar_from_bricks", ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_PILLAR.get());
 		stonecuttingRecipe("obsidian_brick_wall", Blocks.OBSIDIAN, ModBlocks.OBSIDIAN_BRICK_WALL.get());

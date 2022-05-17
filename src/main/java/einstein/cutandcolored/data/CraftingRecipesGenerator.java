@@ -42,7 +42,7 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		
 		pillarRecipe(Blocks.END_STONE_BRICK_SLAB, ModBlocks.CHISELED_END_STONE_BRICKS.get(), 1);
 		pillarRecipe(Blocks.PRISMARINE_BRICK_SLAB, ModBlocks.CHISELED_PRISMARINE_BRICKS.get(), 1);
-		pillarRecipe(ModBlocks.CHISELED_SOUL_SANDSTONE.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get(), 1);
+		pillarRecipe(ModBlocks.SOUL_SANDSTONE_SLAB.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get(), 1);
 		
 		slabsRecipe("cracked_nether_brick_slab", Blocks.CRACKED_NETHER_BRICKS, ModBlocks.CRACKED_NETHER_BRICK_SLAB.get(), "");
 		stairsRecipe("cracked_nether_brick_stairs", Blocks.CRACKED_NETHER_BRICKS, ModBlocks.CRACKED_NETHER_BRICK_STAIRS.get(), "");
@@ -94,16 +94,16 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			.build(consumer, location(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get(), "crafting/"));
 		
 		ShapedRecipeBuilder.shaped(ModBlocks.IRON_FENCE_GATE.get())
-			.pattern("#$#")
-			.pattern("#$#")
+			.pattern("$#$")
+			.pattern("$#$")
 			.define('#', Items.IRON_INGOT)
 			.define('$', Items.IRON_NUGGET)
 			.unlockedBy("has_item", has(Items.IRON_INGOT))
 			.save(consumer, location(ModBlocks.IRON_FENCE_GATE.get(), "crafting/"));
 		
 		ShapedRecipeBuilder.shaped(ModBlocks.NETHER_BRICK_FENCE_GATE.get())
-			.pattern("#$#")
-			.pattern("#$#")
+			.pattern("$#$")
+			.pattern("$#$")
 			.define('#', Blocks.NETHER_BRICKS)
 			.define('$', Items.NETHER_BRICK)
 			.unlockedBy("has_item", has(Blocks.NETHER_BRICKS))
