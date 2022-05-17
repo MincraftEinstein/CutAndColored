@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": {
+    "item": "cutandcolored:crimson_boards"
+  },
+  "result": "cutandcolored:crimson_board_slab",
+  "count": 2
+}

@@ -461,6 +461,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SOUL_SANDSTONE_WALL = register("soul_sandstone_wall", () -> new WallBlock(Properties.copy(ModBlocks.SOUL_SANDSTONE.get())));
     
     /**********************WOOD_BOARDS**********************/
+    // FULL BLOCKS
     public static final RegistryObject<Block> OAK_BOARDS = register("oak_boards", () -> new Block(BlockProperties.planks(MaterialColor.WOOD)));
     public static final RegistryObject<Block> SPRUCE_BOARDS = register("spruce_boards", () -> new Block(BlockProperties.planks(MaterialColor.PODZOL)));
     public static final RegistryObject<Block> BIRCH_BOARDS = register("birch_boards", () -> new Block(BlockProperties.planks(MaterialColor.SAND)));
@@ -469,6 +470,26 @@ public class ModBlocks {
     public static final RegistryObject<Block> DARK_OAK_BOARDS = register("dark_oak_boards", () -> new Block(BlockProperties.planks(MaterialColor.COLOR_BROWN)));
     public static final RegistryObject<Block> CRIMSON_BOARDS = register("crimson_boards", () -> new Block(BlockProperties.netherPlanks(MaterialColor.CRIMSON_STEM)));
     public static final RegistryObject<Block> WARPED_BOARDS = register("warped_boards", () -> new Block(BlockProperties.netherPlanks(MaterialColor.WARPED_STEM)));
+    
+    // STAIRS
+    public static final RegistryObject<Block> OAK_BOARD_STAIRS = register("oak_board_stairs", () -> new StairBlock(OAK_BOARDS.get()::defaultBlockState, Properties.copy(OAK_BOARDS.get())));
+    public static final RegistryObject<Block> SPRUCE_BOARD_STAIRS = register("spruce_board_stairs", () -> new StairBlock(SPRUCE_BOARDS.get()::defaultBlockState, Properties.copy(SPRUCE_BOARDS.get())));
+    public static final RegistryObject<Block> BIRCH_BOARD_STAIRS = register("birch_board_stairs", () -> new StairBlock(BIRCH_BOARDS.get()::defaultBlockState, Properties.copy(BIRCH_BOARDS.get())));
+    public static final RegistryObject<Block> JUNGLE_BOARD_STAIRS = register("jungle_board_stairs", () -> new StairBlock(JUNGLE_BOARDS.get()::defaultBlockState, Properties.copy(JUNGLE_BOARDS.get())));
+    public static final RegistryObject<Block> ACACIA_BOARD_STAIRS = register("acacia_board_stairs", () -> new StairBlock(ACACIA_BOARDS.get()::defaultBlockState, Properties.copy(ACACIA_BOARDS.get())));
+    public static final RegistryObject<Block> DARK_OAK_BOARD_STAIRS = register("dark_oak_board_stairs", () -> new StairBlock(DARK_OAK_BOARDS.get()::defaultBlockState, Properties.copy(DARK_OAK_BOARDS.get())));
+    public static final RegistryObject<Block> CRIMSON_BOARD_STAIRS = register("crimson_board_stairs", () -> new StairBlock(CRIMSON_BOARDS.get()::defaultBlockState, Properties.copy(CRIMSON_BOARDS.get())));
+    public static final RegistryObject<Block> WARPED_BOARD_STAIRS = register("warped_board_stairs", () -> new StairBlock(WARPED_BOARDS.get()::defaultBlockState, Properties.copy(WARPED_BOARDS.get())));
+    
+    // SLABS
+    public static final RegistryObject<Block> OAK_BOARD_SLAB = register("oak_board_slab", () -> new SlabBlock(Properties.copy(OAK_BOARDS.get())));
+    public static final RegistryObject<Block> SPRUCE_BOARD_SLAB = register("spruce_board_slab", () -> new SlabBlock(Properties.copy(SPRUCE_BOARDS.get())));
+    public static final RegistryObject<Block> BIRCH_BOARD_SLAB = register("birch_board_slab", () -> new SlabBlock(Properties.copy(BIRCH_BOARDS.get())));
+    public static final RegistryObject<Block> JUNGLE_BOARD_SLAB = register("jungle_board_slab", () -> new SlabBlock(Properties.copy(JUNGLE_BOARDS.get())));
+    public static final RegistryObject<Block> ACACIA_BOARD_SLAB = register("acacia_board_slab", () -> new SlabBlock(Properties.copy(ACACIA_BOARDS.get())));
+    public static final RegistryObject<Block> DARK_OAK_BOARD_SLAB = register("dark_oak_board_slab", () -> new SlabBlock(Properties.copy(DARK_OAK_BOARDS.get())));
+    public static final RegistryObject<Block> CRIMSON_BOARD_SLAB = register("crimson_board_slab", () -> new SlabBlock(Properties.copy(CRIMSON_BOARDS.get())));
+    public static final RegistryObject<Block> WARPED_BOARD_SLAB = register("warped_board_slab", () -> new SlabBlock(Properties.copy(WARPED_BOARDS.get())));
     
     /**********************MISC_BLOCKS**********************/
     // FULL BLOCKS

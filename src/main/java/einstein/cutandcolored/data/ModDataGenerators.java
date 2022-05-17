@@ -36,6 +36,7 @@ public class ModDataGenerators {
 	public static final List<Block> allMCBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
 			.filter((block) -> CutAndColored.MCMODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
 			.collect(Collectors.toList()));
+	public static final String[] BOARD_TYPES = { "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "crimson", "warped" };
 	
 	@SubscribeEvent
 	public static void DataGenerator(GatherDataEvent event) {

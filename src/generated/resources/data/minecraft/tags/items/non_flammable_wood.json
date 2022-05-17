@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "cutandcolored:crimson_boards",
-    "cutandcolored:warped_boards"
+    "cutandcolored:crimson_board_stairs",
+    "cutandcolored:crimson_board_slab",
+    "cutandcolored:warped_boards",
+    "cutandcolored:warped_board_stairs",
+    "cutandcolored:warped_board_slab"
   ]
 }

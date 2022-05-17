@@ -30,6 +30,16 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		vanillaColoredRecipes();
 		stoneBrickTypeRecipes();
 		
+		for (int i = 0; i < ModDataGenerators.BOARD_TYPES.length; i++) {
+			String type = ModDataGenerators.BOARD_TYPES[i];
+			String slab = type + "_board_slab";
+			String stairs = type +  "_board_stairs";
+			Item block = getItem(modRL(type + "_boards"));
+			
+			slabsRecipe(slab, block, getItem(modRL(slab)), "");
+			stairsRecipe(stairs, block, getItem(modRL(stairs)), "");
+		}
+		
 		pillarRecipe(Blocks.END_STONE_BRICK_SLAB, ModBlocks.CHISELED_END_STONE_BRICKS.get(), 1);
 		pillarRecipe(Blocks.PRISMARINE_BRICK_SLAB, ModBlocks.CHISELED_PRISMARINE_BRICKS.get(), 1);
 		pillarRecipe(ModBlocks.CHISELED_SOUL_SANDSTONE.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get(), 1);

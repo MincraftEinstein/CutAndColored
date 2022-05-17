@@ -114,8 +114,20 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			}
 			
 			try {
-				sawmillingRecipe(woodName + "_boards_from" + s, logTypes, getItem(new ResourceLocation(CutAndColored.MODID, woodName + "_boards")), 4);
-				sawmillingRecipe(woodName + "_boards", planks, getItem(new ResourceLocation(CutAndColored.MODID, woodName + "_boards")), 1);
+				Item boards = getItem(modRL(woodName + "_boards"));
+				Item boardSlab = getItem(modRL(woodName + "_board_slab"));
+				Item boardStairs = getItem(modRL(woodName + "_board_stairs"));
+				
+				sawmillingRecipe(woodName + "_boards_from" + s, logTypes, boards, 4);
+				sawmillingRecipe(woodName + "_boards", planks, boards);
+				
+				sawmillingRecipe(woodName + "_board_slab_from" + s, logTypes, boardSlab, 8);
+				sawmillingRecipe(woodName + "_board_slab_from_planks", planks, boardSlab, 2);
+				sawmillingRecipe(woodName + "_board_slab", boards, boardSlab, 2);
+				
+				sawmillingRecipe(woodName + "_board_stairs_from" + s, logTypes, boardStairs, 4);
+				sawmillingRecipe(woodName + "_board_stairs_from_planks", planks, boardStairs);
+				sawmillingRecipe(woodName + "_board_stairs", boards, boardStairs);
 			}
 			catch(Exception e) {
 			}

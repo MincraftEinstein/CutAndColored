@@ -119,12 +119,29 @@ public class PropertyEvents {
         PropertyRegistry.FlammableBlock(ModBlocks.BLACK_STAINED_PLANK_SLAB.get(), 5, 20);
         
         /**********************WOOD_BOARDS**********************/
+        // FULL BLOCKS
         PropertyRegistry.FlammableBlock(ModBlocks.OAK_BOARDS.get(), 5, 20);
         PropertyRegistry.FlammableBlock(ModBlocks.SPRUCE_BOARDS.get(), 5, 20);
         PropertyRegistry.FlammableBlock(ModBlocks.BIRCH_BOARDS.get(), 5, 20);
         PropertyRegistry.FlammableBlock(ModBlocks.JUNGLE_BOARDS.get(), 5, 20);
         PropertyRegistry.FlammableBlock(ModBlocks.ACACIA_BOARDS.get(), 5, 20);
         PropertyRegistry.FlammableBlock(ModBlocks.DARK_OAK_BOARDS.get(), 5, 20);
+        
+        // STAIRS
+        PropertyRegistry.FlammableBlock(ModBlocks.OAK_BOARD_STAIRS.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.SPRUCE_BOARD_STAIRS.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.BIRCH_BOARD_STAIRS.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.JUNGLE_BOARD_STAIRS.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.ACACIA_BOARD_STAIRS.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.DARK_OAK_BOARD_STAIRS.get(), 5, 20);
+        
+        // SLABS
+        PropertyRegistry.FlammableBlock(ModBlocks.OAK_BOARD_SLAB.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.SPRUCE_BOARD_SLAB.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.BIRCH_BOARD_SLAB.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.JUNGLE_BOARD_SLAB.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.ACACIA_BOARD_SLAB.get(), 5, 20);
+        PropertyRegistry.FlammableBlock(ModBlocks.DARK_OAK_BOARD_SLAB.get(), 5, 20);
     }
     
     @SubscribeEvent
@@ -234,6 +251,7 @@ public class PropertyEvents {
         }
         
         /**********************WOOD_BOARDS**********************/
+        // FULL BLOCKS
         else if (fuel == ModBlocks.OAK_BOARDS.get().asItem()) {
             event.setBurnTime(300);
         }
@@ -251,6 +269,46 @@ public class PropertyEvents {
         }
         else if (fuel == ModBlocks.DARK_OAK_BOARDS.get().asItem()) {
             event.setBurnTime(300);
+        }
+        
+        // STAIRS
+        else if (fuel == ModBlocks.OAK_BOARD_STAIRS.get().asItem()) {
+            event.setBurnTime(300);
+        }
+        else if (fuel == ModBlocks.SPRUCE_BOARD_STAIRS.get().asItem()) {
+            event.setBurnTime(300);
+        }
+        else if (fuel == ModBlocks.BIRCH_BOARD_STAIRS.get().asItem()) {
+            event.setBurnTime(300);
+        }
+        else if (fuel == ModBlocks.JUNGLE_BOARD_STAIRS.get().asItem()) {
+            event.setBurnTime(300);
+        }
+        else if (fuel == ModBlocks.ACACIA_BOARD_STAIRS.get().asItem()) {
+            event.setBurnTime(300);
+        }
+        else if (fuel == ModBlocks.DARK_OAK_BOARD_STAIRS.get().asItem()) {
+            event.setBurnTime(300);
+        }
+        
+        //SLABS
+        else if (fuel == ModBlocks.OAK_BOARD_SLAB.get().asItem()) {
+            event.setBurnTime(150);
+        }
+        else if (fuel == ModBlocks.SPRUCE_BOARD_SLAB.get().asItem()) {
+            event.setBurnTime(150);
+        }
+        else if (fuel == ModBlocks.BIRCH_BOARD_SLAB.get().asItem()) {
+            event.setBurnTime(150);
+        }
+        else if (fuel == ModBlocks.JUNGLE_BOARD_SLAB.get().asItem()) {
+            event.setBurnTime(150);
+        }
+        else if (fuel == ModBlocks.ACACIA_BOARD_SLAB.get().asItem()) {
+            event.setBurnTime(150);
+        }
+        else if (fuel == ModBlocks.DARK_OAK_BOARD_SLAB.get().asItem()) {
+            event.setBurnTime(150);
         }
     }
     

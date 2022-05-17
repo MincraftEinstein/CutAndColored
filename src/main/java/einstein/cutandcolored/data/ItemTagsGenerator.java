@@ -64,6 +64,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	public static final TagKey<Item> STAINED_PLANK_SLABS = forgeCreate("stained_plank_slabs");
 	public static final TagKey<Item> TERRACOTTA_SLABS = forgeCreate("terracotta_slabs");
 	public static final TagKey<Item> WOOL_SLABS = forgeCreate("wool_slabs");
+	public static final TagKey<Item> BOARD_SLABS = forgeCreate("board_slabs");
 	
 	public static final TagKey<Item> CLAY_BRICK_STAIRS = forgeCreate("clay_brick_stairs");
 	public static final TagKey<Item> CONCRETE_STAIRS = forgeCreate("concrete_stairs");
@@ -71,6 +72,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	public static final TagKey<Item> STAINED_PLANK_STAIRS = forgeCreate("stained_plank_stairs");
 	public static final TagKey<Item> TERRACOTTA_STAIRS = forgeCreate("terracotta_stairs");
 	public static final TagKey<Item> WOOL_STAIRS = forgeCreate("wool_stairs");
+	public static final TagKey<Item> BOARD_STAIRS = forgeCreate("board_stairs");
 	
 	public static final TagKey<Item> CLAY_BRICK_WALLS = forgeCreate("clay_brick_walls");
 	
@@ -94,7 +96,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		
 		/**********************Minecraft***********************/
 		tag(ItemTags.PLANKS).addTags(STAINED_PLANKS);
-		tag(ItemTags.SLABS).addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS)
+		tag(ItemTags.SLABS).addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS, BOARD_SLABS)
 				.add(ModBlocks.CRACKED_STONE_BRICK_SLAB.get().asItem(),
 						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get().asItem(),
 						ModBlocks.CRACKED_NETHER_BRICK_SLAB.get().asItem(), ModBlocks.SOUL_SANDSTONE_SLAB.get().asItem(),
@@ -105,7 +107,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 						ModBlocks.CALCITE_SLAB.get().asItem(), ModBlocks.TUFF_SLAB.get().asItem(), ModBlocks.RAW_IRON_SLAB.get().asItem(),
 						ModBlocks.RAW_GOLD_SLAB.get().asItem(), ModBlocks.RAW_COPPER_SLAB.get().asItem(),
 						ModBlocks.OBSIDIAN_BRICK_SLAB.get().asItem());
-		tag(ItemTags.STAIRS).addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS)
+		tag(ItemTags.STAIRS).addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS, BOARD_STAIRS)
 				.add(ModBlocks.SMOOTH_STONE_STAIRS.get().asItem(), ModBlocks.CRACKED_STONE_BRICK_STAIRS.get().asItem(),
 						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get().asItem(),
 						ModBlocks.CRACKED_NETHER_BRICK_STAIRS.get().asItem(), ModBlocks.SOUL_SANDSTONE_STAIRS.get().asItem(),
@@ -127,7 +129,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 				ModBlocks.OBSIDIAN_BRICK_WALL.get().asItem());
 		tag(ItemTags.WOODEN_SLABS).addTag(STAINED_PLANK_SLABS);
 		tag(ItemTags.WOODEN_STAIRS).addTag(STAINED_PLANK_STAIRS);
-		tag(ItemTags.NON_FLAMMABLE_WOOD).add(ModBlocks.CRIMSON_BOARDS.get().asItem(), ModBlocks.WARPED_BOARDS.get().asItem());
+		tag(ItemTags.NON_FLAMMABLE_WOOD).add(ModBlocks.CRIMSON_BOARDS.get().asItem(), ModBlocks.CRIMSON_BOARD_STAIRS.get().asItem(), ModBlocks.CRIMSON_BOARD_SLAB.get().asItem(),
+				ModBlocks.WARPED_BOARDS.get().asItem(), ModBlocks.WARPED_BOARD_STAIRS.get().asItem(), ModBlocks.WARPED_BOARD_SLAB.get().asItem());
 		
 		/**********************Forge***********************/
 		tag(CLAY_BRICK_SLABS).add(Items.BRICK_SLAB).addTag(VANILLA_STAINED_BRICK_SLABS);
@@ -158,6 +161,12 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(BOARDS).add(ModBlocks.OAK_BOARDS.get().asItem(), ModBlocks.SPRUCE_BOARDS.get().asItem(), ModBlocks.BIRCH_BOARDS.get().asItem(),
 				ModBlocks.JUNGLE_BOARDS.get().asItem(), ModBlocks.ACACIA_BOARDS.get().asItem(), ModBlocks.DARK_OAK_BOARDS.get().asItem(),
 				ModBlocks.CRIMSON_BOARDS.get().asItem(), ModBlocks.WARPED_BOARDS.get().asItem());
+		tag(BOARD_STAIRS).add(ModBlocks.OAK_BOARD_STAIRS.get().asItem(), ModBlocks.SPRUCE_BOARD_STAIRS.get().asItem(), ModBlocks.BIRCH_BOARD_STAIRS.get().asItem(),
+				ModBlocks.JUNGLE_BOARD_STAIRS.get().asItem(), ModBlocks.ACACIA_BOARD_STAIRS.get().asItem(),ModBlocks.DARK_OAK_BOARD_STAIRS.get().asItem(),
+				ModBlocks.CRIMSON_BOARD_STAIRS.get().asItem(), ModBlocks.WARPED_BOARD_STAIRS.get().asItem());
+		tag(BOARD_SLABS).add(ModBlocks.OAK_BOARD_SLAB.get().asItem(), ModBlocks.SPRUCE_BOARD_SLAB.get().asItem(), ModBlocks.BIRCH_BOARD_SLAB.get().asItem(),
+				ModBlocks.JUNGLE_BOARD_SLAB.get().asItem(), ModBlocks.ACACIA_BOARD_SLAB.get().asItem(),ModBlocks.DARK_OAK_BOARD_SLAB.get().asItem(),
+				ModBlocks.CRIMSON_BOARD_SLAB.get().asItem(), ModBlocks.WARPED_BOARD_SLAB.get().asItem());
 		
 		tag(Tags.Items.GLASS_COLORLESS).add(ModBlocks.GLASS_WINDOW.get().asItem());
 		tag(Tags.Items.GLASS_PANES_COLORLESS).add(ModBlocks.GLASS_WINDOW_PANE.get().asItem());

@@ -430,6 +430,7 @@
     "block.cutandcolored.soul_sandstone_wall": "Soul Sandstone Wall",
     
     /**********************WOOD_BOARDS**********************/
+    // FULL BLOCKS
     "block.cutandcolored.oak_boards": "Oak Boards",
     "block.cutandcolored.spruce_boards": "Spruce Boards",
     "block.cutandcolored.birch_boards": "Birch Boards",
@@ -438,6 +439,26 @@
     "block.cutandcolored.dark_oak_boards": "Dark Oak Boards",
     "block.cutandcolored.crimson_boards": "Crimson Boards",
     "block.cutandcolored.warped_boards": "Warped Boards",
+    
+    // STAIRS
+    "block.cutandcolored.oak_board_stairs": "Oak Board Stairs",
+    "block.cutandcolored.spruce_board_stairs": "Spruce Board Stairs",
+    "block.cutandcolored.birch_board_stairs": "Birch Board Stairs",
+    "block.cutandcolored.jungle_board_stairs": "Jungle Board Stairs",
+    "block.cutandcolored.acacia_board_stairs": "Acacia Board Stairs",
+    "block.cutandcolored.dark_oak_board_stairs": "Dark Oak Board Stairs",
+    "block.cutandcolored.crimson_board_stairs": "Crimson Board Stairs",
+    "block.cutandcolored.warped_board_stairs": "Warped Board Stairs",
+    
+    // SLABS
+    "block.cutandcolored.oak_board_slab": "Oak Board Slab",
+    "block.cutandcolored.spruce_board_slab": "Spruce Board Slab",
+    "block.cutandcolored.birch_board_slab": "Birch Board Slab",
+    "block.cutandcolored.jungle_board_slab": "Jungle Board Slab",
+    "block.cutandcolored.acacia_board_slab": "Acacia Board Slab",
+    "block.cutandcolored.dark_oak_board_slab": "Dark Oak Board Slab",
+    "block.cutandcolored.crimson_board_slab": "Crimson Board Slab",
+    "block.cutandcolored.warped_board_slab": "Warped Board Slab",
     
     /**********************MISC_BLOCKS**********************/
     // FULL BLOCKS

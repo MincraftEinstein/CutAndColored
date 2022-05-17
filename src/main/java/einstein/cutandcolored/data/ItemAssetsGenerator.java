@@ -112,14 +112,12 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.NETHER_BRICK_FENCE_GATE.get());
 		blockItemModel(ModBlocks.IRON_FENCE_GATE.get());
 		
-		blockItemModel(ModBlocks.OAK_BOARDS.get());
-		blockItemModel(ModBlocks.SPRUCE_BOARDS.get());
-		blockItemModel(ModBlocks.BIRCH_BOARDS.get());
-		blockItemModel(ModBlocks.JUNGLE_BOARDS.get());
-		blockItemModel(ModBlocks.ACACIA_BOARDS.get());
-		blockItemModel(ModBlocks.DARK_OAK_BOARDS.get());
-		blockItemModel(ModBlocks.CRIMSON_BOARDS.get());
-		blockItemModel(ModBlocks.WARPED_BOARDS.get());
+		for (int i = 0; i < ModDataGenerators.BOARD_TYPES.length; i++) {
+			String type = ModDataGenerators.BOARD_TYPES[i];
+			blockItemModel(BlockAssetsGenerator.getBlock(type + "_boards"));
+			blockItemModel(BlockAssetsGenerator.getBlock(type + "_board_stairs"));
+			blockItemModel(BlockAssetsGenerator.getBlock(type + "_board_slab"));
+		}
 		
 		blockItemModel(ModBlocks.OBSIDIAN_BRICKS.get());
 		blockItemModel(ModBlocks.OBSIDIAN_BRICK_PILLAR.get());

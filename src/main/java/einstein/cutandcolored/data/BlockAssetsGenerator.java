@@ -10,6 +10,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.RedstoneLampBlock;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockAssetsGenerator extends BlockStateProvider {
 	
@@ -79,6 +81,14 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 		}
 		
+		for (int i = 0; i < ModDataGenerators.BOARD_TYPES.length; i++) {
+			String type = ModDataGenerators.BOARD_TYPES[i];
+			String block = type + "_boards";
+			simpleBlock(getBlock(block));
+			stairsBlock((StairBlock) getBlock(type + "_board_stairs"), blockRL(block));
+			slabBlock((SlabBlock) getBlock(type + "_board_slab"), blockRL(block), blockRL(block));
+		}
+		
 		simpleBlock(ModBlocks.SOUL_SANDSTONE.get(), new ConfiguredModel(models().cubeBottomTop("soul_sandstone", blockRL("soul_sandstone_side"), blockRL("soul_sandstone_bottom"), blockRL("soul_sandstone_top"))));
 		simpleBlock(ModBlocks.CHISELED_SOUL_SANDSTONE.get(), new ConfiguredModel(models().cubeBottomTop("chiseled_soul_sandstone", blockRL("chiseled_soul_sandstone"), blockRL("soul_sandstone_bottom"), blockRL("soul_sandstone_top"))));
 		simpleBlock(ModBlocks.CUT_SOUL_SANDSTONE.get(), new ConfiguredModel(models().cubeBottomTop("cut_soul_sandstone", blockRL("cut_soul_sandstone"), blockRL("soul_sandstone_bottom"), blockRL("soul_sandstone_top"))));
@@ -86,15 +96,6 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		simpleBlock(ModBlocks.SOUL_GLASS.get());
 		simpleBlock(ModBlocks.POLISHED_END_STONE.get());
 		simpleBlock(ModBlocks.POLISHED_STONE.get());
-		
-		simpleBlock(ModBlocks.OAK_BOARDS.get());
-		simpleBlock(ModBlocks.SPRUCE_BOARDS.get());
-		simpleBlock(ModBlocks.BIRCH_BOARDS.get());
-		simpleBlock(ModBlocks.JUNGLE_BOARDS.get());
-		simpleBlock(ModBlocks.ACACIA_BOARDS.get());
-		simpleBlock(ModBlocks.DARK_OAK_BOARDS.get());
-		simpleBlock(ModBlocks.CRIMSON_BOARDS.get());
-		simpleBlock(ModBlocks.WARPED_BOARDS.get());
 		
 		stairsBlock((StairBlock) ModBlocks.TERRACOTTA_STAIRS.get(), blockMCRL("terracotta"));
 		stairsBlock((StairBlock) ModBlocks.GRANITE_BRICK_STAIRS.get(), blockRL("granite_bricks"));
@@ -330,6 +331,16 @@ public class BlockAssetsGenerator extends BlockStateProvider {
         		.texture("top", imageName)
         		.texture("bottom", imageName)))
         .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).addModels(new ConfiguredModel(models().getExistingFile(doubleSlab)));
+	}
+	
+	public static Block getBlock(String registryName) {
+		Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID,  registryName));
+		if (block != null && block != Blocks.AIR) {
+			return block;
+		}
+		else {
+			throw new NullPointerException("Could not find block with registry name: " + registryName);
+		}
 	}
 	
 	private ResourceLocation blockRL(String string) {

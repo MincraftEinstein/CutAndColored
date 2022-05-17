@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "ingredient": {
+    "item": "cutandcolored:jungle_boards"
+  },
+  "result": "cutandcolored:jungle_board_slab",
+  "count": 2
+}

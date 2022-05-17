@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "cutandcolored:block/crimson_board_slab_top"
+    },
+    "type=bottom": {
+      "model": "cutandcolored:block/crimson_board_slab"
+    },
+    "type=double": {
+      "model": "cutandcolored:block/crimson_boards"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "side": "cutandcolored:block/crimson_boards",
+    "bottom": "cutandcolored:block/crimson_boards",
+    "top": "cutandcolored:block/crimson_boards"
+  }
+}
