@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "einstein.cutandcolored.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"refmap": "cutandcolored.refmap.json",
+	"mixins": [
+		"AddShearableBlocks"
+	],
+	"client": [],
+	"minVersion": "0.8"
+}

@@ -1,19 +1,27 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
 version = "${mod_version}-${minecraft_version}"
 group = "einstein.${modid}"
 archivesBaseName = "${modid}"
+
+mixin {
+	add sourceSets.main, "${modid}.refmap.json"
+	config "${modid}.mixins.json"
+}
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -83,6 +91,7 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
 	implementation fg.deobf("curse.maven:einsteins-library-405744:3545865")
 	implementation fg.deobf("curse.maven:jei-238222:3712464")
