@@ -155,6 +155,9 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 				ModBlocks.WARPED_BOARDS.get(), ModBlocks.WARPED_BOARD_STAIRS.get(), ModBlocks.WARPED_BOARD_SLAB.get());
 		tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get(),
 				ModBlocks.OBSIDIAN_BRICK_SLAB.get(), ModBlocks.OBSIDIAN_BRICK_PILLAR.get(), ModBlocks.OBSIDIAN_BRICK_WALL.get());
+		tag(BlockTags.DRAGON_IMMUNE).add(ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get(),
+				ModBlocks.OBSIDIAN_BRICK_SLAB.get(), ModBlocks.OBSIDIAN_BRICK_PILLAR.get(), ModBlocks.OBSIDIAN_BRICK_WALL.get(),
+				ModBlocks.CHISELED_END_STONE_BRICKS.get(), ModBlocks.END_STONE_BRICK_PILLAR.get(), ModBlocks.POLISHED_END_STONE.get());
 		
 		/**********************Forge***********************/
 		tag(CLAY_BRICK_SLABS).add(Blocks.BRICK_SLAB).addTag(VANILLA_STAINED_BRICK_SLABS);

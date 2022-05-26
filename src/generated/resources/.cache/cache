@@ -4811,6 +4811,7 @@ c391e00544558eef071bd72f1e7525467ca3e8bc data/forge/tags/items/stained_plank_sta
 e3d37847743109bbaace212d11fc9ee86882f692 data/forge/tags/items/terracotta_stairs.json
 034feac9bfbb0c4457113126f07a85387e056aab data/forge/tags/items/wool_slabs.json
 aeb58d44fa937a4670931f85d6490e3978c2c4bb data/forge/tags/items/wool_stairs.json
+b42cff07afe3a8859dceee7a3be7c41366783e3e data/minecraft/tags/blocks/dragon_immune.json
 762a688cbbcc84c89dd8197570240b6029b41cb9 data/minecraft/tags/blocks/impermeable.json
 9de9f7d02bfc502930d79effaee608906c95d0a1 data/minecraft/tags/blocks/mineable/axe.json
 a1de2a12dec4f7f13ec0577f5208fabfe5c34acc data/minecraft/tags/blocks/mineable/pickaxe.json
