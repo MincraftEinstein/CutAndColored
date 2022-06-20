@@ -5,6 +5,7 @@ import java.util.List;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -192,7 +193,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		}
 		for (int i = 0; i < coloredItems.size(); i++) {
 			Item item = coloredItems.get(i);
-			String name = item.getRegistryName().getPath();
+			String name = Util.getItemRegistryName(item).getPath();
 			if (name.contains("concrete")) {
 				if (name.contains("slab")) {
 					tag(VANILLA_CONCRETE_SLABS).add(item);
@@ -265,7 +266,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	}
 	
 	private boolean isVanillaColored(Block block, int colorIndex) {
-		String name = block.getRegistryName().getPath();
+		String name = Util.getBlockRegistryName(block).getPath();
 		return name.contains(DyeColor.byId(colorIndex).getName()) && !name.contains("blackstone");
 	}
 	

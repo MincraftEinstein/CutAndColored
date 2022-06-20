@@ -3,6 +3,7 @@ package einstein.cutandcolored.data;
 import java.util.function.Consumer;
 
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
@@ -30,23 +31,23 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 			TagKey<Item> tag = ItemTags.create(new ResourceLocation("forge", "glass/" + color));
 			
 			Item pane = getItem(MCRL(color + "_stained_glass_pane"));
-			glasscuttingRecipe(pane.getRegistryName().getPath(), glass, pane, 4);
+			glasscuttingRecipe(Util.getItemRegistryName(pane).getPath(), glass, pane, 4);
 			
 			Item slab = getItem(modRL(color + "_stained_glass_slab"));
-			glasscuttingRecipe(slab.getRegistryName().getPath(), glass, slab, 2);
+			glasscuttingRecipe(Util.getItemRegistryName(slab).getPath(), glass, slab, 2);
 			
 			Item stairs = getItem(modRL(color + "_stained_glass_stairs"));
-			glasscuttingRecipe(stairs.getRegistryName().getPath(), glass, stairs);
+			glasscuttingRecipe(Util.getItemRegistryName(stairs).getPath(), glass, stairs);
 			
 			Item hPane = getItem(new ResourceLocation("horizontalpanes", "horizontal_stained_" + color + "_pane"));
-			glasscuttingRecipe(hPane.getRegistryName().getPath(), glass, hPane, 4);
+			glasscuttingRecipe(Util.getItemRegistryName(hPane).getPath(), glass, hPane, 4);
 			
 			Item window = getItem(modRL(color + "_stained_glass_window"));
-			glasscuttingRecipe(window.getRegistryName().getPath(), glass, window);
+			glasscuttingRecipe(Util.getItemRegistryName(window).getPath(), glass, window);
 			
 			Item windowPane = getItem(modRL(color + "_stained_glass_window_pane"));
-			glasscuttingRecipe(windowPane.getRegistryName().getPath() + "_from_glass", tag, windowPane, 4);
-			glasscuttingRecipe(windowPane.getRegistryName().getPath(), getItem(MCRL(color + "_stained_glass_pane")), windowPane);
+			glasscuttingRecipe(Util.getItemRegistryName(windowPane).getPath() + "_from_glass", tag, windowPane, 4);
+			glasscuttingRecipe(Util.getItemRegistryName(windowPane).getPath(), getItem(MCRL(color + "_stained_glass_pane")), windowPane);
 		}
 		
 		glasscuttingRecipe("glass_bottle", Tags.Items.GLASS_COLORLESS, Items.GLASS_BOTTLE);

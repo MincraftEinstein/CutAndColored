@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
@@ -19,11 +20,11 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 
 	private List<Block> wallBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
-			.filter((block) -> block.getRegistryName().getPath().contains("wall"))
+			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("wall"))
 			.collect(Collectors.toList()));
 	
 	private List<Block> windowBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
-			.filter((block) -> block.getRegistryName().getPath().contains("window") && !block.getRegistryName().getPath().contains("pane"))
+			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("window") && !Util.getBlockRegistryName(block).getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	
 	public ItemAssetsGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
@@ -123,7 +124,7 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.OBSIDIAN_BRICK_PILLAR.get());
 		
 		for (int i = 0; i < wallBlocks.size(); i++) {
-			String name = wallBlocks.get(i).getRegistryName().getPath();
+			String name = Util.getBlockRegistryName(wallBlocks.get(i)).getPath();
 			String fileName = name.replaceAll("_wall", "");
 			try {
 				if (name.contains("brick")) {
@@ -153,13 +154,13 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 	}
 	
 	private void blockItemModel(Block block) {
-		String name = block.getRegistryName().getPath();
+		String name = Util.getBlockRegistryName(block).getPath();
 		getBuilder(name).parent(getExistingFile(blockRL(name)));
 	}
 	
 	@SuppressWarnings("unused")
 	private void blockItemModel(Block block, String parentName) {
-		String name = block.getRegistryName().getPath();
+		String name = Util.getBlockRegistryName(block).getPath();
 		getBuilder(name).parent(getExistingFile(blockRL(parentName)));
 	}
 	

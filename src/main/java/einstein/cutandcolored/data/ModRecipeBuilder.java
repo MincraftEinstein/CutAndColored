@@ -119,14 +119,14 @@ public class ModRecipeBuilder {
 		}
 		
 		@SuppressWarnings("deprecation")
-		public void serializeRecipeData(JsonObject p_126349_) {
+		public void serializeRecipeData(JsonObject json) {
 			if (!this.group.isEmpty()) {
-				p_126349_.addProperty("group", this.group);
+				json.addProperty("group", this.group);
 			}
 			
-			p_126349_.add("ingredient", this.ingredient.toJson());
-			p_126349_.addProperty("result", Registry.ITEM.getKey(this.result).toString());
-			p_126349_.addProperty("count", this.count);
+			json.add("ingredient", this.ingredient.toJson());
+			json.addProperty("result", Registry.ITEM.getKey(this.result).toString());
+			json.addProperty("count", this.count);
 		}
 		
 		public ResourceLocation getId() {

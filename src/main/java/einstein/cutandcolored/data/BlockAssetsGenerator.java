@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
@@ -27,17 +28,17 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class BlockAssetsGenerator extends BlockStateProvider {
 	
 	private List<Block> cubeBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
-			.filter((block) -> block.getRegistryName().getPath().contains("planks")
-					|| block.getRegistryName().getPath().contains("bricks")
-					|| block.getRegistryName().getPath().contains("window"))
-			.filter((block) -> !block.getRegistryName().getPath().contains("pane"))
+			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("planks")
+					|| Util.getBlockRegistryName(block).getPath().contains("bricks")
+					|| Util.getBlockRegistryName(block).getPath().contains("window"))
+			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("pane"))
 			.filter((block) -> !(block instanceof SlabBlock))
 			.filter((block) -> !(block instanceof StairBlock))
 			.collect(Collectors.toList()));
 	
 	private List<Block> slabBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block instanceof SlabBlock)
-			.filter((block) -> !block.getRegistryName().getPath().contains("pane"))
+			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	
 	private List<Block> stairBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
@@ -46,7 +47,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 	
 	private List<Block> wallBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
-			.filter((block) -> block.getRegistryName().getPath().contains("wall"))
+			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("wall"))
 			.collect(Collectors.toList()));
 
 	private List<Block> lampBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
@@ -54,8 +55,8 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			.collect(Collectors.toList()));
 	
 	private List<Block> paneBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
-			.filter((block) -> block.getRegistryName().getPath().contains("pane"))
-			.filter((block) -> block.getRegistryName().getPath().contains("window"))
+			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("pane"))
+			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("window"))
 			.collect(Collectors.toList()));
 	
 	private List<Block> coloredStairs = new ArrayList<Block>();
@@ -76,7 +77,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 	protected void registerStatesAndModels() {
 		for (int i = 0; i < cubeBlocks.size(); i++) {
 			Block block = cubeBlocks.get(i);
-			String name = block.getRegistryName().getPath();
+			String name = Util.getBlockRegistryName(block).getPath();
 			simpleBlock(block);
 			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 		}
@@ -169,7 +170,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		
 		for (int i = 0; i < wallBlocks.size(); i ++) {
 			WallBlock block = (WallBlock) wallBlocks.get(i);
-			String name = block.getRegistryName().getPath();
+			String name = Util.getBlockRegistryName(block).getPath();
 			String fileName = name.replaceAll("_wall", "");
 			try {
 				if (name.contains("brick")) {
@@ -241,7 +242,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		// Slabs
 		for (int i = 0; i < coloredSlabs.size(); i++) {
 			SlabBlock block = (SlabBlock) coloredSlabs.get(i);
-			String name = block.getRegistryName().getPath();
+			String name = Util.getBlockRegistryName(block).getPath();
 			String fileName = name.replaceAll("_slab", "");
 			if (name.contains("glass")) {
 				borderedSlabBlock(block, blockMCRL(fileName), blockMCRL(fileName));
@@ -257,7 +258,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		// Stairs
 		for (int i = 0; i < coloredStairs.size(); i++) {
 			StairBlock block = (StairBlock) coloredStairs.get(i);
-			String name = block.getRegistryName().getPath();
+			String name = Util.getBlockRegistryName(block).getPath();
 			String fileName = name.replaceAll("_stairs", "");
 			if (name.contains("glass")) {
 				borderedStairBlock(block, blockMCRL(fileName));
@@ -273,7 +274,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		// Walls
 		for (int i = 0; i < coloredWalls.size(); i++) {
 			WallBlock block = (WallBlock) coloredWalls.get(i);
-			String name = block.getRegistryName().getPath();
+			String name = Util.getBlockRegistryName(block).getPath();
 			String fileName = name.replaceAll("_wall", "");
 			if (name.contains("stained_brick")) {
 				wallBlock(block, blockRL(fileName + "s"));
@@ -282,7 +283,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		// Redstone Lamps
 		for (int i = 0; i < coloredLamps.size(); i++) {
 			RedstoneLampBlock block = (RedstoneLampBlock) coloredLamps.get(i);
-			String name = block.getRegistryName().getPath();
+			String name = Util.getBlockRegistryName(block).getPath();
 			getVariantBuilder(block)
 			.partialState().with(RedstoneLampBlock.LIT, false).addModels(new ConfiguredModel(cubeAll(block)))
 			.partialState().with(RedstoneLampBlock.LIT, true).addModels(new ConfiguredModel(models()
@@ -292,18 +293,18 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 		// Window Panes
 		for (int i = 0; i < coloredWindowPanes.size(); i++) {
 			IronBarsBlock block = (IronBarsBlock) coloredWindowPanes.get(i);
-			String name = block.getRegistryName().getPath();
+			String name = Util.getBlockRegistryName(block).getPath();
 			paneBlock(block, blockRL(name.replace("_pane", "")), blockMCRL(name.replace("_window", "") + "_top"));
 		}
 	}
 	
 	private boolean isVanillaColored(Block block, int colorIndex) {
-		String name = block.getRegistryName().getPath();
+		String name = Util.getBlockRegistryName(block).getPath();
 		return name.contains(DyeColor.byId(colorIndex).getName()) && !name.contains("blackstone");
 	}
 	
 	private void borderedStairBlock(StairBlock block, ResourceLocation imageName) {
-		String name = block.getRegistryName().getPath();
+		String name = Util.getBlockRegistryName(block).getPath();
 		stairsBlock(block,
 				models().withExistingParent(name, blockRL("bordered_stairs"))
 					.texture("side", imageName)
@@ -320,7 +321,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 	}
 	
 	private void borderedSlabBlock(SlabBlock block, ResourceLocation doubleSlab, ResourceLocation imageName) {
-		String name = block.getRegistryName().getPath();
+		String name = Util.getBlockRegistryName(block).getPath();
 		getVariantBuilder(block)
 		.partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).addModels(new ConfiguredModel(models().withExistingParent(name, blockRL("bordered_slab"))
 				.texture("side", imageName)

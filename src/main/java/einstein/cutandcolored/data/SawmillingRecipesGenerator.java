@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
@@ -166,8 +167,8 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 	private void getWood() {
 		for (int i = 0; i < ForgeRegistries.BLOCKS.getValues().size(); i++) {
 			Block block = ForgeRegistries.BLOCKS.getValues().stream().collect(Collectors.toList()).get(i);
-			if (block.getRegistryName().getPath().contains("_log") && !block.getRegistryName().getPath().contains("stripped_")) {
-				String[] object = { block.getRegistryName().getNamespace(), block.getRegistryName().getPath().replace("_log", "") };
+			if (Util.getBlockRegistryName(block).getPath().contains("_log") && !Util.getBlockRegistryName(block).getPath().contains("stripped_")) {
+				String[] object = { Util.getBlockRegistryName(block).getNamespace(), Util.getBlockRegistryName(block).getPath().replace("_log", "") };
 				woodTypes.add(object);
 			}
 		}

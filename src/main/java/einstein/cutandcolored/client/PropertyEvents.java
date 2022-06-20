@@ -6,12 +6,13 @@ import einstein.cutandcolored.client.gui.screen.inventory.SawmillScreen;
 import einstein.cutandcolored.client.gui.screen.inventory.WeaverScreen;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.init.ModMenuTypes;
-import einstein.einsteins_library.util.PropertyRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -25,123 +26,124 @@ public class PropertyEvents {
 
     @SubscribeEvent
     public static void setBlockFlammable(final FMLCommonSetupEvent event) {
-        
+        final FireBlock fire = (FireBlock)Blocks.FIRE;
+
         /*************************WOOL**************************/
         // STAIRS
-        PropertyRegistry.FlammableBlock(ModBlocks.WHITE_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.ORANGE_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.MAGENTA_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_BLUE_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.YELLOW_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIME_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.PINK_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.GRAY_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_GRAY_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.CYAN_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.PURPLE_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLUE_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.BROWN_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.GREEN_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.RED_WOOL_STAIRS.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLACK_WOOL_STAIRS.get(), 30, 60);
-        
+        fire.setFlammable(ModBlocks.WHITE_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.ORANGE_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.MAGENTA_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.LIGHT_BLUE_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.YELLOW_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.LIME_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.PINK_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.GRAY_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.LIGHT_GRAY_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.CYAN_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.PURPLE_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.BLUE_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.BROWN_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.GREEN_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.RED_WOOL_STAIRS.get(), 30, 60);
+        fire.setFlammable(ModBlocks.BLACK_WOOL_STAIRS.get(), 30, 60);
+
         // SLABS
-        PropertyRegistry.FlammableBlock(ModBlocks.WHITE_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.ORANGE_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.MAGENTA_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_BLUE_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.YELLOW_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIME_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.PINK_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.GRAY_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_GRAY_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.CYAN_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.PURPLE_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLUE_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.BROWN_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.GREEN_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.RED_WOOL_SLAB.get(), 30, 60);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLACK_WOOL_SLAB.get(), 30, 60);
-        
+        fire.setFlammable(ModBlocks.WHITE_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.ORANGE_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.MAGENTA_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.LIGHT_BLUE_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.YELLOW_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.LIME_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.PINK_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.GRAY_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.LIGHT_GRAY_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.CYAN_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.PURPLE_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.BLUE_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.BROWN_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.GREEN_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.RED_WOOL_SLAB.get(), 30, 60);
+        fire.setFlammable(ModBlocks.BLACK_WOOL_SLAB.get(), 30, 60);
+
         /*******************STAINED_PLANKS**********************/
         // FULL BLOCKS
-        PropertyRegistry.FlammableBlock(ModBlocks.WHITE_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.ORANGE_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.MAGENTA_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_BLUE_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.YELLOW_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIME_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.PINK_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.GRAY_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_GRAY_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.CYAN_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.PURPLE_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLUE_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BROWN_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.GREEN_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.RED_STAINED_PLANKS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLACK_STAINED_PLANKS.get(), 5, 20);
-        
+        fire.setFlammable(ModBlocks.WHITE_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.ORANGE_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.MAGENTA_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.LIGHT_BLUE_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.YELLOW_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.LIME_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.PINK_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.GRAY_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.LIGHT_GRAY_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.CYAN_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.PURPLE_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BLUE_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BROWN_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.GREEN_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.RED_STAINED_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BLACK_STAINED_PLANKS.get(), 5, 20);
+
         // STAIRS
-        PropertyRegistry.FlammableBlock(ModBlocks.WHITE_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.ORANGE_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.MAGENTA_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_BLUE_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.YELLOW_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIME_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.PINK_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.GRAY_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_GRAY_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.CYAN_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.PURPLE_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLUE_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BROWN_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.GREEN_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.RED_STAINED_PLANK_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLACK_STAINED_PLANK_STAIRS.get(), 5, 20);
-        
+        fire.setFlammable(ModBlocks.WHITE_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.ORANGE_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.MAGENTA_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.LIGHT_BLUE_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.YELLOW_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.LIME_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.PINK_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.GRAY_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.LIGHT_GRAY_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.CYAN_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.PURPLE_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BLUE_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BROWN_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.GREEN_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.RED_STAINED_PLANK_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BLACK_STAINED_PLANK_STAIRS.get(), 5, 20);
+
         // SLABS
-        PropertyRegistry.FlammableBlock(ModBlocks.WHITE_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.ORANGE_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.MAGENTA_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_BLUE_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.YELLOW_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIME_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.PINK_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.GRAY_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.LIGHT_GRAY_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.CYAN_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.PURPLE_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLUE_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BROWN_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.GREEN_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.RED_STAINED_PLANK_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BLACK_STAINED_PLANK_SLAB.get(), 5, 20);
-        
+        fire.setFlammable(ModBlocks.WHITE_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.ORANGE_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.MAGENTA_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.LIGHT_BLUE_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.YELLOW_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.LIME_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.PINK_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.GRAY_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.LIGHT_GRAY_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.CYAN_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.PURPLE_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BLUE_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BROWN_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.GREEN_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.RED_STAINED_PLANK_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BLACK_STAINED_PLANK_SLAB.get(), 5, 20);
+
         /**********************WOOD_BOARDS**********************/
         // FULL BLOCKS
-        PropertyRegistry.FlammableBlock(ModBlocks.OAK_BOARDS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.SPRUCE_BOARDS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BIRCH_BOARDS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.JUNGLE_BOARDS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.ACACIA_BOARDS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.DARK_OAK_BOARDS.get(), 5, 20);
-        
+        fire.setFlammable(ModBlocks.OAK_BOARDS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.SPRUCE_BOARDS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BIRCH_BOARDS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.JUNGLE_BOARDS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.ACACIA_BOARDS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.DARK_OAK_BOARDS.get(), 5, 20);
+
         // STAIRS
-        PropertyRegistry.FlammableBlock(ModBlocks.OAK_BOARD_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.SPRUCE_BOARD_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BIRCH_BOARD_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.JUNGLE_BOARD_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.ACACIA_BOARD_STAIRS.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.DARK_OAK_BOARD_STAIRS.get(), 5, 20);
-        
+        fire.setFlammable(ModBlocks.OAK_BOARD_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.SPRUCE_BOARD_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BIRCH_BOARD_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.JUNGLE_BOARD_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.ACACIA_BOARD_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.DARK_OAK_BOARD_STAIRS.get(), 5, 20);
+
         // SLABS
-        PropertyRegistry.FlammableBlock(ModBlocks.OAK_BOARD_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.SPRUCE_BOARD_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.BIRCH_BOARD_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.JUNGLE_BOARD_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.ACACIA_BOARD_SLAB.get(), 5, 20);
-        PropertyRegistry.FlammableBlock(ModBlocks.DARK_OAK_BOARD_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.OAK_BOARD_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.SPRUCE_BOARD_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.BIRCH_BOARD_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.JUNGLE_BOARD_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.ACACIA_BOARD_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.DARK_OAK_BOARD_SLAB.get(), 5, 20);
     }
     
     @SubscribeEvent

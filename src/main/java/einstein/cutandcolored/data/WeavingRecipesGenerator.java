@@ -2,6 +2,7 @@ package einstein.cutandcolored.data;
 
 import java.util.function.Consumer;
 
+import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.DyeColor;
@@ -21,13 +22,13 @@ public class WeavingRecipesGenerator extends RecipeResources {
 			Item item = getItem(MCRL(color + "_wool"));
 			
 			Item carpet = getItem(MCRL(color + "_carpet"));
-			weavingRecipe(carpet.getRegistryName().getPath(), item, carpet, 2);
+			weavingRecipe(Util.getItemRegistryName(carpet).getPath(), item, carpet, 2);
 			
 			Item slab = getItem(modRL(color + "_wool_slab"));
-			weavingRecipe(slab.getRegistryName().getPath(), item, slab, 2);
+			weavingRecipe(Util.getItemRegistryName(slab).getPath(), item, slab, 2);
 			
 			Item stairs = getItem(modRL(color + "_wool_stairs"));
-			weavingRecipe(stairs.getRegistryName().getPath(), item, stairs);
+			weavingRecipe(Util.getItemRegistryName(stairs).getPath(), item, stairs);
 		}
 	}
 	

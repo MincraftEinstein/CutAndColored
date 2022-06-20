@@ -1,7 +1,6 @@
 package einstein.cutandcolored.item.crafting;
 
 import com.google.gson.JsonObject;
-
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -13,7 +12,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleItemRecipe;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 
 public abstract class AbstractSingleItemRecipe extends SingleItemRecipe {
 
@@ -31,8 +29,7 @@ public abstract class AbstractSingleItemRecipe extends SingleItemRecipe {
 		return true;
 	}
 	
-    public static class Serializer<T extends AbstractSingleItemRecipe> extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<T>
-    {
+    public static class Serializer<T extends AbstractSingleItemRecipe> implements RecipeSerializer<T> {
         private final IRecipeFactory<T> factory;
         
         public Serializer(IRecipeFactory<T> factory) {
@@ -68,8 +65,7 @@ public abstract class AbstractSingleItemRecipe extends SingleItemRecipe {
             buffer.writeItem(recipe.result);
         }
         
-        public interface IRecipeFactory<T extends AbstractSingleItemRecipe>
-        {
+        public interface IRecipeFactory<T extends AbstractSingleItemRecipe> {
             T create(ResourceLocation id, String group, Ingredient ingredient, ItemStack result);
         }
     }

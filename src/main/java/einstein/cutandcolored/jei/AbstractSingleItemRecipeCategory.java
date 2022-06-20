@@ -8,11 +8,13 @@ import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.config.Constants;
+import mezz.jei.common.Constants;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.Nullable;
+
+import javax.swing.*;
 
 public abstract class AbstractSingleItemRecipeCategory<T extends AbstractSingleItemRecipe> implements IRecipeCategory<T> {
 
@@ -24,20 +26,15 @@ public abstract class AbstractSingleItemRecipeCategory<T extends AbstractSingleI
 	
 	public AbstractSingleItemRecipeCategory(String localizedName, ItemStack iconStack, IGuiHelper guiHelper) {
 		background = guiHelper.createDrawable(Constants.RECIPE_GUI_VANILLA, 0, 220, width, height);
-		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM, iconStack);
-		title = new TranslatableComponent(localizedName);
+		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, iconStack);
+		title = Component.translatable(localizedName);
 	}
-	
+
 	@Override
-	public ResourceLocation getUid() {
+	public @Nullable ResourceLocation getRegistryName(T recipe) {
 		return getRecipeType().getUid();
 	}
-	
-	@Override
-	public Class<? extends T> getRecipeClass() {
-		return getRecipeType().getRecipeClass();
-	}
-	
+
 	@Override
 	public IDrawable getBackground() {
 		return background;

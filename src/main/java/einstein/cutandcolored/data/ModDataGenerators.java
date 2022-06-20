@@ -14,6 +14,7 @@ import com.mojang.datafixers.util.Pair;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -34,7 +35,7 @@ public class ModDataGenerators {
 
 	public static final List<Block> allBlocks = new ArrayList<Block>();
 	public static final List<Block> allMCBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
-			.filter((block) -> CutAndColored.MCMODID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
+			.filter((block) -> CutAndColored.MCMODID.equals(Objects.requireNonNull(Util.getBlockRegistryName(block)).getNamespace()))
 			.collect(Collectors.toList()));
 	public static final String[] BOARD_TYPES = { "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "crimson", "warped" };
 	
@@ -42,25 +43,29 @@ public class ModDataGenerators {
 	public static void DataGenerator(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
 		ModBlocks.BLOCKS.getEntries().forEach((block) -> allBlocks.add(block.get()));
-		generator.addProvider(new CraftingRecipesGenerator(generator));
-		generator.addProvider(new SmeltingRecipeGenerator(generator));
-		generator.addProvider(new StonecuttingRecipesGenerator(generator));
-		generator.addProvider(new GlasscuttingRecipesGenerator(generator));
-		generator.addProvider(new SawmillingRecipesGenerator(generator));
-		generator.addProvider(new WeavingRecipesGenerator(generator));
-		generator.addProvider(new ModLootTableProvder(generator));
-		generator.addProvider(new BlockAssetsGenerator(generator, event.getExistingFileHelper()));
-		generator.addProvider(new ItemAssetsGenerator(generator, event.getExistingFileHelper()));
+
+		// Server providers
+		generator.addProvider(event.includeServer(), new CraftingRecipesGenerator(generator));
+		generator.addProvider(event.includeServer(), new SmeltingRecipeGenerator(generator));
+		generator.addProvider(event.includeServer(), new StonecuttingRecipesGenerator(generator));
+		generator.addProvider(event.includeServer(), new GlasscuttingRecipesGenerator(generator));
+		generator.addProvider(event.includeServer(), new SawmillingRecipesGenerator(generator));
+		generator.addProvider(event.includeServer(), new WeavingRecipesGenerator(generator));
+		generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
 		BlockTagsProvider blockTags = new BlockTagsGenerator(generator, event.getExistingFileHelper()); // Used for both item and block tags
-		generator.addProvider(blockTags);
-		generator.addProvider(new ItemTagsGenerator(generator, blockTags, event.getExistingFileHelper()));
+		generator.addProvider(event.includeServer(), blockTags);
+		generator.addProvider(event.includeServer(), new ItemTagsGenerator(generator, blockTags, event.getExistingFileHelper()));
+
+		// Client providers
+		generator.addProvider(event.includeClient(), new BlockAssetsGenerator(generator, event.getExistingFileHelper()));
+		generator.addProvider(event.includeClient(), new ItemAssetsGenerator(generator, event.getExistingFileHelper()));
 	}
 	
-	public static class ModLootTableProvder extends LootTableProvider {
+	public static class ModLootTableProvider extends LootTableProvider {
 
 		private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> loot_tables = ImmutableList.of(Pair.of(BlockLootTableGenerator::new, LootContextParamSets.BLOCK));
 		
-		public ModLootTableProvder(DataGenerator dataGenerator) {
+		public ModLootTableProvider(DataGenerator dataGenerator) {
 			super(dataGenerator);
 		}
 		

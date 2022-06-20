@@ -5,6 +5,7 @@ import java.util.List;
 
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -148,7 +149,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 						ModBlocks.SOUL_GLASS_STAIRS.get(), ModBlocks.SOUL_GLASS_SLAB.get(), ModBlocks.OBSIDIAN_BRICKS.get(),
 						ModBlocks.OBSIDIAN_BRICK_STAIRS.get(), ModBlocks.OBSIDIAN_BRICK_SLAB.get(), ModBlocks.OBSIDIAN_BRICK_PILLAR.get(),
 						ModBlocks.OBSIDIAN_BRICK_WALL.get())
-				.addOptional(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get().getRegistryName());
+				.addOptional(Util.getBlockRegistryName(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get()));
 		tag(BlockTags.MINEABLE_WITH_AXE).addTags(STAINED_PLANK_SLABS, STAINED_PLANK_STAIRS, STAINED_PLANKS, BOARDS, BOARD_STAIRS, BOARD_SLABS)
 				.add(ModBlocks.WEAVER.get(), ModBlocks.SAWMILL.get());
 		tag(BlockTags.NON_FLAMMABLE_WOOD).add(ModBlocks.CRIMSON_BOARDS.get(), ModBlocks.CRIMSON_BOARD_STAIRS.get(), ModBlocks.CRIMSON_BOARD_SLAB.get(),
@@ -219,7 +220,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 		}
 		for (int i = 0; i < coloredBlocks.size(); i++) {
 			Block block = coloredBlocks.get(i);
-			String name = block.getRegistryName().getPath();
+			String name = Util.getBlockRegistryName(block).getPath();
 			if (name.contains("concrete")) {
 				if (name.contains("slab")) {
 					tag(VANILLA_CONCRETE_SLABS).add(block);
@@ -292,7 +293,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	}
 	
 	private boolean isVanillaColored(Block block, int colorIndex) {
-		String name = block.getRegistryName().getPath();
+		String name = Util.getBlockRegistryName(block).getPath();
 		return name.contains(DyeColor.byId(colorIndex).getName()) && !name.contains("blackstone");
 	}
 	

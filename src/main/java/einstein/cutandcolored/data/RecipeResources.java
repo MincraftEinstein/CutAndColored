@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -54,7 +55,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 
 	protected static ResourceLocation location(ItemLike item, String folder) {
-		return modRL(folder + Objects.requireNonNull(item.asItem().getRegistryName().getPath()));
+		return modRL(folder + Objects.requireNonNull(Util.getItemRegistryName(item).getPath()));
 	}
 	
 	protected static void smeltingRecipe(ItemLike ingredient, ItemLike result, float experience, int cookTime) {
@@ -66,7 +67,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void stonecuttingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
-		String modid = result.asItem().getRegistryName().getNamespace();
+		String modid = Util.getItemRegistryName(result).getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.stonecuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(triggerItem)).save(consumer, location(name, "stonecutting/"));
 		}
@@ -92,7 +93,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void stonecuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
-		String modid = result.asItem().getRegistryName().getNamespace();
+		String modid = Util.getItemRegistryName(result).getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.stonecuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "stonecutting/"));
 		}
@@ -114,7 +115,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void glasscuttingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
-		String modid = result.asItem().getRegistryName().getNamespace();
+		String modid = Util.getItemRegistryName(result).getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(triggerItem)).save(consumer, location(name, "glasscutting/"));
 		}
@@ -140,7 +141,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void glasscuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
-		String modid = result.asItem().getRegistryName().getNamespace();
+		String modid = Util.getItemRegistryName(result).getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "glasscutting/"));
 		}
@@ -162,7 +163,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void sawmillingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
-		String modid = result.asItem().getRegistryName().getNamespace();
+		String modid = Util.getItemRegistryName(result).getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.sawmillingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(triggerItem)).save(consumer, location(name, "sawmilling/"));
 		}
@@ -188,7 +189,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void sawmillingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
-		String modid = result.asItem().getRegistryName().getNamespace();
+		String modid = Util.getItemRegistryName(result).getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.sawmillingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "sawmilling/"));
 		}
@@ -210,7 +211,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void weavingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
-		String modid = result.asItem().getRegistryName().getNamespace();
+		String modid = Util.getItemRegistryName(result).getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.weavingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(triggerItem)).save(consumer, location(name, "weaving/"));
 		}
@@ -236,7 +237,7 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static void weavingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
-		String modid = result.asItem().getRegistryName().getNamespace();
+		String modid = Util.getItemRegistryName(result).getNamespace();
 		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
 			ModRecipeBuilder.weavingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "weaving/"));
 		}
@@ -351,7 +352,7 @@ public class RecipeResources extends RecipeProvider {
 			.define('$', dye)
 			.group(group)
 			.unlockedBy("has_item", has(ingredients))
-			.save(consumer, location(result.asItem().getRegistryName().getPath() + "_from_recolor", "crafting/"));
+			.save(consumer, location(Util.getItemRegistryName(result).getPath() + "_from_recolor", "crafting/"));
 	}
 	
 	protected static void recolorObject(TagKey<Item> ingredients, ItemLike result, String color, String group, String modid) {
@@ -366,6 +367,6 @@ public class RecipeResources extends RecipeProvider {
 			.group(group)
 			.unlockedBy("has_item", has(ingredients))::save)
 			.generateAdvancement()
-			.build(consumer, location(result.asItem().getRegistryName().getPath() + "_from_recolor", "crafting/"));
+			.build(consumer, location(Util.getItemRegistryName(result).getPath() + "_from_recolor", "crafting/"));
 	}
 }

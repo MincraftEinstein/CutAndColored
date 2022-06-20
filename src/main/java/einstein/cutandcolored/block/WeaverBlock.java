@@ -1,12 +1,9 @@
 package einstein.cutandcolored.block;
 
-import javax.annotation.Nullable;
-
 import einstein.cutandcolored.inventory.container.WeaverMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.inventory.ContainerLevelAccess;
@@ -18,9 +15,11 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import javax.annotation.Nullable;
+
 public class WeaverBlock extends AbstractSingleItemRecipeBlock
 {
-	private static final Component CONTAINER_TITLE = new TranslatableComponent("container.cutandcolored.weaver");
+	private static final Component CONTAINER_TITLE = Component.translatable("container.cutandcolored.weaver");
 	
 	// North shapes
     protected static final VoxelShape NORTH_RIGHT_LEG = Block.box(14.0, 0.0, 7.0, 15.0, 8.0, 9.0);
