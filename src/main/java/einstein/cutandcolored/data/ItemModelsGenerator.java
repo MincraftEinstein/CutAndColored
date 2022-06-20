@@ -16,7 +16,7 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ItemAssetsGenerator extends ItemModelProvider {
+public class ItemModelsGenerator extends ItemModelProvider {
 
 	private List<Block> wallBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
@@ -27,7 +27,7 @@ public class ItemAssetsGenerator extends ItemModelProvider {
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("window") && !Util.getBlockRegistryName(block).getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	
-	public ItemAssetsGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+	public ItemModelsGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
 		super(generator, CutAndColored.MODID, existingFileHelper);
 	}
 	

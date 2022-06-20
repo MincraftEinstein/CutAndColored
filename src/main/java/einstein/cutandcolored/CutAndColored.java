@@ -33,11 +33,6 @@ public class CutAndColored
 		ModRecipeTypes.RECIPE_TYPE.register(modEventBus);
 		ModRecipeTypes.RECIPE_SERIALIZERS.register(modEventBus);
 		MinecraftForge.EVENT_BUS.register(new PropertyEvents());
-//		modEventBus.addGenericListener(RecipeSerializer.class, this::registerRecipeType);
 		ModConfigs.init();
 	}
-	
-//	private void registerRecipeType(RegistryEvent.Register<RecipeSerializer<?>> event) {
-//		ModRecipeTypes.types.forEach((type) -> Registry.register(Registry.RECIPE_TYPE, type.toString(), type));
-//	}
 }

@@ -58,7 +58,7 @@ public class ModDataGenerators {
 
 		// Client providers
 		generator.addProvider(event.includeClient(), new BlockAssetsGenerator(generator, event.getExistingFileHelper()));
-		generator.addProvider(event.includeClient(), new ItemAssetsGenerator(generator, event.getExistingFileHelper()));
+		generator.addProvider(event.includeClient(), new ItemModelsGenerator(generator, event.getExistingFileHelper()));
 	}
 	
 	public static class ModLootTableProvider extends LootTableProvider {
