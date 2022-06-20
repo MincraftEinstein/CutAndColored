@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "cutandcolored:block/mangrove_boards",
+    "side": "cutandcolored:block/mangrove_boards",
+    "top": "cutandcolored:block/mangrove_boards"
+  }
+}

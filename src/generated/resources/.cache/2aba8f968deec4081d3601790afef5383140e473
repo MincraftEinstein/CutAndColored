@@ -1,4 +1,4 @@
-// 1.19	2022-06-20T13:35:28.499111	CutAndColored item assets
+// 1.19	2022-06-20T16:43:16.5128083	CutAndColored item assets
 d1602e02a092b3896dc2d7eb82530c127c127886 assets/cutandcolored/models/item/acacia_boards.json
 1d61866c80626b301f228c634650518da01b7e72 assets/cutandcolored/models/item/acacia_board_slab.json
 2edc73f74f05f8f7b753053c400dd24b57193131 assets/cutandcolored/models/item/acacia_board_stairs.json
@@ -83,6 +83,9 @@ d4e64fae5f9862675536d65373a173c78d13cd0f assets/cutandcolored/models/item/lime_s
 192b026d3594f94339c7d46a56650525dba7853d assets/cutandcolored/models/item/magenta_stained_brick_wall.json
 2bd33cccade16dd0683413b7d352d8e80d90674f assets/cutandcolored/models/item/magenta_stained_glass_window.json
 95e7522b5a19826b43e206c29f6c497be0f86712 assets/cutandcolored/models/item/magenta_stained_glass_window_pane.json
+e547cc2a5f75e6786b2323b001a4f94476776cb5 assets/cutandcolored/models/item/mangrove_boards.json
+24271b3449f3028834e85b949a357ff425fb6377 assets/cutandcolored/models/item/mangrove_board_slab.json
+4bd87bbe320fb76fb3a61392902ef45bbc88d0eb assets/cutandcolored/models/item/mangrove_board_stairs.json
 101cd58bcacda497a8faa07344241ce2ef762d9b assets/cutandcolored/models/item/nether_brick_fence_gate.json
 c53359938254002bdb2ced28afc182ae8a70caee assets/cutandcolored/models/item/oak_boards.json
 d2912f99c431245dfc2c68cce2c278a732bab240 assets/cutandcolored/models/item/oak_board_slab.json

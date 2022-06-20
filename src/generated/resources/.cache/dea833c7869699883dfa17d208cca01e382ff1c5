@@ -1,4 +1,4 @@
-// 1.19	2022-06-20T13:35:28.6290315	CutAndColored loot tables
+// 1.19	2022-06-20T16:43:16.4758315	CutAndColored loot tables
 caa3189ff9c4a5d8653f5baad29e6f3145126203 data/cutandcolored/loot_tables/blocks/acacia_boards.json
 0a6cf898350e45941b9215848b6dfee2879964e2 data/cutandcolored/loot_tables/blocks/acacia_board_slab.json
 a5c46119bcfa081845144201a7c9327f58292c43 data/cutandcolored/loot_tables/blocks/acacia_board_stairs.json
@@ -237,6 +237,9 @@ f3fb8a3a0568e21c3d16b6ec2ec2fbd7a736b918 data/cutandcolored/loot_tables/blocks/m
 b90530048fbc5c48a2794493a36f0a0024bc805d data/cutandcolored/loot_tables/blocks/magenta_terracotta_stairs.json
 a9502b4f97bcc93b6b2390a3b406adebd12e8001 data/cutandcolored/loot_tables/blocks/magenta_wool_slab.json
 813efc23ed2716b0051f770a2aeb12fa7ccfb195 data/cutandcolored/loot_tables/blocks/magenta_wool_stairs.json
+643fbe0e4fb9946bc434ee59b3fea759499476a6 data/cutandcolored/loot_tables/blocks/mangrove_boards.json
+73db226ea097bad80fb2c028eea1fd9d99c7f023 data/cutandcolored/loot_tables/blocks/mangrove_board_slab.json
+d23125da1bf2f308e90f0e7cf4e93b059e6d6b4b data/cutandcolored/loot_tables/blocks/mangrove_board_stairs.json
 5af1604e7eadc79ccb1f872a4e88a5ac5414d82c data/cutandcolored/loot_tables/blocks/nether_brick_fence_gate.json
 f407da5f6221db7f1969763b1597b95c841af415 data/cutandcolored/loot_tables/blocks/oak_boards.json
 830fa90e3223514c2ffdce86a9c1f48ae6629982 data/cutandcolored/loot_tables/blocks/oak_board_slab.json

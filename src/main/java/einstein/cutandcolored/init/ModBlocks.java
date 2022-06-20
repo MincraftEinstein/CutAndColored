@@ -468,6 +468,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> JUNGLE_BOARDS = register("jungle_boards", () -> new Block(BlockProperties.planks(MaterialColor.DIRT)));
     public static final RegistryObject<Block> ACACIA_BOARDS = register("acacia_boards", () -> new Block(BlockProperties.planks(MaterialColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> DARK_OAK_BOARDS = register("dark_oak_boards", () -> new Block(BlockProperties.planks(MaterialColor.COLOR_BROWN)));
+    public static final RegistryObject<Block> MANGROVE_BOARDS = register("mangrove_boards", () -> new Block(BlockProperties.planks(MaterialColor.COLOR_RED)));
     public static final RegistryObject<Block> CRIMSON_BOARDS = register("crimson_boards", () -> new Block(BlockProperties.netherPlanks(MaterialColor.CRIMSON_STEM)));
     public static final RegistryObject<Block> WARPED_BOARDS = register("warped_boards", () -> new Block(BlockProperties.netherPlanks(MaterialColor.WARPED_STEM)));
     
@@ -478,6 +479,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> JUNGLE_BOARD_STAIRS = register("jungle_board_stairs", () -> new StairBlock(JUNGLE_BOARDS.get()::defaultBlockState, Properties.copy(JUNGLE_BOARDS.get())));
     public static final RegistryObject<Block> ACACIA_BOARD_STAIRS = register("acacia_board_stairs", () -> new StairBlock(ACACIA_BOARDS.get()::defaultBlockState, Properties.copy(ACACIA_BOARDS.get())));
     public static final RegistryObject<Block> DARK_OAK_BOARD_STAIRS = register("dark_oak_board_stairs", () -> new StairBlock(DARK_OAK_BOARDS.get()::defaultBlockState, Properties.copy(DARK_OAK_BOARDS.get())));
+    public static final RegistryObject<Block> MANGROVE_BOARD_STAIRS = register("mangrove_board_stairs", () -> new StairBlock(MANGROVE_BOARDS.get()::defaultBlockState, Properties.copy(MANGROVE_BOARDS.get())));
     public static final RegistryObject<Block> CRIMSON_BOARD_STAIRS = register("crimson_board_stairs", () -> new StairBlock(CRIMSON_BOARDS.get()::defaultBlockState, Properties.copy(CRIMSON_BOARDS.get())));
     public static final RegistryObject<Block> WARPED_BOARD_STAIRS = register("warped_board_stairs", () -> new StairBlock(WARPED_BOARDS.get()::defaultBlockState, Properties.copy(WARPED_BOARDS.get())));
     
@@ -488,6 +490,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> JUNGLE_BOARD_SLAB = register("jungle_board_slab", () -> new SlabBlock(Properties.copy(JUNGLE_BOARDS.get())));
     public static final RegistryObject<Block> ACACIA_BOARD_SLAB = register("acacia_board_slab", () -> new SlabBlock(Properties.copy(ACACIA_BOARDS.get())));
     public static final RegistryObject<Block> DARK_OAK_BOARD_SLAB = register("dark_oak_board_slab", () -> new SlabBlock(Properties.copy(DARK_OAK_BOARDS.get())));
+    public static final RegistryObject<Block> MANGROVE_BOARD_SLAB = register("mangrove_board_slab", () -> new SlabBlock(Properties.copy(MANGROVE_BOARDS.get())));
     public static final RegistryObject<Block> CRIMSON_BOARD_SLAB = register("crimson_board_slab", () -> new SlabBlock(Properties.copy(CRIMSON_BOARDS.get())));
     public static final RegistryObject<Block> WARPED_BOARD_SLAB = register("warped_board_slab", () -> new SlabBlock(Properties.copy(WARPED_BOARDS.get())));
     

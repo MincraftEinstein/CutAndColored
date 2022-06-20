@@ -161,13 +161,13 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 		tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.get().asItem(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get().asItem());
 		tag(BOARDS).add(ModBlocks.OAK_BOARDS.get().asItem(), ModBlocks.SPRUCE_BOARDS.get().asItem(), ModBlocks.BIRCH_BOARDS.get().asItem(),
 				ModBlocks.JUNGLE_BOARDS.get().asItem(), ModBlocks.ACACIA_BOARDS.get().asItem(), ModBlocks.DARK_OAK_BOARDS.get().asItem(),
-				ModBlocks.CRIMSON_BOARDS.get().asItem(), ModBlocks.WARPED_BOARDS.get().asItem());
+				ModBlocks.CRIMSON_BOARDS.get().asItem(), ModBlocks.WARPED_BOARDS.get().asItem(), ModBlocks.MANGROVE_BOARDS.get().asItem());
 		tag(BOARD_STAIRS).add(ModBlocks.OAK_BOARD_STAIRS.get().asItem(), ModBlocks.SPRUCE_BOARD_STAIRS.get().asItem(), ModBlocks.BIRCH_BOARD_STAIRS.get().asItem(),
 				ModBlocks.JUNGLE_BOARD_STAIRS.get().asItem(), ModBlocks.ACACIA_BOARD_STAIRS.get().asItem(),ModBlocks.DARK_OAK_BOARD_STAIRS.get().asItem(),
-				ModBlocks.CRIMSON_BOARD_STAIRS.get().asItem(), ModBlocks.WARPED_BOARD_STAIRS.get().asItem());
+				ModBlocks.CRIMSON_BOARD_STAIRS.get().asItem(), ModBlocks.WARPED_BOARD_STAIRS.get().asItem(), ModBlocks.MANGROVE_BOARD_STAIRS.get().asItem());
 		tag(BOARD_SLABS).add(ModBlocks.OAK_BOARD_SLAB.get().asItem(), ModBlocks.SPRUCE_BOARD_SLAB.get().asItem(), ModBlocks.BIRCH_BOARD_SLAB.get().asItem(),
 				ModBlocks.JUNGLE_BOARD_SLAB.get().asItem(), ModBlocks.ACACIA_BOARD_SLAB.get().asItem(),ModBlocks.DARK_OAK_BOARD_SLAB.get().asItem(),
-				ModBlocks.CRIMSON_BOARD_SLAB.get().asItem(), ModBlocks.WARPED_BOARD_SLAB.get().asItem());
+				ModBlocks.CRIMSON_BOARD_SLAB.get().asItem(), ModBlocks.WARPED_BOARD_SLAB.get().asItem(), ModBlocks.MANGROVE_BOARD_SLAB.get().asItem());
 		
 		tag(Tags.Items.GLASS_COLORLESS).add(ModBlocks.GLASS_WINDOW.get().asItem());
 		tag(Tags.Items.GLASS_PANES_COLORLESS).add(ModBlocks.GLASS_WINDOW_PANE.get().asItem());

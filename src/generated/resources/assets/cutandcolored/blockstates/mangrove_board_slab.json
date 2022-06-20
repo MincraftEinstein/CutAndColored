@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cutandcolored:block/mangrove_board_slab"
+    },
+    "type=double": {
+      "model": "cutandcolored:block/mangrove_boards"
+    },
+    "type=top": {
+      "model": "cutandcolored:block/mangrove_board_slab_top"
+    }
+  }
+}

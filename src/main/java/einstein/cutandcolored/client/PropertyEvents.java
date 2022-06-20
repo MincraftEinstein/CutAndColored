@@ -128,6 +128,7 @@ public class PropertyEvents {
         fire.setFlammable(ModBlocks.JUNGLE_BOARDS.get(), 5, 20);
         fire.setFlammable(ModBlocks.ACACIA_BOARDS.get(), 5, 20);
         fire.setFlammable(ModBlocks.DARK_OAK_BOARDS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.MANGROVE_BOARDS.get(), 5, 20);
 
         // STAIRS
         fire.setFlammable(ModBlocks.OAK_BOARD_STAIRS.get(), 5, 20);
@@ -136,6 +137,7 @@ public class PropertyEvents {
         fire.setFlammable(ModBlocks.JUNGLE_BOARD_STAIRS.get(), 5, 20);
         fire.setFlammable(ModBlocks.ACACIA_BOARD_STAIRS.get(), 5, 20);
         fire.setFlammable(ModBlocks.DARK_OAK_BOARD_STAIRS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.MANGROVE_BOARD_STAIRS.get(), 5, 20);
 
         // SLABS
         fire.setFlammable(ModBlocks.OAK_BOARD_SLAB.get(), 5, 20);
@@ -144,6 +146,7 @@ public class PropertyEvents {
         fire.setFlammable(ModBlocks.JUNGLE_BOARD_SLAB.get(), 5, 20);
         fire.setFlammable(ModBlocks.ACACIA_BOARD_SLAB.get(), 5, 20);
         fire.setFlammable(ModBlocks.DARK_OAK_BOARD_SLAB.get(), 5, 20);
+        fire.setFlammable(ModBlocks.MANGROVE_BOARD_SLAB.get(), 5, 20);
     }
     
     @SubscribeEvent
@@ -272,6 +275,9 @@ public class PropertyEvents {
         else if (fuel == ModBlocks.DARK_OAK_BOARDS.get().asItem()) {
             event.setBurnTime(300);
         }
+        else if (fuel == ModBlocks.MANGROVE_BOARDS.get().asItem()) {
+            event.setBurnTime(300);
+        }
         
         // STAIRS
         else if (fuel == ModBlocks.OAK_BOARD_STAIRS.get().asItem()) {
@@ -292,6 +298,9 @@ public class PropertyEvents {
         else if (fuel == ModBlocks.DARK_OAK_BOARD_STAIRS.get().asItem()) {
             event.setBurnTime(300);
         }
+        else if (fuel == ModBlocks.MANGROVE_BOARD_STAIRS.get().asItem()) {
+            event.setBurnTime(300);
+        }
         
         //SLABS
         else if (fuel == ModBlocks.OAK_BOARD_SLAB.get().asItem()) {
@@ -310,6 +319,9 @@ public class PropertyEvents {
             event.setBurnTime(150);
         }
         else if (fuel == ModBlocks.DARK_OAK_BOARD_SLAB.get().asItem()) {
+            event.setBurnTime(150);
+        }
+        else if (fuel == ModBlocks.MANGROVE_BOARD_SLAB.get().asItem()) {
             event.setBurnTime(150);
         }
     }

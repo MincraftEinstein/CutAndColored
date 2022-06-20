@@ -439,6 +439,7 @@
     "block.cutandcolored.dark_oak_boards": "Dark Oak Boards",
     "block.cutandcolored.crimson_boards": "Crimson Boards",
     "block.cutandcolored.warped_boards": "Warped Boards",
+    "block.cutandcolored.mangrove_boards": "Mangrove Boards",
     
     // STAIRS
     "block.cutandcolored.oak_board_stairs": "Oak Board Stairs",
@@ -449,6 +450,7 @@
     "block.cutandcolored.dark_oak_board_stairs": "Dark Oak Board Stairs",
     "block.cutandcolored.crimson_board_stairs": "Crimson Board Stairs",
     "block.cutandcolored.warped_board_stairs": "Warped Board Stairs",
+    "block.cutandcolored.mangrove_board_stairs": "Mangrove Board Stairs",
     
     // SLABS
     "block.cutandcolored.oak_board_slab": "Oak Board Slab",
@@ -459,6 +461,7 @@
     "block.cutandcolored.dark_oak_board_slab": "Dark Oak Board Slab",
     "block.cutandcolored.crimson_board_slab": "Crimson Board Slab",
     "block.cutandcolored.warped_board_slab": "Warped Board Slab",
+    "block.cutandcolored.mangrove_board_slab": "Mangrove Board Slab",
     
     /**********************MISC_BLOCKS**********************/
     // FULL BLOCKS
