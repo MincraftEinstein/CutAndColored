@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 2,
   "ingredient": {
     "item": "cutandcolored:warped_boards"
   },
-  "result": "cutandcolored:warped_board_slab",
-  "count": 2
+  "result": "cutandcolored:warped_board_slab"
 }

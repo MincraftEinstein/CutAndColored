@@ -1,11 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "recolor_stained_glass_window_panes",
-  "pattern": [
-    "###",
-    "#$#",
-    "###"
-  ],
   "key": {
     "#": {
       "tag": "forge:glass_window_panes"
@@ -14,8 +9,13 @@
       "item": "minecraft:yellow_dye"
     }
   },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
   "result": {
-    "item": "cutandcolored:yellow_stained_glass_window_pane",
-    "count": 8
+    "count": 8,
+    "item": "cutandcolored:yellow_stained_glass_window_pane"
   }
 }

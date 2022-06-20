@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:weaving",
+  "count": 1,
   "ingredient": {
     "item": "minecraft:lime_wool"
   },
-  "result": "cutandcolored:lime_wool_stairs",
-  "count": 1
+  "result": "cutandcolored:lime_wool_stairs"
 }

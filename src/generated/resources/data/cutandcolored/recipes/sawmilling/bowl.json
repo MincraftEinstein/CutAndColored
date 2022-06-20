@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 1,
   "ingredient": {
     "tag": "minecraft:planks"
   },
-  "result": "minecraft:bowl",
-  "count": 1
+  "result": "minecraft:bowl"
 }

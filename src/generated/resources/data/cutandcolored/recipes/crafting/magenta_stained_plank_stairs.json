@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "stained_plank_stairs",
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
   "key": {
     "#": {
       "item": "cutandcolored:magenta_stained_planks"
     }
   },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
   "result": {
-    "item": "cutandcolored:magenta_stained_plank_stairs",
-    "count": 4
+    "count": 4,
+    "item": "cutandcolored:magenta_stained_plank_stairs"
   }
 }

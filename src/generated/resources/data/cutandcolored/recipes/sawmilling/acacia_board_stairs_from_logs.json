@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 4,
   "ingredient": {
     "tag": "minecraft:acacia_logs"
   },
-  "result": "cutandcolored:acacia_board_stairs",
-  "count": 4
+  "result": "cutandcolored:acacia_board_stairs"
 }

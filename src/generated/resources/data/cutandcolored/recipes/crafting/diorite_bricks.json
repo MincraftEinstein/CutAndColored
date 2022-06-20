@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "##",
-    "##"
-  ],
   "key": {
     "#": {
       "item": "minecraft:polished_diorite"
     }
   },
+  "pattern": [
+    "##",
+    "##"
+  ],
   "result": {
-    "item": "cutandcolored:diorite_bricks",
-    "count": 4
+    "count": 4,
+    "item": "cutandcolored:diorite_bricks"
   }
 }

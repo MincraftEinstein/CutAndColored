@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "cutandcolored:block/purple_stained_glass_slab_top"
-    },
     "type=bottom": {
       "model": "cutandcolored:block/purple_stained_glass_slab"
     },
     "type=double": {
       "model": "minecraft:block/purple_stained_glass"
+    },
+    "type=top": {
+      "model": "cutandcolored:block/purple_stained_glass_slab_top"
     }
   }
 }

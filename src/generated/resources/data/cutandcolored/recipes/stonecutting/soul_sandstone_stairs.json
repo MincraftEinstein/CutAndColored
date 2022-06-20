@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 1,
   "ingredient": {
     "item": "cutandcolored:soul_sandstone"
   },
-  "result": "cutandcolored:soul_sandstone_stairs",
-  "count": 1
+  "result": "cutandcolored:soul_sandstone_stairs"
 }

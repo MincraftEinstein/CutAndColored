@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "wool_stairs",
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
   "key": {
     "#": {
       "item": "minecraft:lime_wool"
     }
   },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
   "result": {
-    "item": "cutandcolored:lime_wool_stairs",
-    "count": 4
+    "count": 4,
+    "item": "cutandcolored:lime_wool_stairs"
   }
 }

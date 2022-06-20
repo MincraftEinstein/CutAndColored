@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 2,
   "ingredient": {
     "item": "minecraft:oak_planks"
   },
-  "result": "minecraft:oak_slab",
-  "count": 2
+  "result": "minecraft:oak_slab"
 }

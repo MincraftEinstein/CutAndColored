@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 1,
   "ingredient": {
     "item": "minecraft:end_stone_bricks"
   },
-  "result": "cutandcolored:chiseled_end_stone_bricks",
-  "count": 1
+  "result": "cutandcolored:chiseled_end_stone_bricks"
 }

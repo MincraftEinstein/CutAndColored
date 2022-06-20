@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/inner_stairs",
   "textures": {
-    "side": "cutandcolored:block/oak_boards",
     "bottom": "cutandcolored:block/oak_boards",
+    "side": "cutandcolored:block/oak_boards",
     "top": "cutandcolored:block/oak_boards"
   }
 }

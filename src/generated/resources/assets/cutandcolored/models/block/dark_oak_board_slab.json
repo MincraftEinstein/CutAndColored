@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab",
   "textures": {
-    "side": "cutandcolored:block/dark_oak_boards",
     "bottom": "cutandcolored:block/dark_oak_boards",
+    "side": "cutandcolored:block/dark_oak_boards",
     "top": "cutandcolored:block/dark_oak_boards"
   }
 }

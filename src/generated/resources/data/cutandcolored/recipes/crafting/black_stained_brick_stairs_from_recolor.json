@@ -1,11 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "recolor_stained_brick_stairs",
-  "pattern": [
-    "###",
-    "#$#",
-    "###"
-  ],
   "key": {
     "#": {
       "tag": "forge:clay_brick_stairs"
@@ -14,8 +9,13 @@
       "item": "minecraft:black_dye"
     }
   },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
   "result": {
-    "item": "cutandcolored:black_stained_brick_stairs",
-    "count": 8
+    "count": 8,
+    "item": "cutandcolored:black_stained_brick_stairs"
   }
 }

@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 1,
   "ingredient": {
     "item": "cutandcolored:soul_sandstone"
   },
-  "result": "cutandcolored:chiseled_soul_sandstone",
-  "count": 1
+  "result": "cutandcolored:chiseled_soul_sandstone"
 }

@@ -1,9 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "$#$",
-    "$#$"
-  ],
   "key": {
     "#": {
       "item": "minecraft:iron_ingot"
@@ -12,6 +8,10 @@
       "item": "minecraft:iron_nugget"
     }
   },
+  "pattern": [
+    "$#$",
+    "$#$"
+  ],
   "result": {
     "item": "cutandcolored:iron_fence_gate"
   }

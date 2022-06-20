@@ -1,17 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
+  "group": "board_stairs",
   "key": {
     "#": {
       "item": "cutandcolored:acacia_boards"
     }
   },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
   "result": {
-    "item": "cutandcolored:acacia_board_stairs",
-    "count": 4
+    "count": 4,
+    "item": "cutandcolored:acacia_board_stairs"
   }
 }

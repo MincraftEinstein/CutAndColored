@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 300,
+  "experience": 0.3,
   "ingredient": {
     "item": "minecraft:soul_sand"
   },
-  "result": "cutandcolored:soul_glass",
-  "experience": 0.3,
-  "cookingtime": 300
+  "result": "cutandcolored:soul_glass"
 }

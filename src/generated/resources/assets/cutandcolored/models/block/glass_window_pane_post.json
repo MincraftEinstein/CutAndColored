@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_post",
   "textures": {
-    "pane": "cutandcolored:block/glass_window",
-    "edge": "minecraft:block/glass_pane_top"
+    "edge": "minecraft:block/glass_pane_top",
+    "pane": "cutandcolored:block/glass_window"
   }
 }

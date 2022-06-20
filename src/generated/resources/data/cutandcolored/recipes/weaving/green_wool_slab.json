@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:weaving",
+  "count": 2,
   "ingredient": {
     "item": "minecraft:green_wool"
   },
-  "result": "cutandcolored:green_wool_slab",
-  "count": 2
+  "result": "cutandcolored:green_wool_slab"
 }

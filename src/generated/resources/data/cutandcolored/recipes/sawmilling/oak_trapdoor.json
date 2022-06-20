@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 2,
   "ingredient": {
     "tag": "minecraft:oak_logs"
   },
-  "result": "minecraft:oak_trapdoor",
-  "count": 2
+  "result": "minecraft:oak_trapdoor"
 }

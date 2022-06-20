@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side",
   "textures": {
-    "pane": "cutandcolored:block/orange_stained_glass_window",
-    "edge": "minecraft:block/orange_stained_glass_pane_top"
+    "edge": "minecraft:block/orange_stained_glass_pane_top",
+    "pane": "cutandcolored:block/orange_stained_glass_window"
   }
 }

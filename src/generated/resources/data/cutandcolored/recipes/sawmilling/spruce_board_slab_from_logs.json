@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 8,
   "ingredient": {
     "tag": "minecraft:spruce_logs"
   },
-  "result": "cutandcolored:spruce_board_slab",
-  "count": 8
+  "result": "cutandcolored:spruce_board_slab"
 }

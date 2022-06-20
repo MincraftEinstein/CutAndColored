@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:glasscutting",
+  "count": 1,
   "ingredient": {
     "item": "minecraft:blue_stained_glass_pane"
   },
-  "result": "cutandcolored:blue_stained_glass_window_pane",
-  "count": 1
+  "result": "cutandcolored:blue_stained_glass_window_pane"
 }

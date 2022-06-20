@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "###",
-    "###"
-  ],
   "key": {
     "#": {
       "item": "cutandcolored:glass_window"
     }
   },
+  "pattern": [
+    "###",
+    "###"
+  ],
   "result": {
-    "item": "cutandcolored:glass_window_pane",
-    "count": 6
+    "count": 6,
+    "item": "cutandcolored:glass_window_pane"
   }
 }

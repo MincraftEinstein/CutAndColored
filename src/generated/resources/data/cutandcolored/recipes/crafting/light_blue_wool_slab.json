@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "wool_slabs",
-  "pattern": [
-    "###"
-  ],
   "key": {
     "#": {
       "item": "minecraft:light_blue_wool"
     }
   },
+  "pattern": [
+    "###"
+  ],
   "result": {
-    "item": "cutandcolored:light_blue_wool_slab",
-    "count": 6
+    "count": 6,
+    "item": "cutandcolored:light_blue_wool_slab"
   }
 }

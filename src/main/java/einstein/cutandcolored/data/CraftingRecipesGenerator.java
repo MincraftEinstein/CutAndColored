@@ -36,8 +36,8 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			String stairs = type +  "_board_stairs";
 			Item block = getItem(modRL(type + "_boards"));
 			
-			slabsRecipe(slab, block, getItem(modRL(slab)), "");
-			stairsRecipe(stairs, block, getItem(modRL(stairs)), "");
+			slabsRecipe(slab, block, getItem(modRL(slab)), "board_slabs");
+			stairsRecipe(stairs, block, getItem(modRL(stairs)), "board_stairs");
 		}
 		
 		pillarRecipe(Blocks.END_STONE_BRICK_SLAB, ModBlocks.CHISELED_END_STONE_BRICKS.get(), 1);
@@ -84,15 +84,7 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			.define('$', Blocks.STONE)
 			.unlockedBy("has_item", has(Items.DIAMOND))
 			.save(consumer, location(ModBlocks.GLASSCUTTER.get(), "crafting/"));
-		
-		ConditionalRecipe.builder().addCondition(new ModLoadedCondition("horizontalpanes"))
-		.addRecipe(ShapedRecipeBuilder.shaped(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get(), 3)
-			.pattern("###")
-			.define('#', ItemTagsGenerator.SOUL_GLASS_PANES)
-			.unlockedBy("has_item", has(ItemTagsGenerator.SOUL_GLASS_PANES))::save)
-			.generateAdvancement()
-			.build(consumer, location(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get(), "crafting/"));
-		
+
 		ShapedRecipeBuilder.shaped(ModBlocks.IRON_FENCE_GATE.get())
 			.pattern("$#$")
 			.pattern("$#$")
@@ -140,12 +132,6 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		
 		wallsRecipe("glass_window_pane", ModBlocks.GLASS_WINDOW.get(), ModBlocks.GLASS_WINDOW_PANE.get(), "");
 		wallsRecipe("soul_glass_window_pane", ModBlocks.SOUL_GLASS_WINDOW.get(), ModBlocks.SOUL_GLASS_WINDOW_PANE.get(), "");
-		ConditionalRecipe.builder().addCondition(new ModLoadedCondition("horizontalpanes"))
-		.addRecipe(ShapelessRecipeBuilder.shapeless(ModBlocks.SOUL_GLASS_PANE.get())
-			.requires(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get())
-			.unlockedBy("has_item", has(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get()))::save)
-			.generateAdvancement()
-			.build(consumer, location("soul_glass_pane_from_horizontal_pane", "crafting/"));
 		
 		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_GLASS_PANE.get(), 16)
 			.pattern("###")
@@ -160,21 +146,6 @@ public class CraftingRecipesGenerator extends RecipeResources {
 			.define('#', Blocks.TINTED_GLASS)
 			.unlockedBy("has_item", has(Blocks.TINTED_GLASS))
 			.save(consumer, location(ModBlocks.TINTED_GLASS_PANE.get(), "crafting/"));
-		
-		Item horizontal_tinted_glass_pane = getItem(new ResourceLocation("horizontalpanes:horizontal_tinted_glass_pane"));
-		ConditionalRecipe.builder().addCondition(new ModLoadedCondition("horizontalpanes"))
-		.addRecipe(ShapedRecipeBuilder.shaped(horizontal_tinted_glass_pane, 3)
-			.pattern("###")
-			.define('#', ItemTagsGenerator.TINTED_GLASS_PANES)
-			.unlockedBy("has_item", has(ItemTagsGenerator.TINTED_GLASS_PANES))::save)
-			.generateAdvancement()
-			.build(consumer, location(horizontal_tinted_glass_pane, "crafting/"));
-		ConditionalRecipe.builder().addCondition(new ModLoadedCondition("horizontalpanes"))
-		.addRecipe(ShapelessRecipeBuilder.shapeless(ModBlocks.TINTED_GLASS_PANE.get())
-			.requires(horizontal_tinted_glass_pane)
-			.unlockedBy("has_item", has(horizontal_tinted_glass_pane))::save)
-			.generateAdvancement()
-			.build(consumer, location("tinted_glass_pane_from_horizontal_pane", "crafting/"));
 		
 		ShapedRecipeBuilder.shaped(ModBlocks.SOUL_SANDSTONE_SLAB.get(), 6)
 			.pattern("###")

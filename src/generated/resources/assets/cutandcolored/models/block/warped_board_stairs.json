@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/stairs",
   "textures": {
-    "side": "cutandcolored:block/warped_boards",
     "bottom": "cutandcolored:block/warped_boards",
+    "side": "cutandcolored:block/warped_boards",
     "top": "cutandcolored:block/warped_boards"
   }
 }

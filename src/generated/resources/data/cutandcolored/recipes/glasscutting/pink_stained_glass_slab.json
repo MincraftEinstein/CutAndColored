@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:glasscutting",
+  "count": 2,
   "ingredient": {
     "item": "minecraft:pink_stained_glass"
   },
-  "result": "cutandcolored:pink_stained_glass_slab",
-  "count": 2
+  "result": "cutandcolored:pink_stained_glass_slab"
 }

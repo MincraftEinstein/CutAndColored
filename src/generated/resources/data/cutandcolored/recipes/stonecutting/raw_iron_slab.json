@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 2,
   "ingredient": {
     "item": "minecraft:raw_iron_block"
   },
-  "result": "cutandcolored:raw_iron_slab",
-  "count": 2
+  "result": "cutandcolored:raw_iron_slab"
 }

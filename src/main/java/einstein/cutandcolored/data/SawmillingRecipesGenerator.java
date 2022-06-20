@@ -18,6 +18,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.apache.commons.lang3.ObjectUtils;
 
 public class SawmillingRecipesGenerator extends RecipeResources {
 
@@ -59,10 +60,10 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			String woodKind;
 			Item log;
 			Item wood;
-			Item bars;
-			Item crossedBars;
-			Item horizontalBars;
-			Item horizontalCrossedBars;
+			Item bars = null;
+			Item crossedBars = null;
+			Item horizontalBars = null;
+			Item horizontalCrossedBars = null;
 			Item planks = getItem(RL(woodName + "_planks"));
 			Item stairs = getItem(RL(woodName + "_stairs"));
 			Item slab = getItem(RL(woodName + "_slab"));
@@ -94,7 +95,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			sawmillingRecipe(woodName + "_slab", planks, slab, 2);
 			sawmillingRecipe(woodName + "_stairs", planks, stairs);
 			sawmillingRecipe("stripped_" + woodName + s, log, strippedLog);
-			sawmillingRecipe("stripped_" + woodName + woodKind + "s", wood, strippedWood);
+			sawmillingRecipe("stripped_" + woodName + woodKind, wood, strippedWood);
 			sawmillingRecipe(woodName + "_door", logTypes, getItem(RL(woodName + "_door")), 1);
 			sawmillingRecipe(woodName + "_fence", logTypes, getItem(RL(woodName + "_fence")), 1);
 			sawmillingRecipe(woodName + "_fence_gate", logTypes, getItem(RL(woodName + "_fence_gate")), 1);
@@ -111,8 +112,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			try {
 				sawmillingRecipe(woodName + "_sign", logTypes, getItem(RL(woodName + "_sign")), 1);
 			}
-			catch (Exception e) {
-			}
+			catch (Exception e) {}
 			
 			try {
 				Item boards = getItem(modRL(woodName + "_boards"));
@@ -130,8 +130,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 				sawmillingRecipe(woodName + "_board_stairs_from_planks", planks, boardStairs);
 				sawmillingRecipe(woodName + "_board_stairs", boards, boardStairs);
 			}
-			catch(Exception e) {
-			}
+			catch(Exception e) {}
 			
 			try {
 				bars = getItem(new ResourceLocation("additionalbars", woodName + "_bars"));
@@ -140,12 +139,15 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 				crossedBars = getItem(new ResourceLocation("additionalbars", "crossed_" + woodName + "_bars"));
 			}
 			catch (Exception e) {
-				bars = getItem(new ResourceLocation("additionalbarsbop", woodName + "_bars"));
-				horizontalBars = getItem(new ResourceLocation("additionalbarsbop", "horizontal_" + woodName + "_bars"));
-				horizontalCrossedBars = getItem(new ResourceLocation("additionalbarsbop", "horizontal_crossed_" + woodName + "_bars"));
-				crossedBars = getItem(new ResourceLocation("additionalbarsbop", "crossed_" + woodName + "_bars"));
+				try {
+					bars = getItem(new ResourceLocation("additionalbarsbop", woodName + "_bars"));
+					horizontalBars = getItem(new ResourceLocation("additionalbarsbop", "horizontal_" + woodName + "_bars"));
+					horizontalCrossedBars = getItem(new ResourceLocation("additionalbarsbop", "horizontal_crossed_" + woodName + "_bars"));
+					crossedBars = getItem(new ResourceLocation("additionalbarsbop", "crossed_" + woodName + "_bars"));
+				}
+				catch (Exception e2) {}
 			}
-			
+
 			try {
 				sawmillingRecipe(woodName + "_bars", logTypes, bars, 2);
 				sawmillingRecipe(woodName + "_bars_from_bars", bars, 1, horizontalBars, horizontalCrossedBars, crossedBars);
@@ -159,8 +161,7 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars", logTypes, horizontalCrossedBars, 2);
 				sawmillingRecipe("horizontal_crossed_" + woodName + "_bars_from_bars", horizontalCrossedBars, 1, horizontalBars, bars, crossedBars);
 			}
-			catch (Exception e) {
-			}
+			catch (Exception e) {}
 		}
 	}
 	

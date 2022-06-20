@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "$": {
+      "tag": "minecraft:planks"
+    },
+    "~": {
+      "item": "minecraft:string"
+    }
+  },
   "pattern": [
     "#~#",
     "#~#",
     "$ $"
   ],
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "~": {
-      "item": "minecraft:string"
-    },
-    "$": {
-      "tag": "minecraft:planks"
-    }
-  },
   "result": {
     "item": "cutandcolored:weaver"
   }

@@ -1,17 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
+  "group": "board_stairs",
   "key": {
     "#": {
       "item": "cutandcolored:oak_boards"
     }
   },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
   "result": {
-    "item": "cutandcolored:oak_board_stairs",
-    "count": 4
+    "count": 4,
+    "item": "cutandcolored:oak_board_stairs"
   }
 }

@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 2,
   "ingredient": {
     "item": "cutandcolored:smooth_soul_sandstone"
   },
-  "result": "cutandcolored:smooth_soul_sandstone_slab",
-  "count": 2
+  "result": "cutandcolored:smooth_soul_sandstone_slab"
 }

@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "cutandcolored:block/tinted_glass_slab_top"
-    },
     "type=bottom": {
       "model": "cutandcolored:block/tinted_glass_slab"
     },
     "type=double": {
       "model": "minecraft:block/tinted_glass"
+    },
+    "type=top": {
+      "model": "cutandcolored:block/tinted_glass_slab_top"
     }
   }
 }

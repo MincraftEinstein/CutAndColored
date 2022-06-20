@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "side": "cutandcolored:block/end_stone_brick_pillar",
-    "end": "cutandcolored:block/end_stone_brick_pillar_top"
+    "end": "cutandcolored:block/end_stone_brick_pillar_top",
+    "side": "cutandcolored:block/end_stone_brick_pillar"
   }
 }

@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 2,
   "ingredient": {
     "item": "minecraft:birch_planks"
   },
-  "result": "cutandcolored:birch_board_slab",
-  "count": 2
+  "result": "cutandcolored:birch_board_slab"
 }

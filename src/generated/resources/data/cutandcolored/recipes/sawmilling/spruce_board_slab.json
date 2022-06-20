@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 2,
   "ingredient": {
     "item": "cutandcolored:spruce_boards"
   },
-  "result": "cutandcolored:spruce_board_slab",
-  "count": 2
+  "result": "cutandcolored:spruce_board_slab"
 }

@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 4,
   "ingredient": {
     "tag": "minecraft:birch_logs"
   },
-  "result": "cutandcolored:birch_board_stairs",
-  "count": 4
+  "result": "cutandcolored:birch_board_stairs"
 }

@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 4,
   "ingredient": {
     "tag": "minecraft:crimson_stems"
   },
-  "result": "cutandcolored:crimson_boards",
-  "count": 4
+  "result": "cutandcolored:crimson_boards"
 }

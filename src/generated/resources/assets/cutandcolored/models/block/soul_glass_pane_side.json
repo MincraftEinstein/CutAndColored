@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side",
   "textures": {
-    "pane": "cutandcolored:block/soul_glass",
-    "edge": "cutandcolored:block/soul_glass_pane_top"
+    "edge": "cutandcolored:block/soul_glass_pane_top",
+    "pane": "cutandcolored:block/soul_glass"
   }
 }

@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/inner_stairs",
   "textures": {
-    "side": "cutandcolored:block/green_stained_bricks",
     "bottom": "cutandcolored:block/green_stained_bricks",
+    "side": "cutandcolored:block/green_stained_bricks",
     "top": "cutandcolored:block/green_stained_bricks"
   }
 }

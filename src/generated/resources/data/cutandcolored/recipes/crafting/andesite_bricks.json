@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "##",
-    "##"
-  ],
   "key": {
     "#": {
       "item": "minecraft:polished_andesite"
     }
   },
+  "pattern": [
+    "##",
+    "##"
+  ],
   "result": {
-    "item": "cutandcolored:andesite_bricks",
-    "count": 4
+    "count": 4,
+    "item": "cutandcolored:andesite_bricks"
   }
 }

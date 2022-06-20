@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "cutandcolored:block/raw_gold_slab_top"
-    },
     "type=bottom": {
       "model": "cutandcolored:block/raw_gold_slab"
     },
     "type=double": {
       "model": "minecraft:block/raw_gold_block"
+    },
+    "type=top": {
+      "model": "cutandcolored:block/raw_gold_slab_top"
     }
   }
 }

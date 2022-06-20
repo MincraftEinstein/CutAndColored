@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 2,
   "ingredient": {
     "item": "minecraft:warped_planks"
   },
-  "result": "minecraft:warped_slab",
-  "count": 2
+  "result": "minecraft:warped_slab"
 }

@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 8,
   "ingredient": {
     "tag": "minecraft:warped_stems"
   },
-  "result": "cutandcolored:warped_board_slab",
-  "count": 8
+  "result": "cutandcolored:warped_board_slab"
 }

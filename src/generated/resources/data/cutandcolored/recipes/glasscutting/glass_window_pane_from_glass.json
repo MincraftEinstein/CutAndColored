@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:glasscutting",
+  "count": 4,
   "ingredient": {
     "tag": "forge:glass/colorless"
   },
-  "result": "cutandcolored:glass_window_pane",
-  "count": 4
+  "result": "cutandcolored:glass_window_pane"
 }

@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "cutandcolored:block/acacia_board_slab_top"
-    },
     "type=bottom": {
       "model": "cutandcolored:block/acacia_board_slab"
     },
     "type=double": {
       "model": "cutandcolored:block/acacia_boards"
+    },
+    "type=top": {
+      "model": "cutandcolored:block/acacia_board_slab_top"
     }
   }
 }

@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "cutandcolored:block/quartz_brick_slab_top"
-    },
     "type=bottom": {
       "model": "cutandcolored:block/quartz_brick_slab"
     },
     "type=double": {
       "model": "minecraft:block/quartz_bricks"
+    },
+    "type=top": {
+      "model": "cutandcolored:block/quartz_brick_slab_top"
     }
   }
 }

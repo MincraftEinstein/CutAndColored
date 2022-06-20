@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:glasscutting",
+  "count": 4,
   "ingredient": {
     "tag": "forge:glass/blue"
   },
-  "result": "cutandcolored:blue_stained_glass_window_pane",
-  "count": 4
+  "result": "cutandcolored:blue_stained_glass_window_pane"
 }

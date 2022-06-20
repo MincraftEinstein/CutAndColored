@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 1,
   "ingredient": {
     "item": "cutandcolored:andesite_bricks"
   },
-  "result": "cutandcolored:andesite_brick_stairs",
-  "count": 1
+  "result": "cutandcolored:andesite_brick_stairs"
 }

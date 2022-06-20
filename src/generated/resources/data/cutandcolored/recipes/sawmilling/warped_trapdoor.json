@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 2,
   "ingredient": {
     "tag": "minecraft:warped_stems"
   },
-  "result": "minecraft:warped_trapdoor",
-  "count": 2
+  "result": "minecraft:warped_trapdoor"
 }

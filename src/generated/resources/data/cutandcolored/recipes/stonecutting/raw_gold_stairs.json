@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 1,
   "ingredient": {
     "item": "minecraft:raw_gold_block"
   },
-  "result": "cutandcolored:raw_gold_stairs",
-  "count": 1
+  "result": "cutandcolored:raw_gold_stairs"
 }

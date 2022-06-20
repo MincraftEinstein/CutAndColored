@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:glasscutting",
+  "count": 1,
   "ingredient": {
     "item": "minecraft:gray_stained_glass"
   },
-  "result": "cutandcolored:gray_stained_glass_window",
-  "count": 1
+  "result": "cutandcolored:gray_stained_glass_window"
 }

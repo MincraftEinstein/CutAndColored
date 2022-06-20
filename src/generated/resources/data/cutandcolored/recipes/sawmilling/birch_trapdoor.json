@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:sawmilling",
+  "count": 2,
   "ingredient": {
     "tag": "minecraft:birch_logs"
   },
-  "result": "minecraft:birch_trapdoor",
-  "count": 2
+  "result": "minecraft:birch_trapdoor"
 }

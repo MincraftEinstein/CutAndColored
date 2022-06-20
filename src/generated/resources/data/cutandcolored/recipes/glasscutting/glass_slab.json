@@ -1,8 +1,8 @@
 {
   "type": "cutandcolored:glasscutting",
+  "count": 2,
   "ingredient": {
     "item": "minecraft:glass"
   },
-  "result": "cutandcolored:glass_slab",
-  "count": 2
+  "result": "cutandcolored:glass_slab"
 }

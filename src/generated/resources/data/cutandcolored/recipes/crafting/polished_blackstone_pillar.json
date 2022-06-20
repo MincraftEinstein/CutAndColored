@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#",
-    "#"
-  ],
   "key": {
     "#": {
       "item": "minecraft:polished_blackstone"
     }
   },
+  "pattern": [
+    "#",
+    "#"
+  ],
   "result": {
-    "item": "cutandcolored:polished_blackstone_pillar",
-    "count": 2
+    "count": 2,
+    "item": "cutandcolored:polished_blackstone_pillar"
   }
 }
