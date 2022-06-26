@@ -1,22 +1,38 @@
 ﻿
-## CutAndColored
-![](https://img.shields.io/badge/Mod%20Loader-Forge-orange)
-![](https://img.shields.io/badge/Minecraft%20Version-1.18.2-green)</br>
-📜 License: All Rights Reserved </br>
-💻 [Website](https://mincrafteinstein.wix.com/mincrafteinstein)</br>
-🧱 Requirements:
-- [Einstein's Library](https://curseforge.com/minecraft/mc-mods/einsteins-library)(Required)
- - [Flamboyant](https://curseforge.com/minecraft/mc-mods/flamboyant)(Optional)
-- [CraftTweaker](https://curseforge.com/minecraft/mc-mods/crafttweaker)(Optional)
-- [Oh My Gourd](https://curseforge.com/minecraft/mc-mods/oh-my-gourd)(Optional)
+# Cut And Colored
+
+[![Mod Loader](https://img.shields.io/badge/Mod%20Loader-Forge-green?style=for-the-badge "Forge Download")](https://files.minecraftforge.net)
+[![Curseforge Page](https://img.shields.io/badge/Curseforge-Page-orange?style=for-the-badge&logo=curseforge "Curseforge page")](https://www.curseforge.com/minecraft/mc-mods/cut-and-colored)
+[![Modrinth](https://img.shields.io/badge/Modrinth-Page-1bd96a?style=for-the-badge "Modrinth page")](https://modrinth.com/mod/cut-and-colored)
+<br>
+
+### **📘 Description**
+Welcome to Cut And Colored. This mod aims to add vanilla feeling blocks to the game. Along with some new workstations(the glasscutter, the sawmill, and the weaver) to help create these new blocks. We are always looking to improve the mod, so if you have any ideas that fit well with the mod and Minecraft feel free to suggest them.
+
+<br>
+<details>
+<summary><b>📜 PLEASE READ</b></summary>
+<ul>
+<li>You may use this mod in modpacks</li>
+<li>You may translate this mod into any language (Just make a pull request on github)</li>
+<li>You may make resource/data packs</li>
+<hr>
+<li>You may <b>NOT</b> publish/reupload this mod in any form (edited or not) on another site without asking first</li>
+<li>You may <b>NOT</b> sell this mod or it's source code in any from</li>
+</ul>
+</details>
+<br>
 
 ---
--   <p style="color:#01bc0d">You may use my mod in modpacks</p>
--   <p style="color:#01bc0d">You may make resource packs for my mod</p>
-(you don’t have to ask, but I would like you to tell me)</p>
--   <p style="color:Red">You may <b>NOT</b> fork/edit my mod for anything other than personal use</p>
--   <p style="color:Red">You may <b>NOT</b> republish/reupload my mod</p>
--   <p style="color:#6701bc">AND HAVE FUN!!</p>
+
+### **📷 Images**
+
+![Fishing House](https://cdn-raw.modrinth.com//data/FXYNda4M/images/e430016cb304b5540e2171e7508ea2c607f3871c.png)
+
+![Mountain Cabin](https://cdn-raw.modrinth.com//data/FXYNda4M/images/7182c36f649a389c6a306ab3d9c850a7af4c20d6.png)
+
+![Stair Case](https://cdn-raw.modrinth.com//data/FXYNda4M/images/e3380cbc82003ec9d4b611dfe26ef894ce020b26.png)
 
 ---
-If anyone likes the Stonecutter, then you'll like this mod, because it adds three new blocks like the Stonecutter. The Glasscutter used to make glass stairs and slabs. The Sawmill used to make wood stairs and slabs and the Weaver, it's like a real-life loom, used to make wool stairs and slabs. The Stonecutter has some new recipes like terracotta stairs and slabs. Colored Redstone lamps are also here! as well as stained planks!
+
+**Note**: All mod support in the way of recipes/blocks (or the like) will be in the form of smaller separate mods called addons.
