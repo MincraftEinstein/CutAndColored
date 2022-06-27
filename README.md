@@ -18,7 +18,7 @@ Welcome to Cut And Colored. This mod aims to add vanilla feeling blocks to the g
 <li>You may make resource/data packs</li>
 <hr>
 <li>You may <b>NOT</b> publish/reupload this mod in any form (edited or not) on another site without asking first</li>
-<li>You may <b>NOT</b> sell this mod or it's source code in any from</li>
+<li>You may <b>NOT</b> sell this mod or it's source code in any form</li>
 </ul>
 </details>
 <br>
