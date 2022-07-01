@@ -5,7 +5,7 @@ license="All rights reserved"
 
 [[mods]]
 	modId="cutandcolored"
-	version="9.0"
+	version="9.1"
 	displayName="Cut And Colored"
 	#updateJSONURL="http://myurl.me/"
 	displayURL="https://www.curseforge.com/minecraft/mc-mods/cut-and-colored"
