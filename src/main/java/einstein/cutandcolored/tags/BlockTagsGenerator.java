@@ -1,9 +1,10 @@
-package einstein.cutandcolored.data;
+package einstein.cutandcolored.tags;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.data.ModDataGenerators;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
@@ -207,9 +208,9 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	private void vanillaDyedTags() {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			String color = DyeColor.byId(i).getName();
-			int i1 = ModDataGenerators.allBlocks.size() - 1;
+			int i1 = CutAndColored.allBlocks.size() - 1;
 			while (i1 >= 0) {
-				Block block = ModDataGenerators.allBlocks.get(i1);
+				Block block = CutAndColored.allBlocks.get(i1);
 				if (isVanillaColored(block, i)) {
 					coloredBlocks.add(block);
 				}

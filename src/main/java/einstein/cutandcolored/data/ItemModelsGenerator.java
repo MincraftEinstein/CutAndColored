@@ -18,12 +18,12 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ItemModelsGenerator extends ItemModelProvider {
 
-	private List<Block> wallBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> wallBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("wall"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> windowBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> windowBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("window") && !Util.getBlockRegistryName(block).getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	
@@ -113,8 +113,8 @@ public class ItemModelsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.NETHER_BRICK_FENCE_GATE.get());
 		blockItemModel(ModBlocks.IRON_FENCE_GATE.get());
 		
-		for (int i = 0; i < ModDataGenerators.BOARD_TYPES.length; i++) {
-			String type = ModDataGenerators.BOARD_TYPES[i];
+		for (int i = 0; i < CutAndColored.BOARD_TYPES.length; i++) {
+			String type = CutAndColored.BOARD_TYPES[i];
 			blockItemModel(BlockAssetsGenerator.getBlock(type + "_boards"));
 			blockItemModel(BlockAssetsGenerator.getBlock(type + "_board_stairs"));
 			blockItemModel(BlockAssetsGenerator.getBlock(type + "_board_slab"));

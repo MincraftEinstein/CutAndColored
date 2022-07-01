@@ -2,6 +2,8 @@ package einstein.cutandcolored.data;
 
 import java.util.function.Consumer;
 
+import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.tags.ItemTagsGenerator;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.RecipeResources;
 import net.minecraft.data.DataGenerator;
@@ -28,8 +30,8 @@ public class CraftingRecipesGenerator extends RecipeResources {
 		vanillaColoredRecipes();
 		stoneBrickTypeRecipes();
 		
-		for (int i = 0; i < ModDataGenerators.BOARD_TYPES.length; i++) {
-			String type = ModDataGenerators.BOARD_TYPES[i];
+		for (int i = 0; i < CutAndColored.BOARD_TYPES.length; i++) {
+			String type = CutAndColored.BOARD_TYPES[i];
 			String slab = type + "_board_slab";
 			String stairs = type +  "_board_stairs";
 			Item block = getItem(modRL(type + "_boards"));

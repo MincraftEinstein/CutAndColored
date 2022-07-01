@@ -13,6 +13,8 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.tags.BlockTagsGenerator;
+import einstein.cutandcolored.tags.ItemTagsGenerator;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
@@ -32,17 +34,11 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 @EventBusSubscriber(modid = CutAndColored.MODID, bus = Bus.MOD)
 public class ModDataGenerators {
-
-	public static final List<Block> allBlocks = new ArrayList<Block>();
-	public static final List<Block> allMCBlocks = new ArrayList<Block>(ForgeRegistries.BLOCKS.getValues().stream()
-			.filter((block) -> CutAndColored.MCMODID.equals(Objects.requireNonNull(Util.getBlockRegistryName(block)).getNamespace()))
-			.collect(Collectors.toList()));
-	public static final String[] BOARD_TYPES = { "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "crimson", "warped" };
 	
 	@SubscribeEvent
 	public static void DataGenerator(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
-		ModBlocks.BLOCKS.getEntries().forEach((block) -> allBlocks.add(block.get()));
+		ModBlocks.BLOCKS.getEntries().forEach((block) -> CutAndColored.allBlocks.add(block.get()));
 
 		// Server providers
 		generator.addProvider(event.includeServer(), new CraftingRecipesGenerator(generator));

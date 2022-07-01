@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import javax.annotation.Nonnull;
 
+import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -22,17 +23,17 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
 public class BlockLootTableGenerator extends BlockLoot {
 	
-	private List<Block> nonSlabBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> nonSlabBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("_slab"))
 			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("glass"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> slabBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> slabBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("_slab"))
 			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("glass"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> silkTouchBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> silkTouchBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("glass") || Util.getBlockRegistryName(block).getPath().contains("window"))
 			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("_slab"))
 			.filter((block) -> !ModBlocks.GLASSCUTTER.get().equals(block))
@@ -44,7 +45,7 @@ public class BlockLootTableGenerator extends BlockLoot {
 			.filter((block) -> !ModBlocks.TINTED_GLASS_WINDOW_PANE.get().equals(block))
 			.collect(Collectors.toList()));
 	
-	private List<Block> glassSlabBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> glassSlabBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("glass"))
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("_slab"))
 			.collect(Collectors.toList()));
@@ -74,7 +75,7 @@ public class BlockLootTableGenerator extends BlockLoot {
 	@Nonnull
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		List<Block> list = new ArrayList<Block>(ModDataGenerators.allBlocks);
+		List<Block> list = new ArrayList<Block>(CutAndColored.allBlocks);
 		list.remove(list.indexOf(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get()));
 		return list;
 	}

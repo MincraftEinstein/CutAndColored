@@ -27,7 +27,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockAssetsGenerator extends BlockStateProvider {
 	
-	private List<Block> cubeBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> cubeBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("planks")
 					|| Util.getBlockRegistryName(block).getPath().contains("bricks")
 					|| Util.getBlockRegistryName(block).getPath().contains("window"))
@@ -36,25 +36,25 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			.filter((block) -> !(block instanceof StairBlock))
 			.collect(Collectors.toList()));
 	
-	private List<Block> slabBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> slabBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> block instanceof SlabBlock)
 			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> stairBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> stairBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> block instanceof StairBlock)
 			.collect(Collectors.toList()));
 	
-	private List<Block> wallBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> wallBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("wall"))
 			.collect(Collectors.toList()));
 
-	private List<Block> lampBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> lampBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> block instanceof RedstoneLampBlock)
 			.collect(Collectors.toList()));
 	
-	private List<Block> paneBlocks = new ArrayList<Block>(ModDataGenerators.allBlocks.stream()
+	private List<Block> paneBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("pane"))
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("window"))
 			.collect(Collectors.toList()));
@@ -82,8 +82,8 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 			simpleBlockItem(block, models().getExistingFile(blockRL(name)));
 		}
 		
-		for (int i = 0; i < ModDataGenerators.BOARD_TYPES.length; i++) {
-			String type = ModDataGenerators.BOARD_TYPES[i];
+		for (int i = 0; i < CutAndColored.BOARD_TYPES.length; i++) {
+			String type = CutAndColored.BOARD_TYPES[i];
 			String block = type + "_boards";
 			simpleBlock(getBlock(block));
 			stairsBlock((StairBlock) getBlock(type + "_board_stairs"), blockRL(block));
