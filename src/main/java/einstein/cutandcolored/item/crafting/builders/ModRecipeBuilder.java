@@ -1,4 +1,4 @@
-package einstein.cutandcolored.data;
+package einstein.cutandcolored.item.crafting.builders;
 
 import java.util.function.Consumer;
 

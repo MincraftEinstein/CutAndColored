@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.util.RecipeResources;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -18,7 +19,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.apache.commons.lang3.ObjectUtils;
 
 public class SawmillingRecipesGenerator extends RecipeResources {
 

@@ -1,10 +1,10 @@
-package einstein.cutandcolored.data;
+package einstein.cutandcolored.util;
 
 import java.util.Objects;
 import java.util.function.Consumer;
 
 import einstein.cutandcolored.CutAndColored;
-import einstein.cutandcolored.util.Util;
+import einstein.cutandcolored.item.crafting.builders.ModRecipeBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;

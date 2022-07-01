@@ -2,6 +2,7 @@ package einstein.cutandcolored.data;
 
 import java.util.function.Consumer;
 
+import einstein.cutandcolored.util.RecipeResources;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
