@@ -15,17 +15,11 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModMenuTypes
 {
-	public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.CONTAINERS, CutAndColored.MODID);
+	public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, CutAndColored.MODID);
 	
-    public static final RegistryObject<MenuType<GlasscutterMenu>> GLASSCUTTER = register("glasscutter", () -> IForgeMenuType.create((id, inventory, data) -> {
-    	return new GlasscutterMenu(id, inventory);
-    }));
-    public static final RegistryObject<MenuType<WeaverMenu>> WEAVER = register("weaver", () -> IForgeMenuType.create((id, inventory, data) -> {
-    	return new WeaverMenu(id, inventory);
-    }));
-    public static final RegistryObject<MenuType<SawmillMenu>> SAWMILL = register("sawmill", () -> IForgeMenuType.create((id, inventory, data) -> {
-    	return new SawmillMenu(id, inventory);
-    }));
+    public static final RegistryObject<MenuType<GlasscutterMenu>> GLASSCUTTER = register("glasscutter", () -> IForgeMenuType.create((id, inventory, data) -> new GlasscutterMenu(id, inventory)));
+    public static final RegistryObject<MenuType<WeaverMenu>> WEAVER = register("weaver", () -> IForgeMenuType.create((id, inventory, data) -> new WeaverMenu(id, inventory)));
+    public static final RegistryObject<MenuType<SawmillMenu>> SAWMILL = register("sawmill", () -> IForgeMenuType.create((id, inventory, data) -> new SawmillMenu(id, inventory)));
     
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> register(final String name, final Supplier<MenuType<T>> menu) {
     	return MENUS.register(name, menu);

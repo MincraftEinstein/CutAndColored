@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/MincraftEinstein/CutAndColored/issues"
 
 [[mods]]
 	modId="cutandcolored"
-	version="9.3"
+	version="9.4"
 	displayName="Cut And Colored"
 	#updateJSONURL="http://myurl.me/"
 	displayURL="https://www.curseforge.com/minecraft/mc-mods/cut-and-colored"
@@ -23,7 +23,7 @@ A mod that aims to add vanilla feeling blocks to Minecraft
 [[dependencies.cutandcolored]]
     modId="forge"
     mandatory=true
-    versionRange="[41,)"
+    versionRange="[41.0.98,)"
     ordering="NONE"
     side="BOTH"
 
