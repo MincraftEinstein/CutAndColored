@@ -19,6 +19,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -516,8 +517,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> POLISHED_END_STONE = register("polished_end_stone", () -> new Block(Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> CHISELED_END_STONE_BRICKS = register("chiseled_end_stone_bricks", () -> new Block(Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> POLISHED_STONE = register("polished_stone", () -> new Block(BlockProperties.stone(MaterialColor.STONE)));
-    public static final RegistryObject<Block> OBSIDIAN_BRICKS = register("obsidian_bricks", () -> new Block(Properties.copy(Blocks.OBSIDIAN)));
-    public static final RegistryObject<Block> OBSIDIAN_BRICK_PILLAR = register("obsidian_brick_pillar", () -> new RotatedPillarBlock(Properties.copy(OBSIDIAN_BRICKS.get())));
+    public static final RegistryObject<Block> OBSIDIAN_BRICKS = register("obsidian_bricks", () -> new Block(Properties.copy(Blocks.OBSIDIAN)) {
+        @Override
+        public boolean isPortalFrame(BlockState state, BlockGetter getter, BlockPos pos) {
+            return true;
+        }
+    });
+    public static final RegistryObject<Block> OBSIDIAN_BRICK_PILLAR = register("obsidian_brick_pillar", () -> new RotatedPillarBlock(Properties.copy(OBSIDIAN_BRICKS.get())) {
+        @Override
+        public boolean isPortalFrame(BlockState state, BlockGetter getter, BlockPos pos) {
+            return true;
+        }
+    });
     
     // STAIRS
     public static final RegistryObject<Block> SMOOTH_STONE_STAIRS = register("smooth_stone_stairs", () -> new StairBlock(Blocks.SMOOTH_STONE::defaultBlockState, Properties.copy(Blocks.SMOOTH_STONE)));
