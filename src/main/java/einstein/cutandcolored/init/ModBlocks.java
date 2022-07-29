@@ -15,9 +15,11 @@ import einstein.cutandcolored.block.TintedGlassPane;
 import einstein.cutandcolored.block.TintedGlassSlabBlock;
 import einstein.cutandcolored.block.TintedGlassStairsBlock;
 import einstein.cutandcolored.block.WeaverBlock;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -33,6 +35,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TintedGlassBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.ModList;
@@ -496,8 +499,18 @@ public class ModBlocks {
     
     /**********************MISC_BLOCKS**********************/
     // FULL BLOCKS
-    public static final RegistryObject<Block> CHISELED_PRISMARINE_BRICKS = register("chiseled_prismarine_bricks", () -> new Block(Properties.copy(Blocks.PRISMARINE_BRICKS)));
-    public static final RegistryObject<Block> PRISMARINE_BRICK_PILLAR = register("prismarine_brick_pillar", () -> new RotatedPillarBlock(Properties.copy(Blocks.PRISMARINE_BRICKS)));
+    public static final RegistryObject<Block> CHISELED_PRISMARINE_BRICKS = register("chiseled_prismarine_bricks", () -> new Block(Properties.copy(Blocks.PRISMARINE_BRICKS)) {
+        @Override
+        public boolean isConduitFrame(BlockState state, LevelReader level, BlockPos pos, BlockPos conduit) {
+            return true;
+        }
+    });
+    public static final RegistryObject<Block> PRISMARINE_BRICK_PILLAR = register("prismarine_brick_pillar", () -> new RotatedPillarBlock(Properties.copy(Blocks.PRISMARINE_BRICKS)) {
+        @Override
+        public boolean isConduitFrame(BlockState state, LevelReader level, BlockPos pos, BlockPos conduit) {
+            return true;
+        }
+    });
     public static final RegistryObject<Block> POLISHED_BLACKSTONE_PILLAR = register("polished_blackstone_pillar", () -> new RotatedPillarBlock(Properties.copy(Blocks.POLISHED_BLACKSTONE)));
     public static final RegistryObject<Block> END_STONE_BRICK_PILLAR = register("end_stone_brick_pillar", () -> new RotatedPillarBlock(Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> POLISHED_END_STONE = register("polished_end_stone", () -> new Block(Properties.copy(Blocks.END_STONE_BRICKS)));
