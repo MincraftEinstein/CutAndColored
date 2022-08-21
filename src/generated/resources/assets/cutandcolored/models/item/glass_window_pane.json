@@ -1,5 +1,6 @@
 {
   "parent": "minecraft:item/generated",
+  "render_type": "minecraft:cutout_mipped",
   "textures": {
     "layer0": "cutandcolored:block/glass_window"
   }

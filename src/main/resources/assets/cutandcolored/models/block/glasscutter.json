@@ -1,5 +1,6 @@
 {
     "parent": "minecraft:block/stonecutter",
+    "render_type": "minecraft:cutout",
     "textures": {
         "particle": "cutandcolored:block/glasscutter_bottom",
         "bottom": "cutandcolored:block/glasscutter_bottom",

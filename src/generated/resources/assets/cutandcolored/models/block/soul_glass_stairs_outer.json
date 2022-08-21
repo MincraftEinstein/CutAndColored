@@ -1,5 +1,6 @@
 {
   "parent": "cutandcolored:block/bordered_outer_stairs",
+  "render_type": "minecraft:cutout",
   "textures": {
     "bottom": "cutandcolored:block/soul_glass",
     "side": "cutandcolored:block/soul_glass",

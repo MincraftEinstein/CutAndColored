@@ -1,5 +1,6 @@
 {
   "parent": "cutandcolored:block/bordered_slab",
+  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "minecraft:block/purple_stained_glass",
     "side": "minecraft:block/purple_stained_glass",

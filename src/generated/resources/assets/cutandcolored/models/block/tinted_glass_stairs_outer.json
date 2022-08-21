@@ -1,5 +1,6 @@
 {
   "parent": "cutandcolored:block/bordered_outer_stairs",
+  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "minecraft:block/tinted_glass",
     "side": "minecraft:block/tinted_glass",

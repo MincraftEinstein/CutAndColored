@@ -1,5 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_side_alt",
+  "render_type": "minecraft:cutout_mipped",
   "textures": {
     "edge": "minecraft:block/glass_pane_top",
     "pane": "cutandcolored:block/glass_window"

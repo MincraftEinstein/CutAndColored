@@ -1,9 +1,5 @@
 package einstein.cutandcolored.data;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
@@ -16,14 +12,18 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class ItemModelsGenerator extends ItemModelProvider {
 
-	private List<Block> wallBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
+	private final List<Block> wallBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("wall"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> windowBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
+	private final List<Block> windowBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("window") && !Util.getBlockRegistryName(block).getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	
@@ -96,15 +96,16 @@ public class ItemModelsGenerator extends ItemModelProvider {
 		blockItemModel(ModBlocks.TINTED_GLASS_SLAB.get());
 		
 		wallInventory("soul_sandstone_wall", blockRL("soul_sandstone_side"));
-		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.SOUL_SANDSTONE_WALL.get()));
+		wallBlocks.remove(ModBlocks.SOUL_SANDSTONE_WALL.get());
 		wallInventory("purpur_wall", blockMCRL("purpur_block"));
-		wallBlocks.remove(wallBlocks.indexOf(ModBlocks.PURPUR_WALL.get()));
-		
-		generatedItem("soul_glass_pane", blockRL("soul_glass"));
-		generatedItem("tinted_glass_pane", blockMCRL("tinted_glass"));
-		generatedItem("glass_window_pane", blockRL("glass_window"));
-		generatedItem("soul_glass_window_pane", blockRL("soul_glass_window"));
-		generatedItem("tinted_glass_window_pane", blockRL("tinted_glass_window"));
+		wallBlocks.remove(ModBlocks.PURPUR_WALL.get());
+
+		generatedItem("soul_glass_pane", BlockAssetsGenerator.CUTOUT_MIPPED, blockRL("soul_glass"));
+		generatedItem("tinted_glass_pane", BlockAssetsGenerator.TRANSLUCENT, blockMCRL("tinted_glass"));
+
+		generatedItem("glass_window_pane", BlockAssetsGenerator.CUTOUT_MIPPED, blockRL("glass_window"));
+		generatedItem("soul_glass_window_pane", BlockAssetsGenerator.CUTOUT_MIPPED, blockRL("soul_glass_window"));
+		generatedItem("tinted_glass_window_pane", BlockAssetsGenerator.TRANSLUCENT, blockRL("tinted_glass_window"));
 		
 		blockItemModel(ModBlocks.PRISMARINE_BRICK_PILLAR.get());
 		blockItemModel(ModBlocks.POLISHED_BLACKSTONE_PILLAR.get());
@@ -122,9 +123,9 @@ public class ItemModelsGenerator extends ItemModelProvider {
 		
 		blockItemModel(ModBlocks.OBSIDIAN_BRICKS.get());
 		blockItemModel(ModBlocks.OBSIDIAN_BRICK_PILLAR.get());
-		
-		for (int i = 0; i < wallBlocks.size(); i++) {
-			String name = Util.getBlockRegistryName(wallBlocks.get(i)).getPath();
+
+		for (Block wallBlock : wallBlocks) {
+			String name = Util.getBlockRegistryName(wallBlock).getPath();
 			String fileName = name.replaceAll("_wall", "");
 			try {
 				if (name.contains("brick")) {
@@ -133,7 +134,8 @@ public class ItemModelsGenerator extends ItemModelProvider {
 				else {
 					wallInventory(name, blockRL(fileName));
 				}
-			} catch (IllegalArgumentException e) {
+			}
+			catch (IllegalArgumentException e) {
 				if (name.contains("brick") || name.contains("tile")) {
 					wallInventory(name, blockMCRL(fileName + "s"));
 				}
@@ -145,11 +147,11 @@ public class ItemModelsGenerator extends ItemModelProvider {
 		
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			String name = DyeColor.byId(i).getName() + "_stained_glass_window";
-			generatedItem(name + "_pane", blockRL(name));
+			generatedItem(name + "_pane", BlockAssetsGenerator.TRANSLUCENT, blockRL(name));
 		}
-		
-		for (int i = 0; i < windowBlocks.size(); i++) {
-			blockItemModel(windowBlocks.get(i));
+
+		for (Block windowBlock : windowBlocks) {
+			blockItemModel(windowBlock);
 		}
 	}
 	
@@ -164,8 +166,8 @@ public class ItemModelsGenerator extends ItemModelProvider {
 		getBuilder(name).parent(getExistingFile(blockRL(parentName)));
 	}
 	
-	private ItemModelBuilder generatedItem(String name, ResourceLocation... layers) {
-		ItemModelBuilder model = withExistingParent(name, "item/generated");
+	private ItemModelBuilder generatedItem(String name, ResourceLocation renderType, ResourceLocation... layers) {
+		ItemModelBuilder model = withExistingParent(name, "item/generated").renderType(renderType);
 		for (int i = 0; i < layers.length; i++) {
 			model = model.texture("layer" + i, layers[i]);
 		}

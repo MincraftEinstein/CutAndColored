@@ -1,5 +1,6 @@
 {
   "parent": "cutandcolored:block/bordered_inner_stairs",
+  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "minecraft:block/lime_stained_glass",
     "side": "minecraft:block/lime_stained_glass",

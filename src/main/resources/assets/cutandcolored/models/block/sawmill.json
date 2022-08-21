@@ -1,5 +1,6 @@
 {
     "parent": "minecraft:block/stonecutter",
+    "render_type": "minecraft:cutout",
     "textures": {
         "particle": "cutandcolored:block/sawmill_bottom",
         "bottom": "cutandcolored:block/sawmill_bottom",

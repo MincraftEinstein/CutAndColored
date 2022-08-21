@@ -4,7 +4,7 @@
       "model": "cutandcolored:block/blue_stained_glass_slab"
     },
     "type=double": {
-      "model": "minecraft:block/blue_stained_glass"
+      "model": "cutandcolored:block/blue_stained_glass_slab_double"
     },
     "type=top": {
       "model": "cutandcolored:block/blue_stained_glass_slab_top"

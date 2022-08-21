@@ -4,7 +4,7 @@
       "model": "cutandcolored:block/glass_slab"
     },
     "type=double": {
-      "model": "minecraft:block/glass"
+      "model": "cutandcolored:block/glass_slab_double"
     },
     "type=top": {
       "model": "cutandcolored:block/glass_slab_top"

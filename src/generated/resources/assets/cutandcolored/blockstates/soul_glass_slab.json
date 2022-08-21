@@ -4,7 +4,7 @@
       "model": "cutandcolored:block/soul_glass_slab"
     },
     "type=double": {
-      "model": "cutandcolored:block/soul_glass"
+      "model": "cutandcolored:block/soul_glass_slab_double"
     },
     "type=top": {
       "model": "cutandcolored:block/soul_glass_slab_top"
