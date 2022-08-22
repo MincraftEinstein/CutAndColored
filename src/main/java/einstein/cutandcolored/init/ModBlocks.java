@@ -46,8 +46,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlocks {
 	
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CutAndColored.MODID);
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CutAndColored.MODID);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CutAndColored.MOD_ID);
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CutAndColored.MOD_ID);
 	
     /*********************WORK_STATIONS**********************/
     public static final RegistryObject<Block> GLASSCUTTER = register("glasscutter", () -> new GlasscutterBlock(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.5F)));

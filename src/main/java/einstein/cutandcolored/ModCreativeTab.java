@@ -1,14 +1,13 @@
-package einstein.cutandcolored.tab;
+package einstein.cutandcolored;
 
-import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.init.ModConfigs;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public class ModCreativeTab extends CreativeModeTab
-{
+public class ModCreativeTab extends CreativeModeTab {
+
     public ModCreativeTab(final int index, final String label) {
         super(index, label);
     }
@@ -18,16 +17,16 @@ public class ModCreativeTab extends CreativeModeTab
     }
     
     public ResourceLocation getBackgroundImage() {
-    	if (ModConfigs.CREATIVESEARCHBAR.get()) {
-    		return new ResourceLocation(CutAndColored.MODID, "textures/gui/container/creative_inventory/tab_cutandcolored_item_search.png");
+    	if (ModConfigs.CREATIVE_SEARCH_BAR.get()) {
+    		return new ResourceLocation(CutAndColored.MOD_ID, "textures/gui/container/creative_inventory/tab_cutandcolored_item_search.png");
     	}
     	else {
-    		return new ResourceLocation(CutAndColored.MCMODID, "textures/gui/container/creative_inventory/tab_items.png");
+    		return new ResourceLocation(CutAndColored.MC_MOD_ID, "textures/gui/container/creative_inventory/tab_items.png");
     	}
     }
     
     public boolean hasSearchBar() {
-    	return ModConfigs.CREATIVESEARCHBAR.get();
+    	return ModConfigs.CREATIVE_SEARCH_BAR.get();
     }
     
     public int getSearchbarWidth() {

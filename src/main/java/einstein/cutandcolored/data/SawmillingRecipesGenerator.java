@@ -174,9 +174,9 @@ public class SawmillingRecipesGenerator extends RecipeResources {
 			}
 		}
 		
-		String[] object = {CutAndColored.MCMODID, "crimson"};
+		String[] object = {CutAndColored.MC_MOD_ID, "crimson"};
 		woodTypes.add(object);
-		String[] object2 = {CutAndColored.MCMODID, "warped"};
+		String[] object2 = {CutAndColored.MC_MOD_ID, "warped"};
 		woodTypes.add(object2);
 		
 		CutAndColored.LOGGER.debug("Found " + woodTypes.size() + " wood types");

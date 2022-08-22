@@ -15,8 +15,8 @@ import java.util.function.Supplier;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class ModRecipeTypes {
-	public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, CutAndColored.MODID);
-	public static final DeferredRegister<RecipeType<?>> RECIPE_TYPE = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, CutAndColored.MODID);
+	public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, CutAndColored.MOD_ID);
+	public static final DeferredRegister<RecipeType<?>> RECIPE_TYPE = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, CutAndColored.MOD_ID);
 
 	public static final RecipeType<GlasscuttingRecipe> GLASSCUTTING_RECIPE = registerType("glasscutting");
 	public static final RegistryObject<RecipeSerializer<GlasscuttingRecipe>> GLASSCUTTING = register("glasscutting", () -> new GlasscuttingRecipe.Serializer(GlasscuttingRecipe::new), GLASSCUTTING_RECIPE);

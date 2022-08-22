@@ -15,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModMenuTypes
 {
-	public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, CutAndColored.MODID);
+	public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, CutAndColored.MOD_ID);
 	
     public static final RegistryObject<MenuType<GlasscutterMenu>> GLASSCUTTER = register("glasscutter", () -> IForgeMenuType.create((id, inventory, data) -> new GlasscutterMenu(id, inventory)));
     public static final RegistryObject<MenuType<WeaverMenu>> WEAVER = register("weaver", () -> IForgeMenuType.create((id, inventory, data) -> new WeaverMenu(id, inventory)));

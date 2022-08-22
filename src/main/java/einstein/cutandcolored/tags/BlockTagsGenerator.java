@@ -1,10 +1,6 @@
 package einstein.cutandcolored.tags;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import einstein.cutandcolored.CutAndColored;
-import einstein.cutandcolored.data.ModDataGenerators;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
@@ -18,6 +14,9 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BlockTagsGenerator extends BlockTagsProvider {
 	
@@ -84,7 +83,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	public static final TagKey<Block> SOUL_GLASS = forgeCreate("glass/soul");
 	
 	public BlockTagsGenerator(DataGenerator generatorIn, ExistingFileHelper existingFileHelper) {
-		super(generatorIn, CutAndColored.MODID, existingFileHelper);
+		super(generatorIn, CutAndColored.MOD_ID, existingFileHelper);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -216,8 +215,8 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 				}
 				i1--;
 			}
-			tag(forgeCreate("glass/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window")));
-			tag(forgeCreate("glass_panes/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window_pane")));
+			tag(forgeCreate("glass/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MOD_ID, color + "_stained_glass_window")));
+			tag(forgeCreate("glass_panes/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MOD_ID, color + "_stained_glass_window_pane")));
 		}
 		for (int i = 0; i < coloredBlocks.size(); i++) {
 			Block block = coloredBlocks.get(i);
@@ -299,7 +298,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	}
 	
 	private static TagKey<Block> create(String name) {
-		return BlockTags.create(new ResourceLocation(CutAndColored.MODID, name));
+		return BlockTags.create(new ResourceLocation(CutAndColored.MOD_ID, name));
 	}
 	
 	private static TagKey<Block> forgeCreate(String name) {

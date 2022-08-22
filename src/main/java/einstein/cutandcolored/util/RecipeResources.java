@@ -43,11 +43,11 @@ public class RecipeResources extends RecipeProvider {
 	}
 	
 	protected static ResourceLocation modRL(String string) {
-		return new ResourceLocation(CutAndColored.MODID, string);
+		return new ResourceLocation(CutAndColored.MOD_ID, string);
 	}
 	
 	protected static ResourceLocation MCRL(String string) {
-		return new ResourceLocation(CutAndColored.MCMODID, string);
+		return new ResourceLocation(CutAndColored.MC_MOD_ID, string);
 	}
 	
 	protected static ResourceLocation location(String name, String folder) {
@@ -68,7 +68,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void stonecuttingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
 		String modid = Util.getItemRegistryName(result).getNamespace();
-		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
+		if (modid.contains(CutAndColored.MC_MOD_ID) || modid.contains(CutAndColored.MOD_ID)) {
 			ModRecipeBuilder.stonecuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(triggerItem)).save(consumer, location(name, "stonecutting/"));
 		}
 		else {
@@ -94,7 +94,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void stonecuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
 		String modid = Util.getItemRegistryName(result).getNamespace();
-		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
+		if (modid.contains(CutAndColored.MC_MOD_ID) || modid.contains(CutAndColored.MOD_ID)) {
 			ModRecipeBuilder.stonecuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "stonecutting/"));
 		}
 		else {
@@ -116,7 +116,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void glasscuttingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
 		String modid = Util.getItemRegistryName(result).getNamespace();
-		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
+		if (modid.contains(CutAndColored.MC_MOD_ID) || modid.contains(CutAndColored.MOD_ID)) {
 			ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(triggerItem)).save(consumer, location(name, "glasscutting/"));
 		}
 		else {
@@ -142,7 +142,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void glasscuttingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
 		String modid = Util.getItemRegistryName(result).getNamespace();
-		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
+		if (modid.contains(CutAndColored.MC_MOD_ID) || modid.contains(CutAndColored.MOD_ID)) {
 			ModRecipeBuilder.glasscuttingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "glasscutting/"));
 		}
 		else {
@@ -164,7 +164,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void sawmillingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
 		String modid = Util.getItemRegistryName(result).getNamespace();
-		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
+		if (modid.contains(CutAndColored.MC_MOD_ID) || modid.contains(CutAndColored.MOD_ID)) {
 			ModRecipeBuilder.sawmillingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(triggerItem)).save(consumer, location(name, "sawmilling/"));
 		}
 		else {
@@ -190,7 +190,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void sawmillingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
 		String modid = Util.getItemRegistryName(result).getNamespace();
-		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
+		if (modid.contains(CutAndColored.MC_MOD_ID) || modid.contains(CutAndColored.MOD_ID)) {
 			ModRecipeBuilder.sawmillingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "sawmilling/"));
 		}
 		else {
@@ -212,7 +212,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void weavingRecipe(String name, ItemLike result, int count, ItemLike triggerItem, ItemLike... ingredient) {
 		String modid = Util.getItemRegistryName(result).getNamespace();
-		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
+		if (modid.contains(CutAndColored.MC_MOD_ID) || modid.contains(CutAndColored.MOD_ID)) {
 			ModRecipeBuilder.weavingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(triggerItem)).save(consumer, location(name, "weaving/"));
 		}
 		else {
@@ -238,7 +238,7 @@ public class RecipeResources extends RecipeProvider {
 	
 	protected static void weavingRecipe(String name, TagKey<Item> ingredient, ItemLike result, int count) {
 		String modid = Util.getItemRegistryName(result).getNamespace();
-		if (modid.contains(CutAndColored.MCMODID) || modid.contains(CutAndColored.MODID)) {
+		if (modid.contains(CutAndColored.MC_MOD_ID) || modid.contains(CutAndColored.MOD_ID)) {
 			ModRecipeBuilder.weavingRecipe(Ingredient.of(ingredient), result, count).unlockedBy("has_item", has(ingredient)).save(consumer, location(name, "weaving/"));
 		}
 		else {

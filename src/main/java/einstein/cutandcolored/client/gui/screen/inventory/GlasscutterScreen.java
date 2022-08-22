@@ -12,7 +12,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class GlasscutterScreen extends AbstractSingleItemRecipeScreen<GlasscutterMenu, GlasscuttingRecipe> {
 
-	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(CutAndColored.MODID, "textures/gui/container/glasscutter.png");
+	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(CutAndColored.MOD_ID, "textures/gui/container/glasscutter.png");
 	
 	public GlasscutterScreen(GlasscutterMenu menu, Inventory inventory, Component component) {
 		super(menu, inventory, component);

@@ -66,7 +66,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
     public static final ResourceLocation TRANSLUCENT = new ResourceLocation("minecraft:translucent");
 	
 	public BlockAssetsGenerator(DataGenerator generator, ExistingFileHelper existingFile) {
-		super(generator, CutAndColored.MODID, existingFile);
+		super(generator, CutAndColored.MOD_ID, existingFile);
 	}
 	
 	@Override
@@ -384,11 +384,11 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 
     private void simpleBlockWithRenderType(Block block, ResourceLocation renderType) {
         String name = Util.getBlockRegistryName(block).getPath();
-        simpleBlock(block, models().cubeAll(name, new ResourceLocation(CutAndColored.MODID, "block/" + name)).renderType(renderType));
+        simpleBlock(block, models().cubeAll(name, new ResourceLocation(CutAndColored.MOD_ID, "block/" + name)).renderType(renderType));
     }
 
 	public static Block getBlock(String registryName) {
-		Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, registryName));
+		Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MOD_ID, registryName));
 		if (block != null && block != Blocks.AIR) {
 			return block;
 		}
@@ -398,11 +398,11 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 	}
 	
 	private static ResourceLocation blockRL(String string) {
-		return new ResourceLocation(CutAndColored.MODID, "block/" + string);
+		return new ResourceLocation(CutAndColored.MOD_ID, "block/" + string);
 	}
 	
 	private static ResourceLocation blockMCRL(String string) {
-		return new ResourceLocation(CutAndColored.MCMODID, "block/" + string);
+		return new ResourceLocation(CutAndColored.MC_MOD_ID, "block/" + string);
 	}
 	
 	@Override

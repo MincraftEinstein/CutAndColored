@@ -28,7 +28,7 @@ public class ItemModelsGenerator extends ItemModelProvider {
 			.collect(Collectors.toList()));
 	
 	public ItemModelsGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		super(generator, CutAndColored.MODID, existingFileHelper);
+		super(generator, CutAndColored.MOD_ID, existingFileHelper);
 	}
 	
 	@Override
@@ -175,11 +175,11 @@ public class ItemModelsGenerator extends ItemModelProvider {
 	}
 	
 	private ResourceLocation blockRL(String string) {
-		return new ResourceLocation(CutAndColored.MODID, "block/" + string);
+		return new ResourceLocation(CutAndColored.MOD_ID, "block/" + string);
 	}
 	
 	private ResourceLocation blockMCRL(String string) {
-		return new ResourceLocation(CutAndColored.MCMODID, "block/" + string);
+		return new ResourceLocation(CutAndColored.MC_MOD_ID, "block/" + string);
 	}
 	
 	@Override

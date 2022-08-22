@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
-@EventBusSubscriber(modid = CutAndColored.MODID, bus = Bus.MOD, value = { Dist.CLIENT })
+@EventBusSubscriber(modid = CutAndColored.MOD_ID, bus = Bus.MOD, value = { Dist.CLIENT })
 public class PropertyEvents {
 
     @SubscribeEvent
@@ -151,7 +151,7 @@ public class PropertyEvents {
     public void setBlockItemBurnable(final FurnaceFuelBurnTimeEvent event) {
         final ItemStack fuelStack = event.getItemStack();
         final Item fuel = fuelStack.getItem();
-        
+
         /*************************WOOL**************************/
         // STAIRS
         if (fuel == ModBlocks.WHITE_WOOL_STAIRS.get().asItem()) {

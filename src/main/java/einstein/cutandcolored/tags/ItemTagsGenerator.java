@@ -1,10 +1,6 @@
 package einstein.cutandcolored.tags;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import einstein.cutandcolored.CutAndColored;
-import einstein.cutandcolored.data.ModDataGenerators;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
@@ -21,6 +17,9 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemTagsGenerator extends ItemTagsProvider {
 	
@@ -87,7 +86,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	public static final TagKey<Item> SOUL_GLASS = forgeCreate("glass/soul");
 	
 	public ItemTagsGenerator(DataGenerator dataGenerator, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
-		super(dataGenerator, blockTagProvider, CutAndColored.MODID, existingFileHelper);
+		super(dataGenerator, blockTagProvider, CutAndColored.MOD_ID, existingFileHelper);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -189,8 +188,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 				}
 				i1--;
 			}
-			tag(forgeCreate("glass/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window")).asItem());
-			tag(forgeCreate("glass_panes/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MODID, color + "_stained_glass_window_pane")).asItem());
+			tag(forgeCreate("glass/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MOD_ID, color + "_stained_glass_window")).asItem());
+			tag(forgeCreate("glass_panes/" + color)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(CutAndColored.MOD_ID, color + "_stained_glass_window_pane")).asItem());
 		}
 		for (int i = 0; i < coloredItems.size(); i++) {
 			Item item = coloredItems.get(i);
@@ -272,7 +271,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	}
 	
 	private static TagKey<Item> create(String name) {
-		return ItemTags.create(new ResourceLocation(CutAndColored.MODID, name));
+		return ItemTags.create(new ResourceLocation(CutAndColored.MOD_ID, name));
 	}
 	
 	private static TagKey<Item> forgeCreate(String name) {

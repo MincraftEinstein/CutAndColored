@@ -15,6 +15,6 @@ public class ModJEIRecipeTypes {
 	public static final RecipeType<WeavingRecipe> WEAVING = create("weaving", WeavingRecipe.class);
 
 	private static <T extends Recipe<Container>> RecipeType<T> create(String name, Class<T> recipeClass) {
-		return RecipeType.create(CutAndColored.MODID, name, recipeClass);
+		return RecipeType.create(CutAndColored.MOD_ID, name, recipeClass);
 	}
 }
