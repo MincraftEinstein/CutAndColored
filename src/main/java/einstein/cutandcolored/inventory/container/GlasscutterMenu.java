@@ -28,7 +28,7 @@ public class GlasscutterMenu extends AbstractSingleItemRecipeMenu<GlasscuttingRe
 
 	@Override
 	public SoundEvent getCraftSound() {
-		return ModSounds.UI_GLASSCUTTER_TAKE_RESULT;
+		return ModSounds.UI_GLASSCUTTER_TAKE_RESULT.get();
 	}
 
 	@Override

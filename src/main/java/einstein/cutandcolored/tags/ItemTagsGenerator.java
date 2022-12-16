@@ -3,8 +3,8 @@ package einstein.cutandcolored.tags;
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -15,15 +15,17 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class ItemTagsGenerator extends ItemTagsProvider {
 	
-	private List<Item> coloredItems = new ArrayList<Item>();
+	private final List<Item> coloredItems = new ArrayList<>();
 	
 	/**********************Mod***********************/
 	public static final TagKey<Item> VANILLA_STAINED_BRICKS = create("vanilla_stained_bricks");
@@ -85,20 +87,18 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	
 	public static final TagKey<Item> SOUL_GLASS = forgeCreate("glass/soul");
 	
-	public ItemTagsGenerator(DataGenerator dataGenerator, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
-		super(dataGenerator, blockTagProvider, CutAndColored.MOD_ID, existingFileHelper);
+	public ItemTagsGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> future, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
+		super(output, future, blockTagProvider, CutAndColored.MOD_ID, existingFileHelper);
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	protected void addTags() {
-		
+	protected void addTags(HolderLookup.Provider provider) {
 		vanillaDyedTags();
 		
 		/**********************Minecraft***********************/
 		tag(ItemTags.PLANKS).addTags(STAINED_PLANKS);
-		tag(ItemTags.SLABS).addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS, BOARD_SLABS)
-				.add(ModBlocks.CRACKED_STONE_BRICK_SLAB.get().asItem(),
+		tag(ItemTags.SLABS).add(ModBlocks.CRACKED_STONE_BRICK_SLAB.get().asItem(),
 						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get().asItem(),
 						ModBlocks.CRACKED_NETHER_BRICK_SLAB.get().asItem(), ModBlocks.SOUL_SANDSTONE_SLAB.get().asItem(),
 						ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB.get().asItem(), ModBlocks.CUT_SOUL_SANDSTONE_SLAB.get().asItem(),
@@ -107,9 +107,9 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 						ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get().asItem(), ModBlocks.QUARTZ_BRICK_SLAB.get().asItem(),
 						ModBlocks.CALCITE_SLAB.get().asItem(), ModBlocks.TUFF_SLAB.get().asItem(), ModBlocks.RAW_IRON_SLAB.get().asItem(),
 						ModBlocks.RAW_GOLD_SLAB.get().asItem(), ModBlocks.RAW_COPPER_SLAB.get().asItem(),
-						ModBlocks.OBSIDIAN_BRICK_SLAB.get().asItem());
-		tag(ItemTags.STAIRS).addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS, BOARD_STAIRS)
-				.add(ModBlocks.SMOOTH_STONE_STAIRS.get().asItem(), ModBlocks.CRACKED_STONE_BRICK_STAIRS.get().asItem(),
+						ModBlocks.OBSIDIAN_BRICK_SLAB.get().asItem())
+				.addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS, BOARD_SLABS);
+		tag(ItemTags.STAIRS).add(ModBlocks.SMOOTH_STONE_STAIRS.get().asItem(), ModBlocks.CRACKED_STONE_BRICK_STAIRS.get().asItem(),
 						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get().asItem(),
 						ModBlocks.CRACKED_NETHER_BRICK_STAIRS.get().asItem(), ModBlocks.SOUL_SANDSTONE_STAIRS.get().asItem(),
 						ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS.get().asItem(), ModBlocks.GRANITE_BRICK_STAIRS.get().asItem(),
@@ -118,7 +118,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 						ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get().asItem(), ModBlocks.QUARTZ_BRICK_STAIRS.get().asItem(),
 						ModBlocks.CALCITE_STAIRS.get().asItem(), ModBlocks.TUFF_STAIRS.get().asItem(),
 						ModBlocks.RAW_IRON_STAIRS.get().asItem(), ModBlocks.RAW_GOLD_STAIRS.get().asItem(),
-						ModBlocks.RAW_COPPER_STAIRS.get().asItem(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get().asItem());
+						ModBlocks.RAW_COPPER_STAIRS.get().asItem(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get().asItem())
+				.addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS, BOARD_STAIRS);
 		tag(ItemTags.WALLS).addTag(CLAY_BRICK_WALLS).add(ModBlocks.SOUL_SANDSTONE_WALL.get().asItem(),
 				ModBlocks.GRANITE_BRICK_WALL.get().asItem(), ModBlocks.DIORITE_BRICK_WALL.get().asItem(),
 				ModBlocks.ANDESITE_BRICK_WALL.get().asItem(), ModBlocks.PURPUR_WALL.get().asItem(),

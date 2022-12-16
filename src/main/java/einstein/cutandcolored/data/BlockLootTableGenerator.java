@@ -1,16 +1,13 @@
 package einstein.cutandcolored.data;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import javax.annotation.Nonnull;
-
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.properties.SlabType;
@@ -21,19 +18,25 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
-public class BlockLootTableGenerator extends BlockLoot {
+import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class BlockLootTableGenerator extends BlockLootSubProvider {
 	
-	private List<Block> nonSlabBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
+	private final List<Block> nonSlabBlocks = new ArrayList<>(CutAndColored.allBlocks.stream()
 			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("_slab"))
 			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("glass"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> slabBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
+	private final List<Block> slabBlocks = new ArrayList<>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("_slab"))
 			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("glass"))
 			.collect(Collectors.toList()));
 	
-	private List<Block> silkTouchBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
+	private final List<Block> silkTouchBlocks = new ArrayList<>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("glass") || Util.getBlockRegistryName(block).getPath().contains("window"))
 			.filter((block) -> !Util.getBlockRegistryName(block).getPath().contains("_slab"))
 			.filter((block) -> !ModBlocks.GLASSCUTTER.get().equals(block))
@@ -45,42 +48,46 @@ public class BlockLootTableGenerator extends BlockLoot {
 			.filter((block) -> !ModBlocks.TINTED_GLASS_WINDOW_PANE.get().equals(block))
 			.collect(Collectors.toList()));
 	
-	private List<Block> glassSlabBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
+	private final List<Block> glassSlabBlocks = new ArrayList<>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("glass"))
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("_slab"))
 			.collect(Collectors.toList()));
-	
+
+	protected BlockLootTableGenerator() {
+		super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+	}
+
 	@Override
-	protected void addTables() {
-		for (int i = 0; i < nonSlabBlocks.size(); i++) {
-			dropSelf(nonSlabBlocks.get(i));
+	protected void generate() {
+		for (Block nonSlabBlock : nonSlabBlocks) {
+			dropSelf(nonSlabBlock);
 		}
-		for (int i = 0; i < slabBlocks.size(); i++) {
-			add(slabBlocks.get(i), BlockLoot::createSlabItemTable);
+		for (Block slabBlock : slabBlocks) {
+			add(slabBlock, this::createSlabItemTable);
 		}
-		for (int i = 0; i < silkTouchBlocks.size(); i++) {
-			dropWhenSilkTouch(silkTouchBlocks.get(i));
+		for (Block silkTouchBlock : silkTouchBlocks) {
+			dropWhenSilkTouch(silkTouchBlock);
 		}
-		for (int i = 0; i < glassSlabBlocks.size(); i++) {
-			add(glassSlabBlocks.get(i), BlockLootTableGenerator::createSilkTouchSlabTable);
+		for (Block glassSlabBlock : glassSlabBlocks) {
+			add(glassSlabBlock, this::createSilkTouchSlabTable);
 		}
 		dropSelf(ModBlocks.GLASSCUTTER.get());
 		dropSelf(ModBlocks.TINTED_GLASS_PANE.get());
 		dropSelf(ModBlocks.TINTED_GLASS_STAIRS.get());
 		dropSelf(ModBlocks.TINTED_GLASS_WINDOW.get());
 		dropSelf(ModBlocks.TINTED_GLASS_WINDOW_PANE.get());
-		add(ModBlocks.TINTED_GLASS_SLAB.get(), BlockLoot::createSlabItemTable);
+		add(ModBlocks.TINTED_GLASS_SLAB.get(), this::createSlabItemTable);
 	}
 	
 	@Nonnull
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		List<Block> list = new ArrayList<Block>(CutAndColored.allBlocks);
-		list.remove(list.indexOf(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get()));
+		List<Block> list = new ArrayList<>(CutAndColored.allBlocks);
+		list.remove(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get());
 		return list;
 	}
 	
-	protected static LootTable.Builder createSilkTouchSlabTable(Block slab) {
+	protected LootTable.Builder createSilkTouchSlabTable(Block slab) {
 		return LootTable.lootTable()
 				.withPool(LootPool.lootPool().when(HAS_SILK_TOUCH).setRolls(ConstantValue.exactly(1))
 				.add(applyExplosionDecay(slab, LootItem.lootTableItem(slab)

@@ -28,7 +28,7 @@ public class SawmillMenu extends AbstractSingleItemRecipeMenu<SawmillingRecipe> 
 
 	@Override
 	public SoundEvent getCraftSound() {
-		return ModSounds.UI_SAWMILL_TAKE_RESULT;
+		return ModSounds.UI_SAWMILL_TAKE_RESULT.get();
 	}
 
 	@Override

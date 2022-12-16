@@ -3,8 +3,9 @@ package einstein.cutandcolored.tags;
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -12,11 +13,13 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class BlockTagsGenerator extends BlockTagsProvider {
 	
@@ -82,37 +85,36 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	
 	public static final TagKey<Block> SOUL_GLASS = forgeCreate("glass/soul");
 	
-	public BlockTagsGenerator(DataGenerator generatorIn, ExistingFileHelper existingFileHelper) {
-		super(generatorIn, CutAndColored.MOD_ID, existingFileHelper);
+	public BlockTagsGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> future, ExistingFileHelper existingFileHelper) {
+		super(output, future, CutAndColored.MOD_ID, existingFileHelper);
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	protected void addTags() {
-		
+	protected void addTags(HolderLookup.Provider provider) {
 		vanillaDyedTags();
 		
 		/**********************Minecraft***********************/
 		tag(BlockTags.IMPERMEABLE).add(ModBlocks.SOUL_GLASS.get()).addTags(GLASS_SLABS, GLASS_STAIRS, GLASS_WINDOWS);
 		tag(BlockTags.PLANKS).addTags(STAINED_PLANKS);
-		tag(BlockTags.SLABS).addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS, BOARD_SLABS)
-				.add(ModBlocks.CRACKED_STONE_BRICK_SLAB.get(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(),
+		tag(BlockTags.SLABS).add(ModBlocks.CRACKED_STONE_BRICK_SLAB.get(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(),
 						ModBlocks.CRACKED_NETHER_BRICK_SLAB.get(), ModBlocks.SOUL_SANDSTONE_SLAB.get(),
 						ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB.get(), ModBlocks.CUT_SOUL_SANDSTONE_SLAB.get(),
 						ModBlocks.GRANITE_BRICK_SLAB.get(), ModBlocks.DIORITE_BRICK_SLAB.get(), ModBlocks.ANDESITE_BRICK_SLAB.get(),
 						ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get(),
 						ModBlocks.QUARTZ_BRICK_SLAB.get(), ModBlocks.CALCITE_SLAB.get(), ModBlocks.TUFF_SLAB.get(),
 						ModBlocks.RAW_IRON_SLAB.get(), ModBlocks.RAW_GOLD_SLAB.get(), ModBlocks.RAW_COPPER_SLAB.get(),
-						ModBlocks.OBSIDIAN_BRICK_SLAB.get());
-		tag(BlockTags.STAIRS).addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS, BOARD_STAIRS)
-				.add(ModBlocks.SMOOTH_STONE_STAIRS.get(), ModBlocks.CRACKED_STONE_BRICK_STAIRS.get(),
+						ModBlocks.OBSIDIAN_BRICK_SLAB.get())
+				.addTags(CONCRETE_SLABS, GLASS_SLABS, TERRACOTTA_SLABS, WOOL_SLABS, BOARD_SLABS);
+		tag(BlockTags.STAIRS).add(ModBlocks.SMOOTH_STONE_STAIRS.get(), ModBlocks.CRACKED_STONE_BRICK_STAIRS.get(),
 						ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(), ModBlocks.CRACKED_NETHER_BRICK_STAIRS.get(),
 						ModBlocks.SOUL_SANDSTONE_STAIRS.get(), ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS.get(),
 						ModBlocks.GRANITE_BRICK_STAIRS.get(), ModBlocks.DIORITE_BRICK_STAIRS.get(), ModBlocks.ANDESITE_BRICK_STAIRS.get(),
 						ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get(),
 						ModBlocks.QUARTZ_BRICK_STAIRS.get(), ModBlocks.CALCITE_STAIRS.get(), ModBlocks.TUFF_STAIRS.get(),
 						ModBlocks.RAW_IRON_STAIRS.get(), ModBlocks.RAW_GOLD_STAIRS.get(), ModBlocks.RAW_COPPER_STAIRS.get(),
-						ModBlocks.OBSIDIAN_BRICK_STAIRS.get());
+						ModBlocks.OBSIDIAN_BRICK_STAIRS.get())
+				.addTags(CONCRETE_STAIRS, GLASS_STAIRS, TERRACOTTA_STAIRS, WOOL_STAIRS, BOARD_STAIRS);
 		tag(BlockTags.WALLS).addTag(CLAY_BRICK_WALLS).add(ModBlocks.SOUL_SANDSTONE_WALL.get(), ModBlocks.GRANITE_BRICK_WALL.get(),
 				ModBlocks.DIORITE_BRICK_WALL.get(), ModBlocks.ANDESITE_BRICK_WALL.get(), ModBlocks.PURPUR_WALL.get(),
 				ModBlocks.PRISMARINE_BRICK_WALL.get(), ModBlocks.DARK_PRISMARINE_WALL.get(), ModBlocks.CRACKED_STONE_BRICK_WALL.get(),
@@ -122,11 +124,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 				ModBlocks.TUFF_WALL.get(), ModBlocks.OBSIDIAN_BRICK_WALL.get());
 		tag(BlockTags.WOODEN_SLABS).addTag(STAINED_PLANK_SLABS);
 		tag(BlockTags.WOODEN_STAIRS).addTag(STAINED_PLANK_STAIRS);
-		tag(BlockTags.MINEABLE_WITH_PICKAXE)
-				.addTags(CLAY_BRICK_SLABS, CLAY_BRICK_STAIRS, CLAY_BRICKS, CONCRETE_SLABS, CONCRETE_STAIRS, GLASS_SLABS,
-						GLASS_STAIRS, REDSTONE_LAMPS, TERRACOTTA_SLABS, TERRACOTTA_STAIRS, NETHER_BRICK_FENCE_GATES,
-						SOUL_GLASS, SOUL_GLASS_PANES, TINTED_GLASS_PANES, GLASS_WINDOWS, GLASS_WINDOW_PANES)
-				.add(ModBlocks.GLASSCUTTER.get(), ModBlocks.ANDESITE_BRICK_SLAB.get(), ModBlocks.ANDESITE_BRICK_STAIRS.get(),
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GLASSCUTTER.get(), ModBlocks.ANDESITE_BRICK_SLAB.get(), ModBlocks.ANDESITE_BRICK_STAIRS.get(),
 						ModBlocks.ANDESITE_BRICKS.get(), ModBlocks.DIORITE_BRICK_SLAB.get(), ModBlocks.DIORITE_BRICK_STAIRS.get(),
 						ModBlocks.DIORITE_BRICKS.get(), ModBlocks.GRANITE_BRICK_SLAB.get(), ModBlocks.GRANITE_BRICK_STAIRS.get(),
 						ModBlocks.GRANITE_BRICKS.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get(), ModBlocks.CUT_SOUL_SANDSTONE.get(),
@@ -149,11 +147,12 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 						ModBlocks.SOUL_GLASS_STAIRS.get(), ModBlocks.SOUL_GLASS_SLAB.get(), ModBlocks.OBSIDIAN_BRICKS.get(),
 						ModBlocks.OBSIDIAN_BRICK_STAIRS.get(), ModBlocks.OBSIDIAN_BRICK_SLAB.get(), ModBlocks.OBSIDIAN_BRICK_PILLAR.get(),
 						ModBlocks.OBSIDIAN_BRICK_WALL.get())
+				.addTags(CLAY_BRICK_SLABS, CLAY_BRICK_STAIRS, CLAY_BRICKS, CONCRETE_SLABS, CONCRETE_STAIRS, GLASS_SLABS,
+						GLASS_STAIRS, REDSTONE_LAMPS, TERRACOTTA_SLABS, TERRACOTTA_STAIRS, NETHER_BRICK_FENCE_GATES,
+						SOUL_GLASS, SOUL_GLASS_PANES, TINTED_GLASS_PANES, GLASS_WINDOWS, GLASS_WINDOW_PANES)
 				.addOptional(Util.getBlockRegistryName(ModBlocks.HORIZONTAL_SOUL_GLASS_PANE.get()));
-		tag(BlockTags.MINEABLE_WITH_AXE).addTags(STAINED_PLANK_SLABS, STAINED_PLANK_STAIRS, STAINED_PLANKS, BOARDS, BOARD_STAIRS, BOARD_SLABS)
-				.add(ModBlocks.WEAVER.get(), ModBlocks.SAWMILL.get());
-		tag(BlockTags.NON_FLAMMABLE_WOOD).add(ModBlocks.CRIMSON_BOARDS.get(), ModBlocks.CRIMSON_BOARD_STAIRS.get(), ModBlocks.CRIMSON_BOARD_SLAB.get(),
-				ModBlocks.WARPED_BOARDS.get(), ModBlocks.WARPED_BOARD_STAIRS.get(), ModBlocks.WARPED_BOARD_SLAB.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(ModBlocks.WEAVER.get(), ModBlocks.SAWMILL.get())
+				.addTags(STAINED_PLANK_SLABS, STAINED_PLANK_STAIRS, STAINED_PLANKS, BOARDS, BOARD_STAIRS, BOARD_SLABS);
 		tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get(),
 				ModBlocks.OBSIDIAN_BRICK_SLAB.get(), ModBlocks.OBSIDIAN_BRICK_PILLAR.get(), ModBlocks.OBSIDIAN_BRICK_WALL.get());
 		tag(BlockTags.DRAGON_IMMUNE).add(ModBlocks.OBSIDIAN_BRICKS.get(), ModBlocks.OBSIDIAN_BRICK_STAIRS.get(),

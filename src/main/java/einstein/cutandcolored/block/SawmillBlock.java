@@ -21,8 +21,7 @@ public class SawmillBlock extends AbstractSingleItemRecipeBlock {
 	@Nullable
 	@Override
 	public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
-		return new SimpleMenuProvider((id, inventory, player) -> {
-			return new SawmillMenu(id, inventory, ContainerLevelAccess.create(level, pos));
-		}, CONTAINER_TITLE);
+		return new SimpleMenuProvider((id, inventory, player) ->
+				new SawmillMenu(id, inventory, ContainerLevelAccess.create(level, pos)), CONTAINER_TITLE);
 	}
 }

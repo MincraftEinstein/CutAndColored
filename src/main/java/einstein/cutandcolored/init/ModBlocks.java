@@ -16,6 +16,8 @@ import einstein.cutandcolored.block.TintedGlassSlabBlock;
 import einstein.cutandcolored.block.TintedGlassStairsBlock;
 import einstein.cutandcolored.block.WeaverBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -575,24 +577,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> OBSIDIAN_BRICK_WALL = register("obsidian_brick_wall", () -> new WallBlock(Properties.copy(OBSIDIAN_BRICKS.get())));
     
     // MISC MODELS
-    public static final RegistryObject<Block> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", () -> new FenceGateBlock(Properties.of(Material.STONE, MaterialColor.NETHER).strength(2.0F, 6.0F)));
+    public static final RegistryObject<Block> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", () -> new FenceGateBlock(Properties.of(Material.STONE, MaterialColor.NETHER).strength(2.0F, 6.0F), SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> IRON_FENCE_GATE = register("iron_fence_gate", () -> new IronFenceGateBlock(Properties.of(Material.METAL, MaterialColor.METAL).strength(5.0F).sound(SoundType.METAL)));
     
     public static <T extends Block> RegistryObject<Block> register(final String name, final Supplier<T> block) {
     	final RegistryObject<Block> instance = BLOCKS.register(name, block);
-    	ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties().tab(CutAndColored.MOD_TAB)));
+    	ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties()));
     	return instance;
     }
-    
+
+    // TODO remove modid paramatar
     public static <T extends Block> RegistryObject<Block> register(final String modid, final String name, final Supplier<T> block) {
     	final RegistryObject<Block> instance = BLOCKS.register(name, block);
-    	final Item.Properties props = new Item.Properties();
-    	
-    	if (ModList.get().isLoaded(modid)) {
-    		props.tab(CutAndColored.MOD_TAB);
-    	}
-    	
-    	ITEMS.register(name, () -> new BlockItem(instance.get(), props));
+    	ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties()));
     	return instance;
     }
 	

@@ -15,6 +15,7 @@ import java.util.function.Supplier;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class ModRecipeTypes {
+
 	public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, CutAndColored.MOD_ID);
 	public static final DeferredRegister<RecipeType<?>> RECIPE_TYPE = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, CutAndColored.MOD_ID);
 
@@ -32,13 +33,11 @@ public class ModRecipeTypes {
 	}
 
 	private static <T extends Recipe<?>> RecipeType<T> registerType(String name) {
-		RecipeType<T> type = new RecipeType<T>() {
+		return new RecipeType<T>() {
 			@Override
 			public String toString() {
 				return name;
 			}
 		};
-
-		return type;
 	}
 }

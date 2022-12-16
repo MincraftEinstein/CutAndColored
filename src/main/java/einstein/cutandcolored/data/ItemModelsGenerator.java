@@ -4,6 +4,7 @@ import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
@@ -18,17 +19,17 @@ import java.util.stream.Collectors;
 
 public class ItemModelsGenerator extends ItemModelProvider {
 
-	private final List<Block> wallBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
+	private final List<Block> wallBlocks = new ArrayList<>(CutAndColored.allBlocks.stream()
 			.filter((block) -> block instanceof WallBlock)
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("wall"))
 			.collect(Collectors.toList()));
 	
-	private final List<Block> windowBlocks = new ArrayList<Block>(CutAndColored.allBlocks.stream()
+	private final List<Block> windowBlocks = new ArrayList<>(CutAndColored.allBlocks.stream()
 			.filter((block) -> Util.getBlockRegistryName(block).getPath().contains("window") && !Util.getBlockRegistryName(block).getPath().contains("pane"))
 			.collect(Collectors.toList()));
 	
-	public ItemModelsGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		super(generator, CutAndColored.MOD_ID, existingFileHelper);
+	public ItemModelsGenerator(PackOutput output, ExistingFileHelper existingFileHelper) {
+		super(output, CutAndColored.MOD_ID, existingFileHelper);
 	}
 	
 	@Override

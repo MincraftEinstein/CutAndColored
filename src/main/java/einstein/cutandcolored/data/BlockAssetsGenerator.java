@@ -4,6 +4,7 @@ import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.init.ModBlocks;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
@@ -65,8 +66,8 @@ public class BlockAssetsGenerator extends BlockStateProvider {
 	public static final ResourceLocation CUTOUT_MIPPED = new ResourceLocation("minecraft:cutout_mipped");
     public static final ResourceLocation TRANSLUCENT = new ResourceLocation("minecraft:translucent");
 	
-	public BlockAssetsGenerator(DataGenerator generator, ExistingFileHelper existingFile) {
-		super(generator, CutAndColored.MOD_ID, existingFile);
+	public BlockAssetsGenerator(PackOutput output, ExistingFileHelper existingFile) {
+		super(output, CutAndColored.MOD_ID, existingFile);
 	}
 	
 	@Override

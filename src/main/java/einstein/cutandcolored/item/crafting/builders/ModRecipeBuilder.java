@@ -14,6 +14,7 @@ import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.Registry;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -22,6 +23,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModRecipeBuilder {
+	
+	private final RecipeCategory category;
 	private final Item result;
 	private final Ingredient ingredient;
 	private final int count;
@@ -29,70 +32,75 @@ public class ModRecipeBuilder {
 	private String group;
 	private final RecipeSerializer<?> serializer;
 	
-	public ModRecipeBuilder(RecipeSerializer<?> serializerIn, Ingredient ingredientIn, ItemLike resultProviderIn, int countIn) {
-		this.serializer = serializerIn;
-		this.result = resultProviderIn.asItem();
-		this.ingredient = ingredientIn;
-		this.count = countIn;
+	public ModRecipeBuilder(RecipeCategory category, RecipeSerializer<?> serializer, Ingredient ingredient, ItemLike result, int count) {
+		this.category = category;
+		this.serializer = serializer;
+		this.result = result.asItem();
+		this.ingredient = ingredient;
+		this.count = count;
 	}
 	
-	public static ModRecipeBuilder glasscuttingRecipe(Ingredient ingredientIn, ItemLike resultIn) {
-		return new ModRecipeBuilder(ModRecipeTypes.GLASSCUTTING.get(), ingredientIn, resultIn, 1);
+	public static ModRecipeBuilder glasscuttingRecipe(RecipeCategory category, Ingredient ingredientIn, ItemLike resultIn) {
+		return new ModRecipeBuilder(category, ModRecipeTypes.GLASSCUTTING.get(), ingredientIn, resultIn, 1);
 	}
 	
-	public static ModRecipeBuilder glasscuttingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
-		return new ModRecipeBuilder(ModRecipeTypes.GLASSCUTTING.get(), ingredientIn, resultIn, countIn);
+	public static ModRecipeBuilder glasscuttingRecipe(RecipeCategory category, Ingredient ingredientIn, ItemLike resultIn, int countIn) {
+		return new ModRecipeBuilder(category, ModRecipeTypes.GLASSCUTTING.get(), ingredientIn, resultIn, countIn);
 	}
 	
-	public static ModRecipeBuilder sawmillingRecipe(Ingredient ingredientIn, ItemLike resultIn) {
-		return new ModRecipeBuilder(ModRecipeTypes.SAWMILLING.get(), ingredientIn, resultIn, 1);
+	public static ModRecipeBuilder sawmillingRecipe(RecipeCategory category, Ingredient ingredientIn, ItemLike resultIn) {
+		return new ModRecipeBuilder(category, ModRecipeTypes.SAWMILLING.get(), ingredientIn, resultIn, 1);
 	}
 	
-	public static ModRecipeBuilder sawmillingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
-		return new ModRecipeBuilder(ModRecipeTypes.SAWMILLING.get(), ingredientIn, resultIn, countIn);
+	public static ModRecipeBuilder sawmillingRecipe(RecipeCategory category, Ingredient ingredientIn, ItemLike resultIn, int countIn) {
+		return new ModRecipeBuilder(category, ModRecipeTypes.SAWMILLING.get(), ingredientIn, resultIn, countIn);
 	}
 	
-	public static ModRecipeBuilder weavingRecipe(Ingredient ingredientIn, ItemLike resultIn) {
-		return new ModRecipeBuilder(ModRecipeTypes.WEAVING.get(), ingredientIn, resultIn, 1);
+	public static ModRecipeBuilder weavingRecipe(RecipeCategory category, Ingredient ingredientIn, ItemLike resultIn) {
+		return new ModRecipeBuilder(category, ModRecipeTypes.WEAVING.get(), ingredientIn, resultIn, 1);
 	}
 	
-	public static ModRecipeBuilder weavingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
-		return new ModRecipeBuilder(ModRecipeTypes.WEAVING.get(), ingredientIn, resultIn, countIn);
+	public static ModRecipeBuilder weavingRecipe(RecipeCategory category, Ingredient ingredientIn, ItemLike resultIn, int countIn) {
+		return new ModRecipeBuilder(category, ModRecipeTypes.WEAVING.get(), ingredientIn, resultIn, countIn);
 	}
 	
 	// Used to add conditions to stonecutting recipes
-	public static ModRecipeBuilder stonecuttingRecipe(Ingredient ingredientIn, ItemLike resultIn, int countIn) {
-		return new ModRecipeBuilder(RecipeSerializer.STONECUTTER, ingredientIn, resultIn, countIn);
+	public static ModRecipeBuilder stonecuttingRecipe(RecipeCategory category, Ingredient ingredientIn, ItemLike resultIn, int countIn) {
+		return new ModRecipeBuilder(category, RecipeSerializer.STONECUTTER, ingredientIn, resultIn, countIn);
 	}
 	
-	public ModRecipeBuilder unlockedBy(String p_176810_, CriterionTriggerInstance p_176811_) {
-		this.advancement.addCriterion(p_176810_, p_176811_);
+	public ModRecipeBuilder unlockedBy(String name, CriterionTriggerInstance trigger) {
+		advancement.addCriterion(name, trigger);
 		return this;
 	}
-	
-	public void save(Consumer<FinishedRecipe> consumerIn) {
-		this.save(consumerIn, ForgeRegistries.ITEMS.getKey(this.result));
+
+	public ModRecipeBuilder group(String group) {
+		this.group = group;
+		return this;
+	}
+
+	public void save(Consumer<FinishedRecipe> consumer) {
+		save(consumer, ForgeRegistries.ITEMS.getKey(result));
 	}
 	
-	public void save(Consumer<FinishedRecipe> consumerIn, String save) {
-		ResourceLocation resourcelocation = ForgeRegistries.ITEMS.getKey(this.result);
+	public void save(Consumer<FinishedRecipe> consumer, String save) {
+		ResourceLocation resourcelocation = ForgeRegistries.ITEMS.getKey(result);
 		if ((new ResourceLocation(save)).equals(resourcelocation)) {
 			throw new IllegalStateException("Mod Recipe Builder " + save + " should remove its 'save' argument");
 		} else {
-			this.save(consumerIn, new ResourceLocation(save));
+			save(consumer, new ResourceLocation(save));
 		}
 	}
 	
 	public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
-		this.ensureValid(id);
-		this.advancement.parent(new ResourceLocation("recipes/root")).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-		consumer.accept(new ModRecipeBuilder.Result(id, this.serializer, this.group == null ? "" : this.group,
-				this.ingredient, this.result, this.count, this.advancement, new ResourceLocation(
-						id.getNamespace(), "recipes/" + this.result.getItemCategory().getRecipeFolderName().toLowerCase() + "/" + id.getPath())));
+		ensureValid(id);
+		advancement.parent(new ResourceLocation("recipes/root")).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
+		consumer.accept(new ModRecipeBuilder.Result(id, serializer, group == null ? "" : group,
+				ingredient, result, count, advancement, id.withPrefix(category.getFolderName() + "/")));
 	}
 	
 	private void ensureValid(ResourceLocation id) {
-		if (this.advancement.getCriteria().isEmpty()) {
+		if (advancement.getCriteria().isEmpty()) {
 			throw new IllegalStateException("No way of obtaining recipe " + id);
 		}
 	}
@@ -118,33 +126,32 @@ public class ModRecipeBuilder {
 			this.advancementId = advancementId;
 		}
 		
-		@SuppressWarnings("deprecation")
 		public void serializeRecipeData(JsonObject json) {
-			if (!this.group.isEmpty()) {
-				json.addProperty("group", this.group);
+			if (!group.isEmpty()) {
+				json.addProperty("group", group);
 			}
 			
-			json.add("ingredient", this.ingredient.toJson());
-			json.addProperty("result", Registry.ITEM.getKey(this.result).toString());
-			json.addProperty("count", this.count);
+			json.add("ingredient", ingredient.toJson());
+			json.addProperty("result", ForgeRegistries.ITEMS.getKey(result).toString());
+			json.addProperty("count", count);
 		}
 		
 		public ResourceLocation getId() {
-			return this.id;
+			return id;
 		}
 		
 		public RecipeSerializer<?> getType() {
-			return this.type;
+			return type;
 		}
 		
 		@Nullable
 		public JsonObject serializeAdvancement() {
-			return this.advancement.serializeToJson();
+			return advancement.serializeToJson();
 		}
 		
 		@Nullable
 		public ResourceLocation getAdvancementId() {
-			return this.advancementId;
+			return advancementId;
 		}
 	}
 }

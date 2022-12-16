@@ -1,13 +1,12 @@
 package einstein.cutandcolored.data;
 
-import java.util.function.Consumer;
-
-import einstein.cutandcolored.tags.ItemTagsGenerator;
 import einstein.cutandcolored.init.ModBlocks;
+import einstein.cutandcolored.tags.ItemTagsGenerator;
 import einstein.cutandcolored.util.RecipeResources;
 import einstein.cutandcolored.util.Util;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -17,14 +16,16 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 
+import java.util.function.Consumer;
+
 public class GlasscuttingRecipesGenerator extends RecipeResources {
 
-	public GlasscuttingRecipesGenerator(DataGenerator generatorIn) {
-		super(generatorIn);
+	public GlasscuttingRecipesGenerator(PackOutput output) {
+		super(output);
 	}
-	
+
 	@Override
-	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+	protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
 		setConsumer(consumer);
 		
 		for (int i = 0; i < DyeColor.values().length; i++) {
@@ -33,48 +34,42 @@ public class GlasscuttingRecipesGenerator extends RecipeResources {
 			TagKey<Item> tag = ItemTags.create(new ResourceLocation("forge", "glass/" + color));
 			
 			Item pane = getItem(MCRL(color + "_stained_glass_pane"));
-			glasscuttingRecipe(Util.getItemRegistryName(pane).getPath(), glass, pane, 4);
+			glasscuttingRecipe(Util.getItemRegistryName(pane).getPath(), RecipeCategory.BUILDING_BLOCKS, glass, pane, 4);
 			
 			Item slab = getItem(modRL(color + "_stained_glass_slab"));
-			glasscuttingRecipe(Util.getItemRegistryName(slab).getPath(), glass, slab, 2);
+			glasscuttingRecipe(Util.getItemRegistryName(slab).getPath(), RecipeCategory.BUILDING_BLOCKS, glass, slab, 2);
 			
 			Item stairs = getItem(modRL(color + "_stained_glass_stairs"));
-			glasscuttingRecipe(Util.getItemRegistryName(stairs).getPath(), glass, stairs);
+			glasscuttingRecipe(Util.getItemRegistryName(stairs).getPath(), RecipeCategory.BUILDING_BLOCKS, glass, stairs);
 			
 			Item window = getItem(modRL(color + "_stained_glass_window"));
-			glasscuttingRecipe(Util.getItemRegistryName(window).getPath(), glass, window);
+			glasscuttingRecipe(Util.getItemRegistryName(window).getPath(), RecipeCategory.BUILDING_BLOCKS, glass, window);
 			
 			Item windowPane = getItem(modRL(color + "_stained_glass_window_pane"));
-			glasscuttingRecipe(Util.getItemRegistryName(windowPane).getPath() + "_from_glass", tag, windowPane, 4);
-			glasscuttingRecipe(Util.getItemRegistryName(windowPane).getPath(), getItem(MCRL(color + "_stained_glass_pane")), windowPane);
+			glasscuttingRecipe(Util.getItemRegistryName(windowPane).getPath() + "_from_glass", RecipeCategory.BUILDING_BLOCKS, tag, windowPane, 4);
+			glasscuttingRecipe(Util.getItemRegistryName(windowPane).getPath(), RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(color + "_stained_glass_pane")), windowPane);
 		}
 		
-		glasscuttingRecipe("glass_bottle", Tags.Items.GLASS_COLORLESS, Items.GLASS_BOTTLE);
-		glasscuttingRecipe("glass_pane", Blocks.GLASS, Blocks.GLASS_PANE, 4);
-		glasscuttingRecipe("glass_slab", Blocks.GLASS, ModBlocks.GLASS_SLAB.get(), 2);
-		glasscuttingRecipe("glass_stairs", Blocks.GLASS, ModBlocks.GLASS_STAIRS.get());
-		glasscuttingRecipe("glass_window", Blocks.GLASS, ModBlocks.GLASS_WINDOW.get());
-		glasscuttingRecipe("glass_window_pane_from_glass", Tags.Items.GLASS_COLORLESS, ModBlocks.GLASS_WINDOW_PANE.get(), 4);
-		glasscuttingRecipe("glass_window_pane", Blocks.GLASS_PANE, ModBlocks.GLASS_WINDOW_PANE.get());
+		glasscuttingRecipe("glass_bottle", RecipeCategory.BUILDING_BLOCKS, Tags.Items.GLASS_COLORLESS, Items.GLASS_BOTTLE);
+		glasscuttingRecipe("glass_pane", RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS, Blocks.GLASS_PANE, 4);
+		glasscuttingRecipe("glass_slab", RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS, ModBlocks.GLASS_SLAB.get(), 2);
+		glasscuttingRecipe("glass_stairs", RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS, ModBlocks.GLASS_STAIRS.get());
+		glasscuttingRecipe("glass_window", RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS, ModBlocks.GLASS_WINDOW.get());
+		glasscuttingRecipe("glass_window_pane_from_glass", RecipeCategory.BUILDING_BLOCKS, Tags.Items.GLASS_COLORLESS, ModBlocks.GLASS_WINDOW_PANE.get(), 4);
+		glasscuttingRecipe("glass_window_pane", RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS_PANE, ModBlocks.GLASS_WINDOW_PANE.get());
 		
-		glasscuttingRecipe("soul_glass_pane", ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_PANE.get(), 4);
-		glasscuttingRecipe("soul_glass_slab", ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_SLAB.get(), 2);
-		glasscuttingRecipe("soul_glass_stairs", ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_STAIRS.get());
-		glasscuttingRecipe("soul_glass_window", ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_WINDOW.get());
-		glasscuttingRecipe("soul_glass_window_pane_from_glass", ItemTagsGenerator.SOUL_GLASS, ModBlocks.SOUL_GLASS_WINDOW_PANE.get(), 4);
-		glasscuttingRecipe("soul_glass_window_pane", ModBlocks.SOUL_GLASS_PANE.get(), ModBlocks.SOUL_GLASS_WINDOW_PANE.get());
+		glasscuttingRecipe("soul_glass_pane", RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_PANE.get(), 4);
+		glasscuttingRecipe("soul_glass_slab", RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_SLAB.get(), 2);
+		glasscuttingRecipe("soul_glass_stairs", RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_STAIRS.get());
+		glasscuttingRecipe("soul_glass_window", RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOUL_GLASS.get(), ModBlocks.SOUL_GLASS_WINDOW.get());
+		glasscuttingRecipe("soul_glass_window_pane_from_glass", RecipeCategory.BUILDING_BLOCKS, ItemTagsGenerator.SOUL_GLASS, ModBlocks.SOUL_GLASS_WINDOW_PANE.get(), 4);
+		glasscuttingRecipe("soul_glass_window_pane", RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOUL_GLASS_PANE.get(), ModBlocks.SOUL_GLASS_WINDOW_PANE.get());
 		
-		glasscuttingRecipe("tinted_glass_pane", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_PANE.get(), 4);
-		glasscuttingRecipe("tinted_glass_slab", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_SLAB.get(), 2);
-		glasscuttingRecipe("tinted_glass_stairs", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_STAIRS.get());
-		glasscuttingRecipe("tinted_glass_window", Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_WINDOW.get());
-		glasscuttingRecipe("tinted_glass_window_pane_from_glass", ItemTagsGenerator.TINTED_GLASS, ModBlocks.TINTED_GLASS_WINDOW_PANE.get(), 4);
-		glasscuttingRecipe("tinted_glass_window_pane", ModBlocks.TINTED_GLASS_PANE.get(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get());
-		
-	}
-	
-	@Override
-	public String getName() {
-		return "CutAndColored glasscutting recipes";
+		glasscuttingRecipe("tinted_glass_pane", RecipeCategory.BUILDING_BLOCKS, Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_PANE.get(), 4);
+		glasscuttingRecipe("tinted_glass_slab", RecipeCategory.BUILDING_BLOCKS, Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_SLAB.get(), 2);
+		glasscuttingRecipe("tinted_glass_stairs", RecipeCategory.BUILDING_BLOCKS, Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_STAIRS.get());
+		glasscuttingRecipe("tinted_glass_window", RecipeCategory.BUILDING_BLOCKS, Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_WINDOW.get());
+		glasscuttingRecipe("tinted_glass_window_pane_from_glass", RecipeCategory.BUILDING_BLOCKS, ItemTagsGenerator.TINTED_GLASS, ModBlocks.TINTED_GLASS_WINDOW_PANE.get(), 4);
+		glasscuttingRecipe("tinted_glass_window_pane", RecipeCategory.BUILDING_BLOCKS, ModBlocks.TINTED_GLASS_PANE.get(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get());
 	}
 }

@@ -12,8 +12,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class GlassStairsBlock extends StairBlock
-{
+public class GlassStairsBlock extends StairBlock {
+
     private Supplier<BlockState> blockState;
     
     public GlassStairsBlock(Block block, BlockBehaviour.Properties properties) {
