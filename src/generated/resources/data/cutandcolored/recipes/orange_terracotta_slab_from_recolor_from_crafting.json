@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolored_tarracotta_slabs",
+  "key": {
+    "#": {
+      "tag": "forge:terracotta_slabs"
+    },
+    "$": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:orange_terracotta_slab"
+  }
+}

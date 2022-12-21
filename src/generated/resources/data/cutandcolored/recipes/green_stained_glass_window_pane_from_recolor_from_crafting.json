@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_stained_glass_window_panes",
+  "key": {
+    "#": {
+      "tag": "forge:glass_window_panes"
+    },
+    "$": {
+      "item": "minecraft:green_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:green_stained_glass_window_pane"
+  }
+}

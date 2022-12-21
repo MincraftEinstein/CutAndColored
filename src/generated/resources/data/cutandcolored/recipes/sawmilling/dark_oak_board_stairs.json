@@ -1,8 +1,0 @@
-{
-  "type": "cutandcolored:sawmilling",
-  "count": 1,
-  "ingredient": {
-    "item": "cutandcolored:dark_oak_boards"
-  },
-  "result": "cutandcolored:dark_oak_board_stairs"
-}

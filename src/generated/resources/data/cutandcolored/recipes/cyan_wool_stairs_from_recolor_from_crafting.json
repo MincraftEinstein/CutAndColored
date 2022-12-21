@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_wool_stairs",
+  "key": {
+    "#": {
+      "tag": "forge:wool_stairs"
+    },
+    "$": {
+      "item": "minecraft:cyan_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:cyan_wool_stairs"
+  }
+}

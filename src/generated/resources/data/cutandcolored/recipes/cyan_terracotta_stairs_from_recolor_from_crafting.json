@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolored_tarracotta_stairs",
+  "key": {
+    "#": {
+      "tag": "forge:terracotta_stairs"
+    },
+    "$": {
+      "item": "minecraft:cyan_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:cyan_terracotta_stairs"
+  }
+}

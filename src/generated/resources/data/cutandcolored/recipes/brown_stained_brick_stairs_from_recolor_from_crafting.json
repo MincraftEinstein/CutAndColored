@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_stained_brick_stairs",
+  "key": {
+    "#": {
+      "tag": "forge:clay_brick_stairs"
+    },
+    "$": {
+      "item": "minecraft:brown_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:brown_stained_brick_stairs"
+  }
+}

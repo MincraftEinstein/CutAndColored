@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "redstone_lamp",
+  "ingredients": [
+    {
+      "tag": "forge:redstone_lamps"
+    },
+    {
+      "item": "minecraft:blue_dye"
+    }
+  ],
+  "result": {
+    "item": "cutandcolored:blue_redstone_lamp"
+  }
+}

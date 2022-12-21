@@ -1,8 +1,0 @@
-{
-  "type": "cutandcolored:sawmilling",
-  "count": 8,
-  "ingredient": {
-    "tag": "minecraft:mangrove_logs"
-  },
-  "result": "cutandcolored:mangrove_board_slab"
-}

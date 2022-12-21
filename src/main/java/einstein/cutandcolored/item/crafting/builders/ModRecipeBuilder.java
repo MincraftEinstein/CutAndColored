@@ -96,7 +96,7 @@ public class ModRecipeBuilder {
 		ensureValid(id);
 		advancement.parent(new ResourceLocation("recipes/root")).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
 		consumer.accept(new ModRecipeBuilder.Result(id, serializer, group == null ? "" : group,
-				ingredient, result, count, advancement, id.withPrefix(category.getFolderName() + "/")));
+				ingredient, result, count, advancement, id.withPrefix("recipes/" + category.getFolderName() + "/")));
 	}
 	
 	private void ensureValid(ResourceLocation id) {

@@ -1,10 +1,5 @@
 {
   "values": [
-    "#forge:concrete_stairs",
-    "#forge:glass_stairs",
-    "#forge:terracotta_stairs",
-    "#forge:wool_stairs",
-    "#forge:board_stairs",
     "cutandcolored:smooth_stone_stairs",
     "cutandcolored:cracked_stone_brick_stairs",
     "cutandcolored:cracked_polished_blackstone_brick_stairs",
@@ -22,6 +17,11 @@
     "cutandcolored:raw_iron_stairs",
     "cutandcolored:raw_gold_stairs",
     "cutandcolored:raw_copper_stairs",
-    "cutandcolored:obsidian_brick_stairs"
+    "cutandcolored:obsidian_brick_stairs",
+    "#forge:concrete_stairs",
+    "#forge:glass_stairs",
+    "#forge:terracotta_stairs",
+    "#forge:wool_stairs",
+    "#forge:board_stairs"
   ]
 }

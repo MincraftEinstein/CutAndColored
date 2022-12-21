@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_stained_bricks",
+  "key": {
+    "#": {
+      "tag": "forge:clay_bricks"
+    },
+    "$": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:red_stained_bricks"
+  }
+}

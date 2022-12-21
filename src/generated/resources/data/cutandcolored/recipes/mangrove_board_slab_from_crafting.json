@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "board_slabs",
+  "key": {
+    "#": {
+      "item": "cutandcolored:mangrove_boards"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "cutandcolored:mangrove_board_slab"
+  }
+}

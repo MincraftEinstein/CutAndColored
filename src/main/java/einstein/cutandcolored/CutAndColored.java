@@ -92,12 +92,7 @@ public class CutAndColored {
         ExistingFileHelper helper = event.getExistingFileHelper();
 
         // Server providers
-        generator.addProvider(event.includeServer(), new CraftingRecipesGenerator(output));
-        generator.addProvider(event.includeServer(), new SmeltingRecipeGenerator(output));
-        generator.addProvider(event.includeServer(), new StonecuttingRecipesGenerator(output));
-        generator.addProvider(event.includeServer(), new GlasscuttingRecipesGenerator(output));
-        generator.addProvider(event.includeServer(), new SawmillingRecipesGenerator(output));
-        generator.addProvider(event.includeServer(), new WeavingRecipesGenerator(output));
+        generator.addProvider(event.includeServer(), new ModRecipesGenerator(output));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(output));
         BlockTagsProvider blockTags = new BlockTagsGenerator(output, event.getLookupProvider(), helper); // Used for both item and block tags
         generator.addProvider(event.includeServer(), blockTags);

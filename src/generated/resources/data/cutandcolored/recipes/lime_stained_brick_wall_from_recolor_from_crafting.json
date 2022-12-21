@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_stained_brick_walls",
+  "key": {
+    "#": {
+      "tag": "forge:clay_brick_walls"
+    },
+    "$": {
+      "item": "minecraft:lime_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:lime_stained_brick_wall"
+  }
+}

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.1,
-  "ingredient": {
-    "item": "minecraft:stone_brick_wall"
-  },
-  "result": "cutandcolored:cracked_stone_brick_wall"
-}

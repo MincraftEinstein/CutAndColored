@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_stained_glass_slabs",
+  "key": {
+    "#": {
+      "tag": "forge:glass_slabs"
+    },
+    "$": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:orange_stained_glass_slab"
+  }
+}

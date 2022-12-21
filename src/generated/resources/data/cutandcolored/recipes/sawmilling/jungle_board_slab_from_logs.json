@@ -1,8 +1,0 @@
-{
-  "type": "cutandcolored:sawmilling",
-  "count": 8,
-  "ingredient": {
-    "tag": "minecraft:jungle_logs"
-  },
-  "result": "cutandcolored:jungle_board_slab"
-}

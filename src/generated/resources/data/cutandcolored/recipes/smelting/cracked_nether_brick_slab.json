@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.1,
-  "ingredient": {
-    "item": "minecraft:nether_brick_slab"
-  },
-  "result": "cutandcolored:cracked_nether_brick_slab"
-}

@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-21T18:34:47.1787033	CutAndColored item tags
+// 1.19.3	2022-12-16T16:54:19.5540779	CutAndColored item tags
 daeded7a2588fd1bf29cd4ec69e9cd3ac4fdc472 data/cutandcolored/tags/items/vanilla_concrete_slabs.json
 120344714917469dae26fb36bda4a099e3f2ba15 data/cutandcolored/tags/items/vanilla_concrete_stairs.json
 3296db6c054a00dd4f7cb468d938a8cf84a574ba data/cutandcolored/tags/items/vanilla_plank_slabs.json
@@ -84,8 +84,8 @@ e59745aa43c53569932b802957d023f61d46f294 data/forge/tags/items/stained_plank_sta
 e48db685a83c734afa71239b2006249ed4173d6e data/forge/tags/items/wool_stairs.json
 9036dc7413b863bc1f8c97c5fa9bf5d0119f4cf8 data/minecraft/tags/items/non_flammable_wood.json
 ee8c9ff168d882120879b2eaa10f5aa5469774eb data/minecraft/tags/items/planks.json
-0616d6261347d987a7693442ce160651a59f2c23 data/minecraft/tags/items/slabs.json
-af9d36f35679aaf107e6d146707554d53a37c08c data/minecraft/tags/items/stairs.json
+50f3c5cae6c3bf56dad53f455c92a9a91e59e755 data/minecraft/tags/items/slabs.json
+f5d6091caaad56f0bc9b10c8d0680127d251c638 data/minecraft/tags/items/stairs.json
 2d961613aaf9f1c79530b0e4398af3148dee979d data/minecraft/tags/items/walls.json
 3811222e1ba820d063e65852694c907e3ba5c984 data/minecraft/tags/items/wooden_slabs.json
 4790390eca9acc38f175a0cc9374ea8cc80617f5 data/minecraft/tags/items/wooden_stairs.json

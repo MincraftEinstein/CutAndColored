@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolored_tarracotta_stairs",
+  "key": {
+    "#": {
+      "tag": "forge:terracotta_stairs"
+    },
+    "$": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:white_terracotta_stairs"
+  }
+}

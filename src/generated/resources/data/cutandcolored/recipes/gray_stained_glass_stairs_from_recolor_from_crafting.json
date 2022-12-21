@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_stained_glass_stairs",
+  "key": {
+    "#": {
+      "tag": "forge:glass_stairs"
+    },
+    "$": {
+      "item": "minecraft:gray_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:gray_stained_glass_stairs"
+  }
+}

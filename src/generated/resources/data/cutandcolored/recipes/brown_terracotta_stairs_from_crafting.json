@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "colored_tarracotta_stairs",
+  "key": {
+    "#": {
+      "item": "minecraft:brown_terracotta"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "cutandcolored:brown_terracotta_stairs"
+  }
+}

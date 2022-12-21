@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-21T18:34:47.149781	CutAndColored block tags
+// 1.19.3	2022-12-16T16:54:19.5500886	CutAndColored block tags
 daeded7a2588fd1bf29cd4ec69e9cd3ac4fdc472 data/cutandcolored/tags/blocks/vanilla_concrete_slabs.json
 120344714917469dae26fb36bda4a099e3f2ba15 data/cutandcolored/tags/blocks/vanilla_concrete_stairs.json
 3296db6c054a00dd4f7cb468d938a8cf84a574ba data/cutandcolored/tags/blocks/vanilla_plank_slabs.json
@@ -84,13 +84,12 @@ e59745aa43c53569932b802957d023f61d46f294 data/forge/tags/blocks/stained_plank_st
 e48db685a83c734afa71239b2006249ed4173d6e data/forge/tags/blocks/wool_stairs.json
 626baca0687cef1b6c067cd18a424c07accc6113 data/minecraft/tags/blocks/dragon_immune.json
 f9ea261d6bca32e9e30e81b98b2a6697198f99bd data/minecraft/tags/blocks/impermeable.json
-d71b5424d2eb81fcb18b6cd89e3af01fbf77d268 data/minecraft/tags/blocks/mineable/axe.json
-cb797865352928bc0052fa54a82fa76af8c823ad data/minecraft/tags/blocks/mineable/pickaxe.json
+adf9b689a7b2ea51aeb638b873857b02b92ce178 data/minecraft/tags/blocks/mineable/axe.json
+4573e9228855663d48c7e4646c976e8f65d95cc4 data/minecraft/tags/blocks/mineable/pickaxe.json
 b4caeff76db9c551912a23314f708797deb99827 data/minecraft/tags/blocks/needs_diamond_tool.json
-9036dc7413b863bc1f8c97c5fa9bf5d0119f4cf8 data/minecraft/tags/blocks/non_flammable_wood.json
 ee8c9ff168d882120879b2eaa10f5aa5469774eb data/minecraft/tags/blocks/planks.json
-0616d6261347d987a7693442ce160651a59f2c23 data/minecraft/tags/blocks/slabs.json
-af9d36f35679aaf107e6d146707554d53a37c08c data/minecraft/tags/blocks/stairs.json
+50f3c5cae6c3bf56dad53f455c92a9a91e59e755 data/minecraft/tags/blocks/slabs.json
+f5d6091caaad56f0bc9b10c8d0680127d251c638 data/minecraft/tags/blocks/stairs.json
 2d961613aaf9f1c79530b0e4398af3148dee979d data/minecraft/tags/blocks/walls.json
 3811222e1ba820d063e65852694c907e3ba5c984 data/minecraft/tags/blocks/wooden_slabs.json
 4790390eca9acc38f175a0cc9374ea8cc80617f5 data/minecraft/tags/blocks/wooden_stairs.json

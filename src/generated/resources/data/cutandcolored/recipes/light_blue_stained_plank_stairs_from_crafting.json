@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_plank_stairs",
+  "key": {
+    "#": {
+      "item": "cutandcolored:light_blue_stained_planks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "cutandcolored:light_blue_stained_plank_stairs"
+  }
+}

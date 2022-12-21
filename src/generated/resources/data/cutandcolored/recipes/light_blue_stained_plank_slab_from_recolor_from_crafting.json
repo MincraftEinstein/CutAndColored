@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_stained_plank_slabs",
+  "key": {
+    "#": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "$": {
+      "item": "minecraft:light_blue_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:light_blue_stained_plank_slab"
+  }
+}

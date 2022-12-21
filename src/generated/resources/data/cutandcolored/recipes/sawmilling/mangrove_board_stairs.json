@@ -1,8 +1,0 @@
-{
-  "type": "cutandcolored:sawmilling",
-  "count": 1,
-  "ingredient": {
-    "item": "cutandcolored:mangrove_boards"
-  },
-  "result": "cutandcolored:mangrove_board_stairs"
-}

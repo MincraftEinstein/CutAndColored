@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_brick_walls",
+  "key": {
+    "#": {
+      "item": "cutandcolored:brown_stained_bricks"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "cutandcolored:brown_stained_brick_wall"
+  }
+}

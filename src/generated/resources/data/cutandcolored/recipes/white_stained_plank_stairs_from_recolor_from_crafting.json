@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_stained_plank_stairs",
+  "key": {
+    "#": {
+      "tag": "minecraft:wooden_stairs"
+    },
+    "$": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:white_stained_plank_stairs"
+  }
+}

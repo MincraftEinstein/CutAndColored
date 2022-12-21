@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.1,
-  "ingredient": {
-    "item": "minecraft:cracked_deepslate_bricks"
-  },
-  "result": "cutandcolored:cracked_deepslate_brick_slab"
-}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "recolor_concrete_slabs",
+  "key": {
+    "#": {
+      "tag": "forge:concrete_slabs"
+    },
+    "$": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cutandcolored:orange_concrete_slab"
+  }
+}

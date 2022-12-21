@@ -1,12 +1,12 @@
 {
   "values": [
+    "cutandcolored:weaver",
+    "cutandcolored:sawmill",
     "#forge:stained_plank_slabs",
     "#forge:stained_plank_stairs",
     "#forge:stained_planks",
     "#forge:boards",
     "#forge:board_stairs",
-    "#forge:board_slabs",
-    "cutandcolored:weaver",
-    "cutandcolored:sawmill"
+    "#forge:board_slabs"
   ]
 }
