@@ -62,18 +62,13 @@ public class CutAndColored {
         ModRecipeTypes.RECIPE_SERIALIZERS.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(new PropertyEvents());
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ModConfigs.buildConfigs());
     }
 
     void registerCreativeTab(CreativeModeTabEvent.Register event) {
         MOD_TAB = event.registerCreativeModeTab(new ResourceLocation(MOD_ID, "cutandcolored_tab"), builder -> {
-            builder.icon(() -> new ItemStack(ModBlocks.SAWMILL.get())).title(Component.translatable("itemGroup.cutandcolored_tab"));
-
-//            if (ModConfigs.CREATIVE_SEARCH_BAR.get()) {
-//                builder.withSearchBar(80).withBackgroundLocation(new ResourceLocation(MOD_ID, "textures/gui/container/creative_inventory/tab_cutandcolored_item_search.png"));
-//            }
-
-            builder.build();
+            builder.icon(() -> new ItemStack(ModBlocks.SAWMILL.get()))
+                    .title(Component.translatable("itemGroup.cutandcolored_tab"))
+                    .build();
         });
     }
 
