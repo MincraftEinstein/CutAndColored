@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[41,)"
+loaderVersion="[45,)"
 license="All rights reserved"
 issueTrackerURL="https://github.com/MincraftEinstein/CutAndColored/issues"
 
@@ -23,13 +23,13 @@ A mod that aims to add vanilla feeling blocks to Minecraft
 [[dependencies.cutandcolored]]
     modId="forge"
     mandatory=true
-    versionRange="[41.0.98,)"
+    versionRange="[45.0.23,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.cutandcolored]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19, 1.20]"
+    versionRange="[1.19.4, 1.20]"
     ordering="NONE"
     side="BOTH"
