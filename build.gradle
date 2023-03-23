@@ -106,6 +106,17 @@ dependencies {
     implementation fg.deobf("curse.maven:configured-457570:${configured_v}")
 }
 
+processResources {
+    exclude('.cache/')
+
+    inputs.property "version", "${mod_v}"
+
+    filesMatching("META-INF/mods.toml") {
+        expand "version": "${mod_v}"
+    }
+}
+
+
 jar {
     manifest {
         attributes([
