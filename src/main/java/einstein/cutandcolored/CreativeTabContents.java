@@ -133,6 +133,13 @@ public class CreativeTabContents {
         // Dark prismarine bricks
         event.accept(ModBlocks.DARK_PRISMARINE_WALL.get());
 
+        // Obsidian bricks
+        event.accept(ModBlocks.OBSIDIAN_BRICKS.get());
+        event.accept(ModBlocks.OBSIDIAN_BRICK_PILLAR.get());
+        event.accept(ModBlocks.OBSIDIAN_BRICK_STAIRS.get());
+        event.accept(ModBlocks.OBSIDIAN_BRICK_SLAB.get());
+        event.accept(ModBlocks.OBSIDIAN_BRICK_WALL.get());
+
         // Nether bricks
         event.accept(ModBlocks.CRACKED_NETHER_BRICK_STAIRS.get());
         event.accept(ModBlocks.CRACKED_NETHER_BRICK_SLAB.get());
