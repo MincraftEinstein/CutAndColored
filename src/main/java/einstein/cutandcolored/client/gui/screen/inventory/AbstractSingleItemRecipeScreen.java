@@ -56,7 +56,7 @@ public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleIte
 		int i1 = topPos + 14;
 		int j1 = startIndex + 12;
 		renderButtons(poseStack, x, y, l, i1, j1);
-		renderRecipes(l, i1, j1);
+		renderRecipes(poseStack, l, i1, j1);
 	}
 	
 	@Override
@@ -73,7 +73,7 @@ public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleIte
 				int j1 = i + i1 % 4 * 16;
 				int k1 = j + i1 / 4 * 18 + 2;
 				if (x >= j1 && x < j1 + 16 && y >= k1 && y < k1 + 18) {
-					this.renderTooltip(poseStack, list.get(l).getResultItem(), x, y);
+					this.renderTooltip(poseStack, list.get(l).getResultItem(minecraft.level.registryAccess()), x, y);
 				}
 			}
 		}
@@ -96,14 +96,14 @@ public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleIte
 		}
 	}
 	
-	private void renderRecipes(int left, int top, int offset) {
+	private void renderRecipes(PoseStack poseStack, int left, int top, int offset) {
 		List<R> list = menu.getRecipes();
 		for (int i = startIndex; i < offset && i < menu.getNumRecipes(); ++i) {
 			int j = i - startIndex;
 			int k = left + j % 4 * 16;
 			int l = j / 4;
 			int i1 = top + l * 18 + 2;
-			minecraft.getItemRenderer().renderAndDecorateItem(list.get(i).getResultItem(), k, i1);
+			minecraft.getItemRenderer().renderAndDecorateItem(poseStack, list.get(i).getResultItem(minecraft.level.registryAccess()), k, i1);
 		}
 	}
 	

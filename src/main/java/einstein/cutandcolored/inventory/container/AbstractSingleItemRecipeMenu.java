@@ -154,7 +154,7 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
 		if (!recipes.isEmpty() && isValidRecipeIndex(selectedRecipeIndex.get())) {
 			T recipe = recipes.get(selectedRecipeIndex.get());
 			resultContainer.setRecipeUsed(recipe);
-			resultSlot.set(recipe.assemble(container));
+			resultSlot.set(recipe.assemble(container, level.registryAccess()));
 		} else {
 			resultSlot.set(ItemStack.EMPTY);
 		}

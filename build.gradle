@@ -100,12 +100,8 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_v}-${forge_v}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-//	implementation fg.deobf("curse.maven:einsteins-library-405744:3545865")
     compileOnly fg.deobf("curse.maven:jei-238222:${jei_v}")
 //	implementation fg.deobf("curse.maven:crafttweaker-239197:3696628")
-//	implementation fg.deobf("curse.maven:additional-bars-357362:3672351")
-//	implementation fg.deobf("curse.maven:additional-bars-biomes-o-plenty-addon-460311:3682646")
-//	implementation fg.deobf("curse.maven:codenamerevys-horizontal-glass-panes-397068:3735973")
     implementation fg.deobf("curse.maven:catalogue-459701:${catalogue_v}")
     implementation fg.deobf("curse.maven:configured-457570:${configured_v}")
 }

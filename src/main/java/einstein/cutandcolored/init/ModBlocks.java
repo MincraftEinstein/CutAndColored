@@ -39,6 +39,7 @@ import net.minecraft.world.level.block.TintedGlassBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.ModList;
@@ -577,7 +578,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> OBSIDIAN_BRICK_WALL = register("obsidian_brick_wall", () -> new WallBlock(Properties.copy(OBSIDIAN_BRICKS.get())));
     
     // MISC MODELS
-    public static final RegistryObject<Block> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", () -> new FenceGateBlock(Properties.of(Material.STONE, MaterialColor.NETHER).strength(2.0F, 6.0F), SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
+    public static final RegistryObject<Block> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", () -> new FenceGateBlock(Properties.of(Material.STONE, MaterialColor.NETHER).strength(2.0F, 6.0F), WoodType.OAK));
     public static final RegistryObject<Block> IRON_FENCE_GATE = register("iron_fence_gate", () -> new IronFenceGateBlock(Properties.of(Material.METAL, MaterialColor.METAL).strength(5.0F).sound(SoundType.METAL)));
     
     public static <T extends Block> RegistryObject<Block> register(final String name, final Supplier<T> block) {

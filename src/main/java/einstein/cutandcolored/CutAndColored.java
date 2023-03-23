@@ -83,7 +83,7 @@ public class CutAndColored {
         generator.addProvider(event.includeServer(), new ModLootTableProvider(output));
         BlockTagsProvider blockTags = new BlockTagsGenerator(output, event.getLookupProvider(), helper); // Used for both item and block tags
         generator.addProvider(event.includeServer(), blockTags);
-        generator.addProvider(event.includeServer(), new ItemTagsGenerator(output, event.getLookupProvider(), blockTags, helper));
+        generator.addProvider(event.includeServer(), new ItemTagsGenerator(output, event.getLookupProvider(), blockTags.contentsGetter(), helper));
 
         // Client providers
         generator.addProvider(event.includeClient(), new BlockAssetsGenerator(output, helper));

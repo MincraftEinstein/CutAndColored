@@ -9,9 +9,11 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import mezz.jei.common.Constants;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.MinecartItem;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -53,6 +55,6 @@ public abstract class AbstractSingleItemRecipeCategory<T extends AbstractSingleI
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, T recipe, IFocusGroup focuses) {
 		builder.addSlot(RecipeIngredientRole.INPUT, 1, 9).addIngredients(recipe.getIngredients().get(0));
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 61, 9).addItemStack(recipe.getResultItem());
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 61, 9).addItemStack(recipe.getResultItem(Minecraft.getInstance().level.registryAccess()));
 	}
 }

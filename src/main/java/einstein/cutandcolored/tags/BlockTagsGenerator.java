@@ -23,7 +23,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class BlockTagsGenerator extends BlockTagsProvider {
 	
-	private List<Block> coloredBlocks = new ArrayList<Block>();
+	private final List<Block> coloredBlocks = new ArrayList<Block>();
 	
 	/**********************Mod***********************/
 	public static final TagKey<Block> VANILLA_STAINED_BRICKS = create("vanilla_stained_bricks");
@@ -85,8 +85,8 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	
 	public static final TagKey<Block> SOUL_GLASS = forgeCreate("glass/soul");
 	
-	public BlockTagsGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> future, ExistingFileHelper existingFileHelper) {
-		super(output, future, CutAndColored.MOD_ID, existingFileHelper);
+	public BlockTagsGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
+		super(output, lookupProvider, CutAndColored.MOD_ID, existingFileHelper);
 	}
 	
 	@SuppressWarnings("unchecked")

@@ -87,8 +87,8 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 	
 	public static final TagKey<Item> SOUL_GLASS = forgeCreate("glass/soul");
 	
-	public ItemTagsGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> future, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
-		super(output, future, blockTagProvider, CutAndColored.MOD_ID, existingFileHelper);
+	public ItemTagsGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags, ExistingFileHelper existingFileHelper) {
+		super(output, lookupProvider, blockTags, CutAndColored.MOD_ID, existingFileHelper);
 	}
 	
 	@SuppressWarnings("unchecked")
