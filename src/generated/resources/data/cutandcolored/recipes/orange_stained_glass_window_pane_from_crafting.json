@@ -14,5 +14,6 @@
   "result": {
     "count": 6,
     "item": "cutandcolored:orange_stained_glass_window_pane"
-  }
+  },
+  "show_notification": true
 }

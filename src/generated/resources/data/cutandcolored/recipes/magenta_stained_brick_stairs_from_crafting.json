@@ -15,5 +15,6 @@
   "result": {
     "count": 4,
     "item": "cutandcolored:magenta_stained_brick_stairs"
-  }
+  },
+  "show_notification": true
 }

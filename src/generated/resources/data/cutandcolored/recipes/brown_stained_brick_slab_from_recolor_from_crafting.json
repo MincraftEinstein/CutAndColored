@@ -18,5 +18,6 @@
   "result": {
     "count": 8,
     "item": "cutandcolored:brown_stained_brick_slab"
-  }
+  },
+  "show_notification": true
 }

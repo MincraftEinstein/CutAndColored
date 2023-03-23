@@ -15,5 +15,6 @@
   "result": {
     "count": 4,
     "item": "cutandcolored:dark_oak_board_stairs"
-  }
+  },
+  "show_notification": true
 }

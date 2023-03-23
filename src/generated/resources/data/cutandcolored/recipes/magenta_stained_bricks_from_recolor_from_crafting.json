@@ -18,5 +18,6 @@
   "result": {
     "count": 8,
     "item": "cutandcolored:magenta_stained_bricks"
-  }
+  },
+  "show_notification": true
 }

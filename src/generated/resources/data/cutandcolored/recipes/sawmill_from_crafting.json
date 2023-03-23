@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "cutandcolored:sawmill"
-  }
+  },
+  "show_notification": true
 }

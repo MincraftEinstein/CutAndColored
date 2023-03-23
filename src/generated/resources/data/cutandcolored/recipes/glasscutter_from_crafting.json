@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "cutandcolored:glasscutter"
-  }
+  },
+  "show_notification": true
 }

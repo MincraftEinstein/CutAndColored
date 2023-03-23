@@ -18,5 +18,6 @@
   "result": {
     "count": 8,
     "item": "cutandcolored:white_stained_plank_slab"
-  }
+  },
+  "show_notification": true
 }

@@ -15,5 +15,6 @@
   "result": {
     "count": 4,
     "item": "cutandcolored:gray_wool_stairs"
-  }
+  },
+  "show_notification": true
 }

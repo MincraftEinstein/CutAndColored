@@ -15,5 +15,6 @@
   "result": {
     "count": 4,
     "item": "cutandcolored:brown_stained_plank_stairs"
-  }
+  },
+  "show_notification": true
 }

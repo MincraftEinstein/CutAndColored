@@ -12,5 +12,6 @@
   "result": {
     "count": 6,
     "item": "cutandcolored:raw_copper_slab"
-  }
+  },
+  "show_notification": true
 }

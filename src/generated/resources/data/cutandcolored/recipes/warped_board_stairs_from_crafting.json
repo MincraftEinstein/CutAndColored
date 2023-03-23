@@ -15,5 +15,6 @@
   "result": {
     "count": 4,
     "item": "cutandcolored:warped_board_stairs"
-  }
+  },
+  "show_notification": true
 }

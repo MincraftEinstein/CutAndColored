@@ -18,5 +18,6 @@
   "result": {
     "count": 8,
     "item": "cutandcolored:black_stained_brick_stairs"
-  }
+  },
+  "show_notification": true
 }

@@ -14,5 +14,6 @@
   "result": {
     "count": 6,
     "item": "cutandcolored:blue_stained_brick_wall"
-  }
+  },
+  "show_notification": true
 }

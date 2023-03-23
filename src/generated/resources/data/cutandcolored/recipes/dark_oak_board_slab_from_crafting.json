@@ -13,5 +13,6 @@
   "result": {
     "count": 6,
     "item": "cutandcolored:dark_oak_board_slab"
-  }
+  },
+  "show_notification": true
 }

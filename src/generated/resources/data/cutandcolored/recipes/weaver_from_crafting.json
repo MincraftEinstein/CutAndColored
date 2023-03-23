@@ -19,5 +19,6 @@
   ],
   "result": {
     "item": "cutandcolored:weaver"
-  }
+  },
+  "show_notification": true
 }
