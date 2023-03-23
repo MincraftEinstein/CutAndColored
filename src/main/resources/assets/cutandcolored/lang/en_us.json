@@ -518,6 +518,9 @@
     "block.cutandcolored.calcite_wall": "Calcite Wall",
     "block.cutandcolored.tuff_wall": "Tuff Wall",
     "block.cutandcolored.obsidian_brick_wall": "Obsidian Brick Wall",
+    "block.cutandcolored.polished_granite_wall": "Polished Granite Wall",
+    "block.cutandcolored.polished_diorite_wall": "Polished Diorite Wall",
+    "block.cutandcolored.polished_andesite_wall": "Polished Andesite Wall",
     
     // MISC MODELS
     "block.cutandcolored.nether_brick_fence_gate": "Nether Brick Fence Gate",

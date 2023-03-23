@@ -310,6 +310,7 @@ public class ModRecipesGenerator extends RecipeResources {
             stonecuttingRecipe(type + "_brick_wall", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_brick_wall")));
             stonecuttingRecipe(type + "_brick_wall_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL("polished_" + type)), getItem(modRL(type + "_brick_wall")));
             stonecuttingRecipe(type + "_brick_wall_from_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(modRL(type + "_bricks")), getItem(modRL(type + "_brick_wall")));
+            stonecuttingRecipe("polished_" + type + "_wall", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL("polished_" + type)), getItem(modRL("polished_" + type + "_wall")));
         }
 
         stonecuttingRecipe("chiseled_end_stone_bricks", RecipeCategory.BUILDING_BLOCKS, Blocks.END_STONE, ModBlocks.CHISELED_END_STONE_BRICKS.get());

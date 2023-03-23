@@ -576,7 +576,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> CALCITE_WALL = register("calcite_wall", () -> new WallBlock(Properties.copy(Blocks.CALCITE)));
     public static final RegistryObject<Block> TUFF_WALL = register("tuff_wall", () -> new WallBlock(Properties.copy(Blocks.TUFF)));
     public static final RegistryObject<Block> OBSIDIAN_BRICK_WALL = register("obsidian_brick_wall", () -> new WallBlock(Properties.copy(OBSIDIAN_BRICKS.get())));
-    
+    public static final RegistryObject<Block> POLISHED_GRANITE_WALL = register("polished_granite_wall", () -> new WallBlock(Properties.copy(Blocks.POLISHED_GRANITE)));
+    public static final RegistryObject<Block> POLISHED_DIORITE_WALL = register("polished_diorite_wall", () -> new WallBlock(Properties.copy(Blocks.POLISHED_DIORITE)));
+    public static final RegistryObject<Block> POLISHED_ANDESITE_WALL = register("polished_andesite_wall", () -> new WallBlock(Properties.copy(Blocks.POLISHED_ANDESITE)));
+
     // MISC MODELS
     public static final RegistryObject<Block> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", () -> new FenceGateBlock(Properties.of(Material.STONE, MaterialColor.NETHER).strength(2.0F, 6.0F), WoodType.OAK));
     public static final RegistryObject<Block> IRON_FENCE_GATE = register("iron_fence_gate", () -> new IronFenceGateBlock(Properties.of(Material.METAL, MaterialColor.METAL).strength(5.0F).sound(SoundType.METAL)));

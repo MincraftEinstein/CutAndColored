@@ -74,18 +74,21 @@ public class CreativeTabContents {
         event.accept(ModBlocks.CRACKED_STONE_BRICK_WALL.get());
 
         // Granite
+        event.accept(ModBlocks.POLISHED_GRANITE_WALL.get());
         event.accept(ModBlocks.GRANITE_BRICKS.get());
         event.accept(ModBlocks.GRANITE_BRICK_STAIRS.get());
         event.accept(ModBlocks.GRANITE_BRICK_SLAB.get());
         event.accept(ModBlocks.GRANITE_BRICK_WALL.get());
 
         // Diorite
+        event.accept(ModBlocks.POLISHED_DIORITE_WALL.get());
         event.accept(ModBlocks.DIORITE_BRICKS.get());
         event.accept(ModBlocks.DIORITE_BRICK_STAIRS.get());
         event.accept(ModBlocks.DIORITE_BRICK_SLAB.get());
         event.accept(ModBlocks.DIORITE_BRICK_WALL.get());
 
         // Andesite
+        event.accept(ModBlocks.POLISHED_ANDESITE_WALL);
         event.accept(ModBlocks.ANDESITE_BRICKS.get());
         event.accept(ModBlocks.ANDESITE_BRICK_STAIRS.get());
         event.accept(ModBlocks.ANDESITE_BRICK_SLAB.get());

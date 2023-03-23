@@ -1,4 +1,4 @@
-// 1.19.4	2023-03-23T16:17:41.3908659	Loot Tables
+// 1.19.4	2023-03-23T17:04:07.9342497	Loot Tables
 caa3189ff9c4a5d8653f5baad29e6f3145126203 data/cutandcolored/loot_tables/blocks/acacia_boards.json
 0a6cf898350e45941b9215848b6dfee2879964e2 data/cutandcolored/loot_tables/blocks/acacia_board_slab.json
 a5c46119bcfa081845144201a7c9327f58292c43 data/cutandcolored/loot_tables/blocks/acacia_board_stairs.json
@@ -285,8 +285,11 @@ f8d4825b3039c948a3a9cd98d492ba9dc89a7389 data/cutandcolored/loot_tables/blocks/p
 9020c56253ccf6ae44fbcadc25b541565c99566e data/cutandcolored/loot_tables/blocks/pink_terracotta_stairs.json
 feef726b1f49fa65567f5e64fe1d9df301570ba0 data/cutandcolored/loot_tables/blocks/pink_wool_slab.json
 1276d11a6f232dec0f1393b19c6352d89f93472e data/cutandcolored/loot_tables/blocks/pink_wool_stairs.json
+cad6a4c2435f9a8027f07ea8a55c2562965e8aa5 data/cutandcolored/loot_tables/blocks/polished_andesite_wall.json
 62ca8a168fc30801a9649cccc29b2f529048fb1c data/cutandcolored/loot_tables/blocks/polished_blackstone_pillar.json
+4299830fa64aaa5b2661d19a8afef864f6493bca data/cutandcolored/loot_tables/blocks/polished_diorite_wall.json
 0664e9ed4f18960cd33a425835d41f0aa34f6c88 data/cutandcolored/loot_tables/blocks/polished_end_stone.json
+79801497519b2a5d2f11d9bbe310924d959262fc data/cutandcolored/loot_tables/blocks/polished_granite_wall.json
 f8a2995e911598c48ba395347c41be25a0760ede data/cutandcolored/loot_tables/blocks/polished_stone.json
 e3f6b0c45f9226ecf74db8bfd39f4f58b05fde70 data/cutandcolored/loot_tables/blocks/prismarine_brick_pillar.json
 28a4e6e5c51ceaf4328f99cbaa543e886c4ddc86 data/cutandcolored/loot_tables/blocks/prismarine_brick_wall.json

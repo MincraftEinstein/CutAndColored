@@ -17,6 +17,9 @@
     "cutandcolored:quartz_brick_wall",
     "cutandcolored:calcite_wall",
     "cutandcolored:tuff_wall",
-    "cutandcolored:obsidian_brick_wall"
+    "cutandcolored:obsidian_brick_wall",
+    "cutandcolored:polished_granite_wall",
+    "cutandcolored:polished_diorite_wall",
+    "cutandcolored:polished_andesite_wall"
   ]
 }

@@ -1,4 +1,4 @@
-// 1.19.4	2023-03-23T16:17:41.4098216	CutAndColored block tags
+// 1.19.4	2023-03-23T17:31:01.3869074	CutAndColored block tags
 daeded7a2588fd1bf29cd4ec69e9cd3ac4fdc472 data/cutandcolored/tags/blocks/vanilla_concrete_slabs.json
 120344714917469dae26fb36bda4a099e3f2ba15 data/cutandcolored/tags/blocks/vanilla_concrete_stairs.json
 3296db6c054a00dd4f7cb468d938a8cf84a574ba data/cutandcolored/tags/blocks/vanilla_plank_slabs.json
@@ -90,6 +90,6 @@ b4caeff76db9c551912a23314f708797deb99827 data/minecraft/tags/blocks/needs_diamon
 ee8c9ff168d882120879b2eaa10f5aa5469774eb data/minecraft/tags/blocks/planks.json
 50f3c5cae6c3bf56dad53f455c92a9a91e59e755 data/minecraft/tags/blocks/slabs.json
 f5d6091caaad56f0bc9b10c8d0680127d251c638 data/minecraft/tags/blocks/stairs.json
-2d961613aaf9f1c79530b0e4398af3148dee979d data/minecraft/tags/blocks/walls.json
+eac4ad9348c478c12ecf1ae9c9bd3f287a16b853 data/minecraft/tags/blocks/walls.json
 3811222e1ba820d063e65852694c907e3ba5c984 data/minecraft/tags/blocks/wooden_slabs.json
 4790390eca9acc38f175a0cc9374ea8cc80617f5 data/minecraft/tags/blocks/wooden_stairs.json

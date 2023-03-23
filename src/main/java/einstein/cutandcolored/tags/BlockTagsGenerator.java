@@ -121,7 +121,8 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 				ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(), ModBlocks.CRACKED_NETHER_BRICK_WALL.get(),
 				ModBlocks.SMOOTH_STONE_WALL.get(), ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL.get(),
 				ModBlocks.CRACKED_DEEPSLATE_TILE_WALL.get(), ModBlocks.QUARTZ_BRICK_WALL.get(), ModBlocks.CALCITE_WALL.get(),
-				ModBlocks.TUFF_WALL.get(), ModBlocks.OBSIDIAN_BRICK_WALL.get());
+				ModBlocks.TUFF_WALL.get(), ModBlocks.OBSIDIAN_BRICK_WALL.get(), ModBlocks.POLISHED_GRANITE_WALL.get(),
+				ModBlocks.POLISHED_DIORITE_WALL.get(), ModBlocks.POLISHED_ANDESITE_WALL.get());
 		tag(BlockTags.WOODEN_SLABS).addTag(STAINED_PLANK_SLABS);
 		tag(BlockTags.WOODEN_STAIRS).addTag(STAINED_PLANK_STAIRS);
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GLASSCUTTER.get(), ModBlocks.ANDESITE_BRICK_SLAB.get(), ModBlocks.ANDESITE_BRICK_STAIRS.get(),

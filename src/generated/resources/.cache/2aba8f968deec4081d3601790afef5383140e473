@@ -1,4 +1,4 @@
-// 1.19.4	2023-03-23T16:17:41.4108173	CutAndColored item assets
+// 1.19.4	2023-03-23T17:04:07.9392362	CutAndColored item assets
 d1602e02a092b3896dc2d7eb82530c127c127886 assets/cutandcolored/models/item/acacia_boards.json
 1d61866c80626b301f228c634650518da01b7e72 assets/cutandcolored/models/item/acacia_board_slab.json
 2edc73f74f05f8f7b753053c400dd24b57193131 assets/cutandcolored/models/item/acacia_board_stairs.json
@@ -101,8 +101,11 @@ a527be1877c20b974016d8592f63e44f90b0bd6b assets/cutandcolored/models/item/orange
 094741835428cb9cb19d3591ade80967938ed88e assets/cutandcolored/models/item/pink_stained_brick_wall.json
 b7e91b7b578dc0073b8795ab8761f63a1b0cbed8 assets/cutandcolored/models/item/pink_stained_glass_window.json
 1ef00d5d59e554ac59936bb373419b46d8590867 assets/cutandcolored/models/item/pink_stained_glass_window_pane.json
+4f4f37e4572aa07b6de6bd970974a2aee41df9a0 assets/cutandcolored/models/item/polished_andesite_wall.json
 0ebd5690c6b6ca6d858fe9fb938f154d0f775738 assets/cutandcolored/models/item/polished_blackstone_pillar.json
+971f9effc0d72a0c9ec3d2ee55e83eb003eba0cd assets/cutandcolored/models/item/polished_diorite_wall.json
 ac20e08332f9ede30993016c395303e31f3e8442 assets/cutandcolored/models/item/polished_end_stone.json
+35a048ac4a5650dd40d228e4bdcd565a563c3b5e assets/cutandcolored/models/item/polished_granite_wall.json
 3adaa064f077fce296d5511af12e0d17b518a800 assets/cutandcolored/models/item/polished_stone.json
 4bfb60e6041b1e0409afe5465519620be93a1c16 assets/cutandcolored/models/item/prismarine_brick_pillar.json
 bd4999f0323af99351b67be243d70858bc115f32 assets/cutandcolored/models/item/prismarine_brick_wall.json
