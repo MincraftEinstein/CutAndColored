@@ -11,7 +11,7 @@ public class WeavingRecipe extends AbstractSingleItemRecipe {
     public WeavingRecipe(ResourceLocation id, String group, Ingredient ingredient, ItemStack result) {
         super(ModRecipeTypes.WEAVING_RECIPE, ModRecipeTypes.WEAVING.get(), id, group, ingredient, result);
     }
-    
+
     @Override
     public ItemStack getToastSymbol() {
         return new ItemStack(ModBlocks.WEAVER.get());

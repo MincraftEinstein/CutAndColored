@@ -1,11 +1,11 @@
 {
-    "parent": "minecraft:block/stonecutter",
-    "render_type": "minecraft:cutout",
-    "textures": {
-        "particle": "cutandcolored:block/glasscutter_bottom",
-        "bottom": "cutandcolored:block/glasscutter_bottom",
-        "top": "cutandcolored:block/glasscutter_top",
-        "side": "cutandcolored:block/glasscutter_side",
-        "saw": "cutandcolored:block/glasscutter_saw"
-    }
+  "parent": "minecraft:block/stonecutter",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "cutandcolored:block/glasscutter_bottom",
+    "bottom": "cutandcolored:block/glasscutter_bottom",
+    "top": "cutandcolored:block/glasscutter_top",
+    "side": "cutandcolored:block/glasscutter_side",
+    "saw": "cutandcolored:block/glasscutter_saw"
+  }
 }

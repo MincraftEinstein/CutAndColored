@@ -19,12 +19,12 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
-@EventBusSubscriber(modid = CutAndColored.MOD_ID, bus = Bus.MOD, value = { Dist.CLIENT })
+@EventBusSubscriber(modid = CutAndColored.MOD_ID, bus = Bus.MOD, value = {Dist.CLIENT})
 public class PropertyEvents {
 
     @SubscribeEvent
     public static void setBlockFlammable(final FMLCommonSetupEvent event) {
-        final FireBlock fire = (FireBlock)Blocks.FIRE;
+        final FireBlock fire = (FireBlock) Blocks.FIRE;
 
         /*************************WOOL**************************/
         // STAIRS
@@ -146,7 +146,7 @@ public class PropertyEvents {
         fire.setFlammable(ModBlocks.DARK_OAK_BOARD_SLAB.get(), 5, 20);
         fire.setFlammable(ModBlocks.MANGROVE_BOARD_SLAB.get(), 5, 20);
     }
-    
+
     @SubscribeEvent
     public void setBlockItemBurnable(final FurnaceFuelBurnTimeEvent event) {
         final ItemStack fuelStack = event.getItemStack();
@@ -202,7 +202,7 @@ public class PropertyEvents {
         else if (fuel == ModBlocks.BLACK_WOOL_STAIRS.get().asItem()) {
             event.setBurnTime(100);
         }
-        
+
         // SLABS
         else if (fuel == ModBlocks.WHITE_WOOL_SLAB.get().asItem()) {
             event.setBurnTime(50);
@@ -252,7 +252,7 @@ public class PropertyEvents {
         else if (fuel == ModBlocks.BLACK_WOOL_SLAB.get().asItem()) {
             event.setBurnTime(50);
         }
-        
+
         /**********************WOOD_BOARDS**********************/
         // FULL BLOCKS
         else if (fuel == ModBlocks.OAK_BOARDS.get().asItem()) {
@@ -276,7 +276,7 @@ public class PropertyEvents {
         else if (fuel == ModBlocks.MANGROVE_BOARDS.get().asItem()) {
             event.setBurnTime(300);
         }
-        
+
         // STAIRS
         else if (fuel == ModBlocks.OAK_BOARD_STAIRS.get().asItem()) {
             event.setBurnTime(300);
@@ -299,7 +299,7 @@ public class PropertyEvents {
         else if (fuel == ModBlocks.MANGROVE_BOARD_STAIRS.get().asItem()) {
             event.setBurnTime(300);
         }
-        
+
         //SLABS
         else if (fuel == ModBlocks.OAK_BOARD_SLAB.get().asItem()) {
             event.setBurnTime(150);
@@ -323,11 +323,11 @@ public class PropertyEvents {
             event.setBurnTime(150);
         }
     }
-    
+
     @SubscribeEvent
     public static void setupBlockRenderLayer(final FMLClientSetupEvent event) {
-    	MenuScreens.register(ModMenuTypes.GLASSCUTTER.get(), GlasscutterScreen::new);
-    	MenuScreens.register(ModMenuTypes.WEAVER.get(), WeaverScreen::new);
-    	MenuScreens.register(ModMenuTypes.SAWMILL.get(), SawmillScreen::new);
+        MenuScreens.register(ModMenuTypes.GLASSCUTTER.get(), GlasscutterScreen::new);
+        MenuScreens.register(ModMenuTypes.WEAVER.get(), WeaverScreen::new);
+        MenuScreens.register(ModMenuTypes.SAWMILL.get(), SawmillScreen::new);
     }
 }

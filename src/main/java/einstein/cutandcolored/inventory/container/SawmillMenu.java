@@ -13,26 +13,26 @@ import net.minecraft.world.level.block.Block;
 
 public class SawmillMenu extends AbstractSingleItemRecipeMenu<SawmillingRecipe> {
 
-	public SawmillMenu(int id, Inventory inventory) {
-		super(ModMenuTypes.SAWMILL.get(), id, inventory);
-	}
-	
-	public SawmillMenu(int id, Inventory inventory, ContainerLevelAccess levelAccess) {
-		super(ModMenuTypes.SAWMILL.get(), id, inventory, levelAccess);
-	}
-	
-	@Override
-	public Block getBlock() {
-		return ModBlocks.SAWMILL.get();
-	}
+    public SawmillMenu(int id, Inventory inventory) {
+        super(ModMenuTypes.SAWMILL.get(), id, inventory);
+    }
 
-	@Override
-	public SoundEvent getCraftSound() {
-		return ModSounds.UI_SAWMILL_TAKE_RESULT.get();
-	}
+    public SawmillMenu(int id, Inventory inventory, ContainerLevelAccess levelAccess) {
+        super(ModMenuTypes.SAWMILL.get(), id, inventory, levelAccess);
+    }
 
-	@Override
-	public RecipeType<SawmillingRecipe> getRecipeType() {
-		return ModRecipeTypes.SAWMILLING_RECIPE;
-	}
+    @Override
+    public Block getBlock() {
+        return ModBlocks.SAWMILL.get();
+    }
+
+    @Override
+    public SoundEvent getCraftSound() {
+        return ModSounds.UI_SAWMILL_TAKE_RESULT.get();
+    }
+
+    @Override
+    public RecipeType<SawmillingRecipe> getRecipeType() {
+        return ModRecipeTypes.SAWMILLING_RECIPE;
+    }
 }

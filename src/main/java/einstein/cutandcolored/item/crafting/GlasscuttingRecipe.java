@@ -11,7 +11,7 @@ public class GlasscuttingRecipe extends AbstractSingleItemRecipe {
     public GlasscuttingRecipe(ResourceLocation id, String group, Ingredient ingredient, ItemStack result) {
         super(ModRecipeTypes.GLASSCUTTING_RECIPE, ModRecipeTypes.GLASSCUTTING.get(), id, group, ingredient, result);
     }
-    
+
     @Override
     public ItemStack getToastSymbol() {
         return new ItemStack(ModBlocks.GLASSCUTTER.get());

@@ -8,12 +8,12 @@ import net.minecraft.world.item.ItemStack;
 
 public class GlasscuttingCategory extends AbstractSingleItemRecipeCategory<GlasscuttingRecipe> {
 
-	public GlasscuttingCategory(IGuiHelper guiHelper) {
-		super("gui.jei.cutandcolored.category.glasscutting", new ItemStack(ModBlocks.GLASSCUTTER.get()), guiHelper);
-	}
-	
-	@Override
-	public RecipeType<GlasscuttingRecipe> getRecipeType() {
-		return ModJEIRecipeTypes.GLASSCUTTING;
-	}
+    public GlasscuttingCategory(IGuiHelper guiHelper) {
+        super("gui.jei.cutandcolored.category.glasscutting", new ItemStack(ModBlocks.GLASSCUTTER.get()), guiHelper);
+    }
+
+    @Override
+    public RecipeType<GlasscuttingRecipe> getRecipeType() {
+        return ModJEIRecipeTypes.GLASSCUTTING;
+    }
 }

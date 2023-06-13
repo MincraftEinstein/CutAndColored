@@ -12,14 +12,14 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class WeaverScreen extends AbstractSingleItemRecipeScreen<WeaverMenu, WeavingRecipe> {
 
-	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(CutAndColored.MOD_ID, "textures/gui/container/weaver.png");
-	
-	public WeaverScreen(WeaverMenu menu, Inventory inventory, Component component) {
-		super(menu, inventory, component);
-	}
-	
-	@Override
-	protected ResourceLocation getBackgroundTexture() {
-		return BACKGROUND_TEXTURE;
-	}
+    private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(CutAndColored.MOD_ID, "textures/gui/container/weaver.png");
+
+    public WeaverScreen(WeaverMenu menu, Inventory inventory, Component component) {
+        super(menu, inventory, component);
+    }
+
+    @Override
+    protected ResourceLocation getBackgroundTexture() {
+        return BACKGROUND_TEXTURE;
+    }
 }

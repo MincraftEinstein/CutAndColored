@@ -12,16 +12,17 @@ import net.minecraft.world.level.block.state.BlockState;
 import javax.annotation.Nullable;
 
 public class SawmillBlock extends AbstractSingleItemRecipeBlock {
-	private static final Component CONTAINER_TITLE = Component.translatable("container.cutandcolored.sawmill");
-	
-	public SawmillBlock(Properties properties) {
-		super(properties);
-	}
-	
-	@Nullable
-	@Override
-	public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
-		return new SimpleMenuProvider((id, inventory, player) ->
-				new SawmillMenu(id, inventory, ContainerLevelAccess.create(level, pos)), CONTAINER_TITLE);
-	}
+
+    private static final Component CONTAINER_TITLE = Component.translatable("container.cutandcolored.sawmill");
+
+    public SawmillBlock(Properties properties) {
+        super(properties);
+    }
+
+    @Nullable
+    @Override
+    public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
+        return new SimpleMenuProvider((id, inventory, player) ->
+                new SawmillMenu(id, inventory, ContainerLevelAccess.create(level, pos)), CONTAINER_TITLE);
+    }
 }

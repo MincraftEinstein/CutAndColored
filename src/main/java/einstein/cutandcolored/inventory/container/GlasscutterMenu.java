@@ -13,26 +13,26 @@ import net.minecraft.world.level.block.Block;
 
 public class GlasscutterMenu extends AbstractSingleItemRecipeMenu<GlasscuttingRecipe> {
 
-	public GlasscutterMenu(int id, Inventory inventory) {
-		super(ModMenuTypes.GLASSCUTTER.get(), id, inventory);
-	}
-	
-	public GlasscutterMenu(int id, Inventory inventory, ContainerLevelAccess levelAccess) {
-		super(ModMenuTypes.GLASSCUTTER.get(), id, inventory, levelAccess);
-	}
-	
-	@Override
-	public Block getBlock() {
-		return ModBlocks.GLASSCUTTER.get();
-	}
+    public GlasscutterMenu(int id, Inventory inventory) {
+        super(ModMenuTypes.GLASSCUTTER.get(), id, inventory);
+    }
 
-	@Override
-	public SoundEvent getCraftSound() {
-		return ModSounds.UI_GLASSCUTTER_TAKE_RESULT.get();
-	}
+    public GlasscutterMenu(int id, Inventory inventory, ContainerLevelAccess levelAccess) {
+        super(ModMenuTypes.GLASSCUTTER.get(), id, inventory, levelAccess);
+    }
 
-	@Override
-	public RecipeType<GlasscuttingRecipe> getRecipeType() {
-		return ModRecipeTypes.GLASSCUTTING_RECIPE;
-	}
+    @Override
+    public Block getBlock() {
+        return ModBlocks.GLASSCUTTER.get();
+    }
+
+    @Override
+    public SoundEvent getCraftSound() {
+        return ModSounds.UI_GLASSCUTTER_TAKE_RESULT.get();
+    }
+
+    @Override
+    public RecipeType<GlasscuttingRecipe> getRecipeType() {
+        return ModRecipeTypes.GLASSCUTTING_RECIPE;
+    }
 }

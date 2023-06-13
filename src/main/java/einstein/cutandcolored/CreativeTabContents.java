@@ -26,7 +26,7 @@ public class CreativeTabContents {
         event.accept(ModBlocks.SPRUCE_BOARDS.get());
         event.accept(ModBlocks.SPRUCE_BOARD_STAIRS.get());
         event.accept(ModBlocks.SPRUCE_BOARD_SLAB.get());
-        
+
         // Birch wood set
         event.accept(ModBlocks.BIRCH_BOARDS.get());
         event.accept(ModBlocks.BIRCH_BOARD_STAIRS.get());
@@ -36,7 +36,7 @@ public class CreativeTabContents {
         event.accept(ModBlocks.JUNGLE_BOARDS.get());
         event.accept(ModBlocks.JUNGLE_BOARD_STAIRS.get());
         event.accept(ModBlocks.JUNGLE_BOARD_SLAB.get());
-        
+
         // Acacia wood set
         event.accept(ModBlocks.ACACIA_BOARDS.get());
         event.accept(ModBlocks.ACACIA_BOARD_STAIRS.get());
@@ -99,7 +99,7 @@ public class CreativeTabContents {
         event.accept(ModBlocks.CALCITE_STAIRS.get());
         event.accept(ModBlocks.CALCITE_SLAB.get());
         event.accept(ModBlocks.CALCITE_WALL.get());
-        
+
         // Tuff
         event.accept(ModBlocks.TUFF_STAIRS.get());
         event.accept(ModBlocks.TUFF_SLAB.get());
@@ -202,7 +202,7 @@ public class CreativeTabContents {
         event.accept(ModBlocks.PURPLE_WOOL_STAIRS.get());
         event.accept(ModBlocks.MAGENTA_WOOL_STAIRS.get());
         event.accept(ModBlocks.PINK_WOOL_STAIRS.get());
-        
+
         // Wool slabs
         event.accept(ModBlocks.WHITE_WOOL_SLAB.get());
         event.accept(ModBlocks.LIGHT_GRAY_WOOL_SLAB.get());
@@ -406,7 +406,7 @@ public class CreativeTabContents {
         event.accept(ModBlocks.PURPLE_REDSTONE_LAMP.get());
         event.accept(ModBlocks.MAGENTA_REDSTONE_LAMP.get());
         event.accept(ModBlocks.PINK_REDSTONE_LAMP.get());
-        
+
         // Stained planks
         event.accept(ModBlocks.WHITE_STAINED_PLANKS.get());
         event.accept(ModBlocks.LIGHT_GRAY_STAINED_PLANKS.get());
@@ -460,7 +460,7 @@ public class CreativeTabContents {
         event.accept(ModBlocks.PURPLE_STAINED_PLANK_SLAB.get());
         event.accept(ModBlocks.MAGENTA_STAINED_PLANK_SLAB.get());
         event.accept(ModBlocks.PINK_STAINED_PLANK_SLAB.get());
-        
+
         // Stained bricks
         event.accept(ModBlocks.WHITE_STAINED_BRICKS.get());
         event.accept(ModBlocks.LIGHT_GRAY_STAINED_BRICKS.get());
@@ -478,7 +478,7 @@ public class CreativeTabContents {
         event.accept(ModBlocks.PURPLE_STAINED_BRICKS.get());
         event.accept(ModBlocks.MAGENTA_STAINED_BRICKS.get());
         event.accept(ModBlocks.PINK_STAINED_BRICKS.get());
-        
+
         // Stained brick stairs
         event.accept(ModBlocks.WHITE_STAINED_BRICK_STAIRS.get());
         event.accept(ModBlocks.LIGHT_GRAY_STAINED_BRICK_STAIRS.get());

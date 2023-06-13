@@ -1,7 +1,6 @@
 package einstein.cutandcolored.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -20,9 +19,9 @@ public class IronFenceGateBlock extends FenceGateBlock {
     public IronFenceGateBlock(final BlockBehaviour.Properties properties) {
         super(properties, new WoodType("cutandcolored:iron_fence_gate", BlockSetType.IRON, SoundType.METAL, null, SoundEvents.IRON_DOOR_CLOSE, SoundEvents.IRON_DOOR_OPEN));
     }
-    
+
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-    	return InteractionResult.PASS;
+        return InteractionResult.PASS;
     }
 }

@@ -19,9 +19,9 @@ import javax.annotation.Nullable;
 
 public class WeaverBlock extends AbstractSingleItemRecipeBlock {
 
-	private static final Component CONTAINER_TITLE = Component.translatable("container.cutandcolored.weaver");
-	
-	// North shapes
+    private static final Component CONTAINER_TITLE = Component.translatable("container.cutandcolored.weaver");
+
+    // North shapes
     protected static final VoxelShape NORTH_RIGHT_LEG = Block.box(14.0, 0.0, 7.0, 15.0, 8.0, 9.0);
     protected static final VoxelShape NORTH_RIGHT_LEG_PIVOT = Block.box(14.0, 8.0, 6.5, 15.0, 11.0, 9.5);
     protected static final VoxelShape NORTH_LEFT_LEG = Block.box(1.0, 0.0, 7.0, 2.0, 8.0, 9.0);
@@ -38,7 +38,7 @@ public class WeaverBlock extends AbstractSingleItemRecipeBlock {
     protected static final VoxelShape NORTH_BOARD10 = Block.box(2.0, 12.0, 10.5, 14.0, 13.0, 11.5);
     protected static final VoxelShape NORTH_BOARD11 = Block.box(2.0, 13.0, 11.5, 14.0, 14.0, 12.5);
     protected static final VoxelShape NORTH_SHAPE = Shapes.or(WeaverBlock.NORTH_RIGHT_LEG, WeaverBlock.NORTH_RIGHT_LEG_PIVOT, WeaverBlock.NORTH_LEFT_LEG, WeaverBlock.NORTH_LEFT_LEG_PIVOT, WeaverBlock.NORTH_BOARD1, WeaverBlock.NORTH_BOARD2, WeaverBlock.NORTH_BOARD3, WeaverBlock.NORTH_BOARD4, WeaverBlock.NORTH_BOARD5, WeaverBlock.NORTH_BOARD6, WeaverBlock.NORTH_BOARD7, WeaverBlock.NORTH_BOARD8, WeaverBlock.NORTH_BOARD9, WeaverBlock.NORTH_BOARD10, WeaverBlock.NORTH_BOARD11);
-    
+
     // South shapes
     protected static final VoxelShape SOUTH_RIGHT_LEG = Block.box(1.0, 0.0, 7.0, 2.0, 8.0, 9.0);
     protected static final VoxelShape SOUTH_RIGHT_LEG_PIVOT = Block.box(1.0, 8.0, 6.5, 2.0, 11.0, 9.5);
@@ -56,7 +56,7 @@ public class WeaverBlock extends AbstractSingleItemRecipeBlock {
     protected static final VoxelShape SOUTH_BOARD10 = Block.box(2.0, 12.0, 4.5, 14.0, 13.0, 5.5);
     protected static final VoxelShape SOUTH_BOARD11 = Block.box(2.0, 13.0, 3.5, 14.0, 14.0, 4.5);
     protected static final VoxelShape SOUTH_SHAPE = Shapes.or(WeaverBlock.SOUTH_RIGHT_LEG, WeaverBlock.SOUTH_RIGHT_LEG_PIVOT, WeaverBlock.SOUTH_LEFT_LEG, WeaverBlock.SOUTH_LEFT_LEG_PIVOT, WeaverBlock.SOUTH_BOARD1, WeaverBlock.SOUTH_BOARD2, WeaverBlock.SOUTH_BOARD3, WeaverBlock.SOUTH_BOARD4, WeaverBlock.SOUTH_BOARD5, WeaverBlock.SOUTH_BOARD6, WeaverBlock.SOUTH_BOARD7, WeaverBlock.SOUTH_BOARD8, WeaverBlock.SOUTH_BOARD9, WeaverBlock.SOUTH_BOARD10, WeaverBlock.SOUTH_BOARD11);
-    
+
     // East shapes
     protected static final VoxelShape EAST_RIGHT_LEG = Block.box(7.0, 0.0, 14.0, 9.0, 8.0, 15.0);
     protected static final VoxelShape EAST_RIGHT_LEG_PIVOT = Block.box(6.5, 8.0, 14.0, 9.5, 11.0, 15.0);
@@ -74,7 +74,7 @@ public class WeaverBlock extends AbstractSingleItemRecipeBlock {
     protected static final VoxelShape EAST_BOARD10 = Block.box(4.5, 12.0, 2.0, 5.5, 13.0, 14.0);
     protected static final VoxelShape EAST_BOARD11 = Block.box(3.5, 13.0, 2.0, 4.5, 14.0, 14.0);
     protected static final VoxelShape EAST_SHAPE = Shapes.or(WeaverBlock.EAST_RIGHT_LEG, WeaverBlock.EAST_RIGHT_LEG_PIVOT, WeaverBlock.EAST_LEFT_LEG, WeaverBlock.EAST_LEFT_LEG_PIVOT, WeaverBlock.EAST_BOARD1, WeaverBlock.EAST_BOARD2, WeaverBlock.EAST_BOARD3, WeaverBlock.EAST_BOARD4, WeaverBlock.EAST_BOARD5, WeaverBlock.EAST_BOARD6, WeaverBlock.EAST_BOARD7, WeaverBlock.EAST_BOARD8, WeaverBlock.EAST_BOARD9, WeaverBlock.EAST_BOARD10, WeaverBlock.EAST_BOARD11);
-    
+
     // West shapes
     protected static final VoxelShape WEST_RIGHT_LEG = Block.box(7.0, 0.0, 1.0, 9.0, 8.0, 2.0);
     protected static final VoxelShape WEST_RIGHT_LEG_PIVOT = Block.box(6.5, 8.0, 1.0, 9.5, 11.0, 2.0);
@@ -92,21 +92,21 @@ public class WeaverBlock extends AbstractSingleItemRecipeBlock {
     protected static final VoxelShape WEST_BOARD10 = Block.box(10.5, 12.0, 2.0, 11.5, 13.0, 14.0);
     protected static final VoxelShape WEST_BOARD11 = Block.box(11.5, 13.0, 2.0, 12.5, 14.0, 14.0);
     protected static final VoxelShape WEST_SHAPE = Shapes.or(WeaverBlock.WEST_RIGHT_LEG, WeaverBlock.WEST_RIGHT_LEG_PIVOT, WeaverBlock.WEST_LEFT_LEG, WeaverBlock.WEST_LEFT_LEG_PIVOT, WeaverBlock.WEST_BOARD1, WeaverBlock.WEST_BOARD2, WeaverBlock.WEST_BOARD3, WeaverBlock.WEST_BOARD4, WeaverBlock.WEST_BOARD5, WeaverBlock.WEST_BOARD6, WeaverBlock.WEST_BOARD7, WeaverBlock.WEST_BOARD8, WeaverBlock.WEST_BOARD9, WeaverBlock.WEST_BOARD10, WeaverBlock.WEST_BOARD11);
-    
+
     public WeaverBlock(Properties properties) {
         super(properties);
     }
-    
-	@Nullable
-	@Override
-	public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
-		return new SimpleMenuProvider((id, inventory, player) -> {
-			return new WeaverMenu(id, inventory, ContainerLevelAccess.create(level, pos));
-		}, CONTAINER_TITLE);
-	}
-    
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+
+    @Nullable
+    @Override
+    public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
+        return new SimpleMenuProvider((id, inventory, player) -> {
+            return new WeaverMenu(id, inventory, ContainerLevelAccess.create(level, pos));
+        }, CONTAINER_TITLE);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
         final Direction direction = state.getValue(FACING);
         if (direction == Direction.NORTH) {
             return WeaverBlock.NORTH_SHAPE;
@@ -118,10 +118,10 @@ public class WeaverBlock extends AbstractSingleItemRecipeBlock {
             return WeaverBlock.WEST_SHAPE;
         }
         else if (direction == Direction.EAST) {
-        	return WeaverBlock.EAST_SHAPE;
+            return WeaverBlock.EAST_SHAPE;
         }
         else {
-        	return WeaverBlock.NORTH_SHAPE;
+            return WeaverBlock.NORTH_SHAPE;
         }
     }
 }

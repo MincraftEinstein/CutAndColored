@@ -1,7 +1,5 @@
 package einstein.cutandcolored.init;
 
-import java.util.function.Supplier;
-
 import einstein.cutandcolored.CutAndColored;
 import einstein.cutandcolored.inventory.container.GlasscutterMenu;
 import einstein.cutandcolored.inventory.container.SawmillMenu;
@@ -13,15 +11,17 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.function.Supplier;
+
 public class ModMenuTypes {
 
-	public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, CutAndColored.MOD_ID);
-	
+    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, CutAndColored.MOD_ID);
+
     public static final RegistryObject<MenuType<GlasscutterMenu>> GLASSCUTTER = register("glasscutter", () -> IForgeMenuType.create((id, inventory, data) -> new GlasscutterMenu(id, inventory)));
     public static final RegistryObject<MenuType<WeaverMenu>> WEAVER = register("weaver", () -> IForgeMenuType.create((id, inventory, data) -> new WeaverMenu(id, inventory)));
     public static final RegistryObject<MenuType<SawmillMenu>> SAWMILL = register("sawmill", () -> IForgeMenuType.create((id, inventory, data) -> new SawmillMenu(id, inventory)));
-    
+
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> register(final String name, final Supplier<MenuType<T>> menu) {
-    	return MENUS.register(name, menu);
+        return MENUS.register(name, menu);
     }
 }

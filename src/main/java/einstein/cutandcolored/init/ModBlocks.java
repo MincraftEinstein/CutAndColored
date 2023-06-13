@@ -21,24 +21,24 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
-	
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CutAndColored.MOD_ID);
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CutAndColored.MOD_ID);
-	
+
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CutAndColored.MOD_ID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CutAndColored.MOD_ID);
+
     /*********************WORK_STATIONS**********************/
     public static final RegistryObject<Block> GLASSCUTTER = register("glasscutter", () -> new GlasscutterBlock(Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(3.5F)));
     public static final RegistryObject<Block> WEAVER = register("weaver", () -> new WeaverBlock(Properties.of().mapColor(MapColor.WOOD).ignitedByLava().sound(SoundType.WOOD).strength(1.3F)));
     public static final RegistryObject<Block> SAWMILL = register("sawmill", () -> new SawmillBlock(Properties.of().mapColor(MapColor.WOOD).ignitedByLava().sound(SoundType.WOOD).strength(1.3F)));
-    
+
     /************************GLASS***************************/
     // FULL BLOCKS
     public static final RegistryObject<Block> SOUL_GLASS = register("soul_glass", () -> new GlassBlock(BlockProperties.GLASS));
-    
+
     // PANES
     public static final RegistryObject<Block> SOUL_GLASS_PANE = register("soul_glass_pane", () -> new IronBarsBlock(BlockProperties.GLASS));
     public static final RegistryObject<Block> TINTED_GLASS_PANE = register("tinted_glass_pane", () -> new TintedGlassPane(Properties.copy(Blocks.GLASS_PANE).mapColor(MapColor.COLOR_GRAY).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
     public static final RegistryObject<Block> HORIZONTAL_SOUL_GLASS_PANE = register("horizontalpanes", "horizontal_soul_glass_pane", () -> new HorizontalSoulGlassPane(Properties.of().mapColor(MapColor.COLOR_GRAY).noOcclusion().strength(0.3F, 0.3F).sound(SoundType.GLASS).isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
-    
+
     // STAIRS
     public static final RegistryObject<Block> GLASS_STAIRS = register("glass_stairs", () -> new GlassStairsBlock(Blocks.GLASS, Properties.copy(Blocks.GLASS)));
     public static final RegistryObject<Block> TINTED_GLASS_STAIRS = register("tinted_glass_stairs", () -> new TintedGlassStairsBlock(Blocks.TINTED_GLASS, Properties.copy(Blocks.TINTED_GLASS).mapColor(MapColor.COLOR_GRAY).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
@@ -59,7 +59,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_GLASS_STAIRS = register("green_stained_glass_stairs", () -> new StainedGlassStairsBlock(DyeColor.GREEN, Blocks.GREEN_STAINED_GLASS, Properties.copy(Blocks.GREEN_STAINED_GLASS)));
     public static final RegistryObject<Block> RED_STAINED_GLASS_STAIRS = register("red_stained_glass_stairs", () -> new StainedGlassStairsBlock(DyeColor.RED, Blocks.RED_STAINED_GLASS, Properties.copy(Blocks.RED_STAINED_GLASS)));
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_STAIRS = register("black_stained_glass_stairs", () -> new StainedGlassStairsBlock(DyeColor.BLACK, Blocks.BLACK_STAINED_GLASS, Properties.copy(Blocks.BLACK_STAINED_GLASS)));
-    
+
     // SLABS
     public static final RegistryObject<Block> GLASS_SLAB = register("glass_slab", () -> new GlassSlabBlock(Blocks.GLASS, Properties.copy(Blocks.GLASS)));
     public static final RegistryObject<Block> TINTED_GLASS_SLAB = register("tinted_glass_slab", () -> new TintedGlassSlabBlock(Blocks.TINTED_GLASS, Properties.copy(Blocks.TINTED_GLASS).mapColor(MapColor.COLOR_GRAY).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
@@ -80,7 +80,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_GLASS_SLAB = register("green_stained_glass_slab", () -> new StainedGlassSlabBlock(DyeColor.GREEN, Blocks.GREEN_STAINED_GLASS, Properties.copy(Blocks.GREEN_STAINED_GLASS)));
     public static final RegistryObject<Block> RED_STAINED_GLASS_SLAB = register("red_stained_glass_slab", () -> new StainedGlassSlabBlock(DyeColor.RED, Blocks.RED_STAINED_GLASS, Properties.copy(Blocks.RED_STAINED_GLASS)));
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_SLAB = register("black_stained_glass_slab", () -> new StainedGlassSlabBlock(DyeColor.BLACK, Blocks.BLACK_STAINED_GLASS, Properties.copy(Blocks.BLACK_STAINED_GLASS)));
-    
+
     // WINDOWS
     public static final RegistryObject<Block> GLASS_WINDOW = register("glass_window", () -> new GlassBlock(BlockProperties.GLASS));
     public static final RegistryObject<Block> TINTED_GLASS_WINDOW = register("tinted_glass_window", () -> new TintedGlassBlock(BlockProperties.TINTED_GLASS));
@@ -101,7 +101,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_GLASS_WINDOW = register("green_stained_glass_window", () -> new StainedGlassBlock(DyeColor.GREEN, BlockProperties.GLASS));
     public static final RegistryObject<Block> RED_STAINED_GLASS_WINDOW = register("red_stained_glass_window", () -> new StainedGlassBlock(DyeColor.RED, BlockProperties.GLASS));
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_WINDOW = register("black_stained_glass_window", () -> new StainedGlassBlock(DyeColor.BLACK, BlockProperties.GLASS));
-    
+
     // WINDOW PANES
     public static final RegistryObject<Block> GLASS_WINDOW_PANE = register("glass_window_pane", () -> new IronBarsBlock(BlockProperties.GLASS));
     public static final RegistryObject<Block> TINTED_GLASS_WINDOW_PANE = register("tinted_glass_window_pane", () -> new TintedGlassPane(BlockProperties.TINTED_GLASS));
@@ -122,7 +122,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_GLASS_WINDOW_PANE = register("green_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.GREEN, BlockProperties.GLASS));
     public static final RegistryObject<Block> RED_STAINED_GLASS_WINDOW_PANE = register("red_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.RED, BlockProperties.GLASS));
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_WINDOW_PANE = register("black_stained_glass_window_pane", () -> new StainedGlassPaneBlock(DyeColor.BLACK, BlockProperties.GLASS));
-    
+
     /*************************WOOL**************************/
     // STAIRS
     public static final RegistryObject<Block> WHITE_WOOL_STAIRS = register("white_wool_stairs", () -> new StairBlock(Blocks.WHITE_WOOL::defaultBlockState, Properties.copy(Blocks.WHITE_WOOL)));
@@ -141,7 +141,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_WOOL_STAIRS = register("green_wool_stairs", () -> new StairBlock(Blocks.GREEN_WOOL::defaultBlockState, Properties.copy(Blocks.GREEN_WOOL)));
     public static final RegistryObject<Block> RED_WOOL_STAIRS = register("red_wool_stairs", () -> new StairBlock(Blocks.RED_WOOL::defaultBlockState, Properties.copy(Blocks.RED_WOOL)));
     public static final RegistryObject<Block> BLACK_WOOL_STAIRS = register("black_wool_stairs", () -> new StairBlock(Blocks.BLACK_WOOL::defaultBlockState, Properties.copy(Blocks.BLACK_WOOL)));
-    
+
     // SLABS
     public static final RegistryObject<Block> WHITE_WOOL_SLAB = register("white_wool_slab", () -> new SlabBlock(Properties.copy(Blocks.WHITE_WOOL)));
     public static final RegistryObject<Block> ORANGE_WOOL_SLAB = register("orange_wool_slab", () -> new SlabBlock(Properties.copy(Blocks.ORANGE_WOOL)));
@@ -159,7 +159,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_WOOL_SLAB = register("green_wool_slab", () -> new SlabBlock(Properties.copy(Blocks.GREEN_WOOL)));
     public static final RegistryObject<Block> RED_WOOL_SLAB = register("red_wool_slab", () -> new SlabBlock(Properties.copy(Blocks.RED_WOOL)));
     public static final RegistryObject<Block> BLACK_WOOL_SLAB = register("black_wool_slab", () -> new SlabBlock(Properties.copy(Blocks.BLACK_WOOL)));
-    
+
     /*******************STAINED_PLANKS**********************/
     // FULL BLOCKS
     public static final RegistryObject<Block> WHITE_STAINED_PLANKS = register("white_stained_planks", () -> new Block(BlockProperties.planks(MapColor.SNOW)));
@@ -178,7 +178,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_PLANKS = register("green_stained_planks", () -> new Block(BlockProperties.planks(MapColor.COLOR_GREEN)));
     public static final RegistryObject<Block> RED_STAINED_PLANKS = register("red_stained_planks", () -> new Block(BlockProperties.planks(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> BLACK_STAINED_PLANKS = register("black_stained_planks", () -> new Block(BlockProperties.planks(MapColor.COLOR_BLACK)));
-    
+
     // STAIRS
     public static final RegistryObject<Block> WHITE_STAINED_PLANK_STAIRS = register("white_stained_plank_stairs", () -> new StairBlock(ModBlocks.WHITE_STAINED_PLANKS.get()::defaultBlockState, Properties.copy(ModBlocks.WHITE_STAINED_PLANKS.get())));
     public static final RegistryObject<Block> ORANGE_STAINED_PLANK_STAIRS = register("orange_stained_plank_stairs", () -> new StairBlock(ModBlocks.ORANGE_STAINED_PLANKS.get()::defaultBlockState, Properties.copy(ModBlocks.ORANGE_STAINED_PLANKS.get())));
@@ -196,7 +196,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_PLANK_STAIRS = register("green_stained_plank_stairs", () -> new StairBlock(ModBlocks.GREEN_STAINED_PLANKS.get()::defaultBlockState, Properties.copy(ModBlocks.GREEN_STAINED_PLANKS.get())));
     public static final RegistryObject<Block> RED_STAINED_PLANK_STAIRS = register("red_stained_plank_stairs", () -> new StairBlock(ModBlocks.RED_STAINED_PLANKS.get()::defaultBlockState, Properties.copy(ModBlocks.RED_STAINED_PLANKS.get())));
     public static final RegistryObject<Block> BLACK_STAINED_PLANK_STAIRS = register("black_stained_plank_stairs", () -> new StairBlock(ModBlocks.BLACK_STAINED_PLANKS.get()::defaultBlockState, Properties.copy(ModBlocks.BLACK_STAINED_PLANKS.get())));
-    
+
     // SLABS
     public static final RegistryObject<Block> WHITE_STAINED_PLANK_SLAB = register("white_stained_plank_slab", () -> new SlabBlock(Properties.copy(ModBlocks.WHITE_STAINED_PLANKS.get())));
     public static final RegistryObject<Block> ORANGE_STAINED_PLANK_SLAB = register("orange_stained_plank_slab", () -> new SlabBlock(Properties.copy(ModBlocks.ORANGE_STAINED_PLANKS.get())));
@@ -214,7 +214,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_PLANK_SLAB = register("green_stained_plank_slab", () -> new SlabBlock(Properties.copy(ModBlocks.GREEN_STAINED_PLANKS.get())));
     public static final RegistryObject<Block> RED_STAINED_PLANK_SLAB = register("red_stained_plank_slab", () -> new SlabBlock(Properties.copy(ModBlocks.RED_STAINED_PLANKS.get())));
     public static final RegistryObject<Block> BLACK_STAINED_PLANK_SLAB = register("black_stained_plank_slab", () -> new SlabBlock(Properties.copy(ModBlocks.BLACK_STAINED_PLANKS.get())));
-    
+
     /*********************TERRACOTTA************************/
     // STAIRS
     public static final RegistryObject<Block> TERRACOTTA_STAIRS = register("terracotta_stairs", () -> new StairBlock(Blocks.TERRACOTTA::defaultBlockState, Properties.copy(Blocks.TERRACOTTA)));
@@ -234,7 +234,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_TERRACOTTA_STAIRS = register("green_terracotta_stairs", () -> new StairBlock(Blocks.GREEN_TERRACOTTA::defaultBlockState, Properties.copy(Blocks.GREEN_TERRACOTTA)));
     public static final RegistryObject<Block> RED_TERRACOTTA_STAIRS = register("red_terracotta_stairs", () -> new StairBlock(Blocks.RED_TERRACOTTA::defaultBlockState, Properties.copy(Blocks.RED_TERRACOTTA)));
     public static final RegistryObject<Block> BLACK_TERRACOTTA_STAIRS = register("black_terracotta_stairs", () -> new StairBlock(Blocks.BLACK_TERRACOTTA::defaultBlockState, Properties.copy(Blocks.BLACK_TERRACOTTA)));
-    
+
     // SLABS
     public static final RegistryObject<Block> TERRACOTTA_SLAB = register("terracotta_slab", () -> new SlabBlock(Properties.copy(Blocks.TERRACOTTA)));
     public static final RegistryObject<Block> WHITE_TERRACOTTA_SLAB = register("white_terracotta_slab", () -> new SlabBlock(Properties.copy(Blocks.WHITE_TERRACOTTA)));
@@ -253,7 +253,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_TERRACOTTA_SLAB = register("green_terracotta_slab", () -> new SlabBlock(Properties.copy(Blocks.GREEN_TERRACOTTA)));
     public static final RegistryObject<Block> RED_TERRACOTTA_SLAB = register("red_terracotta_slab", () -> new SlabBlock(Properties.copy(Blocks.RED_TERRACOTTA)));
     public static final RegistryObject<Block> BLACK_TERRACOTTA_SLAB = register("black_terracotta_slab", () -> new SlabBlock(Properties.copy(Blocks.BLACK_TERRACOTTA)));
-    
+
     /**********************CONCRETE*************************/
     // STAIRS
     public static final RegistryObject<Block> WHITE_CONCRETE_STAIRS = register("white_concrete_stairs", () -> new StairBlock(Blocks.WHITE_CONCRETE::defaultBlockState, Properties.copy(Blocks.WHITE_CONCRETE)));
@@ -272,8 +272,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_CONCRETE_STAIRS = register("green_concrete_stairs", () -> new StairBlock(Blocks.GREEN_CONCRETE::defaultBlockState, Properties.copy(Blocks.GREEN_CONCRETE)));
     public static final RegistryObject<Block> RED_CONCRETE_STAIRS = register("red_concrete_stairs", () -> new StairBlock(Blocks.RED_CONCRETE::defaultBlockState, Properties.copy(Blocks.RED_CONCRETE)));
     public static final RegistryObject<Block> BLACK_CONCRETE_STAIRS = register("black_concrete_stairs", () -> new StairBlock(Blocks.BLACK_CONCRETE::defaultBlockState, Properties.copy(Blocks.BLACK_CONCRETE)));
-    
-	// SLABS
+
+    // SLABS
     public static final RegistryObject<Block> WHITE_CONCRETE_SLAB = register("white_concrete_slab", () -> new SlabBlock(Properties.copy(Blocks.WHITE_CONCRETE)));
     public static final RegistryObject<Block> ORANGE_CONCRETE_SLAB = register("orange_concrete_slab", () -> new SlabBlock(Properties.copy(Blocks.ORANGE_CONCRETE)));
     public static final RegistryObject<Block> MAGENTA_CONCRETE_SLAB = register("magenta_concrete_slab", () -> new SlabBlock(Properties.copy(Blocks.MAGENTA_CONCRETE)));
@@ -290,7 +290,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_CONCRETE_SLAB = register("green_concrete_slab", () -> new SlabBlock(Properties.copy(Blocks.GREEN_CONCRETE)));
     public static final RegistryObject<Block> RED_CONCRETE_SLAB = register("red_concrete_slab", () -> new SlabBlock(Properties.copy(Blocks.RED_CONCRETE)));
     public static final RegistryObject<Block> BLACK_CONCRETE_SLAB = register("black_concrete_slab", () -> new SlabBlock(Properties.copy(Blocks.BLACK_CONCRETE)));
-    
+
     /*******************STAINED_BRICKS**********************/
     // FULL BLOCKS
     public static final RegistryObject<Block> WHITE_STAINED_BRICKS = register("white_stained_bricks", () -> new Block(BlockProperties.stone(MapColor.SNOW)));
@@ -309,7 +309,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_BRICKS = register("green_stained_bricks", () -> new Block(BlockProperties.stone(MapColor.COLOR_GREEN)));
     public static final RegistryObject<Block> RED_STAINED_BRICKS = register("red_stained_bricks", () -> new Block(BlockProperties.stone(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> BLACK_STAINED_BRICKS = register("black_stained_bricks", () -> new Block(BlockProperties.stone(MapColor.COLOR_BLACK)));
-    
+
     // STAIRS
     public static final RegistryObject<Block> WHITE_STAINED_BRICK_STAIRS = register("white_stained_brick_stairs", () -> new StairBlock(ModBlocks.WHITE_STAINED_BRICKS.get()::defaultBlockState, Properties.copy(ModBlocks.WHITE_STAINED_BRICKS.get())));
     public static final RegistryObject<Block> ORANGE_STAINED_BRICK_STAIRS = register("orange_stained_brick_stairs", () -> new StairBlock(ModBlocks.ORANGE_STAINED_BRICKS.get()::defaultBlockState, Properties.copy(ModBlocks.ORANGE_STAINED_BRICKS.get())));
@@ -327,7 +327,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_BRICK_STAIRS = register("green_stained_brick_stairs", () -> new StairBlock(ModBlocks.GREEN_STAINED_BRICKS.get()::defaultBlockState, Properties.copy(ModBlocks.GREEN_STAINED_BRICKS.get())));
     public static final RegistryObject<Block> RED_STAINED_BRICK_STAIRS = register("red_stained_brick_stairs", () -> new StairBlock(ModBlocks.RED_STAINED_BRICKS.get()::defaultBlockState, Properties.copy(ModBlocks.RED_STAINED_BRICKS.get())));
     public static final RegistryObject<Block> BLACK_STAINED_BRICK_STAIRS = register("black_stained_brick_stairs", () -> new StairBlock(ModBlocks.BLACK_STAINED_BRICKS.get()::defaultBlockState, Properties.copy(ModBlocks.BLACK_STAINED_BRICKS.get())));
-    
+
     // SLABS
     public static final RegistryObject<Block> WHITE_STAINED_BRICK_SLAB = register("white_stained_brick_slab", () -> new SlabBlock(Properties.copy(ModBlocks.WHITE_STAINED_BRICKS.get())));
     public static final RegistryObject<Block> ORANGE_STAINED_BRICK_SLAB = register("orange_stained_brick_slab", () -> new SlabBlock(Properties.copy(ModBlocks.ORANGE_STAINED_BRICKS.get())));
@@ -345,7 +345,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_BRICK_SLAB = register("green_stained_brick_slab", () -> new SlabBlock(Properties.copy(ModBlocks.GREEN_STAINED_BRICKS.get())));
     public static final RegistryObject<Block> RED_STAINED_BRICK_SLAB = register("red_stained_brick_slab", () -> new SlabBlock(Properties.copy(ModBlocks.RED_STAINED_BRICKS.get())));
     public static final RegistryObject<Block> BLACK_STAINED_BRICK_SLAB = register("black_stained_brick_slab", () -> new SlabBlock(Properties.copy(ModBlocks.BLACK_STAINED_BRICKS.get())));
-    
+
     // WALLS
     public static final RegistryObject<Block> WHITE_STAINED_BRICK_WALL = register("white_stained_brick_wall", () -> new WallBlock(Properties.copy(ModBlocks.WHITE_STAINED_BRICKS.get())));
     public static final RegistryObject<Block> ORANGE_STAINED_BRICK_WALL = register("orange_stained_brick_wall", () -> new WallBlock(Properties.copy(ModBlocks.ORANGE_STAINED_BRICKS.get())));
@@ -363,7 +363,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_STAINED_BRICK_WALL = register("green_stained_brick_wall", () -> new WallBlock(Properties.copy(ModBlocks.GREEN_STAINED_BRICKS.get())));
     public static final RegistryObject<Block> RED_STAINED_BRICK_WALL = register("red_stained_brick_wall", () -> new WallBlock(Properties.copy(ModBlocks.RED_STAINED_BRICKS.get())));
     public static final RegistryObject<Block> BLACK_STAINED_BRICK_WALL = register("black_stained_brick_wall", () -> new WallBlock(Properties.copy(ModBlocks.BLACK_STAINED_BRICKS.get())));
-    
+
     /************************LAMPS**************************/
     public static final RegistryObject<Block> WHITE_REDSTONE_LAMP = register("white_redstone_lamp", () -> new RedstoneLampBlock(Properties.copy(Blocks.REDSTONE_LAMP)));
     public static final RegistryObject<Block> ORANGE_REDSTONE_LAMP = register("orange_redstone_lamp", () -> new RedstoneLampBlock(Properties.copy(Blocks.REDSTONE_LAMP)));
@@ -381,20 +381,20 @@ public class ModBlocks {
     public static final RegistryObject<Block> GREEN_REDSTONE_LAMP = register("green_redstone_lamp", () -> new RedstoneLampBlock(Properties.copy(Blocks.REDSTONE_LAMP)));
     public static final RegistryObject<Block> RED_REDSTONE_LAMP = register("red_redstone_lamp", () -> new RedstoneLampBlock(Properties.copy(Blocks.REDSTONE_LAMP)));
     public static final RegistryObject<Block> BLACK_REDSTONE_LAMP = register("black_redstone_lamp", () -> new RedstoneLampBlock(Properties.copy(Blocks.REDSTONE_LAMP)));
-    
+
     /******************GRANITE_BRICKS***********************/
     // FULL BLOCKS
     public static final RegistryObject<Block> GRANITE_BRICKS = register("granite_bricks", () -> new Block(BlockProperties.stone(MapColor.DIRT)));
 
     // STAIRS
     public static final RegistryObject<Block> GRANITE_BRICK_STAIRS = register("granite_brick_stairs", () -> new StairBlock(ModBlocks.GRANITE_BRICKS.get()::defaultBlockState, Properties.copy(ModBlocks.GRANITE_BRICKS.get())));
-    
+
     // SLABS
     public static final RegistryObject<Block> GRANITE_BRICK_SLAB = register("granite_brick_slab", () -> new SlabBlock(Properties.copy(ModBlocks.GRANITE_BRICKS.get())));
-    
+
     // WALLS
     public static final RegistryObject<Block> GRANITE_BRICK_WALL = register("granite_brick_wall", () -> new WallBlock(Properties.copy(ModBlocks.GRANITE_BRICKS.get())));
-    
+
     /******************DIORITE_BRICKS***********************/
     // FULL BLOCKS
     public static final RegistryObject<Block> DIORITE_BRICKS = register("diorite_bricks", () -> new Block(BlockProperties.stone(MapColor.QUARTZ)));
@@ -407,17 +407,17 @@ public class ModBlocks {
 
     // WALLS
     public static final RegistryObject<Block> DIORITE_BRICK_WALL = register("diorite_brick_wall", () -> new WallBlock(Properties.copy(ModBlocks.DIORITE_BRICKS.get())));
-    
+
     /******************ANDESITE_BRICKS**********************/
     // FULL BLOCKS
     public static final RegistryObject<Block> ANDESITE_BRICKS = register("andesite_bricks", () -> new Block(BlockProperties.stone(MapColor.STONE)));
-    
+
     // STAIRS
     public static final RegistryObject<Block> ANDESITE_BRICK_STAIRS = register("andesite_brick_stairs", () -> new StairBlock(ModBlocks.ANDESITE_BRICKS.get()::defaultBlockState, Properties.copy(ModBlocks.ANDESITE_BRICKS.get())));
-    
+
     // SLABS
     public static final RegistryObject<Block> ANDESITE_BRICK_SLAB = register("andesite_brick_slab", () -> new SlabBlock(Properties.copy(ModBlocks.ANDESITE_BRICKS.get())));
-    
+
     // WALLS
     public static final RegistryObject<Block> ANDESITE_BRICK_WALL = register("andesite_brick_wall", () -> new WallBlock(Properties.copy(ModBlocks.ANDESITE_BRICKS.get())));
 
@@ -427,19 +427,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHISELED_SOUL_SANDSTONE = register("chiseled_soul_sandstone", () -> new Block(BlockProperties.SOUL_SANDSTONE));
     public static final RegistryObject<Block> CUT_SOUL_SANDSTONE = register("cut_soul_sandstone", () -> new Block(BlockProperties.SOUL_SANDSTONE));
     public static final RegistryObject<Block> SMOOTH_SOUL_SANDSTONE = register("smooth_soul_sandstone", () -> new Block(BlockProperties.SOUL_SANDSTONE));
-    
+
     // STAIRS
     public static final RegistryObject<Block> SOUL_SANDSTONE_STAIRS = register("soul_sandstone_stairs", () -> new StairBlock(ModBlocks.SOUL_SANDSTONE.get()::defaultBlockState, Properties.copy(ModBlocks.SOUL_SANDSTONE.get())));
     public static final RegistryObject<Block> SMOOTH_SOUL_SANDSTONE_STAIRS = register("smooth_soul_sandstone_stairs", () -> new StairBlock(ModBlocks.SMOOTH_SOUL_SANDSTONE.get()::defaultBlockState, Properties.copy(ModBlocks.SMOOTH_SOUL_SANDSTONE.get())));
-    
+
     // SLABS
     public static final RegistryObject<Block> SOUL_SANDSTONE_SLAB = register("soul_sandstone_slab", () -> new SlabBlock(Properties.copy(ModBlocks.SOUL_SANDSTONE.get())));
     public static final RegistryObject<Block> CUT_SOUL_SANDSTONE_SLAB = register("cut_soul_sandstone_slab", () -> new SlabBlock(Properties.copy(ModBlocks.CUT_SOUL_SANDSTONE.get())));
     public static final RegistryObject<Block> SMOOTH_SOUL_SANDSTONE_SLAB = register("smooth_soul_sandstone_slab", () -> new SlabBlock(Properties.copy(ModBlocks.SMOOTH_SOUL_SANDSTONE.get())));
-    
+
     // WALLS
     public static final RegistryObject<Block> SOUL_SANDSTONE_WALL = register("soul_sandstone_wall", () -> new WallBlock(Properties.copy(ModBlocks.SOUL_SANDSTONE.get())));
-    
+
     /**********************WOOD_BOARDS**********************/
     // FULL BLOCKS
     public static final RegistryObject<Block> OAK_BOARDS = register("oak_boards", () -> new Block(BlockProperties.planks(MapColor.WOOD)));
@@ -451,7 +451,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MANGROVE_BOARDS = register("mangrove_boards", () -> new Block(BlockProperties.planks(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> CRIMSON_BOARDS = register("crimson_boards", () -> new Block(BlockProperties.netherPlanks(MapColor.CRIMSON_STEM)));
     public static final RegistryObject<Block> WARPED_BOARDS = register("warped_boards", () -> new Block(BlockProperties.netherPlanks(MapColor.WARPED_STEM)));
-    
+
     // STAIRS
     public static final RegistryObject<Block> OAK_BOARD_STAIRS = register("oak_board_stairs", () -> new StairBlock(OAK_BOARDS.get()::defaultBlockState, Properties.copy(OAK_BOARDS.get())));
     public static final RegistryObject<Block> SPRUCE_BOARD_STAIRS = register("spruce_board_stairs", () -> new StairBlock(SPRUCE_BOARDS.get()::defaultBlockState, Properties.copy(SPRUCE_BOARDS.get())));
@@ -462,7 +462,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MANGROVE_BOARD_STAIRS = register("mangrove_board_stairs", () -> new StairBlock(MANGROVE_BOARDS.get()::defaultBlockState, Properties.copy(MANGROVE_BOARDS.get())));
     public static final RegistryObject<Block> CRIMSON_BOARD_STAIRS = register("crimson_board_stairs", () -> new StairBlock(CRIMSON_BOARDS.get()::defaultBlockState, Properties.copy(CRIMSON_BOARDS.get())));
     public static final RegistryObject<Block> WARPED_BOARD_STAIRS = register("warped_board_stairs", () -> new StairBlock(WARPED_BOARDS.get()::defaultBlockState, Properties.copy(WARPED_BOARDS.get())));
-    
+
     // SLABS
     public static final RegistryObject<Block> OAK_BOARD_SLAB = register("oak_board_slab", () -> new SlabBlock(Properties.copy(OAK_BOARDS.get())));
     public static final RegistryObject<Block> SPRUCE_BOARD_SLAB = register("spruce_board_slab", () -> new SlabBlock(Properties.copy(SPRUCE_BOARDS.get())));
@@ -473,16 +473,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> MANGROVE_BOARD_SLAB = register("mangrove_board_slab", () -> new SlabBlock(Properties.copy(MANGROVE_BOARDS.get())));
     public static final RegistryObject<Block> CRIMSON_BOARD_SLAB = register("crimson_board_slab", () -> new SlabBlock(Properties.copy(CRIMSON_BOARDS.get())));
     public static final RegistryObject<Block> WARPED_BOARD_SLAB = register("warped_board_slab", () -> new SlabBlock(Properties.copy(WARPED_BOARDS.get())));
-    
+
     /**********************MISC_BLOCKS**********************/
     // FULL BLOCKS
     public static final RegistryObject<Block> CHISELED_PRISMARINE_BRICKS = register("chiseled_prismarine_bricks", () -> new Block(Properties.copy(Blocks.PRISMARINE_BRICKS)) {
+
         @Override
         public boolean isConduitFrame(BlockState state, LevelReader level, BlockPos pos, BlockPos conduit) {
             return true;
         }
     });
     public static final RegistryObject<Block> PRISMARINE_BRICK_PILLAR = register("prismarine_brick_pillar", () -> new RotatedPillarBlock(Properties.copy(Blocks.PRISMARINE_BRICKS)) {
+
         @Override
         public boolean isConduitFrame(BlockState state, LevelReader level, BlockPos pos, BlockPos conduit) {
             return true;
@@ -494,18 +496,20 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHISELED_END_STONE_BRICKS = register("chiseled_end_stone_bricks", () -> new Block(Properties.copy(Blocks.END_STONE_BRICKS)));
     public static final RegistryObject<Block> POLISHED_STONE = register("polished_stone", () -> new Block(BlockProperties.stone(MapColor.STONE)));
     public static final RegistryObject<Block> OBSIDIAN_BRICKS = register("obsidian_bricks", () -> new Block(Properties.copy(Blocks.OBSIDIAN)) {
+
         @Override
         public boolean isPortalFrame(BlockState state, BlockGetter getter, BlockPos pos) {
             return true;
         }
     });
     public static final RegistryObject<Block> OBSIDIAN_BRICK_PILLAR = register("obsidian_brick_pillar", () -> new RotatedPillarBlock(Properties.copy(OBSIDIAN_BRICKS.get())) {
+
         @Override
         public boolean isPortalFrame(BlockState state, BlockGetter getter, BlockPos pos) {
             return true;
         }
     });
-    
+
     // STAIRS
     public static final RegistryObject<Block> SMOOTH_STONE_STAIRS = register("smooth_stone_stairs", () -> new StairBlock(Blocks.SMOOTH_STONE::defaultBlockState, Properties.copy(Blocks.SMOOTH_STONE)));
     public static final RegistryObject<Block> CRACKED_STONE_BRICK_STAIRS = register("cracked_stone_brick_stairs", () -> new StairBlock(Blocks.CRACKED_STONE_BRICKS::defaultBlockState, Properties.copy(Blocks.CRACKED_STONE_BRICKS)));
@@ -520,7 +524,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> RAW_GOLD_STAIRS = register("raw_gold_stairs", () -> new StairBlock(Blocks.RAW_GOLD_BLOCK::defaultBlockState, Properties.copy(Blocks.RAW_GOLD_BLOCK)));
     public static final RegistryObject<Block> RAW_COPPER_STAIRS = register("raw_copper_stairs", () -> new StairBlock(Blocks.RAW_COPPER_BLOCK::defaultBlockState, Properties.copy(Blocks.RAW_COPPER_BLOCK)));
     public static final RegistryObject<Block> OBSIDIAN_BRICK_STAIRS = register("obsidian_brick_stairs", () -> new StairBlock(Blocks.OBSIDIAN::defaultBlockState, Properties.copy(OBSIDIAN_BRICKS.get())));
-    
+
     // SLABS
     public static final RegistryObject<Block> CRACKED_STONE_BRICK_SLAB = register("cracked_stone_brick_slab", () -> new SlabBlock(Properties.copy(Blocks.CRACKED_STONE_BRICKS)));
     public static final RegistryObject<Block> CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB = register("cracked_polished_blackstone_brick_slab", () -> new SlabBlock(Properties.copy(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS)));
@@ -534,7 +538,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> RAW_GOLD_SLAB = register("raw_gold_slab", () -> new SlabBlock(Properties.copy(Blocks.RAW_GOLD_BLOCK)));
     public static final RegistryObject<Block> RAW_COPPER_SLAB = register("raw_copper_slab", () -> new SlabBlock(Properties.copy(Blocks.RAW_COPPER_BLOCK)));
     public static final RegistryObject<Block> OBSIDIAN_BRICK_SLAB = register("obsidian_brick_slab", () -> new SlabBlock(Properties.copy(OBSIDIAN_BRICKS.get())));
-    
+
     // WALLS
     public static final RegistryObject<Block> PURPUR_WALL = register("purpur_wall", () -> new WallBlock(Properties.copy(Blocks.PURPUR_BLOCK)));
     public static final RegistryObject<Block> PRISMARINE_BRICK_WALL = register("prismarine_brick_wall", () -> new WallBlock(Properties.copy(Blocks.PRISMARINE_BRICKS)));
@@ -556,35 +560,36 @@ public class ModBlocks {
     // MISC MODELS
     public static final RegistryObject<Block> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", () -> new FenceGateBlock(BlockProperties.stone(MapColor.NETHER).strength(2.0F, 6.0F), WoodType.OAK));
     public static final RegistryObject<Block> IRON_FENCE_GATE = register("iron_fence_gate", () -> new IronFenceGateBlock(Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F).sound(SoundType.METAL)));
-    
+
     public static <T extends Block> RegistryObject<Block> register(final String name, final Supplier<T> block) {
-    	final RegistryObject<Block> instance = BLOCKS.register(name, block);
-    	ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties()));
-    	return instance;
+        final RegistryObject<Block> instance = BLOCKS.register(name, block);
+        ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties()));
+        return instance;
     }
 
     // TODO remove modid paramatar
     public static <T extends Block> RegistryObject<Block> register(final String modid, final String name, final Supplier<T> block) {
-    	final RegistryObject<Block> instance = BLOCKS.register(name, block);
-    	ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties()));
-    	return instance;
+        final RegistryObject<Block> instance = BLOCKS.register(name, block);
+        ITEMS.register(name, () -> new BlockItem(instance.get(), new Item.Properties()));
+        return instance;
     }
-	
+
     public static class BlockProperties {
-    	public static final Properties GLASS = Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never);
-    	public static final Properties TINTED_GLASS = Properties.copy(Blocks.TINTED_GLASS).mapColor(MapColor.COLOR_GRAY).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never);
-    	public static final Properties SOUL_SANDSTONE = stone(MapColor.COLOR_BROWN).strength(0.8F);
-    	
-    	public static Properties planks(MapColor color) {
-    		return Properties.of().mapColor(color).ignitedByLava().strength(2.0F, 3.0F).sound(SoundType.WOOD);
-    	}
-    	
-    	public static Properties netherPlanks(MapColor color) {
-    		return Properties.of().mapColor(color).strength(2.0F).sound(SoundType.STEM).instrument(NoteBlockInstrument.BASS);
-    	}
-    	
-    	public static Properties stone(MapColor color) {
-    		return Properties.of().mapColor(color).requiresCorrectToolForDrops().strength(1.5F, 6.0F).instrument(NoteBlockInstrument.BASEDRUM);
-    	}
+
+        public static final Properties GLASS = Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never);
+        public static final Properties TINTED_GLASS = Properties.copy(Blocks.TINTED_GLASS).mapColor(MapColor.COLOR_GRAY).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never);
+        public static final Properties SOUL_SANDSTONE = stone(MapColor.COLOR_BROWN).strength(0.8F);
+
+        public static Properties planks(MapColor color) {
+            return Properties.of().mapColor(color).ignitedByLava().strength(2.0F, 3.0F).sound(SoundType.WOOD);
+        }
+
+        public static Properties netherPlanks(MapColor color) {
+            return Properties.of().mapColor(color).strength(2.0F).sound(SoundType.STEM).instrument(NoteBlockInstrument.BASS);
+        }
+
+        public static Properties stone(MapColor color) {
+            return Properties.of().mapColor(color).requiresCorrectToolForDrops().strength(1.5F, 6.0F).instrument(NoteBlockInstrument.BASEDRUM);
+        }
     }
 }

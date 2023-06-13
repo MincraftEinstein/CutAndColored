@@ -17,43 +17,43 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractSingleItemRecipeCategory<T extends AbstractSingleItemRecipe> implements IRecipeCategory<T> {
 
-	public static final ResourceLocation RECIPE_GUI_VANILLA = new ResourceLocation(ModIds.JEI_ID, "textures/jei/gui/gui_vanilla.png");
+    public static final ResourceLocation RECIPE_GUI_VANILLA = new ResourceLocation(ModIds.JEI_ID, "textures/jei/gui/gui_vanilla.png");
 
-	public static final int width = 82;
-	public static final int height = 34;
-	private final IDrawable background;
-	private final IDrawable icon;
-	private final Component title;
-	
-	public AbstractSingleItemRecipeCategory(String localizedName, ItemStack iconStack, IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(RECIPE_GUI_VANILLA, 0, 220, width, height);
-		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, iconStack);
-		title = Component.translatable(localizedName);
-	}
+    public static final int width = 82;
+    public static final int height = 34;
+    private final IDrawable background;
+    private final IDrawable icon;
+    private final Component title;
 
-	@Override
-	public @Nullable ResourceLocation getRegistryName(T recipe) {
-		return getRecipeType().getUid();
-	}
+    public AbstractSingleItemRecipeCategory(String localizedName, ItemStack iconStack, IGuiHelper guiHelper) {
+        background = guiHelper.createDrawable(RECIPE_GUI_VANILLA, 0, 220, width, height);
+        icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, iconStack);
+        title = Component.translatable(localizedName);
+    }
 
-	@Override
-	public IDrawable getBackground() {
-		return background;
-	}
-	
-	@Override
-	public IDrawable getIcon() {
-		return icon;
-	}
-	
-	@Override
-	public Component getTitle() {
-		return title;
-	}
-	
-	@Override
-	public void setRecipe(IRecipeLayoutBuilder builder, T recipe, IFocusGroup focuses) {
-		builder.addSlot(RecipeIngredientRole.INPUT, 1, 9).addIngredients(recipe.getIngredients().get(0));
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 61, 9).addItemStack(recipe.getResultItem(Minecraft.getInstance().level.registryAccess()));
-	}
+    @Override
+    public @Nullable ResourceLocation getRegistryName(T recipe) {
+        return getRecipeType().getUid();
+    }
+
+    @Override
+    public IDrawable getBackground() {
+        return background;
+    }
+
+    @Override
+    public IDrawable getIcon() {
+        return icon;
+    }
+
+    @Override
+    public Component getTitle() {
+        return title;
+    }
+
+    @Override
+    public void setRecipe(IRecipeLayoutBuilder builder, T recipe, IFocusGroup focuses) {
+        builder.addSlot(RecipeIngredientRole.INPUT, 1, 9).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 61, 9).addItemStack(recipe.getResultItem(Minecraft.getInstance().level.registryAccess()));
+    }
 }

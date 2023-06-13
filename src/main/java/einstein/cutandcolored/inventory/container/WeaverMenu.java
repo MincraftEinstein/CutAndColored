@@ -13,26 +13,26 @@ import net.minecraft.world.level.block.Block;
 
 public class WeaverMenu extends AbstractSingleItemRecipeMenu<WeavingRecipe> {
 
-	public WeaverMenu(int id, Inventory inventory) {
-		super(ModMenuTypes.WEAVER.get(), id, inventory);
-	}
-	
-	public WeaverMenu(int id, Inventory inventory, ContainerLevelAccess levelAccess) {
-		super(ModMenuTypes.WEAVER.get(), id, inventory, levelAccess);
-	}
-	
-	@Override
-	public Block getBlock() {
-		return ModBlocks.WEAVER.get();
-	}
+    public WeaverMenu(int id, Inventory inventory) {
+        super(ModMenuTypes.WEAVER.get(), id, inventory);
+    }
 
-	@Override
-	public SoundEvent getCraftSound() {
-		return SoundEvents.UI_LOOM_TAKE_RESULT;
-	}
+    public WeaverMenu(int id, Inventory inventory, ContainerLevelAccess levelAccess) {
+        super(ModMenuTypes.WEAVER.get(), id, inventory, levelAccess);
+    }
 
-	@Override
-	public RecipeType<WeavingRecipe> getRecipeType() {
-		return ModRecipeTypes.WEAVING_RECIPE;
-	}
+    @Override
+    public Block getBlock() {
+        return ModBlocks.WEAVER.get();
+    }
+
+    @Override
+    public SoundEvent getCraftSound() {
+        return SoundEvents.UI_LOOM_TAKE_RESULT;
+    }
+
+    @Override
+    public RecipeType<WeavingRecipe> getRecipeType() {
+        return ModRecipeTypes.WEAVING_RECIPE;
+    }
 }

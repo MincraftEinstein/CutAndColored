@@ -12,14 +12,14 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class SawmillScreen extends AbstractSingleItemRecipeScreen<SawmillMenu, SawmillingRecipe> {
 
-	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(CutAndColored.MOD_ID, "textures/gui/container/sawmill.png");
-	
-	public SawmillScreen(SawmillMenu menu, Inventory inventory, Component component) {
-		super(menu, inventory, component);
-	}
-	
-	@Override
-	protected ResourceLocation getBackgroundTexture() {
-		return BACKGROUND_TEXTURE;
-	}
+    private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(CutAndColored.MOD_ID, "textures/gui/container/sawmill.png");
+
+    public SawmillScreen(SawmillMenu menu, Inventory inventory, Component component) {
+        super(menu, inventory, component);
+    }
+
+    @Override
+    protected ResourceLocation getBackgroundTexture() {
+        return BACKGROUND_TEXTURE;
+    }
 }

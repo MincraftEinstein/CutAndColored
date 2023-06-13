@@ -40,7 +40,7 @@ public class CutAndColored {
     public static final List<Block> allMCBlocks = new ArrayList<>(ForgeRegistries.BLOCKS.getValues().stream()
             .filter((block) -> CutAndColored.MC_MOD_ID.equals(Objects.requireNonNull(Util.getBlockRegistryName(block)).getNamespace()))
             .collect(Collectors.toList()));
-    public static final String[] BOARD_TYPES = { "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "crimson", "warped" };
+    public static final String[] BOARD_TYPES = {"oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "crimson", "warped"};
 
     public CutAndColored() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

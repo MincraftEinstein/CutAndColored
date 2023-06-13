@@ -53,7 +53,7 @@ public class ModRecipesGenerator extends RecipeResources {
         for (int i = 0; i < CutAndColored.BOARD_TYPES.length; i++) {
             String type = CutAndColored.BOARD_TYPES[i];
             String slab = type + "_board_slab";
-            String stairs = type +  "_board_stairs";
+            String stairs = type + "_board_stairs";
             Item block = getItem(modRL(type + "_boards"));
 
             slabsRecipe(slab, block, getItem(modRL(slab)), "board_slabs");
@@ -297,7 +297,7 @@ public class ModRecipesGenerator extends RecipeResources {
             stonecuttingRecipe(type + "_stairs", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_stairs")));
         }
 
-        String[] stoneTypes = { "andesite", "diorite", "granite" };
+        String[] stoneTypes = {"andesite", "diorite", "granite"};
         for (String type : stoneTypes) {
             stonecuttingRecipe(type + "_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_bricks")));
             stonecuttingRecipe(type + "_bricks_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL("polished_" + type)), getItem(modRL(type + "_bricks")));
@@ -533,7 +533,7 @@ public class ModRecipesGenerator extends RecipeResources {
         for (int i = 0; i < ForgeRegistries.BLOCKS.getValues().size(); i++) {
             Block block = ForgeRegistries.BLOCKS.getValues().stream().toList().get(i);
             if (Util.getBlockRegistryName(block).getPath().contains("_log") && !Util.getBlockRegistryName(block).getPath().contains("stripped_")) {
-                String[] object = { Util.getBlockRegistryName(block).getNamespace(), Util.getBlockRegistryName(block).getPath().replace("_log", "") };
+                String[] object = {Util.getBlockRegistryName(block).getNamespace(), Util.getBlockRegistryName(block).getPath().replace("_log", "")};
                 woodTypes.add(object);
             }
         }
@@ -549,7 +549,7 @@ public class ModRecipesGenerator extends RecipeResources {
     private ResourceLocation RL(String string) {
         return new ResourceLocation(namespace, string);
     }
-    
+
     private void vanillaColoredRecipes() {
         for (int i = 0; i < DyeColor.values().length; i++) {
             String color = DyeColor.byId(i).getName();
