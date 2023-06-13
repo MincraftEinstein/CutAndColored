@@ -104,7 +104,7 @@ public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleIte
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         scrolling = false;
-        if (this.displayRecipes) {
+        if (displayRecipes) {
             int i = leftPos + 52;
             int j = topPos + 14;
             int k = startIndex + 12;

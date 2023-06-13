@@ -22,8 +22,7 @@ public class GlasscutterBlock extends AbstractSingleItemRecipeBlock {
     @Nullable
     @Override
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
-        return new SimpleMenuProvider((id, inventory, player) -> {
-            return new GlasscutterMenu(id, inventory, ContainerLevelAccess.create(level, pos));
-        }, CONTAINER_TITLE);
+        return new SimpleMenuProvider((id, inventory, player) ->
+                new GlasscutterMenu(id, inventory, ContainerLevelAccess.create(level, pos)), CONTAINER_TITLE);
     }
 }

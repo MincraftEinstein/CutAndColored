@@ -48,9 +48,9 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
         super(menuType, id);
         this.menuType = menuType;
         this.access = levelAccess;
-        this.level = inventory.player.level();
-        this.inputSlot = addSlot(new Slot(container, 0, 20, 33));
-        this.resultSlot = addSlot(new Slot(resultContainer, 1, 143, 33) {
+        level = inventory.player.level();
+        inputSlot = addSlot(new Slot(container, 0, 20, 33));
+        resultSlot = addSlot(new Slot(resultContainer, 1, 143, 33) {
 
             public boolean mayPlace(ItemStack stack) {
                 return false;
@@ -67,7 +67,7 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
                 levelAccess.execute((level, pos) -> {
                     long gameTime = level.getGameTime();
                     if (lastSoundTime != gameTime) {
-                        level.playSound((Player) null, pos, getCraftSound(), SoundSource.BLOCKS, 1, 1);
+                        level.playSound(null, pos, getCraftSound(), SoundSource.BLOCKS, 1, 1);
                         lastSoundTime = gameTime;
                     }
                 });
@@ -75,21 +75,21 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
             }
 
             private List<ItemStack> getRelevantItems() {
-                return List.of(AbstractSingleItemRecipeMenu.this.inputSlot.getItem());
+                return List.of(inputSlot.getItem());
             }
         });
 
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+                addSlot(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
         for (int k = 0; k < 9; ++k) {
-            this.addSlot(new Slot(inventory, k, 8 + k * 18, 142));
+            addSlot(new Slot(inventory, k, 8 + k * 18, 142));
         }
 
-        this.addDataSlot(this.selectedRecipeIndex);
+        addDataSlot(selectedRecipeIndex);
     }
 
     public abstract Block getBlock();
@@ -168,7 +168,7 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
     }
 
     public void registerUpdateListener(Runnable listener) {
-        this.slotUpdateListener = listener;
+        slotUpdateListener = listener;
     }
 
     @Override
