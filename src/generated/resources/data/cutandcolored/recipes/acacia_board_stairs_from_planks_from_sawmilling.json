@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:acacia_planks"
+  },
+  "result": "cutandcolored:acacia_board_stairs"
+}

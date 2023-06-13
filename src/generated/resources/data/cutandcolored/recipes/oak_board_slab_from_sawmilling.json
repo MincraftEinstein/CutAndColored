@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "count": 2,
+  "ingredient": {
+    "item": "cutandcolored:oak_boards"
+  },
+  "result": "cutandcolored:oak_board_slab"
+}

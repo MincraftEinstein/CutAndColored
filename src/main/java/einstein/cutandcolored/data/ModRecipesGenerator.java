@@ -476,9 +476,9 @@ public class ModRecipesGenerator extends RecipeResources {
             }
 
             try {
-                Item boards = getItem(RL(woodName + "_boards"));
-                Item boardSlab = getItem(RL(woodName + "_board_slab"));
-                Item boardStairs = getItem(RL(woodName + "_board_stairs"));
+                Item boards = getItem(modRL(woodName + "_boards"));
+                Item boardSlab = getItem(modRL(woodName + "_board_slab"));
+                Item boardStairs = getItem(modRL(woodName + "_board_stairs"));
 
                 sawmillingRecipe(woodName + "_boards_from" + s, RecipeCategory.BUILDING_BLOCKS, logTypes, boards, 4);
                 sawmillingRecipe(woodName + "_boards", RecipeCategory.BUILDING_BLOCKS, planks, boards);

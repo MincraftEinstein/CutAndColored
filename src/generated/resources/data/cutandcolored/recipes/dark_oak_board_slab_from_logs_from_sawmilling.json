@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "count": 8,
+  "ingredient": {
+    "tag": "minecraft:dark_oak_logs"
+  },
+  "result": "cutandcolored:dark_oak_board_slab"
+}

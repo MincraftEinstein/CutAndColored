@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:jungle_planks"
+  },
+  "result": "cutandcolored:jungle_board_stairs"
+}

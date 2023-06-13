@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "count": 1,
+  "ingredient": {
+    "item": "cutandcolored:spruce_boards"
+  },
+  "result": "cutandcolored:spruce_board_stairs"
+}

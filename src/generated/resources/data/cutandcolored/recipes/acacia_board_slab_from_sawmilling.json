@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "count": 2,
+  "ingredient": {
+    "item": "cutandcolored:acacia_boards"
+  },
+  "result": "cutandcolored:acacia_board_slab"
+}

@@ -31,7 +31,7 @@ public abstract class RecipeResources extends RecipeProvider {
 	
 	protected static Item getItem(ResourceLocation location) {
 		Item item = ForgeRegistries.ITEMS.getValue(location);
-		if (item != Items.AIR) {
+		if (item != Items.AIR && item != null) {
 			return item;
 		}
 		else {
