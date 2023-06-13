@@ -1,35 +1,42 @@
-modLoader="javafml"
-loaderVersion="[45,)"
-license="All rights reserved"
-issueTrackerURL="https://github.com/MincraftEinstein/CutAndColored/issues"
+modLoader = "javafml"
+loaderVersion = "[46,)"
+license = "All rights reserved"
+issueTrackerURL = "https://github.com/MincraftEinstein/CutAndColored/issues"
 
 [[mods]]
-	modId="cutandcolored"
-	version="${version}"
-	displayName="Cut And Colored"
+	modId = "cutandcolored"
+	version = "${version}"
+	displayName = "Cut And Colored"
 	#updateJSONURL="http://myurl.me/"
-	displayURL="https://www.curseforge.com/minecraft/mc-mods/cut-and-colored"
-	logoFile="pack.png"
-	credits="Me the mod author (Programer), SpiderKolo (Artist)"
-	authors="MincraftEinstein, SpiderKolo"
-	description='''
+	displayURL = "https://www.curseforge.com/minecraft/mc-mods/cut-and-colored"
+	logoFile = "pack.png"
+	credits = "Me the mod author (Programer), SpiderKolo (Artist)"
+	authors = "MincraftEinstein, SpiderKolo"
+	description = '''
 A mod that aims to add vanilla feeling blocks to Minecraft
 '''
 
 [modproperties.cutandcolored]
-	catalogueImageIcon="pack.png"
-	configuredBackground="cutandcolored:textures/block/light_blue_stained_planks.png"
+	catalogueImageIcon = "pack.png"
+	configuredBackground = "cutandcolored:textures/block/light_blue_stained_planks.png"
 
 [[dependencies.cutandcolored]]
-    modId="forge"
-    mandatory=true
-    versionRange="[45.0.23,)"
-    ordering="NONE"
-    side="BOTH"
+    modId = "forge"
+    mandatory = true
+    versionRange = "[46.0.14,)"
+    ordering = "NONE"
+    side = "BOTH"
 
 [[dependencies.cutandcolored]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.19.4, 1.20]"
-    ordering="NONE"
-    side="BOTH"
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "[1.20, 1.21]"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.cutandcolored]]
+    modId = "jei"
+    mandatory = false
+    versionRange = "[14.0.0.11,)"
+    ordering = "NONE"
+    side = "CLIENT"
