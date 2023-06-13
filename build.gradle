@@ -94,16 +94,28 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven {
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_v}-${forge_v}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    compileOnly fg.deobf("curse.maven:jei-238222:${jei_v}")
-//	implementation fg.deobf("curse.maven:crafttweaker-239197:3696628")
-    implementation fg.deobf("curse.maven:catalogue-459701:${catalogue_v}")
-    implementation fg.deobf("curse.maven:configured-457570:${configured_v}")
+//    implementation fg.deobf("curse.maven:crafttweaker-239197:3696628")
+//    implementation fg.deobf("curse.maven:catalogue-459701:${catalogue_v}")
+//    implementation fg.deobf("curse.maven:configured-457570:${configured_v}")
+
+    compileOnly fg.deobf("mezz.jei:jei-${mc_v}-common-api:${jei_v}")
+    compileOnly fg.deobf("mezz.jei:jei-${mc_v}-forge-api:${jei_v}")
+
+    runtimeOnly fg.deobf("mezz.jei:jei-${mc_v}-forge:${jei_v}")
 }
 
 processResources {

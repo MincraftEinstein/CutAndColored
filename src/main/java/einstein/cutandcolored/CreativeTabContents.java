@@ -1,13 +1,14 @@
 package einstein.cutandcolored;
 
 import einstein.cutandcolored.init.ModBlocks;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import einstein.cutandcolored.init.ModCreativeTabs;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.fml.ModList;
 
 public class CreativeTabContents {
 
-    public static void buildContents(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() != CutAndColored.MOD_TAB) {
+    public static void buildContents(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTab() != ModCreativeTabs.CUTANDCOLORED_TAB.get()) {
             return;
         }
 

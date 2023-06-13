@@ -11,20 +11,13 @@ import einstein.cutandcolored.tags.ItemTagsGenerator;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
@@ -42,7 +35,6 @@ public class CutAndColored {
     public static final String MOD_ID = "cutandcolored";
     public static final String MC_MOD_ID = "minecraft";
     public static final String F_MOD_ID = "flamboyant";
-    public static CreativeModeTab MOD_TAB;
 
     public static final List<Block> allBlocks = new ArrayList<>();
     public static final List<Block> allMCBlocks = new ArrayList<>(ForgeRegistries.BLOCKS.getValues().stream()
@@ -53,7 +45,6 @@ public class CutAndColored {
     public CutAndColored() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::generateData);
-        modEventBus.addListener(this::registerCreativeTab);
         modEventBus.addListener(CreativeTabContents::buildContents);
         ModBlocks.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
@@ -61,15 +52,8 @@ public class CutAndColored {
         ModRecipeTypes.RECIPE_TYPE.register(modEventBus);
         ModRecipeTypes.RECIPE_SERIALIZERS.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
+        ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(new PropertyEvents());
-    }
-
-    void registerCreativeTab(CreativeModeTabEvent.Register event) {
-        MOD_TAB = event.registerCreativeModeTab(new ResourceLocation(MOD_ID, "cutandcolored_tab"), builder -> {
-            builder.icon(() -> new ItemStack(ModBlocks.SAWMILL.get()))
-                    .title(Component.translatable("itemGroup.cutandcolored_tab"))
-                    .build();
-        });
     }
 
     void generateData(GatherDataEvent event) {

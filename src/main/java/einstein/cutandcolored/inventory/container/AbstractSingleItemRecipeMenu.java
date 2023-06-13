@@ -11,12 +11,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.DataSlot;
-import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.inventory.ResultContainer;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -53,7 +48,7 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
 		super(menuType, id);
 		this.menuType = menuType;
 		this.access = levelAccess;
-		this.level = inventory.player.level;
+		this.level = inventory.player.level();
 		this.inputSlot = addSlot(new Slot(container, 0, 20, 33));
 		this.resultSlot = addSlot(new Slot(resultContainer, 1, 143, 33) {
 			public boolean mayPlace(ItemStack stack) {
@@ -61,8 +56,8 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
 			}
 			
 			public void onTake(Player player, ItemStack stack) {
-				stack.onCraftedBy(player.level, player, stack.getCount());
-				resultContainer.awardUsedRecipes(player);
+				stack.onCraftedBy(player.level(), player, stack.getCount());
+				resultContainer.awardUsedRecipes(player, getRelevantItems());
 				ItemStack itemstack = inputSlot.remove(1);
 				if (!itemstack.isEmpty()) {
 					setupResultSlot();
@@ -76,6 +71,10 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
 					}
 				});
 				super.onTake(player, stack);
+			}
+
+			private List<ItemStack> getRelevantItems() {
+				return List.of(AbstractSingleItemRecipeMenu.this.inputSlot.getItem());
 			}
 		});
 		
@@ -186,7 +185,7 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
 			stack = stack1.copy();
 			
 			if (index == 1) {
-				item.onCraftedBy(stack1, player.level, player);
+				item.onCraftedBy(stack1, player.level(), player);
 				if (!moveItemStackTo(stack1, 2, 38, true)) {
 					return ItemStack.EMPTY;
 				}

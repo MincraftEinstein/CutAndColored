@@ -8,6 +8,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import einstein.cutandcolored.inventory.container.AbstractSingleItemRecipeMenu;
 import einstein.cutandcolored.item.crafting.AbstractSingleItemRecipe;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
@@ -36,32 +37,29 @@ public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleIte
 	protected abstract ResourceLocation getBackgroundTexture();
 	
 	@Override
-	public void render(PoseStack stack, int mouseX, int mouseY, float partialTicks) {
-		super.render(stack, mouseX, mouseY, partialTicks);
-		renderTooltip(stack, mouseX, mouseY);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		renderTooltip(guiGraphics, mouseX, mouseY);
 	}
-	
+
 	@Override
-	protected void renderBg(PoseStack poseStack, float partialTicks, int x, int y) {
-		this.renderBackground(poseStack);
-		RenderSystem.setShader(GameRenderer::getPositionTexShader);
-		RenderSystem.setShaderColor(1, 1, 1, 1);
-		RenderSystem.setShaderTexture(0, getBackgroundTexture());
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int x, int y) {
+		renderBackground(guiGraphics);
 		int i = leftPos;
 		int j = topPos;
-		blit(poseStack, i, j, 0, 0, imageWidth, imageHeight);
+		guiGraphics.blit(getBackgroundTexture(), i, j, 0, 0, imageWidth, imageHeight);
 		int k = (int) (41 * scrollOffs);
-		blit(poseStack, i + 119, j + 15 + k, 176 + (isScrollBarActive() ? 0 : 12), 0, 12, 15);
+		guiGraphics.blit(getBackgroundTexture(), i + 119, j + 15 + k, 176 + (isScrollBarActive() ? 0 : 12), 0, 12, 15);
 		int l = leftPos + 52;
 		int i1 = topPos + 14;
 		int j1 = startIndex + 12;
-		renderButtons(poseStack, x, y, l, i1, j1);
-		renderRecipes(poseStack, l, i1, j1);
+		renderButtons(guiGraphics, x, y, l, i1, j1);
+		renderRecipes(guiGraphics, l, i1, j1);
 	}
 	
 	@Override
-	protected void renderTooltip(PoseStack poseStack, int x, int y) {
-		super.renderTooltip(poseStack, x, y);
+	protected void renderTooltip(GuiGraphics guiGraphics, int x, int y) {
+		super.renderTooltip(guiGraphics, x, y);
 		if (displayRecipes) {
 			int i = leftPos + 52;
 			int j = topPos + 14;
@@ -73,13 +71,13 @@ public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleIte
 				int j1 = i + i1 % 4 * 16;
 				int k1 = j + i1 / 4 * 18 + 2;
 				if (x >= j1 && x < j1 + 16 && y >= k1 && y < k1 + 18) {
-					this.renderTooltip(poseStack, list.get(l).getResultItem(minecraft.level.registryAccess()), x, y);
+					guiGraphics.renderTooltip(font, list.get(l).getResultItem(minecraft.level.registryAccess()), x, y);
 				}
 			}
 		}
 	}
 	
-	private void renderButtons(PoseStack poseStack, int x, int y, int p_99345_, int p_99346_, int p_99347_) {
+	private void renderButtons(GuiGraphics guiGraphics, int x, int y, int p_99345_, int p_99346_, int p_99347_) {
 		for (int i = startIndex; i < p_99347_ && i < menu.getNumRecipes(); ++i) {
 			int j = i - startIndex;
 			int k = p_99345_ + j % 4 * 16;
@@ -92,18 +90,18 @@ public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleIte
 			else if (x >= k && y >= i1 && x < k + 16 && y < i1 + 18) {
 				j1 += 36;
 			}
-			blit(poseStack, k, i1 - 1, 0, j1, 16, 18);
+			guiGraphics.blit(getBackgroundTexture(), k, i1 - 1, 0, j1, 16, 18);
 		}
 	}
 	
-	private void renderRecipes(PoseStack poseStack, int left, int top, int offset) {
+	private void renderRecipes(GuiGraphics guiGraphics, int left, int top, int offset) {
 		List<R> list = menu.getRecipes();
 		for (int i = startIndex; i < offset && i < menu.getNumRecipes(); ++i) {
 			int j = i - startIndex;
 			int k = left + j % 4 * 16;
 			int l = j / 4;
 			int i1 = top + l * 18 + 2;
-			minecraft.getItemRenderer().renderAndDecorateItem(poseStack, list.get(i).getResultItem(minecraft.level.registryAccess()), k, i1);
+			guiGraphics.renderItem(list.get(i).getResultItem(minecraft.level.registryAccess()), k, i1);
 		}
 	}
 	
