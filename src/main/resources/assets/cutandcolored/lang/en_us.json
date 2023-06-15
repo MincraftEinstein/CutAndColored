@@ -1,34 +1,35 @@
 {
-
-	/************************GUIS***************************/
-	// TABS
+	"_comment": "Creative Tabs",
 	"itemGroup.cutandcolored_tab": "Cut And Colored",
 
-	// CONTAINERS
+	"_comment": "Containers",
 	"container.cutandcolored.glasscutter": "Glasscutter",
 	"container.cutandcolored.sawmill": "Sawmill",
     "container.cutandcolored.weaver": "Weaver",
-    
-    // JEI CATEGORIES
+
+    "_comment": "JEI",
     "gui.jei.cutandcolored.category.glasscutting": "Glasscutting",
     "gui.jei.cutandcolored.category.sawmilling": "Sawmilling",
     "gui.jei.cutandcolored.category.weaving": "Weaving",
-    
-    /*********************WORK_STATIONS**********************/
+
+    "_comment": "Workstations Blocks",
     "block.cutandcolored.glasscutter": "Glasscutter",
     "block.cutandcolored.weaver": "Weaver",
     "block.cutandcolored.sawmill": "Sawmill",
-    
-    /************************GLASS***************************/
-    // FULL BLOCKS
+
+
+    "_comment": "GLASS",
+
+
+    "_comment": "Full Blocks",
     "block.cutandcolored.soul_glass": "Soul Glass",
-    
-    // PANES
+
+    "_comment": "Panes",
     "block.cutandcolored.soul_glass_pane": "Soul Glass Pane",
     "block.cutandcolored.tinted_glass_pane": "Tinted Glass Pane",
     "block.cutandcolored.horizontal_soul_glass_pane": "Horizontal Soul Glass Pane",
-    
-    // STAIRS
+
+    "_comment": "Stairs",
     "block.cutandcolored.glass_stairs": "Glass Stairs",
     "block.cutandcolored.tinted_glass_stairs": "Tinted Glass Stairs",
     "block.cutandcolored.soul_glass_stairs": "Soul Glass Stairs",
@@ -48,8 +49,8 @@
     "block.cutandcolored.magenta_stained_glass_stairs": "Magenta Stained Glass Stairs",
     "block.cutandcolored.orange_stained_glass_stairs": "Orange Stained Glass Stairs",
     "block.cutandcolored.white_stained_glass_stairs": "White Stained Glass Stairs",
-    
-    // SLABS
+
+    "_comment": "Slabs",
     "block.cutandcolored.glass_slab": "Glass Slab",
     "block.cutandcolored.tinted_glass_slab": "Tinted Glass Slab",
     "block.cutandcolored.soul_glass_slab": "Soul Glass Slab",
@@ -69,8 +70,8 @@
     "block.cutandcolored.magenta_stained_glass_slab": "Magenta Stained Glass Slab",
     "block.cutandcolored.orange_stained_glass_slab": "Orange Stained Glass Slab",
     "block.cutandcolored.white_stained_glass_slab": "White Stained Glass Slab",
-    
-    // WINDOWS
+
+    "_comment": "Windows",
 	"block.cutandcolored.glass_window": "Glass Window",
     "block.cutandcolored.tinted_glass_window": "Tinted Glass Window",
     "block.cutandcolored.soul_glass_window": "Soul Glass Window",
@@ -90,8 +91,8 @@
     "block.cutandcolored.magenta_stained_glass_window": "Magenta Stained Glass Window",
     "block.cutandcolored.orange_stained_glass_window": "Orange Stained Glass Window",
     "block.cutandcolored.white_stained_glass_window": "White Stained Glass Window",
-    
-    // WINDOW PANES
+
+    "_comment": "Window Panes",
 	"block.cutandcolored.glass_window_pane": "Glass Window Pane",
     "block.cutandcolored.tinted_glass_window_pane": "Tinted Glass Window Pane",
     "block.cutandcolored.soul_glass_window_pane": "Soul Glass Window Pane",
@@ -111,9 +112,12 @@
     "block.cutandcolored.magenta_stained_glass_window_pane": "Magenta Stained Glass Window Pane",
     "block.cutandcolored.orange_stained_glass_window_pane": "Orange Stained Glass Window Pane",
     "block.cutandcolored.white_stained_glass_window_pane": "White Stained Glass Window Pane",
-    
-    /*************************WOOL**************************/
-    // STAIRS
+
+
+    "_comment": "WOOL",
+
+
+    "_comment": "Stairs",
     "block.cutandcolored.black_wool_stairs": "Black Wool Stairs",
     "block.cutandcolored.red_wool_stairs": "Red Wool Stairs",
     "block.cutandcolored.green_wool_stairs": "Green Wool Stairs",
@@ -130,8 +134,8 @@
     "block.cutandcolored.magenta_wool_stairs": "Magenta Wool Stairs",
     "block.cutandcolored.orange_wool_stairs": "Orange Wool Stairs",
     "block.cutandcolored.white_wool_stairs": "White Wool Stairs",
-	
-	// SLABS
+
+    "_comment": "Slabs",
 	"block.cutandcolored.black_wool_slab": "Black Wool Slab",
     "block.cutandcolored.red_wool_slab": "Red Wool Slab",
     "block.cutandcolored.green_wool_slab": "Green Wool Slab",
@@ -148,9 +152,12 @@
     "block.cutandcolored.magenta_wool_slab": "Magenta Wool Slab",
     "block.cutandcolored.orange_wool_slab": "Orange Wool Slab",
     "block.cutandcolored.white_wool_slab": "White Wool Slab",
-	
-	/*******************STAINED_PLANKS**********************/
-    // FULL BLOCKS
+
+
+    "_comment": "STAINED PLANKS",
+
+
+    "_comment": "Full Blocks",
     "block.cutandcolored.black_stained_planks": "Black Stained Planks",
     "block.cutandcolored.red_stained_planks": "Red Stained Planks",
     "block.cutandcolored.green_stained_planks": "Green Stained Planks",
@@ -167,8 +174,8 @@
     "block.cutandcolored.magenta_stained_planks": "Magenta Stained Planks",
     "block.cutandcolored.orange_stained_planks": "Orange Stained Planks",
     "block.cutandcolored.white_stained_planks": "White Stained Planks",
-    
-    // STAIRS
+
+    "_comment": "Stairs",
     "block.cutandcolored.black_stained_plank_stairs": "Black Stained Plank Stairs",
     "block.cutandcolored.red_stained_plank_stairs": "Red Stained Plank Stairs",
     "block.cutandcolored.green_stained_plank_stairs": "Green Stained Plank Stairs",
@@ -185,8 +192,8 @@
     "block.cutandcolored.magenta_stained_plank_stairs": "Magenta Stained Plank Stairs",
     "block.cutandcolored.orange_stained_plank_stairs": "Orange Stained Plank Stairs",
     "block.cutandcolored.white_stained_plank_stairs": "White Stained Plank Stairs",
-    
-    // SLABS
+
+    "_comment": "Slabs",
     "block.cutandcolored.black_stained_plank_slab": "Black Stained Plank Slab",
     "block.cutandcolored.red_stained_plank_slab": "Red Stained Plank Slab",
     "block.cutandcolored.green_stained_plank_slab": "Green Stained Plank Slab",
@@ -203,9 +210,12 @@
     "block.cutandcolored.magenta_stained_plank_slab": "Magenta Stained Plank Slab",
     "block.cutandcolored.orange_stained_plank_slab": "Orange Stained Plank Slab",
     "block.cutandcolored.white_stained_plank_slab": "White Stained Plank Slab",
-    
-    /*********************TERRACOTTA************************/
-    // STAIRS
+
+
+    "_comment": "TERRACOTTA",
+
+
+    "_comment": "Stairs",
     "block.cutandcolored.terracotta_stairs": "Terracotta Stairs",
     "block.cutandcolored.white_terracotta_stairs": "White Terracotta Stairs",
     "block.cutandcolored.orange_terracotta_stairs": "Orange Terracotta Stairs",
@@ -223,8 +233,8 @@
     "block.cutandcolored.green_terracotta_stairs": "Green Terracotta Stairs",
     "block.cutandcolored.red_terracotta_stairs": "Red Terracotta Stairs",
     "block.cutandcolored.black_terracotta_stairs": "Black Terracotta Stairs",
-    
-    // SLABS
+
+    "_comment": "Slabs",
     "block.cutandcolored.terracotta_slab": "Terracotta Slab",
     "block.cutandcolored.white_terracotta_slab": "White Terracotta Slab",
     "block.cutandcolored.orange_terracotta_slab": "Orange Terracotta Slab",
@@ -242,9 +252,11 @@
     "block.cutandcolored.green_terracotta_slab": "Green Terracotta Slab",
     "block.cutandcolored.red_terracotta_slab": "Red Terracotta Slab",
     "block.cutandcolored.black_terracotta_slab": "Black Terracotta Slab",
-    
-    /**********************CONCRETE*************************/
-    // STAIRS
+
+
+    "_comment": "CONCRETE",
+
+    "_comment": "Stairs",
     "block.cutandcolored.black_concrete_stairs": "Black Concrete Stairs",
     "block.cutandcolored.red_concrete_stairs": "Red Concrete Stairs",
     "block.cutandcolored.green_concrete_stairs": "Green Concrete Stairs",
@@ -261,8 +273,8 @@
     "block.cutandcolored.magenta_concrete_stairs": "Magenta Concrete Stairs",
     "block.cutandcolored.orange_concrete_stairs": "Orange Concrete Stairs",
     "block.cutandcolored.white_concrete_stairs": "White Concrete Stairs",
-	
-	// SLABS
+
+    "_comment": "Slabs",
 	"block.cutandcolored.black_concrete_slab": "Black Concrete Slab",
     "block.cutandcolored.red_concrete_slab": "Red Concrete Slab",
     "block.cutandcolored.green_concrete_slab": "Green Concrete Slab",
@@ -279,9 +291,12 @@
     "block.cutandcolored.magenta_concrete_slab": "Magenta Concrete Slab",
     "block.cutandcolored.orange_concrete_slab": "Orange Concrete Slab",
     "block.cutandcolored.white_concrete_slab": "White Concrete Slab",
-    
-    /*******************STAINED_BRICKS**********************/
-    // FULL BLOCKS
+
+
+    "_comment": "STAINED BRICKS",
+
+
+    "_comment": "Full Blocks",
     "block.cutandcolored.black_stained_bricks": "Black Stained Bricks",
     "block.cutandcolored.red_stained_bricks": "Red Stained Bricks",
     "block.cutandcolored.green_stained_bricks": "Green Stained Bricks",
@@ -298,8 +313,8 @@
     "block.cutandcolored.magenta_stained_bricks": "Magenta Stained Bricks",
     "block.cutandcolored.orange_stained_bricks": "Orange Stained Bricks",
     "block.cutandcolored.white_stained_bricks": "White Stained Bricks",
-    
-	// STAIRS
+
+    "_comment": "Stairs",
     "block.cutandcolored.black_stained_brick_stairs": "Black Stained Brick Stairs",
     "block.cutandcolored.red_stained_brick_stairs": "Red Stained Brick Stairs",
     "block.cutandcolored.green_stained_brick_stairs": "Green Stained Brick Stairs",
@@ -316,8 +331,8 @@
     "block.cutandcolored.magenta_stained_brick_stairs": "Magenta Stained Brick Stairs",
     "block.cutandcolored.orange_stained_brick_stairs": "Orange Stained Brick Stairs",
     "block.cutandcolored.white_stained_brick_stairs": "White Stained Brick Stairs",
-    
-	// SALBS
+
+    "_comment": "Slabs",
     "block.cutandcolored.black_stained_brick_slab": "Black Stained Brick Slab",
     "block.cutandcolored.red_stained_brick_slab": "Red Stained Brick Slab",
     "block.cutandcolored.green_stained_brick_slab": "Green Stained Brick Slab",
@@ -334,8 +349,8 @@
     "block.cutandcolored.magenta_stained_brick_slab": "Magenta Stained Brick Slab",
     "block.cutandcolored.orange_stained_brick_slab": "Orange Stained Brick Slab",
     "block.cutandcolored.white_stained_brick_slab": "White Stained Brick Slab",
-    
-    // WALLS
+
+    "_comment": "Walls",
     "block.cutandcolored.black_stained_brick_wall": "Black Stained Brick Wall",
     "block.cutandcolored.red_stained_brick_wall": "Red Stained Brick Wall",
     "block.cutandcolored.green_stained_brick_wall": "Green Stained Brick Wall",
@@ -352,8 +367,11 @@
     "block.cutandcolored.magenta_stained_brick_wall": "Magenta Stained Brick Wall",
     "block.cutandcolored.orange_stained_brick_wall": "Orange Stained Brick Wall",
     "block.cutandcolored.white_stained_brick_wall": "White Stained Brick Wall",
-    
-    /************************LAMPS**************************/
+
+
+    "_comment": "LAMPS",
+
+
     "block.cutandcolored.white_redstone_lamp": "White Redstone Lamp",
    	"block.cutandcolored.orange_redstone_lamp": "Orange Redstone Lamp",
     "block.cutandcolored.magenta_redstone_lamp": "Magenta Redstone Lamp",
@@ -370,67 +388,81 @@
     "block.cutandcolored.green_redstone_lamp": "Green Redstone Lamp",
     "block.cutandcolored.red_redstone_lamp": "Red Redstone Lamp",
     "block.cutandcolored.black_redstone_lamp": "Black Redstone Lamp",
-    
-    /******************GRANITE_BRICKS***********************/
-    // FULL BLOCKS
+
+
+    "_comment": "GRANITE BRICKS",
+
+
+    "_comment": "Full Blocks",
     "block.cutandcolored.granite_bricks": "Granite Bricks",
-    
-    // STAIRS
+
+    "_comment": "Stairs",
     "block.cutandcolored.granite_brick_stairs": "Granite Brick Stairs",
-    
-    // SLABS
+
+    "_comment": "Slabs",
     "block.cutandcolored.granite_brick_slab": "Granite Brick Slab",
-    
-    // WALLS
+
+    "_comment": "Walls",
     "block.cutandcolored.granite_brick_wall": "Granite Brick Wall",
-    
-    /******************DIORITE_BRICKS***********************/
-    // FULL BLOCKS
+
+
+    "_comment": "DIORITE BRICKS",
+
+
+    "_comment": "Full Blocks",
     "block.cutandcolored.diorite_bricks": "Diorite Bricks",
-    
-    // STAIRS
+
+    "_comment": "Stairs",
     "block.cutandcolored.diorite_brick_stairs": "Diorite Brick Stairs",
-    
-    // SLABS
+
+    "_comment": "Slabs",
     "block.cutandcolored.diorite_brick_slab": "Diorite Brick Slab",
-    
-    // WALLS
+
+    "_comment": "Walls",
     "block.cutandcolored.diorite_brick_wall": "Diorite Brick Wall",
-    
-    /******************ANDESITE_BRICKS**********************/
-    // FULL BLOCKS
+
+
+    "_comment": "ANDSITE BRICKS",
+
+
+    "_comment": "Full Blocks",
     "block.cutandcolored.andesite_bricks": "Andesite Bricks",
-    
-    // STAIRS
+
+    "_comment": "Stairs",
     "block.cutandcolored.andesite_brick_stairs": "Andesite Brick Stairs",
-    
-    // SLABS
+
+    "_comment": "Slabs",
     "block.cutandcolored.andesite_brick_slab": "Andesite Brick Slab",
-    
-    // WALLS
+
+    "_comment": "Walls",
     "block.cutandcolored.andesite_brick_wall": "Andesite Brick Wall",
-    
-    /*******************SOUL_SANDSTONE**********************/
-    // FULL BLOCKS
+
+
+    "_comment": "SOUL SANDSTONE",
+
+    "_comment": "Full Blocks",
     "block.cutandcolored.soul_sandstone": "Soul Sandstone",
     "block.cutandcolored.chiseled_soul_sandstone": "Chiseled Soul Sandstone",
     "block.cutandcolored.cut_soul_sandstone": "Cut Soul Sandstone",
     "block.cutandcolored.smooth_soul_sandstone": "Smooth Soul Sandstone",
-    
-    // STAIRS
+
+    "_comment": "Stairs",
     "block.cutandcolored.soul_sandstone_stairs": "Soul Sandstone Stairs",
     "block.cutandcolored.smooth_soul_sandstone_stairs": "Smooth Soul Sandstone Stairs",
     
-    // SLABS
+    "_comment": "Slabs",
     "block.cutandcolored.soul_sandstone_slab": "Soul Sandstone Slab",
     "block.cutandcolored.cut_soul_sandstone_slab": "Cut Soul Sandstone Slab",
     "block.cutandcolored.smooth_soul_sandstone_slab": "Smooth Soul Sandstone Slab",
-    
-    // WALLS
+
+    "_comment": "Walls",
     "block.cutandcolored.soul_sandstone_wall": "Soul Sandstone Wall",
-    
-    /**********************WOOD_BOARDS**********************/
-    // FULL BLOCKS
+
+
+    "_comment": "WOOD BOARDS",
+
+
+    "_comment": "Full Blocks",
     "block.cutandcolored.oak_boards": "Oak Boards",
     "block.cutandcolored.spruce_boards": "Spruce Boards",
     "block.cutandcolored.birch_boards": "Birch Boards",
@@ -440,8 +472,8 @@
     "block.cutandcolored.crimson_boards": "Crimson Boards",
     "block.cutandcolored.warped_boards": "Warped Boards",
     "block.cutandcolored.mangrove_boards": "Mangrove Boards",
-    
-    // STAIRS
+
+    "_comment": "Stairs",
     "block.cutandcolored.oak_board_stairs": "Oak Board Stairs",
     "block.cutandcolored.spruce_board_stairs": "Spruce Board Stairs",
     "block.cutandcolored.birch_board_stairs": "Birch Board Stairs",
@@ -451,8 +483,8 @@
     "block.cutandcolored.crimson_board_stairs": "Crimson Board Stairs",
     "block.cutandcolored.warped_board_stairs": "Warped Board Stairs",
     "block.cutandcolored.mangrove_board_stairs": "Mangrove Board Stairs",
-    
-    // SLABS
+
+    "_comment": "Slabs",
     "block.cutandcolored.oak_board_slab": "Oak Board Slab",
     "block.cutandcolored.spruce_board_slab": "Spruce Board Slab",
     "block.cutandcolored.birch_board_slab": "Birch Board Slab",
@@ -462,9 +494,12 @@
     "block.cutandcolored.crimson_board_slab": "Crimson Board Slab",
     "block.cutandcolored.warped_board_slab": "Warped Board Slab",
     "block.cutandcolored.mangrove_board_slab": "Mangrove Board Slab",
-    
-    /**********************MISC_BLOCKS**********************/
-    // FULL BLOCKS
+
+
+    "_comment": "MISC BLOCKS",
+
+
+    "_comment": "Full Blocks",
     "block.cutandcolored.chiseled_prismarine_bricks": "Chiseled Prismarine Bricks",
     "block.cutandcolored.prismarine_brick_pillar": "Prismarine Brick Pillar",
     "block.cutandcolored.polished_blackstone_pillar": "Polished Blackstone Pillar",
@@ -474,8 +509,8 @@
     "block.cutandcolored.polished_stone": "Polished Stone",
     "block.cutandcolored.obsidian_bricks": "Obsidian Bricks",
     "block.cutandcolored.obsidian_brick_pillar": "Obsidian Brick Pillar",
-    
-    // STAIRS
+
+    "_comment": "Stairs",
     "block.cutandcolored.smooth_stone_stairs": "Smooth Stone Stairs",
     "block.cutandcolored.cracked_stone_brick_stairs": "Cracked Stone Brick Stairs",
     "block.cutandcolored.cracked_polished_blackstone_brick_stairs": "Cracked Polished Blackstone Brick Stairs",
@@ -489,8 +524,8 @@
     "block.cutandcolored.raw_gold_stairs": "Raw Gold Stairs",
     "block.cutandcolored.raw_copper_stairs": "Raw Copper Stairs",
     "block.cutandcolored.obsidian_brick_stairs": "Obsidian Brick Stairs",
-    
-    // SLABS
+
+    "_comment": "Slabs",
     "block.cutandcolored.cracked_stone_brick_slab": "Cracked Stone Brick Slab",
     "block.cutandcolored.cracked_polished_blackstone_brick_slab": "Cracked Polished Blackstone Brick Slab",
     "block.cutandcolored.cracked_nether_brick_slab": "Cracked Nether Brick Slab",
@@ -503,8 +538,8 @@
     "block.cutandcolored.raw_gold_slab": "Raw Gold Slab",
     "block.cutandcolored.raw_copper_slab": "Raw Copper Slab",
     "block.cutandcolored.obsidian_brick_slab": "Obsidian Brick Slab",
-    
-    // WALLS
+
+    "_comment": "Walls",
     "block.cutandcolored.purpur_wall": "Purpur Wall",
     "block.cutandcolored.prismarine_brick_wall": "Prismarine Brick Wall",
     "block.cutandcolored.dark_prismarine_wall": "Dark Prismarine Wall",
@@ -521,8 +556,8 @@
     "block.cutandcolored.polished_granite_wall": "Polished Granite Wall",
     "block.cutandcolored.polished_diorite_wall": "Polished Diorite Wall",
     "block.cutandcolored.polished_andesite_wall": "Polished Andesite Wall",
-    
-    // MISC MODELS
+
+    "_comment": "Misc Models",
     "block.cutandcolored.nether_brick_fence_gate": "Nether Brick Fence Gate",
     "block.cutandcolored.iron_fence_gate": "Iron Fence Gate"
 }
