@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "count": 4,
+  "ingredient": {
+    "tag": "minecraft:bamboo_blocks"
+  },
+  "result": "minecraft:bamboo_planks"
+}

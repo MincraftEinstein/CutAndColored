@@ -27,9 +27,6 @@ import static einstein.cutandcolored.CutAndColored.mcLoc;
 
 public class ModRecipesGenerator extends RecipeResources {
 
-    private final List<String[]> woodTypes = new ArrayList<>();
-    private String namespace;
-
     public ModRecipesGenerator(PackOutput output) {
         super(output);
     }
@@ -406,13 +403,19 @@ public class ModRecipesGenerator extends RecipeResources {
         sawmillingRecipe("sticks_from_logs", RecipeCategory.BUILDING_BLOCKS, ItemTags.LOGS, Items.STICK, 16);
         sawmillingRecipe("sticks_from_planks", RecipeCategory.BUILDING_BLOCKS, ItemTags.PLANKS, Items.STICK, 4);
         sawmillingRecipe("carved_pumpkin", RecipeCategory.BUILDING_BLOCKS, Blocks.PUMPKIN, Blocks.CARVED_PUMPKIN);
+        sawmillingRecipe("bamboo_mosaic_from_blocks", RecipeCategory.BUILDING_BLOCKS, ItemTags.BAMBOO_BLOCKS, Blocks.BAMBOO_MOSAIC, 4);
+        sawmillingRecipe("bamboo_mosaic_stairs_from_blocks", RecipeCategory.BUILDING_BLOCKS, ItemTags.BAMBOO_BLOCKS, Blocks.BAMBOO_MOSAIC_STAIRS, 4);
+        sawmillingRecipe("bamboo_mosaic_slabs_from_blocks", RecipeCategory.BUILDING_BLOCKS, ItemTags.BAMBOO_BLOCKS, Blocks.BAMBOO_MOSAIC_SLAB, 8);
+        sawmillingRecipe("bamboo_mosaic", RecipeCategory.BUILDING_BLOCKS, Blocks.BAMBOO_PLANKS, Blocks.BAMBOO_MOSAIC);
+        sawmillingRecipe("bamboo_mosaic_stairs_planks", RecipeCategory.BUILDING_BLOCKS, Blocks.BAMBOO_PLANKS, Blocks.BAMBOO_MOSAIC_STAIRS);
+        sawmillingRecipe("bamboo_mosaic_slabs_planks", RecipeCategory.BUILDING_BLOCKS, Blocks.BAMBOO_PLANKS, Blocks.BAMBOO_MOSAIC_SLAB, 2);
+        sawmillingRecipe("bamboo_mosaic_stairs", RecipeCategory.BUILDING_BLOCKS, Blocks.BAMBOO_MOSAIC, Blocks.BAMBOO_MOSAIC_STAIRS);
+        sawmillingRecipe("bamboo_mosaic_slabs", RecipeCategory.BUILDING_BLOCKS, Blocks.BAMBOO_MOSAIC, Blocks.BAMBOO_MOSAIC_SLAB, 2);
     }
 
     private void woodRecipes() {
-        getWood();
-        for (String[] woodType : woodTypes) {
-            String modid = woodType[0];
-            namespace = modid;
+        for (String[] woodType : getWood()) {
+            String modId = woodType[0];
             String woodName = woodType[1];
             String logKind;
             String woodKind;
@@ -422,53 +425,65 @@ public class ModRecipesGenerator extends RecipeResources {
             Item crossedBars = null;
             Item horizontalBars = null;
             Item horizontalCrossedBars = null;
-            Item planks = getItem(RL(woodName + "_planks"));
-            Item stairs = getItem(RL(woodName + "_stairs"));
-            Item slab = getItem(RL(woodName + "_slab"));
+            Item planks = getItem(new ResourceLocation(modId, woodName + "_planks"));
+            Item stairs = getItem(new ResourceLocation(modId, woodName + "_stairs"));
+            Item slab = getItem(new ResourceLocation(modId, woodName + "_slab"));
 
             try {
                 logKind = "_log";
-                log = getItem(RL(woodName + logKind));
+                log = getItem(new ResourceLocation(modId, woodName + logKind));
             }
             catch (Exception e) {
-                logKind = "_stem";
-                log = getItem(RL(woodName + logKind));
+                try {
+                    logKind = "_stem";
+                    log = getItem(new ResourceLocation(modId, woodName + logKind));
+                }
+                catch (Exception e1) {
+                    logKind = "_block";
+                    log = getItem(new ResourceLocation(modId, woodName + logKind));
+                }
             }
 
             try {
                 woodKind = "_wood";
-                wood = getItem(RL(woodName + woodKind));
+                wood = getItem(new ResourceLocation(modId, woodName + woodKind));
             }
             catch (Exception e) {
-                woodKind = "_hyphae";
-                wood = getItem(RL(woodName + woodKind));
+                try {
+                    woodKind = "_hyphae";
+                    wood = getItem(new ResourceLocation(modId, woodName + woodKind));
+                }
+                catch (Exception e1) {
+                    woodKind = "_block";
+                    wood = getItem(new ResourceLocation(modId, woodName + woodKind));
+                }
             }
 
-            Item strippedLog = getItem(RL("stripped_" + woodName + logKind));
-            Item strippedWood = getItem(RL("stripped_" + woodName + woodKind));
+            Item strippedLog = getItem(new ResourceLocation(modId, "stripped_" + woodName + logKind));
+            Item strippedWood = getItem(new ResourceLocation(modId, "stripped_" + woodName + woodKind));
             String s = logKind + "s";
-            TagKey<Item> logTypes = ItemTags.create(new ResourceLocation(modid + ":" + woodName + s));
+            TagKey<Item> logTypes = ItemTags.create(new ResourceLocation(modId + ":" + woodName + s));
 
             sawmillingRecipe(woodName + "_planks", RecipeCategory.BUILDING_BLOCKS, logTypes, planks, 4);
             sawmillingRecipe(woodName + "_slab", RecipeCategory.BUILDING_BLOCKS, planks, slab, 2);
             sawmillingRecipe(woodName + "_stairs", RecipeCategory.BUILDING_BLOCKS, planks, stairs);
             sawmillingRecipe("stripped_" + woodName + s, RecipeCategory.BUILDING_BLOCKS, log, strippedLog);
             sawmillingRecipe("stripped_" + woodName + woodKind, RecipeCategory.BUILDING_BLOCKS, wood, strippedWood);
-            sawmillingRecipe(woodName + "_door", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_door")), 3);
-            sawmillingRecipe(woodName + "_fence", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_fence")), 3);
-            sawmillingRecipe(woodName + "_fence_gate", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_fence_gate")), 1);
+            sawmillingRecipe(woodName + "_door", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(new ResourceLocation(modId, woodName + "_door")), 3);
+            sawmillingRecipe(woodName + "_fence", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(new ResourceLocation(modId, woodName + "_fence")), 3);
+            sawmillingRecipe(woodName + "_fence_gate", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(new ResourceLocation(modId, woodName + "_fence_gate")), 1);
             sawmillingRecipe(woodName + "_slab_from" + s, RecipeCategory.BUILDING_BLOCKS, logTypes, slab, 8);
             sawmillingRecipe(woodName + "_stairs_from" + s, RecipeCategory.BUILDING_BLOCKS, logTypes, stairs, 4);
-            sawmillingRecipe(woodName + "_trapdoor", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_trapdoor")), 2);
+            sawmillingRecipe(woodName + "_trapdoor", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(new ResourceLocation(modId, woodName + "_trapdoor")), 2);
 
             try {
-                sawmillingRecipe(woodName + "_boat", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_boat")), 1);
+                sawmillingRecipe(woodName + "_boat", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(new ResourceLocation(modId, woodName + "_boat")), 1);
             }
             catch (Exception e) {
             }
 
             try {
-                sawmillingRecipe(woodName + "_sign", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_sign")), 3);
+                sawmillingRecipe(woodName + "_sign", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(new ResourceLocation(modId, woodName + "_sign")), 3);
             }
             catch (Exception e) {
             }
@@ -527,7 +542,8 @@ public class ModRecipesGenerator extends RecipeResources {
         }
     }
 
-    private void getWood() {
+    private List<String[]> getWood() {
+        List<String[]> woodTypes = new ArrayList<>();
         for (int i = 0; i < ForgeRegistries.BLOCKS.getValues().size(); i++) {
             Block block = ForgeRegistries.BLOCKS.getValues().stream().toList().get(i);
             if (Util.getBlockRegistryName(block).getPath().contains("_log") && !Util.getBlockRegistryName(block).getPath().contains("stripped_")) {
@@ -536,16 +552,15 @@ public class ModRecipesGenerator extends RecipeResources {
             }
         }
 
-        String[] object = {CutAndColored.MC_MOD_ID, "crimson"};
-        woodTypes.add(object);
-        String[] object2 = {CutAndColored.MC_MOD_ID, "warped"};
-        woodTypes.add(object2);
+        String[] crimsonType = {CutAndColored.MC_MOD_ID, "crimson"};
+        woodTypes.add(crimsonType);
+        String[] warpedType = {CutAndColored.MC_MOD_ID, "warped"};
+        woodTypes.add(warpedType);
+        String[] bambooType = {CutAndColored.MC_MOD_ID, "bamboo"};
+        woodTypes.add(bambooType);
 
         CutAndColored.LOGGER.debug("Found " + woodTypes.size() + " wood types");
-    }
-
-    private ResourceLocation RL(String string) {
-        return new ResourceLocation(namespace, string);
+        return woodTypes;
     }
 
     private void vanillaColoredRecipes() {
