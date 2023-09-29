@@ -45,5 +45,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "cutandcolored:blocks/blue_stained_glass_slab"
 }

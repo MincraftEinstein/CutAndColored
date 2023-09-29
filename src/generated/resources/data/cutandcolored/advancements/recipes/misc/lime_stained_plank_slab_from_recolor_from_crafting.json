@@ -20,13 +20,14 @@
   },
   "requirements": [
     [
-      "has_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "cutandcolored:lime_stained_plank_slab_from_recolor_from_crafting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

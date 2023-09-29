@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "cutandcolored:purple_stained_glass_window_pane_from_glasscutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

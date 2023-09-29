@@ -46,15 +46,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_soul_sandstone",
       "has_chiseled_soul_sandstone",
-      "has_cut_soul_sandstone",
-      "has_the_recipe"
+      "has_cut_soul_sandstone"
     ]
   ],
   "rewards": {
     "recipes": [
       "cutandcolored:soul_sandstone_stairs_from_crafting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

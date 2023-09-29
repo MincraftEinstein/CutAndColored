@@ -30,5 +30,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "cutandcolored:blocks/white_stained_brick_slab"
 }

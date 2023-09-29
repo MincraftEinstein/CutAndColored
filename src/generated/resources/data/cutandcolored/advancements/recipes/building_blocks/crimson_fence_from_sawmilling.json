@@ -20,13 +20,14 @@
   },
   "requirements": [
     [
-      "has_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "cutandcolored:crimson_fence_from_sawmilling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

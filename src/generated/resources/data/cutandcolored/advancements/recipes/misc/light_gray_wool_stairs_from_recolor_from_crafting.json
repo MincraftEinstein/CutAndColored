@@ -20,13 +20,14 @@
   },
   "requirements": [
     [
-      "has_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "cutandcolored:light_gray_wool_stairs_from_recolor_from_crafting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

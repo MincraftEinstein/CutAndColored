@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "cutandcolored:light_blue_stained_plank_stairs_from_sawmilling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
