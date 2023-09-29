@@ -11,145 +11,160 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.List;
 
+import static einstein.cutandcolored.CutAndColored.loc;
+
 @OnlyIn(Dist.CLIENT)
-public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleItemRecipeMenu<R>, R extends AbstractSingleItemRecipe> extends AbstractContainerScreen<T> {
+public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleItemRecipeMenu<V>, V extends AbstractSingleItemRecipe> extends AbstractContainerScreen<T> {
+
+    private static final int SCROLLER_WIDTH = 12;
+    private static final int SCROLLER_HEIGHT = 15;
+    private static final int SCROLLABLE_HEIGHT = 54;
+    private static final int RECIPE_BUTTON_WIDTH = 16;
+    private static final int RECIPE_BUTTON_HEIGHT = 18;
+    private static final int RECIPE_COLUMNS = 4;
+    private static final int RECIPE_ROWS = 3;
+    private static final int RECIPE_LIST_X = 52;
+    private static final int RECIPE_LIST_Y = 14;
 
     private float scrollOffs;
     private boolean scrolling;
     private int startIndex;
     private boolean displayRecipes;
+    private final String texturePath;
 
-    public AbstractSingleItemRecipeScreen(T menu, Inventory inventory, Component component) {
-        super(menu, inventory, component);
+    public AbstractSingleItemRecipeScreen(T menu, Inventory inventory, Component title, String texturePath) {
+        super(menu, inventory, title);
         menu.registerUpdateListener(this::containerChanged);
         --titleLabelY;
+        this.texturePath = texturePath;
     }
 
-    protected abstract ResourceLocation getBackgroundTexture();
-
     @Override
-    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-        super.render(guiGraphics, mouseX, mouseY, partialTicks);
+    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
         renderTooltip(guiGraphics, mouseX, mouseY);
     }
 
     @Override
-    protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int x, int y) {
-        renderBackground(guiGraphics);
-        int i = leftPos;
-        int j = topPos;
-        guiGraphics.blit(getBackgroundTexture(), i, j, 0, 0, imageWidth, imageHeight);
-        int k = (int) (41 * scrollOffs);
-        guiGraphics.blit(getBackgroundTexture(), i + 119, j + 15 + k, 176 + (isScrollBarActive() ? 0 : 12), 0, 12, 15);
-        int l = leftPos + 52;
-        int i1 = topPos + 14;
+    protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
+        guiGraphics.blit(getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, imageHeight);
+        int i = (int) (41 * scrollOffs);
+        ResourceLocation scrollerLoc = isScrollBarActive() ? getScrollerSprite() : getScrollerDisabledSprite();
+        guiGraphics.blitSprite(scrollerLoc, leftPos + 119, topPos + 15 + i, SCROLLER_WIDTH, SCROLLER_HEIGHT);
+        int listStartX = leftPos + RECIPE_LIST_X;
+        int listStartY = topPos + RECIPE_LIST_Y;
         int j1 = startIndex + 12;
-        renderButtons(guiGraphics, x, y, l, i1, j1);
-        renderRecipes(guiGraphics, l, i1, j1);
+        renderButtons(guiGraphics, mouseX, mouseY, listStartX, listStartY, j1);
+        renderRecipes(guiGraphics, listStartX, listStartY, j1);
     }
 
     @Override
-    protected void renderTooltip(GuiGraphics guiGraphics, int x, int y) {
-        super.renderTooltip(guiGraphics, x, y);
+    protected void renderTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+        super.renderTooltip(guiGraphics, mouseX, mouseY);
         if (displayRecipes) {
-            int i = leftPos + 52;
-            int j = topPos + 14;
+            int listStartX = leftPos + RECIPE_LIST_X;
+            int listStartY = topPos + RECIPE_LIST_Y;
             int k = startIndex + 12;
-            List<R> list = menu.getRecipes();
+            List<RecipeHolder<V>> recipes = menu.getRecipes();
 
             for (int l = startIndex; l < k && l < menu.getNumRecipes(); ++l) {
-                int i1 = l - startIndex;
-                int j1 = i + i1 % 4 * 16;
-                int k1 = j + i1 / 4 * 18 + 2;
-                if (x >= j1 && x < j1 + 16 && y >= k1 && y < k1 + 18) {
-                    guiGraphics.renderTooltip(font, list.get(l).getResultItem(minecraft.level.registryAccess()), x, y);
+                int i = l - startIndex;
+                int i1 = listStartX + i % 4 * RECIPE_BUTTON_WIDTH;
+                int i2 = listStartY + i / 4 * RECIPE_BUTTON_HEIGHT + 2;
+                if (mouseX >= i1 && mouseX < i1 + RECIPE_BUTTON_WIDTH && mouseY >= i2 && mouseY < i2 + RECIPE_BUTTON_HEIGHT) {
+                    guiGraphics.renderTooltip(font, recipes.get(l).value().getResultItem(minecraft.level.registryAccess()), mouseX, mouseY);
                 }
             }
         }
     }
 
-    private void renderButtons(GuiGraphics guiGraphics, int x, int y, int p_99345_, int p_99346_, int p_99347_) {
-        for (int i = startIndex; i < p_99347_ && i < menu.getNumRecipes(); ++i) {
+    private void renderButtons(GuiGraphics guiGraphics, int mouseX, int mouseY, int listStartX, int listStartY, int apdwo) {
+        for (int i = startIndex; i < apdwo && i < menu.getNumRecipes(); ++i) {
             int j = i - startIndex;
-            int k = p_99345_ + j % 4 * 16;
-            int l = j / 4;
-            int i1 = p_99346_ + l * 18 + 2;
-            int j1 = imageHeight;
+            int k = listStartX + j % RECIPE_COLUMNS * RECIPE_BUTTON_WIDTH;
+            int l = j / RECIPE_COLUMNS;
+            int i1 = listStartY + l * RECIPE_BUTTON_HEIGHT + 2;
+            ResourceLocation buttonLoc = getRecipeSprite();
             if (i == menu.getSelectedRecipeIndex()) {
-                j1 += 18;
+                buttonLoc = getRecipeSelectedSprite();
             }
-            else if (x >= k && y >= i1 && x < k + 16 && y < i1 + 18) {
-                j1 += 36;
+            else if (mouseX >= k && mouseY >= i1 && mouseX < k + RECIPE_BUTTON_WIDTH && mouseY < i1 + RECIPE_BUTTON_HEIGHT) {
+                buttonLoc = getRecipeHighlightedSprite();
             }
-            guiGraphics.blit(getBackgroundTexture(), k, i1 - 1, 0, j1, 16, 18);
+
+            guiGraphics.blitSprite(buttonLoc, k, i1 - 1, 16, 18);
         }
     }
 
-    private void renderRecipes(GuiGraphics guiGraphics, int left, int top, int offset) {
-        List<R> list = menu.getRecipes();
-        for (int i = startIndex; i < offset && i < menu.getNumRecipes(); ++i) {
+    private void renderRecipes(GuiGraphics guiGraphics, int listStartX, int listStartY, int awdwad) {
+        List<RecipeHolder<V>> recipes = menu.getRecipes();
+
+        for (int i = startIndex; i < awdwad && i < menu.getNumRecipes(); ++i) {
             int j = i - startIndex;
-            int k = left + j % 4 * 16;
-            int l = j / 4;
-            int i1 = top + l * 18 + 2;
-            guiGraphics.renderItem(list.get(i).getResultItem(minecraft.level.registryAccess()), k, i1);
+            int x = listStartX + j % RECIPE_COLUMNS * RECIPE_BUTTON_WIDTH;
+            int l = j / RECIPE_COLUMNS;
+            int y = listStartY + l * RECIPE_BUTTON_HEIGHT + 2;
+            guiGraphics.renderItem(recipes.get(i).value().getResultItem(minecraft.level.registryAccess()), x, y);
         }
     }
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+    public boolean mouseClicked(double mouseX, double mouseY, int mouseButton) {
         scrolling = false;
         if (displayRecipes) {
-            int i = leftPos + 52;
-            int j = topPos + 14;
+            int listStartX = leftPos + RECIPE_LIST_X;
+            int listStartY = topPos + RECIPE_LIST_Y;
             int k = startIndex + 12;
 
-            for (int l = startIndex; l < k; ++l) {
-                int i1 = l - startIndex;
-                double d0 = mouseX - (i + i1 % 4 * 16);
-                double d1 = mouseY - (j + i1 / 4 * 18);
-                if (d0 >= 0 && d1 >= 0 && d0 < 16 && d1 < 18 && menu.clickMenuButton(minecraft.player, l)) {
+            for (int button = startIndex; button < k; ++button) {
+                int i1 = button - startIndex;
+                double d0 = mouseX - (double) (listStartX + i1 % 4 * RECIPE_BUTTON_WIDTH);
+                double d1 = mouseY - (double) (listStartY + i1 / 4 * RECIPE_BUTTON_HEIGHT);
+                if (d0 >= 0 && d1 >= 0 && d0 < RECIPE_BUTTON_WIDTH && d1 < RECIPE_BUTTON_HEIGHT && menu.clickMenuButton(minecraft.player, button)) {
                     Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1));
-                    minecraft.gameMode.handleInventoryButtonClick((menu).containerId, l);
+                    minecraft.gameMode.handleInventoryButtonClick(menu.containerId, button);
                     return true;
                 }
             }
-            i = leftPos + 119;
-            j = topPos + 9;
-            if (mouseX >= i && mouseX < (i + 12) && mouseY >= j && mouseY < (j + 54)) {
+
+            listStartX = leftPos + 119;
+            listStartY = topPos + 9;
+            if (mouseX >= listStartX && mouseX < listStartX + SCROLLER_WIDTH && mouseY >= listStartY && mouseY < listStartY + SCROLLABLE_HEIGHT) {
                 scrolling = true;
             }
         }
-        return super.mouseClicked(mouseX, mouseY, button);
+
+        return super.mouseClicked(mouseX, mouseY, mouseButton);
     }
 
     @Override
     public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
         if (scrolling && isScrollBarActive()) {
-            int i = topPos + 14;
-            int j = i + 54;
-            scrollOffs = ((float) mouseY - (float) i - 7.5F) / ((float) (j - i) - 15);
+            int startY = topPos + 14;
+            int endY = startY + SCROLLABLE_HEIGHT;
+            scrollOffs = (float) ((mouseY - startY - 7.5F) / ((endY - startY) - SCROLLER_HEIGHT));
             scrollOffs = Mth.clamp(scrollOffs, 0, 1);
             startIndex = (int) ((scrollOffs * getOffscreenRows()) + 0.5D) * 4;
             return true;
         }
-        else {
-            return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
-        }
+        return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
     }
 
-    public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
+    @Override
+    public boolean mouseScrolled(double mouseX, double mouseY, double d, double d1) {
         if (isScrollBarActive()) {
             int i = getOffscreenRows();
-            scrollOffs = (float) (scrollOffs - delta / i);
-            scrollOffs = Mth.clamp(scrollOffs, 0, 1);
-            startIndex = (int) ((scrollOffs * i) + 0.5D) * 4;
+            float f = (float) d1 / (float) i;
+            scrollOffs = Mth.clamp(scrollOffs - f, 0.0F, 1.0F);
+            startIndex = (int) ((double) (scrollOffs * (float) i) + 0.5D) * 4;
         }
+
         return true;
     }
 
@@ -158,7 +173,7 @@ public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleIte
     }
 
     protected int getOffscreenRows() {
-        return (menu.getNumRecipes() + 4 - 1) / 4 - 3;
+        return (menu.getNumRecipes() + 4 - 1) / 4 - RECIPE_ROWS;
     }
 
     private void containerChanged() {
@@ -167,5 +182,29 @@ public abstract class AbstractSingleItemRecipeScreen<T extends AbstractSingleIte
             scrollOffs = 0;
             startIndex = 0;
         }
+    }
+
+    protected ResourceLocation getBackgroundTexture() {
+        return loc("textures/gui/container/" + texturePath + ".png");
+    }
+
+    protected ResourceLocation getScrollerSprite() {
+        return loc("container/" + texturePath + "/scroller");
+    }
+
+    protected ResourceLocation getScrollerDisabledSprite() {
+        return loc("container/" + texturePath + "/scroller_disabled");
+    }
+
+    protected ResourceLocation getRecipeSprite() {
+        return loc("container/" + texturePath + "/recipe");
+    }
+
+    protected ResourceLocation getRecipeSelectedSprite() {
+        return loc("container/" + texturePath + "/recipe_selected");
+    }
+
+    protected ResourceLocation getRecipeHighlightedSprite() {
+        return loc("container/" + texturePath + "/recipe_highlighted");
     }
 }

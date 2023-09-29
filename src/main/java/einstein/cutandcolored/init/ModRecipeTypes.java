@@ -1,6 +1,7 @@
 package einstein.cutandcolored.init;
 
 import einstein.cutandcolored.CutAndColored;
+import einstein.cutandcolored.item.crafting.AbstractSingleItemRecipe;
 import einstein.cutandcolored.item.crafting.GlasscuttingRecipe;
 import einstein.cutandcolored.item.crafting.SawmillingRecipe;
 import einstein.cutandcolored.item.crafting.WeavingRecipe;
@@ -20,7 +21,7 @@ public class ModRecipeTypes {
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPE = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, CutAndColored.MOD_ID);
 
     public static final RecipeType<GlasscuttingRecipe> GLASSCUTTING_RECIPE = registerType("glasscutting");
-    public static final RegistryObject<RecipeSerializer<GlasscuttingRecipe>> GLASSCUTTING = register("glasscutting", () -> new GlasscuttingRecipe.Serializer(GlasscuttingRecipe::new), GLASSCUTTING_RECIPE);
+    public static final RegistryObject<RecipeSerializer<GlasscuttingRecipe>> GLASSCUTTING = register("glasscutting", () -> new AbstractSingleItemRecipe.Serializer<>(GlasscuttingRecipe::new), GLASSCUTTING_RECIPE);
 
     public static final RecipeType<WeavingRecipe> WEAVING_RECIPE = registerType("weaving");
     public static final RegistryObject<RecipeSerializer<WeavingRecipe>> WEAVING = register("weaving", () -> new WeavingRecipe.Serializer(WeavingRecipe::new), WEAVING_RECIPE);

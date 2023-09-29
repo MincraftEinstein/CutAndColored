@@ -8,8 +8,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 public class GlasscuttingRecipe extends AbstractSingleItemRecipe {
 
-    public GlasscuttingRecipe(ResourceLocation id, String group, Ingredient ingredient, ItemStack result) {
-        super(ModRecipeTypes.GLASSCUTTING_RECIPE, ModRecipeTypes.GLASSCUTTING.get(), id, group, ingredient, result);
+    public GlasscuttingRecipe(String group, Ingredient ingredient, ItemStack result) {
+        super(ModRecipeTypes.GLASSCUTTING_RECIPE, ModRecipeTypes.GLASSCUTTING.get(), group, ingredient, result);
     }
 
     @Override

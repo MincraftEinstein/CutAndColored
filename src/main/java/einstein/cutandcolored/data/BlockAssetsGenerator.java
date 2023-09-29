@@ -398,7 +398,7 @@ public class BlockAssetsGenerator extends BlockStateProvider {
     }
 
     private static ResourceLocation blockRL(String string) {
-        return new ResourceLocation(CutAndColored.MOD_ID, "block/" + string);
+        return CutAndColored.loc("block/" + string);
     }
 
     private static ResourceLocation blockMCRL(String string) {

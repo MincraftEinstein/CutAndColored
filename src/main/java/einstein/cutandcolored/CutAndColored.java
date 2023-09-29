@@ -11,6 +11,7 @@ import einstein.cutandcolored.tags.ItemTagsGenerator;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -72,5 +73,13 @@ public class CutAndColored {
         // Client providers
         generator.addProvider(event.includeClient(), new BlockAssetsGenerator(output, helper));
         generator.addProvider(event.includeClient(), new ItemModelsGenerator(output, helper));
+    }
+
+    public static ResourceLocation loc(String path) {
+        return new ResourceLocation(MOD_ID, path);
+    }
+
+    public static ResourceLocation mcLoc(String path) {
+        return new ResourceLocation(MC_MOD_ID, path);
     }
 }

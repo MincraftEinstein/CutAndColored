@@ -11,17 +11,22 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.RecipeType;
 
+import java.util.List;
 import java.util.Objects;
 
 @JeiPlugin
-public class JEIPlugin implements IModPlugin {
+public class ModJEIPlugin implements IModPlugin {
 
     @Override
     public ResourceLocation getPluginUid() {
-        return new ResourceLocation(CutAndColored.MOD_ID, "jei_plugin");
+        return CutAndColored.loc("jei_plugin");
     }
 
     @Override
@@ -33,12 +38,10 @@ public class JEIPlugin implements IModPlugin {
     }
 
     @Override
-    @SuppressWarnings("resource")
     public void registerRecipes(IRecipeRegistration registration) {
-        RecipeManager recipeManager = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
-        registration.addRecipes(ModJEIRecipeTypes.GLASSCUTTING, recipeManager.getAllRecipesFor(ModRecipeTypes.GLASSCUTTING_RECIPE));
-        registration.addRecipes(ModJEIRecipeTypes.SAWMILLING, recipeManager.getAllRecipesFor(ModRecipeTypes.SAWMILLING_RECIPE));
-        registration.addRecipes(ModJEIRecipeTypes.WEAVING, recipeManager.getAllRecipesFor(ModRecipeTypes.WEAVING_RECIPE));
+        registration.addRecipes(ModJEIRecipeTypes.GLASSCUTTING, getRecipesForType(ModRecipeTypes.GLASSCUTTING_RECIPE));
+        registration.addRecipes(ModJEIRecipeTypes.SAWMILLING, getRecipesForType(ModRecipeTypes.SAWMILLING_RECIPE));
+        registration.addRecipes(ModJEIRecipeTypes.WEAVING, getRecipesForType(ModRecipeTypes.WEAVING_RECIPE));
     }
 
     @Override
@@ -46,5 +49,10 @@ public class JEIPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.GLASSCUTTER.get()), ModJEIRecipeTypes.GLASSCUTTING);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.SAWMILL.get()), ModJEIRecipeTypes.SAWMILLING);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.WEAVER.get()), ModJEIRecipeTypes.WEAVING);
+    }
+
+    private static <T extends Recipe<V>, V extends Container> List<T> getRecipesForType(RecipeType<T> type) {
+        RecipeManager manager = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
+        return manager.getAllRecipesFor(type).stream().map(RecipeHolder::value).toList();
     }
 }

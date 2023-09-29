@@ -6,10 +6,7 @@ import einstein.cutandcolored.tags.ItemTagsGenerator;
 import einstein.cutandcolored.util.RecipeResources;
 import einstein.cutandcolored.util.Util;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -24,7 +21,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
+
+import static einstein.cutandcolored.CutAndColored.loc;
+import static einstein.cutandcolored.CutAndColored.mcLoc;
 
 public class ModRecipesGenerator extends RecipeResources {
 
@@ -36,8 +35,7 @@ public class ModRecipesGenerator extends RecipeResources {
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        setConsumer(consumer);
+    protected void buildRecipes() {
         buildCraftingRecipes();
         buildGlasscuttingRecipes();
         buildWeavingRecipes();
@@ -54,10 +52,10 @@ public class ModRecipesGenerator extends RecipeResources {
             String type = CutAndColored.BOARD_TYPES[i];
             String slab = type + "_board_slab";
             String stairs = type + "_board_stairs";
-            Item block = getItem(modRL(type + "_boards"));
+            Item block = getItem(loc(type + "_boards"));
 
-            slabsRecipe(slab, block, getItem(modRL(slab)), "board_slabs");
-            stairsRecipe(stairs, block, getItem(modRL(stairs)), "board_stairs");
+            slabsRecipe(slab, block, getItem(loc(slab)), "board_slabs");
+            stairsRecipe(stairs, block, getItem(loc(stairs)), "board_stairs");
         }
 
         pillarRecipe(Blocks.END_STONE_BRICK_SLAB, ModBlocks.CHISELED_END_STONE_BRICKS.get(), 1);
@@ -103,7 +101,7 @@ public class ModRecipesGenerator extends RecipeResources {
                 .define('#', Items.DIAMOND)
                 .define('$', Blocks.STONE)
                 .unlockedBy("has_item", has(Items.DIAMOND))
-                .save(consumer, location(ModBlocks.GLASSCUTTER.get(), Type.CRAFTING));
+                .save(output, location(ModBlocks.GLASSCUTTER.get(), Type.CRAFTING));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.IRON_FENCE_GATE.get())
                 .pattern("$#$")
@@ -111,7 +109,7 @@ public class ModRecipesGenerator extends RecipeResources {
                 .define('#', Items.IRON_INGOT)
                 .define('$', Items.IRON_NUGGET)
                 .unlockedBy("has_item", has(Items.IRON_INGOT))
-                .save(consumer, location(ModBlocks.IRON_FENCE_GATE.get(), Type.CRAFTING));
+                .save(output, location(ModBlocks.IRON_FENCE_GATE.get(), Type.CRAFTING));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.NETHER_BRICK_FENCE_GATE.get())
                 .pattern("$#$")
@@ -119,7 +117,7 @@ public class ModRecipesGenerator extends RecipeResources {
                 .define('#', Blocks.NETHER_BRICKS)
                 .define('$', Items.NETHER_BRICK)
                 .unlockedBy("has_item", has(Blocks.NETHER_BRICKS))
-                .save(consumer, location(ModBlocks.NETHER_BRICK_FENCE_GATE.get(), Type.CRAFTING));
+                .save(output, location(ModBlocks.NETHER_BRICK_FENCE_GATE.get(), Type.CRAFTING));
 
         pillarRecipe(Blocks.POLISHED_BLACKSTONE, ModBlocks.POLISHED_BLACKSTONE_PILLAR.get(), 2);
 
@@ -142,7 +140,7 @@ public class ModRecipesGenerator extends RecipeResources {
                 .define('#', Items.IRON_INGOT)
                 .define('$', ItemTags.PLANKS)
                 .unlockedBy("has_item", has(Items.IRON_INGOT))
-                .save(consumer, location(ModBlocks.SAWMILL.get(), Type.CRAFTING));
+                .save(output, location(ModBlocks.SAWMILL.get(), Type.CRAFTING));
 
         slabsRecipe("smooth_soul_sandstone_slab", ModBlocks.SMOOTH_SOUL_SANDSTONE.get(), ModBlocks.SMOOTH_SOUL_SANDSTONE_SLAB.get(), "");
         stairsRecipe("smooth_soul_sandstone_stairs", ModBlocks.SMOOTH_SOUL_SANDSTONE.get(), ModBlocks.SMOOTH_SOUL_SANDSTONE_STAIRS.get(), "");
@@ -158,21 +156,21 @@ public class ModRecipesGenerator extends RecipeResources {
                 .pattern("###")
                 .define('#', ModBlocks.SOUL_GLASS.get())
                 .unlockedBy("has_item", has(ModBlocks.SOUL_GLASS.get()))
-                .save(consumer, location(ModBlocks.SOUL_GLASS_PANE.get(), Type.CRAFTING));
+                .save(output, location(ModBlocks.SOUL_GLASS_PANE.get(), Type.CRAFTING));
         wallsRecipe("tinted_glass_window_pane", ModBlocks.TINTED_GLASS_WINDOW.get(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get(), "");
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TINTED_GLASS_PANE.get(), 16)
                 .pattern("###")
                 .pattern("###")
                 .define('#', Blocks.TINTED_GLASS)
                 .unlockedBy("has_item", has(Blocks.TINTED_GLASS))
-                .save(consumer, location(ModBlocks.TINTED_GLASS_PANE.get(), Type.CRAFTING));
+                .save(output, location(ModBlocks.TINTED_GLASS_PANE.get(), Type.CRAFTING));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOUL_SANDSTONE_SLAB.get(), 6)
                 .pattern("###")
                 .define('#', Ingredient.of(ModBlocks.SOUL_SANDSTONE.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get()))
                 .unlockedBy("has_soul_sandstone", has(ModBlocks.SOUL_SANDSTONE.get()))
                 .unlockedBy("has_chiseled_soul_sandstone", has(ModBlocks.CHISELED_SOUL_SANDSTONE.get()))
-                .save(consumer, location("soul_sandstone_slab", Type.CRAFTING));
+                .save(output, location("soul_sandstone_slab", Type.CRAFTING));
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOUL_SANDSTONE_STAIRS.get(), 4)
                 .pattern("#  ")
                 .pattern("## ")
@@ -181,7 +179,7 @@ public class ModRecipesGenerator extends RecipeResources {
                 .unlockedBy("has_soul_sandstone", has(ModBlocks.SOUL_SANDSTONE.get()))
                 .unlockedBy("has_chiseled_soul_sandstone", has(ModBlocks.CHISELED_SOUL_SANDSTONE.get()))
                 .unlockedBy("has_cut_soul_sandstone", has(ModBlocks.CUT_SOUL_SANDSTONE.get()))
-                .save(consumer, location("soul_sandstone_stairs", Type.CRAFTING));
+                .save(output, location("soul_sandstone_stairs", Type.CRAFTING));
         wallsRecipe("soul_sandstone_wall", ModBlocks.SOUL_SANDSTONE.get(), ModBlocks.SOUL_SANDSTONE_WALL.get(), "");
         blockRecipe4x4("soul_sandstone", Blocks.SOUL_SAND, ModBlocks.SOUL_SANDSTONE.get(), 1);
 
@@ -196,7 +194,7 @@ public class ModRecipesGenerator extends RecipeResources {
                 .define('~', Items.STRING)
                 .define('$', ItemTags.PLANKS)
                 .unlockedBy("has_item", has(Items.STRING))
-                .save(consumer, location(ModBlocks.WEAVER.get(), Type.CRAFTING));
+                .save(output, location(ModBlocks.WEAVER.get(), Type.CRAFTING));
 
         slabsRecipe("calcite_slab", Blocks.CALCITE, ModBlocks.CALCITE_SLAB.get(), "");
         stairsRecipe("calcite_stairs", Blocks.CALCITE, ModBlocks.CALCITE_STAIRS.get(), "");
@@ -220,24 +218,24 @@ public class ModRecipesGenerator extends RecipeResources {
     private void buildGlasscuttingRecipes() {
         for (int i = 0; i < DyeColor.values().length; i++) {
             String color = DyeColor.byId(i).getName();
-            Item glass = getItem(MCRL(color + "_stained_glass"));
+            Item glass = getItem(mcLoc(color + "_stained_glass"));
             TagKey<Item> tag = ItemTags.create(new ResourceLocation("forge", "glass/" + color));
 
-            Item pane = getItem(MCRL(color + "_stained_glass_pane"));
+            Item pane = getItem(mcLoc(color + "_stained_glass_pane"));
             glasscuttingRecipe(Util.getItemRegistryName(pane).getPath(), RecipeCategory.BUILDING_BLOCKS, glass, pane, 4);
 
-            Item slab = getItem(modRL(color + "_stained_glass_slab"));
+            Item slab = getItem(loc(color + "_stained_glass_slab"));
             glasscuttingRecipe(Util.getItemRegistryName(slab).getPath(), RecipeCategory.BUILDING_BLOCKS, glass, slab, 2);
 
-            Item stairs = getItem(modRL(color + "_stained_glass_stairs"));
+            Item stairs = getItem(loc(color + "_stained_glass_stairs"));
             glasscuttingRecipe(Util.getItemRegistryName(stairs).getPath(), RecipeCategory.BUILDING_BLOCKS, glass, stairs);
 
-            Item window = getItem(modRL(color + "_stained_glass_window"));
+            Item window = getItem(loc(color + "_stained_glass_window"));
             glasscuttingRecipe(Util.getItemRegistryName(window).getPath(), RecipeCategory.BUILDING_BLOCKS, glass, window);
 
-            Item windowPane = getItem(modRL(color + "_stained_glass_window_pane"));
+            Item windowPane = getItem(loc(color + "_stained_glass_window_pane"));
             glasscuttingRecipe(Util.getItemRegistryName(windowPane).getPath() + "_from_glass", RecipeCategory.BUILDING_BLOCKS, tag, windowPane, 4);
-            glasscuttingRecipe(Util.getItemRegistryName(windowPane).getPath(), RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(color + "_stained_glass_pane")), windowPane);
+            glasscuttingRecipe(Util.getItemRegistryName(windowPane).getPath(), RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc(color + "_stained_glass_pane")), windowPane);
         }
 
         glasscuttingRecipe("glass_bottle", RecipeCategory.BUILDING_BLOCKS, Tags.Items.GLASS_COLORLESS, Items.GLASS_BOTTLE);
@@ -266,15 +264,15 @@ public class ModRecipesGenerator extends RecipeResources {
     private void buildWeavingRecipes() {
         for (DyeColor dyeColor : DyeColor.values()) {
             String color = dyeColor.getName();
-            Item item = getItem(MCRL(color + "_wool"));
+            Item item = getItem(mcLoc(color + "_wool"));
 
-            Item carpet = getItem(MCRL(color + "_carpet"));
+            Item carpet = getItem(mcLoc(color + "_carpet"));
             weavingRecipe(Util.getItemRegistryName(carpet).getPath(), RecipeCategory.BUILDING_BLOCKS, item, carpet, 2);
 
-            Item slab = getItem(modRL(color + "_wool_slab"));
+            Item slab = getItem(loc(color + "_wool_slab"));
             weavingRecipe(Util.getItemRegistryName(slab).getPath(), RecipeCategory.BUILDING_BLOCKS, item, slab, 2);
 
-            Item stairs = getItem(modRL(color + "_wool_stairs"));
+            Item stairs = getItem(loc(color + "_wool_stairs"));
             weavingRecipe(Util.getItemRegistryName(stairs).getPath(), RecipeCategory.BUILDING_BLOCKS, item, stairs);
         }
     }
@@ -284,33 +282,33 @@ public class ModRecipesGenerator extends RecipeResources {
             String color = DyeColor.byId(i).getName();
 
             String type = color + "_concrete";
-            stonecuttingRecipe(type + "_slab", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_slab")), 2);
-            stonecuttingRecipe(type + "_stairs", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_stairs")));
+            stonecuttingRecipe(type + "_slab", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc(type)), getItem(loc(type + "_slab")), 2);
+            stonecuttingRecipe(type + "_stairs", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc(type)), getItem(loc(type + "_stairs")));
 
             type = color + "_stained_brick";
-            stonecuttingRecipe(type + "_slab", RecipeCategory.BUILDING_BLOCKS, getItem(modRL(type + "s")), getItem(modRL(type + "_slab")), 2);
-            stonecuttingRecipe(type + "_stairs", RecipeCategory.BUILDING_BLOCKS, getItem(modRL(type + "s")), getItem(modRL(type + "_stairs")));
-            stonecuttingRecipe(type + "_wall", RecipeCategory.BUILDING_BLOCKS, getItem(modRL(type + "s")), getItem(modRL(type + "_wall")));
+            stonecuttingRecipe(type + "_slab", RecipeCategory.BUILDING_BLOCKS, getItem(loc(type + "s")), getItem(loc(type + "_slab")), 2);
+            stonecuttingRecipe(type + "_stairs", RecipeCategory.BUILDING_BLOCKS, getItem(loc(type + "s")), getItem(loc(type + "_stairs")));
+            stonecuttingRecipe(type + "_wall", RecipeCategory.BUILDING_BLOCKS, getItem(loc(type + "s")), getItem(loc(type + "_wall")));
 
             type = color + "_terracotta";
-            stonecuttingRecipe(type + "_slab", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_slab")), 2);
-            stonecuttingRecipe(type + "_stairs", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_stairs")));
+            stonecuttingRecipe(type + "_slab", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc(type)), getItem(loc(type + "_slab")), 2);
+            stonecuttingRecipe(type + "_stairs", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc(type)), getItem(loc(type + "_stairs")));
         }
 
         String[] stoneTypes = {"andesite", "diorite", "granite"};
         for (String type : stoneTypes) {
-            stonecuttingRecipe(type + "_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_bricks")));
-            stonecuttingRecipe(type + "_bricks_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL("polished_" + type)), getItem(modRL(type + "_bricks")));
-            stonecuttingRecipe(type + "_brick_slab", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_brick_slab")), 2);
-            stonecuttingRecipe(type + "_brick_slab_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL("polished_" + type)), getItem(modRL(type + "_brick_slab")), 2);
-            stonecuttingRecipe(type + "_brick_slab_from_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(modRL(type + "_bricks")), getItem(modRL(type + "_brick_slab")), 2);
-            stonecuttingRecipe(type + "_brick_stairs", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_brick_stairs")));
-            stonecuttingRecipe(type + "_brick_stairs_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL("polished_" + type)), getItem(modRL(type + "_brick_stairs")));
-            stonecuttingRecipe(type + "_brick_stairs_from_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(modRL(type + "_bricks")), getItem(modRL(type + "_brick_stairs")));
-            stonecuttingRecipe(type + "_brick_wall", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL(type)), getItem(modRL(type + "_brick_wall")));
-            stonecuttingRecipe(type + "_brick_wall_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL("polished_" + type)), getItem(modRL(type + "_brick_wall")));
-            stonecuttingRecipe(type + "_brick_wall_from_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(modRL(type + "_bricks")), getItem(modRL(type + "_brick_wall")));
-            stonecuttingRecipe("polished_" + type + "_wall", RecipeCategory.BUILDING_BLOCKS, getItem(MCRL("polished_" + type)), getItem(modRL("polished_" + type + "_wall")));
+            stonecuttingRecipe(type + "_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc(type)), getItem(loc(type + "_bricks")));
+            stonecuttingRecipe(type + "_bricks_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc("polished_" + type)), getItem(loc(type + "_bricks")));
+            stonecuttingRecipe(type + "_brick_slab", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc(type)), getItem(loc(type + "_brick_slab")), 2);
+            stonecuttingRecipe(type + "_brick_slab_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc("polished_" + type)), getItem(loc(type + "_brick_slab")), 2);
+            stonecuttingRecipe(type + "_brick_slab_from_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(loc(type + "_bricks")), getItem(loc(type + "_brick_slab")), 2);
+            stonecuttingRecipe(type + "_brick_stairs", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc(type)), getItem(loc(type + "_brick_stairs")));
+            stonecuttingRecipe(type + "_brick_stairs_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc("polished_" + type)), getItem(loc(type + "_brick_stairs")));
+            stonecuttingRecipe(type + "_brick_stairs_from_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(loc(type + "_bricks")), getItem(loc(type + "_brick_stairs")));
+            stonecuttingRecipe(type + "_brick_wall", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc(type)), getItem(loc(type + "_brick_wall")));
+            stonecuttingRecipe(type + "_brick_wall_from_polished", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc("polished_" + type)), getItem(loc(type + "_brick_wall")));
+            stonecuttingRecipe(type + "_brick_wall_from_bricks", RecipeCategory.BUILDING_BLOCKS, getItem(loc(type + "_bricks")), getItem(loc(type + "_brick_wall")));
+            stonecuttingRecipe("polished_" + type + "_wall", RecipeCategory.BUILDING_BLOCKS, getItem(mcLoc("polished_" + type)), getItem(loc("polished_" + type + "_wall")));
         }
 
         stonecuttingRecipe("chiseled_end_stone_bricks", RecipeCategory.BUILDING_BLOCKS, Blocks.END_STONE, ModBlocks.CHISELED_END_STONE_BRICKS.get());
@@ -394,10 +392,10 @@ public class ModRecipesGenerator extends RecipeResources {
     private void buildSawmillingRecipes() {
         for (int i = 0; i < DyeColor.values().length; i++) {
             String color = DyeColor.byId(i).getName();
-            Item item = getItem(modRL(color + "_stained_planks"));
+            Item item = getItem(loc(color + "_stained_planks"));
 
-            sawmillingRecipe(color + "_stained_plank_slab", RecipeCategory.BUILDING_BLOCKS, item, getItem(modRL(color + "_stained_plank_slab")), 2);
-            sawmillingRecipe(color + "_stained_plank_stairs", RecipeCategory.BUILDING_BLOCKS, item, getItem(modRL(color + "_stained_plank_stairs")));
+            sawmillingRecipe(color + "_stained_plank_slab", RecipeCategory.BUILDING_BLOCKS, item, getItem(loc(color + "_stained_plank_slab")), 2);
+            sawmillingRecipe(color + "_stained_plank_stairs", RecipeCategory.BUILDING_BLOCKS, item, getItem(loc(color + "_stained_plank_stairs")));
         }
 
         woodRecipes();
@@ -476,9 +474,9 @@ public class ModRecipesGenerator extends RecipeResources {
             }
 
             try {
-                Item boards = getItem(modRL(woodName + "_boards"));
-                Item boardSlab = getItem(modRL(woodName + "_board_slab"));
-                Item boardStairs = getItem(modRL(woodName + "_board_stairs"));
+                Item boards = getItem(loc(woodName + "_boards"));
+                Item boardSlab = getItem(loc(woodName + "_board_slab"));
+                Item boardStairs = getItem(loc(woodName + "_board_stairs"));
 
                 sawmillingRecipe(woodName + "_boards_from" + s, RecipeCategory.BUILDING_BLOCKS, logTypes, boards, 4);
                 sawmillingRecipe(woodName + "_boards", RecipeCategory.BUILDING_BLOCKS, planks, boards);
@@ -553,69 +551,69 @@ public class ModRecipesGenerator extends RecipeResources {
     private void vanillaColoredRecipes() {
         for (int i = 0; i < DyeColor.values().length; i++) {
             String color = DyeColor.byId(i).getName();
-            Item dye = getItem(MCRL(color + "_dye"));
+            Item dye = getItem(mcLoc(color + "_dye"));
 
             // Concrete
             String blockKind = "_concrete";
             String block = color + blockKind;
-            slabsRecipe(block + "_slab", getItem(MCRL(block)), getItem(modRL(block + "_slab")), "concrete_slabs");
-            recolorObject(ItemTagsGenerator.CONCRETE_SLABS, getItem(modRL(block + "_slab")), color, "recolor_concrete_slabs");
-            stairsRecipe(block + "_stairs", getItem(MCRL(block)), getItem(modRL(block + "_stairs")), "concrete_stairs");
-            recolorObject(ItemTagsGenerator.CONCRETE_STAIRS, getItem(modRL(block + "_stairs")), color, "recolor_concrete_stairs");
+            slabsRecipe(block + "_slab", getItem(mcLoc(block)), getItem(loc(block + "_slab")), "concrete_slabs");
+            recolorObject(ItemTagsGenerator.CONCRETE_SLABS, getItem(loc(block + "_slab")), color, "recolor_concrete_slabs");
+            stairsRecipe(block + "_stairs", getItem(mcLoc(block)), getItem(loc(block + "_stairs")), "concrete_stairs");
+            recolorObject(ItemTagsGenerator.CONCRETE_STAIRS, getItem(loc(block + "_stairs")), color, "recolor_concrete_stairs");
 
             // Stained Bricks
             blockKind = "_stained_brick";
             block = color + blockKind + "s";
-            slabsRecipe(color + blockKind + "_slab", getItem(modRL(block)), getItem(modRL(color + blockKind + "_slab")), "stained_brick_slabs");
-            recolorObject(ItemTagsGenerator.CLAY_BRICK_SLABS, getItem(modRL(color + blockKind + "_slab")), color, "recolor_stained_brick_slabs");
-            stairsRecipe(color + blockKind + "_stairs", getItem(modRL(block)), getItem(modRL(color + blockKind + "_stairs")), "stained_brick_stairs");
-            recolorObject(ItemTagsGenerator.CLAY_BRICK_STAIRS, getItem(modRL(color + blockKind + "_stairs")), color, "recolor_stained_brick_stairs");
-            wallsRecipe(color + blockKind + "_wall", getItem(modRL(block)), getItem(modRL(color + blockKind + "_wall")), "stained_brick_walls");
-            recolorObject(ItemTagsGenerator.CLAY_BRICK_WALLS, getItem(modRL(color + blockKind + "_wall")), color, "recolor_stained_brick_walls");
-            recolorObject(ItemTagsGenerator.CLAY_BRICKS, getItem(modRL(block)), color, "recolor_stained_bricks");
+            slabsRecipe(color + blockKind + "_slab", getItem(loc(block)), getItem(loc(color + blockKind + "_slab")), "stained_brick_slabs");
+            recolorObject(ItemTagsGenerator.CLAY_BRICK_SLABS, getItem(loc(color + blockKind + "_slab")), color, "recolor_stained_brick_slabs");
+            stairsRecipe(color + blockKind + "_stairs", getItem(loc(block)), getItem(loc(color + blockKind + "_stairs")), "stained_brick_stairs");
+            recolorObject(ItemTagsGenerator.CLAY_BRICK_STAIRS, getItem(loc(color + blockKind + "_stairs")), color, "recolor_stained_brick_stairs");
+            wallsRecipe(color + blockKind + "_wall", getItem(loc(block)), getItem(loc(color + blockKind + "_wall")), "stained_brick_walls");
+            recolorObject(ItemTagsGenerator.CLAY_BRICK_WALLS, getItem(loc(color + blockKind + "_wall")), color, "recolor_stained_brick_walls");
+            recolorObject(ItemTagsGenerator.CLAY_BRICKS, getItem(loc(block)), color, "recolor_stained_bricks");
 
             // Stained Glass
             blockKind = "_stained_glass";
             block = color + blockKind;
-            recolorObject(ItemTagsGenerator.GLASS_SLABS, getItem(modRL(block + "_slab")), color, "recolor_stained_glass_slabs");
-            recolorObject(ItemTagsGenerator.GLASS_STAIRS, getItem(modRL(block + "_stairs")), color, "recolor_stained_glass_stairs");
-            wallsRecipe(block + "_window_pane", getItem(modRL(block + "_window")), getItem(modRL(block + "_window_pane")), "stained_glass_window_panes");
-            recolorObject(ItemTagsGenerator.GLASS_WINDOWS, getItem(modRL(block + "_window")), color, "recolor_stained_glass_windows");
-            recolorObject(ItemTagsGenerator.GLASS_WINDOW_PANES, getItem(modRL(block + "_window_pane")), color, "recolor_stained_glass_window_panes");
+            recolorObject(ItemTagsGenerator.GLASS_SLABS, getItem(loc(block + "_slab")), color, "recolor_stained_glass_slabs");
+            recolorObject(ItemTagsGenerator.GLASS_STAIRS, getItem(loc(block + "_stairs")), color, "recolor_stained_glass_stairs");
+            wallsRecipe(block + "_window_pane", getItem(loc(block + "_window")), getItem(loc(block + "_window_pane")), "stained_glass_window_panes");
+            recolorObject(ItemTagsGenerator.GLASS_WINDOWS, getItem(loc(block + "_window")), color, "recolor_stained_glass_windows");
+            recolorObject(ItemTagsGenerator.GLASS_WINDOW_PANES, getItem(loc(block + "_window_pane")), color, "recolor_stained_glass_window_panes");
 
             // Stained Planks
             blockKind = "_stained_plank";
             block = color + blockKind + "s";
-            slabsRecipe(color + blockKind + "_slab", getItem(modRL(block)), getItem(modRL(color + blockKind + "_slab")), "stained_plank_slabs");
-            recolorObject(ItemTags.WOODEN_SLABS, getItem(modRL(color + blockKind + "_slab")), color, "recolor_stained_plank_slabs");
-            stairsRecipe(color + blockKind + "_stairs", getItem(modRL(block)), getItem(modRL(color + blockKind + "_stairs")), "stained_plank_stairs");
-            recolorObject(ItemTags.WOODEN_STAIRS, getItem(modRL(color + blockKind + "_stairs")), color, "recolor_stained_plank_stairs");
-            recolorObject(ItemTags.PLANKS, getItem(modRL(block)), color, "recolor_stained_planks");
+            slabsRecipe(color + blockKind + "_slab", getItem(loc(block)), getItem(loc(color + blockKind + "_slab")), "stained_plank_slabs");
+            recolorObject(ItemTags.WOODEN_SLABS, getItem(loc(color + blockKind + "_slab")), color, "recolor_stained_plank_slabs");
+            stairsRecipe(color + blockKind + "_stairs", getItem(loc(block)), getItem(loc(color + blockKind + "_stairs")), "stained_plank_stairs");
+            recolorObject(ItemTags.WOODEN_STAIRS, getItem(loc(color + blockKind + "_stairs")), color, "recolor_stained_plank_stairs");
+            recolorObject(ItemTags.PLANKS, getItem(loc(block)), color, "recolor_stained_planks");
 
             // Terracotta
             blockKind = "_terracotta";
             block = color + blockKind;
-            slabsRecipe(block + "_slab", getItem(MCRL(block)), getItem(modRL(block + "_slab")), "colored_tarracotta_slabs");
-            recolorObject(ItemTagsGenerator.TERRACOTTA_SLABS, getItem(modRL(block + "_slab")), color, "recolored_tarracotta_slabs");
-            stairsRecipe(block + "_stairs", getItem(MCRL(block)), getItem(modRL(block + "_stairs")), "colored_tarracotta_stairs");
-            recolorObject(ItemTagsGenerator.TERRACOTTA_STAIRS, getItem(modRL(block + "_stairs")), color, "recolored_tarracotta_stairs");
+            slabsRecipe(block + "_slab", getItem(mcLoc(block)), getItem(loc(block + "_slab")), "colored_tarracotta_slabs");
+            recolorObject(ItemTagsGenerator.TERRACOTTA_SLABS, getItem(loc(block + "_slab")), color, "recolored_tarracotta_slabs");
+            stairsRecipe(block + "_stairs", getItem(mcLoc(block)), getItem(loc(block + "_stairs")), "colored_tarracotta_stairs");
+            recolorObject(ItemTagsGenerator.TERRACOTTA_STAIRS, getItem(loc(block + "_stairs")), color, "recolored_tarracotta_stairs");
 
             // Wool
             blockKind = "_wool";
             block = color + blockKind;
-            slabsRecipe(block + "_slab", getItem(MCRL(block)), getItem(modRL(block + "_slab")), "wool_slabs");
-            recolorObject(ItemTagsGenerator.WOOL_SLABS, getItem(modRL(block + "_slab")), color, "recolor_wool_slabs");
-            stairsRecipe(block + "_stairs", getItem(MCRL(block)), getItem(modRL(block + "_stairs")), "wool_stairs");
-            recolorObject(ItemTagsGenerator.WOOL_STAIRS, getItem(modRL(block + "_stairs")), color, "recolor_wool_stairs");
+            slabsRecipe(block + "_slab", getItem(mcLoc(block)), getItem(loc(block + "_slab")), "wool_slabs");
+            recolorObject(ItemTagsGenerator.WOOL_SLABS, getItem(loc(block + "_slab")), color, "recolor_wool_slabs");
+            stairsRecipe(block + "_stairs", getItem(mcLoc(block)), getItem(loc(block + "_stairs")), "wool_stairs");
+            recolorObject(ItemTagsGenerator.WOOL_STAIRS, getItem(loc(block + "_stairs")), color, "recolor_wool_stairs");
 
             // Redstone Lamps
             String name = color + "_redstone_lamp";
-            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, getItem(modRL(name)))
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, getItem(loc(name)))
                     .requires(ItemTagsGenerator.REDSTONE_LAMPS)
                     .requires(dye)
                     .group("redstone_lamp")
                     .unlockedBy("has_item", has(ItemTagsGenerator.REDSTONE_LAMPS))
-                    .save(consumer, location(name, Type.CRAFTING));
+                    .save(output, location(name, Type.CRAFTING));
         }
     }
 
@@ -624,10 +622,10 @@ public class ModRecipesGenerator extends RecipeResources {
         for (String stoneType : stoneTypes) {
             String type = stoneType + "_brick";
             String block = type + "s";
-            slabsRecipe(type + "_slab", getItem(modRL(block)), getItem(modRL(type + "_slab")), "");
-            stairsRecipe(type + "_stairs", getItem(modRL(block)), getItem(modRL(type + "_stairs")), "");
-            wallsRecipe(type + "_wall", getItem(modRL(block)), getItem(modRL(type + "_wall")), "");
-            blockRecipe4x4(block, getItem(MCRL("polished_" + stoneType)), getItem(modRL(block)), 4);
+            slabsRecipe(type + "_slab", getItem(loc(block)), getItem(loc(type + "_slab")), "");
+            stairsRecipe(type + "_stairs", getItem(loc(block)), getItem(loc(type + "_stairs")), "");
+            wallsRecipe(type + "_wall", getItem(loc(block)), getItem(loc(type + "_wall")), "");
+            blockRecipe4x4(block, getItem(mcLoc("polished_" + stoneType)), getItem(loc(block)), 4);
         }
     }
 }

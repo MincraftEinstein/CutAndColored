@@ -1,6 +1,5 @@
 package einstein.cutandcolored.inventory.container;
 
-import com.google.common.collect.Lists;
 import einstein.cutandcolored.item.crafting.AbstractSingleItemRecipe;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -11,27 +10,29 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemRecipe> extends AbstractContainerMenu {
 
-    private final MenuType<?> menuType;
     private final ContainerLevelAccess access;
     private final DataSlot selectedRecipeIndex = DataSlot.standalone();
     private final Level level;
-    private List<T> recipes = Lists.newArrayList();
+    private List<RecipeHolder<T>> recipes = new ArrayList<>();
     private ItemStack input = ItemStack.EMPTY;
     private long lastSoundTime;
     private final Slot inputSlot;
     private final Slot resultSlot;
     private Runnable slotUpdateListener = () -> {
     };
-    public final Container container = new SimpleContainer(1) {
+    private final Container container = new SimpleContainer(1) {
 
+        @Override
         public void setChanged() {
             super.setChanged();
             slotsChanged(this);
@@ -40,69 +41,60 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
     };
     private final ResultContainer resultContainer = new ResultContainer();
 
-    public AbstractSingleItemRecipeMenu(MenuType<?> menuType, int id, Inventory inventory) {
-        this(menuType, id, inventory, ContainerLevelAccess.NULL);
+    public AbstractSingleItemRecipeMenu(int id, Inventory inventory) {
+        this(id, inventory, ContainerLevelAccess.NULL);
     }
 
-    public AbstractSingleItemRecipeMenu(MenuType<?> menuType, int id, Inventory inventory, final ContainerLevelAccess levelAccess) {
-        super(menuType, id);
-        this.menuType = menuType;
-        this.access = levelAccess;
+    public AbstractSingleItemRecipeMenu(int id, Inventory inventory, ContainerLevelAccess access) {
+        super(MenuType.STONECUTTER, id);
+        this.access = access;
         level = inventory.player.level();
-        inputSlot = addSlot(new Slot(container, 0, 20, 33));
-        resultSlot = addSlot(new Slot(resultContainer, 1, 143, 33) {
+        inputSlot = addSlot(new Slot(container, StonecutterMenu.INPUT_SLOT, 20, 33));
+        resultSlot = addSlot(new Slot(resultContainer, StonecutterMenu.RESULT_SLOT, 143, 33) {
 
+            @Override
             public boolean mayPlace(ItemStack stack) {
                 return false;
             }
 
+            @Override
             public void onTake(Player player, ItemStack stack) {
                 stack.onCraftedBy(player.level(), player, stack.getCount());
-                resultContainer.awardUsedRecipes(player, getRelevantItems());
-                ItemStack itemstack = inputSlot.remove(1);
-                if (!itemstack.isEmpty()) {
+                resultContainer.awardUsedRecipes(player, List.of(inputSlot.getItem()));
+                ItemStack inputStack = inputSlot.remove(1);
+                if (!inputStack.isEmpty()) {
                     setupResultSlot();
                 }
 
-                levelAccess.execute((level, pos) -> {
-                    long gameTime = level.getGameTime();
-                    if (lastSoundTime != gameTime) {
+                access.execute((level, pos) -> {
+                    long time = level.getGameTime();
+                    if (lastSoundTime != time) {
                         level.playSound(null, pos, getCraftSound(), SoundSource.BLOCKS, 1, 1);
-                        lastSoundTime = gameTime;
+                        lastSoundTime = time;
                     }
                 });
                 super.onTake(player, stack);
             }
-
-            private List<ItemStack> getRelevantItems() {
-                return List.of(inputSlot.getItem());
-            }
         });
 
-        for (int i = 0; i < 3; ++i) {
-            for (int j = 0; j < 9; ++j) {
-                addSlot(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+        for (int y = 0; y < 3; ++y) {
+            for (int x = 0; x < 9; ++x) {
+                addSlot(new Slot(inventory, x + y * 9 + 9, 8 + x * 18, 84 + y * 18));
             }
         }
 
-        for (int k = 0; k < 9; ++k) {
-            addSlot(new Slot(inventory, k, 8 + k * 18, 142));
+        for (int x = 0; x < 9; ++x) {
+            addSlot(new Slot(inventory, x, 8 + x * 18, 142));
         }
 
         addDataSlot(selectedRecipeIndex);
     }
 
-    public abstract Block getBlock();
-
-    public abstract SoundEvent getCraftSound();
-
-    public abstract RecipeType<T> getRecipeType();
-
     public int getSelectedRecipeIndex() {
         return selectedRecipeIndex.get();
     }
 
-    public List<T> getRecipes() {
+    public List<RecipeHolder<T>> getRecipes() {
         return recipes;
     }
 
@@ -116,28 +108,29 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
 
     @Override
     public boolean stillValid(Player player) {
-        return stillValid(access, player, getBlock());
+        return stillValid(access, player, getContainerBlock());
     }
 
     @Override
-    public boolean clickMenuButton(Player player, int id) {
-        if (isValidRecipeIndex(id)) {
-            selectedRecipeIndex.set(id);
+    public boolean clickMenuButton(Player player, int button) {
+        if (isValidRecipeIndex(button)) {
+            selectedRecipeIndex.set(button);
             setupResultSlot();
         }
+
         return true;
     }
 
-    private boolean isValidRecipeIndex(int id) {
-        return id >= 0 && id < recipes.size();
+    private boolean isValidRecipeIndex(int index) {
+        return index >= 0 && index < recipes.size();
     }
 
     @Override
     public void slotsChanged(Container container) {
-        ItemStack inputStack = inputSlot.getItem();
-        if (!inputStack.is(input.getItem())) {
-            input = inputStack.copy();
-            setupRecipeList(container, inputStack);
+        ItemStack stack = inputSlot.getItem();
+        if (!stack.is(input.getItem())) {
+            input = stack.copy();
+            setupRecipeList(container, stack);
         }
     }
 
@@ -152,19 +145,26 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
 
     private void setupResultSlot() {
         if (!recipes.isEmpty() && isValidRecipeIndex(selectedRecipeIndex.get())) {
-            T recipe = recipes.get(selectedRecipeIndex.get());
-            resultContainer.setRecipeUsed(recipe);
-            resultSlot.set(recipe.assemble(container, level.registryAccess()));
+            RecipeHolder<T> holder = recipes.get(selectedRecipeIndex.get());
+            ItemStack stack = holder.value().assemble(container, level.registryAccess());
+            if (stack.isItemEnabled(level.enabledFeatures())) {
+                resultContainer.setRecipeUsed(holder);
+                resultSlot.set(stack);
+            }
+            else {
+                resultSlot.set(ItemStack.EMPTY);
+            }
         }
         else {
             resultSlot.set(ItemStack.EMPTY);
         }
+
         broadcastChanges();
     }
 
     @Override
     public MenuType<?> getType() {
-        return menuType;
+        return getMenuType();
     }
 
     public void registerUpdateListener(Runnable listener) {
@@ -177,23 +177,24 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
     }
 
     @Override
-    public ItemStack quickMoveStack(Player player, int index) {
+    public ItemStack quickMoveStack(Player player, int slotIndex) {
         ItemStack stack = ItemStack.EMPTY;
-        Slot slot = slots.get(index);
+        Slot slot = slots.get(slotIndex);
 
         if (slot != null && slot.hasItem()) {
             ItemStack stack1 = slot.getItem();
             Item item = stack1.getItem();
             stack = stack1.copy();
 
-            if (index == 1) {
+            if (slotIndex == 1) {
                 item.onCraftedBy(stack1, player.level(), player);
                 if (!moveItemStackTo(stack1, 2, 38, true)) {
                     return ItemStack.EMPTY;
                 }
+
                 slot.onQuickCraft(stack1, stack);
             }
-            else if (index == 0) {
+            else if (slotIndex == 0) {
                 if (!moveItemStackTo(stack1, 2, 38, false)) {
                     return ItemStack.EMPTY;
                 }
@@ -203,17 +204,17 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
                     return ItemStack.EMPTY;
                 }
             }
-            else if (index >= 2 && index < 29) {
+            else if (slotIndex >= 2 && slotIndex < 29) {
                 if (!moveItemStackTo(stack1, 29, 38, false)) {
                     return ItemStack.EMPTY;
                 }
             }
-            else if (index >= 29 && index < 38 && !moveItemStackTo(stack1, 2, 29, false)) {
+            else if (slotIndex >= 29 && slotIndex < 38 && !moveItemStackTo(stack1, 2, 29, false)) {
                 return ItemStack.EMPTY;
             }
 
             if (stack1.isEmpty()) {
-                slot.set(ItemStack.EMPTY);
+                slot.setByPlayer(ItemStack.EMPTY);
             }
 
             slot.setChanged();
@@ -232,8 +233,14 @@ public abstract class AbstractSingleItemRecipeMenu<T extends AbstractSingleItemR
     public void removed(Player player) {
         super.removed(player);
         resultContainer.removeItemNoUpdate(1);
-        access.execute((level, pos) -> {
-            clearContainer(player, container);
-        });
+        access.execute((level, pos) -> clearContainer(player, container));
     }
+
+    protected abstract RecipeType<T> getRecipeType();
+
+    protected abstract MenuType<? extends AbstractSingleItemRecipeMenu<?>> getMenuType();
+
+    protected abstract SoundEvent getCraftSound();
+
+    protected abstract Block getContainerBlock();
 }

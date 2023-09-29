@@ -8,22 +8,28 @@ import einstein.cutandcolored.item.crafting.SawmillingRecipe;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 
 public class SawmillMenu extends AbstractSingleItemRecipeMenu<SawmillingRecipe> {
 
     public SawmillMenu(int id, Inventory inventory) {
-        super(ModMenuTypes.SAWMILL.get(), id, inventory);
+        super(id, inventory);
     }
 
     public SawmillMenu(int id, Inventory inventory, ContainerLevelAccess levelAccess) {
-        super(ModMenuTypes.SAWMILL.get(), id, inventory, levelAccess);
+        super(id, inventory, levelAccess);
     }
 
     @Override
-    public Block getBlock() {
-        return ModBlocks.SAWMILL.get();
+    public RecipeType<SawmillingRecipe> getRecipeType() {
+        return ModRecipeTypes.SAWMILLING_RECIPE;
+    }
+
+    @Override
+    protected MenuType<? extends AbstractSingleItemRecipeMenu<?>> getMenuType() {
+        return ModMenuTypes.SAWMILL.get();
     }
 
     @Override
@@ -32,7 +38,7 @@ public class SawmillMenu extends AbstractSingleItemRecipeMenu<SawmillingRecipe> 
     }
 
     @Override
-    public RecipeType<SawmillingRecipe> getRecipeType() {
-        return ModRecipeTypes.SAWMILLING_RECIPE;
+    public Block getContainerBlock() {
+        return ModBlocks.SAWMILL.get();
     }
 }

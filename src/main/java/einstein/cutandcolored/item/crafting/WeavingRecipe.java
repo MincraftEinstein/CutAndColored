@@ -8,8 +8,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 public class WeavingRecipe extends AbstractSingleItemRecipe {
 
-    public WeavingRecipe(ResourceLocation id, String group, Ingredient ingredient, ItemStack result) {
-        super(ModRecipeTypes.WEAVING_RECIPE, ModRecipeTypes.WEAVING.get(), id, group, ingredient, result);
+    public WeavingRecipe(String group, Ingredient ingredient, ItemStack result) {
+        super(ModRecipeTypes.WEAVING_RECIPE, ModRecipeTypes.WEAVING.get(), group, ingredient, result);
     }
 
     @Override
