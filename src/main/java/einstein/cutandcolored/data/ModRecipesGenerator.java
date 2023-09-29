@@ -454,8 +454,8 @@ public class ModRecipesGenerator extends RecipeResources {
             sawmillingRecipe(woodName + "_stairs", RecipeCategory.BUILDING_BLOCKS, planks, stairs);
             sawmillingRecipe("stripped_" + woodName + s, RecipeCategory.BUILDING_BLOCKS, log, strippedLog);
             sawmillingRecipe("stripped_" + woodName + woodKind, RecipeCategory.BUILDING_BLOCKS, wood, strippedWood);
-            sawmillingRecipe(woodName + "_door", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_door")), 1);
-            sawmillingRecipe(woodName + "_fence", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_fence")), 1);
+            sawmillingRecipe(woodName + "_door", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_door")), 3);
+            sawmillingRecipe(woodName + "_fence", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_fence")), 3);
             sawmillingRecipe(woodName + "_fence_gate", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_fence_gate")), 1);
             sawmillingRecipe(woodName + "_slab_from" + s, RecipeCategory.BUILDING_BLOCKS, logTypes, slab, 8);
             sawmillingRecipe(woodName + "_stairs_from" + s, RecipeCategory.BUILDING_BLOCKS, logTypes, stairs, 4);
@@ -468,7 +468,7 @@ public class ModRecipesGenerator extends RecipeResources {
             }
 
             try {
-                sawmillingRecipe(woodName + "_sign", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_sign")), 1);
+                sawmillingRecipe(woodName + "_sign", RecipeCategory.BUILDING_BLOCKS, logTypes, getItem(RL(woodName + "_sign")), 3);
             }
             catch (Exception e) {
             }
