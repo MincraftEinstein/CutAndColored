@@ -51,6 +51,16 @@ public class CreativeTabContents {
         event.accept(ModBlocks.MANGROVE_BOARDS.get());
         event.accept(ModBlocks.MANGROVE_BOARD_STAIRS.get());
         event.accept(ModBlocks.MANGROVE_BOARD_SLAB.get());
+        
+        // Cherry wood set
+        event.accept(ModBlocks.CHERRY_BOARDS.get());
+        event.accept(ModBlocks.CHERRY_BOARD_STAIRS.get());
+        event.accept(ModBlocks.CHERRY_BOARD_SLAB.get());
+        
+        // Bamboo wood set
+        event.accept(ModBlocks.BAMBOO_BOARDS.get());
+        event.accept(ModBlocks.BAMBOO_BOARD_STAIRS.get());
+        event.accept(ModBlocks.BAMBOO_BOARD_SLAB.get());
 
         // Crimson wood set
         event.accept(ModBlocks.CRIMSON_BOARDS.get());

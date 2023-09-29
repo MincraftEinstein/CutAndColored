@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "board_slabs",
+  "key": {
+    "#": {
+      "item": "cutandcolored:cherry_boards"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "cutandcolored:cherry_board_slab"
+  },
+  "show_notification": true
+}

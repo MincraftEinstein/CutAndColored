@@ -449,6 +449,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> ACACIA_BOARDS = register("acacia_boards", () -> new Block(BlockProperties.planks(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> DARK_OAK_BOARDS = register("dark_oak_boards", () -> new Block(BlockProperties.planks(MapColor.COLOR_BROWN)));
     public static final RegistryObject<Block> MANGROVE_BOARDS = register("mangrove_boards", () -> new Block(BlockProperties.planks(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> CHERRY_BOARDS = register("cherry_boards", () -> new Block(BlockProperties.planks(MapColor.TERRACOTTA_WHITE, SoundType.CHERRY_WOOD)));
+    public static final RegistryObject<Block> BAMBOO_BOARDS = register("bamboo_boards", () -> new Block(BlockProperties.planks(MapColor.COLOR_YELLOW, SoundType.BAMBOO_WOOD)));
     public static final RegistryObject<Block> CRIMSON_BOARDS = register("crimson_boards", () -> new Block(BlockProperties.netherPlanks(MapColor.CRIMSON_STEM)));
     public static final RegistryObject<Block> WARPED_BOARDS = register("warped_boards", () -> new Block(BlockProperties.netherPlanks(MapColor.WARPED_STEM)));
 
@@ -460,6 +462,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> ACACIA_BOARD_STAIRS = register("acacia_board_stairs", () -> new StairBlock(ACACIA_BOARDS.get()::defaultBlockState, Properties.copy(ACACIA_BOARDS.get())));
     public static final RegistryObject<Block> DARK_OAK_BOARD_STAIRS = register("dark_oak_board_stairs", () -> new StairBlock(DARK_OAK_BOARDS.get()::defaultBlockState, Properties.copy(DARK_OAK_BOARDS.get())));
     public static final RegistryObject<Block> MANGROVE_BOARD_STAIRS = register("mangrove_board_stairs", () -> new StairBlock(MANGROVE_BOARDS.get()::defaultBlockState, Properties.copy(MANGROVE_BOARDS.get())));
+    public static final RegistryObject<Block> CHERRY_BOARD_STAIRS = register("cherry_board_stairs", () -> new StairBlock(CHERRY_BOARDS.get()::defaultBlockState, Properties.copy(CHERRY_BOARDS.get())));
+    public static final RegistryObject<Block> BAMBOO_BOARD_STAIRS = register("bamboo_board_stairs", () -> new StairBlock(BAMBOO_BOARDS.get()::defaultBlockState, Properties.copy(BAMBOO_BOARDS.get())));
     public static final RegistryObject<Block> CRIMSON_BOARD_STAIRS = register("crimson_board_stairs", () -> new StairBlock(CRIMSON_BOARDS.get()::defaultBlockState, Properties.copy(CRIMSON_BOARDS.get())));
     public static final RegistryObject<Block> WARPED_BOARD_STAIRS = register("warped_board_stairs", () -> new StairBlock(WARPED_BOARDS.get()::defaultBlockState, Properties.copy(WARPED_BOARDS.get())));
 
@@ -471,6 +475,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> ACACIA_BOARD_SLAB = register("acacia_board_slab", () -> new SlabBlock(Properties.copy(ACACIA_BOARDS.get())));
     public static final RegistryObject<Block> DARK_OAK_BOARD_SLAB = register("dark_oak_board_slab", () -> new SlabBlock(Properties.copy(DARK_OAK_BOARDS.get())));
     public static final RegistryObject<Block> MANGROVE_BOARD_SLAB = register("mangrove_board_slab", () -> new SlabBlock(Properties.copy(MANGROVE_BOARDS.get())));
+    public static final RegistryObject<Block> CHERRY_BOARD_SLAB = register("cherry_board_slab", () -> new SlabBlock(Properties.copy(CHERRY_BOARDS.get())));
+    public static final RegistryObject<Block> BAMBOO_BOARD_SLAB = register("bamboo_board_slab", () -> new SlabBlock(Properties.copy(BAMBOO_BOARDS.get())));
     public static final RegistryObject<Block> CRIMSON_BOARD_SLAB = register("crimson_board_slab", () -> new SlabBlock(Properties.copy(CRIMSON_BOARDS.get())));
     public static final RegistryObject<Block> WARPED_BOARD_SLAB = register("warped_board_slab", () -> new SlabBlock(Properties.copy(WARPED_BOARDS.get())));
 
@@ -581,11 +587,19 @@ public class ModBlocks {
         public static final Properties SOUL_SANDSTONE = stone(MapColor.COLOR_BROWN).strength(0.8F);
 
         public static Properties planks(MapColor color) {
-            return Properties.of().mapColor(color).ignitedByLava().strength(2.0F, 3.0F).sound(SoundType.WOOD);
+            return planks(color, SoundType.WOOD);
+        }
+
+        public static Properties planks(MapColor color, SoundType soundType) {
+            return lavaProofPlanks(color, soundType).ignitedByLava();
+        }
+
+        public static Properties lavaProofPlanks(MapColor color, SoundType soundType) {
+            return Properties.of().mapColor(color).strength(2.0F, 3.0F).sound(soundType);
         }
 
         public static Properties netherPlanks(MapColor color) {
-            return Properties.of().mapColor(color).strength(2.0F).sound(SoundType.STEM).instrument(NoteBlockInstrument.BASS);
+            return lavaProofPlanks(color, SoundType.STEM);
         }
 
         public static Properties stone(MapColor color) {

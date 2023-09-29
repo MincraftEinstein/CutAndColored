@@ -1,0 +1,8 @@
+{
+  "type": "cutandcolored:sawmilling",
+  "count": 4,
+  "ingredient": {
+    "tag": "minecraft:cherry_logs"
+  },
+  "result": "cutandcolored:cherry_boards"
+}

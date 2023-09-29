@@ -187,13 +187,16 @@ public class BlockTagsGenerator extends BlockTagsProvider {
         tag(TINTED_GLASS_PANES).add(ModBlocks.TINTED_GLASS_PANE.get(), ModBlocks.TINTED_GLASS_WINDOW_PANE.get());
         tag(BOARDS).add(ModBlocks.OAK_BOARDS.get(), ModBlocks.SPRUCE_BOARDS.get(), ModBlocks.BIRCH_BOARDS.get(),
                 ModBlocks.JUNGLE_BOARDS.get(), ModBlocks.ACACIA_BOARDS.get(), ModBlocks.DARK_OAK_BOARDS.get(),
-                ModBlocks.CRIMSON_BOARDS.get(), ModBlocks.WARPED_BOARDS.get(), ModBlocks.MANGROVE_BOARDS.get());
+                ModBlocks.CRIMSON_BOARDS.get(), ModBlocks.WARPED_BOARDS.get(), ModBlocks.MANGROVE_BOARDS.get(),
+                ModBlocks.CHERRY_BOARDS.get(), ModBlocks.BAMBOO_BOARDS.get());
         tag(BOARD_STAIRS).add(ModBlocks.OAK_BOARD_STAIRS.get(), ModBlocks.SPRUCE_BOARD_STAIRS.get(), ModBlocks.BIRCH_BOARD_STAIRS.get(),
                 ModBlocks.JUNGLE_BOARD_STAIRS.get(), ModBlocks.ACACIA_BOARD_STAIRS.get(), ModBlocks.DARK_OAK_BOARD_STAIRS.get(),
-                ModBlocks.CRIMSON_BOARD_STAIRS.get(), ModBlocks.WARPED_BOARD_STAIRS.get(), ModBlocks.MANGROVE_BOARD_STAIRS.get());
+                ModBlocks.CRIMSON_BOARD_STAIRS.get(), ModBlocks.WARPED_BOARD_STAIRS.get(), ModBlocks.MANGROVE_BOARD_STAIRS.get(),
+                ModBlocks.CHERRY_BOARD_STAIRS.get(), ModBlocks.BAMBOO_BOARD_STAIRS.get());
         tag(BOARD_SLABS).add(ModBlocks.OAK_BOARD_SLAB.get(), ModBlocks.SPRUCE_BOARD_SLAB.get(), ModBlocks.BIRCH_BOARD_SLAB.get(),
                 ModBlocks.JUNGLE_BOARD_SLAB.get(), ModBlocks.ACACIA_BOARD_SLAB.get(), ModBlocks.DARK_OAK_BOARD_SLAB.get(),
-                ModBlocks.CRIMSON_BOARD_SLAB.get(), ModBlocks.WARPED_BOARD_SLAB.get(), ModBlocks.MANGROVE_BOARD_SLAB.get());
+                ModBlocks.CRIMSON_BOARD_SLAB.get(), ModBlocks.WARPED_BOARD_SLAB.get(), ModBlocks.MANGROVE_BOARD_SLAB.get(),
+                ModBlocks.CHERRY_BOARD_SLAB.get(), ModBlocks.BAMBOO_BOARD_SLAB.get());
 
         tag(Tags.Blocks.GLASS_COLORLESS).add(ModBlocks.GLASS_WINDOW.get());
         tag(Tags.Blocks.GLASS_PANES_COLORLESS).add(ModBlocks.GLASS_WINDOW_PANE.get());

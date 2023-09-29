@@ -469,9 +469,11 @@
     "block.cutandcolored.jungle_boards": "Jungle Boards",
     "block.cutandcolored.acacia_boards": "Acacia Boards",
     "block.cutandcolored.dark_oak_boards": "Dark Oak Boards",
+    "block.cutandcolored.mangrove_boards": "Mangrove Boards",
+    "block.cutandcolored.cherry_boards": "Cherry Boards",
+    "block.cutandcolored.bamboo_boards": "Bamboo Boards",
     "block.cutandcolored.crimson_boards": "Crimson Boards",
     "block.cutandcolored.warped_boards": "Warped Boards",
-    "block.cutandcolored.mangrove_boards": "Mangrove Boards",
 
     "_comment": "Stairs",
     "block.cutandcolored.oak_board_stairs": "Oak Board Stairs",
@@ -480,9 +482,11 @@
     "block.cutandcolored.jungle_board_stairs": "Jungle Board Stairs",
     "block.cutandcolored.acacia_board_stairs": "Acacia Board Stairs",
     "block.cutandcolored.dark_oak_board_stairs": "Dark Oak Board Stairs",
+    "block.cutandcolored.mangrove_board_stairs": "Mangrove Board Stairs",
+    "block.cutandcolored.cherry_board_stairs": "Cherry Board Stairs",
+    "block.cutandcolored.bamboo_board_stairs": "Bamboo Board Stairs",
     "block.cutandcolored.crimson_board_stairs": "Crimson Board Stairs",
     "block.cutandcolored.warped_board_stairs": "Warped Board Stairs",
-    "block.cutandcolored.mangrove_board_stairs": "Mangrove Board Stairs",
 
     "_comment": "Slabs",
     "block.cutandcolored.oak_board_slab": "Oak Board Slab",
@@ -491,9 +495,11 @@
     "block.cutandcolored.jungle_board_slab": "Jungle Board Slab",
     "block.cutandcolored.acacia_board_slab": "Acacia Board Slab",
     "block.cutandcolored.dark_oak_board_slab": "Dark Oak Board Slab",
+    "block.cutandcolored.mangrove_board_slab": "Mangrove Board Slab",
+    "block.cutandcolored.cherry_board_slab": "Cherry Board Slab",
+    "block.cutandcolored.bamboo_board_slab": "Bamboo Board Slab",
     "block.cutandcolored.crimson_board_slab": "Crimson Board Slab",
     "block.cutandcolored.warped_board_slab": "Warped Board Slab",
-    "block.cutandcolored.mangrove_board_slab": "Mangrove Board Slab",
 
 
     "_comment": "MISC BLOCKS",

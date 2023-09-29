@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "board_stairs",
+  "key": {
+    "#": {
+      "item": "cutandcolored:cherry_boards"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "cutandcolored:cherry_board_stairs"
+  },
+  "show_notification": true
+}

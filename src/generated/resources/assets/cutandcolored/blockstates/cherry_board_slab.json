@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cutandcolored:block/cherry_board_slab"
+    },
+    "type=double": {
+      "model": "cutandcolored:block/cherry_boards"
+    },
+    "type=top": {
+      "model": "cutandcolored:block/cherry_board_slab_top"
+    }
+  }
+}

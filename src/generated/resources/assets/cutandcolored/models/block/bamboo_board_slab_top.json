@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "cutandcolored:block/bamboo_boards",
+    "side": "cutandcolored:block/bamboo_boards",
+    "top": "cutandcolored:block/bamboo_boards"
+  }
+}

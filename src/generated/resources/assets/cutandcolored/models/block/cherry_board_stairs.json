@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "cutandcolored:block/cherry_boards",
+    "side": "cutandcolored:block/cherry_boards",
+    "top": "cutandcolored:block/cherry_boards"
+  }
+}
