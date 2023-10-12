@@ -34,4 +34,9 @@ Welcome to Cut And Colored. This mod aims to add vanilla feeling blocks to the g
 
 ---
 
+### **💬 Translators**
+Ukrainian: [Un roman](https://github.com/unroman)
+
+---
+
 [![Kinetic Hosting Banner](https://i.imgur.com/u6Fn0I0.png)](https://billing.kinetichosting.net/aff.php?aff=124)
